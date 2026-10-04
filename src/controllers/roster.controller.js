@@ -24,6 +24,37 @@ function createRosterController(repository, rosterService) {
       )));
     },
 
+    async campaignRosters(request, response) {
+      if (!(await repository.isCampaignMember(request.params.campaignId, request.user.id))) return response.status(403).json({ error: "You have not joined this campaign." });
+      const rosters = await repository.campaignRosters(request.params.campaignId);
+      response.json(await Promise.all(rosters.map(async (roster) =>
+        rosterService.toRosterResponse(roster, await rosterService.fetchRosterMembers(roster.id)),
+      )));
+    },
+
+    async listShared(request, response) {
+      const rosters = await repository.listSharedRosters(request.user.id);
+      response.json(await Promise.all(rosters.map(async (roster) =>
+        rosterService.toRosterResponse(roster, await rosterService.fetchRosterMembers(roster.id)),
+      )));
+    },
+
+    async redeemShare(request, response) {
+      const code = String(request.body?.code || "").trim().toLowerCase();
+      const roster = code ? await repository.redeemShareCode(code, request.user.id) : null;
+      if (!roster) return response.status(404).json({ error: "That share code is not valid." });
+      response.json(await rosterService.toRosterResponse(roster, await rosterService.fetchRosterMembers(roster.id)));
+    },
+
+    async share(request, response) {
+      const roster = await repository.findRoster(request.params.rosterId);
+      if (!roster) return response.status(404).json({ error: "Roster not found." });
+      if (roster.user_id !== request.user.id) return response.status(403).json({ error: "Only the owner can share a warband." });
+      const code = request.method === "DELETE" ? null : roster.share_code || require("crypto").randomBytes(6).toString("hex");
+      await repository.setShareCode(roster.id, code);
+      response.json(await rosterService.toRosterResponse(await repository.findRoster(roster.id), await rosterService.fetchRosterMembers(roster.id)));
+    },
+
     async create(request, response) {
       const values = pickFields(request.body, rosterFields);
       const campaign = request.body?.campaignId ? await repository.findCampaign(request.body.campaignId) : null;

@@ -13,6 +13,7 @@ COPY spells-catalog.json ./spells-catalog.json
 COPY spell-profile-access.json ./spell-profile-access.json
 COPY migrations ./migrations
 COPY src ./src
+COPY test ./test
 ENV NODE_ENV=production PORT=4000
 EXPOSE 4000
 CMD ["npm", "start"]

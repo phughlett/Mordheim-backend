@@ -49,7 +49,10 @@ function createAuth(db) {
       const roster = await db("rosters").where({ id: rosterId }).first("id", "user_id", "campaign_id");
       if (!roster) return next();
       if (roster.user_id === request.user.id) return next();
-      if (request.method === "GET" && roster.campaign_id && await isMember(roster.campaign_id, request.user.id)) return next();
+      if (request.method === "GET") {
+        if (roster.campaign_id && await isMember(roster.campaign_id, request.user.id)) return next();
+        if (await db("roster_shares").where({ roster_id: roster.id, user_id: request.user.id }).first()) return next();
+      }
       response.status(403).json({ error: "This warband belongs to another player." });
     } catch (error) {
       next(error);

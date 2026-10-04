@@ -548,6 +548,31 @@ function createRosterRepository(db) {
       return db("rosters").where({ user_id: userId }).select("*").orderBy("created_at", "asc");
     },
 
+    async findUsername(userId) {
+      return (await db("users").where({ id: userId }).first("username"))?.username;
+    },
+
+    listSharedRosters(userId) {
+      return db("rosters").join("roster_shares", "roster_shares.roster_id", "rosters.id").where({ "roster_shares.user_id": userId }).select("rosters.*").orderBy("rosters.created_at", "asc");
+    },
+
+    async campaignRosters(campaignId) {
+      return db("rosters").where({ campaign_id: campaignId }).select("*").orderBy("created_at", "asc");
+    },
+
+    async setShareCode(rosterId, code) {
+      await db("rosters").where({ id: rosterId }).update({ share_code: code });
+      if (!code) await db("roster_shares").where({ roster_id: rosterId }).delete();
+    },
+
+    async redeemShareCode(code, userId) {
+      const roster = await db("rosters").where({ share_code: code }).first();
+      if (roster && roster.user_id !== userId) {
+        await db("roster_shares").insert({ roster_id: roster.id, user_id: userId }).onConflict(["roster_id", "user_id"]).ignore();
+      }
+      return roster;
+    },
+
     async isCampaignMember(campaignId, userId) {
       return Boolean(await db("campaign_members").where({ campaign_id: campaignId, user_id: userId }).first());
     },

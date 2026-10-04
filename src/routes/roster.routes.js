@@ -12,6 +12,11 @@ function createRosterRoutes(db) {
   const { guard, fromRoster, check: campaignCheck } = createCampaignGuard(repository);
 
   router.get("/rosters", controller.list);
+  router.get("/shared-rosters", controller.listShared);
+  router.post("/shared-rosters/join", controller.redeemShare);
+  router.get("/campaigns/:campaignId/rosters", controller.campaignRosters);
+  router.post("/rosters/:rosterId/share", controller.share);
+  router.delete("/rosters/:rosterId/share", controller.share);
   router.post("/rosters", controller.create);
   router.get("/rosters/:rosterId", controller.get);
   router.put("/rosters/:rosterId/member-order", controller.reorderMembers);
