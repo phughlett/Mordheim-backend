@@ -119,6 +119,21 @@ describe("multi-user campaigns", () => {
     assert.equal((await call(users.carol.token, "POST", "/shared-rosters/join", { code })).status, 404);
   });
 
+  test("freebuild warbands need no campaign, can be shared, and stay read-only for others", async () => {
+    const warband = aliceRoster.warbandId;
+    const free = await call(users.alice.token, "POST", "/rosters", { warbandId: warband, treasury: 650 });
+    assert.equal(free.status, 201, JSON.stringify(free.body));
+    assert.equal(free.body.campaignId, null);
+    assert.equal(Number(free.body.treasury), 650);
+    assert.equal((await call(users.alice.token, "POST", "/rosters", { warbandId: warband, treasury: -1 })).status, 400);
+    assert.equal((await call(users.alice.token, "POST", `/rosters/${free.body.id}/campaign/advance`)).status, 409);
+    assert.equal((await call(users.bob.token, "GET", `/rosters/${free.body.id}`)).status, 403);
+    const code = (await call(users.alice.token, "POST", `/rosters/${free.body.id}/share`)).body.shareCode;
+    assert.equal((await call(users.bob.token, "POST", "/shared-rosters/join", { code })).status, 200);
+    assert.equal((await call(users.bob.token, "GET", `/rosters/${free.body.id}`)).status, 200);
+    assert.equal((await call(users.bob.token, "PATCH", `/rosters/${free.body.id}`, { name: "Nope" })).status, 403);
+  });
+
   test("players only assign their own warbands to a shared battle", async () => {
     const battle = (await call(users.alice.token, "POST", `/campaigns/${campaign.id}/battles`, { format: "1v1" })).body;
     assert.equal((await call(users.bob.token, "PUT", `/battles/${battle.id}/participants`, { rosterId: aliceRoster.id, team: "A" })).status, 403);

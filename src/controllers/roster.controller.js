@@ -57,13 +57,20 @@ function createRosterController(repository, rosterService) {
 
     async create(request, response) {
       const values = pickFields(request.body, rosterFields);
-      const campaign = request.body?.campaignId ? await repository.findCampaign(request.body.campaignId) : null;
-      if (!campaign) return response.status(400).json({ error: "Choose a campaign for this warband." });
-      const membership = await repository.isCampaignMember(campaign.id, request.user.id);
-      if (!membership) return response.status(403).json({ error: "Join this campaign before creating a warband in it." });
-      values.campaign_id = campaign.id;
       values.user_id = request.user.id;
-      values.treasury = campaign.max_gc;
+      if (request.body?.campaignId) {
+        const campaign = await repository.findCampaign(request.body.campaignId);
+        if (!campaign) return response.status(400).json({ error: "Campaign not found." });
+        if (!(await repository.isCampaignMember(campaign.id, request.user.id))) return response.status(403).json({ error: "Join this campaign before creating a warband in it." });
+        values.campaign_id = campaign.id;
+        values.treasury = campaign.max_gc;
+      } else {
+        // Freebuild: no campaign, so the player chooses the starting gold.
+        values.campaign_id = null;
+        const gold = request.body?.treasury === undefined ? 500 : Number(request.body.treasury);
+        if (!Number.isSafeInteger(gold) || gold < 0) return response.status(400).json({ error: "Starting gold must be a non-negative whole number." });
+        values.treasury = gold;
+      }
       if (values.name !== undefined && !isNonEmptyString(values.name)) {
         return response.status(400).json({ error: "Roster name must not be empty." });
       }
@@ -104,6 +111,7 @@ function createRosterController(repository, rosterService) {
     async advanceCampaign(request, response) {
       const roster = await repository.findRoster(request.params.rosterId);
       if (!roster) return response.status(404).json({ error: "Roster not found." });
+      if (!roster.campaign_id) return response.status(409).json({ error: "Freebuild warbands are not part of a campaign sequence." });
       if (roster.campaign_id && roster.campaign_phase === "battle") return response.status(409).json({ error: "This warband is in a battle. Advance the battle from the Battle panel." });
       if (roster.campaign_id && roster.campaign_phase === "pre_battle" && roster.campaign_step === PRE_BATTLE_STEPS.length) {
         return response.status(409).json({ error: "Set up the battle (teams) and start it from the Battle panel." });
@@ -118,6 +126,7 @@ function createRosterController(repository, rosterService) {
     async reopenCampaign(request, response) {
       const roster = await repository.findRoster(request.params.rosterId);
       if (!roster) return response.status(404).json({ error: "Roster not found." });
+      if (!roster.campaign_id) return response.status(409).json({ error: "Freebuild warbands are not part of a campaign sequence." });
       const result = reopenCampaign(roster);
       if (result.error) return response.status(409).json({ error: result.error });
       const [updated] = await repository.updateRoster(roster.id, result.updates);
