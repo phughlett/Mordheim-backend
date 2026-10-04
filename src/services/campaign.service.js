@@ -34,6 +34,7 @@ const BATTLE_PHASES = [
 const ROUT_REMINDER = " At the start of your turn, take a Rout test if a quarter (25%) or more of your warband is out of action.";
 
 const SETUP_ACTIONS = ["hire", "buy", "sell", "remove", "warband", "treasury"];
+const FREEBUILD_ACTIONS = [...SETUP_ACTIONS, "experience", "advance"];
 
 const PHASE_LABELS = {
   setup: "Roster creation",
@@ -68,6 +69,7 @@ function getStage(roster) {
 }
 
 function getAllowedActions(roster) {
+  if (!roster.campaign_id) return FREEBUILD_ACTIONS;
   return getStage(roster).actions;
 }
 
@@ -102,7 +104,7 @@ function toCampaign(roster) {
     battleTurn: stage.phase === "battle" ? stage.turn : null,
     battlePhases: BATTLE_PHASES.map((entry) => entry.label),
     postBattleSteps: POST_BATTLE_STEPS.map((entry) => entry.label),
-    allowedActions: stage.actions,
+    allowedActions: getAllowedActions(roster),
     nextLabel: getNextLabel(roster),
     canReopen: stage.phase === "pre_battle" && stage.step === 1 && Number(roster.battles_fought || 0) === 0,
   };

@@ -75,7 +75,7 @@ function validateNonNegativeIntegers(values, fields) {
   return null;
 }
 
-function validateExperience(values, role, canGainExperience = true, minimumExperience = 0) {
+function validateExperience(values, role, canGainExperience = true, minimumExperience = 0, freebuild = false) {
   if (values.experience === undefined) return null;
   values.experience = Number(values.experience);
   if (!Number.isSafeInteger(values.experience) || values.experience < 0) {
@@ -87,7 +87,7 @@ function validateExperience(values, role, canGainExperience = true, minimumExper
   if (!canGainExperience && values.experience > 0) {
     return `This ${role} type cannot gain experience.`;
   }
-  const maximum = role === "Henchman" ? 14 : 90;
+  const maximum = freebuild ? 2147483647 : role === "Henchman" ? 14 : 90;
   if (values.experience > maximum) {
     return `experience must not exceed ${maximum} for ${role}.`;
   }

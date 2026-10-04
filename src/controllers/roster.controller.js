@@ -286,6 +286,7 @@ function createRosterController(repository, rosterService) {
         values.role,
         selectedWarriorType?.can_gain_experience !== false,
         selectedWarriorType?.starting_experience ?? 0,
+        !rosterExists.campaign_id,
       );
       if (experienceError) return response.status(400).json({ error: experienceError });
       const statsResult = normalizeStats(selectedWarriorType?.stats ?? {});

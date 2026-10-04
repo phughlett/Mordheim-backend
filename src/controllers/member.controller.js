@@ -461,7 +461,7 @@ function createMemberController(repository, rosterService) {
         if (companion) return response.status(409).json({ error: "Remove the Wolf Companion before changing the Wolf Priest type." });
       }
       const experienceType = warriorTypeId !== undefined ? targetType : currentType;
-      const experienceError = validateExperience(values, requestedRole, experienceType?.can_gain_experience !== false, experienceType?.starting_experience ?? 0);
+      const experienceError = validateExperience(values, requestedRole, experienceType?.can_gain_experience !== false, experienceType?.starting_experience ?? 0, !rosterRecord.campaign_id);
       if (experienceError) return response.status(400).json({ error: experienceError });
       if (Object.keys(values).length === 0) return response.status(400).json({ error: "No valid warrior fields supplied." });
       if (values.experience !== undefined && values.experience < Number(warrior.experience)) {

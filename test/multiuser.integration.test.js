@@ -143,4 +143,33 @@ describe("multi-user campaigns", () => {
     assert.deepEqual(result.body.participants.map((entry) => entry.player).sort(), [`alice_${suffix}`, `bob_${suffix}`]);
     assert.equal((await call(users.carol.token, "GET", `/campaigns/${campaign.id}/battles`)).status, 403);
   });
+
+  test("freebuild records mature warrior XP without campaign timing or track caps", async () => {
+    const free = await call(users.alice.token, "POST", "/rosters", { warbandId: aliceRoster.warbandId, treasury: 500 });
+    assert.equal(free.status, 201);
+    assert.ok(free.body.campaign.allowedActions.includes("experience"));
+    assert.ok(free.body.campaign.allowedActions.includes("advance"));
+    const types = (await call(users.alice.token, "GET", `/warbands/${aliceRoster.warbandId}/warrior-types`)).body;
+    for (const [role, xp] of [["Hero", 150], ["Henchman", 50]]) {
+      const type = types.find((item) => item.category === role && item.canGainExperience !== false && item.hireCost != null);
+      assert.ok(type, `Missing hireable ${role}`);
+      const body = { name: `Existing ${role}`, role, warriorTypeId: type.id, experience: xp };
+      const member = await call(users.alice.token, "POST", `/rosters/${free.body.id}/members`, body);
+      assert.equal(member.status, 201, JSON.stringify(member.body));
+      assert.equal(Number(member.body.experience), xp);
+      const updated = await call(users.alice.token, "PATCH", `/members/${member.body.id}`, { experience: xp + 100 });
+      assert.equal(updated.status, 200, JSON.stringify(updated.body));
+      assert.equal(Number(updated.body.experience), xp + 100);
+      for (const experience of [-1, 1.5, 2147483648]) {
+        assert.equal((await call(users.alice.token, "PATCH", `/members/${member.body.id}`, { experience })).status, 400);
+      }
+      assert.equal((await call(users.bob.token, "PATCH", `/members/${member.body.id}`, { experience: 300 })).status, 403);
+      const campaignMember = await call(users.alice.token, "POST", `/rosters/${aliceRoster.id}/members`, { name: `Campaign ${role}`, role, warriorTypeId: type.id });
+      assert.equal(campaignMember.status, 201, JSON.stringify(campaignMember.body));
+      assert.equal((await call(users.alice.token, "PATCH", `/members/${campaignMember.body.id}`, { experience: xp })).status, 409);
+      assert.equal((await call(users.alice.token, "POST", `/rosters/${aliceRoster.id}/members`, body)).status, 400);
+    }
+    const reread = await call(users.alice.token, "GET", `/rosters/${free.body.id}`);
+    assert.deepEqual(reread.body.members.map((member) => Number(member.experience)).sort((a, b) => a - b), [150, 250]);
+  });
 });
