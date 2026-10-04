@@ -370,6 +370,11 @@ function createMemberController(repository, rosterService) {
       if (warrior.role === "Henchman" && warrior.warrior_type_id && values.warriorTypeId !== undefined && values.warriorTypeId !== warrior.warrior_type_id) {
         return response.status(409).json({ error: "A Henchman group's type is fixed when hired. Remove and re-hire the group to change it." });
       }
+      if (warrior.role === "Hired Sword" && warrior.warrior_type_id
+        && ((values.warriorTypeId !== undefined && values.warriorTypeId !== warrior.warrior_type_id)
+          || (values.type !== undefined && values.type !== warrior.type))) {
+        return response.status(409).json({ error: "A Hired Sword's type is fixed when hired. Remove and re-hire the Hired Sword to change it." });
+      }
       const groupSizeProvided = values.groupSize !== undefined;
       const groupSize = groupSizeProvided ? Number(values.groupSize) : (warrior.group_size || 1);
       delete values.groupSize;

@@ -144,6 +144,31 @@ describe("multi-user campaigns", () => {
     assert.equal((await call(users.carol.token, "GET", `/campaigns/${campaign.id}/battles`)).status, 403);
   });
 
+  test("a selected Hired Sword type cannot be replaced, cleared, or relabeled", async () => {
+    const free = await call(users.alice.token, "POST", "/rosters", { warbandId: aliceRoster.warbandId });
+    assert.equal(free.status, 201);
+    const types = (await call(users.alice.token, "GET", `/warbands/${aliceRoster.warbandId}/warrior-types`)).body;
+    const hiredSwords = types.filter((item) => item.category === "Hired Sword" && item.hireCost != null && !item.equipmentChoices.length);
+    assert.ok(hiredSwords.length >= 2);
+    const member = await call(users.alice.token, "POST", `/rosters/${free.body.id}/members`, {
+      name: "Fixed Hired Sword", role: "Hired Sword", warriorTypeId: hiredSwords[0].id,
+    });
+    assert.equal(member.status, 201, JSON.stringify(member.body));
+    for (const changes of [
+      { warriorTypeId: hiredSwords[1].id }, { warriorTypeId: null },
+      { warriorTypeId: "" }, { type: "Different Hired Sword" },
+    ]) {
+      const result = await call(users.alice.token, "PATCH", `/members/${member.body.id}`, changes);
+      assert.equal(result.status, 409, JSON.stringify(result.body));
+    }
+    const edited = await call(users.alice.token, "PATCH", `/members/${member.body.id}`, {
+      warriorTypeId: hiredSwords[0].id, name: "Renamed Hired Sword", notes: "Still editable",
+    });
+    assert.equal(edited.status, 200, JSON.stringify(edited.body));
+    assert.equal(edited.body.warriorTypeId, hiredSwords[0].id);
+    assert.equal(edited.body.name, "Renamed Hired Sword");
+  });
+
   test("freebuild records mature warrior XP without campaign timing or track caps", async () => {
     const free = await call(users.alice.token, "POST", "/rosters", { warbandId: aliceRoster.warbandId, treasury: 500 });
     assert.equal(free.status, 201);
