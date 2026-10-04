@@ -1,0 +1,20 @@
+{
+  "name": "mordheim-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Express API for the Mordheim roster app",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "migrate:latest": "knex migrate:latest",
+    "migrate:rollback": "knex migrate:rollback",
+    "migrate:make": "knex migrate:make"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "knex": "^3.1.0",
+    "pg": "^8.16.3"
+  }
+}

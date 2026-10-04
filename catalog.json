@@ -1,0 +1,8282 @@
+{
+  "warbands": [
+    {
+      "name": "Amazons",
+      "sourceReference": "Amazons.pdf"
+    },
+    {
+      "name": "Averlander Mercenaries",
+      "sourceReference": "Averlanders.pdf"
+    },
+    {
+      "name": "Beastmen Raiders",
+      "sourceReference": "MordEMP2.pdf"
+    },
+    {
+      "name": "Bretonnian",
+      "sourceReference": "BretonnianWarband.pdf"
+    },
+    {
+      "name": "Carnival of Chaos",
+      "sourceReference": "MordEMP2.pdf"
+    },
+    {
+      "name": "Cult of the Possessed",
+      "sourceReference": "2Warbands.pdf"
+    },
+    {
+      "name": "Dark Elves",
+      "sourceReference": "Lustria3.pdf"
+    },
+    {
+      "name": "Dwarf Treasure Hunters",
+      "sourceReference": "DwarfTreasurehunters.pdf"
+    },
+    {
+      "name": "Kislevite",
+      "sourceReference": "Kislevwarband.pdf"
+    },
+    {
+      "name": "Lizardmen",
+      "sourceReference": "lizardmen.pdf"
+    },
+    {
+      "name": "Mercenaries",
+      "sourceReference": "2Warbands.pdf"
+    },
+    {
+      "name": "Night Goblins",
+      "sourceReference": "Night_Goblins_v3.21.pdf"
+    },
+    {
+      "name": "Norse",
+      "sourceReference": "Lustria4.pdf"
+    },
+    {
+      "name": "Orc",
+      "sourceReference": "damobrules.pdf"
+    },
+    {
+      "name": "Ostlanders",
+      "sourceReference": "Ostlanders.pdf"
+    },
+    {
+      "name": "Pirate",
+      "sourceReference": "PirateWarband.pdf"
+    },
+    {
+      "name": "Pit Fighter",
+      "sourceReference": "PitFighter.pdf"
+    },
+    {
+      "name": "Shadow Warrior",
+      "sourceReference": "ShadowWarriors.pdf"
+    },
+    {
+      "name": "Sisters of Sigmar",
+      "sourceReference": "2Warbands.pdf"
+    },
+    {
+      "name": "Skaven",
+      "sourceReference": "2Warbands.pdf"
+    },
+    {
+      "name": "Undead",
+      "sourceReference": "2Warbands.pdf"
+    },
+    {
+      "name": "Witch Hunters",
+      "sourceReference": "2Warbands.pdf"
+    },
+    {
+      "name": "Marauders of Chaos",
+      "sourceReference": "10%20Marauders%20of%20Chaos.pdf"
+    },
+    {
+      "name": "Battle Monks of Cathay",
+      "sourceReference": "14%20Battle%20Monks.pdf"
+    }
+  ],
+  "warriorTypes": [
+    {
+      "name": "Acolytes",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 2"
+    },
+    {
+      "name": "Apprentice (Necromancer)",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 3"
+    },
+    {
+      "name": "Arch Mage",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 4"
+    },
+    {
+      "name": "Assassin",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "4",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 5"
+    },
+    {
+      "name": "Assassin Adept",
+      "category": "Hero",
+      "stats": {
+        "M": "6",
+        "WS": "4",
+        "BS": "4",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "5",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 6"
+    },
+    {
+      "name": "Augur",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 7"
+    },
+    {
+      "name": "Bandit Leader",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 8"
+    },
+    {
+      "name": "Banshee",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "5",
+        "A": "2",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 9"
+    },
+    {
+      "name": "Barbarian",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "4",
+        "T": "4",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "10"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 10"
+    },
+    {
+      "name": "Barrow Wight",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 11"
+    },
+    {
+      "name": "Battle Augur",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 12"
+    },
+    {
+      "name": "Battle Matriarch",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "2",
+        "I": "4",
+        "A": "2",
+        "Ld": "9"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 13"
+    },
+    {
+      "name": "Battle Missionary",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "2",
+        "I": "3",
+        "A": "2",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 14"
+    },
+    {
+      "name": "Battle Superiors",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "5",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "2",
+        "I": "4",
+        "A": "2",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 15"
+    },
+    {
+      "name": "Bear Tamer",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 16"
+    },
+    {
+      "name": "Beastmen Chieftain",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "3",
+        "S": "4",
+        "T": "4",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 17"
+    },
+    {
+      "name": "Beastmen Shaman",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 18"
+    },
+    {
+      "name": "Beast Master (Dark Elves)",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "6",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 19"
+    },
+    {
+      "name": "Beast Master (Druchii)",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "5",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 20"
+    },
+    {
+      "name": "Bedouins",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 21"
+    },
+    {
+      "name": "Beloved",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 22"
+    },
+    {
+      "name": "Beloved (Thrall)",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 23"
+    },
+    {
+      "name": "Bergjaeger",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 24"
+    },
+    {
+      "name": "Berserkers",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 25"
+    },
+    {
+      "name": "Bestigors",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "3",
+        "S": "4",
+        "T": "4",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 26"
+    },
+    {
+      "name": "Big Boss",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 27"
+    },
+    {
+      "name": "Black Knives",
+      "category": "Hero",
+      "stats": {
+        "M": "6",
+        "WS": "4",
+        "BS": "3",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "5",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 28"
+    },
+    {
+      "name": "Black Skaven",
+      "category": "Hero",
+      "stats": {
+        "M": "6",
+        "WS": "4",
+        "BS": "3",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "6",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 29"
+    },
+    {
+      "name": "Bleak One",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "9"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 30"
+    },
+    {
+      "name": "Blood Brothers",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 31"
+    },
+    {
+      "name": "Blood Sister (Ihinnan Shee)",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "3",
+        "BS": "3",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 32"
+    },
+    {
+      "name": "Blood Sisters",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "4",
+        "T": "4",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 33"
+    },
+    {
+      "name": "Bondsman (Blooddragon)",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 34"
+    },
+    {
+      "name": "Bondsmen (Norse)",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 35"
+    },
+    {
+      "name": "Boss",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "4",
+        "T": "4",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 36"
+    },
+    {
+      "name": "Bosses (Forest Goblins)",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 37"
+    },
+    {
+      "name": "Bosses (Night Goblins)",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 38"
+    },
+    {
+      "name": "Brave",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 39"
+    },
+    {
+      "name": "Brutes (Carnival of Chaos)",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "0",
+        "S": "4",
+        "T": "4",
+        "W": "1",
+        "I": "2",
+        "A": "2",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 40"
+    },
+    {
+      "name": "Burglars",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 41"
+    },
+    {
+      "name": "Butcher-kin",
+      "category": "Hero",
+      "stats": {
+        "M": "6",
+        "WS": "3",
+        "BS": "2",
+        "S": "4",
+        "T": "4",
+        "W": "2",
+        "I": "3",
+        "A": "2",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": true,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 42"
+    },
+    {
+      "name": "Cabin Boys",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 43"
+    },
+    {
+      "name": "Captain (Averlander)",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 44"
+    },
+    {
+      "name": "Carnival Master",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 45"
+    },
+    {
+      "name": "Centigors",
+      "category": "Hero",
+      "stats": {
+        "M": "8",
+        "WS": "4",
+        "BS": "3",
+        "S": "4",
+        "T": "4",
+        "W": "1",
+        "I": "2",
+        "A": "1(2)",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 46"
+    },
+    {
+      "name": "Champion (Faerie)",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 47"
+    },
+    {
+      "name": "Champion (Nomads)",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 48"
+    },
+    {
+      "name": "Champion of Sigmar",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "4",
+        "T": "4",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 49"
+    },
+    {
+      "name": "Champions (Albion Barbarian)",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 50"
+    },
+    {
+      "name": "Champions (Mercenaries & Amazons)",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 51"
+    },
+    {
+      "name": "Champions (Outlaws)",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 52"
+    },
+    {
+      "name": "Changeling",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "0",
+        "BS": "2",
+        "S": "0",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "4"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 53"
+    },
+    {
+      "name": "Charnel Guard",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "3",
+        "A": "2",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 54"
+    },
+    {
+      "name": "Chief",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "4",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 55"
+    },
+    {
+      "name": "Chieftan",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 56"
+    },
+    {
+      "name": "Claw Leader",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "4",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "5",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 57"
+    },
+    {
+      "name": "Cleric",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 58"
+    },
+    {
+      "name": "Dark Elf Sorceress (Dark Elves)",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "6",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 59"
+    },
+    {
+      "name": "Dark Elf Sorceress (Druchii)",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "5",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 60"
+    },
+    {
+      "name": "Dog Soldiers",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 61"
+    },
+    {
+      "name": "Dregs",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 62"
+    },
+    {
+      "name": "Druzhina Captain",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 63"
+    },
+    {
+      "name": "Dwarf",
+      "category": "Hero",
+      "stats": {
+        "M": "3",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "9"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 64"
+    },
+    {
+      "name": "Dwarf Apprentice",
+      "category": "Hero",
+      "stats": {
+        "M": "3",
+        "WS": "3",
+        "BS": "2",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 65"
+    },
+    {
+      "name": "Dwarf Engineer",
+      "category": "Hero",
+      "stats": {
+        "M": "3",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "9"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 66"
+    },
+    {
+      "name": "Dwarf Expert Craftsman",
+      "category": "Hero",
+      "stats": {
+        "M": "3",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "9"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 67"
+    },
+    {
+      "name": "Dwarf Master Craftsman",
+      "category": "Hero",
+      "stats": {
+        "M": "3",
+        "WS": "5",
+        "BS": "4",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "9"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 68"
+    },
+    {
+      "name": "Dwarf Noble",
+      "category": "Hero",
+      "stats": {
+        "M": "3",
+        "WS": "5",
+        "BS": "4",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "9"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 69"
+    },
+    {
+      "name": "Dwarf Troll Slayer (Pit Fighter)",
+      "category": "Hero",
+      "stats": {
+        "M": "3",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "9"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 70"
+    },
+    {
+      "name": "Dwarf Troll Slayers",
+      "category": "Hero",
+      "stats": {
+        "M": "3",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "9"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 71"
+    },
+    {
+      "name": "Elder",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 72"
+    },
+    {
+      "name": "Elf",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "5",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 73"
+    },
+    {
+      "name": "Engineer Apprentice",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "2",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "4"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 74"
+    },
+    {
+      "name": "Engineers",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "3",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "5",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 75"
+    },
+    {
+      "name": "Esaul",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 76"
+    },
+    {
+      "name": "Eshin Sorcerer",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 77"
+    },
+    {
+      "name": "Fellblades",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "5",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "6",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 78"
+    },
+    {
+      "name": "Forest Goblin Shaman",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 79"
+    },
+    {
+      "name": "Giant Slayer",
+      "category": "Hero",
+      "stats": {
+        "M": "3",
+        "WS": "5",
+        "BS": "3",
+        "S": "3",
+        "T": "4",
+        "W": "2",
+        "I": "2",
+        "A": "2",
+        "Ld": "9"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 80"
+    },
+    {
+      "name": "Gnoblar Trapper",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 81"
+    },
+    {
+      "name": "Guild Master",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 82"
+    },
+    {
+      "name": "Hag",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 83"
+    },
+    {
+      "name": "Halfling Cook",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 84"
+    },
+    {
+      "name": "Halfling Elder",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "5",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "5",
+        "A": "1",
+        "Ld": "9"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 85"
+    },
+    {
+      "name": "Halfling Thief",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "4",
+        "S": "2",
+        "T": "2",
+        "W": "1",
+        "I": "5",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 86"
+    },
+    {
+      "name": "Halfling Youths",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "3",
+        "S": "2",
+        "T": "2",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 87"
+    },
+    {
+      "name": "High Born",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "5",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "6",
+        "A": "1",
+        "Ld": "9"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 88"
+    },
+    {
+      "name": "Imperial Noble",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 89"
+    },
+    {
+      "name": "Jarl",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "2",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 90"
+    },
+    {
+      "name": "Khan",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 91"
+    },
+    {
+      "name": "Knight Errant",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 92"
+    },
+    {
+      "name": "Lahmia Vampire",
+      "category": "Hero",
+      "stats": {
+        "M": "6",
+        "WS": "4",
+        "BS": "4",
+        "S": "4",
+        "T": "4",
+        "W": "2",
+        "I": "5",
+        "A": "2",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 93"
+    },
+    {
+      "name": "Lahmia Vampire (Blood Sister)",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "4",
+        "T": "4",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 94"
+    },
+    {
+      "name": "Liche Priest (Nehekhara)",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 95"
+    },
+    {
+      "name": "Liche Priest (Tomb Guardians)",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 96"
+    },
+    {
+      "name": "Loot Boyz",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 97"
+    },
+    {
+      "name": "Lordlings",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "6",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 98"
+    },
+    {
+      "name": "Loremaster",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "6",
+        "A": "1",
+        "Ld": "9"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 99"
+    },
+    {
+      "name": "Lunatics",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 100"
+    },
+    {
+      "name": "Mage",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "2",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 101"
+    },
+    {
+      "name": "Magi",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 102"
+    },
+    {
+      "name": "Magister",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 103"
+    },
+    {
+      "name": "Man-eater-kin",
+      "category": "Hero",
+      "stats": {
+        "M": "6",
+        "WS": "4",
+        "BS": "3",
+        "S": "4",
+        "T": "4",
+        "W": "3",
+        "I": "3",
+        "A": "2",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": true,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 104"
+    },
+    {
+      "name": "Master Engineer",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "4",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "5",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 105"
+    },
+    {
+      "name": "Master Thief",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 106"
+    },
+    {
+      "name": "Mercenary Captain",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 107"
+    },
+    {
+      "name": "Monk Initiates",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 108"
+    },
+    {
+      "name": "Mors Sorcerer",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 109"
+    },
+    {
+      "name": "Mummy Prince",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "4",
+        "T": "4",
+        "W": "2",
+        "I": "3",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 110"
+    },
+    {
+      "name": "Mummy Warriors",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "4",
+        "T": "4",
+        "W": "2",
+        "I": "2",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 111"
+    },
+    {
+      "name": "Mutants",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 112"
+    },
+    {
+      "name": "Mystic",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 113"
+    },
+    {
+      "name": "Necromancer (Lahmia & Undead))",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 114"
+    },
+    {
+      "name": "Necromancer (Necromancer)",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 115"
+    },
+    {
+      "name": "Night Runners",
+      "category": "Hero",
+      "stats": {
+        "M": "6",
+        "WS": "2",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "4"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 116"
+    },
+    {
+      "name": "Noble",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "5",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "6",
+        "A": "1",
+        "Ld": "9"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 117"
+    },
+    {
+      "name": "Oakman",
+      "category": "Hero",
+      "stats": {
+        "M": "3",
+        "WS": "4",
+        "BS": "0",
+        "S": "4",
+        "T": "4",
+        "W": "2",
+        "I": "2",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 118"
+    },
+    {
+      "name": "Orc Big 'Uns",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 119"
+    },
+    {
+      "name": "Orc Boss",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "4",
+        "S": "4",
+        "T": "4",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 120"
+    },
+    {
+      "name": "Orc Shaman",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 121"
+    },
+    {
+      "name": "Orphans",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 122"
+    },
+    {
+      "name": "Pathfinders",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "3",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "5",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 123"
+    },
+    {
+      "name": "Performers",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 124"
+    },
+    {
+      "name": "Petty Thieves",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 125"
+    },
+    {
+      "name": "Pirate Captain",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 126"
+    },
+    {
+      "name": "Pit King",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "4",
+        "T": "4",
+        "W": "1",
+        "I": "4",
+        "A": "2",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 127"
+    },
+    {
+      "name": "Pit Veterans",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 128"
+    },
+    {
+      "name": "Pixie",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "2",
+        "BS": "4",
+        "S": "2",
+        "T": "2",
+        "W": "1",
+        "I": "6",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 129"
+    },
+    {
+      "name": "Plague Champions",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "3",
+        "S": "4",
+        "T": "4",
+        "W": "1",
+        "I": "5",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 130"
+    },
+    {
+      "name": "Plague Priest",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "3",
+        "S": "4",
+        "T": "4",
+        "W": "1",
+        "I": "5",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 131"
+    },
+    {
+      "name": "Priest of Taal",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 132"
+    },
+    {
+      "name": "Priestess",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 133"
+    },
+    {
+      "name": "Priestess of Morrigan",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 134"
+    },
+    {
+      "name": "Prophet",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "4",
+        "T": "4",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "9"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 135"
+    },
+    {
+      "name": "Questing Knight",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 136"
+    },
+    {
+      "name": "Rangers",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "6",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 137"
+    },
+    {
+      "name": "Rememberer (Dwarf)",
+      "category": "Hero",
+      "stats": {
+        "M": "3",
+        "WS": "3",
+        "BS": "2",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "9"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 138"
+    },
+    {
+      "name": "Rememberer (Human)",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 139"
+    },
+    {
+      "name": "Ringmaster",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 140"
+    },
+    {
+      "name": "Runts",
+      "category": "Hero",
+      "stats": {
+        "M": "6",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "4",
+        "W": "2",
+        "I": "2",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": true,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 141"
+    },
+    {
+      "name": "Saurus Totem Warrior",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "0",
+        "S": "4",
+        "T": "4",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 142"
+    },
+    {
+      "name": "Shadow Master",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "5",
+        "BS": "5",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "6",
+        "A": "1",
+        "Ld": "9"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 144"
+    },
+    {
+      "name": "Shadow Walker",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "5",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "6",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 145"
+    },
+    {
+      "name": "Shadow Weaver",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "6",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 146"
+    },
+    {
+      "name": "Shadowblade",
+      "category": "Hero",
+      "stats": {
+        "M": "6",
+        "WS": "4",
+        "BS": "4",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "5",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 147"
+    },
+    {
+      "name": "Shaman (Albion Barbarian)",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 148"
+    },
+    {
+      "name": "Shaman (Iroquois)",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 149"
+    },
+    {
+      "name": "Shaman (Night Goblins)",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 150"
+    },
+    {
+      "name": "Sheik",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 151"
+    },
+    {
+      "name": "Ship's Mates",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 152"
+    },
+    {
+      "name": "Sidhe",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "5",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "6",
+        "A": "1",
+        "Ld": "9"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 153"
+    },
+    {
+      "name": "Sigmarite Matriarch",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 154"
+    },
+    {
+      "name": "Silent Hunter",
+      "category": "Hero",
+      "stats": {
+        "M": "6",
+        "WS": "4",
+        "BS": "3",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "5",
+        "A": "2",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 155"
+    },
+    {
+      "name": "Sister Superior",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 156"
+    },
+    {
+      "name": "Skink Great Crests",
+      "category": "Hero",
+      "stats": {
+        "M": "6",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "2",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 157"
+    },
+    {
+      "name": "Skink Priest",
+      "category": "Hero",
+      "stats": {
+        "M": "6",
+        "WS": "3",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "5",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 158"
+    },
+    {
+      "name": "Spectre",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 159"
+    },
+    {
+      "name": "Spellwalker",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "5",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 160"
+    },
+    {
+      "name": "Spottaz",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 161"
+    },
+    {
+      "name": "Sprites",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "2",
+        "BS": "4",
+        "S": "2",
+        "T": "2",
+        "W": "1",
+        "I": "6",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 162"
+    },
+    {
+      "name": "Squires",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 163"
+    },
+    {
+      "name": "Stormvermin",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "3",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "5",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 164"
+    },
+    {
+      "name": "Street Mage",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 165"
+    },
+    {
+      "name": "Strigany",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 166"
+    },
+    {
+      "name": "Sword Wardens",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "5",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "6",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 167"
+    },
+    {
+      "name": "Tainted Ones",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 168"
+    },
+    {
+      "name": "The Possessed",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "0",
+        "S": "4",
+        "T": "4",
+        "W": "2",
+        "I": "4",
+        "A": "2",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 169"
+    },
+    {
+      "name": "Thralls (Lahmia)",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 170"
+    },
+    {
+      "name": "Tomb Lord",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "4",
+        "T": "5",
+        "W": "3",
+        "I": "3",
+        "A": "2",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 171"
+    },
+    {
+      "name": "Tomb Robber",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 172"
+    },
+    {
+      "name": "Totem Warriors",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 173"
+    },
+    {
+      "name": "Troll Slayer",
+      "category": "Hero",
+      "stats": {
+        "M": "3",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "9"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 174"
+    },
+    {
+      "name": "Unicorn",
+      "category": "Hero",
+      "stats": {
+        "M": "8",
+        "WS": "3",
+        "BS": "0",
+        "S": "3",
+        "T": "3",
+        "W": "2",
+        "I": "3",
+        "A": "2",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 175"
+    },
+    {
+      "name": "Vampire",
+      "category": "Hero",
+      "stats": {
+        "M": "6",
+        "WS": "4",
+        "BS": "4",
+        "S": "4",
+        "T": "4",
+        "W": "2",
+        "I": "5",
+        "A": "2",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 176"
+    },
+    {
+      "name": "Vampires (Blooddragon)",
+      "category": "Hero",
+      "stats": {
+        "M": "6",
+        "WS": "4",
+        "BS": "4",
+        "S": "4",
+        "T": "4",
+        "W": "2",
+        "I": "5",
+        "A": "2",
+        "Ld": "9"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 177"
+    },
+    {
+      "name": "War Chief",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "5",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 178"
+    },
+    {
+      "name": "Warlock (Mage)",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 179"
+    },
+    {
+      "name": "Warlock Engineer",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 180"
+    },
+    {
+      "name": "Warrior (Soldier o/t Apocalypse)",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "0",
+        "S": "4",
+        "T": "4",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 181"
+    },
+    {
+      "name": "Warrior Priest",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 182"
+    },
+    {
+      "name": "Way-Warden",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "5",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "6",
+        "A": "1",
+        "Ld": "9"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 183"
+    },
+    {
+      "name": "Wierdo",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 184"
+    },
+    {
+      "name": "Wights (Blooddragon)",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "4",
+        "T": "4",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 185"
+    },
+    {
+      "name": "Wild Hunter",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "5",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 186"
+    },
+    {
+      "name": "Witch Hunter Captain",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 187"
+    },
+    {
+      "name": "Witch Hunters",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 188"
+    },
+    {
+      "name": "Wizard",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 189"
+    },
+    {
+      "name": "Wulfin",
+      "category": "Hero",
+      "stats": {
+        "M": "6",
+        "WS": "4",
+        "BS": "0",
+        "S": "4",
+        "T": "4",
+        "W": "1",
+        "I": "4",
+        "A": "2",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 190"
+    },
+    {
+      "name": "Young Claws",
+      "category": "Hero",
+      "stats": {
+        "M": "5",
+        "WS": "2",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "4"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 191"
+    },
+    {
+      "name": "Young Snout",
+      "category": "Hero",
+      "stats": {
+        "M": "6",
+        "WS": "2",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 192"
+    },
+    {
+      "name": "Youngblood",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 193"
+    },
+    {
+      "name": "Youths",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 194"
+    },
+    {
+      "name": "Amazon Warriors",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 195"
+    },
+    {
+      "name": "Ancestral Guardians",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 196"
+    },
+    {
+      "name": "Animal Friends",
+      "category": "Henchman",
+      "stats": {
+        "M": "6",
+        "WS": "2",
+        "BS": "0",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "4"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 197"
+    },
+    {
+      "name": "Apprentice (Mage)",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "2",
+        "T": "2",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 198"
+    },
+    {
+      "name": "Bats",
+      "category": "Henchman",
+      "stats": {
+        "M": "8",
+        "WS": "2",
+        "BS": "0",
+        "S": "3",
+        "T": "2",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 199"
+    },
+    {
+      "name": "Battle Medics",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 200"
+    },
+    {
+      "name": "Battle Sisters",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "2",
+        "I": "3",
+        "A": "2",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 201"
+    },
+    {
+      "name": "Beardlings",
+      "category": "Henchman",
+      "stats": {
+        "M": "3",
+        "WS": "3",
+        "BS": "2",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 202"
+    },
+    {
+      "name": "Beastmen",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "4",
+        "W": "2",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 203"
+    },
+    {
+      "name": "Beggars",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 204"
+    },
+    {
+      "name": "Black Hounds",
+      "category": "Henchman",
+      "stats": {
+        "M": "7",
+        "WS": "3",
+        "BS": "0",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 205"
+    },
+    {
+      "name": "Blood Slaves",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 206"
+    },
+    {
+      "name": "Blood-Rager",
+      "category": "Henchman",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "0",
+        "S": "5",
+        "T": "4",
+        "W": "2",
+        "I": "3",
+        "A": "2",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 207"
+    },
+    {
+      "name": "Boatswains",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 208"
+    },
+    {
+      "name": "Bowmen",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 209"
+    },
+    {
+      "name": "Boyz",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 210"
+    },
+    {
+      "name": "Brethren",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 211"
+    },
+    {
+      "name": "Brownies",
+      "category": "Henchman",
+      "stats": {
+        "M": "5",
+        "WS": "2",
+        "BS": "4",
+        "S": "2",
+        "T": "2",
+        "W": "1",
+        "I": "5",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 212"
+    },
+    {
+      "name": "Brutes (Savage Orcs)",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "4",
+        "T": "4",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 213"
+    },
+    {
+      "name": "Cadets",
+      "category": "Henchman",
+      "stats": {
+        "M": "5",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "5",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 214"
+    },
+    {
+      "name": "Cannon Fodder",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 215"
+    },
+    {
+      "name": "Cave Squigs",
+      "category": "Henchman",
+      "stats": {
+        "M": "12",
+        "WS": "4",
+        "BS": "0",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 216"
+    },
+    {
+      "name": "Chariot (Tomb Guardians)",
+      "category": "Henchman",
+      "stats": {
+        "M": "0",
+        "WS": "0",
+        "BS": "0",
+        "S": "4",
+        "T": "4",
+        "W": "3",
+        "I": "0",
+        "A": "0",
+        "Ld": "0"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 217"
+    },
+    {
+      "name": "City Folk",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 218"
+    },
+    {
+      "name": "Clan Rats (Pestilence & Mors)",
+      "category": "Henchman",
+      "stats": {
+        "M": "5",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 219"
+    },
+    {
+      "name": "Clan Rats (Skryre)",
+      "category": "Henchman",
+      "stats": {
+        "M": "5",
+        "WS": "2",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "4"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 220"
+    },
+    {
+      "name": "Clockwork Construct",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "0",
+        "S": "4",
+        "T": "4",
+        "W": "2",
+        "I": "2",
+        "A": "1",
+        "Ld": "0"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 221"
+    },
+    {
+      "name": "Clowns",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 222"
+    },
+    {
+      "name": "Cold One Beasthounds",
+      "category": "Henchman",
+      "stats": {
+        "M": "6",
+        "WS": "3",
+        "BS": "0",
+        "S": "4",
+        "T": "4",
+        "W": "1",
+        "I": "1",
+        "A": "1",
+        "Ld": "4"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 223"
+    },
+    {
+      "name": "Corsairs (Dark Elves)",
+      "category": "Henchman",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "6",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 224"
+    },
+    {
+      "name": "Corsairs (Druchii)",
+      "category": "Henchman",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "5",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 225"
+    },
+    {
+      "name": "Cossacks",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 226"
+    },
+    {
+      "name": "Crew",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 227"
+    },
+    {
+      "name": "Darksouls",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 228"
+    },
+    {
+      "name": "Dire Wolves",
+      "category": "Henchman",
+      "stats": {
+        "M": "9",
+        "WS": "3",
+        "BS": "0",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "4"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 229"
+    },
+    {
+      "name": "Dwarf Artisans",
+      "category": "Henchman",
+      "stats": {
+        "M": "3",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "9"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 230"
+    },
+    {
+      "name": "Dwarf Clansmen",
+      "category": "Henchman",
+      "stats": {
+        "M": "3",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "9"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 231"
+    },
+    {
+      "name": "Dwarf Labourers",
+      "category": "Henchman",
+      "stats": {
+        "M": "3",
+        "WS": "3",
+        "BS": "2",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 232"
+    },
+    {
+      "name": "Dwarf Thunderers",
+      "category": "Henchman",
+      "stats": {
+        "M": "3",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "9"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 233"
+    },
+    {
+      "name": "Dwarf tinker",
+      "category": "Henchman",
+      "stats": {
+        "M": "3",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 234"
+    },
+    {
+      "name": "Eaters of the Dead",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 235"
+    },
+    {
+      "name": "Fanatics",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 236"
+    },
+    {
+      "name": "Fell Bats",
+      "category": "Henchman",
+      "stats": {
+        "M": "8",
+        "WS": "3",
+        "BS": "0",
+        "S": "3",
+        "T": "3",
+        "W": "2",
+        "I": "3",
+        "A": "2",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 237"
+    },
+    {
+      "name": "Fighting Gnoblars",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "2",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 238"
+    },
+    {
+      "name": "Flagellants",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "4",
+        "T": "4",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "10"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 239"
+    },
+    {
+      "name": "Fleshless",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 240"
+    },
+    {
+      "name": "Fomorians",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 241"
+    },
+    {
+      "name": "Forest Goblin Sluggas",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 242"
+    },
+    {
+      "name": "Forest Goblins",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 243"
+    },
+    {
+      "name": "Ghouls",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "3",
+        "A": "2",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 244"
+    },
+    {
+      "name": "Giant Rats",
+      "category": "Henchman",
+      "stats": {
+        "M": "6",
+        "WS": "2",
+        "BS": "0",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "4"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 245"
+    },
+    {
+      "name": "Giant Spider",
+      "category": "Henchman",
+      "stats": {
+        "M": "7",
+        "WS": "3",
+        "BS": "0",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "4"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 246"
+    },
+    {
+      "name": "Giant Wolf",
+      "category": "Henchman",
+      "stats": {
+        "M": "9",
+        "WS": "3",
+        "BS": "0",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "4"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 247"
+    },
+    {
+      "name": "Giant Wolves",
+      "category": "Henchman",
+      "stats": {
+        "M": "9",
+        "WS": "4",
+        "BS": "0",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "3"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 248"
+    },
+    {
+      "name": "Gigantic Spider",
+      "category": "Henchman",
+      "stats": {
+        "M": "6",
+        "WS": "3",
+        "BS": "0",
+        "S": "5",
+        "T": "5",
+        "W": "3",
+        "I": "4",
+        "A": "2",
+        "Ld": "4"
+      },
+      "startingExperience": 0,
+      "large": true,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 249"
+    },
+    {
+      "name": "Glade Warrior",
+      "category": "Henchman",
+      "stats": {
+        "M": "5",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "5",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 250"
+    },
+    {
+      "name": "Gnomes",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 251"
+    },
+    {
+      "name": "Gobbo Boyz",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 252"
+    },
+    {
+      "name": "Goblin Warriors",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 253"
+    },
+    {
+      "name": "Gor",
+      "category": "Henchman",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 254"
+    },
+    {
+      "name": "Grave Guards",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 255"
+    },
+    {
+      "name": "Gunners",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 256"
+    },
+    {
+      "name": "Halfling Scouts",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "4",
+        "S": "2",
+        "T": "2",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 257"
+    },
+    {
+      "name": "Halfling Warriors",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 258"
+    },
+    {
+      "name": "Hell Hounds (Barghes)",
+      "category": "Henchman",
+      "stats": {
+        "M": "6",
+        "WS": "3",
+        "BS": "0",
+        "S": "4",
+        "T": "4",
+        "W": "1",
+        "I": "6",
+        "A": "1",
+        "Ld": "4"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 259"
+    },
+    {
+      "name": "Hell Hounds (Blooddragon)",
+      "category": "Henchman",
+      "stats": {
+        "M": "8",
+        "WS": "4",
+        "BS": "0",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 260"
+    },
+    {
+      "name": "Hunters (Albion Barbarian)",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 261"
+    },
+    {
+      "name": "Hunters (Norse)",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 262"
+    },
+    {
+      "name": "Hunting Cats",
+      "category": "Henchman",
+      "stats": {
+        "M": "6",
+        "WS": "4",
+        "BS": "0",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "2",
+        "Ld": "4"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 263"
+    },
+    {
+      "name": "Impressionable Youths",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 264"
+    },
+    {
+      "name": "Jackals (Lahmia)",
+      "category": "Henchman",
+      "stats": {
+        "M": "6",
+        "WS": "3",
+        "BS": "0",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "4"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 265"
+    },
+    {
+      "name": "Jaeger",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 266"
+    },
+    {
+      "name": "Kin",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 267"
+    },
+    {
+      "name": "Knives",
+      "category": "Henchman",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 268"
+    },
+    {
+      "name": "Kroxigor",
+      "category": "Henchman",
+      "stats": {
+        "M": "6",
+        "WS": "3",
+        "BS": "0",
+        "S": "5",
+        "T": "4",
+        "W": "3",
+        "I": "1",
+        "A": "3",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": true,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 269"
+    },
+    {
+      "name": "Leadbelchers",
+      "category": "Henchman",
+      "stats": {
+        "M": "6",
+        "WS": "2",
+        "BS": "2",
+        "S": "4",
+        "T": "4",
+        "W": "2",
+        "I": "2",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": true,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 270"
+    },
+    {
+      "name": "Maimed Ones",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 271"
+    },
+    {
+      "name": "Marauders",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 272"
+    },
+    {
+      "name": "Marksmen (All Others)",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 273"
+    },
+    {
+      "name": "Marksmen (Outlaws)",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 274"
+    },
+    {
+      "name": "Men-at-Arms",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 275"
+    },
+    {
+      "name": "Minotaur",
+      "category": "Henchman",
+      "stats": {
+        "M": "6",
+        "WS": "4",
+        "BS": "3",
+        "S": "4",
+        "T": "4",
+        "W": "3",
+        "I": "4",
+        "A": "3",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": true,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 276"
+    },
+    {
+      "name": "Mountainguard",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 277"
+    },
+    {
+      "name": "Night Goblins",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 278"
+    },
+    {
+      "name": "Novices",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 279"
+    },
+    {
+      "name": "Nurglings",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "0",
+        "S": "3",
+        "T": "2",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "10"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 280"
+    },
+    {
+      "name": "Nuttaz",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 281"
+    },
+    {
+      "name": "Ogre",
+      "category": "Henchman",
+      "stats": {
+        "M": "6",
+        "WS": "3",
+        "BS": "2",
+        "S": "4",
+        "T": "4",
+        "W": "3",
+        "I": "3",
+        "A": "2",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 282"
+    },
+    {
+      "name": "Ogre Bulls",
+      "category": "Henchman",
+      "stats": {
+        "M": "6",
+        "WS": "3",
+        "BS": "2",
+        "S": "4",
+        "T": "4",
+        "W": "2",
+        "I": "2",
+        "A": "2",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": true,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 283"
+    },
+    {
+      "name": "Ogre Pit Fighter",
+      "category": "Henchman",
+      "stats": {
+        "M": "6",
+        "WS": "3",
+        "BS": "2",
+        "S": "4",
+        "T": "4",
+        "W": "3",
+        "I": "3",
+        "A": "2",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": true,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 284"
+    },
+    {
+      "name": "Orc Boyz",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 285"
+    },
+    {
+      "name": "Outlaws",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 286"
+    },
+    {
+      "name": "Pickpockets",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 287"
+    },
+    {
+      "name": "Piggies",
+      "category": "Henchman",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "0",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "4"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 288"
+    },
+    {
+      "name": "Pit Fighters (Pit Fighter)",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 289"
+    },
+    {
+      "name": "Plague Bearers",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "4",
+        "T": "4",
+        "W": "1",
+        "I": "4",
+        "A": "2",
+        "Ld": "10"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 290"
+    },
+    {
+      "name": "Plague Cart (CoC)",
+      "category": "Henchman",
+      "stats": {
+        "M": "0",
+        "WS": "0",
+        "BS": "0",
+        "S": "0",
+        "T": "8",
+        "W": "4",
+        "I": "0",
+        "A": "0",
+        "Ld": "0"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 291"
+    },
+    {
+      "name": "Plague Cart Guardian (CoC)",
+      "category": "Henchman",
+      "stats": {
+        "M": "0",
+        "WS": "3",
+        "BS": "0",
+        "S": "3",
+        "T": "3",
+        "W": "0",
+        "I": "3",
+        "A": "1",
+        "Ld": "0"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 292"
+    },
+    {
+      "name": "Plague Cart Horse (CoC)",
+      "category": "Henchman",
+      "stats": {
+        "M": "8",
+        "WS": "0",
+        "BS": "0",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "0",
+        "Ld": "0"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 293"
+    },
+    {
+      "name": "Plague Cart Wheel (CoC)",
+      "category": "Henchman",
+      "stats": {
+        "M": "0",
+        "WS": "0",
+        "BS": "0",
+        "S": "0",
+        "T": "6",
+        "W": "1",
+        "I": "0",
+        "A": "0",
+        "Ld": "0"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 294"
+    },
+    {
+      "name": "Plague Monks",
+      "category": "Henchman",
+      "stats": {
+        "M": "5",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 295"
+    },
+    {
+      "name": "Pursuers",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 296"
+    },
+    {
+      "name": "Rat Ogre",
+      "category": "Henchman",
+      "stats": {
+        "M": "6",
+        "WS": "3",
+        "BS": "3",
+        "S": "5",
+        "T": "5",
+        "W": "3",
+        "I": "4",
+        "A": "3",
+        "Ld": "4"
+      },
+      "startingExperience": 0,
+      "large": true,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 297"
+    },
+    {
+      "name": "Red Toof Clan Goblins",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 298"
+    },
+    {
+      "name": "Redcaps",
+      "category": "Henchman",
+      "stats": {
+        "M": "5",
+        "WS": "3",
+        "BS": "3",
+        "S": "4",
+        "T": "2",
+        "W": "1",
+        "I": "5",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 299"
+    },
+    {
+      "name": "Ruffians",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "10"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 300"
+    },
+    {
+      "name": "Saurus Braves",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "0",
+        "S": "4",
+        "T": "4",
+        "W": "1",
+        "I": "1",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 301"
+    },
+    {
+      "name": "Scouts",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 302"
+    },
+    {
+      "name": "Seaguard",
+      "category": "Henchman",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "6",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 303"
+    },
+    {
+      "name": "Shades (Dark Elves)",
+      "category": "Henchman",
+      "stats": {
+        "M": "5",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "5",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 304"
+    },
+    {
+      "name": "Shades (Druchii)",
+      "category": "Henchman",
+      "stats": {
+        "M": "5",
+        "WS": "3",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "5",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 305"
+    },
+    {
+      "name": "Shadow Warrior Novices",
+      "category": "Henchman",
+      "stats": {
+        "M": "5",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "5",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 306"
+    },
+    {
+      "name": "Shadow Warriors",
+      "category": "Henchman",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "6",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 307"
+    },
+    {
+      "name": "Sigmarite Sister",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 308"
+    },
+    {
+      "name": "Skaven Slaves",
+      "category": "Henchman",
+      "stats": {
+        "M": "5",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "4"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 309"
+    },
+    {
+      "name": "Skeletal Giant",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "0",
+        "S": "5",
+        "T": "4",
+        "W": "3",
+        "I": "1",
+        "A": "2",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": true,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 310"
+    },
+    {
+      "name": "Skeletal Soldiers",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 311"
+    },
+    {
+      "name": "Skeleton (Necromancer)",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "1",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 312"
+    },
+    {
+      "name": "Skeleton Warriors",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 313"
+    },
+    {
+      "name": "Skeletons (Lahmia)",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 314"
+    },
+    {
+      "name": "Skeletons (Strigoi)",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "0",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "1",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 315"
+    },
+    {
+      "name": "Skink Braves",
+      "category": "Henchman",
+      "stats": {
+        "M": "6",
+        "WS": "2",
+        "BS": "3",
+        "S": "3",
+        "T": "2",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 316"
+    },
+    {
+      "name": "Slavehounds",
+      "category": "Henchman",
+      "stats": {
+        "M": "7",
+        "WS": "4",
+        "BS": "0",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 317"
+    },
+    {
+      "name": "Slaves",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 318"
+    },
+    {
+      "name": "Slayers",
+      "category": "Henchman",
+      "stats": {
+        "M": "3",
+        "WS": "3",
+        "BS": "2",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "9"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 319"
+    },
+    {
+      "name": "Snipers",
+      "category": "Henchman",
+      "stats": {
+        "M": "5",
+        "WS": "2",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 320"
+    },
+    {
+      "name": "Snotling Mob",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "2",
+        "T": "2",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "4"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 321"
+    },
+    {
+      "name": "Soldier",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 322"
+    },
+    {
+      "name": "Steed (Tomb Guardians)",
+      "category": "Henchman",
+      "stats": {
+        "M": "8",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 323"
+    },
+    {
+      "name": "Stickaz",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 324"
+    },
+    {
+      "name": "Stone Golem",
+      "category": "Henchman",
+      "stats": {
+        "M": "3",
+        "WS": "3",
+        "BS": "0",
+        "S": "5",
+        "T": "4",
+        "W": "3",
+        "I": "1",
+        "A": "2",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 325"
+    },
+    {
+      "name": "Streltsi",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 326"
+    },
+    {
+      "name": "Strongmen",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "4",
+        "T": "4",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 327"
+    },
+    {
+      "name": "Swabbies",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 328"
+    },
+    {
+      "name": "Swordsmen",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 329"
+    },
+    {
+      "name": "The Warped",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 330"
+    },
+    {
+      "name": "Thieves",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 331"
+    },
+    {
+      "name": "Thievin' Gitz",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 332"
+    },
+    {
+      "name": "Tomb Guardians",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "2",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 333"
+    },
+    {
+      "name": "Tomb Guards",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 334"
+    },
+    {
+      "name": "Tomb Scorpions (Nehekhara)",
+      "category": "Henchman",
+      "stats": {
+        "M": "5",
+        "WS": "2",
+        "BS": "0",
+        "S": "1",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "4"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 335"
+    },
+    {
+      "name": "Tomb Scorpions (Tomb Guardians)",
+      "category": "Henchman",
+      "stats": {
+        "M": "5",
+        "WS": "2",
+        "BS": "0",
+        "S": "2",
+        "T": "2",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "4"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 336"
+    },
+    {
+      "name": "Toughs",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 337"
+    },
+    {
+      "name": "Trained Animals",
+      "category": "Henchman",
+      "stats": {
+        "M": "6",
+        "WS": "4",
+        "BS": "0",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 338"
+    },
+    {
+      "name": "Trained Bear",
+      "category": "Henchman",
+      "stats": {
+        "M": "6",
+        "WS": "3",
+        "BS": "0",
+        "S": "5",
+        "T": "5",
+        "W": "2",
+        "I": "2",
+        "A": "2",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 339"
+    },
+    {
+      "name": "Troll",
+      "category": "Henchman",
+      "stats": {
+        "M": "6",
+        "WS": "3",
+        "BS": "1",
+        "S": "5",
+        "T": "4",
+        "W": "3",
+        "I": "1",
+        "A": "3",
+        "Ld": "4"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 340"
+    },
+    {
+      "name": "Undead Golem",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "0",
+        "S": "4",
+        "T": "4",
+        "W": "3",
+        "I": "2",
+        "A": "2",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 341"
+    },
+    {
+      "name": "Undead Vulture",
+      "category": "Henchman",
+      "stats": {
+        "M": "8",
+        "WS": "2",
+        "BS": "0",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 342"
+    },
+    {
+      "name": "Ungor",
+      "category": "Henchman",
+      "stats": {
+        "M": "5",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 343"
+    },
+    {
+      "name": "Verminkin",
+      "category": "Henchman",
+      "stats": {
+        "M": "5",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 344"
+    },
+    {
+      "name": "Village Ogre",
+      "category": "Henchman",
+      "stats": {
+        "M": "6",
+        "WS": "3",
+        "BS": "2",
+        "S": "4",
+        "T": "4",
+        "W": "3",
+        "I": "3",
+        "A": "2",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": true,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 345"
+    },
+    {
+      "name": "War Boar",
+      "category": "Henchman",
+      "stats": {
+        "M": "7",
+        "WS": "3",
+        "BS": "0",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "3"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 346"
+    },
+    {
+      "name": "Wardancers",
+      "category": "Henchman",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "5",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 347"
+    },
+    {
+      "name": "Warhounds",
+      "category": "Henchman",
+      "stats": {
+        "M": "6",
+        "WS": "4",
+        "BS": "0",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 348"
+    },
+    {
+      "name": "Warhounds of Chaos",
+      "category": "Henchman",
+      "stats": {
+        "M": "7",
+        "WS": "4",
+        "BS": "0",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 349"
+    },
+    {
+      "name": "Warriors (All Other)",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 350"
+    },
+    {
+      "name": "Warriors (Iroquois)",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 351"
+    },
+    {
+      "name": "Wights (Lahmia)",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "0",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 352"
+    },
+    {
+      "name": "Witch Elves",
+      "category": "Henchman",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 353"
+    },
+    {
+      "name": "Wolf Rats",
+      "category": "Henchman",
+      "stats": {
+        "M": "6",
+        "WS": "4",
+        "BS": "0",
+        "S": "4",
+        "T": "4",
+        "W": "1",
+        "I": "4",
+        "A": "2",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 354"
+    },
+    {
+      "name": "Wolfhounds",
+      "category": "Henchman",
+      "stats": {
+        "M": "6",
+        "WS": "4",
+        "BS": "0",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 355"
+    },
+    {
+      "name": "Wolves",
+      "category": "Henchman",
+      "stats": {
+        "M": "9",
+        "WS": "3",
+        "BS": "0",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 356"
+    },
+    {
+      "name": "Wood Spirit",
+      "category": "Henchman",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "0",
+        "S": "4",
+        "T": "4",
+        "W": "3",
+        "I": "4",
+        "A": "2",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 357"
+    },
+    {
+      "name": "Zealots",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 358"
+    },
+    {
+      "name": "Zombies",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "0",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "1",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 359"
+    },
+    {
+      "name": "Bard",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 3,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 360"
+    },
+    {
+      "name": "Beast Hunter",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "2",
+        "Ld": "7"
+      },
+      "startingExperience": 13,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 361"
+    },
+    {
+      "name": "Blessed Cassandora - High Seeress",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "3",
+        "I": "4",
+        "A": "1",
+        "Ld": "9"
+      },
+      "startingExperience": 55,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 362"
+    },
+    {
+      "name": "Bounty Hunter",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 15,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 363"
+    },
+    {
+      "name": "Chaos Warrior",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "4",
+        "WS": "5",
+        "BS": "3",
+        "S": "4",
+        "T": "4",
+        "W": "1",
+        "I": "3",
+        "A": "2",
+        "Ld": "10"
+      },
+      "startingExperience": 20,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 364"
+    },
+    {
+      "name": "Clan Eshin Assassin",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "6",
+        "WS": "4",
+        "BS": "4",
+        "S": "4",
+        "T": "3",
+        "W": "2",
+        "I": "5",
+        "A": "2",
+        "Ld": "8"
+      },
+      "startingExperience": 25,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 365"
+    },
+    {
+      "name": "Clan Skryre Engineer",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "5",
+        "WS": "3",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 10,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 366"
+    },
+    {
+      "name": "Dall Burgansdotter: The Iron Maiden",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "3",
+        "WS": "5",
+        "BS": "3",
+        "S": "4",
+        "T": "4",
+        "W": "2",
+        "I": "2",
+        "A": "3",
+        "Ld": "9"
+      },
+      "startingExperience": 30,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 367"
+    },
+    {
+      "name": "Duelist",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "2",
+        "Ld": "7"
+      },
+      "startingExperience": 3,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 368"
+    },
+    {
+      "name": "Dwarf Treasure Hunter",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "3",
+        "WS": "5",
+        "BS": "4",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "9"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 369"
+    },
+    {
+      "name": "Dwarf Troll Slayer (HS)",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "3",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "9"
+      },
+      "startingExperience": 7,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 370"
+    },
+    {
+      "name": "Elf Mage",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "2",
+        "I": "6",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 18,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 371"
+    },
+    {
+      "name": "Elf Ranger",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "5",
+        "WS": "4",
+        "BS": "5",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "6",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 7,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 372"
+    },
+    {
+      "name": "Freelancer",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 16,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 373"
+    },
+    {
+      "name": "Freelancer's Warhorse",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "8",
+        "WS": "3",
+        "BS": "0",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 374"
+    },
+    {
+      "name": "Genevieve Undead",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "5",
+        "WS": "5",
+        "BS": "4",
+        "S": "4",
+        "T": "4",
+        "W": "2",
+        "I": "6",
+        "A": "3",
+        "Ld": "9"
+      },
+      "startingExperience": 55,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 375"
+    },
+    {
+      "name": "Halfling Scout (HS)",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "4",
+        "S": "2",
+        "T": "2",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 376"
+    },
+    {
+      "name": "Halfling Thief (HS)",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "4",
+        "S": "2",
+        "T": "2",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 5,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 377"
+    },
+    {
+      "name": "Highwayman",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 15,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 378"
+    },
+    {
+      "name": "Highwayman's Horse",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "8",
+        "WS": "0",
+        "BS": "0",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "0",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 379"
+    },
+    {
+      "name": "Ninja Gnoblar",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 3,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 380"
+    },
+    {
+      "name": "Ogre Bodyguard",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "6",
+        "WS": "3",
+        "BS": "2",
+        "S": "4",
+        "T": "4",
+        "W": "3",
+        "I": "3",
+        "A": "2",
+        "Ld": "7"
+      },
+      "startingExperience": 5,
+      "large": true,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 381"
+    },
+    {
+      "name": "Pit Fighter",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "4",
+        "T": "4",
+        "W": "1",
+        "I": "4",
+        "A": "2",
+        "Ld": "7"
+      },
+      "startingExperience": 17,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 382"
+    },
+    {
+      "name": "Prospector (Dwarf)",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "3",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "4",
+        "W": "1",
+        "I": "2",
+        "A": "1",
+        "Ld": "9"
+      },
+      "startingExperience": 15,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 383"
+    },
+    {
+      "name": "Prospector (Human)",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 10,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 384"
+    },
+    {
+      "name": "Reaper",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "0",
+        "S": "3",
+        "T": "3",
+        "W": "2",
+        "I": "2",
+        "A": "2",
+        "Ld": "7"
+      },
+      "startingExperience": 30,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 385"
+    },
+    {
+      "name": "Roadwarden",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 17,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 386"
+    },
+    {
+      "name": "Roadwarden's Horse",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "8",
+        "WS": "0",
+        "BS": "0",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "0",
+        "Ld": "5"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 387"
+    },
+    {
+      "name": "Strigany Seer",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 10,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 388"
+    },
+    {
+      "name": "The Dwarf from Bloody River",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "3",
+        "WS": "5",
+        "BS": "2",
+        "S": "4",
+        "T": "5",
+        "W": "2",
+        "I": "3",
+        "A": "3",
+        "Ld": "9"
+      },
+      "startingExperience": 55,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 389"
+    },
+    {
+      "name": "The Salesman",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "6",
+        "S": "4",
+        "T": "4",
+        "W": "3",
+        "I": "5",
+        "A": "3",
+        "Ld": "9"
+      },
+      "startingExperience": 55,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 390"
+    },
+    {
+      "name": "Warlock (HS)",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 11,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 391"
+    },
+    {
+      "name": "Witch",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "2",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 9,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 392"
+    },
+    {
+      "name": "Wraith",
+      "category": "Hired Sword",
+      "stats": {
+        "M": "6",
+        "WS": "3",
+        "BS": "0",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "2",
+        "A": "2",
+        "Ld": "7"
+      },
+      "startingExperience": 10,
+      "large": false,
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 393"
+    },
+    {
+      "name": "Marauder Chieftain",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "5",
+        "BS": "3",
+        "S": "4",
+        "T": "4",
+        "W": "1",
+        "I": "5",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 20,
+      "large": false,
+      "sourceReference": "10%20Marauders%20of%20Chaos.pdf"
+    },
+    {
+      "name": "Seer",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 8,
+      "large": false,
+      "sourceReference": "10%20Marauders%20of%20Chaos.pdf"
+    },
+    {
+      "name": "Champion",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "4",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 8,
+      "large": false,
+      "sourceReference": "10%20Marauders%20of%20Chaos.pdf"
+    },
+    {
+      "name": "Condemned",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "D6",
+        "BS": "3",
+        "S": "D6",
+        "T": "D6",
+        "W": "1",
+        "I": "4",
+        "A": "D3",
+        "Ld": "7"
+      },
+      "startingExperience": 8,
+      "large": false,
+      "sourceReference": "10%20Marauders%20of%20Chaos.pdf"
+    },
+    {
+      "name": "Marauders",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "10%20Marauders%20of%20Chaos.pdf"
+    },
+    {
+      "name": "Warhounds of Chaos",
+      "category": "Henchman",
+      "stats": {},
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "10%20Marauders%20of%20Chaos.pdf"
+    },
+    {
+      "name": "Spawn of Chaos",
+      "category": "Henchman",
+      "stats": {},
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "10%20Marauders%20of%20Chaos.pdf"
+    },
+    {
+      "name": "Emissary",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "4",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "8"
+      },
+      "startingExperience": 20,
+      "large": false,
+      "sourceReference": "14%20Battle%20Monks.pdf"
+    },
+    {
+      "name": "Officer",
+      "category": "Hero",
+      "stats": {
+        "M": "4",
+        "WS": "4",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 12,
+      "large": false,
+      "sourceReference": "14%20Battle%20Monks.pdf"
+    },
+    {
+      "name": "Dragon Monks",
+      "category": "Hero",
+      "stats": {},
+      "startingExperience": 15,
+      "large": false,
+      "sourceReference": "14%20Battle%20Monks.pdf"
+    },
+    {
+      "name": "Soldiers",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "14%20Battle%20Monks.pdf"
+    },
+    {
+      "name": "Warrior Monks",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "3",
+        "BS": "3",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "4",
+        "A": "1",
+        "Ld": "7"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "14%20Battle%20Monks.pdf"
+    },
+    {
+      "name": "Raging Peasants",
+      "category": "Henchman",
+      "stats": {
+        "M": "4",
+        "WS": "2",
+        "BS": "2",
+        "S": "3",
+        "T": "3",
+        "W": "1",
+        "I": "3",
+        "A": "1",
+        "Ld": "6"
+      },
+      "startingExperience": 0,
+      "large": false,
+      "sourceReference": "14%20Battle%20Monks.pdf"
+    }
+  ],
+  "associations": [
+    {
+      "warriorName": "Assassin Adept",
+      "category": "Hero",
+      "warbandName": "Skaven",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 6"
+    },
+    {
+      "warriorName": "Augur",
+      "category": "Hero",
+      "warbandName": "Sisters of Sigmar",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 7"
+    },
+    {
+      "warriorName": "Bear Tamer",
+      "category": "Hero",
+      "warbandName": "Kislevite",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 16"
+    },
+    {
+      "warriorName": "Beastmen Chieftain",
+      "category": "Hero",
+      "warbandName": "Beastmen Raiders",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 17"
+    },
+    {
+      "warriorName": "Beastmen Shaman",
+      "category": "Hero",
+      "warbandName": "Beastmen Raiders",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 18"
+    },
+    {
+      "warriorName": "Beast Master (Dark Elves)",
+      "category": "Hero",
+      "warbandName": "Dark Elves",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 19"
+    },
+    {
+      "warriorName": "Bergjaeger",
+      "category": "Hero",
+      "warbandName": "Averlander Mercenaries",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 24"
+    },
+    {
+      "warriorName": "Berserkers",
+      "category": "Hero",
+      "warbandName": "Norse",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 25"
+    },
+    {
+      "warriorName": "Bestigors",
+      "category": "Hero",
+      "warbandName": "Beastmen Raiders",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 26"
+    },
+    {
+      "warriorName": "Big Boss",
+      "category": "Hero",
+      "warbandName": "Night Goblins",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 27"
+    },
+    {
+      "warriorName": "Black Skaven",
+      "category": "Hero",
+      "warbandName": "Skaven",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 29"
+    },
+    {
+      "warriorName": "Blood Brothers",
+      "category": "Hero",
+      "warbandName": "Ostlanders",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 31"
+    },
+    {
+      "warriorName": "Bondsmen (Norse)",
+      "category": "Hero",
+      "warbandName": "Norse",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 35"
+    },
+    {
+      "warriorName": "Bosses (Night Goblins)",
+      "category": "Hero",
+      "warbandName": "Night Goblins",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 38"
+    },
+    {
+      "warriorName": "Brutes (Carnival of Chaos)",
+      "category": "Hero",
+      "warbandName": "Carnival of Chaos",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 40"
+    },
+    {
+      "warriorName": "Cabin Boys",
+      "category": "Hero",
+      "warbandName": "Pirate",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 43"
+    },
+    {
+      "warriorName": "Captain (Averlander)",
+      "category": "Hero",
+      "warbandName": "Averlander Mercenaries",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 44"
+    },
+    {
+      "warriorName": "Carnival Master",
+      "category": "Hero",
+      "warbandName": "Carnival of Chaos",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 45"
+    },
+    {
+      "warriorName": "Centigors",
+      "category": "Hero",
+      "warbandName": "Beastmen Raiders",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 46"
+    },
+    {
+      "warriorName": "Champions (Mercenaries & Amazons)",
+      "category": "Hero",
+      "warbandName": "Mercenaries",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 51"
+    },
+    {
+      "warriorName": "Champions (Mercenaries & Amazons)",
+      "category": "Hero",
+      "warbandName": "Amazons",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 51"
+    },
+    {
+      "warriorName": "Dark Elf Sorceress (Dark Elves)",
+      "category": "Hero",
+      "warbandName": "Dark Elves",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 59"
+    },
+    {
+      "warriorName": "Dregs",
+      "category": "Hero",
+      "warbandName": "Undead",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 62"
+    },
+    {
+      "warriorName": "Druzhina Captain",
+      "category": "Hero",
+      "warbandName": "Kislevite",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 63"
+    },
+    {
+      "warriorName": "Dwarf Engineer",
+      "category": "Hero",
+      "warbandName": "Dwarf Treasure Hunters",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 66"
+    },
+    {
+      "warriorName": "Dwarf Noble",
+      "category": "Hero",
+      "warbandName": "Dwarf Treasure Hunters",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 69"
+    },
+    {
+      "warriorName": "Dwarf Troll Slayer (Pit Fighter)",
+      "category": "Hero",
+      "warbandName": "Pit Fighter",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 70"
+    },
+    {
+      "warriorName": "Dwarf Troll Slayers",
+      "category": "Hero",
+      "warbandName": "Dwarf Treasure Hunters",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 71"
+    },
+    {
+      "warriorName": "Elder",
+      "category": "Hero",
+      "warbandName": "Ostlanders",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 72"
+    },
+    {
+      "warriorName": "Esaul",
+      "category": "Hero",
+      "warbandName": "Kislevite",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 76"
+    },
+    {
+      "warriorName": "Eshin Sorcerer",
+      "category": "Hero",
+      "warbandName": "Skaven",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 77"
+    },
+    {
+      "warriorName": "Fellblades",
+      "category": "Hero",
+      "warbandName": "Dark Elves",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 78"
+    },
+    {
+      "warriorName": "High Born",
+      "category": "Hero",
+      "warbandName": "Dark Elves",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 88"
+    },
+    {
+      "warriorName": "Jarl",
+      "category": "Hero",
+      "warbandName": "Norse",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 90"
+    },
+    {
+      "warriorName": "Knight Errant",
+      "category": "Hero",
+      "warbandName": "Bretonnian",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 92"
+    },
+    {
+      "warriorName": "Magister",
+      "category": "Hero",
+      "warbandName": "Cult of the Possessed",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 103"
+    },
+    {
+      "warriorName": "Mercenary Captain",
+      "category": "Hero",
+      "warbandName": "Mercenaries",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 107"
+    },
+    {
+      "warriorName": "Mutants",
+      "category": "Hero",
+      "warbandName": "Cult of the Possessed",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 112"
+    },
+    {
+      "warriorName": "Necromancer (Lahmia & Undead))",
+      "category": "Hero",
+      "warbandName": "Undead",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 114"
+    },
+    {
+      "warriorName": "Night Runners",
+      "category": "Hero",
+      "warbandName": "Skaven",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 116"
+    },
+    {
+      "warriorName": "Orc Big 'Uns",
+      "category": "Hero",
+      "warbandName": "Orc",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 119"
+    },
+    {
+      "warriorName": "Orc Boss",
+      "category": "Hero",
+      "warbandName": "Orc",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 120"
+    },
+    {
+      "warriorName": "Orc Shaman",
+      "category": "Hero",
+      "warbandName": "Orc",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 121"
+    },
+    {
+      "warriorName": "Pirate Captain",
+      "category": "Hero",
+      "warbandName": "Pirate",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 126"
+    },
+    {
+      "warriorName": "Pit King",
+      "category": "Hero",
+      "warbandName": "Pit Fighter",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 127"
+    },
+    {
+      "warriorName": "Pit Veterans",
+      "category": "Hero",
+      "warbandName": "Pit Fighter",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 128"
+    },
+    {
+      "warriorName": "Priest of Taal",
+      "category": "Hero",
+      "warbandName": "Ostlanders",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 132"
+    },
+    {
+      "warriorName": "Priestess",
+      "category": "Hero",
+      "warbandName": "Amazons",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 133"
+    },
+    {
+      "warriorName": "Questing Knight",
+      "category": "Hero",
+      "warbandName": "Bretonnian",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 136"
+    },
+    {
+      "warriorName": "Saurus Totem Warrior",
+      "category": "Hero",
+      "warbandName": "Lizardmen",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 142"
+    },
+    {
+      "warriorName": "Shadow Master",
+      "category": "Hero",
+      "warbandName": "Shadow Warrior",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 144"
+    },
+    {
+      "warriorName": "Shadow Walker",
+      "category": "Hero",
+      "warbandName": "Shadow Warrior",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 145"
+    },
+    {
+      "warriorName": "Shadow Weaver",
+      "category": "Hero",
+      "warbandName": "Shadow Warrior",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 146"
+    },
+    {
+      "warriorName": "Shaman (Night Goblins)",
+      "category": "Hero",
+      "warbandName": "Night Goblins",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 150"
+    },
+    {
+      "warriorName": "Ship's Mates",
+      "category": "Hero",
+      "warbandName": "Pirate",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 152"
+    },
+    {
+      "warriorName": "Sigmarite Matriarch",
+      "category": "Hero",
+      "warbandName": "Sisters of Sigmar",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 154"
+    },
+    {
+      "warriorName": "Sister Superior",
+      "category": "Hero",
+      "warbandName": "Sisters of Sigmar",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 156"
+    },
+    {
+      "warriorName": "Skink Great Crests",
+      "category": "Hero",
+      "warbandName": "Lizardmen",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 157"
+    },
+    {
+      "warriorName": "Skink Priest",
+      "category": "Hero",
+      "warbandName": "Lizardmen",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 158"
+    },
+    {
+      "warriorName": "Squires",
+      "category": "Hero",
+      "warbandName": "Bretonnian",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 163"
+    },
+    {
+      "warriorName": "Tainted Ones",
+      "category": "Hero",
+      "warbandName": "Carnival of Chaos",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 168"
+    },
+    {
+      "warriorName": "The Possessed",
+      "category": "Hero",
+      "warbandName": "Cult of the Possessed",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 169"
+    },
+    {
+      "warriorName": "Totem Warriors",
+      "category": "Hero",
+      "warbandName": "Amazons",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 173"
+    },
+    {
+      "warriorName": "Vampire",
+      "category": "Hero",
+      "warbandName": "Undead",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 176"
+    },
+    {
+      "warriorName": "Warrior Priest",
+      "category": "Hero",
+      "warbandName": "Witch Hunters",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 182"
+    },
+    {
+      "warriorName": "Witch Hunter Captain",
+      "category": "Hero",
+      "warbandName": "Witch Hunters",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 187"
+    },
+    {
+      "warriorName": "Witch Hunters",
+      "category": "Hero",
+      "warbandName": "Witch Hunters",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 188"
+    },
+    {
+      "warriorName": "Wulfin",
+      "category": "Hero",
+      "warbandName": "Norse",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 190"
+    },
+    {
+      "warriorName": "Youngblood",
+      "category": "Hero",
+      "warbandName": "Mercenaries",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 193"
+    },
+    {
+      "warriorName": "Youngblood",
+      "category": "Hero",
+      "warbandName": "Averlander Mercenaries",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 193"
+    },
+    {
+      "warriorName": "Youths",
+      "category": "Hero",
+      "warbandName": "Kislevite",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 194"
+    },
+    {
+      "warriorName": "Amazon Warriors",
+      "category": "Henchman",
+      "warbandName": "Amazons",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 195"
+    },
+    {
+      "warriorName": "Beardlings",
+      "category": "Henchman",
+      "warbandName": "Dwarf Treasure Hunters",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 202"
+    },
+    {
+      "warriorName": "Beastmen",
+      "category": "Henchman",
+      "warbandName": "Cult of the Possessed",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 203"
+    },
+    {
+      "warriorName": "Boatswains",
+      "category": "Henchman",
+      "warbandName": "Pirate",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 208"
+    },
+    {
+      "warriorName": "Bowmen",
+      "category": "Henchman",
+      "warbandName": "Bretonnian",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 209"
+    },
+    {
+      "warriorName": "Brethren",
+      "category": "Henchman",
+      "warbandName": "Cult of the Possessed",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 211"
+    },
+    {
+      "warriorName": "Brethren",
+      "category": "Henchman",
+      "warbandName": "Carnival of Chaos",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 211"
+    },
+    {
+      "warriorName": "Cave Squigs",
+      "category": "Henchman",
+      "warbandName": "Night Goblins",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 216"
+    },
+    {
+      "warriorName": "Cave Squigs",
+      "category": "Henchman",
+      "warbandName": "Orc",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 216"
+    },
+    {
+      "warriorName": "Cold One Beasthounds",
+      "category": "Henchman",
+      "warbandName": "Dark Elves",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 223"
+    },
+    {
+      "warriorName": "Corsairs (Dark Elves)",
+      "category": "Henchman",
+      "warbandName": "Dark Elves",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 224"
+    },
+    {
+      "warriorName": "Cossacks",
+      "category": "Henchman",
+      "warbandName": "Kislevite",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 226"
+    },
+    {
+      "warriorName": "Crew",
+      "category": "Henchman",
+      "warbandName": "Pirate",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 227"
+    },
+    {
+      "warriorName": "Darksouls",
+      "category": "Henchman",
+      "warbandName": "Cult of the Possessed",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 228"
+    },
+    {
+      "warriorName": "Dire Wolves",
+      "category": "Henchman",
+      "warbandName": "Undead",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 229"
+    },
+    {
+      "warriorName": "Dwarf Clansmen",
+      "category": "Henchman",
+      "warbandName": "Dwarf Treasure Hunters",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 231"
+    },
+    {
+      "warriorName": "Dwarf Thunderers",
+      "category": "Henchman",
+      "warbandName": "Dwarf Treasure Hunters",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 233"
+    },
+    {
+      "warriorName": "Fanatics",
+      "category": "Henchman",
+      "warbandName": "Night Goblins",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 236"
+    },
+    {
+      "warriorName": "Flagellants",
+      "category": "Henchman",
+      "warbandName": "Witch Hunters",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 239"
+    },
+    {
+      "warriorName": "Ghouls",
+      "category": "Henchman",
+      "warbandName": "Undead",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 244"
+    },
+    {
+      "warriorName": "Giant Rats",
+      "category": "Henchman",
+      "warbandName": "Skaven",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 245"
+    },
+    {
+      "warriorName": "Goblin Warriors",
+      "category": "Henchman",
+      "warbandName": "Orc",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 253"
+    },
+    {
+      "warriorName": "Gor",
+      "category": "Henchman",
+      "warbandName": "Beastmen Raiders",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 254"
+    },
+    {
+      "warriorName": "Gunners",
+      "category": "Henchman",
+      "warbandName": "Pirate",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 256"
+    },
+    {
+      "warriorName": "Halfling Scouts",
+      "category": "Henchman",
+      "warbandName": "Averlander Mercenaries",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 257"
+    },
+    {
+      "warriorName": "Hunters (Norse)",
+      "category": "Henchman",
+      "warbandName": "Norse",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 262"
+    },
+    {
+      "warriorName": "Jaeger",
+      "category": "Henchman",
+      "warbandName": "Ostlanders",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 266"
+    },
+    {
+      "warriorName": "Kin",
+      "category": "Henchman",
+      "warbandName": "Ostlanders",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 267"
+    },
+    {
+      "warriorName": "Kroxigor",
+      "category": "Henchman",
+      "warbandName": "Lizardmen",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 269"
+    },
+    {
+      "warriorName": "Marauders",
+      "category": "Henchman",
+      "warbandName": "Norse",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 272"
+    },
+    {
+      "warriorName": "Marksmen (All Others)",
+      "category": "Henchman",
+      "warbandName": "Mercenaries",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 273"
+    },
+    {
+      "warriorName": "Marksmen (All Others)",
+      "category": "Henchman",
+      "warbandName": "Averlander Mercenaries",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 273"
+    },
+    {
+      "warriorName": "Men-at-Arms",
+      "category": "Henchman",
+      "warbandName": "Bretonnian",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 275"
+    },
+    {
+      "warriorName": "Minotaur",
+      "category": "Henchman",
+      "warbandName": "Beastmen Raiders",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 276"
+    },
+    {
+      "warriorName": "Mountainguard",
+      "category": "Henchman",
+      "warbandName": "Averlander Mercenaries",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 277"
+    },
+    {
+      "warriorName": "Night Goblins",
+      "category": "Henchman",
+      "warbandName": "Night Goblins",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 278"
+    },
+    {
+      "warriorName": "Novices",
+      "category": "Henchman",
+      "warbandName": "Sisters of Sigmar",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 279"
+    },
+    {
+      "warriorName": "Nurglings",
+      "category": "Henchman",
+      "warbandName": "Carnival of Chaos",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 280"
+    },
+    {
+      "warriorName": "Ogre",
+      "category": "Henchman",
+      "warbandName": "Ostlanders",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 282"
+    },
+    {
+      "warriorName": "Ogre Pit Fighter",
+      "category": "Henchman",
+      "warbandName": "Pit Fighter",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 284"
+    },
+    {
+      "warriorName": "Orc Boyz",
+      "category": "Henchman",
+      "warbandName": "Orc",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 285"
+    },
+    {
+      "warriorName": "Pit Fighters (Pit Fighter)",
+      "category": "Henchman",
+      "warbandName": "Pit Fighter",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 289"
+    },
+    {
+      "warriorName": "Plague Bearers",
+      "category": "Henchman",
+      "warbandName": "Carnival of Chaos",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 290"
+    },
+    {
+      "warriorName": "Plague Cart (CoC)",
+      "category": "Henchman",
+      "warbandName": "Carnival of Chaos",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 291"
+    },
+    {
+      "warriorName": "Plague Cart Guardian (CoC)",
+      "category": "Henchman",
+      "warbandName": "Carnival of Chaos",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 292"
+    },
+    {
+      "warriorName": "Plague Cart Horse (CoC)",
+      "category": "Henchman",
+      "warbandName": "Carnival of Chaos",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 293"
+    },
+    {
+      "warriorName": "Plague Cart Wheel (CoC)",
+      "category": "Henchman",
+      "warbandName": "Carnival of Chaos",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 294"
+    },
+    {
+      "warriorName": "Pursuers",
+      "category": "Henchman",
+      "warbandName": "Pit Fighter",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 296"
+    },
+    {
+      "warriorName": "Rat Ogre",
+      "category": "Henchman",
+      "warbandName": "Skaven",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 297"
+    },
+    {
+      "warriorName": "Ruffians",
+      "category": "Henchman",
+      "warbandName": "Ostlanders",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 300"
+    },
+    {
+      "warriorName": "Saurus Braves",
+      "category": "Henchman",
+      "warbandName": "Lizardmen",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 301"
+    },
+    {
+      "warriorName": "Scouts",
+      "category": "Henchman",
+      "warbandName": "Amazons",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 302"
+    },
+    {
+      "warriorName": "Shades (Dark Elves)",
+      "category": "Henchman",
+      "warbandName": "Dark Elves",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 304"
+    },
+    {
+      "warriorName": "Shadow Warrior Novices",
+      "category": "Henchman",
+      "warbandName": "Shadow Warrior",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 306"
+    },
+    {
+      "warriorName": "Shadow Warriors",
+      "category": "Henchman",
+      "warbandName": "Shadow Warrior",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 307"
+    },
+    {
+      "warriorName": "Sigmarite Sister",
+      "category": "Henchman",
+      "warbandName": "Sisters of Sigmar",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 308"
+    },
+    {
+      "warriorName": "Skink Braves",
+      "category": "Henchman",
+      "warbandName": "Lizardmen",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 316"
+    },
+    {
+      "warriorName": "Snotling Mob",
+      "category": "Henchman",
+      "warbandName": "Night Goblins",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 321"
+    },
+    {
+      "warriorName": "Streltsi",
+      "category": "Henchman",
+      "warbandName": "Kislevite",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 326"
+    },
+    {
+      "warriorName": "Swabbies",
+      "category": "Henchman",
+      "warbandName": "Pirate",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 328"
+    },
+    {
+      "warriorName": "Swordsmen",
+      "category": "Henchman",
+      "warbandName": "Mercenaries",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 329"
+    },
+    {
+      "warriorName": "Trained Bear",
+      "category": "Henchman",
+      "warbandName": "Kislevite",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 339"
+    },
+    {
+      "warriorName": "Troll",
+      "category": "Henchman",
+      "warbandName": "Night Goblins",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 340"
+    },
+    {
+      "warriorName": "Ungor",
+      "category": "Henchman",
+      "warbandName": "Beastmen Raiders",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 343"
+    },
+    {
+      "warriorName": "Verminkin",
+      "category": "Henchman",
+      "warbandName": "Skaven",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 344"
+    },
+    {
+      "warriorName": "Warhounds",
+      "category": "Henchman",
+      "warbandName": "Witch Hunters",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 348"
+    },
+    {
+      "warriorName": "Warhounds of Chaos",
+      "category": "Henchman",
+      "warbandName": "Beastmen Raiders",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 349"
+    },
+    {
+      "warriorName": "Warriors (All Other)",
+      "category": "Henchman",
+      "warbandName": "Mercenaries",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 350"
+    },
+    {
+      "warriorName": "Warriors (All Other)",
+      "category": "Henchman",
+      "warbandName": "Kislevite",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 350"
+    },
+    {
+      "warriorName": "Wolves",
+      "category": "Henchman",
+      "warbandName": "Norse",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 356"
+    },
+    {
+      "warriorName": "Zealots",
+      "category": "Henchman",
+      "warbandName": "Witch Hunters",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 358"
+    },
+    {
+      "warriorName": "Zombies",
+      "category": "Henchman",
+      "warbandName": "Undead",
+      "sourceReference": "Mordheim_Sheetv2.3.xlsx:Starting_Values!row 359"
+    },
+    {
+      "warriorName": "Marauder Chieftain",
+      "category": "Hero",
+      "warbandName": "Marauders of Chaos",
+      "sourceReference": "10%20Marauders%20of%20Chaos.pdf"
+    },
+    {
+      "warriorName": "Seer",
+      "category": "Hero",
+      "warbandName": "Marauders of Chaos",
+      "sourceReference": "10%20Marauders%20of%20Chaos.pdf"
+    },
+    {
+      "warriorName": "Champion",
+      "category": "Hero",
+      "warbandName": "Marauders of Chaos",
+      "sourceReference": "10%20Marauders%20of%20Chaos.pdf"
+    },
+    {
+      "warriorName": "Condemned",
+      "category": "Hero",
+      "warbandName": "Marauders of Chaos",
+      "sourceReference": "10%20Marauders%20of%20Chaos.pdf"
+    },
+    {
+      "warriorName": "Marauders",
+      "category": "Henchman",
+      "warbandName": "Marauders of Chaos",
+      "sourceReference": "10%20Marauders%20of%20Chaos.pdf"
+    },
+    {
+      "warriorName": "Warhounds of Chaos",
+      "category": "Henchman",
+      "warbandName": "Marauders of Chaos",
+      "sourceReference": "10%20Marauders%20of%20Chaos.pdf"
+    },
+    {
+      "warriorName": "Spawn of Chaos",
+      "category": "Henchman",
+      "warbandName": "Marauders of Chaos",
+      "sourceReference": "10%20Marauders%20of%20Chaos.pdf"
+    },
+    {
+      "warriorName": "Emissary",
+      "category": "Hero",
+      "warbandName": "Battle Monks of Cathay",
+      "sourceReference": "14%20Battle%20Monks.pdf"
+    },
+    {
+      "warriorName": "Officer",
+      "category": "Hero",
+      "warbandName": "Battle Monks of Cathay",
+      "sourceReference": "14%20Battle%20Monks.pdf"
+    },
+    {
+      "warriorName": "Dragon Monks",
+      "category": "Hero",
+      "warbandName": "Battle Monks of Cathay",
+      "sourceReference": "14%20Battle%20Monks.pdf"
+    },
+    {
+      "warriorName": "Soldiers",
+      "category": "Henchman",
+      "warbandName": "Battle Monks of Cathay",
+      "sourceReference": "14%20Battle%20Monks.pdf"
+    },
+    {
+      "warriorName": "Warrior Monks",
+      "category": "Henchman",
+      "warbandName": "Battle Monks of Cathay",
+      "sourceReference": "14%20Battle%20Monks.pdf"
+    },
+    {
+      "warriorName": "Raging Peasants",
+      "category": "Henchman",
+      "warbandName": "Battle Monks of Cathay",
+      "sourceReference": "14%20Battle%20Monks.pdf"
+    }
+  ]
+}

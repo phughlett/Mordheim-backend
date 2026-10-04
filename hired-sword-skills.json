@@ -1,0 +1,348 @@
+{
+  "categoryChoices": [
+    { "warriorType": "Pit Fighter", "category": "Combat" },
+    { "warriorType": "Pit Fighter", "category": "Speed" },
+    { "warriorType": "Pit Fighter", "category": "Strength" },
+    { "warriorType": "Ogre Bodyguard", "category": "Combat" },
+    { "warriorType": "Ogre Bodyguard", "category": "Strength" },
+    { "warriorType": "Halfling Scout (HS)", "category": "Speed" },
+    { "warriorType": "Halfling Scout (HS)", "category": "Shooting" },
+    { "warriorType": "Warlock (HS)", "category": "Academic" },
+    { "warriorType": "Freelancer", "category": "Combat" },
+    { "warriorType": "Freelancer", "category": "Strength" },
+    { "warriorType": "Elf Ranger", "category": "Shooting" },
+    { "warriorType": "Elf Ranger", "category": "Speed" },
+    { "warriorType": "Elf Ranger", "category": "Special", "specialListName": "Elven Skills" },
+    { "warriorType": "Dwarf Troll Slayer (HS)", "category": "Combat" },
+    { "warriorType": "Dwarf Troll Slayer (HS)", "category": "Strength" },
+    { "warriorType": "Dwarf Troll Slayer (HS)", "category": "Special", "specialListName": "Troll Slayer Skills" },
+    { "warriorType": "Imperial Assassin", "category": "Combat" },
+    { "warriorType": "Imperial Assassin", "category": "Shooting" },
+    { "warriorType": "Imperial Assassin", "category": "Speed" },
+    { "warriorType": "Imperial Assassin", "category": "Special", "specialListName": "Assassin Skills" },
+    { "warriorType": "Tilean Marksman", "category": "Shooting" },
+    { "warriorType": "Chameleon Skink", "category": "Shooting" },
+    { "warriorType": "Chameleon Skink", "category": "Speed" },
+    { "warriorType": "Chameleon Skink", "category": "Special", "specialListName": "Lizardmen Skink Skills" },
+    { "warriorType": "Chameleon Skink Pathfinder", "category": "Combat" },
+    { "warriorType": "Chameleon Skink Pathfinder", "category": "Shooting" },
+    { "warriorType": "Chameleon Skink Pathfinder", "category": "Speed" },
+    { "warriorType": "Chameleon Skink Pathfinder", "category": "Special", "specialListName": "Pathfinder Skills" },
+    { "warriorType": "Dark Elf Assassin", "category": "Combat" },
+    { "warriorType": "Dark Elf Assassin", "category": "Shooting" },
+    { "warriorType": "Dark Elf Assassin", "category": "Speed" },
+    { "warriorType": "Dark Elf Assassin", "category": "Special", "specialListName": "Dark Elf Special Skills" }
+  ],
+  "skills": [
+    {
+      "name": "Seeker",
+      "category": "Special",
+      "description": "Once per Exploration roll, the Elf Ranger may modify one die by +1 or -1.",
+      "warriorType": "Elf Ranger",
+      "specialListName": "Starting abilities",
+      "starting": true,
+      "learnable": false,
+      "sourceReference": "3Campaigns.pdf — Elf Ranger"
+    },
+    {
+      "name": "Excellent Sight",
+      "category": "Special",
+      "description": "The Elf Ranger detects Hidden enemies from twice the normal distance.",
+      "warriorType": "Elf Ranger",
+      "specialListName": "Starting abilities",
+      "starting": true,
+      "learnable": false,
+      "sourceReference": "3Campaigns.pdf — Elf Ranger"
+    },
+    {
+      "name": "Fey",
+      "category": "Special",
+      "description": "The Elf Ranger has a 4+ save against hostile magic spells.",
+      "warriorType": "Elf Ranger",
+      "specialListName": "Elven Skills",
+      "starting": false,
+      "learnable": true,
+      "sourceReference": "3Campaigns.pdf — Elf Ranger"
+    },
+    {
+      "name": "Luck",
+      "category": "Special",
+      "description": "Once per game, the Elf Ranger may re-roll one of his own dice rolls.",
+      "warriorType": "Elf Ranger",
+      "specialListName": "Elven Skills",
+      "starting": false,
+      "learnable": true,
+      "sourceReference": "3Campaigns.pdf — Elf Ranger"
+    },
+    {
+      "name": "Deathwish",
+      "category": "Special",
+      "description": "The Troll Slayer is immune to psychology and need not test when fighting alone.",
+      "warriorType": "Dwarf Troll Slayer (HS)",
+      "specialListName": "Starting abilities",
+      "starting": true,
+      "learnable": false,
+      "sourceReference": "3Campaigns.pdf — Dwarf Troll Slayer"
+    },
+    {
+      "name": "Ferocious Charge",
+      "category": "Special",
+      "description": "The Slayer may double his attacks on the turn he charges, with a -1 hit penalty.",
+      "warriorType": "Dwarf Troll Slayer (HS)",
+      "specialListName": "Troll Slayer Skills",
+      "starting": false,
+      "learnable": true,
+      "sourceReference": "DwarfTreasurehunters.pdf — Troll Slayer Skills"
+    },
+    {
+      "name": "Monster Slayer",
+      "category": "Special",
+      "description": "The Slayer wounds opponents on a 4+ regardless of Toughness, unless his Strength would require a lower roll.",
+      "warriorType": "Dwarf Troll Slayer (HS)",
+      "specialListName": "Troll Slayer Skills",
+      "starting": false,
+      "learnable": true,
+      "sourceReference": "DwarfTreasurehunters.pdf — Troll Slayer Skills"
+    },
+    {
+      "name": "Berserker",
+      "category": "Special",
+      "description": "The Slayer gains +1 to hit in close combat during the turn he charges.",
+      "warriorType": "Dwarf Troll Slayer (HS)",
+      "specialListName": "Troll Slayer Skills",
+      "starting": false,
+      "learnable": true,
+      "sourceReference": "DwarfTreasurehunters.pdf — Troll Slayer Skills"
+    },
+    {
+      "name": "Weapons Master",
+      "category": "Special",
+      "description": "The Assassin may use weapons he finds, and weapons purchased for him remain his own.",
+      "warriorType": "Imperial Assassin",
+      "specialListName": "Starting abilities",
+      "starting": true,
+      "learnable": false,
+      "sourceReference": "Showmethemoney.pdf — Imperial Assassin"
+    },
+    {
+      "name": "Poisoner",
+      "category": "Special",
+      "description": "The Assassin begins each game with his weapons coated in either Black Lotus or Dark Venom, chosen before the game.",
+      "warriorType": "Imperial Assassin",
+      "specialListName": "Starting abilities",
+      "starting": true,
+      "learnable": false,
+      "sourceReference": "Showmethemoney.pdf — Imperial Assassin"
+    },
+    {
+      "name": "Backstabber",
+      "category": "Special",
+      "description": "When charging an unseen enemy within range, the Assassin gains +1 to hit and +1 on Serious Injury rolls for the first round of combat.",
+      "warriorType": "Imperial Assassin",
+      "specialListName": "Assassin Skills",
+      "starting": false,
+      "learnable": true,
+      "sourceReference": "Showmethemoney.pdf — Assassin Skills"
+    },
+    {
+      "name": "Hide in Shadows",
+      "category": "Special",
+      "description": "While within 1 inch of a linear obstacle, enemies must pass an Initiative test to charge or shoot at the Assassin.",
+      "warriorType": "Imperial Assassin",
+      "specialListName": "Assassin Skills",
+      "starting": false,
+      "learnable": true,
+      "sourceReference": "Showmethemoney.pdf — Assassin Skills"
+    },
+    {
+      "name": "Steady Hands",
+      "category": "Special",
+      "description": "The Marksman ignores long-range hit modifiers when firing his crossbow.",
+      "warriorType": "Tilean Marksman",
+      "specialListName": "Starting abilities",
+      "starting": true,
+      "learnable": false,
+      "sourceReference": "Showmethemoney.pdf — Tilean Marksman"
+    },
+    {
+      "name": "Dead Eye Shot",
+      "category": "Special",
+      "description": "The Marksman ignores cover hit modifiers when firing his crossbow.",
+      "warriorType": "Tilean Marksman",
+      "specialListName": "Starting abilities",
+      "starting": true,
+      "learnable": false,
+      "sourceReference": "Showmethemoney.pdf — Tilean Marksman"
+    },
+    {
+      "name": "Scaly Skin",
+      "category": "Special",
+      "description": "The Chameleon Skink has the Scaly Skin ability listed among the Skink special skills.",
+      "warriorType": "Chameleon Skink",
+      "specialListName": "Lizardmen Skink Skills",
+      "starting": true,
+      "learnable": true,
+      "sourceReference": "Lustria3.pdf — Chameleon Skink"
+    },
+    {
+      "name": "Cold Blooded",
+      "category": "Special",
+      "description": "The Chameleon Skink has the Cold Blooded ability listed among the Skink special skills.",
+      "warriorType": "Chameleon Skink",
+      "specialListName": "Lizardmen Skink Skills",
+      "starting": true,
+      "learnable": true,
+      "sourceReference": "Lustria3.pdf — Chameleon Skink"
+    },
+    {
+      "name": "Aquatic",
+      "category": "Special",
+      "description": "The Chameleon Skink has the Aquatic ability listed among the Skink special skills.",
+      "warriorType": "Chameleon Skink",
+      "specialListName": "Lizardmen Skink Skills",
+      "starting": true,
+      "learnable": true,
+      "sourceReference": "Lustria3.pdf — Chameleon Skink"
+    },
+    {
+      "name": "Jungle-born",
+      "category": "Special",
+      "description": "The Chameleon Skink has the Jungle-born ability listed among the Skink special skills.",
+      "warriorType": "Chameleon Skink",
+      "specialListName": "Lizardmen Skink Skills",
+      "starting": true,
+      "learnable": true,
+      "sourceReference": "Lustria3.pdf — Chameleon Skink"
+    },
+    {
+      "name": "Chameleon Skin",
+      "category": "Special",
+      "description": "Enemies halve their Initiative when attempting to detect the Chameleon Skink while Hidden; missile attacks against it suffer -2 to hit.",
+      "warriorType": "Chameleon Skink",
+      "specialListName": "Starting abilities",
+      "starting": true,
+      "learnable": false,
+      "sourceReference": "Lustria3.pdf — Chameleon Skink"
+    },
+    {
+      "name": "Infiltrator",
+      "category": "Special",
+      "description": "The Chameleon Skink may deploy out of sight and at least 12 inches from any enemy model.",
+      "warriorType": "Chameleon Skink",
+      "specialListName": "Starting abilities",
+      "starting": true,
+      "learnable": false,
+      "sourceReference": "Lustria3.pdf — Chameleon Skink"
+    },
+    {
+      "name": "Lay of the Land",
+      "category": "Special",
+      "description": "The Pathfinder ignores terrain movement modifiers and can cross impassable obstacles.",
+      "warriorType": "Chameleon Skink Pathfinder",
+      "specialListName": "Starting abilities",
+      "starting": true,
+      "learnable": false,
+      "sourceReference": "Lustria3.pdf — Chameleon Skink Pathfinder"
+    },
+    {
+      "name": "Knowledge of Myths and Legends",
+      "category": "Special",
+      "description": "If the Pathfinder survives, one die may be re-rolled during Exploration.",
+      "warriorType": "Chameleon Skink Pathfinder",
+      "specialListName": "Starting abilities",
+      "starting": true,
+      "learnable": false,
+      "sourceReference": "Lustria3.pdf — Chameleon Skink Pathfinder"
+    },
+    {
+      "name": "Lookout!",
+      "category": "Special",
+      "description": "Once per game, the Pathfinder may cancel a trap or hazard on a roll of 4+.",
+      "warriorType": "Chameleon Skink Pathfinder",
+      "specialListName": "Pathfinder Skills",
+      "starting": false,
+      "learnable": true,
+      "sourceReference": "Lustria3.pdf — Pathfinder Special Skills"
+    },
+    {
+      "name": "This Way!",
+      "category": "Special",
+      "description": "A model in base contact may move through impassable terrain while contact with the Pathfinder is maintained.",
+      "warriorType": "Chameleon Skink Pathfinder",
+      "specialListName": "Pathfinder Skills",
+      "starting": false,
+      "learnable": true,
+      "sourceReference": "Lustria3.pdf — Pathfinder Special Skills"
+    },
+    {
+      "name": "Perfect Killer",
+      "category": "Special",
+      "description": "The Dark Elf Assassin's attacks have an additional -1 armour save modifier.",
+      "warriorType": "Dark Elf Assassin",
+      "specialListName": "Starting abilities",
+      "starting": true,
+      "learnable": false,
+      "sourceReference": "Lustria3.pdf — Dark Elf Assassin"
+    },
+    {
+      "name": "Kindred Hatred",
+      "category": "Special",
+      "description": "The Dark Elf Assassin follows the Dark Elf rule of Hatred against High Elves.",
+      "warriorType": "Dark Elf Assassin",
+      "specialListName": "Starting abilities",
+      "starting": true,
+      "learnable": false,
+      "sourceReference": "Lustria3.pdf — Dark Elf Assassin"
+    },
+    {
+      "name": "Fury of Khaine",
+      "category": "Special",
+      "description": "After taking all opponents out of action, the Dark Elf may make a 4-inch follow-up move and begin another combat on his next turn.",
+      "warriorType": "Dark Elf Assassin",
+      "specialListName": "Dark Elf Special Skills",
+      "starting": false,
+      "learnable": true,
+      "sourceReference": "Lustria3.pdf — Dark Elf Special Skills"
+    },
+    {
+      "name": "Powerful Build",
+      "category": "Special",
+      "description": "The Dark Elf may choose skills from the Strength list; Sorceresses are excluded and the warband-wide limit still applies.",
+      "warriorType": "Dark Elf Assassin",
+      "specialListName": "Dark Elf Special Skills",
+      "starting": false,
+      "learnable": true,
+      "sourceReference": "Lustria3.pdf — Dark Elf Special Skills"
+    },
+    {
+      "name": "Fey Quickness",
+      "category": "Special",
+      "description": "The Dark Elf avoids melee and missile attacks on a 6; Step Aside or Dodge improves the corresponding save to 4+.",
+      "warriorType": "Dark Elf Assassin",
+      "specialListName": "Dark Elf Special Skills",
+      "starting": false,
+      "learnable": true,
+      "sourceReference": "Lustria3.pdf — Dark Elf Special Skills"
+    },
+    {
+      "name": "Infiltration",
+      "category": "Special",
+      "description": "The Dark Elf may use the Infiltrate rule.",
+      "warriorType": "Dark Elf Assassin",
+      "specialListName": "Dark Elf Special Skills",
+      "starting": false,
+      "learnable": true,
+      "sourceReference": "Lustria3.pdf — Dark Elf Special Skills"
+    },
+    {
+      "name": "Master of Poisons",
+      "category": "Special",
+      "description": "If the Dark Elf does not search for rare items, he may make D3-1 doses of Dark Venom for the next battle.",
+      "warriorType": "Dark Elf Assassin",
+      "specialListName": "Dark Elf Special Skills",
+      "starting": false,
+      "learnable": true,
+      "sourceReference": "Lustria3.pdf — Dark Elf Special Skills"
+    }
+  ]
+}

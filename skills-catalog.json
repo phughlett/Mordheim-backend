@@ -1,0 +1,1162 @@
+[
+  {
+    "name": "Strike to Injure",
+    "category": "Combat",
+    "description": "The warrior can land his blows with uncanny accuracy. Add +1 to all injury rolls caused by the model in hand-to-hand combat.",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Combat Master",
+    "category": "Combat",
+    "description": "The warrior is able to take on several opponents at once. If he fights against more than one enemy at a time, he gains an extra Attack in each hand-to-hand combat phase as long as he is fighting two or more enemy models. In addition, the warrior is immune to 'All Alone' tests.",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Weapons Training",
+    "category": "Combat",
+    "description": "A warrior with this skill is adept at using many different weapons. He may use any hand-to-hand combat weapon he comes across, not just those in his equipment options.",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Web of Steel",
+    "category": "Combat",
+    "description": "Few can match the ability of this warrior. He fights with great skill, weaving a web of steel around him. The model gains +1 to all his rolls on Critical Hit tables in hand-to-hand combat.",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Expert Swordsman",
+    "category": "Combat",
+    "description": "This warrior has been expertly taught in the art of swordsmanship. He may re-roll all missed attacks if he is using a sword in the hand-to-hand phase of the turn that he charges. Note that this only applies when they are armed with normal swords or weeping blades, and not with double-handed swords or any other weapons.",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Step Aside",
+    "category": "Combat",
+    "description": "The warrior has a natural ability to avoid injury in combat. Each time he suffers a wound in close combat he may make an additional saving throw of 5+. This save is never modified and is taken after all other armour saves.",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Quick Shot",
+    "category": "Shooting",
+    "description": "The warrior may shoot twice per turn with a bow or crossbow (but not a crossbow pistol).",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Pistolier",
+    "category": "Shooting",
+    "description": "The warrior is an expert at using all kinds of pistols. If he is equipped with a brace of pistols of any type (including crossbow pistols), he may fire twice in the Shooting phase (though note that normal reloading rules apply). If he has a single pistol then he may fire it in the same turn it was reloaded.",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Eagle Eyes",
+    "category": "Shooting",
+    "description": "The warrior's sight is exceptionally keen. He adds +6\" to the range of any missile weapon he is using.",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Weapons Expert",
+    "category": "Shooting",
+    "description": "The warrior has been trained to use some of the more unusual weapons of the known world. He may use any missile weapon he comes across, not just the weapons available from his warband's list.",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Nimble",
+    "category": "Shooting",
+    "description": "The warrior may move and fire with weapons that are normally only used if the firer has not moved. Note that this skill cannot be combined with the Quick Shot skill.",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Trick Shooter",
+    "category": "Shooting",
+    "description": "The warrior can shoot through the tiniest gap without it affecting his aim. He ignores all modifiers for cover when using missile weapons.",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Hunter",
+    "category": "Shooting",
+    "description": "The warrior is an expert at getting his weapon loaded and ready. He may fire each turn with a handgun or Hochland long rifle.",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Knife-Fighter",
+    "category": "Shooting",
+    "description": "The warrior is an unrivalled expert at using throwing knives and throwing stars. He can throw a maximum of three of these missiles in his shooting phase and may divide his shots between any targets within range as he wishes. Note that this skill cannot be combined with the Quick Shot skill.",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Battle Tongue",
+    "category": "Academic",
+    "description": "This skill may only be chosen by a leader. The warrior has drilled his warband to follow short barked commands. This increases the range of his Leader ability by 6\". Note that Undead leaders may not use this skill.",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Sorcery",
+    "category": "Academic",
+    "description": "This skill may only be taken by Heroes capable of casting spells. A warrior with this skill gains +1 to his rolls to see whether he can cast spells successfully or not. Note that Sisters of Sigmar and Warrior-Priests may not use this skill.",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Streetwise",
+    "category": "Academic",
+    "description": "A warrior with this skill has good contacts and knows where to purchase rare items. He may add +2 to the roll that determines his chances of finding such items (see the Trading section).",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Haggle",
+    "category": "Academic",
+    "description": "The warrior knows all the tricks of bargaining and haggling. He may deduct 2D6 gold crowns from the price of any single item (to a minimum cost of 1gc) once per post battle sequence.",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Arcane Lore",
+    "category": "Academic",
+    "description": "Witch Hunters, Sisters of Sigmar and Warrior-Priests may not have this skill. Any warrior with this skill may learn Lesser Magic if he owns a Tome of Magic.",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Wyrdstone Hunter",
+    "category": "Academic",
+    "description": "The warrior has an uncanny ability to find hidden shards of wyrdstone. If a Hero with this skill is searching the ruins in the exploration phase you may re-roll one dice when rolling on the Exploration chart. The second result stands.",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Warrior Wizard",
+    "category": "Academic",
+    "description": "This skill may only be taken by spellcasters. The mental powers of the wizard allow him to wear armour and cast spells.",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Mighty Blow",
+    "category": "Strength",
+    "description": "The warrior knows how to use his strength to maximum effect and has a +1 Strength bonus in close combat (excluding pistols). As his Strength is used for close combat weapons, the bonus applies to all such weapons.",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Pit Fighter",
+    "category": "Strength",
+    "description": "The warrior has learned how to fight in enclosed spaces from his time in the dangerous fighting pits of the Empire. He is an expert at fighting in confined areas and adds +1 to his WS and +1 to his Attacks if he is fighting inside buildings or ruins. It's a good idea to define which bits of your terrain collection count as 'buildings or ruins' at the start of a battle to avoid confusion later.",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Resilient",
+    "category": "Strength",
+    "description": "The warrior is covered in battle scars. Deduct -1 Strength from all hits against him in close combat. This does not affect armour save modifiers.",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Fearsome",
+    "category": "Strength",
+    "description": "Such is the reputation and physique of the model that he causes fear in opposing models.",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Strongman",
+    "category": "Strength",
+    "description": "The warrior is capable of great feats of strength. He may use a double-handed weapon without the usual penalty of always striking last. Work out order of battle as you would with other weapons.",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Unstoppable Charge",
+    "category": "Speed",
+    "description": "When he charges, the warrior is almost impossible to halt. He adds +1 to his Weapon Skill when charging.",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Leap",
+    "category": "Speed",
+    "description": "The warrior may leap D6\" in the movement phase in addition to his normal movement. He may move and leap, run and leap, or charge and leap, but he can only leap once per turn. A leaping warrior may jump over opposing man-sized models, including enemies, and obstacles 1\" high, without penalty. The leap may also be used to leap over gaps, but in this case you must commit the warrior to making the leap before rolling the dice to see how far he jumps. If he fails to make it all the way across, he falls through the gap (see page 28).",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Sprint",
+    "category": "Speed",
+    "description": "The warrior may triple his Movement rate when he runs or charges, rather than doubling it as normal.",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Acrobat",
+    "category": "Speed",
+    "description": "The warrior is incredibly supple and agile. He may fall or jump from a height of up to 12\" without taking any damage if he passes a single Initiative test, and can re-roll failed Diving Charge rolls. He can still only make a diving charge from a height of up to 6\".",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Lightning Reflexes",
+    "category": "Speed",
+    "description": "If the warrior is charged he will 'strike first' against those that charged that turn. As the charger(s) will also normally 'strike first' (for charging), the order of attack between the charger(s) and the warrior with this skill will be determined by comparing Initiative values.",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Jump Up",
+    "category": "Speed",
+    "description": "The warrior can regain his footing in an instant, springing to his feet immediately if he is knocked down. The warrior may ignore knocked down results when rolling for injuries, unless he is knocked down because of a successful save from wearing a helmet or because he has the No Pain special rule.",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Dodge",
+    "category": "Speed",
+    "description": "A warrior with this skill is nimble and as fast as quicksilver. He can avoid any hits from a missile weapon on a D6 roll of 5+. Note that this roll is taken against missiles as soon as a hit is scored to see whether the warrior dodges it or not, before rolling to wound, and before any effects from other skills or equipment (such as lucky charms).",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Scale Sheer Surfaces",
+    "category": "Speed",
+    "description": "A warrior with this skill can scale even the highest wall or fence with ease. He can climb up or down a height equal to twice his normal Movement, and does not need to make Initiative tests when doing so.",
+    "warband": null,
+    "specialListName": null,
+    "appliesTo": null,
+    "sourceReference": "3Campaigns.pdf"
+  },
+  {
+    "name": "Sign of Sigmar",
+    "category": "Special",
+    "description": "The Sister is favoured by the great god Sigmar. Possessed or Undead opponents lose their first attack against the Priestess in the first round of hand-to-hand combat (down to a minimum of 1).",
+    "warband": "Sisters of Sigmar",
+    "specialListName": "Sisters of Sigmar Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Sisters of Sigmar)"
+  },
+  {
+    "name": "Protection of Sigmar",
+    "category": "Special",
+    "description": "The Sister has been blessed by the High Matriarch. Any spell which would affect her is nullified on a D6 roll of 4+. Note that if the spell is nullified it will not affect any other models either.",
+    "warband": "Sisters of Sigmar",
+    "specialListName": "Sisters of Sigmar Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Sisters of Sigmar)"
+  },
+  {
+    "name": "Utter Determination",
+    "category": "Special",
+    "description": "Only the Matriarch may have this skill, which allows her to re-roll any failed Rout tests.",
+    "warband": "Sisters of Sigmar",
+    "specialListName": "Sisters of Sigmar Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Sisters of Sigmar)"
+  },
+  {
+    "name": "Righteous Fury",
+    "category": "Special",
+    "description": "The Sister feels cold fury and utter contempt towards any evil that pollutes the soil of the holy Empire with its presence. The model hates all Skaven, Undead or Possessed warbands and all models in them.",
+    "warband": "Sisters of Sigmar",
+    "specialListName": "Sisters of Sigmar Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Sisters of Sigmar)"
+  },
+  {
+    "name": "Absolute Faith",
+    "category": "Special",
+    "description": "The Sister puts her faith in Sigmar, and faces dangers unflinchingly. She may re-roll any Fear tests and does not have to test if she is fighting alone against several opponents.",
+    "warband": "Sisters of Sigmar",
+    "specialListName": "Sisters of Sigmar Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Sisters of Sigmar)"
+  },
+  {
+    "name": "Black Hunger",
+    "category": "Special",
+    "description": "The Skaven can draw upon the dreaded Black Hunger, the fighting frenzy which gives him unnatural strength and speed but can ravage him from inside. The Skaven Hero may declare at the beginning of his turn that he is using this skill. The Hero may add +1 attack and +D3\" to the total move to his profile for the duration of his own turn but will suffer D3 S3 hits with no armour save possible at the end of the turn.",
+    "warband": "Skaven",
+    "specialListName": "Skaven Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Skaven)"
+  },
+  {
+    "name": "Tail Fighting",
+    "category": "Special",
+    "description": "The Skaven may wield a shield, knife or a sword with its tail. The model gains an extra attack with the appropriate weapon or a +1 bonus to its armour save.",
+    "warband": "Skaven",
+    "specialListName": "Skaven Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Skaven)"
+  },
+  {
+    "name": "Wall Runner",
+    "category": "Special",
+    "description": "The Skaven does not need to take an Initiative test when climbing up walls and other sheer surfaces.",
+    "warband": "Skaven",
+    "specialListName": "Skaven Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Skaven)"
+  },
+  {
+    "name": "Infiltration",
+    "category": "Special",
+    "description": "A Skaven with this skill is always placed on the battlefield after the opposing warband and can be placed anywhere on the table as long as it is out of sight of the opposing warband and more than 12\" away from any enemy model. If both players have models which infiltrate, roll a D6 for each, and the lowest roll sets up first.",
+    "warband": "Skaven",
+    "specialListName": "Skaven Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Skaven)"
+  },
+  {
+    "name": "Art of Silent Death",
+    "category": "Special",
+    "description": "The Skaven has patiently mastered the deadly art of open-hand fighting, as taught by the mystics of Cathay in the temples of the far East. In hand-to-hand combat, the Skaven can fight with his bare paws without any penalties and counts as having two weapons (ie, +1 attack). In addition, a Skaven Hero with this skill will cause a critical hit on a To Wound roll of 5-6 instead of just 6. This skill may be used in conjunction with the Eshin Fighting Claws (+2 Attacks instead of +1).",
+    "warband": "Skaven",
+    "specialListName": "Skaven Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Skaven)"
+  },
+  {
+    "name": "Fury of Khaine",
+    "category": "Special",
+    "description": "The Dark Elf is infused with an intense raging thirst for blood and is a whirlwind in hand-to-hand combat, moving from opponent to opponent. The Dark Elf may make a 4\" follow up move if he takes all of his opponents out of action. If he comes into contact with another enemy this starts a new combat. This new combat takes place in the following turn and the model counts as charging. May not follow up in the opponent's turn.",
+    "warband": "Dark Elves",
+    "specialListName": "Dark Elf Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Dark Elves)"
+  },
+  {
+    "name": "Powerful Build",
+    "category": "Special",
+    "description": "The warrior is strongly built for an Elf and is capable of feats of strength. A warrior with this skill may choose skills from the Strength table. The Sorceress may never take this skill and no more than two warriors in the warband may take this skill at any one time.",
+    "warband": "Dark Elves",
+    "specialListName": "Dark Elf Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Dark Elves)"
+  },
+  {
+    "name": "Fey Quickness",
+    "category": "Special",
+    "description": "Few can ever hope to match an Elf's inhuman quickness and agility. An Elf with Fey Quickness can avoid melee or missile attacks on a roll of 6. If the Elf also has Step Aside or Dodge this will increase to a 4+ in the relevant area. For example, an Elf with Fey Quickness and Step Aside avoids melee attacks on a 4+ and missile attacks on a 6.",
+    "warband": "Dark Elves",
+    "specialListName": "Dark Elf Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Dark Elves)"
+  },
+  {
+    "name": "Infiltration",
+    "category": "Special",
+    "description": "The Dark Elf can Infiltrate, this skill is exactly the same as the Skaven skill.",
+    "warband": "Dark Elves",
+    "specialListName": "Dark Elf Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Dark Elves)"
+  },
+  {
+    "name": "Master of Poisons",
+    "category": "Special",
+    "description": "The Dark Elf is proficient in concocting different poisons. If the Hero doesn't search for rare items, he may make D3-1 doses of Dark Venom instead. There is a chance of getting none, as the hero doesn't have access to a stable workplace. The poison must be used in the next battle and cannot be sold or traded to other warbands as the Dark Elves guard their secrets very carefully.",
+    "warband": "Dark Elves",
+    "specialListName": "Dark Elf Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Dark Elves)"
+  },
+  {
+    "name": "energy focus",
+    "category": "Special",
+    "description": "If fighting unarmed the Hero may choose to reduce his Attacks by -1 and thus gain +1 Strength in close combat. The monk may sacrifice any number of attacks this way.",
+    "warband": "Battle Monks of Cathay",
+    "specialListName": "Battle Monks special skills",
+    "appliesTo": [
+      "Dragon Monks"
+    ],
+    "sourceReference": "Warband fact sheet (Battle Monks of Cathay)"
+  },
+  {
+    "name": "human shield",
+    "category": "Special",
+    "description": "If two or more models are engaged in close combat with the monk, he may choose to grab one to use it as a shield instead of his normal attacks. To do this he must pass an Initiative test after the first model has attacked, but before the second model attacks. On a successful roll, the monk grabs the first model - the second model directs its full attacks on the friendly model. After the combat phase the model breaks free and the battle goes on as usual. On a failed roll the monk and the second model use their normal attacks.",
+    "warband": "Battle Monks of Cathay",
+    "specialListName": "Battle Monks special skills",
+    "appliesTo": [
+      "Dragon Monks"
+    ],
+    "sourceReference": "Warband fact sheet (Battle Monks of Cathay)"
+  },
+  {
+    "name": "lightning speed",
+    "category": "Special",
+    "description": "The monk may triple his Movement whilst running or charging and may run even when there are enemy models within 8\".",
+    "warband": "Battle Monks of Cathay",
+    "specialListName": "Battle Monks special skills",
+    "appliesTo": [
+      "Dragon Monks"
+    ],
+    "sourceReference": "Warband fact sheet (Battle Monks of Cathay)"
+  },
+  {
+    "name": "leap of faith",
+    "category": "Special",
+    "description": "The Hero cannot be intercepted whilst charging. He may escape from combat (as described on p. 161 in the Mordheim rulebook) by leaping away without having to pass a Ld test and may declare a leaping charge at the same time in the same turn.",
+    "warband": "Battle Monks of Cathay",
+    "specialListName": "Battle Monks special skills",
+    "appliesTo": [
+      "Dragon Monks"
+    ],
+    "sourceReference": "Warband fact sheet (Battle Monks of Cathay)"
+  },
+  {
+    "name": "warmonger",
+    "category": "Special",
+    "description": "The Emissary may make a Ld test before the battle. If the test is successful, D3+1 Raging Peasants join the warband for the next game (this may exceed the maximum number of warriors). Each Raging Peasant in the warband is subject to Hatred for the duration of the battle.",
+    "warband": "Battle Monks of Cathay",
+    "specialListName": "Battle Monks special skills",
+    "appliesTo": [
+      "Emissary"
+    ],
+    "sourceReference": "Warband fact sheet (Battle Monks of Cathay)"
+  },
+  {
+    "name": "Shaggy Hide",
+    "category": "Special",
+    "description": "The bestial hero is titanic in size and may use a double-handed weapon in one hand.",
+    "warband": "Beastmen Raiders",
+    "specialListName": "Beastmen Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Beastmen Raiders)"
+  },
+  {
+    "name": "Mutant",
+    "category": "Special",
+    "description": "The Beastman may buy one mutation. See Mutants section on special rules.",
+    "warband": "Beastmen Raiders",
+    "specialListName": "Beastmen Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Beastmen Raiders)"
+  },
+  {
+    "name": "Fearless",
+    "category": "Special",
+    "description": "Immune to fear and terror and All Alone test.",
+    "warband": "Beastmen Raiders",
+    "specialListName": "Beastmen Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Beastmen Raiders)"
+  },
+  {
+    "name": "Horned One",
+    "category": "Special",
+    "description": "The Beastman has mighty horns, and can make an additional Attack with its basic Strength on a turn it charges.",
+    "warband": "Beastmen Raiders",
+    "specialListName": "Beastmen Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Beastmen Raiders)"
+  },
+  {
+    "name": "Bellowing Roar",
+    "category": "Special",
+    "description": "Only the Beastmen Chief may have this skill. He may re-roll any failed Rout tests.",
+    "warband": "Beastmen Raiders",
+    "specialListName": "Beastmen Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Beastmen Raiders)"
+  },
+  {
+    "name": "Manhater",
+    "category": "Special",
+    "description": "Will be affected by the rules of hatred when fighting any Human warbands.",
+    "warband": "Beastmen Raiders",
+    "specialListName": "Beastmen Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Beastmen Raiders)"
+  },
+  {
+    "name": "Master of Blades",
+    "category": "Special",
+    "description": "This Dwarf's martial skills surpass those of a normal warrior; he has fought unscathed against hordes of Orcs and Goblins. When using a weapon that has a Parry special rule, this hero parries successfully if he beats or matches his opponents highest 'to hit' roll, not just if he beats the roll. In addition, if this warrior is using two weapons that have the Parry special rule, he is allowed to parry two attacks (if his two dice match or beat the two highest Attack dice against him) instead of the normal maximum of one. Note that if this Dwarf has two Dwarf axes (as detailed above) he can re-roll any failed parries.",
+    "warband": "Dwarf Treasure Hunters",
+    "specialListName": "Dwarf special skills",
+    "appliesTo": [
+      "Dwarf Engineer",
+      "Dwarf Noble"
+    ],
+    "sourceReference": "Warband fact sheet (Dwarf Treasure Hunters)"
+  },
+  {
+    "name": "Extra Tough",
+    "category": "Special",
+    "description": "This Dwarf is notorious for walking away from wounds that would kill a lesser being. When rolling on the Heroes Serious Injury chart for this Hero after a game in which he has been taken out of action, the dice may be re-rolled once. The result of this second dice roll must be accepted, even if it is a worse result.",
+    "warband": "Dwarf Treasure Hunters",
+    "specialListName": "Dwarf special skills",
+    "appliesTo": [
+      "Dwarf Engineer",
+      "Dwarf Noble"
+    ],
+    "sourceReference": "Warband fact sheet (Dwarf Treasure Hunters)"
+  },
+  {
+    "name": "Resource Hunter",
+    "category": "Special",
+    "description": "This Dwarf is especially good at locating valuable resources. When rolling on the Exploration chart at the end of a game, the Hero may modify one dice roll by +1/-1.",
+    "warband": "Dwarf Treasure Hunters",
+    "specialListName": "Dwarf special skills",
+    "appliesTo": [
+      "Dwarf Engineer",
+      "Dwarf Noble"
+    ],
+    "sourceReference": "Warband fact sheet (Dwarf Treasure Hunters)"
+  },
+  {
+    "name": "True Grit",
+    "category": "Special",
+    "description": "Dwarfs are hardy individuals and this Hero is hardy even for a Dwarf! When rolling on the Injury table for this Hero, a roll of 1-3 is treated as knocked down, 4-5 as stunned, and 6 as out of action.",
+    "warband": "Dwarf Treasure Hunters",
+    "specialListName": "Dwarf special skills",
+    "appliesTo": [
+      "Dwarf Engineer",
+      "Dwarf Noble"
+    ],
+    "sourceReference": "Warband fact sheet (Dwarf Treasure Hunters)"
+  },
+  {
+    "name": "Thick Skull",
+    "category": "Special",
+    "description": "The Hero has a thick skull, even for a Dwarf. He has a 3+ save on a D6 to avoid being stunned. If the save is made, treat a stunned result as knocked down instead. If the Dwarf also wears a helmet, this save is 2+ instead of 3+ (this takes the place of the normal Helmet special rule).",
+    "warband": "Dwarf Treasure Hunters",
+    "specialListName": "Dwarf special skills",
+    "appliesTo": [
+      "Dwarf Engineer",
+      "Dwarf Noble"
+    ],
+    "sourceReference": "Warband fact sheet (Dwarf Treasure Hunters)"
+  },
+  {
+    "name": "Ferocious Charge",
+    "category": "Special",
+    "description": "The Slayer may double his attacks on the turn in which he charges. He will suffer a -1 'to hit' penalty on that turn.",
+    "warband": "Dwarf Treasure Hunters",
+    "specialListName": "TROLL SLAYER SKILLS",
+    "appliesTo": [
+      "Dwarf Troll Slayers"
+    ],
+    "sourceReference": "Warband fact sheet (Dwarf Treasure Hunters)"
+  },
+  {
+    "name": "Monster Slayer",
+    "category": "Special",
+    "description": "The Slayer always wounds any opponent on a roll of 4+, regardless of Toughness, unless his own Strength (after all modifiers due to weapon bonuses, etc) would mean that a lower roll than this is needed.",
+    "warband": "Dwarf Treasure Hunters",
+    "specialListName": "TROLL SLAYER SKILLS",
+    "appliesTo": [
+      "Dwarf Troll Slayers"
+    ],
+    "sourceReference": "Warband fact sheet (Dwarf Treasure Hunters)"
+  },
+  {
+    "name": "Berserker",
+    "category": "Special",
+    "description": "The Slayer may add +1 to his close combat 'to hit' rolls during the turn in which he charges.",
+    "warband": "Dwarf Treasure Hunters",
+    "specialListName": "TROLL SLAYER SKILLS",
+    "appliesTo": [
+      "Dwarf Troll Slayers"
+    ],
+    "sourceReference": "Warband fact sheet (Dwarf Treasure Hunters)"
+  },
+  {
+    "name": "Infiltration",
+    "category": "Special",
+    "description": "The Skink is a great hunter and is an expert at sneaking upon his prey unnoticed. The Hero may set up anywhere on the table but no closer than 12\" to an enemy and he must start the game in hiding.",
+    "warband": "Lizardmen",
+    "specialListName": "Lizardmen Special Skills & Sacred Markings",
+    "appliesTo": [
+      "Skink Great Crests",
+      "Skink Priest"
+    ],
+    "sourceReference": "Warband fact sheet (Lizardmen)"
+  },
+  {
+    "name": "Great Hunter",
+    "category": "Special",
+    "description": "The Skink Great Crest is adept at making the most of the cover available and imposes an additional -1 to hit the Skink if he is in cover, IE a -2 to hit penalty.",
+    "warband": "Lizardmen",
+    "specialListName": "Lizardmen Special Skills & Sacred Markings",
+    "appliesTo": [
+      "Skink Great Crests",
+      "Skink Priest"
+    ],
+    "sourceReference": "Warband fact sheet (Lizardmen)"
+  },
+  {
+    "name": "Bellowing Battle Roar",
+    "category": "Special",
+    "description": "The Saurus' roar is so deafening that enemy models in base contact suffer -1 to hit in the first round of combat against them.",
+    "warband": "Lizardmen",
+    "specialListName": "Lizardmen Special Skills & Sacred Markings",
+    "appliesTo": [
+      "Saurus Totem Warrior"
+    ],
+    "sourceReference": "Warband fact sheet (Lizardmen)"
+  },
+  {
+    "name": "Toughened Hide",
+    "category": "Special",
+    "description": "Through years of battle the Saurus' hide has become hardened and the Saurus will only be taken out of action on a 6+.",
+    "warband": "Lizardmen",
+    "specialListName": "Lizardmen Special Skills & Sacred Markings",
+    "appliesTo": [
+      "Saurus Totem Warrior"
+    ],
+    "sourceReference": "Warband fact sheet (Lizardmen)"
+  },
+  {
+    "name": "chosen of chaos",
+    "category": "Special",
+    "description": "The Hero has been found worthy of his god's service and entered the rank of a Chaos Warrior. He uses the maximum profile for Warriors of Chaos and the Hero equipment list (if he does not already).",
+    "warband": "Marauders of Chaos",
+    "specialListName": "Marauder special skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Marauders of Chaos)"
+  },
+  {
+    "name": "sweeping blow",
+    "category": "Special",
+    "description": "Whenever the Hero takes an enemy model out of action using a double-handed weapon he may immediately make an additional attack against another model in base contact. Requires the Strongman skill.",
+    "warband": "Marauders of Chaos",
+    "specialListName": "Marauder special skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Marauders of Chaos)"
+  },
+  {
+    "name": "tattooed body",
+    "category": "Special",
+    "description": "Only the warband's leader may have this skill. The Hero's body is covered with unholy Chaos signs to attract his patron's attention. The Eye of the Gods special rule's effect (of becoming a Chaos Spawn or receiving a Mark) happens on a result of 10+ instead of 12+ only. Note that for the less favoured Norse leaders this is 11+.",
+    "warband": "Marauders of Chaos",
+    "specialListName": "Marauder special skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Marauders of Chaos)"
+  },
+  {
+    "name": "mutant",
+    "category": "Special",
+    "description": "The Hero may buy one mutation. See the Mutations section of the Possessed on special rules. Heroes with the Mark of Onogal may choose a Blessing of Nurgle instead (see Empire in Flames, page 66) except the Mark of Nurgle. Unlike other skills this may be taken more than once.",
+    "warband": "Marauders of Chaos",
+    "specialListName": "Marauder special skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Marauders of Chaos)"
+  },
+  {
+    "name": "heart of the warrior",
+    "category": "Special",
+    "description": "Only the warband's leader may have this skill. He may re-roll any failed Rout test and is immune to fear and all alone tests.",
+    "warband": "Marauders of Chaos",
+    "specialListName": "Marauder special skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Marauders of Chaos)"
+  },
+  {
+    "name": "Ded Shooty",
+    "category": "Special",
+    "description": "The clever little git adds +6\" to the range of any missile weapons he uses (not including nets).",
+    "warband": "Night Goblins",
+    "specialListName": "NIGHT GOBLIN SPECIAL SKILLS",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Night Goblins)"
+  },
+  {
+    "name": "Sneaky Git",
+    "category": "Special",
+    "description": "The greenskin is so sneaky that he can move D3 of his warband members after all other deployment is complete. Night Goblin Big Boss only.",
+    "warband": "Night Goblins",
+    "specialListName": "NIGHT GOBLIN SPECIAL SKILLS",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Night Goblins)"
+  },
+  {
+    "name": "Infiltrate",
+    "category": "Special",
+    "description": "As Skaven skill.",
+    "warband": "Night Goblins",
+    "specialListName": "NIGHT GOBLIN SPECIAL SKILLS",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Night Goblins)"
+  },
+  {
+    "name": "Netter",
+    "category": "Special",
+    "description": "The goblin is adept at using a net to disable his enemies. They learn their skill hunting wild cave squigs in the depths of the mountains. The technique he has mastered is 'chuck and charge'. The goblin may declare that he is making a net charge. He throws the net at a target in the same way as described in the Mordheim rulebook. If he hits and the target fails to escape the net then target counts as knocked down and the goblin completes his charge. If he misses or the target escapes then the goblin makes a failed charge. If the failed charge would take him into base contact then stop him 1\" away. A warrior who is caught in a net will be automatically hit in combat. The goblin must still roll to wound just as with a knocked down enemy. In the warrior's next recovery phase, unless he is stunned or out of action he will cut himself out of the net but cannot do anything else and will go last in combat just as if he had stood up from being knocked down.",
+    "warband": "Night Goblins",
+    "specialListName": "NIGHT GOBLIN SPECIAL SKILLS",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Night Goblins)"
+  },
+  {
+    "name": "Shield Master",
+    "category": "Special",
+    "description": "Norse warriors begin training with shields when they are still children. Some warriors become so skilled with these weapons that they can block almost any blow against them. When this hero is armed with a shield he may parry with it in addition to getting a 6+ save.",
+    "warband": "Norse",
+    "specialListName": "Norse Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Norse)"
+  },
+  {
+    "name": "Berserk Charge",
+    "category": "Special",
+    "description": "The Norse are very skilled with weapons that many other races see as primitive and savage. When this hero is armed with an axe or double handed weapon, he may re-roll all failed to hit rolls when he charges.",
+    "warband": "Norse",
+    "specialListName": "Norse Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Norse)"
+  },
+  {
+    "name": "Crushing Blow",
+    "category": "Special",
+    "description": "Norse warriors train in almost all of their spare time. They are expert fighters and learn to put all of their strength into very powerful attacks. No enemy may parry an attack made by this hero because it strikes with such power that it pushes right threw a buckler or sword.",
+    "warband": "Norse",
+    "specialListName": "Norse Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Norse)"
+  },
+  {
+    "name": "Battle Tongue",
+    "category": "Special",
+    "description": "Only a hero with the leader skill may gain this skill. It allows models within 12\" of him use his leadership, rather than the normal 6\".",
+    "warband": "Norse",
+    "specialListName": "Norse Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Norse)"
+  },
+  {
+    "name": "Barbarian Courage",
+    "category": "Special",
+    "description": "As Norse warriors strive to die bravely in battle, they learn to fear nothing and embrace hardship. This hero never needs to take all alone tests and may re-roll failed fear tests.",
+    "warband": "Norse",
+    "specialListName": "Norse Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Norse)"
+  },
+  {
+    "name": "\u2019ard ead",
+    "category": "Special",
+    "description": "The warrior has a thick skull even for an Orc. He has a special 3+ save on a D6 to avoid being stunned. If the save is made, treat a stunned result as knocked down instead. If the Orc also wears a helmet, this save is 2+ instead of 3+ (this takes the place of the normal helmet special rule).",
+    "warband": "Orc",
+    "specialListName": "Orc special skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Orc)"
+  },
+  {
+    "name": "da cunnin\u2019 plan",
+    "category": "Special",
+    "description": "Only the Boss may have this skill. The warband may re-roll any failed Rout tests as long as the Boss is not out of action.",
+    "warband": "Orc",
+    "specialListName": "Orc special skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Orc)"
+  },
+  {
+    "name": "waaagh!",
+    "category": "Special",
+    "description": "Orcs are aggressive creatures and some are experts at bulldozing charges. The warrior may add +D3\" to his charge range.",
+    "warband": "Orc",
+    "specialListName": "Orc special skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Orc)"
+  },
+  {
+    "name": "well \u2019ard",
+    "category": "Special",
+    "description": "The Orc has a thick, dark-green skin, possibly indicating Black Orc blood. Such is the toughness of the Orc that he may add +1 to any armour saves.",
+    "warband": "Orc",
+    "specialListName": "Orc special skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Orc)"
+  },
+  {
+    "name": "\u2019ere we go!",
+    "category": "Special",
+    "description": "Orcs often charge even the most fearsome opponents. The model may ignore Fear and Terror tests when charging.",
+    "warband": "Orc",
+    "specialListName": "Orc special skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Orc)"
+  },
+  {
+    "name": "\u2019eadbasher",
+    "category": "Special",
+    "description": "Orcs have massive physical strength and some of them even learn to aim their blows at the heads of their opponents, with obvious results. Any knocked down results which the Orc causes in hand-to-hand count as stunned results instead.",
+    "warband": "Orc",
+    "specialListName": "Orc special skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Orc)"
+  },
+  {
+    "name": "Bull Rush",
+    "category": "Special",
+    "description": "This warrior is huge, even by Ostlander standards, and can use his massive girth to overpower his opponents. When he charges, this Hero may attempt to knock down his opponent rather than making his normal attacks. Roll to hit once with a +1 to hit modifier, though no \u2018to wound\u2019 roll is necessary. Instead, if the warrior hits with this attack, the opposing model is Knocked Down. (Models with the Bull Rush skill should have a suitably large beer-belly modelled out of putty whenever possible.)",
+    "warband": "Ostlanders",
+    "specialListName": "Ostlander Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Ostlanders)"
+  },
+  {
+    "name": "Foul Odour",
+    "category": "Special",
+    "description": "Ostlanders are one and all prodigious drinkers and none too hygienic! This warrior rises head and shoulders above the rest. After a lifetime of drinking, liquor has little effect on him any more... not that this stops him from consuming massive quantities! His unwashed clothes and sweat reek of alcohol and all living enemies (not Undead or Possessed) are at -1 to hit him in hand-to-hand combat. In addition, the warrior cannot carry any open flames (torch, lantern, etc.) and fire attacks made against him are resolved at +1 Strength as his beer soaked clothing burns readily.",
+    "warband": "Ostlanders",
+    "specialListName": "Ostlander Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Ostlanders)"
+  },
+  {
+    "name": "Taunt",
+    "category": "Special",
+    "description": "After years of baiting opponents into drunken brawls the Ostlander has learned some of most vile insults in the Empire. During the shooting phase the warrior may choose to taunt one enemy instead of shooting with a missile weapon or casting a spell. The warrior must be able to see the enemy and taunting follows all the LOS rules for shooting (you must taunt the nearest opponent, etc.). The player should insult the enemy model in some manner whenever possible (perhaps his hat looks like a strangled parrot or his mother was a Bretonnian.). The enemy then takes a Leadership test. If he passes, nothing happens but if he fails he must spend his next movement phase trying to get into close combat with the warrior who taunted him.",
+    "warband": "Ostlanders",
+    "specialListName": "Ostlander Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Ostlanders)"
+  },
+  {
+    "name": "Animal Friendship",
+    "category": "Special",
+    "description": "Having grown up amidst the animals of the forest this warrior exudes a certain charm to all \u2018normal\u2019 animals (i.e. warhorses, warhounds, etc.). Animals will never attack him and up to two wardogs (see Mordheim book, page 54) that the warrior owns do not count against the maximum number of models in the Warband.",
+    "warband": "Ostlanders",
+    "specialListName": "Ostlander Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Ostlanders)"
+  },
+  {
+    "name": "Blood Oath",
+    "category": "Special",
+    "description": "The leader of an Ostlander Warband sometimes takes a Blood Oath never to leave any of his fallen \u2018family\u2019 members behind. Such is his determination to protect his fallen Blood-kin that it is extremely difficult to cause him to Rout from the field. Only a Warband\u2019s leader may have this skill, which allows him to re-roll a single Rout test once per game.",
+    "warband": "Ostlanders",
+    "specialListName": "Ostlander Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Ostlanders)"
+  },
+  {
+    "name": "Sea Shanty Singer",
+    "category": "Special",
+    "description": "The pirate is renowned throughout the seas as one of the greatest singers aboard a ship, able to raise the spirits of any crew with his stirring renditions of \u2018The Sloop Johan Bee\u2019, \u2018What do you do with a Drunken Halfling?\u2019, and other famous pirate ditties. At the start of his Close Combat phase he can suddenly burst out in song, distracting one opponent in base contact of his choosing. That enemy must pass a Leadership test, or loose 1 Attack that turn. This does not effect Undead or other non-living creatures, such as Possessed.",
+    "warband": "Pirate",
+    "specialListName": "Pirate Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Pirate)"
+  },
+  {
+    "name": "Sea Legs",
+    "category": "Special",
+    "description": "Even in the strongest seas, the pirate has learned to keep his footing and equilibrium. If he Falls during a battle, he may ignore the effects of the D3 hits on a roll of 4+ (make a single roll to see if the any of the hits take effect or not). In addition, if he is knocked down or stunned within 1\" of a precipice he may re-roll his Initiative test to see if he falls down or not.",
+    "warband": "Pirate",
+    "specialListName": "Pirate Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Pirate)"
+  },
+  {
+    "name": "Cutlass Master",
+    "category": "Special",
+    "description": "These short, single bladed swords are the mainstay weapon of any pirate crew, and in the hands of a trained seaman they are superb weapons for close quarters fighting. If the pirate is equipped with a Sword, this skill will give him the additional benefit of also being able to parry successfully if the player rolls equal to number rolled to hit, not just higher as normal. This extra ability only apply if the Pirate is not in the open; ie., only when in cover or in a building, within 2\" of a terrain feature like a wall or tree, etc.",
+    "warband": "Pirate",
+    "specialListName": "Pirate Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Pirate)"
+  },
+  {
+    "name": "Booming Voice",
+    "category": "Special",
+    "description": "(Captain only) The Captain has spent many a battle bellowing orders to his crew, yelling above the roar of the cannons and the screams of the enemy. Once per turn, the captain may shout encouraging words (or threats) at any one pirate within 8\" who just failed his test to see if he runs away from combat, or to stop running away if he was already fleeing. That pirate may then re-roll the test. This can only be done if the Captain is on his feet, but not if the Captain is in close combat himself.",
+    "warband": "Pirate",
+    "specialListName": "Pirate Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Pirate)"
+  },
+  {
+    "name": "Hardy Constitution",
+    "category": "Special",
+    "description": "Many months at sea, and especially many months eating hardtack, have hardened the pirate\u2019s body to effects that would cause a lesser man to collapse. During the battle, the pirate may ignore any Critical Hits on a roll of 5+ (the wound is treated as normal if the roll is successful). If the roll is failed, the Critical Hit is worked out as normal.",
+    "warband": "Pirate",
+    "specialListName": "Pirate Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Pirate)"
+  },
+  {
+    "name": "Swashbuckler",
+    "category": "Special",
+    "description": "The pirate cuts a dashing figure in combat, mixing dazzling swordplay and acrobatic feats with charm and witty comments. Even the basest villains in Mordheim respect (and curse) his ability to always seem to effortlessly slip from their grasp. The pirate may make a Leadership Test at the end of any Hand-to-Hand phase (pirate\u2019s or enemy\u2019s turn) if he is still in base contact with any enemy models. If he passes he may make a normal movement away from the enemy (he may not run or charge), without the enemy striking any blows on him. If he fails the test he remains in combat and must fight as normal in the following turn.",
+    "warband": "Pirate",
+    "specialListName": "Pirate Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Pirate)"
+  },
+  {
+    "name": "Bulging Biceps",
+    "category": "Special",
+    "description": "The Pit Fighter may ignore the entire \u2018heavy\u2019 weapons special rule penalty. The Strength bonus will now apply to all rounds in Close-Combat. So a Morning Star will give +1 Strength in all turns not only the first one.",
+    "warband": "Pit Fighter",
+    "specialListName": "Pit Fighter Skills",
+    "appliesTo": [
+      "Pit King",
+      "Pit Veterans"
+    ],
+    "sourceReference": "Warband fact sheet (Pit Fighter)"
+  },
+  {
+    "name": "Force of Will",
+    "category": "Special",
+    "description": "When the Pit Fighter loses his last wound and is taken Out-of-Action, he must roll a D6 equal or under his Toughness, each following round he has to roll again on his toughness but then with a -1 modifier for each subsequent round. If he succeeds he gets up and may continue to fight, when he gets taken Out-of-Action a second time he\u2019ll be removed as normal.",
+    "warband": "Pit Fighter",
+    "specialListName": "Pit Fighter Skills",
+    "appliesTo": [
+      "Pit King",
+      "Pit Veterans"
+    ],
+    "sourceReference": "Warband fact sheet (Pit Fighter)"
+  },
+  {
+    "name": "Arms master",
+    "category": "Special",
+    "description": "The Pit Fighter may now ignore all \u2018difficult to use\u2019 rules for all weapons. This enables him to combine certain types of weapons, he can combine a Morning Star with buckler, or even a Morning Star with a Morning Star.",
+    "warband": "Pit Fighter",
+    "specialListName": "Pit Fighter Skills",
+    "appliesTo": [
+      "Pit King",
+      "Pit Veterans"
+    ],
+    "sourceReference": "Warband fact sheet (Pit Fighter)"
+  },
+  {
+    "name": "Body Slam",
+    "category": "Special",
+    "description": "Instead of making a normal charge, the Pit Fighter may attempt to slam his opponent to the ground, he burrows his shoulder deep into his opponent\u2019s stomach. Instead of making his normal attacks the Pit fighter may make a single attack resolved as following: +1Str, +1 to Hit, no weapon bonuses or abilities. Critical hit on a 5+.",
+    "warband": "Pit Fighter",
+    "specialListName": "Pit Fighter Skills",
+    "appliesTo": [
+      "Pit King",
+      "Pit Veterans"
+    ],
+    "sourceReference": "Warband fact sheet (Pit Fighter)"
+  },
+  {
+    "name": "Grizzled Veteran",
+    "category": "Special",
+    "description": "The Pit Fighter is used to fighting fearsome monsters and being cornered in the pit when there\u2019s no escape. He has been close to death so many times that he has made his peace and the thought of death no longer bothers him. The Pit Fighter is immune to all psychology.",
+    "warband": "Pit Fighter",
+    "specialListName": "Pit Fighter Skills",
+    "appliesTo": [
+      "Pit King",
+      "Pit Veterans"
+    ],
+    "sourceReference": "Warband fact sheet (Pit Fighter)"
+  },
+  {
+    "name": "Ferocious Charge",
+    "category": "Special",
+    "description": "The Slayer may double his attacks on the turn that he charges. He will suffer a -1 to hit penalty on that turn.",
+    "warband": "Pit Fighter",
+    "specialListName": "Troll Slayer Special Skills List",
+    "appliesTo": [
+      "Dwarf Troll Slayer (Pit Fighter)"
+    ],
+    "sourceReference": "Warband fact sheet (Pit Fighter)"
+  },
+  {
+    "name": "Monster Slayer",
+    "category": "Special",
+    "description": "The Slayer always wounds any opponent on a roll of 4+, regardless of Toughness, unless his own Strength (after all modifiers due to weapon bonuses, etc) would mean that a lower roll than this is needed.",
+    "warband": "Pit Fighter",
+    "specialListName": "Troll Slayer Special Skills List",
+    "appliesTo": [
+      "Dwarf Troll Slayer (Pit Fighter)"
+    ],
+    "sourceReference": "Warband fact sheet (Pit Fighter)"
+  },
+  {
+    "name": "Berserker",
+    "category": "Special",
+    "description": "The Slayer may add +1 to his close combat to hit rolls during the turn which he charges. (may not be used with Ferocious Charge).",
+    "warband": "Pit Fighter",
+    "specialListName": "Troll Slayer Special Skills List",
+    "appliesTo": [
+      "Dwarf Troll Slayer (Pit Fighter)"
+    ],
+    "sourceReference": "Warband fact sheet (Pit Fighter)"
+  },
+  {
+    "name": "Infiltration",
+    "category": "Special",
+    "description": "This skill is exactly the same as the Skaven skill of the same name.",
+    "warband": "Shadow Warrior",
+    "specialListName": "Shadow Warrior Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Shadow Warrior)"
+  },
+  {
+    "name": "See in Shadows",
+    "category": "Special",
+    "description": "The warrior\u2019s senses have become especially keen from years spent walking the shadows. As long as he has movement to reach them, the warrior may always roll to charge opponents he cannot see (instead of the normal 4\").",
+    "warband": "Shadow Warrior",
+    "specialListName": "Shadow Warrior Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Shadow Warrior)"
+  },
+  {
+    "name": "Hide in Shadows",
+    "category": "Special",
+    "description": "Over time Shadow Warriors have learned how to freeze in place and remain undetected, even from the heightened senses of their Dark Elf cousins. An enemy warrior attempting to detect this warrior when he is Hidden must halve his Initiative before measuring the distance.",
+    "warband": "Shadow Warrior",
+    "specialListName": "Shadow Warrior Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Shadow Warrior)"
+  },
+  {
+    "name": "Sniper",
+    "category": "Special",
+    "description": "Long years of guerrilla warfare against the Dark Elves have taught Shadow Warriors how to strike from the shadows without being seen. If Hidden, a warrior with this skill may shoot or cast spells and still remain Hidden.",
+    "warband": "Shadow Warrior",
+    "specialListName": "Shadow Warrior Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Shadow Warrior)"
+  },
+  {
+    "name": "Powerful Build",
+    "category": "Special",
+    "description": "The warrior is strongly built for an Elf, and is capable of feats of strength not often seen among the people of Ulthuan. A warrior with this skill may choose skills from the Strength skills table from now on. This skill may not be taken by Shadow Weavers. There may never be more than two Elves with this skill in the warband at any one time.",
+    "warband": "Shadow Warrior",
+    "specialListName": "Shadow Warrior Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Shadow Warrior)"
+  },
+  {
+    "name": "Master of Runes",
+    "category": "Special",
+    "description": "The Shadow Weaver has learned to harness the power of the High Elven runes of power (see Elven Runestones, below) to a degree few mages attain. When using Elven Runestones, the mage is +1 to his dispel roll. In addition, the mage can inscribe the weapons and armour of one of his fellow warriors with Elven runes. One member of the Warband may reroll a single failed armour save or Parry roll once per battle. After a single battle, the runes lose their glamour and must be redone. This skill may only be taken by Shadow Weavers.",
+    "warband": "Shadow Warrior",
+    "specialListName": "Shadow Warrior Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Shadow Warrior)"
+  },
+  {
+    "name": "Virtue of Purity",
+    "category": "Special",
+    "description": "The Knight\u2019s sole purpose is to serve the Lady of the Lake. His purity of heart and discipline endow him with the strength of spirit to resist enemy magic. Any spell cast against the knight will be dispelled on the D6 roll of a 4+. This is a natural dispel on account of the knights extreme piety.",
+    "warband": "Bretonnian",
+    "specialListName": "Bretonnian Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Bretonnian)"
+  },
+  {
+    "name": "Virtue of Valour",
+    "category": "Special",
+    "description": "The Knight has vowed to confront the biggest and strongest foes. The more awesome his enemy, the more valourous are his efforts. If fighting a model with a higher Strength characteristic than himself, the Knight may re-roll any failed to hit rolls in hand-to-hand combat.",
+    "warband": "Bretonnian",
+    "specialListName": "Bretonnian Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Bretonnian)"
+  },
+  {
+    "name": "Virtue of Discipline",
+    "category": "Special",
+    "description": "The Knight has total faith in his chivalric code: he maintains self-control in the face of adversity, and displays complete confidence whatever the odds. Once per game, if the knight is not out of action, stunned or knocked down, you may re-roll a failed rout test.",
+    "warband": "Bretonnian",
+    "specialListName": "Bretonnian Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Bretonnian)"
+  },
+  {
+    "name": "Virtue of Noble Disdain",
+    "category": "Special",
+    "description": "The Knight has nothing but contempt for enemies who hide behind weapons of dishonour. The Knight is subject to Hatred of all enemies armed with shooting weapons. See the Leadership and Psychology section (p38).",
+    "warband": "Bretonnian",
+    "specialListName": "Bretonnian Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Bretonnian)"
+  },
+  {
+    "name": "Virtue of Impetuous",
+    "category": "Special",
+    "description": "The Knight is eager to get to grips with the enemy. He charges into combat with reckless enthusiasm. The Knight may add +D3\" to his move when charging. Roll the dice each time you wish to charge and before moving the model.",
+    "warband": "Bretonnian",
+    "specialListName": "Bretonnian Special Skills",
+    "appliesTo": null,
+    "sourceReference": "Warband fact sheet (Bretonnian)"
+  }
+]

@@ -1,0 +1,226 @@
+[
+  {
+    "name": "Prayers of Sigmar",
+    "kind": "Prayer",
+    "sourceReference": "1Rules.pdf",
+    "castingRuleSummary": "Roll 2D6 and meet the listed difficulty; Sigmarite prayers may be used in armour.",
+    "spells": [
+      { "roll": 1, "name": "The Hammer of Sigmar", "difficulty": 7, "effectSummary": "Empowers the priest's weapon for powerful, double-damage close-combat hits." },
+      { "roll": 2, "name": "Hearts of Steel", "difficulty": 8, "effectSummary": "Bolsters nearby allies against fear and improves the warband's Rout tests." },
+      { "roll": 3, "name": "Soulfire", "difficulty": 9, "effectSummary": "Damages nearby enemies; Undead and Possessed suffer a stronger hit." },
+      { "roll": 4, "name": "Shield of Faith", "difficulty": 6, "effectSummary": "Protects the priest from spells until the ward fades." },
+      { "roll": 5, "name": "Healing Hand", "difficulty": 5, "effectSummary": "Restores a nearby warrior and revives friendly models that are stunned or knocked down." },
+      { "roll": 6, "name": "Armour of Righteousness", "difficulty": 9, "effectSummary": "Grants the priest strong armour and immunity to fear for a short time." }
+    ]
+  },
+  {
+    "name": "Necromancy",
+    "kind": "Magic",
+    "sourceReference": "1Rules.pdf",
+    "castingRuleSummary": "Roll 2D6 and meet the listed difficulty.",
+    "spells": [
+      { "roll": 1, "name": "Lifestealer", "difficulty": 10, "effectSummary": "Wounds a nearby living target and temporarily strengthens the Necromancer." },
+      { "roll": 2, "name": "Re-Animation", "difficulty": 5, "effectSummary": "Returns a recently destroyed Zombie to the battle near the Necromancer." },
+      { "roll": 3, "name": "Death Vision", "difficulty": 6, "effectSummary": "Causes fear in the Necromancer's enemies for the battle." },
+      { "roll": 4, "name": "Spell of Doom", "difficulty": 9, "effectSummary": "May inflict an injury on a nearby enemy that fails a Strength test." },
+      { "roll": 5, "name": "Call of Vanhel", "difficulty": 6, "effectSummary": "Gives a nearby Zombie or Dire Wolf an immediate move that can count as a charge." },
+      { "roll": 6, "name": "Spell of Awakening", "difficulty": null, "difficultyNote": "Auto", "effectSummary": "Raises a slain enemy Hero as a Zombie under the Necromancer's control." }
+    ]
+  },
+  {
+    "name": "Chaos Rituals",
+    "kind": "Ritual",
+    "sourceReference": "1Rules.pdf",
+    "castingRuleSummary": "Roll 2D6 and meet the listed difficulty.",
+    "spells": [
+      { "roll": 1, "name": "Vision of Torment", "difficulty": 10, "effectSummary": "Stuns or knocks down the closest enemy within range." },
+      { "roll": 2, "name": "Eye of God", "difficulty": 7, "effectSummary": "Once per battle, grants a randomly determined boon or penalty to a nearby model." },
+      { "roll": 3, "name": "Dark Blood", "difficulty": 8, "effectSummary": "Fires a damaging blood attack that also risks injuring the caster." },
+      { "roll": 4, "name": "Lure of Chaos", "difficulty": 9, "effectSummary": "May temporarily seize control of the closest enemy." },
+      { "roll": 5, "name": "Wings of Darkness", "difficulty": 7, "effectSummary": "Moves the caster up to 12 inches and may carry them into a charge." },
+      { "roll": 6, "name": "Word of Pain", "difficulty": 7, "effectSummary": "Inflicts a Strength 3 hit on models close to the caster, without armour saves." }
+    ]
+  },
+  {
+    "name": "Lesser Magic",
+    "kind": "Magic",
+    "sourceReference": "1Rules.pdf",
+    "castingRuleSummary": "Roll 2D6 and meet the listed difficulty.",
+    "spells": [
+      { "roll": 1, "name": "Fires of U'Zhul", "difficulty": 7, "effectSummary": "Hurls a ranged fireball that causes a Strength 4 hit." },
+      { "roll": 2, "name": "Flight of Zimmeran", "difficulty": 7, "effectSummary": "Moves the wizard up to 12 inches and may carry them into a charge." },
+      { "roll": 3, "name": "Dread of Aramar", "difficulty": 7, "effectSummary": "May make a nearby non-Undead, non-fearless enemy flee." },
+      { "roll": 4, "name": "Silver Arrows of Arha", "difficulty": 7, "effectSummary": "Creates magical arrows for a penalty-free volley at one enemy." },
+      { "roll": 5, "name": "Luck of Shemtek", "difficulty": 6, "effectSummary": "Allows the wizard to reroll failed dice until their next turn." },
+      { "roll": 6, "name": "Sword of Rezhebel", "difficulty": 8, "effectSummary": "Summons a powerful weapon that may vanish when the wizard fails a Leadership test." }
+    ]
+  },
+  {
+    "name": "Magic of the Horned Rat",
+    "kind": "Magic",
+    "sourceReference": "1Rules.pdf",
+    "castingRuleSummary": "Roll 2D6 and meet the listed difficulty.",
+    "spells": [
+      { "roll": 1, "name": "Warpfire", "difficulty": 8, "effectSummary": "Projects a short-range blast that hits its target and may scorch a nearby model." },
+      { "roll": 2, "name": "Children of the Horned Rat", "difficulty": null, "difficultyNote": "Auto", "effectSummary": "Once before a battle, summons temporary Giant Rats near the Sorcerer." },
+      { "roll": 3, "name": "Gnawdoom", "difficulty": 7, "effectSummary": "Inflicts numerous weak bites on one nearby target." },
+      { "roll": 4, "name": "Black Fury", "difficulty": 8, "effectSummary": "Lets the Sorcerer charge an enemy and gain extra attacks for that combat." },
+      { "roll": 5, "name": "Eye of the Warp", "difficulty": 8, "effectSummary": "May drive standing models in base contact away and injure them." },
+      { "roll": 6, "name": "Sorcerer's Curse", "difficulty": 6, "effectSummary": "Forces a nearby enemy to reroll successful saves and attacks for a turn." }
+    ]
+  },
+  {
+    "name": "Amazon Rituals",
+    "kind": "Ritual",
+    "sourceReference": "Amazons.pdf",
+    "castingRuleSummary": "Roll 2D6 and meet the listed difficulty.",
+    "spells": [
+      { "roll": 1, "name": "Singing Wind", "difficulty": 8, "effectSummary": "Entrances a nearby model, preventing movement and ranged attacks for a turn." },
+      { "roll": 2, "name": "Serpent's Strength", "difficulty": 9, "effectSummary": "Raises the Strength of nearby friendly models for a turn." },
+      { "roll": 3, "name": "Wendala's Maelstrom", "difficulty": 7, "effectSummary": "Creates a storm that makes enemy missile attacks less accurate." },
+      { "roll": 4, "name": "Shield of Thorns", "difficulty": 7, "effectSummary": "Protects the Priestess from ranged and magical attacks; limits the first combat round." },
+      { "roll": 5, "name": "The Living Jungle", "difficulty": 6, "effectSummary": "Sends a poisonous swarm against one nearby model." },
+      { "roll": 6, "name": "Siren's Dreams", "difficulty": 7, "effectSummary": "Weakens enemy Leadership tests for a short time." }
+    ]
+  },
+  {
+    "name": "Norse Runes",
+    "kind": "Rune",
+    "sourceReference": "Lustria3.pdf",
+    "castingRuleSummary": "Roll 2D6 and meet the listed difficulty; runes can be cast in armour and follow Sigmarite prayer casting.",
+    "spells": [
+      { "roll": 1, "name": "Howl of the North", "difficulty": 9, "effectSummary": "Makes the Shaman immune to missile fire until the winds dissipate." },
+      { "roll": 2, "name": "Angvar's Fury", "difficulty": 7, "effectSummary": "Improves nearby allied warriors' close-combat hit rolls until the next turn." },
+      { "roll": 3, "name": "Elvek's Cold Spear", "difficulty": 7, "effectSummary": "Fires an icy spear that inflicts a Strength 4 hit." },
+      { "roll": 4, "name": "Gift of the Fates", "difficulty": 7, "effectSummary": "Lets the Shaman adjust one die roll by one until their next recovery phase." },
+      { "roll": 5, "name": "Kiss of Frost", "difficulty": 6, "effectSummary": "May knock down a nearby model that fails an Initiative test." },
+      { "roll": 6, "name": "Bear's Might", "difficulty": 9, "effectSummary": "Greatly boosts the Shaman's combat characteristics until the power fades." }
+    ]
+  },
+  {
+    "name": "Dark Magic",
+    "kind": "Magic",
+    "sourceReference": "Lustria3.pdf",
+    "castingRuleSummary": "Roll 2D6 and meet the listed difficulty.",
+    "spells": [
+      { "roll": 1, "name": "Doombolt", "difficulty": 9, "effectSummary": "Fires a bolt that can jump between nearby enemies with diminishing Strength." },
+      { "roll": 2, "name": "Word of Pain", "difficulty": 8, "effectSummary": "Weakens one enemy's attacks and may prevent them from charging." },
+      { "roll": 3, "name": "Soul Stealer", "difficulty": 9, "effectSummary": "Can wound a model in base contact and temporarily increase the Sorceress's Wounds." },
+      { "roll": 4, "name": "Flamesword", "difficulty": 8, "effectSummary": "Adds Strength and armour-ignoring hits to a nearby ally's close-combat weapon." },
+      { "roll": 5, "name": "Deathspasm", "difficulty": 10, "effectSummary": "May force the closest enemy to roll on the Injury table; the caster is knocked down." },
+      { "roll": 6, "name": "Witch Flight", "difficulty": 7, "effectSummary": "Moves the Sorceress up to 12 inches and may carry her into a charge." }
+    ]
+  },
+  {
+    "name": "Waaagh! Magic",
+    "kind": "Magic",
+    "sourceReference": "damobrules.pdf",
+    "castingRuleSummary": "Roll 2D6 and meet the listed difficulty.",
+    "spells": [
+      { "roll": 1, "name": "Led'z Go", "difficulty": 9, "effectSummary": "Nearby Orcs and Goblins strike first in close combat while the spell holds." },
+      { "roll": 2, "name": "Oi! Gerroff!", "difficulty": 7, "effectSummary": "Pushes a nearby enemy away and may injure models or terrain it hits." },
+      { "roll": 3, "name": "Zzap!", "difficulty": 9, "effectSummary": "Strikes the closest enemy with several Strength 4 hits that ignore armour." },
+      { "roll": 4, "name": "Fooled Ya!", "difficulty": 6, "effectSummary": "Prevents enemies charging the Shaman next turn or lets them escape combat." },
+      { "roll": 5, "name": "Clubba", "difficulty": 7, "effectSummary": "Creates a temporary, powerful club for the Shaman." },
+      { "roll": 6, "name": "Fire of Gork", "difficulty": 8, "effectSummary": "Fires two bolts of flame at one or two nearby enemies." }
+    ]
+  },
+  {
+    "name": "Lizardmen Spells",
+    "kind": "Magic",
+    "sourceReference": "lizardmen.pdf",
+    "castingRuleSummary": "Roll 2D6 and meet the listed difficulty; these spells may be cast while wearing armour.",
+    "spells": [
+      { "roll": 1, "name": "Chotec's Wrath", "difficulty": 8, "effectSummary": "Strikes the closest nearby enemy with lightning, more severely if armoured." },
+      { "roll": 2, "name": "Sotec's Blessing", "difficulty": 7, "effectSummary": "Randomly improves one friendly model's combat, toughness, movement, or initiative." },
+      { "roll": 3, "name": "Huanchi's Stealth", "difficulty": 7, "effectSummary": "Lets nearby Skinks in cover hide, even after running or shooting." },
+      { "roll": 4, "name": "The Old Ones' Protection", "difficulty": 6, "effectSummary": "Gives nearby Lizardmen a ward against spells and prayers." },
+      { "roll": 5, "name": "Tinci's Rage", "difficulty": 8, "effectSummary": "Makes one Lizardman frenzied and stronger while the spell is maintained." },
+      { "roll": 6, "name": "Itzl's Speed", "difficulty": 7, "effectSummary": "Grants one Lizardman a short extra move that cannot be used to charge." }
+    ]
+  },
+  {
+    "name": "Shadow Magic",
+    "kind": "Magic",
+    "sourceReference": "ShadowWarriors.pdf",
+    "castingRuleSummary": "Roll 2D6 and meet the listed difficulty; several spells require nearby terrain that can cast a shadow.",
+    "spells": [
+      { "roll": 1, "name": "Pool of Shadow", "difficulty": 7, "effectSummary": "Lets the caster and nearby allies hide and count as in cover for a turn." },
+      { "roll": 2, "name": "The Living Shadows", "difficulty": 7, "effectSummary": "Strikes a nearby enemy with a Strength 4 hit that ignores armour." },
+      { "roll": 3, "name": "Wings of Night", "difficulty": 6, "effectSummary": "Moves the Shadow Weaver between nearby shadows and may result in a charge." },
+      { "roll": 4, "name": "Cloak of Darkness", "difficulty": 7, "effectSummary": "Conceals the caster from attacks until they attack an enemy." },
+      { "roll": 5, "name": "Shadowbind", "difficulty": 9, "effectSummary": "Restrains an enemy until it passes a Strength test or the spell ends." },
+      { "roll": 6, "name": "Shield of Shadow", "difficulty": 7, "effectSummary": "Gives the caster or a nearby ally an unmodified 5+ armour save." }
+    ]
+  },
+  {
+    "name": "Prayers of Taal",
+    "kind": "Prayer",
+    "sourceReference": "Ostlanders.pdf",
+    "castingRuleSummary": "Follow Prayers of Sigmar casting; Taal's Priest does not wear armour.",
+    "spells": [
+      { "roll": 1, "name": "Stag's Leap", "difficulty": 7, "effectSummary": "Moves the Priest up to 9 inches and may carry them into a Strength-boosted charge." },
+      { "roll": 2, "name": "Blessed Ale", "difficulty": 5, "effectSummary": "Fully heals a nearby model and weakens living enemies close to the Priest." },
+      { "roll": 3, "name": "Bear's Paw", "difficulty": 7, "effectSummary": "Increases the Strength of the Priest or a nearby ally." },
+      { "roll": 4, "name": "Earthshudder", "difficulty": 9, "effectSummary": "Damages enemies touching a nearby building and causes the structure to collapse." },
+      { "roll": 5, "name": "Tanglefoot", "difficulty": 8, "effectSummary": "Slows nearby models as plants and vines erupt from the ground." },
+      { "roll": 6, "name": "Summon Squirrels", "difficulty": 7, "effectSummary": "Sends a swarm against one enemy, inflicting many weak hits without armour saves." }
+    ]
+  },
+  {
+    "name": "Nurgle Rituals",
+    "kind": "Ritual",
+    "sourceReference": "MordEMP2.pdf",
+    "castingRuleSummary": "Roll 2D6 and meet the listed difficulty.",
+    "spells": [
+      { "roll": 1, "name": "Daemonic Vigour", "difficulty": 8, "effectSummary": "Improves nearby Plague Bearers' and Nurglings' Daemonic Aura save." },
+      { "roll": 2, "name": "Buboes", "difficulty": 7, "effectSummary": "May wound one nearby enemy that fails a Toughness test; no armour save." },
+      { "roll": 3, "name": "Stench of Nurgle", "difficulty": 8, "effectSummary": "May reduce the Attacks of nearby living enemies." },
+      { "roll": 4, "name": "Pestilence", "difficulty": 10, "effectSummary": "Hits all nearby enemies with a Strength 3 attack that ignores armour." },
+      { "roll": 5, "name": "Scabrous Hide", "difficulty": 8, "effectSummary": "Grants the caster a temporary 2+ armour save." },
+      { "roll": 6, "name": "Nurgle's Rot", "difficulty": 9, "effectSummary": "May infect enemies in base contact with the caster." }
+    ]
+  },
+  {
+    "name": "Nurgle Rituals (Seer)",
+    "kind": "Ritual",
+    "sourceReference": "10 Marauders of Chaos.pdf",
+    "castingRuleSummary": "Use Nurgle Rituals with the first result replaced by Touch of Onogal.",
+    "spells": [
+      { "roll": 1, "name": "Touch of Onogal", "difficulty": 10, "effectSummary": "Can infect an enemy defeated by the Seer in close combat, creating a temporary plague servant." },
+      { "roll": 2, "name": "Buboes", "difficulty": 7, "effectSummary": "May wound one nearby enemy that fails a Toughness test; no armour save." },
+      { "roll": 3, "name": "Stench of Nurgle", "difficulty": 8, "effectSummary": "May reduce the Attacks of nearby living enemies." },
+      { "roll": 4, "name": "Pestilence", "difficulty": 10, "effectSummary": "Hits all nearby enemies with a Strength 3 attack that ignores armour." },
+      { "roll": 5, "name": "Scabrous Hide", "difficulty": 8, "effectSummary": "Grants the caster a temporary 2+ armour save." },
+      { "roll": 6, "name": "Nurgle's Rot", "difficulty": 9, "effectSummary": "May infect enemies in base contact with the caster." }
+    ]
+  },
+  {
+    "name": "Shornaal Rituals",
+    "kind": "Ritual",
+    "sourceReference": "10 Marauders of Chaos.pdf",
+    "castingRuleSummary": "Roll 2D6 and meet the listed difficulty.",
+    "spells": [
+      { "roll": 1, "name": "Delicious Suffering", "difficulty": 8, "effectSummary": "May knock down all other nearby models that fail a Leadership test." },
+      { "roll": 2, "name": "Dance of the Serpent", "difficulty": 8, "effectSummary": "Makes nearby enemies less accurate when attacking the Seer in close combat." },
+      { "roll": 3, "name": "Endless Torment", "difficulty": 9, "effectSummary": "Entraps one enemy in ongoing torment while the Seer sustains the ritual." },
+      { "roll": 4, "name": "Mystify", "difficulty": 8, "effectSummary": "Reduces an enemy's Initiative and makes it strike last until it passes a test." },
+      { "roll": 5, "name": "A Thousand Voices", "difficulty": 8, "effectSummary": "Reduces one enemy's Leadership and may end when it resists or the Seer is wounded." },
+      { "roll": 6, "name": "Shornaal's Temptation", "difficulty": 7, "effectSummary": "May take control of one nearby enemy that fails a Leadership test." }
+    ]
+  },
+  {
+    "name": "Tchar Rituals",
+    "kind": "Ritual",
+    "sourceReference": "10 Marauders of Chaos.pdf",
+    "castingRuleSummary": "Roll 2D6 and meet the listed difficulty unless the result is marked Auto.",
+    "spells": [
+      { "roll": 1, "name": "Tchar's Blessing", "difficulty": null, "difficultyNote": "Auto (before battle)", "effectSummary": "Forgoes casting in the next battle in exchange for possible post-battle Experience." },
+      { "roll": 2, "name": "Dispel Magic", "difficulty": 7, "effectSummary": "Ends all currently active spells." },
+      { "roll": 3, "name": "Foresight", "difficulty": 10, "effectSummary": "Once before battle, makes a randomly selected enemy Hero miss the next game." },
+      { "roll": 4, "name": "Wrath of the Great Eagle", "difficulty": 9, "effectSummary": "Hits one enemy according to the difference in Experience between it and the Seer." },
+      { "roll": 5, "name": "Tchar's Reward", "difficulty": 8, "effectSummary": "Temporarily increases one characteristic for each ten Experience points." },
+      { "roll": 6, "name": "Slave to Chaos", "difficulty": 9, "effectSummary": "May inflict an armour-ignoring hit and transform a slain enemy into a temporary Horror." }
+    ]
+  }
+]

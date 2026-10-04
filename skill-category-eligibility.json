@@ -1,0 +1,1700 @@
+[
+  {
+    "warband": "Mercenaries",
+    "heroType": "Mercenary Captain",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Mercenaries",
+    "heroType": "Mercenary Captain",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Mercenaries",
+    "heroType": "Mercenary Captain",
+    "category": "Academic",
+    "specialListName": null
+  },
+  {
+    "warband": "Mercenaries",
+    "heroType": "Mercenary Captain",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Mercenaries",
+    "heroType": "Mercenary Captain",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Mercenaries",
+    "heroType": "Champions (Mercenaries & Amazons)",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Mercenaries",
+    "heroType": "Champions (Mercenaries & Amazons)",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Mercenaries",
+    "heroType": "Champions (Mercenaries & Amazons)",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Mercenaries",
+    "heroType": "Champions (Mercenaries & Amazons)",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Mercenaries",
+    "heroType": "Youngblood",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Mercenaries",
+    "heroType": "Youngblood",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Mercenaries",
+    "heroType": "Youngblood",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Mercenaries",
+    "heroType": "Youngblood",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Cult of the Possessed",
+    "heroType": "Magister",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Cult of the Possessed",
+    "heroType": "Magister",
+    "category": "Academic",
+    "specialListName": null
+  },
+  {
+    "warband": "Cult of the Possessed",
+    "heroType": "Magister",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Cult of the Possessed",
+    "heroType": "The Possessed",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Cult of the Possessed",
+    "heroType": "The Possessed",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Cult of the Possessed",
+    "heroType": "The Possessed",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Cult of the Possessed",
+    "heroType": "Mutants",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Cult of the Possessed",
+    "heroType": "Mutants",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Witch Hunters",
+    "heroType": "Witch Hunter Captain",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Witch Hunters",
+    "heroType": "Witch Hunter Captain",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Witch Hunters",
+    "heroType": "Witch Hunter Captain",
+    "category": "Academic",
+    "specialListName": null
+  },
+  {
+    "warband": "Witch Hunters",
+    "heroType": "Witch Hunter Captain",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Witch Hunters",
+    "heroType": "Witch Hunter Captain",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Witch Hunters",
+    "heroType": "Witch Hunters",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Witch Hunters",
+    "heroType": "Witch Hunters",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Witch Hunters",
+    "heroType": "Witch Hunters",
+    "category": "Academic",
+    "specialListName": null
+  },
+  {
+    "warband": "Witch Hunters",
+    "heroType": "Witch Hunters",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Witch Hunters",
+    "heroType": "Warrior Priest",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Witch Hunters",
+    "heroType": "Warrior Priest",
+    "category": "Academic",
+    "specialListName": null
+  },
+  {
+    "warband": "Witch Hunters",
+    "heroType": "Warrior Priest",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Sisters of Sigmar",
+    "heroType": "Sigmarite Matriarch",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Sisters of Sigmar",
+    "heroType": "Sigmarite Matriarch",
+    "category": "Academic",
+    "specialListName": null
+  },
+  {
+    "warband": "Sisters of Sigmar",
+    "heroType": "Sigmarite Matriarch",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Sisters of Sigmar",
+    "heroType": "Sigmarite Matriarch",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Sisters of Sigmar",
+    "heroType": "Sigmarite Matriarch",
+    "category": "Special",
+    "specialListName": "Sisters of Sigmar Special Skills"
+  },
+  {
+    "warband": "Sisters of Sigmar",
+    "heroType": "Sister Superior",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Sisters of Sigmar",
+    "heroType": "Sister Superior",
+    "category": "Academic",
+    "specialListName": null
+  },
+  {
+    "warband": "Sisters of Sigmar",
+    "heroType": "Sister Superior",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Sisters of Sigmar",
+    "heroType": "Sister Superior",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Sisters of Sigmar",
+    "heroType": "Sister Superior",
+    "category": "Special",
+    "specialListName": "Sisters of Sigmar Special Skills"
+  },
+  {
+    "warband": "Sisters of Sigmar",
+    "heroType": "Augur",
+    "category": "Academic",
+    "specialListName": null
+  },
+  {
+    "warband": "Sisters of Sigmar",
+    "heroType": "Augur",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Sisters of Sigmar",
+    "heroType": "Augur",
+    "category": "Special",
+    "specialListName": "Sisters of Sigmar Special Skills"
+  },
+  {
+    "warband": "Undead",
+    "heroType": "Vampire",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Undead",
+    "heroType": "Vampire",
+    "category": "Academic",
+    "specialListName": null
+  },
+  {
+    "warband": "Undead",
+    "heroType": "Vampire",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Undead",
+    "heroType": "Vampire",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Undead",
+    "heroType": "Necromancer (Lahmia & Undead))",
+    "category": "Academic",
+    "specialListName": null
+  },
+  {
+    "warband": "Undead",
+    "heroType": "Necromancer (Lahmia & Undead))",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Undead",
+    "heroType": "Dregs",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Undead",
+    "heroType": "Dregs",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Skaven",
+    "heroType": "Assassin Adept",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Skaven",
+    "heroType": "Assassin Adept",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Skaven",
+    "heroType": "Assassin Adept",
+    "category": "Academic",
+    "specialListName": null
+  },
+  {
+    "warband": "Skaven",
+    "heroType": "Assassin Adept",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Skaven",
+    "heroType": "Assassin Adept",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Skaven",
+    "heroType": "Assassin Adept",
+    "category": "Special",
+    "specialListName": "Skaven Special Skills"
+  },
+  {
+    "warband": "Skaven",
+    "heroType": "Black Skaven",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Skaven",
+    "heroType": "Black Skaven",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Skaven",
+    "heroType": "Black Skaven",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Skaven",
+    "heroType": "Black Skaven",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Skaven",
+    "heroType": "Black Skaven",
+    "category": "Special",
+    "specialListName": "Skaven Special Skills"
+  },
+  {
+    "warband": "Skaven",
+    "heroType": "Eshin Sorcerer",
+    "category": "Academic",
+    "specialListName": null
+  },
+  {
+    "warband": "Skaven",
+    "heroType": "Eshin Sorcerer",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Skaven",
+    "heroType": "Eshin Sorcerer",
+    "category": "Special",
+    "specialListName": "Skaven Special Skills"
+  },
+  {
+    "warband": "Skaven",
+    "heroType": "Night Runners",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Skaven",
+    "heroType": "Night Runners",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Skaven",
+    "heroType": "Night Runners",
+    "category": "Special",
+    "specialListName": "Skaven Special Skills"
+  },
+  {
+    "warband": "Amazons",
+    "heroType": "Priestess",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Amazons",
+    "heroType": "Priestess",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Amazons",
+    "heroType": "Priestess",
+    "category": "Academic",
+    "specialListName": null
+  },
+  {
+    "warband": "Amazons",
+    "heroType": "Priestess",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Amazons",
+    "heroType": "Priestess",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Amazons",
+    "heroType": "Champions (Mercenaries & Amazons)",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Amazons",
+    "heroType": "Champions (Mercenaries & Amazons)",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Amazons",
+    "heroType": "Champions (Mercenaries & Amazons)",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Amazons",
+    "heroType": "Totem Warriors",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Amazons",
+    "heroType": "Totem Warriors",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Amazons",
+    "heroType": "Totem Warriors",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Averlander Mercenaries",
+    "heroType": "Captain (Averlander)",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Averlander Mercenaries",
+    "heroType": "Captain (Averlander)",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Averlander Mercenaries",
+    "heroType": "Captain (Averlander)",
+    "category": "Academic",
+    "specialListName": null
+  },
+  {
+    "warband": "Averlander Mercenaries",
+    "heroType": "Captain (Averlander)",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Averlander Mercenaries",
+    "heroType": "Captain (Averlander)",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Averlander Mercenaries",
+    "heroType": "Bergjaeger",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Averlander Mercenaries",
+    "heroType": "Bergjaeger",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Averlander Mercenaries",
+    "heroType": "Youngblood",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Averlander Mercenaries",
+    "heroType": "Youngblood",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Averlander Mercenaries",
+    "heroType": "Youngblood",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Dark Elves",
+    "heroType": "High Born",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Dark Elves",
+    "heroType": "High Born",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Dark Elves",
+    "heroType": "High Born",
+    "category": "Academic",
+    "specialListName": null
+  },
+  {
+    "warband": "Dark Elves",
+    "heroType": "High Born",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Dark Elves",
+    "heroType": "High Born",
+    "category": "Special",
+    "specialListName": "Dark Elf Special Skills"
+  },
+  {
+    "warband": "Dark Elves",
+    "heroType": "Dark Elf Sorceress (Dark Elves)",
+    "category": "Academic",
+    "specialListName": null
+  },
+  {
+    "warband": "Dark Elves",
+    "heroType": "Dark Elf Sorceress (Dark Elves)",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Dark Elves",
+    "heroType": "Dark Elf Sorceress (Dark Elves)",
+    "category": "Special",
+    "specialListName": "Dark Elf Special Skills"
+  },
+  {
+    "warband": "Dark Elves",
+    "heroType": "Fellblades",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Dark Elves",
+    "heroType": "Fellblades",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Dark Elves",
+    "heroType": "Fellblades",
+    "category": "Special",
+    "specialListName": "Dark Elf Special Skills"
+  },
+  {
+    "warband": "Dark Elves",
+    "heroType": "Beast Master (Dark Elves)",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Dark Elves",
+    "heroType": "Beast Master (Dark Elves)",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Dark Elves",
+    "heroType": "Beast Master (Dark Elves)",
+    "category": "Special",
+    "specialListName": "Dark Elf Special Skills"
+  },
+  {
+    "warband": "Battle Monks of Cathay",
+    "heroType": "Dragon Monks",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Battle Monks of Cathay",
+    "heroType": "Dragon Monks",
+    "category": "Academic",
+    "specialListName": null
+  },
+  {
+    "warband": "Battle Monks of Cathay",
+    "heroType": "Dragon Monks",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Battle Monks of Cathay",
+    "heroType": "Dragon Monks",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Battle Monks of Cathay",
+    "heroType": "Dragon Monks",
+    "category": "Special",
+    "specialListName": "Battle Monks special skills"
+  },
+  {
+    "warband": "Battle Monks of Cathay",
+    "heroType": "Emissary",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Battle Monks of Cathay",
+    "heroType": "Emissary",
+    "category": "Academic",
+    "specialListName": null
+  },
+  {
+    "warband": "Battle Monks of Cathay",
+    "heroType": "Emissary",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Battle Monks of Cathay",
+    "heroType": "Emissary",
+    "category": "Special",
+    "specialListName": "Battle Monks special skills"
+  },
+  {
+    "warband": "Battle Monks of Cathay",
+    "heroType": "Officer",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Battle Monks of Cathay",
+    "heroType": "Officer",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Battle Monks of Cathay",
+    "heroType": "Officer",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Battle Monks of Cathay",
+    "heroType": "Officer",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Beastmen Raiders",
+    "heroType": "Beastmen Chieftain",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Beastmen Raiders",
+    "heroType": "Beastmen Chieftain",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Beastmen Raiders",
+    "heroType": "Beastmen Chieftain",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Beastmen Raiders",
+    "heroType": "Beastmen Chieftain",
+    "category": "Special",
+    "specialListName": "Beastmen Special Skills"
+  },
+  {
+    "warband": "Beastmen Raiders",
+    "heroType": "Beastmen Shaman",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Beastmen Raiders",
+    "heroType": "Beastmen Shaman",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Beastmen Raiders",
+    "heroType": "Beastmen Shaman",
+    "category": "Special",
+    "specialListName": "Beastmen Special Skills"
+  },
+  {
+    "warband": "Beastmen Raiders",
+    "heroType": "Bestigors",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Beastmen Raiders",
+    "heroType": "Bestigors",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Beastmen Raiders",
+    "heroType": "Bestigors",
+    "category": "Special",
+    "specialListName": "Beastmen Special Skills"
+  },
+  {
+    "warband": "Beastmen Raiders",
+    "heroType": "Centigors",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Beastmen Raiders",
+    "heroType": "Centigors",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Beastmen Raiders",
+    "heroType": "Centigors",
+    "category": "Special",
+    "specialListName": "Beastmen Special Skills"
+  },
+  {
+    "warband": "Carnival of Chaos",
+    "heroType": "Brutes (Carnival of Chaos)",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Carnival of Chaos",
+    "heroType": "Brutes (Carnival of Chaos)",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Carnival of Chaos",
+    "heroType": "Brutes (Carnival of Chaos)",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Carnival of Chaos",
+    "heroType": "Carnival Master",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Carnival of Chaos",
+    "heroType": "Carnival Master",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Carnival of Chaos",
+    "heroType": "Carnival Master",
+    "category": "Academic",
+    "specialListName": null
+  },
+  {
+    "warband": "Carnival of Chaos",
+    "heroType": "Carnival Master",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Carnival of Chaos",
+    "heroType": "Carnival Master",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Carnival of Chaos",
+    "heroType": "Tainted Ones",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Carnival of Chaos",
+    "heroType": "Tainted Ones",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Dwarf Treasure Hunters",
+    "heroType": "Dwarf Engineer",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Dwarf Treasure Hunters",
+    "heroType": "Dwarf Engineer",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Dwarf Treasure Hunters",
+    "heroType": "Dwarf Engineer",
+    "category": "Special",
+    "specialListName": "Dwarf special skills"
+  },
+  {
+    "warband": "Dwarf Treasure Hunters",
+    "heroType": "Dwarf Noble",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Dwarf Treasure Hunters",
+    "heroType": "Dwarf Noble",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Dwarf Treasure Hunters",
+    "heroType": "Dwarf Noble",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Dwarf Treasure Hunters",
+    "heroType": "Dwarf Noble",
+    "category": "Special",
+    "specialListName": "Dwarf special skills"
+  },
+  {
+    "warband": "Dwarf Treasure Hunters",
+    "heroType": "Dwarf Troll Slayers",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Dwarf Treasure Hunters",
+    "heroType": "Dwarf Troll Slayers",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Dwarf Treasure Hunters",
+    "heroType": "Dwarf Troll Slayers",
+    "category": "Special",
+    "specialListName": "TROLL SLAYER SKILLS"
+  },
+  {
+    "warband": "Kislevite",
+    "heroType": "Bear Tamer",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Kislevite",
+    "heroType": "Bear Tamer",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Kislevite",
+    "heroType": "Bear Tamer",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Kislevite",
+    "heroType": "Druzhina Captain",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Kislevite",
+    "heroType": "Druzhina Captain",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Kislevite",
+    "heroType": "Druzhina Captain",
+    "category": "Academic",
+    "specialListName": null
+  },
+  {
+    "warband": "Kislevite",
+    "heroType": "Druzhina Captain",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Kislevite",
+    "heroType": "Druzhina Captain",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Kislevite",
+    "heroType": "Esaul",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Kislevite",
+    "heroType": "Esaul",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Kislevite",
+    "heroType": "Esaul",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Kislevite",
+    "heroType": "Youths",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Kislevite",
+    "heroType": "Youths",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Kislevite",
+    "heroType": "Youths",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Kislevite",
+    "heroType": "Youths",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Lizardmen",
+    "heroType": "Saurus Totem Warrior",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Lizardmen",
+    "heroType": "Saurus Totem Warrior",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Lizardmen",
+    "heroType": "Saurus Totem Warrior",
+    "category": "Special",
+    "specialListName": "Lizardmen Special Skills & Sacred Markings"
+  },
+  {
+    "warband": "Lizardmen",
+    "heroType": "Skink Great Crests",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Lizardmen",
+    "heroType": "Skink Great Crests",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Lizardmen",
+    "heroType": "Skink Great Crests",
+    "category": "Special",
+    "specialListName": "Lizardmen Special Skills & Sacred Markings"
+  },
+  {
+    "warband": "Lizardmen",
+    "heroType": "Skink Priest",
+    "category": "Academic",
+    "specialListName": null
+  },
+  {
+    "warband": "Lizardmen",
+    "heroType": "Skink Priest",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Lizardmen",
+    "heroType": "Skink Priest",
+    "category": "Special",
+    "specialListName": "Lizardmen Special Skills & Sacred Markings"
+  },
+  {
+    "warband": "Marauders of Chaos",
+    "heroType": "Champion",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Marauders of Chaos",
+    "heroType": "Champion",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Marauders of Chaos",
+    "heroType": "Champion",
+    "category": "Special",
+    "specialListName": "Marauder special skills"
+  },
+  {
+    "warband": "Marauders of Chaos",
+    "heroType": "Condemned",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Marauders of Chaos",
+    "heroType": "Condemned",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Marauders of Chaos",
+    "heroType": "Condemned",
+    "category": "Special",
+    "specialListName": "Marauder special skills"
+  },
+  {
+    "warband": "Marauders of Chaos",
+    "heroType": "Marauder Chieftain",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Marauders of Chaos",
+    "heroType": "Marauder Chieftain",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Marauders of Chaos",
+    "heroType": "Marauder Chieftain",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Marauders of Chaos",
+    "heroType": "Marauder Chieftain",
+    "category": "Special",
+    "specialListName": "Marauder special skills"
+  },
+  {
+    "warband": "Marauders of Chaos",
+    "heroType": "Seer",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Marauders of Chaos",
+    "heroType": "Seer",
+    "category": "Academic",
+    "specialListName": null
+  },
+  {
+    "warband": "Marauders of Chaos",
+    "heroType": "Seer",
+    "category": "Special",
+    "specialListName": "Marauder special skills"
+  },
+  {
+    "warband": "Night Goblins",
+    "heroType": "Big Boss",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Night Goblins",
+    "heroType": "Big Boss",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Night Goblins",
+    "heroType": "Big Boss",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Night Goblins",
+    "heroType": "Big Boss",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Night Goblins",
+    "heroType": "Big Boss",
+    "category": "Special",
+    "specialListName": "NIGHT GOBLIN SPECIAL SKILLS"
+  },
+  {
+    "warband": "Night Goblins",
+    "heroType": "Bosses (Night Goblins)",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Night Goblins",
+    "heroType": "Bosses (Night Goblins)",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Night Goblins",
+    "heroType": "Bosses (Night Goblins)",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Night Goblins",
+    "heroType": "Bosses (Night Goblins)",
+    "category": "Special",
+    "specialListName": "NIGHT GOBLIN SPECIAL SKILLS"
+  },
+  {
+    "warband": "Night Goblins",
+    "heroType": "Shaman (Night Goblins)",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Night Goblins",
+    "heroType": "Shaman (Night Goblins)",
+    "category": "Academic",
+    "specialListName": null
+  },
+  {
+    "warband": "Night Goblins",
+    "heroType": "Shaman (Night Goblins)",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Norse",
+    "heroType": "Berserkers",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Norse",
+    "heroType": "Berserkers",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Norse",
+    "heroType": "Berserkers",
+    "category": "Special",
+    "specialListName": "Norse Special Skills"
+  },
+  {
+    "warband": "Norse",
+    "heroType": "Bondsmen (Norse)",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Norse",
+    "heroType": "Bondsmen (Norse)",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Norse",
+    "heroType": "Bondsmen (Norse)",
+    "category": "Special",
+    "specialListName": "Norse Special Skills"
+  },
+  {
+    "warband": "Norse",
+    "heroType": "Jarl",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Norse",
+    "heroType": "Jarl",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Norse",
+    "heroType": "Jarl",
+    "category": "Special",
+    "specialListName": "Norse Special Skills"
+  },
+  {
+    "warband": "Norse",
+    "heroType": "Wulfin",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Norse",
+    "heroType": "Wulfin",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Norse",
+    "heroType": "Wulfin",
+    "category": "Special",
+    "specialListName": "Norse Special Skills"
+  },
+  {
+    "warband": "Orc",
+    "heroType": "Orc Big 'Uns",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Orc",
+    "heroType": "Orc Big 'Uns",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Orc",
+    "heroType": "Orc Big 'Uns",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Orc",
+    "heroType": "Orc Big 'Uns",
+    "category": "Special",
+    "specialListName": "Orc special skills"
+  },
+  {
+    "warband": "Orc",
+    "heroType": "Orc Boss",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Orc",
+    "heroType": "Orc Boss",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Orc",
+    "heroType": "Orc Boss",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Orc",
+    "heroType": "Orc Boss",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Orc",
+    "heroType": "Orc Boss",
+    "category": "Special",
+    "specialListName": "Orc special skills"
+  },
+  {
+    "warband": "Orc",
+    "heroType": "Orc Shaman",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Orc",
+    "heroType": "Orc Shaman",
+    "category": "Special",
+    "specialListName": "Orc special skills"
+  },
+  {
+    "warband": "Ostlanders",
+    "heroType": "Blood Brothers",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Ostlanders",
+    "heroType": "Blood Brothers",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Ostlanders",
+    "heroType": "Blood Brothers",
+    "category": "Special",
+    "specialListName": "Ostlander Special Skills"
+  },
+  {
+    "warband": "Ostlanders",
+    "heroType": "Elder",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Ostlanders",
+    "heroType": "Elder",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Ostlanders",
+    "heroType": "Elder",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Ostlanders",
+    "heroType": "Elder",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Ostlanders",
+    "heroType": "Elder",
+    "category": "Special",
+    "specialListName": "Ostlander Special Skills"
+  },
+  {
+    "warband": "Ostlanders",
+    "heroType": "Priest of Taal",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Ostlanders",
+    "heroType": "Priest of Taal",
+    "category": "Academic",
+    "specialListName": null
+  },
+  {
+    "warband": "Ostlanders",
+    "heroType": "Priest of Taal",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Ostlanders",
+    "heroType": "Priest of Taal",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Ostlanders",
+    "heroType": "Priest of Taal",
+    "category": "Special",
+    "specialListName": "Ostlander Special Skills"
+  },
+  {
+    "warband": "Pirate",
+    "heroType": "Cabin Boys",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Pirate",
+    "heroType": "Cabin Boys",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Pirate",
+    "heroType": "Cabin Boys",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Pirate",
+    "heroType": "Cabin Boys",
+    "category": "Special",
+    "specialListName": "Pirate Special Skills"
+  },
+  {
+    "warband": "Pirate",
+    "heroType": "Pirate Captain",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Pirate",
+    "heroType": "Pirate Captain",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Pirate",
+    "heroType": "Pirate Captain",
+    "category": "Academic",
+    "specialListName": null
+  },
+  {
+    "warband": "Pirate",
+    "heroType": "Pirate Captain",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Pirate",
+    "heroType": "Pirate Captain",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Pirate",
+    "heroType": "Pirate Captain",
+    "category": "Special",
+    "specialListName": "Pirate Special Skills"
+  },
+  {
+    "warband": "Pirate",
+    "heroType": "Ship's Mates",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Pirate",
+    "heroType": "Ship's Mates",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Pirate",
+    "heroType": "Ship's Mates",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Pirate",
+    "heroType": "Ship's Mates",
+    "category": "Special",
+    "specialListName": "Pirate Special Skills"
+  },
+  {
+    "warband": "Pit Fighter",
+    "heroType": "Dwarf Troll Slayer (Pit Fighter)",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Pit Fighter",
+    "heroType": "Dwarf Troll Slayer (Pit Fighter)",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Pit Fighter",
+    "heroType": "Dwarf Troll Slayer (Pit Fighter)",
+    "category": "Special",
+    "specialListName": "Troll Slayer Special Skills List"
+  },
+  {
+    "warband": "Pit Fighter",
+    "heroType": "Pit King",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Pit Fighter",
+    "heroType": "Pit King",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Pit Fighter",
+    "heroType": "Pit King",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Pit Fighter",
+    "heroType": "Pit King",
+    "category": "Special",
+    "specialListName": "Pit Fighter Skills"
+  },
+  {
+    "warband": "Pit Fighter",
+    "heroType": "Pit Veterans",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Pit Fighter",
+    "heroType": "Pit Veterans",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Pit Fighter",
+    "heroType": "Pit Veterans",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Pit Fighter",
+    "heroType": "Pit Veterans",
+    "category": "Special",
+    "specialListName": "Pit Fighter Skills"
+  },
+  {
+    "warband": "Shadow Warrior",
+    "heroType": "Shadow Master",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Shadow Warrior",
+    "heroType": "Shadow Master",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Shadow Warrior",
+    "heroType": "Shadow Master",
+    "category": "Academic",
+    "specialListName": null
+  },
+  {
+    "warband": "Shadow Warrior",
+    "heroType": "Shadow Master",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Shadow Warrior",
+    "heroType": "Shadow Master",
+    "category": "Special",
+    "specialListName": "Shadow Warrior Special Skills"
+  },
+  {
+    "warband": "Shadow Warrior",
+    "heroType": "Shadow Walker",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Shadow Warrior",
+    "heroType": "Shadow Walker",
+    "category": "Shooting",
+    "specialListName": null
+  },
+  {
+    "warband": "Shadow Warrior",
+    "heroType": "Shadow Walker",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Shadow Warrior",
+    "heroType": "Shadow Walker",
+    "category": "Special",
+    "specialListName": "Shadow Warrior Special Skills"
+  },
+  {
+    "warband": "Shadow Warrior",
+    "heroType": "Shadow Weaver",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Shadow Warrior",
+    "heroType": "Shadow Weaver",
+    "category": "Academic",
+    "specialListName": null
+  },
+  {
+    "warband": "Shadow Warrior",
+    "heroType": "Shadow Weaver",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Shadow Warrior",
+    "heroType": "Shadow Weaver",
+    "category": "Special",
+    "specialListName": "Shadow Warrior Special Skills"
+  },
+  {
+    "warband": "Bretonnian",
+    "heroType": "Knight Errant",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Bretonnian",
+    "heroType": "Knight Errant",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Bretonnian",
+    "heroType": "Questing Knight",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Bretonnian",
+    "heroType": "Questing Knight",
+    "category": "Strength",
+    "specialListName": null
+  },
+  {
+    "warband": "Bretonnian",
+    "heroType": "Questing Knight",
+    "category": "Speed",
+    "specialListName": null
+  },
+  {
+    "warband": "Bretonnian",
+    "heroType": "Questing Knight",
+    "category": "Special",
+    "specialListName": "Bretonnian Special Skills"
+  },
+  {
+    "warband": "Bretonnian",
+    "heroType": "Squires",
+    "category": "Combat",
+    "specialListName": null
+  },
+  {
+    "warband": "Bretonnian",
+    "heroType": "Squires",
+    "category": "Strength",
+    "specialListName": null
+  }
+]

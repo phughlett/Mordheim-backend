@@ -1,0 +1,1146 @@
+{
+  "lists": [
+    {
+      "warbandName": "Mercenaries",
+      "key": "mercenary",
+      "name": "Mercenary Equipment List",
+      "sourceReference": "2Warbands.pdf — Mercenary equipment lists",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Mace", "category": "weapon", "unitCost": 3 },
+        { "name": "Hammer", "category": "weapon", "unitCost": 3 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Morning star", "category": "weapon", "unitCost": 15 },
+        { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Spear", "category": "weapon", "unitCost": 10 },
+        { "name": "Halberd", "category": "weapon", "unitCost": 10 },
+        { "name": "Crossbow", "category": "weapon", "unitCost": 25 },
+        { "name": "Pistol", "category": "weapon", "unitCost": 15 },
+        { "name": "Duelling pistol", "category": "weapon", "unitCost": 25 },
+        { "name": "Bow", "category": "weapon", "unitCost": 10 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 },
+        { "name": "Heavy armour", "category": "armour", "unitCost": 50 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 },
+        { "name": "Buckler", "category": "shield", "unitCost": 5 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 }
+      ]
+    },
+    {
+      "warbandName": "Mercenaries",
+      "key": "marksman",
+      "name": "Marksman Equipment List",
+      "sourceReference": "2Warbands.pdf — Marksman Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Mace", "category": "weapon", "unitCost": 3 },
+        { "name": "Hammer", "category": "weapon", "unitCost": 3 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Crossbow", "category": "weapon", "unitCost": 25 },
+        { "name": "Pistol", "category": "weapon", "unitCost": 15 },
+        { "name": "Bow", "category": "weapon", "unitCost": 10 },
+        { "name": "Long bow", "category": "weapon", "unitCost": 15 },
+        { "name": "Blunderbuss", "category": "weapon", "unitCost": 30 },
+        { "name": "Handgun", "category": "weapon", "unitCost": 35 },
+        { "name": "Hunting rifle", "category": "weapon", "unitCost": 200 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 }
+      ]
+    },
+    {
+      "warbandName": "Cult of the Possessed",
+      "key": "possessed",
+      "name": "Possessed Equipment List",
+      "sourceReference": "2Warbands.pdf — Possessed equipment lists",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Mace", "category": "weapon", "unitCost": 3 },
+        { "name": "Hammer", "category": "weapon", "unitCost": 3 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Spear", "category": "weapon", "unitCost": 10 },
+        { "name": "Bow", "category": "weapon", "unitCost": 15 },
+        { "name": "Short bow", "category": "weapon", "unitCost": 10 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 },
+        { "name": "Heavy armour", "category": "armour", "unitCost": 50 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 }
+      ]
+    },
+    {
+      "warbandName": "Cult of the Possessed",
+      "key": "darksouls",
+      "name": "Darksouls Equipment List",
+      "sourceReference": "2Warbands.pdf — Darksouls Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Mace", "category": "weapon", "unitCost": 3 },
+        { "name": "Hammer", "category": "weapon", "unitCost": 3 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Flail", "category": "weapon", "unitCost": 15 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 },
+        { "name": "Heavy armour", "category": "armour", "unitCost": 50 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 }
+      ]
+    },
+    {
+      "warbandName": "Witch Hunters",
+      "key": "witch-hunter",
+      "name": "Witch Hunter Equipment List",
+      "sourceReference": "2Warbands.pdf — Witch Hunter equipment lists",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Mace", "category": "weapon", "unitCost": 3 },
+        { "name": "Hammer", "category": "weapon", "unitCost": 3 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Spear", "category": "weapon", "unitCost": 10 },
+        { "name": "Crossbow", "category": "weapon", "unitCost": 25 },
+        { "name": "Pistol", "category": "weapon", "unitCost": 15 },
+        { "name": "Crossbow pistol", "category": "weapon", "unitCost": 35 },
+        { "name": "Bow", "category": "weapon", "unitCost": 10 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 },
+        { "name": "Heavy armour", "category": "armour", "unitCost": 50 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 },
+        { "name": "Buckler", "category": "shield", "unitCost": 5 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 }
+      ]
+    },
+    {
+      "warbandName": "Witch Hunters",
+      "key": "zealot",
+      "name": "Zealot Equipment List",
+      "sourceReference": "2Warbands.pdf — Zealot Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Mace", "category": "weapon", "unitCost": 3 },
+        { "name": "Hammer", "category": "weapon", "unitCost": 3 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Crossbow", "category": "weapon", "unitCost": 25 },
+        { "name": "Pistol", "category": "weapon", "unitCost": 15 },
+        { "name": "Crossbow pistol", "category": "weapon", "unitCost": 35 },
+        { "name": "Bow", "category": "weapon", "unitCost": 10 },
+        { "name": "Short bow", "category": "weapon", "unitCost": 5 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 }
+      ]
+    },
+    {
+      "warbandName": "Witch Hunters",
+      "key": "flagellant",
+      "name": "Flagellant Equipment List",
+      "sourceReference": "2Warbands.pdf — Flagellant Equipment List",
+      "items": [
+        { "name": "Flail", "category": "weapon", "unitCost": 15 },
+        { "name": "Morning star", "category": "weapon", "unitCost": 15 },
+        { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 }
+      ]
+    },
+    {
+      "warbandName": "Sisters of Sigmar",
+      "key": "sisters",
+      "name": "Sisters of Sigmar Equipment List",
+      "sourceReference": "2Warbands.pdf — Sisters of Sigmar equipment lists",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Mace", "category": "weapon", "unitCost": 3 },
+        { "name": "Hammer", "category": "weapon", "unitCost": 3 },
+        { "name": "Sigmarite warhammer", "category": "weapon", "unitCost": 15 },
+        { "name": "Flail", "category": "weapon", "unitCost": 15 },
+        { "name": "Steel whip", "category": "weapon", "unitCost": 10 },
+        { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Sling", "category": "weapon", "unitCost": 2 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 },
+        { "name": "Heavy armour", "category": "armour", "unitCost": 50 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 },
+        { "name": "Buckler", "category": "shield", "unitCost": 5 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 }
+      ]
+    },
+    {
+      "warbandName": "Undead",
+      "key": "undead",
+      "name": "Undead Equipment List",
+      "sourceReference": "2Warbands.pdf — Undead equipment lists",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Mace", "category": "weapon", "unitCost": 3 },
+        { "name": "Hammer", "category": "weapon", "unitCost": 3 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Spear", "category": "weapon", "unitCost": 10 },
+        { "name": "Halberd", "category": "weapon", "unitCost": 10 },
+        { "name": "Bow", "category": "weapon", "unitCost": 10 },
+        { "name": "Short bow", "category": "weapon", "unitCost": 5 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 },
+        { "name": "Heavy armour", "category": "armour", "unitCost": 50 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 }
+      ]
+    },
+    {
+      "warbandName": "Skaven",
+      "key": "skaven-hero",
+      "name": "Skaven Heroes Equipment List",
+      "sourceReference": "2Warbands.pdf — Skaven Heroes Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Flail", "category": "weapon", "unitCost": 15 },
+        { "name": "Spear", "category": "weapon", "unitCost": 10 },
+        { "name": "Halberd", "category": "weapon", "unitCost": 10 },
+        { "name": "Weeping blades", "category": "weapon", "unitCost": 50 },
+        { "name": "Fighting claws", "category": "weapon", "unitCost": 35 },
+        { "name": "Sling", "category": "weapon", "unitCost": 2 },
+        { "name": "Throwing stars", "category": "weapon", "unitCost": 15 },
+        { "name": "Blowpipe", "category": "weapon", "unitCost": 25 },
+        { "name": "Warplock pistol", "category": "weapon", "unitCost": 35 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 },
+        { "name": "Buckler", "category": "shield", "unitCost": 5 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 }
+      ]
+    },
+    {
+      "warbandName": "Skaven",
+      "key": "skaven-henchman",
+      "name": "Skaven Henchmen Equipment List",
+      "sourceReference": "2Warbands.pdf — Skaven Henchmen Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Club", "category": "weapon", "unitCost": 3 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Spear", "category": "weapon", "unitCost": 10 },
+        { "name": "Sling", "category": "weapon", "unitCost": 2 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 }
+      ]
+    },
+    {
+      "warbandName": "Amazons",
+      "key": "amazon-heroine",
+      "name": "Heroine's Equipment List",
+      "sourceReference": "Amazons.pdf — Heroines Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Club", "category": "weapon", "unitCost": 3 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Spear", "category": "weapon", "unitCost": 10 },
+        { "name": "Claw of the Old Ones", "category": "weapon", "unitCost": 30 },
+        { "name": "Sunstaff", "category": "weapon", "unitCost": 50 },
+        { "name": "Sun Gauntlet", "category": "weapon", "unitCost": 40 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 },
+        { "name": "Buckler", "category": "shield", "unitCost": 5 }
+      ]
+    },
+    {
+      "warbandName": "Amazons",
+      "key": "amazon-henchwoman",
+      "name": "Henchwoman Equipment List",
+      "sourceReference": "Amazons.pdf — Henchwomen Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Club", "category": "weapon", "unitCost": 3 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Spear", "category": "weapon", "unitCost": 10 },
+        { "name": "Sling", "category": "weapon", "unitCost": 5 },
+        { "name": "Bow", "category": "weapon", "unitCost": 10 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 },
+        { "name": "Buckler", "category": "shield", "unitCost": 5 }
+      ]
+    },
+    {
+      "warbandName": "Amazons",
+      "key": "amazon-scout",
+      "name": "Scout Equipment List",
+      "sourceReference": "Amazons.pdf — Scout Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Club", "category": "weapon", "unitCost": 3 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Spear", "category": "weapon", "unitCost": 10 },
+        { "name": "Sling", "category": "weapon", "unitCost": 5 },
+        { "name": "Javelins", "category": "weapon", "unitCost": 5 },
+        { "name": "Bow", "category": "weapon", "unitCost": 10 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 },
+        { "name": "Buckler", "category": "shield", "unitCost": 5 }
+      ]
+    },
+    {
+      "warbandName": "Bretonnian",
+      "key": "bretonnian-knight",
+      "name": "Knights Equipment List",
+      "sourceReference": "BretonnianWarband.pdf — Knights Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Mace", "category": "weapon", "unitCost": 3 },
+        { "name": "Sword", "category": "weapon", "unitCost": 5 },
+        { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Morning star", "category": "weapon", "unitCost": 15 },
+        { "name": "Lance", "category": "weapon", "unitCost": 20 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 },
+        { "name": "Heavy armour", "category": "armour", "unitCost": 50 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 },
+        { "name": "Buckler", "category": "shield", "unitCost": 5 }
+      ]
+    },
+    {
+      "warbandName": "Bretonnian",
+      "key": "bretonnian-men-at-arms",
+      "name": "Men-at-Arms Equipment List",
+      "sourceReference": "BretonnianWarband.pdf — Men-at-Arms Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Hammer", "category": "weapon", "unitCost": 3 },
+        { "name": "Sword", "category": "weapon", "unitCost": 5 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Spear", "category": "weapon", "unitCost": 10 },
+        { "name": "Halberd", "category": "weapon", "unitCost": 10 },
+        { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 }
+      ]
+    },
+    {
+      "warbandName": "Bretonnian",
+      "key": "bretonnian-squire",
+      "name": "Squires Equipment List",
+      "sourceReference": "BretonnianWarband.pdf — Squires Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Hammer", "category": "weapon", "unitCost": 3 },
+        { "name": "Sword", "category": "weapon", "unitCost": 5 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Spear", "category": "weapon", "unitCost": 10 },
+        { "name": "Bow", "category": "weapon", "unitCost": 10 },
+        { "name": "Longbow", "category": "weapon", "unitCost": 15 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 }
+      ]
+    },
+    {
+      "warbandName": "Bretonnian",
+      "key": "bretonnian-bowman",
+      "name": "Bowmen Equipment List",
+      "sourceReference": "BretonnianWarband.pdf — Bowmen Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Sword", "category": "weapon", "unitCost": 5 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Bow", "category": "weapon", "unitCost": 10 },
+        { "name": "Longbow", "category": "weapon", "unitCost": 15 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 }
+      ]
+    },
+    {
+      "warbandName": "Averlander Mercenaries",
+      "key": "averlander-scout",
+      "name": "Scout Equipment List",
+      "sourceReference": "Averlanders.pdf — Scout Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Mace/hammer", "category": "weapon", "unitCost": 3 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Bow", "category": "weapon", "unitCost": 10 },
+        { "name": "Longbow", "category": "weapon", "unitCost": 15, "allowedWarriorTypeNames": ["Bergjaeger"], "ruleText": "Bergjaeger only." },
+        { "name": "Blunderbuss", "category": "weapon", "unitCost": 30 },
+        { "name": "Hunting rifle", "category": "weapon", "unitCost": 200 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 },
+        { "name": "Buckler", "category": "shield", "unitCost": 5 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 }
+      ]
+    },
+    {
+      "warbandName": "Averlander Mercenaries",
+      "key": "averlander-mountainguard",
+      "name": "Mountainguard Equipment List",
+      "sourceReference": "Averlanders.pdf — Mountainguard Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Mace/hammer", "category": "weapon", "unitCost": 3 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Spear", "category": "weapon", "unitCost": 5 },
+        { "name": "Halberd", "category": "weapon", "unitCost": 10 },
+        { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Morning star", "category": "weapon", "unitCost": 15 },
+        { "name": "Pistol", "category": "weapon", "unitCost": 15 },
+        { "name": "Duelling pistol", "category": "weapon", "unitCost": 25 },
+        { "name": "Crossbow", "category": "weapon", "unitCost": 25 },
+        { "name": "Bow", "category": "weapon", "unitCost": 10 }
+      ]
+    },
+    {
+      "warbandName": "Averlander Mercenaries",
+      "key": "averlander-marksman",
+      "name": "Marksman Equipment List",
+      "sourceReference": "Averlanders.pdf — Marksman Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Mace/hammer", "category": "weapon", "unitCost": 3 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Crossbow", "category": "weapon", "unitCost": 25 },
+        { "name": "Pistol", "category": "weapon", "unitCost": 15 },
+        { "name": "Bow", "category": "weapon", "unitCost": 10 },
+        { "name": "Longbow", "category": "weapon", "unitCost": 15 },
+        { "name": "Handgun", "category": "weapon", "unitCost": 35 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 },
+        { "name": "Heavy armour", "category": "armour", "unitCost": 50 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 },
+        { "name": "Buckler", "category": "shield", "unitCost": 5 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 }
+      ]
+    },
+    {
+      "warbandName": "Dwarf Treasure Hunters",
+      "key": "dwarf-warrior",
+      "name": "Dwarf Warrior Equipment List",
+      "sourceReference": "DwarfTreasurehunters.pdf — Dwarf Warrior Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Mace", "category": "weapon", "unitCost": 3 },
+        { "name": "Hammer", "category": "weapon", "unitCost": 3 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Dwarf axe", "category": "weapon", "unitCost": 15 },
+        { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Spear", "category": "weapon", "unitCost": 10 },
+        { "name": "Halberd", "category": "weapon", "unitCost": 10 },
+        { "name": "Pistol", "category": "weapon", "unitCost": 15 },
+        { "name": "Gromril dagger", "category": "weapon", "unitCost": 6 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 },
+        { "name": "Heavy armour", "category": "armour", "unitCost": 50 },
+        { "name": "Gromril armour", "category": "armour", "unitCost": 75 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 },
+        { "name": "Gromril mace", "category": "weapon", "unitCost": 9 },
+        { "name": "Gromril hammer", "category": "weapon", "unitCost": 9 },
+        { "name": "Gromril axe", "category": "weapon", "unitCost": 15 },
+        { "name": "Gromril sword", "category": "weapon", "unitCost": 30 },
+        { "name": "Gromril dwarf axe", "category": "weapon", "unitCost": 45 },
+        { "name": "Gromril double-handed weapon", "category": "weapon", "unitCost": 45 },
+        { "name": "Gromril spear", "category": "weapon", "unitCost": 30 },
+        { "name": "Gromril halberd", "category": "weapon", "unitCost": 30 }
+      ]
+    },
+    {
+      "warbandName": "Dwarf Treasure Hunters",
+      "key": "dwarf-thunderer",
+      "name": "Thunderer Equipment List",
+      "sourceReference": "DwarfTreasurehunters.pdf — Thunderer Equipment List",
+      "items": [
+        { "name": "Crossbow", "category": "weapon", "unitCost": 25 },
+        { "name": "Handgun", "category": "weapon", "unitCost": 35 },
+        { "name": "Pistol", "category": "weapon", "unitCost": 15 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 },
+        { "name": "Heavy armour", "category": "armour", "unitCost": 50 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 }
+      ]
+    },
+    {
+      "warbandName": "Dwarf Treasure Hunters",
+      "key": "dwarf-troll-slayer",
+      "name": "Troll Slayer Equipment List",
+      "sourceReference": "DwarfTreasurehunters.pdf — Troll Slayer: weapons only, no missile weapons or armour",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Mace", "category": "weapon", "unitCost": 3 },
+        { "name": "Hammer", "category": "weapon", "unitCost": 3 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Dwarf axe", "category": "weapon", "unitCost": 15 },
+        { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Spear", "category": "weapon", "unitCost": 10 },
+        { "name": "Halberd", "category": "weapon", "unitCost": 10 },
+        { "name": "Gromril dagger", "category": "weapon", "unitCost": 6 },
+        { "name": "Gromril mace", "category": "weapon", "unitCost": 9 },
+        { "name": "Gromril hammer", "category": "weapon", "unitCost": 9 },
+        { "name": "Gromril axe", "category": "weapon", "unitCost": 15 },
+        { "name": "Gromril sword", "category": "weapon", "unitCost": 30 },
+        { "name": "Gromril dwarf axe", "category": "weapon", "unitCost": 45 },
+        { "name": "Gromril double-handed weapon", "category": "weapon", "unitCost": 45 },
+        { "name": "Gromril spear", "category": "weapon", "unitCost": 30 },
+        { "name": "Gromril halberd", "category": "weapon", "unitCost": 30 }
+      ]
+    },
+    {
+      "warbandName": "Kislevite",
+      "key": "kislev-warrior",
+      "name": "Kislevite Warrior Equipment List",
+      "sourceReference": "Kislevwarband.pdf — Kislevite Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Mace", "category": "weapon", "unitCost": 3 },
+        { "name": "Hammer", "category": "weapon", "unitCost": 3 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Morning star", "category": "weapon", "unitCost": 15 },
+        { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Halberd", "category": "weapon", "unitCost": 10 },
+        { "name": "Spear", "category": "weapon", "unitCost": 10 },
+        { "name": "Throwing knives", "category": "weapon", "unitCost": 15 },
+        { "name": "Shortbow", "category": "weapon", "unitCost": 5 },
+        { "name": "Bow", "category": "weapon", "unitCost": 10 },
+        { "name": "Crossbow", "category": "weapon", "unitCost": 25 },
+        { "name": "Pistol", "category": "weapon", "unitCost": 15 },
+        { "name": "Duelling pistol", "category": "weapon", "unitCost": 25 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 },
+        { "name": "Buckler", "category": "shield", "unitCost": 5 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 },
+        { "name": "Heavy armour", "category": "armour", "unitCost": 50 }
+      ]
+    },
+    {
+      "warbandName": "Kislevite",
+      "key": "kislev-streltsi",
+      "name": "Streltsi Equipment List",
+      "sourceReference": "Kislevwarband.pdf — Streltsi Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Mace", "category": "weapon", "unitCost": 3 },
+        { "name": "Hammer", "category": "weapon", "unitCost": 3 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Morning star", "category": "weapon", "unitCost": 15 },
+        { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Halberd", "category": "weapon", "unitCost": 10 },
+        { "name": "Spear", "category": "weapon", "unitCost": 10 },
+        { "name": "Bow", "category": "weapon", "unitCost": 10 },
+        { "name": "Crossbow", "category": "weapon", "unitCost": 25 },
+        { "name": "Pistol", "category": "weapon", "unitCost": 15 },
+        { "name": "Duelling pistol", "category": "weapon", "unitCost": 25 },
+        { "name": "Handgun", "category": "weapon", "unitCost": 35 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 },
+        { "name": "Heavy armour", "category": "armour", "unitCost": 50 }
+      ]
+    },
+    {
+      "warbandName": "Dark Elves",
+      "key": "dark-elf",
+      "name": "Dark Elf Equipment List",
+      "sourceReference": "Lustria3.pdf — Dark Elf Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Halberd", "category": "weapon", "unitCost": 10 },
+        { "name": "Spear", "category": "weapon", "unitCost": 10 },
+        { "name": "Beastlash", "category": "weapon", "unitCost": 10 },
+        { "name": "Repeater crossbow", "category": "weapon", "unitCost": 35 },
+        { "name": "Crossbow pistol", "category": "weapon", "unitCost": 35 },
+        { "name": "Dark Elf Blade", "category": "weapon", "unitCost": 15, "allowedWarriorTypeNames": ["Beast Master (Dark Elves)", "Dark Elf Sorceress (Dark Elves)", "Fellblades", "High Born"], "ruleText": "Heroes only." },
+        { "name": "Sea Dragon Cloak", "category": "armour", "unitCost": 50, "allowedWarriorTypeNames": ["Beast Master (Dark Elves)", "Dark Elf Sorceress (Dark Elves)", "Fellblades", "High Born", "Corsairs (Dark Elves)"], "ruleText": "Heroes and Corsairs only." },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 },
+        { "name": "Light armour", "category": "armour", "unitCost": 50 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 },
+        { "name": "Buckler", "category": "shield", "unitCost": 5 }
+      ]
+    },
+    {
+      "warbandName": "Dark Elves",
+      "key": "dark-elf-shades",
+      "name": "Shades Equipment List",
+      "sourceReference": "Lustria3.pdf — Shades Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Repeater crossbow", "category": "weapon", "unitCost": 35 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 }
+      ]
+    },
+    {
+      "warbandName": "Norse",
+      "key": "norse-hero",
+      "name": "Hero Equipment List",
+      "sourceReference": "Lustria4.pdf — Hero Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Hammer", "category": "weapon", "unitCost": 3 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Flail", "category": "weapon", "unitCost": 15 },
+        { "name": "Throwing axes", "category": "weapon", "unitCost": 15 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 }
+      ]
+    },
+    {
+      "warbandName": "Norse",
+      "key": "norse-hunter",
+      "name": "Hunters Equipment List",
+      "sourceReference": "Lustria4.pdf — Hunters Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Hammer", "category": "weapon", "unitCost": 3 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Spear", "category": "weapon", "unitCost": 10 },
+        { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Throwing axes", "category": "weapon", "unitCost": 15 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 }
+      ]
+    },
+    {
+      "warbandName": "Norse",
+      "key": "norse-henchman",
+      "name": "Henchmen Equipment List",
+      "sourceReference": "Lustria4.pdf — Henchmen Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Hammer", "category": "weapon", "unitCost": 3 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Spear", "category": "weapon", "unitCost": 10 },
+        { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Javelins", "category": "weapon", "unitCost": 5 },
+        { "name": "Bow", "category": "weapon", "unitCost": 10 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 }
+      ]
+    },
+    {
+      "warbandName": "Pirate",
+      "key": "pirate",
+      "name": "Pirate Equipment List",
+      "sourceReference": "PirateWarband.pdf — Pirate Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Hammer/Mace", "category": "weapon", "unitCost": 3 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Boat Hook", "category": "weapon", "unitCost": 8 },
+        { "name": "Cat O' Nine Tails", "category": "weapon", "unitCost": 8, "allowedWarriorTypeNames": ["Cabin Boys", "Pirate Captain", "Ship's Mates"], "ruleText": "Heroes only." },
+        { "name": "Cutlass", "category": "weapon", "unitCost": 10 },
+        { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Belaying Pin", "category": "weapon", "unitCost": 3 },
+        { "name": "Bow", "category": "weapon", "unitCost": 10 },
+        { "name": "Pistol", "category": "weapon", "unitCost": 15 },
+        { "name": "Crossbow", "category": "weapon", "unitCost": 25 },
+        { "name": "Duelling Pistol", "category": "weapon", "unitCost": 30 },
+        { "name": "Buckler", "category": "shield", "unitCost": 5 },
+        { "name": "Toughened leathers", "category": "armour", "unitCost": 7 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 }
+      ]
+    },
+    {
+      "warbandName": "Pirate",
+      "key": "pirate-gunner",
+      "name": "Gunner Equipment List",
+      "sourceReference": "PirateWarband.pdf — Gunner Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Hammer/Mace", "category": "weapon", "unitCost": 3 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Cutlass", "category": "weapon", "unitCost": 10 },
+        { "name": "Pistol", "category": "weapon", "unitCost": 15 },
+        { "name": "Blunderbuss", "category": "weapon", "unitCost": 30 },
+        { "name": "Duelling Pistol", "category": "weapon", "unitCost": 30 },
+        { "name": "Handgun", "category": "weapon", "unitCost": 35 },
+        { "name": "Buckler", "category": "shield", "unitCost": 5 },
+        { "name": "Toughened leathers", "category": "armour", "unitCost": 7 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 }
+      ]
+    },
+    {
+      "warbandName": "Pirate",
+      "key": "pirate-swabbie",
+      "name": "Swabbie Equipment List",
+      "sourceReference": "PirateWarband.pdf — Swabbie Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Hammer/Mace", "category": "weapon", "unitCost": 3 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Boat Hook", "category": "weapon", "unitCost": 8 },
+        { "name": "Cutlass", "category": "weapon", "unitCost": 10 },
+        { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Toughened leathers", "category": "armour", "unitCost": 7 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 }
+      ]
+    },
+    {
+      "warbandName": "Ostlanders",
+      "key": "ostlander",
+      "name": "Ostlander Equipment List",
+      "sourceReference": "Ostlanders.pdf — Ostlander Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Mace/Hammer", "category": "weapon", "unitCost": 3 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Spear", "category": "weapon", "unitCost": 5 },
+        { "name": "Bow", "category": "weapon", "unitCost": 10 },
+        { "name": "Pistol", "category": "weapon", "unitCost": 15 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 },
+        { "name": "Heavy armour", "category": "armour", "unitCost": 50 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 }
+      ]
+    },
+    {
+      "warbandName": "Ostlanders",
+      "key": "ostlander-jaeger",
+      "name": "Jaeger Equipment List",
+      "sourceReference": "Ostlanders.pdf — Jaeger Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Spear", "category": "weapon", "unitCost": 5 },
+        { "name": "Pistol", "category": "weapon", "unitCost": 15 },
+        { "name": "Bow", "category": "weapon", "unitCost": 10 },
+        { "name": "Handgun", "category": "weapon", "unitCost": 35 },
+        { "name": "Blunderbuss", "category": "weapon", "unitCost": 30 },
+        { "name": "Hunting rifle", "category": "weapon", "unitCost": 200 },
+        { "name": "Double-barrelled pistol", "category": "weapon", "unitCost": 30 },
+        { "name": "Double-barrelled hunting rifle", "category": "weapon", "unitCost": 400 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 }
+      ]
+    },
+    {
+      "warbandName": "Ostlanders",
+      "key": "ostlander-ruffian",
+      "name": "Ruffian Equipment List",
+      "sourceReference": "Ostlanders.pdf — Ruffian Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Mace/Hammer", "category": "weapon", "unitCost": 3 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 }
+      ]
+    },
+    {
+      "warbandName": "Ostlanders",
+      "key": "ostlander-ogre-kin",
+      "name": "Ogre-Kin Equipment List",
+      "sourceReference": "Ostlanders.pdf — Ogre-Kin Equipment List",
+      "items": [
+        { "name": "Club", "category": "weapon", "unitCost": 3 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 }
+      ]
+    },
+    {
+      "warbandName": "Night Goblins",
+      "key": "night-goblin",
+      "name": "Night Goblin Equipment List",
+      "sourceReference": "Night_Goblins_v3.21.pdf — Night Goblin Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Spear", "category": "weapon", "unitCost": 10 },
+        { "name": "Club", "category": "weapon", "unitCost": 3 },
+        { "name": "Short bow", "category": "weapon", "unitCost": 5 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 }
+      ]
+    },
+    {
+      "warbandName": "Night Goblins",
+      "key": "night-goblin-fanatic",
+      "name": "Fanatic Equipment List",
+      "sourceReference": "Night_Goblins_v3.21.pdf — Fanatic Equipment List",
+      "items": [
+        { "name": "Poison daggers", "category": "weapon", "unitCost": 25 },
+        { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Ball & chain", "category": "weapon", "unitCost": 15 }
+      ]
+    },
+    {
+      "warbandName": "Lizardmen",
+      "key": "lizardmen-saurus",
+      "name": "Saurus Equipment List",
+      "sourceReference": "lizardmen.pdf — Saurus Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Stone Axe", "category": "weapon", "unitCost": 3 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Spear", "category": "weapon", "unitCost": 10 },
+        { "name": "Halberd", "category": "weapon", "unitCost": 10 },
+        { "name": "Bone helmet", "category": "armour", "unitCost": 10 },
+        { "name": "Light armour", "category": "armour", "unitCost": 50 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 }
+      ]
+    },
+    {
+      "warbandName": "Lizardmen",
+      "key": "lizardmen-skinks",
+      "name": "Skinks Equipment List",
+      "sourceReference": "lizardmen.pdf — Skinks Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Stone Axe", "category": "weapon", "unitCost": 3 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10, "allowedWarriorTypeNames": ["Skink Priest", "Skink Great Crests"], "ruleText": "Heroes only." },
+        { "name": "Spear", "category": "weapon", "unitCost": 10 },
+        { "name": "Shortbow", "category": "weapon", "unitCost": 5 },
+        { "name": "Bolas", "category": "weapon", "unitCost": 5 },
+        { "name": "Javelins", "category": "weapon", "unitCost": 10 },
+        { "name": "Throwing knives", "category": "weapon", "unitCost": 15 },
+        { "name": "Blowpipe", "category": "weapon", "unitCost": 25 },
+        { "name": "Bone helmet", "category": "armour", "unitCost": 10, "allowedWarriorTypeNames": ["Skink Priest"], "ruleText": "Skink Priest only." },
+        { "name": "Buckler", "category": "shield", "unitCost": 5 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 }
+      ]
+    },
+    {
+      "warbandName": "Orc",
+      "key": "orc",
+      "name": "Orc Equipment List",
+      "sourceReference": "damobrules.pdf — Orc equipment list",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Battle axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Morning star", "category": "weapon", "unitCost": 15 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Spear", "category": "weapon", "unitCost": 10 },
+        { "name": "Halberd", "category": "weapon", "unitCost": 10 },
+        { "name": "Crossbow", "category": "weapon", "unitCost": 25 },
+        { "name": "Bow", "category": "weapon", "unitCost": 10 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 }
+      ]
+    },
+    {
+      "warbandName": "Orc",
+      "key": "goblin",
+      "name": "Goblin Equipment List",
+      "sourceReference": "damobrules.pdf — Goblin equipment list",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Club", "category": "weapon", "unitCost": 3 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Spear", "category": "weapon", "unitCost": 10 },
+        { "name": "Short bow", "category": "weapon", "unitCost": 5 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 }
+      ]
+    },
+    {
+      "warbandName": "Battle Monks of Cathay",
+      "key": "battle-monk-soldier",
+      "name": "Soldier Equipment List",
+      "sourceReference": "14 Battle Monks.pdf — Soldier Equipment List",
+      "items": [
+        { "name": "Spear", "category": "weapon", "unitCost": 10 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Katana", "category": "weapon", "unitCost": 20 },
+        { "name": "Cathayan longsword", "category": "weapon", "unitCost": 75, "allowedWarriorTypeNames": ["Emissary"], "ruleText": "Emissary only." },
+        { "name": "Duelling pistol", "category": "weapon", "unitCost": 30 },
+        { "name": "Handgun", "category": "weapon", "unitCost": 35 },
+        { "name": "Bow", "category": "weapon", "unitCost": 10 },
+        { "name": "Crossbow", "category": "weapon", "unitCost": 25 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 },
+        { "name": "Heavy armour", "category": "armour", "unitCost": 50 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 }
+      ]
+    },
+    {
+      "warbandName": "Battle Monks of Cathay",
+      "key": "battle-monk-monk",
+      "name": "Monk Equipment List",
+      "sourceReference": "14 Battle Monks.pdf — Monk Equipment List",
+      "items": [
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Spear", "category": "weapon", "unitCost": 10 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Quarter staff", "category": "weapon", "unitCost": 15 },
+        { "name": "Katana", "category": "weapon", "unitCost": 20 },
+        { "name": "Chain sticks", "category": "weapon", "unitCost": 20 },
+        { "name": "Fish-hook shot", "category": "weapon", "unitCost": 10 },
+        { "name": "Throwing stars", "category": "weapon", "unitCost": 15 }
+      ]
+    },
+    {
+      "warbandName": "Beastmen Raiders",
+      "key": "beastman",
+      "name": "Beastman Equipment List",
+      "sourceReference": "MordEMP2.pdf — Beastman Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Mace", "category": "weapon", "unitCost": 3 },
+        { "name": "Hammer", "category": "weapon", "unitCost": 3 },
+        { "name": "Battle Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Double-handed Weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Halberd", "category": "weapon", "unitCost": 10 },
+        { "name": "Light Armour", "category": "armour", "unitCost": 20 },
+        { "name": "Heavy Armour", "category": "armour", "unitCost": 50 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 }
+      ]
+    },
+    {
+      "warbandName": "Beastmen Raiders",
+      "key": "ungor",
+      "name": "Ungor Equipment List",
+      "sourceReference": "MordEMP2.pdf — Ungor Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Mace", "category": "weapon", "unitCost": 3 },
+        { "name": "Hammer", "category": "weapon", "unitCost": 3 },
+        { "name": "Battle Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Spear", "category": "weapon", "unitCost": 10 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 }
+      ]
+    },
+    {
+      "warbandName": "Carnival of Chaos",
+      "key": "carnival",
+      "name": "Carnival of Chaos Equipment List",
+      "sourceReference": "MordEMP2.pdf — Carnival equipment lists",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Mace", "category": "weapon", "unitCost": 3 },
+        { "name": "Hammer", "category": "weapon", "unitCost": 3 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Double-handed Weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Spear", "category": "weapon", "unitCost": 10 },
+        { "name": "Halberd", "category": "weapon", "unitCost": 10 },
+        { "name": "Morning Star", "category": "weapon", "unitCost": 15 },
+        { "name": "Bow", "category": "weapon", "unitCost": 15 },
+        { "name": "Short Bow", "category": "weapon", "unitCost": 10 },
+        { "name": "Pistol", "category": "weapon", "unitCost": 15 },
+        { "name": "Light Armour", "category": "armour", "unitCost": 20 },
+        { "name": "Heavy Armour", "category": "armour", "unitCost": 50 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 }
+      ]
+    },
+    {
+      "warbandName": "Carnival of Chaos",
+      "key": "carnival-brute",
+      "name": "Brute Equipment List",
+      "sourceReference": "MordEMP2.pdf — Brute Equipment List",
+      "items": [
+        { "name": "Double-handed Weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Flail", "category": "weapon", "unitCost": 10 }
+      ]
+    },
+    {
+      "warbandName": "Marauders of Chaos",
+      "key": "marauder-hero",
+      "name": "Hero Equipment List",
+      "sourceReference": "10 Marauders of Chaos.pdf — Hero Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Hammer", "category": "weapon", "unitCost": 3 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Halberd", "category": "weapon", "unitCost": 10 },
+        { "name": "Morning star", "category": "weapon", "unitCost": 15 },
+        { "name": "Steel whip", "category": "weapon", "unitCost": 15 },
+        { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Great axe", "category": "weapon", "unitCost": 25 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 },
+        { "name": "Heavy armour", "category": "armour", "unitCost": 50 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 }
+      ]
+    },
+    {
+      "warbandName": "Marauders of Chaos",
+      "key": "marauder-henchman",
+      "name": "Henchman Equipment List",
+      "sourceReference": "10 Marauders of Chaos.pdf — Henchman Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Hammer", "category": "weapon", "unitCost": 3 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Spear", "category": "weapon", "unitCost": 10 },
+        { "name": "Morning star", "category": "weapon", "unitCost": 15 },
+        { "name": "Flail", "category": "weapon", "unitCost": 15 },
+        { "name": "Throwing axes", "category": "weapon", "unitCost": 15 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 }
+      ]
+    },
+    {
+      "warbandName": "Pit Fighter",
+      "key": "pit-fighter",
+      "name": "Pit Fighters Equipment List",
+      "sourceReference": "PitFighter.pdf — Pit Fighters Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Mace", "category": "weapon", "unitCost": 3 },
+        { "name": "Hammer", "category": "weapon", "unitCost": 3 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Dwarf Axe", "category": "weapon", "unitCost": 15, "allowedWarriorTypeNames": ["Dwarf Troll Slayer (Pit Fighter)"], "ruleText": "Dwarf Troll Slayer only." },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Morning Star", "category": "weapon", "unitCost": 15 },
+        { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Spear", "category": "weapon", "unitCost": 10 },
+        { "name": "Halberd", "category": "weapon", "unitCost": 10 },
+        { "name": "Flail", "category": "weapon", "unitCost": 15 },
+        { "name": "War Chain", "category": "weapon", "unitCost": 20 },
+        { "name": "Fist Spike", "category": "weapon", "unitCost": 15 },
+        { "name": "Throwing Knives", "category": "weapon", "unitCost": 15 },
+        { "name": "Orc Style equipment set", "category": "set", "unitCost": 20 },
+        { "name": "Undead Style equipment set", "category": "set", "unitCost": 35 },
+        { "name": "Empire Style equipment set", "category": "set", "unitCost": 45 },
+        { "name": "Chaos Style equipment set", "category": "set", "unitCost": 50 }
+      ]
+    },
+    {
+      "warbandName": "Pit Fighter",
+      "key": "pit-ogre-slayer",
+      "name": "Ogre & Slayer Equipment List",
+      "sourceReference": "PitFighter.pdf — Ogre & Slayer Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Mace", "category": "weapon", "unitCost": 3 },
+        { "name": "Hammer", "category": "weapon", "unitCost": 3 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Dwarf Axe", "category": "weapon", "unitCost": 15, "allowedWarriorTypeNames": ["Dwarf Troll Slayer (Pit Fighter)"], "ruleText": "Dwarf Troll Slayer only." },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Flail", "category": "weapon", "unitCost": 15 },
+        { "name": "Spiked Gauntlet", "category": "weapon", "unitCost": 15 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10, "allowedWarriorTypeNames": ["Ogre Pit Fighter"], "ruleText": "Ogre Pit Fighter only." },
+        { "name": "Light armour", "category": "armour", "unitCost": 20, "allowedWarriorTypeNames": ["Ogre Pit Fighter"], "ruleText": "Ogre Pit Fighter only." }
+      ]
+    },
+    {
+      "warbandName": "Pit Fighter",
+      "key": "pit-pursuer",
+      "name": "Pursuer Equipment List",
+      "sourceReference": "PitFighter.pdf — Pursuer Equipment List",
+      "items": [
+        { "name": "Skink Style equipment set", "category": "set", "unitCost": 25 },
+        { "name": "Witch Elf Style equipment set", "category": "set", "unitCost": 30 }
+      ]
+    },
+    {
+      "warbandName": "Shadow Warrior",
+      "key": "shadow-warrior",
+      "name": "Shadow Warrior Equipment List",
+      "sourceReference": "ShadowWarriors.pdf — Shadow Warrior Equipment List",
+      "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
+        { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+        { "name": "Spear", "category": "weapon", "unitCost": 10 },
+        { "name": "Bow", "category": "weapon", "unitCost": 10 },
+        { "name": "Longbow", "category": "weapon", "unitCost": 15 },
+        { "name": "Elf Bow", "category": "weapon", "unitCost": 35 },
+        { "name": "Helmet", "category": "armour", "unitCost": 10 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 },
+        { "name": "Shield", "category": "shield", "unitCost": 5 },
+        { "name": "Ithilmar armour", "category": "armour", "unitCost": 60, "allowedWarriorTypeNames": ["Shadow Master", "Shadow Walker", "Shadow Weaver"], "ruleText": "Heroes only." },
+        { "name": "Ithilmar dagger", "category": "weapon", "unitCost": 4, "allowedWarriorTypeNames": ["Shadow Master", "Shadow Walker", "Shadow Weaver"], "ruleText": "Heroes only; Ithilmar weapons cost twice the standard price." },
+        { "name": "Ithilmar sword", "category": "weapon", "unitCost": 20, "allowedWarriorTypeNames": ["Shadow Master", "Shadow Walker", "Shadow Weaver"], "ruleText": "Heroes only; Ithilmar weapons cost twice the standard price." },
+        { "name": "Ithilmar double-handed weapon", "category": "weapon", "unitCost": 30, "allowedWarriorTypeNames": ["Shadow Master", "Shadow Walker", "Shadow Weaver"], "ruleText": "Heroes only; Ithilmar weapons cost twice the standard price." },
+        { "name": "Ithilmar spear", "category": "weapon", "unitCost": 20, "allowedWarriorTypeNames": ["Shadow Master", "Shadow Walker", "Shadow Weaver"], "ruleText": "Heroes only; Ithilmar weapons cost twice the standard price." },
+        { "name": "Ithilmar bow", "category": "weapon", "unitCost": 20, "allowedWarriorTypeNames": ["Shadow Master", "Shadow Walker", "Shadow Weaver"], "ruleText": "Heroes only; Ithilmar weapons cost twice the standard price." },
+        { "name": "Ithilmar longbow", "category": "weapon", "unitCost": 30, "allowedWarriorTypeNames": ["Shadow Master", "Shadow Walker", "Shadow Weaver"], "ruleText": "Heroes only; Ithilmar weapons cost twice the standard price." },
+        { "name": "Ithilmar Elf Bow", "category": "weapon", "unitCost": 70, "allowedWarriorTypeNames": ["Shadow Master", "Shadow Walker", "Shadow Weaver"], "ruleText": "Heroes only; Ithilmar weapons cost twice the standard price." }
+      ]
+    }
+  ],
+  "assignments": [
+    { "warbandName": "Mercenaries", "listKey": "mercenary", "roles": ["Hero", "Henchman"], "excludeWarriorTypes": ["Marksmen (All Others)", "Wolf Companion"], "sourceReference": "2Warbands.pdf — Weapons and Armour", "ruleText": "Use the Mercenary Equipment list." },
+    { "warbandName": "Mercenaries", "listKey": "marksman", "warriorTypeNames": ["Marksmen (All Others)"], "sourceReference": "2Warbands.pdf — Marksman Equipment List", "ruleText": "Marksmen use the Marksman Equipment list." },
+    { "warbandName": "Amazons", "listKey": "amazon-heroine", "roles": ["Hero"], "sourceReference": "Amazons.pdf — Heroines Equipment List", "ruleText": "Heroes use the Heroines Equipment list." },
+    { "warbandName": "Amazons", "listKey": "amazon-henchwoman", "roles": ["Henchman"], "excludeWarriorTypes": ["Scouts"], "sourceReference": "Amazons.pdf — Henchwomen Equipment List", "ruleText": "Amazon Warriors use the Henchwomen Equipment list." },
+    { "warbandName": "Amazons", "listKey": "amazon-scout", "warriorTypeNames": ["Scouts"], "sourceReference": "Amazons.pdf — Scout Equipment List", "ruleText": "Scouts use the Scout Equipment list." },
+    { "warbandName": "Bretonnian", "listKey": "bretonnian-knight", "warriorTypeNames": ["Knight Errant", "Questing Knight"], "sourceReference": "BretonnianWarband.pdf — Knights Equipment List", "ruleText": "Knights use the Knights Equipment list." },
+    { "warbandName": "Bretonnian", "listKey": "bretonnian-squire", "warriorTypeNames": ["Squires"], "sourceReference": "BretonnianWarband.pdf — Squires Equipment List", "ruleText": "Squires use the Squires Equipment list." },
+    { "warbandName": "Bretonnian", "listKey": "bretonnian-men-at-arms", "warriorTypeNames": ["Men-at-Arms"], "sourceReference": "BretonnianWarband.pdf — Men-at-Arms Equipment List", "ruleText": "Men-at-Arms use the Men-at-Arms Equipment list." },
+    { "warbandName": "Bretonnian", "listKey": "bretonnian-bowman", "warriorTypeNames": ["Bowmen"], "sourceReference": "BretonnianWarband.pdf — Bowmen Equipment List", "ruleText": "Bowmen use the Bowmen Equipment list." },
+    { "warbandName": "Averlander Mercenaries", "listKey": "averlander-mountainguard", "roles": ["Hero"], "excludeWarriorTypes": ["Bergjaeger"], "sourceReference": "Averlanders.pdf — Mountainguard Equipment List", "ruleText": "Use the Mountainguard Equipment list." },
+    { "warbandName": "Averlander Mercenaries", "listKey": "averlander-scout", "warriorTypeNames": ["Halfling Scouts", "Bergjaeger"], "sourceReference": "Averlanders.pdf — Scout Equipment List", "ruleText": "Use the Scout Equipment list." },
+    { "warbandName": "Averlander Mercenaries", "listKey": "averlander-mountainguard", "warriorTypeNames": ["Mountainguard"], "sourceReference": "Averlanders.pdf — Mountainguard Equipment List", "ruleText": "Use the Mountainguard Equipment list." },
+    { "warbandName": "Averlander Mercenaries", "listKey": "averlander-marksman", "warriorTypeNames": ["Marksmen (All Others)"], "sourceReference": "Averlanders.pdf — Marksman Equipment List", "ruleText": "Use the Marksman Equipment list." },
+    { "warbandName": "Dwarf Treasure Hunters", "listKey": "dwarf-warrior", "roles": ["Hero", "Henchman"], "excludeWarriorTypes": ["Dwarf Troll Slayers", "Dwarf Engineer"], "sourceReference": "DwarfTreasurehunters.pdf — Dwarf Warrior Equipment List", "ruleText": "Use the Dwarf Warrior Equipment list." },
+    { "warbandName": "Dwarf Treasure Hunters", "listKey": "dwarf-thunderer", "warriorTypeNames": ["Dwarf Thunderers", "Dwarf Engineer"], "sourceReference": "DwarfTreasurehunters.pdf — Thunderer Equipment List", "ruleText": "Dwarf Thunderers and Engineers use the Thunderer Equipment list." },
+    { "warbandName": "Dwarf Treasure Hunters", "listKey": "dwarf-troll-slayer", "warriorTypeNames": ["Dwarf Troll Slayers"], "sourceReference": "DwarfTreasurehunters.pdf — Troll Slayer", "ruleText": "Troll Slayers may use weapons only; they may never use missiles or armour." },
+    { "warbandName": "Kislevite", "listKey": "kislev-warrior", "roles": ["Hero", "Henchman"], "excludeWarriorTypes": ["Streltsi", "Trained Bear"], "sourceReference": "Kislevwarband.pdf — Kislevite Warrior Equipment List", "ruleText": "Use the Kislevite Warrior Equipment list." },
+    { "warbandName": "Kislevite", "listKey": "kislev-streltsi", "warriorTypeNames": ["Streltsi"], "sourceReference": "Kislevwarband.pdf — Streltsi Equipment List", "ruleText": "Streltsi use the Streltsi Equipment list." },
+    { "warbandName": "Dark Elves", "listKey": "dark-elf", "roles": ["Hero", "Henchman"], "excludeWarriorTypes": ["Shades (Dark Elves)", "Cold One Beasthounds"], "sourceReference": "Lustria3.pdf — Dark Elf Equipment List", "ruleText": "Use the Dark Elf Equipment list." },
+    { "warbandName": "Dark Elves", "listKey": "dark-elf-shades", "warriorTypeNames": ["Shades (Dark Elves)"], "sourceReference": "Lustria3.pdf — Shades Equipment List", "ruleText": "Shades use the Shades Equipment list." },
+    { "warbandName": "Norse", "listKey": "norse-hero", "roles": ["Hero"], "excludeWarriorTypes": ["Jarl", "Berserkers", "Wulfin"], "sourceReference": "Lustria4.pdf — Hero Equipment List", "ruleText": "Use the Hero Equipment list." },
+    { "warbandName": "Norse", "listKey": "norse-hero", "warriorTypeNames": ["Jarl"], "allowedCategories": ["weapon"], "sourceReference": "Lustria4.pdf — Jarl", "ruleText": "Jarls may use weapons from the Hero Equipment list but never wear armour." },
+    { "warbandName": "Norse", "listKey": "norse-hero", "warriorTypeNames": ["Berserkers"], "allowedCategories": ["weapon"], "sourceReference": "Lustria4.pdf — Berserker rule", "ruleText": "Berserkers may buy weapons but never wear armour." },
+    { "warbandName": "Norse", "listKey": "norse-hunter", "warriorTypeNames": ["Hunters (Norse)"], "sourceReference": "Lustria4.pdf — Hunters Equipment List", "ruleText": "Hunters use the Hunters Equipment list." },
+    { "warbandName": "Norse", "listKey": "norse-henchman", "warriorTypeNames": ["Marauders"], "sourceReference": "Lustria4.pdf — Henchmen Equipment List", "ruleText": "Marauders use the Henchmen Equipment list." },
+    { "warbandName": "Pirate", "listKey": "pirate", "roles": ["Hero", "Henchman"], "excludeWarriorTypes": ["Gunners", "Swabbies"], "sourceReference": "PirateWarband.pdf — Pirate Equipment List", "ruleText": "Use the Pirate Equipment list." },
+    { "warbandName": "Pirate", "listKey": "pirate-gunner", "warriorTypeNames": ["Gunners"], "sourceReference": "PirateWarband.pdf — Gunner Equipment List", "ruleText": "Gunners use the Gunner Equipment list." },
+    { "warbandName": "Pirate", "listKey": "pirate-swabbie", "warriorTypeNames": ["Swabbies"], "allowIndividualGroupGear": true, "sourceReference": "PirateWarband.pdf — Swabbie Equipment List", "ruleText": "Swabbies may carry different equipment within a group." },
+    { "warbandName": "Ostlanders", "listKey": "ostlander", "roles": ["Hero", "Henchman"], "excludeWarriorTypes": ["Ruffians", "Jaeger", "Ogre"], "sourceReference": "Ostlanders.pdf — Ostlander Equipment List", "ruleText": "Use the Ostlander Equipment list." },
+    { "warbandName": "Ostlanders", "listKey": "ostlander-jaeger", "warriorTypeNames": ["Jaeger"], "sourceReference": "Ostlanders.pdf — Jaeger Equipment List", "ruleText": "Jaegers use the Jaeger Equipment list." },
+    { "warbandName": "Ostlanders", "listKey": "ostlander-ruffian", "warriorTypeNames": ["Ruffians"], "sourceReference": "Ostlanders.pdf — Ruffian Equipment List", "ruleText": "Ruffians use the Ruffian Equipment list." },
+    { "warbandName": "Ostlanders", "listKey": "ostlander-ogre-kin", "warriorTypeNames": ["Ogre"], "sourceReference": "Ostlanders.pdf — Ogre-Kin Equipment List", "ruleText": "Ogre-Kin use their Equipment list." },
+    { "warbandName": "Night Goblins", "listKey": "night-goblin", "roles": ["Hero", "Henchman"], "excludeWarriorTypes": ["Fanatics", "Cave Squigs", "Snotling Mob", "Troll"], "sourceReference": "Night_Goblins_v3.21.pdf — Night Goblin Equipment List", "ruleText": "Use the Night Goblin Equipment list." },
+    { "warbandName": "Night Goblins", "listKey": "night-goblin-fanatic", "warriorTypeNames": ["Fanatics"], "sourceReference": "Night_Goblins_v3.21.pdf — Fanatic Equipment List", "ruleText": "Fanatics use the Fanatic Equipment list." },
+    { "warbandName": "Lizardmen", "listKey": "lizardmen-saurus", "warriorTypeNames": ["Saurus Braves", "Saurus Totem Warrior"], "sourceReference": "lizardmen.pdf — Saurus Equipment List", "ruleText": "Saurus use the Saurus Equipment list." },
+    { "warbandName": "Lizardmen", "listKey": "lizardmen-skinks", "warriorTypeNames": ["Skink Braves", "Skink Priest", "Skink Great Crests"], "sourceReference": "lizardmen.pdf — Skinks Equipment List", "ruleText": "Skinks use the Skinks Equipment list." },
+    { "warbandName": "Orc", "listKey": "orc", "roles": ["Hero"], "sourceReference": "damobrules.pdf — Orc equipment list", "ruleText": "Heroes use the Orc equipment list." },
+    { "warbandName": "Orc", "listKey": "orc", "warriorTypeNames": ["Orc Boyz"], "sourceReference": "damobrules.pdf — Orc equipment list", "ruleText": "Orc Boyz use the Orc equipment list." },
+    { "warbandName": "Orc", "listKey": "goblin", "warriorTypeNames": ["Goblin Warriors"], "sourceReference": "damobrules.pdf — Goblin equipment list", "ruleText": "Goblin Warriors use the Goblin equipment list." },
+    { "warbandName": "Battle Monks of Cathay", "listKey": "battle-monk-soldier", "warriorTypeNames": ["Emissary", "Officer", "Soldiers"], "sourceReference": "14 Battle Monks.pdf — Soldier Equipment List", "ruleText": "These warriors use the Soldier Equipment list." },
+    { "warbandName": "Battle Monks of Cathay", "listKey": "battle-monk-monk", "warriorTypeNames": ["Warrior Monks", "Dragon Monks"], "sourceReference": "14 Battle Monks.pdf — Monk Equipment List", "ruleText": "Monks use the Monk Equipment list." },
+    { "warbandName": "Beastmen Raiders", "listKey": "beastman", "roles": ["Hero", "Henchman"], "excludeWarriorTypes": ["Ungor", "Warhounds of Chaos"], "sourceReference": "MordEMP2.pdf — Beastman Equipment List", "ruleText": "Use the Beastman Equipment list." },
+    { "warbandName": "Beastmen Raiders", "listKey": "ungor", "warriorTypeNames": ["Ungor"], "sourceReference": "MordEMP2.pdf — Ungor Equipment List", "ruleText": "Ungor use the Ungor Equipment list." },
+    { "warbandName": "Carnival of Chaos", "listKey": "carnival", "roles": ["Hero", "Henchman"], "excludeWarriorTypes": ["Brutes (Carnival of Chaos)", "Nurglings", "Plague Bearers", "Plague Cart (CoC)", "Plague Cart Guardian (CoC)", "Plague Cart Horse (CoC)", "Plague Cart Wheel (CoC)"], "sourceReference": "MordEMP2.pdf — Carnival equipment lists", "ruleText": "Use the Carnival of Chaos Equipment list." },
+    { "warbandName": "Carnival of Chaos", "listKey": "carnival-brute", "warriorTypeNames": ["Brutes (Carnival of Chaos)"], "sourceReference": "MordEMP2.pdf — Brute Equipment List", "ruleText": "Brutes use the Brute Equipment list." },
+    { "warbandName": "Marauders of Chaos", "listKey": "marauder-hero", "roles": ["Hero"], "sourceReference": "10 Marauders of Chaos.pdf — Hero Equipment List", "ruleText": "Heroes use the Hero Equipment list." },
+    { "warbandName": "Marauders of Chaos", "listKey": "marauder-henchman", "warriorTypeNames": ["Marauders"], "sourceReference": "10 Marauders of Chaos.pdf — Henchman Equipment List", "ruleText": "Marauders use the Henchman Equipment list." },
+    { "warbandName": "Pit Fighter", "listKey": "pit-fighter", "roles": ["Hero", "Henchman"], "excludeWarriorTypes": ["Ogre Pit Fighter", "Pursuers", "Dwarf Troll Slayer (Pit Fighter)"], "sourceReference": "PitFighter.pdf — Pit Fighter Equipment List", "ruleText": "Use the Pit Fighter Equipment list." },
+    { "warbandName": "Pit Fighter", "listKey": "pit-ogre-slayer", "warriorTypeNames": ["Ogre Pit Fighter", "Dwarf Troll Slayer (Pit Fighter)"], "sourceReference": "PitFighter.pdf — Ogre & Slayer Equipment List", "ruleText": "Use the Ogre & Slayer Equipment list." },
+    { "warbandName": "Pit Fighter", "listKey": "pit-pursuer", "warriorTypeNames": ["Pursuers"], "sourceReference": "PitFighter.pdf — Pursuer Equipment List", "ruleText": "Pursuers use the Pursuer Equipment list." },
+    { "warbandName": "Shadow Warrior", "listKey": "shadow-warrior", "roles": ["Hero", "Henchman"], "sourceReference": "ShadowWarriors.pdf — Shadow Warrior Equipment List", "ruleText": "Use the Shadow Warrior Equipment list." },
+    { "warbandName": "Cult of the Possessed", "listKey": "possessed", "roles": ["Hero", "Henchman"], "excludeWarriorTypes": ["Darksouls", "Beastmen"], "sourceReference": "2Warbands.pdf — Weapons and Armour", "ruleText": "Use the Possessed Equipment list." },
+    { "warbandName": "Cult of the Possessed", "listKey": "darksouls", "warriorTypeNames": ["Darksouls", "Beastmen"], "sourceReference": "2Warbands.pdf — Darksouls Equipment List", "ruleText": "Darksouls and Beastmen use this list." },
+    { "warbandName": "Witch Hunters", "listKey": "witch-hunter", "roles": ["Hero", "Henchman"], "excludeWarriorTypes": ["Zealots", "Flagellants", "Warhounds"], "sourceReference": "2Warbands.pdf — Weapons and Armour", "ruleText": "Use the Witch Hunter Equipment list." },
+    { "warbandName": "Witch Hunters", "listKey": "zealot", "warriorTypeNames": ["Zealots"], "sourceReference": "2Warbands.pdf — Zealot Equipment List", "ruleText": "Zealots use the Zealot Equipment list." },
+    { "warbandName": "Witch Hunters", "listKey": "flagellant", "warriorTypeNames": ["Flagellants"], "sourceReference": "2Warbands.pdf — Flagellant Equipment List", "ruleText": "Flagellants may only select items in their list." },
+    { "warbandName": "Sisters of Sigmar", "listKey": "sisters", "roles": ["Hero", "Henchman"], "excludeWarriorTypes": ["Augur"], "sourceReference": "2Warbands.pdf — Weapons and Armour", "ruleText": "Use the Sisters of Sigmar Equipment list." },
+    { "warbandName": "Sisters of Sigmar", "listKey": "sisters", "warriorTypeNames": ["Augur"], "allowedCategories": ["weapon"], "sourceReference": "2Warbands.pdf — Augur", "ruleText": "Augurs may choose weapons only and never wear armour." },
+    { "warbandName": "Undead", "listKey": "undead", "roles": ["Hero", "Henchman"], "excludeWarriorTypes": ["Ghouls", "Zombies", "Dire Wolves"], "sourceReference": "2Warbands.pdf — Weapons and Armour", "ruleText": "Use the Undead Equipment list." },
+    { "warbandName": "Skaven", "listKey": "skaven-hero", "roles": ["Hero"], "sourceReference": "2Warbands.pdf — Heroes Equipment List", "ruleText": "Heroes use the Skaven Heroes Equipment list." },
+    { "warbandName": "Skaven", "listKey": "skaven-henchman", "roles": ["Henchman"], "excludeWarriorTypes": ["Giant Rats", "Rat Ogre"], "sourceReference": "2Warbands.pdf — Henchmen Equipment List", "ruleText": "Henchmen use the Skaven Henchmen Equipment list." }
+  ]
+}

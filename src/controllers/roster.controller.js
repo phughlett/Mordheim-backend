@@ -1,0 +1,288 @@
+const { PRE_BATTLE_STEPS, advanceCampaign, reopenCampaign } = require("../services/campaign.service");
+const {
+  isNonEmptyString,
+  normalizeStats,
+  pickFields,
+  resolveWarbandSelection,
+  validateExclusiveHire,
+  validateExperience,
+  validateNonNegativeIntegers,
+  validateWarriorTypeCount,
+} = require("../services/roster-validation.service");
+const { getAdvanceTable, getAdvancesEarned } = require("../services/advancement-rules.service");
+
+const rosterFields = ["name", "warband", "warbandId", "treasury"];
+const memberFields = ["name", "type", "warriorTypeId", "equipmentChoiceId", "groupSize", "role", "experience", "equipment", "skills", "notes"];
+const warriorCategories = ["Hero", "Henchman", "Hired Sword"];
+
+function createRosterController(repository, rosterService) {
+  return {
+    async list(request, response) {
+      const rosters = await repository.listRosters(request.user.id);
+      response.json(await Promise.all(rosters.map(async (roster) =>
+        rosterService.toRosterResponse(roster, await rosterService.fetchRosterMembers(roster.id)),
+      )));
+    },
+
+    async create(request, response) {
+      const values = pickFields(request.body, rosterFields);
+      const campaign = request.body?.campaignId ? await repository.findCampaign(request.body.campaignId) : null;
+      if (!campaign) return response.status(400).json({ error: "Choose a campaign for this warband." });
+      const membership = await repository.isCampaignMember(campaign.id, request.user.id);
+      if (!membership) return response.status(403).json({ error: "Join this campaign before creating a warband in it." });
+      values.campaign_id = campaign.id;
+      values.user_id = request.user.id;
+      values.treasury = campaign.max_gc;
+      if (values.name !== undefined && !isNonEmptyString(values.name)) {
+        return response.status(400).json({ error: "Roster name must not be empty." });
+      }
+      const warbandError = await resolveWarbandSelection(repository, values);
+      if (warbandError !== true) return response.status(warbandError.status).json(warbandError.body);
+      const integerError = validateNonNegativeIntegers(values, ["treasury"]);
+      if (integerError) return response.status(400).json({ error: integerError });
+
+      const [roster] = await repository.createRoster(values);
+      response.status(201).json(await rosterService.toRosterResponse(roster, []));
+    },
+
+    async get(request, response) {
+      const roster = await repository.findRoster(request.params.rosterId);
+      if (!roster) return response.status(404).json({ error: "Roster not found." });
+      response.json(await rosterService.toRosterResponse(roster, await rosterService.fetchRosterMembers(roster.id)));
+    },
+
+    async reorderMembers(request, response) {
+      const roster = await repository.findRoster(request.params.rosterId);
+      if (!roster) return response.status(404).json({ error: "Roster not found." });
+      const memberIds = request.body?.memberIds;
+      if (!Array.isArray(memberIds) || memberIds.some((id) => typeof id !== "string")) {
+        return response.status(400).json({ error: "memberIds must be an array of member IDs." });
+      }
+      const currentMembers = await repository.listMembers(roster.id);
+      const currentIds = new Set(currentMembers.map((member) => member.id));
+      const requestedIds = new Set(memberIds);
+      if (requestedIds.size !== memberIds.length || requestedIds.size !== currentIds.size || memberIds.some((id) => !currentIds.has(id))) {
+        return response.status(400).json({ error: "memberIds must contain every roster member exactly once." });
+      }
+
+      await repository.saveMemberOrder(roster.id, memberIds);
+      const updatedRoster = await repository.findRoster(roster.id);
+      response.json(await rosterService.toRosterResponse(updatedRoster, await rosterService.fetchRosterMembers(roster.id)));
+    },
+
+    async advanceCampaign(request, response) {
+      const roster = await repository.findRoster(request.params.rosterId);
+      if (!roster) return response.status(404).json({ error: "Roster not found." });
+      if (roster.campaign_id && roster.campaign_phase === "battle") return response.status(409).json({ error: "This warband is in a battle. Advance the battle from the Battle panel." });
+      if (roster.campaign_id && roster.campaign_phase === "pre_battle" && roster.campaign_step === PRE_BATTLE_STEPS.length) {
+        return response.status(409).json({ error: "Set up the battle (teams) and start it from the Battle panel." });
+      }
+      const [{ count }] = await repository.countHeroes(roster.id);
+      const result = advanceCampaign(roster, { scenario: request.body?.scenario, heroCount: Number(count), endBattle: request.body?.endBattle === true });
+      if (result.error) return response.status(409).json({ error: result.error });
+      const [updated] = await repository.updateRoster(roster.id, result.updates);
+      response.json(await rosterService.toRosterResponse(updated, await rosterService.fetchRosterMembers(updated.id)));
+    },
+
+    async reopenCampaign(request, response) {
+      const roster = await repository.findRoster(request.params.rosterId);
+      if (!roster) return response.status(404).json({ error: "Roster not found." });
+      const result = reopenCampaign(roster);
+      if (result.error) return response.status(409).json({ error: result.error });
+      const [updated] = await repository.updateRoster(roster.id, result.updates);
+      response.json(await rosterService.toRosterResponse(updated, await rosterService.fetchRosterMembers(updated.id)));
+    },
+
+    async update(request, response) {
+      const values = pickFields(request.body, rosterFields);
+      const rosterExists = await repository.findRoster(request.params.rosterId);
+      if (!rosterExists) return response.status(404).json({ error: "Roster not found." });
+      if (values.name !== undefined && !isNonEmptyString(values.name)) {
+        return response.status(400).json({ error: "Roster name must not be empty." });
+      }
+      const warbandError = await resolveWarbandSelection(repository, values);
+      if (warbandError !== true) return response.status(warbandError.status).json(warbandError.body);
+      if (values.warband_id !== undefined) {
+        const assignedTypeIds = await repository.listAssignedWarriorTypeIds(rosterExists.id);
+        if (assignedTypeIds.length > 0) {
+          const eligibleTypeIds = values.warband_id
+            ? new Set(await repository.listEligibleWarriorTypeIds(values.warband_id))
+            : new Set();
+          if (assignedTypeIds.some((typeId) => !eligibleTypeIds.has(typeId))) {
+            return response.status(409).json({ error: "Cannot change warband while assigned warriors are unavailable to the new warband." });
+          }
+        }
+      }
+      if (values.warband_id !== undefined) {
+        const targetWarband = values.warband_id ? await repository.findWarband(values.warband_id) : null;
+        const currentCapacity = await rosterService.getRosterCapacity(rosterExists);
+        const selectedModifiers = await repository.listSelectedCapacityModifiers(rosterExists.id);
+        if (targetWarband && selectedModifiers.some((modifier) => modifier.excluded_warbands.includes(targetWarband.name))) {
+          return response.status(409).json({ error: "The selected capacity item cannot be used by the new warband." });
+        }
+        const targetMax = (targetWarband?.max_members ?? 15)
+          + currentCapacity.memberTypeBonus
+          + selectedModifiers.reduce((total, modifier) => total + modifier.member_limit_bonus, 0);
+        if (currentCapacity.currentMembers > targetMax) {
+          return response.status(409).json({ error: "The roster exceeds the new warband's maximum size." });
+        }
+      }
+      const integerError = validateNonNegativeIntegers(values, ["treasury"]);
+      if (integerError) return response.status(400).json({ error: integerError });
+      if (values.treasury !== undefined && rosterExists.campaign_id) {
+        const campaign = await repository.findCampaign(rosterExists.campaign_id);
+        if (campaign && rosterExists.campaign_phase === "setup" && Number(values.treasury) > campaign.max_gc) {
+          return response.status(409).json({ error: `While building a roster, the treasury cannot exceed the campaign's ${campaign.max_gc} GC limit.` });
+        }
+      }
+      if (Object.keys(values).length === 0) return response.status(400).json({ error: "No valid roster fields supplied." });
+
+      const updates = { ...values };
+      if (values.warband_id !== undefined && values.warband_id !== rosterExists.warband_id) {
+        updates.member_order_customized = false;
+      }
+      const [roster] = await repository.updateRoster(request.params.rosterId, updates);
+      if (!roster) return response.status(404).json({ error: "Roster not found." });
+      response.json(await rosterService.toRosterResponse(roster, await rosterService.fetchRosterMembers(roster.id)));
+    },
+
+    async setCapacityModifiers(request, response) {
+      const roster = await repository.findRoster(request.params.rosterId);
+      if (!roster) return response.status(404).json({ error: "Roster not found." });
+      if (!Array.isArray(request.body?.modifierIds)) return response.status(400).json({ error: "modifierIds must be an array." });
+
+      const modifierIds = [...new Set(request.body.modifierIds)];
+      const modifiers = modifierIds.length
+        ? await repository.findCapacityModifiers(modifierIds)
+        : [];
+      if (modifiers.length !== modifierIds.length) return response.status(400).json({ error: "Unknown capacity modifier." });
+      const warband = roster.warband_id ? await repository.findWarband(roster.warband_id) : null;
+      if (!warband) return response.status(400).json({ error: "Select a warband before applying capacity items." });
+      const unavailable = modifiers.find((modifier) => modifier.excluded_warbands.includes(warband.name));
+      if (unavailable) return response.status(400).json({ error: `${unavailable.name} cannot be used by ${warband.name}.` });
+
+      const currentCapacity = await rosterService.getRosterCapacity(roster);
+      const maxMembers = warband.max_members + currentCapacity.memberTypeBonus
+        + modifiers.reduce((total, modifier) => total + modifier.member_limit_bonus, 0);
+      if (currentCapacity.currentMembers > maxMembers) {
+        return response.status(409).json({ error: "Removing this capacity bonus would put the roster over its maximum size." });
+      }
+
+      await repository.replaceCapacityModifiers(roster.id, modifiers);
+      response.json(await rosterService.toRosterResponse(roster, await rosterService.fetchRosterMembers(roster.id)));
+    },
+
+    async delete(request, response) {
+      const deleted = await repository.deleteRoster(request.params.rosterId);
+      if (!deleted) return response.status(404).json({ error: "Roster not found." });
+      response.status(204).end();
+    },
+
+    async addMember(request, response) {
+      if (Object.hasOwn(request.body || {}, "stats")) {
+        return response.status(400).json({ error: "Stats are set by the warrior profile and earned through advances." });
+      }
+      const rosterExists = await repository.findRoster(request.params.rosterId);
+      if (!rosterExists) return response.status(404).json({ error: "Roster not found." });
+      if (!rosterExists.warband_id) return response.status(400).json({ error: "Select a warband before adding warriors." });
+      const capacity = await rosterService.getRosterCapacity(rosterExists);
+
+      const values = pickFields(request.body, memberFields);
+      if (!isNonEmptyString(values.name)) return response.status(400).json({ error: "Warrior name is required." });
+      if (!warriorCategories.includes(values.role)) return response.status(400).json({ error: "Role must be Hero, Henchman, or Hired Sword." });
+      if (["Hero", "Henchman"].includes(values.role) && !values.warriorTypeId) {
+        return response.status(400).json({ error: `Select a ${values.role} type with a verified hire cost.` });
+      }
+      const groupSize = values.groupSize === undefined ? 1 : Number(values.groupSize);
+      delete values.groupSize;
+      if (!Number.isSafeInteger(groupSize) || groupSize < 1 || groupSize > 5) {
+        return response.status(400).json({ error: "Group size must be between 1 and 5." });
+      }
+      if (values.role !== "Henchman" && groupSize !== 1) {
+        return response.status(400).json({ error: "Only Henchmen can be added as a group." });
+      }
+      const warriorTypeId = values.warriorTypeId;
+      delete values.warriorTypeId;
+      const equipmentChoiceId = values.equipmentChoiceId;
+      delete values.equipmentChoiceId;
+      let selectedWarriorType = null;
+      if (warriorTypeId) {
+        selectedWarriorType = await rosterService.findSelectableWarriorType(rosterExists.warband_id, warriorTypeId);
+        if (!selectedWarriorType) return response.status(400).json({ error: "That warrior type is not available to this warband." });
+        if (selectedWarriorType.category !== values.role) return response.status(400).json({ error: "Warrior type does not match its category." });
+        const hireError = await validateExclusiveHire(repository, request.params.rosterId, selectedWarriorType.name, null);
+        if (hireError) return response.status(hireError.status).json(hireError.body);
+        const typeCountError = await validateWarriorTypeCount(repository, request.params.rosterId, selectedWarriorType, null, groupSize);
+        if (typeCountError) return response.status(typeCountError.status).json(typeCountError.body);
+        values.warrior_type_id = selectedWarriorType.id;
+        values.type = selectedWarriorType.name;
+      } else {
+        values.warrior_type_id = null;
+      }
+      if (values.role === "Hired Sword" && selectedWarriorType) {
+        const equipmentChoices = selectedWarriorType.equipment_choices ?? [];
+        if (equipmentChoices.length) {
+          const selectedEquipment = equipmentChoices.find((choice) => choice.id === equipmentChoiceId);
+          if (!selectedEquipment) return response.status(400).json({ error: "Choose the Hired Sword's starting equipment." });
+          // The matching hired_sword_starting_gear rows are granted via addFreeStartingEquipment once the
+          // warrior is created; starting gear now lives in the structured inventory, not this free-text field.
+          values.equipment_choice_id = selectedEquipment.id;
+        } else if (equipmentChoiceId !== undefined) {
+          return response.status(400).json({ error: "This Hired Sword has no equipment choices." });
+        }
+      } else if (equipmentChoiceId !== undefined) {
+        return response.status(400).json({ error: "Equipment choices are only used when hiring a Hired Sword." });
+      }
+      if (values.role === "Hero" && capacity.currentHeroes >= capacity.maxHeroes) {
+        return response.status(409).json({ error: `This warband already has its maximum of ${capacity.maxHeroes} Heroes.` });
+      }
+      const countedGroupSize = values.role === "Hired Sword" ? 0 : groupSize;
+      if (capacity.currentMembers + countedGroupSize > capacity.maxMembers + (selectedWarriorType?.member_limit_bonus || 0)) {
+        return response.status(409).json({ error: `This warband is at its maximum size of ${capacity.maxMembers} members.` });
+      }
+      values.experience = values.experience === undefined ? (selectedWarriorType?.starting_experience ?? 0) : Number(values.experience);
+      const experienceError = validateExperience(
+        values,
+        values.role,
+        selectedWarriorType?.can_gain_experience !== false,
+        selectedWarriorType?.starting_experience ?? 0,
+      );
+      if (experienceError) return response.status(400).json({ error: experienceError });
+      const statsResult = normalizeStats(selectedWarriorType?.stats ?? {});
+      if (statsResult.error) return response.status(400).json({ error: statsResult.error });
+      values.stats = statsResult.value;
+      values.advance_baseline = getAdvancesEarned(getAdvanceTable(values.role), selectedWarriorType?.starting_experience ?? 0, values.role);
+      for (const field of ["type", "equipment", "skills", "notes"]) values[field] = typeof values[field] === "string" ? values[field] : "";
+      const warriorValues = {
+        ...values,
+        roster_id: request.params.rosterId,
+        group_size: groupSize,
+      };
+      let warrior;
+      if (values.role === "Hero" || values.role === "Henchman") {
+        if (selectedWarriorType.hire_cost === null || selectedWarriorType.hire_cost === undefined) {
+          return response.status(400).json({ error: `This ${values.role} type has no verified hire cost and cannot be hired.` });
+        }
+        const totalHireCost = Number(selectedWarriorType.hire_cost) * (values.role === "Henchman" ? groupSize : 1);
+        const hire = await repository.hireWarrior(warriorValues, totalHireCost);
+        if (hire.insufficientFunds) {
+          return response.status(409).json({ error: `This hire costs ${totalHireCost} GC, but the roster does not have enough gold.` });
+        }
+        warrior = hire.warrior;
+      } else if (selectedWarriorType?.hire_cost != null) {
+        const hireCost = Number(selectedWarriorType.hire_cost);
+        const hire = await repository.hireWarrior(warriorValues, hireCost);
+        if (hire.insufficientFunds) {
+          return response.status(409).json({ error: `This hire costs ${hireCost} GC, but the roster does not have enough gold.` });
+        }
+        warrior = hire.warrior;
+      } else {
+        const [{ count }] = await repository.countRosterWarriors(request.params.rosterId);
+        [warrior] = await repository.createWarrior({ ...warriorValues, position: Number(count) });
+      }
+      response.status(201).json(rosterService.toMember({ ...warrior, member_limit_bonus: selectedWarriorType?.member_limit_bonus || 0 }));
+    },
+  };
+}
+
+module.exports = { createRosterController };
