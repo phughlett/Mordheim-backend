@@ -87,7 +87,7 @@ function validateExperience(values, role, canGainExperience = true, minimumExper
   if (!canGainExperience && values.experience > 0) {
     return `This ${role} type cannot gain experience.`;
   }
-  const maximum = freebuild ? 2147483647 : role === "Henchman" ? 14 : 90;
+  const maximum = freebuild && role === "Hired Sword" ? 2147483647 : role === "Henchman" ? 14 : 90;
   if (values.experience > maximum) {
     return `experience must not exceed ${maximum} for ${role}.`;
   }

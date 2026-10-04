@@ -169,32 +169,41 @@ describe("multi-user campaigns", () => {
     assert.equal(edited.body.name, "Renamed Hired Sword");
   });
 
-  test("freebuild records mature warrior XP without campaign timing or track caps", async () => {
+  test("freebuild records mature XP within caps; campaigns allow XP only during allocation", async () => {
     const free = await call(users.alice.token, "POST", "/rosters", { warbandId: aliceRoster.warbandId, treasury: 500 });
     assert.equal(free.status, 201);
     assert.ok(free.body.campaign.allowedActions.includes("experience"));
     assert.ok(free.body.campaign.allowedActions.includes("advance"));
     const types = (await call(users.alice.token, "GET", `/warbands/${aliceRoster.warbandId}/warrior-types`)).body;
-    for (const [role, xp] of [["Hero", 150], ["Henchman", 50]]) {
+    for (const [role, xp, maximum] of [["Hero", 50, 90], ["Henchman", 10, 14]]) {
       const type = types.find((item) => item.category === role && item.canGainExperience !== false && item.hireCost != null);
       assert.ok(type, `Missing hireable ${role}`);
       const body = { name: `Existing ${role}`, role, warriorTypeId: type.id, experience: xp };
       const member = await call(users.alice.token, "POST", `/rosters/${free.body.id}/members`, body);
       assert.equal(member.status, 201, JSON.stringify(member.body));
       assert.equal(Number(member.body.experience), xp);
-      const updated = await call(users.alice.token, "PATCH", `/members/${member.body.id}`, { experience: xp + 100 });
+      const updated = await call(users.alice.token, "PATCH", `/members/${member.body.id}`, { experience: maximum });
       assert.equal(updated.status, 200, JSON.stringify(updated.body));
-      assert.equal(Number(updated.body.experience), xp + 100);
-      for (const experience of [-1, 1.5, 2147483648]) {
+      assert.equal(Number(updated.body.experience), maximum);
+      for (const experience of [maximum + 1, -1, 1.5, 2147483648]) {
         assert.equal((await call(users.alice.token, "PATCH", `/members/${member.body.id}`, { experience })).status, 400);
       }
+      assert.equal((await call(users.alice.token, "POST", `/rosters/${free.body.id}/members`, { ...body, experience: maximum + 1 })).status, 400);
       assert.equal((await call(users.bob.token, "PATCH", `/members/${member.body.id}`, { experience: 300 })).status, 403);
       const campaignMember = await call(users.alice.token, "POST", `/rosters/${aliceRoster.id}/members`, { name: `Campaign ${role}`, role, warriorTypeId: type.id });
       assert.equal(campaignMember.status, 201, JSON.stringify(campaignMember.body));
       assert.equal((await call(users.alice.token, "PATCH", `/members/${campaignMember.body.id}`, { experience: xp })).status, 409);
-      assert.equal((await call(users.alice.token, "POST", `/rosters/${aliceRoster.id}/members`, body)).status, 400);
+      assert.equal((await call(users.alice.token, "POST", `/rosters/${aliceRoster.id}/members`, { ...body, experience: maximum + 1 })).status, 400);
+      await db("rosters").where({ id: aliceRoster.id }).update({ campaign_phase: "post_battle", campaign_step: 2 });
+      const allocated = await call(users.alice.token, "PATCH", `/members/${campaignMember.body.id}`, { experience: maximum });
+      assert.equal(allocated.status, 200, JSON.stringify(allocated.body));
+      assert.equal(Number(allocated.body.experience), maximum);
+      assert.equal((await call(users.alice.token, "PATCH", `/members/${campaignMember.body.id}`, { experience: maximum + 1 })).status, 400);
+      await db("rosters").where({ id: aliceRoster.id }).update({ campaign_step: 3 });
+      assert.equal((await call(users.alice.token, "PATCH", `/members/${campaignMember.body.id}`, { experience: xp })).status, 409);
+      await db("rosters").where({ id: aliceRoster.id }).update({ campaign_phase: "setup", campaign_step: 1 });
     }
     const reread = await call(users.alice.token, "GET", `/rosters/${free.body.id}`);
-    assert.deepEqual(reread.body.members.map((member) => Number(member.experience)).sort((a, b) => a - b), [150, 250]);
+    assert.deepEqual(reread.body.members.map((member) => Number(member.experience)).sort((a, b) => a - b), [14, 90]);
   });
 });
