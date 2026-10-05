@@ -156,10 +156,18 @@ function createRosterRepository(db) {
   }
 
   async function trimGroupInventory(transaction, warriorId, groupSize) {
-    await transaction("warrior_inventory")
+    const removedItems = await transaction("warrior_inventory")
       .where({ warrior_id: warriorId })
       .where("model_index", ">=", groupSize)
-      .delete();
+      .select("id", "quantity", "unit_cost_paid");
+    const refundAmount = removedItems.reduce((total, item) =>
+      total + Number(item.unit_cost_paid) * Number(item.quantity), 0);
+    if (removedItems.length) {
+      await transaction("warrior_inventory")
+        .whereIn("id", removedItems.map((item) => item.id))
+        .delete();
+    }
+    return refundAmount;
   }
 
   // Maps a `skills` row to the camelCase shape returned to the frontend.
@@ -1301,11 +1309,13 @@ function createRosterRepository(db) {
         if (!roster || Number(roster.treasury) < adjustment) return { insufficientFunds: true };
 
         await updateWarriorValues(transaction, id, values);
-        if (values.group_size !== undefined) await trimGroupInventory(transaction, id, values.group_size);
+        const equipmentRefund = values.group_size !== undefined
+          ? await trimGroupInventory(transaction, id, values.group_size)
+          : 0;
         const currentValues = await transaction("warriors").where({ id }).first("id", "role", "group_size", "warrior_type_id");
         await addFreeStartingEquipment(transaction, currentValues, roster.warband_id);
         await transaction("rosters").where({ id: roster.id }).update({
-          treasury: Number(roster.treasury) - adjustment,
+          treasury: Number(roster.treasury) - adjustment + equipmentRefund,
           updated_at: new Date(),
         });
         const warrior = await transaction("warriors as warrior")

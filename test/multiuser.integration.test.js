@@ -188,6 +188,42 @@ describe("multi-user campaigns", () => {
     assert.equal((await resize(1)).status, 200);
   });
 
+  test("Henchman resizing refunds paid gear assigned to removed models", async () => {
+    const types = (await call(users.alice.token, "GET", `/warbands/${aliceRoster.warbandId}/warrior-types`)).body;
+    const type = types.find((item) => item.category === "Henchman" && item.hireCost > 0);
+    assert.ok(type);
+    const roster = await call(users.alice.token, "POST", "/rosters", {
+      warbandId: aliceRoster.warbandId,
+      treasury: 10000,
+    });
+    const member = await call(users.alice.token, "POST", `/rosters/${roster.body.id}/members`, {
+      name: "Gear refund group",
+      role: "Henchman",
+      warriorTypeId: type.id,
+      groupSize: 2,
+    });
+    assert.equal(member.status, 201);
+    const equipment = await call(users.alice.token, "GET", `/members/${member.body.id}/equipment`);
+    const option = equipment.body.availableOptions.find((item) =>
+      item.allowIndividualGroupGear && item.unitCost > 0 && !item.firstFree);
+    assert.ok(option, "expected an individually assignable paid equipment option");
+
+    const purchase = await call(users.alice.token, "POST", `/members/${member.body.id}/equipment`, {
+      equipmentOptionId: option.id,
+      modelIndex: 1,
+    });
+    assert.equal(purchase.status, 201, JSON.stringify(purchase.body));
+    const treasuryBeforeRemoval = Number((await call(users.alice.token, "GET", `/rosters/${roster.body.id}`)).body.treasury);
+    const resize = await call(users.alice.token, "PATCH", `/members/${member.body.id}`, { groupSize: 1 });
+    assert.equal(resize.status, 200);
+
+    const updatedRoster = (await call(users.alice.token, "GET", `/rosters/${roster.body.id}`)).body;
+    assert.equal(Number(updatedRoster.treasury), treasuryBeforeRemoval + type.hireCost + option.unitCost);
+    assert.equal(await db("warrior_inventory")
+      .where({ warrior_id: member.body.id, equipment_option_id: option.id, model_index: 1 })
+      .first(), undefined);
+  });
+
   test("a selected Hired Sword type cannot be replaced, cleared, or relabeled", async () => {
     const free = await call(users.alice.token, "POST", "/rosters", { warbandId: aliceRoster.warbandId });
     assert.equal(free.status, 201);
