@@ -70,6 +70,7 @@ function toRoster(roster, members) {
     maxHeroes: roster.max_heroes ?? 6,
     maxMembers: roster.max_members ?? 15,
     treasury: String(roster.treasury),
+    wyrdstone: String(roster.wyrdstone),
     rating: String(calculateWarbandRating(members)),
     memberOrderCustomized: Boolean(roster.member_order_customized),
     campaign: toCampaign(roster),

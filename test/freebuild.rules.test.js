@@ -28,3 +28,13 @@ test("Hero and Henchman XP caps apply in Freebuild and campaigns", () => {
   assert.notEqual(validateExperience({ experience: 5 }, "Hero", true, 20, true), null);
   assert.notEqual(validateExperience({ experience: 5 }, "Henchman", false, 0, true), null);
 });
+
+test("only Freebuild permits direct currency editing at every campaign stage", () => {
+  for (const campaign_phase of ["setup", "pre_battle", "battle", "post_battle"]) {
+    for (let campaign_step = 1; campaign_step <= (campaign_phase === "post_battle" ? 10 : 1); campaign_step++) {
+      const roster = { campaign_phase, campaign_step };
+      assert.ok(getAllowedActions({ ...roster, campaign_id: null }).includes("treasury"));
+      assert.equal(getAllowedActions({ ...roster, campaign_id: "campaign" }).includes("treasury"), false);
+    }
+  }
+});

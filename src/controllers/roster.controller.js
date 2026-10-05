@@ -12,7 +12,7 @@ const {
 const { getAdvanceTable, getAdvancesEarned } = require("../services/advancement-rules.service");
 const { getMutationAccess, priceMutations } = require("../services/mutation-rules.service");
 
-const rosterFields = ["name", "warband", "warbandId", "treasury"];
+const rosterFields = ["name", "warband", "warbandId", "treasury", "wyrdstone"];
 const memberFields = ["name", "type", "warriorTypeId", "equipmentChoiceId", "groupSize", "role", "experience", "equipment", "skills", "notes"];
 const warriorCategories = ["Hero", "Henchman", "Hired Sword"];
 
@@ -65,6 +65,10 @@ function createRosterController(repository, rosterService) {
         if (!(await repository.isCampaignMember(campaign.id, request.user.id))) return response.status(403).json({ error: "Join this campaign before creating a warband in it." });
         values.campaign_id = campaign.id;
         values.treasury = campaign.max_gc;
+        if (values.wyrdstone !== undefined && Number(values.wyrdstone) !== 0) {
+          return response.status(409).json({ error: "Campaign warbands start with no Wyrdstone." });
+        }
+        values.wyrdstone = 0;
       } else {
         // Freebuild: no campaign, so the player chooses the starting gold.
         values.campaign_id = null;
@@ -77,8 +81,9 @@ function createRosterController(repository, rosterService) {
       }
       const warbandError = await resolveWarbandSelection(repository, values);
       if (warbandError !== true) return response.status(warbandError.status).json(warbandError.body);
-      const integerError = validateNonNegativeIntegers(values, ["treasury"]);
+      const integerError = validateNonNegativeIntegers(values, ["treasury", "wyrdstone"]);
       if (integerError) return response.status(400).json({ error: integerError });
+      if (values.wyrdstone > 2147483647) return response.status(400).json({ error: "wyrdstone must not exceed 2147483647." });
 
       const [roster] = await repository.createRoster(values);
       response.status(201).json(await rosterService.toRosterResponse(roster, []));
@@ -138,6 +143,9 @@ function createRosterController(repository, rosterService) {
       const values = pickFields(request.body, rosterFields);
       const rosterExists = await repository.findRoster(request.params.rosterId);
       if (!rosterExists) return response.status(404).json({ error: "Roster not found." });
+      if (rosterExists.campaign_id && (values.treasury !== undefined || values.wyrdstone !== undefined)) {
+        return response.status(409).json({ error: "Gold Crowns and Wyrdstone cannot be edited directly in Campaign mode." });
+      }
       if (values.name !== undefined && !isNonEmptyString(values.name)) {
         return response.status(400).json({ error: "Roster name must not be empty." });
       }
@@ -168,14 +176,9 @@ function createRosterController(repository, rosterService) {
           return response.status(409).json({ error: "The roster exceeds the new warband's maximum size." });
         }
       }
-      const integerError = validateNonNegativeIntegers(values, ["treasury"]);
+      const integerError = validateNonNegativeIntegers(values, ["treasury", "wyrdstone"]);
       if (integerError) return response.status(400).json({ error: integerError });
-      if (values.treasury !== undefined && rosterExists.campaign_id) {
-        const campaign = await repository.findCampaign(rosterExists.campaign_id);
-        if (campaign && rosterExists.campaign_phase === "setup" && Number(values.treasury) > campaign.max_gc) {
-          return response.status(409).json({ error: `While building a roster, the treasury cannot exceed the campaign's ${campaign.max_gc} GC limit.` });
-        }
-      }
+      if (values.wyrdstone > 2147483647) return response.status(400).json({ error: "wyrdstone must not exceed 2147483647." });
       if (Object.keys(values).length === 0) return response.status(400).json({ error: "No valid roster fields supplied." });
 
       const updates = { ...values };

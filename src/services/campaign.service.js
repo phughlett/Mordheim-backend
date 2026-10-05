@@ -70,7 +70,7 @@ function getStage(roster) {
 
 function getAllowedActions(roster) {
   if (!roster.campaign_id) return FREEBUILD_ACTIONS;
-  return getStage(roster).actions;
+  return getStage(roster).actions.filter((action) => action !== "treasury");
 }
 
 function describeBlock(roster, action) {

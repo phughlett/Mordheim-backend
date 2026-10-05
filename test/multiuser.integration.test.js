@@ -125,13 +125,53 @@ describe("multi-user campaigns", () => {
     assert.equal(free.status, 201, JSON.stringify(free.body));
     assert.equal(free.body.campaignId, null);
     assert.equal(Number(free.body.treasury), 650);
+    assert.equal(free.body.wyrdstone, "0");
+    const updated = await call(users.alice.token, "PATCH", `/rosters/${free.body.id}`, { treasury: "725", wyrdstone: "12" });
+    assert.equal(updated.status, 200, JSON.stringify(updated.body));
+    assert.equal(updated.body.treasury, "725");
+    assert.equal(updated.body.wyrdstone, "12");
+    const persisted = (await call(users.alice.token, "GET", `/rosters/${free.body.id}`)).body;
+    assert.equal(persisted.wyrdstone, "12");
+    assert.equal(persisted.treasury, "725");
+    assert.equal((await call(users.alice.token, "GET", "/rosters")).body.find((item) => item.id === free.body.id).wyrdstone, "12");
+    for (const wyrdstone of [-1, 0.5, "invalid", 2147483648]) {
+      assert.equal((await call(users.alice.token, "PATCH", `/rosters/${free.body.id}`, { wyrdstone })).status, 400);
+      assert.equal((await call(users.alice.token, "POST", "/rosters", { warbandId: warband, wyrdstone })).status, 400);
+    }
+    assert.equal((await call(users.alice.token, "PATCH", `/rosters/${free.body.id}`, { wyrdstone: 0 })).body.wyrdstone, "0");
     assert.equal((await call(users.alice.token, "POST", "/rosters", { warbandId: warband, treasury: -1 })).status, 400);
     assert.equal((await call(users.alice.token, "POST", `/rosters/${free.body.id}/campaign/advance`)).status, 409);
     assert.equal((await call(users.bob.token, "GET", `/rosters/${free.body.id}`)).status, 403);
     const code = (await call(users.alice.token, "POST", `/rosters/${free.body.id}/share`)).body.shareCode;
     assert.equal((await call(users.bob.token, "POST", "/shared-rosters/join", { code })).status, 200);
     assert.equal((await call(users.bob.token, "GET", `/rosters/${free.body.id}`)).status, 200);
+    assert.equal((await call(users.bob.token, "GET", "/shared-rosters")).body.find((item) => item.id === free.body.id).wyrdstone, "0");
+    assert.equal((await call(users.bob.token, "PATCH", `/rosters/${free.body.id}`, { treasury: 999, wyrdstone: 10 })).status, 403);
     assert.equal((await call(users.bob.token, "PATCH", `/rosters/${free.body.id}`, { name: "Nope" })).status, 403);
+  });
+
+  test("Campaign balances cannot be manually changed at any stage", async () => {
+    assert.equal(aliceRoster.wyrdstone, "0");
+    assert.equal(Number(aliceRoster.treasury), campaign.maxGc);
+    assert.equal((await call(users.alice.token, "POST", "/rosters", {
+      warbandId: aliceRoster.warbandId, campaignId: campaign.id, wyrdstone: 1,
+    })).status, 409);
+    try {
+      for (const campaign_phase of ["setup", "pre_battle", "battle", "post_battle"]) {
+        for (let campaign_step = 1; campaign_step <= (campaign_phase === "post_battle" ? 10 : 1); campaign_step++) {
+          await db("rosters").where({ id: aliceRoster.id }).update({ campaign_phase, campaign_step });
+          for (const changes of [{ treasury: 10 }, { wyrdstone: 1 }, { treasury: 10, wyrdstone: 1 }]) {
+            assert.equal((await call(users.alice.token, "PATCH", `/rosters/${aliceRoster.id}`, changes)).status, 409);
+          }
+          const current = (await call(users.alice.token, "GET", `/rosters/${aliceRoster.id}`)).body;
+          assert.equal(current.treasury, aliceRoster.treasury);
+          assert.equal(current.wyrdstone, "0");
+          assert.equal(current.campaign.allowedActions.includes("treasury"), false);
+        }
+      }
+    } finally {
+      await db("rosters").where({ id: aliceRoster.id }).update({ campaign_phase: "setup", campaign_step: 1 });
+    }
   });
 
   test("players only assign their own warbands to a shared battle", async () => {
