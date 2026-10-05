@@ -5,6 +5,7 @@ const { createAuthRoutes } = require("./routes/auth.routes");
 const { createBattleRoutes } = require("./routes/battle.routes");
 const { createCampaignRoutes } = require("./routes/campaign.routes");
 const { createCatalogRoutes } = require("./routes/catalog.routes");
+const { createCorrectionRoutes } = require("./routes/corrections.routes");
 const { createMemberRoutes } = require("./routes/member.routes");
 const { createRosterRoutes } = require("./routes/roster.routes");
 
@@ -23,9 +24,10 @@ function logApiRequest(request, response, next) {
   next();
 }
 
-function createApp(db) {
+function createApp(db, options = {}) {
   const app = express();
   const allowedOrigins = (process.env.CORS_ORIGIN || "http://localhost:5173").split(",");
+  if (process.env.TRUST_PROXY === "1") app.set("trust proxy", 1);
 
   app.use("/api", logApiRequest);
   app.use(cors({
@@ -36,6 +38,7 @@ function createApp(db) {
   app.use(express.json({ limit: "1mb" }));
   app.use("/api", createAuthRoutes(db));
   app.use("/api", createCatalogRoutes(db));
+  app.use("/api", createCorrectionRoutes(db, options.corrections));
   const { requireAuth, authorizeRoster, authorizeMember } = createAuth(db);
   app.use("/api", requireAuth);
   app.use("/api/rosters/:rosterId", authorizeRoster);
