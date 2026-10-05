@@ -37,15 +37,18 @@ function createRosterService(repository) {
 
   async function toRosterResponse(roster, members) {
     const campaign = roster.campaign_id ? await repository.findCampaign(roster.campaign_id) : null;
+    const capacity = await getRosterCapacity(roster);
     return {
       ...toRoster(roster, members),
+      maxHeroes: capacity.maxHeroes,
+      maxMembers: capacity.baseMaxMembers,
       ownerId: roster.user_id ?? null,
       player: roster.user_id ? (await repository.findUsername(roster.user_id)) ?? null : null,
       shareCode: roster.share_code ?? null,
       campaignId: campaign?.id ?? null,
       campaignName: campaign?.name ?? null,
       campaignMaxGc: campaign?.max_gc ?? null,
-      capacity: await getRosterCapacity(roster),
+      capacity,
     };
   }
 

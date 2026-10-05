@@ -11,6 +11,8 @@ const {
 } = require("../services/advancement-rules.service");
 
 const tomeIneligibleWarbands = new Set(["Witch Hunters", "Sisters of Sigmar", "Undead", "Carnival of Chaos"]);
+const { getMutationAccess, priceMutations, mutationOptions } = require("../services/mutation-rules.service");
+const { createAdvancePurchaseRepository } = require("./advance-purchase.repository");
 
 // Builds a compact `stats` object for an equipment row (from a query joined against
 // weapon_profiles / armour_profiles / weapon_material_modifiers / weapon_poisons), or
@@ -512,6 +514,8 @@ function createRosterRepository(db) {
       .first("id");
   }
 
+  const purchaseRepository = createAdvancePurchaseRepository(db, { getSkillEligibilityContext, loadAvailableSkills, isSkillEligible });
+
   async function refundWarriorEquipmentItems(warriorId, inventoryItemIds) {
     return db.transaction(async (transaction) => {
       const warrior = await transaction("warriors as warrior")
@@ -544,6 +548,7 @@ function createRosterRepository(db) {
   }
 
   return {
+    ...purchaseRepository,
     listRosters(userId) {
       return db("rosters").where({ user_id: userId }).select("*").orderBy("created_at", "asc");
     },
@@ -629,8 +634,25 @@ function createRosterRepository(db) {
           warriorTypeId: "warrior.warrior_type_id",
           warriorTypeName: "warrior_type.name",
           warbandId: "roster.warband_id",
+          campaignId: "roster.campaign_id",
         });
       if (!warrior) return null;
+
+      const warband = await db("warbands").where({ id: warrior.warbandId }).first("name");
+      const access = getMutationAccess(warband?.name, warrior.warriorTypeName, warrior.role);
+      const mutationRows = await db("warrior_mutations").where({ warrior_id: warriorId }).orderBy("position");
+      const mutations = {
+        eligible: access.eligible,
+        required: access.required,
+        canEdit: access.eligible && !warrior.campaignId,
+        availableOptions: access.options,
+        entries: mutationRows.map((row) => {
+          const option = mutationOptions.find((item) => item.id === row.mutation_id);
+          if (!option) throw new Error(`Unknown mutation in inventory: ${row.mutation_id}`);
+          return { ...option, id: row.id, mutationId: row.mutation_id, unitCostPaid: row.unit_cost_paid };
+        }),
+        totalCost: mutationRows.reduce((total, row) => total + Number(row.unit_cost_paid), 0),
+      };
 
       const statSelect = {
         weaponProfileName: "wp.name",
@@ -731,7 +753,38 @@ function createRosterRepository(db) {
       const availableOptions = availableOptionRows.map(stripStatColumns);
       const inventory = inventoryRows.map(stripStatColumns);
 
-      return { role: warrior.role, groupSize: warrior.groupSize || 1, availableOptions, inventory };
+      return { role: warrior.role, groupSize: warrior.groupSize || 1, availableOptions, inventory, mutations };
+    },
+
+    async setWarriorMutations(warriorId, mutationIds) {
+      return db.transaction(async (transaction) => {
+        const warrior = await transaction("warriors as warrior")
+          .join("rosters as roster", "roster.id", "warrior.roster_id")
+          .join("warbands as warband", "warband.id", "roster.warband_id")
+          .leftJoin("warrior_types as type", "type.id", "warrior.warrior_type_id")
+          .where("warrior.id", warriorId)
+          .forUpdate("warrior", "roster")
+          .first({
+            role: "warrior.role", type: "type.name", warband: "warband.name",
+            campaignId: "roster.campaign_id", rosterId: "roster.id", treasury: "roster.treasury",
+          });
+        if (!warrior) return { missingWarrior: true };
+        if (warrior.campaignId) return { recruitmentOnly: true };
+        const access = getMutationAccess(warrior.warband, warrior.type, warrior.role);
+        if (!access.eligible) return { error: "Only Cult of the Possessed Mutants and Possessed can edit these mutations." };
+        const priced = priceMutations(mutationIds, access, false);
+        if (priced.error) return priced;
+        const existing = await transaction("warrior_mutations").where({ warrior_id: warriorId });
+        const previousCost = existing.reduce((total, row) => total + Number(row.unit_cost_paid), 0);
+        const cost = priced.totalCost - previousCost;
+        if (cost > Number(warrior.treasury)) return { insufficientFunds: true, totalCost: cost, treasury: warrior.treasury };
+        await transaction("warrior_mutations").where({ warrior_id: warriorId }).delete();
+        if (priced.entries.length) await transaction("warrior_mutations").insert(priced.entries.map((entry) => ({ ...entry, warrior_id: warriorId })));
+        await transaction("rosters").where({ id: warrior.rosterId }).update({
+          treasury: Number(warrior.treasury) - cost, updated_at: new Date(),
+        });
+        return { treasury: Number(warrior.treasury) - cost };
+      });
     },
 
     async purchaseWarriorEquipment(warriorId, { equipmentOptionId, modelIndex, quantity }) {
@@ -869,7 +922,7 @@ function createRosterRepository(db) {
       });
     },
 
-    async hireWarrior(values, hireCost) {
+    async hireWarrior(values, hireCost, mutations = []) {
       return db.transaction(async (transaction) => {
         const roster = await transaction("rosters")
           .where({ id: values.roster_id })
@@ -883,6 +936,7 @@ function createRosterRepository(db) {
         }).returning("*");
         await addFreeStartingEquipment(transaction, warrior, roster.warband_id);
         await addWarriorTypeStartingSkills(transaction, warrior);
+        if (mutations.length) await transaction("warrior_mutations").insert(mutations.map((entry) => ({ ...entry, warrior_id: warrior.id })));
         await transaction("rosters").where({ id: roster.id }).update({
           treasury: Number(roster.treasury) - hireCost,
           updated_at: new Date(),
@@ -947,6 +1001,8 @@ function createRosterRepository(db) {
           "warrior_advances.secondary_roll as secondaryRoll",
           "warrior_advances.result",
           "warrior_advances.stat",
+          "warrior_advances.purchase_cost as purchaseCost",
+          "warrior_advances.experience_before_purchase as experienceBeforePurchase",
           "learned_skill.id as learnedSkillId",
           "skill.name as learnedSkillName",
           "skill.category as learnedSkillCategory",
@@ -1004,6 +1060,7 @@ function createRosterRepository(db) {
       const canPromote = warrior.role === "Henchman"
         && warrior.promotionEligibility === "eligible"
         && Number(currentHeroes) < Number(warrior.maxHeroes || 6);
+      const purchases = await purchaseRepository.getAdvancePurchaseOptions(warriorId);
 
       return {
         role: warrior.role,
@@ -1027,8 +1084,11 @@ function createRosterRepository(db) {
         pendingSkillAdvances,
         history: history.map((advance) => ({
           ...advance,
-          canRemove: !advance.consumedAt && !(warrior.role === "Hero" && advance.advanceTable === "Henchman") && latestAdvanceByTable.get(advance.advanceTable)?.id === advance.id,
+          canRemove: !advance.consumedAt && !(warrior.role === "Hero" && advance.advanceTable === "Henchman")
+            && latestAdvanceByTable.get(advance.advanceTable)?.id === advance.id
+            && (advance.purchaseCost === null || (purchases.enabled && Number(warrior.experience) === Number(advance.experienceThreshold))),
         })),
+        purchases,
       };
     },
 
@@ -1132,6 +1192,8 @@ function createRosterRepository(db) {
     },
 
     async deleteWarriorAdvance(warriorId, advanceId) {
+      const paid = await db("warrior_advances").where({ id: advanceId, warrior_id: warriorId }).first("purchase_cost");
+      if (paid?.purchase_cost != null) return purchaseRepository.refundPurchasedAdvance(warriorId, advanceId);
       return db.transaction(async (transaction) => {
         const warrior = await transaction("warriors as warrior")
           .leftJoin("warrior_types as warrior_type", "warrior_type.id", "warrior.warrior_type_id")
@@ -1475,12 +1537,14 @@ function createRosterRepository(db) {
         pendingSkillAdvances.length ? loadAvailableSkills(db, context) : [],
         db("warrior_skills as warrior_skill")
           .join("skills as skill", "skill.id", "warrior_skill.skill_id")
+          .leftJoin("warrior_advances as paid_advance", "paid_advance.learned_skill_id", "warrior_skill.id")
           .where("warrior_skill.warrior_id", warriorId)
           .orderBy("warrior_skill.acquired_at", "asc")
           .select(
             "warrior_skill.id as warriorSkillId",
             "warrior_skill.acquired_at as acquiredAt",
             "warrior_skill.notes as notes",
+            "paid_advance.purchase_cost as purchaseCost",
             "skill.id as id",
             "skill.name as name",
             "skill.category as category",
@@ -1501,7 +1565,7 @@ function createRosterRepository(db) {
         eligibility: categoryRows.map((row) => ({ category: row.category, specialListName: row.special_list_name })),
         pendingSkillAdvances,
         availableSkills: loadedSkills.filter((skill) => !knownSkillIds.has(skill.id)),
-        learnedSkills: learnedSkills.map((row) => ({ warriorSkillId: row.warriorSkillId, acquiredAt: row.acquiredAt, notes: row.notes, ...mapSkillRow(row) })),
+        learnedSkills: learnedSkills.map((row) => ({ warriorSkillId: row.warriorSkillId, acquiredAt: row.acquiredAt, notes: row.notes, purchaseCost: row.purchaseCost, ...mapSkillRow(row) })),
       };
     },
 
@@ -1800,6 +1864,8 @@ function createRosterRepository(db) {
     },
 
     async forgetWarriorSkill(warriorId, warriorSkillId) {
+      const paid = await db("warrior_advances").where({ warrior_id: warriorId, learned_skill_id: warriorSkillId }).whereNotNull("purchase_cost").first("id");
+      if (paid) return purchaseRepository.refundPurchasedAdvance(warriorId, paid.id);
       const skill = await db("warrior_skills")
         .where({ id: warriorSkillId, warrior_id: warriorId })
         .first("id", "is_starting");

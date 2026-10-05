@@ -40,7 +40,7 @@ function getStatMaximumProfile(warbandName, warriorTypeName) {
   if (/\b(beastman|beastmen|gor|ungor|bestigor|centigor)\b/.test(source)) return "Beastman";
   if (/\b(dwarf|dwarfs|dwarves)\b/.test(source)) return "Dwarf";
   if (/\b(elf|elves|elven)\b/.test(source)) return "Elf";
-  if (/\b(human|mercenary|witch hunter|sigmar|sister|flagellant|freelancer|warlock|pit fighter|magister|dreg|darksoul|mutant|brethren|warrior priest|zealot|undead|carnival of chaos|pirate|middenheim|marienburg|averland|ostland|hochland|reikland|nuln)\b/.test(source)) {
+  if (/\b(human|mercenary|mercenaries|youngblood|witch hunter|sigmar|sister|flagellant|freelancer|warlock|pit fighter|magister|dreg|darksoul|mutant|mutants|brethren|warrior priest|zealot|undead|carnival of chaos|pirate|middenheim|marienburg|averland|ostland|hochland|reikland|nuln)\b/.test(source)) {
     return "Human";
   }
   return null;

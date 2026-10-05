@@ -1,4 +1,5 @@
 const warriorCategories = ["Hero", "Henchman", "Hired Sword"];
+const { getMutationAccess } = require("./mutation-rules.service");
 
 function createCatalogService(repository) {
   return {
@@ -25,7 +26,8 @@ function createCatalogService(repository) {
     },
 
     async listWarriorTypes(warbandId, query) {
-      if (!await repository.findWarband(warbandId)) {
+      const warband = await repository.findWarband(warbandId);
+      if (!warband) {
         return { status: 404, body: { error: "Warband not found." } };
       }
       if (query.category !== undefined && !warriorCategories.includes(query.category)) {
@@ -35,7 +37,10 @@ function createCatalogService(repository) {
         category: query.category,
         includeUnavailable: query.includeUnavailable === "true",
       });
-      return { status: 200, body: types };
+      return { status: 200, body: types.map((type) => {
+        const access = getMutationAccess(warband.name, type.name, type.category);
+        return { ...type, mutationRequired: access.required, mutationOptions: access.options };
+      }) };
     },
   };
 }

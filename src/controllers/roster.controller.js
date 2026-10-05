@@ -10,6 +10,7 @@ const {
   validateWarriorTypeCount,
 } = require("../services/roster-validation.service");
 const { getAdvanceTable, getAdvancesEarned } = require("../services/advancement-rules.service");
+const { getMutationAccess, priceMutations } = require("../services/mutation-rules.service");
 
 const rosterFields = ["name", "warband", "warbandId", "treasury"];
 const memberFields = ["name", "type", "warriorTypeId", "equipmentChoiceId", "groupSize", "role", "experience", "equipment", "skills", "notes"];
@@ -273,6 +274,14 @@ function createRosterController(repository, rosterService) {
       } else if (equipmentChoiceId !== undefined) {
         return response.status(400).json({ error: "Equipment choices are only used when hiring a Hired Sword." });
       }
+      const warband = await repository.findWarband(rosterExists.warband_id);
+      const mutationAccess = getMutationAccess(warband.name, selectedWarriorType?.name, values.role);
+      const mutationPurchase = priceMutations(
+        request.body?.mutationIds === undefined ? [] : request.body.mutationIds,
+        mutationAccess,
+        Boolean(rosterExists.campaign_id) && mutationAccess.required,
+      );
+      if (mutationPurchase.error) return response.status(400).json({ error: mutationPurchase.error });
       if (values.role === "Hero" && capacity.currentHeroes >= capacity.maxHeroes) {
         return response.status(409).json({ error: `This warband already has its maximum of ${capacity.maxHeroes} Heroes.` });
       }
@@ -304,8 +313,8 @@ function createRosterController(repository, rosterService) {
         if (selectedWarriorType.hire_cost === null || selectedWarriorType.hire_cost === undefined) {
           return response.status(400).json({ error: `This ${values.role} type has no verified hire cost and cannot be hired.` });
         }
-        const totalHireCost = Number(selectedWarriorType.hire_cost) * (values.role === "Henchman" ? groupSize : 1);
-        const hire = await repository.hireWarrior(warriorValues, totalHireCost);
+        const totalHireCost = Number(selectedWarriorType.hire_cost) * (values.role === "Henchman" ? groupSize : 1) + mutationPurchase.totalCost;
+        const hire = await repository.hireWarrior(warriorValues, totalHireCost, mutationPurchase.entries);
         if (hire.insufficientFunds) {
           return response.status(409).json({ error: `This hire costs ${totalHireCost} GC, but the roster does not have enough gold.` });
         }

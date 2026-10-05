@@ -1,5 +1,6 @@
 const crypto = require("crypto");
 const express = require("express");
+const { defaultPurchaseRules, validatePurchaseRules } = require("../services/advance-purchase-rules.service");
 
 function toCampaignResponse(campaign, warbandCount = 0, userId = null) {
   return {
@@ -9,6 +10,7 @@ function toCampaignResponse(campaign, warbandCount = 0, userId = null) {
     warbandCount: Number(warbandCount),
     inviteCode: campaign.invite_code,
     isOwner: Boolean(userId) && campaign.owner_id === userId,
+    advancePurchaseRules: campaign.advance_purchase_rules || defaultPurchaseRules,
   };
 }
 
@@ -77,8 +79,10 @@ function createCampaignRoutes(db) {
     const maxGc = request.body?.maxGc === undefined ? 500 : Number(request.body.maxGc);
     if (!name) return response.status(400).json({ error: "Campaign name must not be empty." });
     if (!validateMaxGc(maxGc)) return response.status(400).json({ error: "Maximum GC must be a whole number of 0 or more." });
+    const purchaseRules = validatePurchaseRules(request.body?.advancePurchaseRules === undefined ? defaultPurchaseRules : request.body.advancePurchaseRules);
+    if (purchaseRules.error) return response.status(400).json({ error: purchaseRules.error });
     const campaign = await db.transaction(async (trx) => {
-      const [created] = await trx("campaigns").insert({ name, max_gc: maxGc, owner_id: request.user.id, invite_code: newInviteCode() }).returning("*");
+      const [created] = await trx("campaigns").insert({ name, max_gc: maxGc, owner_id: request.user.id, invite_code: newInviteCode(), advance_purchase_rules: JSON.stringify(purchaseRules.rules) }).returning("*");
       await trx("campaign_members").insert({ campaign_id: created.id, user_id: request.user.id });
       return created;
     });

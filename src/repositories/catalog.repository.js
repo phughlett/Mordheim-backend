@@ -12,7 +12,7 @@ function createCatalogRepository(db) {
     },
 
     findWarband(id) {
-      return db("warbands").where({ id, is_available: true }).first("id");
+      return db("warbands").where({ id, is_available: true }).first("id", "name");
     },
 
     listWarriorTypes(warbandId, { category, includeUnavailable }) {

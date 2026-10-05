@@ -34,9 +34,19 @@ function createMemberRoutes(db) {
   };
 
   router.get("/members/:memberId/equipment", controller.listEquipment);
+  router.put("/members/:memberId/mutations", controller.setMutations);
   router.get("/members/:memberId/advances", controller.getAdvancements);
   router.post("/members/:memberId/advances", guard("advance", fromMember), controller.recordAdvance);
-  router.delete("/members/:memberId/advances/:advanceId", guard("advance", fromMember), controller.removeAdvance);
+  router.post("/members/:memberId/advance-purchases", controller.purchaseAdvance);
+  router.delete("/members/:memberId/advances/:advanceId", async (request, response, next) => {
+    try {
+      const advance = await db("warrior_advances").where({ id: request.params.advanceId, warrior_id: request.params.memberId }).first("purchase_cost");
+      if (!advance || advance.purchase_cost != null) return next();
+      return guard("advance", fromMember)(request, response, next);
+    } catch (error) {
+      next(error);
+    }
+  }, controller.removeAdvance);
   router.post("/members/:memberId/equipment", guard("buy", fromMember), controller.purchaseEquipment);
   router.delete("/members/:memberId/equipment", guard("sell", fromMember), controller.sellEquipmentItems);
   router.delete("/members/:memberId/equipment/:inventoryItemId", guard("sell", fromMember), controller.sellEquipment);

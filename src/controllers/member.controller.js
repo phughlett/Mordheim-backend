@@ -48,6 +48,7 @@ function createMemberController(repository, rosterService) {
 
     async removeAdvance(request, response) {
       const result = await repository.deleteWarriorAdvance(request.params.memberId, request.params.advanceId);
+      if (result.purchaseError) return response.status(409).json({ error: result.purchaseError });
       if (result.missingWarrior) return response.status(404).json({ error: "Warrior not found." });
       if (result.missingAdvance) return response.status(404).json({ error: "Advancement not found." });
       if (result.usedForPromotion) return response.status(409).json({ error: "Advancements earned as a Henchman, including the one used for promotion, cannot be removed." });
@@ -57,10 +58,32 @@ function createMemberController(repository, rosterService) {
       response.json(await repository.getWarriorAdvancements(request.params.memberId));
     },
 
+    async purchaseAdvance(request, response) {
+      const { stat, skillId } = request.body || {};
+      if ((typeof stat === "string") === (typeof skillId === "string")
+        || (stat !== undefined && skillId !== undefined)
+        || (typeof skillId === "string" && !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(skillId))) {
+        return response.status(400).json({ error: "Supply exactly one characteristic stat or skillId to purchase." });
+      }
+      const result = await repository.purchaseWarriorAdvance(request.params.memberId, { stat, skillId });
+      if (result.missingWarrior) return response.status(404).json({ error: "Warrior not found." });
+      if (result.error) return response.status(409).json({ error: result.error });
+      response.status(201).json(await repository.getWarriorAdvancements(request.params.memberId));
+    },
+
     async listEquipment(request, response) {
       const equipment = await repository.getWarriorEquipment(request.params.memberId);
       if (!equipment) return response.status(404).json({ error: "Warrior not found." });
       response.json(equipment);
+    },
+
+    async setMutations(request, response) {
+      const result = await repository.setWarriorMutations(request.params.memberId, request.body?.mutationIds);
+      if (result.missingWarrior) return response.status(404).json({ error: "Warrior not found." });
+      if (result.recruitmentOnly) return response.status(409).json({ error: "Campaign mutations are permanent and can only be purchased when recruiting a Mutant or Possessed." });
+      if (result.error) return response.status(400).json({ error: result.error });
+      if (result.insufficientFunds) return response.status(409).json({ error: `These mutations cost an additional ${result.totalCost} GC, but the roster has ${result.treasury} GC.` });
+      response.json({ ...await repository.getWarriorEquipment(request.params.memberId), treasury: String(result.treasury) });
     },
 
     async purchaseEquipment(request, response) {
@@ -147,6 +170,7 @@ function createMemberController(repository, rosterService) {
 
     async forgetSkill(request, response) {
       const result = await repository.forgetWarriorSkill(request.params.memberId, request.params.warriorSkillId);
+      if (result.purchaseError) return response.status(409).json({ error: result.purchaseError });
       if (result.notRemovable) return response.status(409).json({ error: "Starting skills cannot be removed." });
       if (!result.deleted) return response.status(404).json({ error: "Learned skill not found." });
 
