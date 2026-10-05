@@ -1220,7 +1220,7 @@ function createRosterRepository(db) {
       });
     },
 
-    async updateHenchmanAndCharge(id, values, additionalHireCost) {
+    async updateHenchmanAndAdjustTreasury(id, values, additionalHireCost) {
       return db.transaction(async (transaction) => {
         const currentWarrior = await transaction("warriors").where({ id }).first("roster_id");
         if (!currentWarrior) return { missingWarrior: true };
@@ -1228,14 +1228,22 @@ function createRosterRepository(db) {
           .where({ id: currentWarrior.roster_id })
           .forUpdate()
           .first("id", "treasury", "warband_id");
-        if (!roster || Number(roster.treasury) < additionalHireCost) return { insufficientFunds: true };
+        const current = await transaction("warriors as warrior")
+          .leftJoin("warrior_types as warrior_type", "warrior_type.id", "warrior.warrior_type_id")
+          .where("warrior.id", id)
+          .first("warrior.group_size", "warrior.warrior_type_id", "warrior_type.hire_cost");
+        if (!current) return { missingWarrior: true };
+        const adjustment = current.warrior_type_id && values.group_size !== undefined
+          ? (values.group_size - current.group_size) * Number(current.hire_cost || 0)
+          : additionalHireCost;
+        if (!roster || Number(roster.treasury) < adjustment) return { insufficientFunds: true };
 
         await updateWarriorValues(transaction, id, values);
         if (values.group_size !== undefined) await trimGroupInventory(transaction, id, values.group_size);
         const currentValues = await transaction("warriors").where({ id }).first("id", "role", "group_size", "warrior_type_id");
         await addFreeStartingEquipment(transaction, currentValues, roster.warband_id);
         await transaction("rosters").where({ id: roster.id }).update({
-          treasury: Number(roster.treasury) - additionalHireCost,
+          treasury: Number(roster.treasury) - adjustment,
           updated_at: new Date(),
         });
         const warrior = await transaction("warriors as warrior")

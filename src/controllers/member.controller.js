@@ -480,8 +480,8 @@ function createMemberController(repository, rosterService) {
       }
 
       let updatedWarrior;
-      if (additionalHireCost > 0) {
-        const update = await repository.updateHenchmanAndCharge(warrior.id, values, additionalHireCost);
+      if (additionalHireCost > 0 || (warrior.role === "Henchman" && groupSizeProvided)) {
+        const update = await repository.updateHenchmanAndAdjustTreasury(warrior.id, values, additionalHireCost);
         if (update.missingWarrior) return response.status(404).json({ error: "Warrior not found." });
         if (update.insufficientFunds) return response.status(409).json({ error: `Adding Henchman models costs ${additionalHireCost} GC, but the roster does not have enough gold.` });
         updatedWarrior = update.warrior;

@@ -144,6 +144,50 @@ describe("multi-user campaigns", () => {
     assert.equal((await call(users.carol.token, "GET", `/campaigns/${campaign.id}/battles`)).status, 403);
   });
 
+  test("Henchman resizing charges additions, refunds removals, and observes campaign gates", async () => {
+    const types = (await call(users.alice.token, "GET", `/warbands/${aliceRoster.warbandId}/warrior-types`)).body;
+    const type = types.find((item) => item.category === "Henchman" && item.hireCost > 0);
+    assert.ok(type);
+    const free = await call(users.alice.token, "POST", "/rosters", { warbandId: aliceRoster.warbandId, treasury: type.hireCost * 3 });
+    assert.equal(free.status, 201);
+    const member = await call(users.alice.token, "POST", `/rosters/${free.body.id}/members`, {
+      name: "Resize test group", role: "Henchman", warriorTypeId: type.id, groupSize: 2,
+    });
+    assert.equal(member.status, 201, JSON.stringify(member.body));
+    const resize = (groupSize) => call(users.alice.token, "PATCH", `/members/${member.body.id}`, { groupSize });
+    const read = () => call(users.alice.token, "GET", `/rosters/${free.body.id}`);
+    assert.equal((await resize(3)).status, 200);
+    assert.equal(Number((await read()).body.treasury), 0);
+    assert.equal((await resize(3)).status, 200);
+    assert.equal(Number((await read()).body.treasury), 0);
+    assert.ok(await db("warrior_inventory").where({ warrior_id: member.body.id, model_index: 2 }).first());
+    assert.equal((await resize(4)).status, 409);
+    assert.equal((await read()).body.members[0].groupSize, 3);
+    assert.equal(Number((await read()).body.treasury), 0);
+    assert.equal((await resize(2)).status, 200);
+    assert.equal(Number((await read()).body.treasury), type.hireCost);
+    assert.equal(await db("warrior_inventory").where({ warrior_id: member.body.id, model_index: 2 }).first(), undefined);
+    const repeated = await Promise.all([resize(2), resize(2)]);
+    assert.ok(repeated.every((result) => result.status === 200));
+    assert.equal(Number((await read()).body.treasury), type.hireCost);
+    const simultaneous = await Promise.all([resize(3), resize(3)]);
+    assert.ok(simultaneous.every((result) => result.status === 200));
+    assert.equal(Number((await read()).body.treasury), 0);
+    assert.equal((await resize(1)).status, 200);
+    assert.equal(Number((await read()).body.treasury), type.hireCost * 2);
+    assert.equal((await resize(0)).status, 400);
+    assert.equal((await resize(6)).status, 400);
+    await db("rosters").where({ id: free.body.id }).update({ campaign_id: campaign.id, campaign_phase: "battle" });
+    assert.equal((await call(users.bob.token, "PATCH", `/members/${member.body.id}`, { groupSize: 2 })).status, 403);
+    assert.equal((await resize(2)).status, 409);
+    await db("rosters").where({ id: free.body.id }).update({ campaign_phase: "post_battle", campaign_step: 1 });
+    assert.equal((await resize(2)).status, 409);
+    await db("rosters").where({ id: free.body.id }).update({ campaign_step: 8 });
+    assert.equal((await resize(2)).status, 200);
+    await db("rosters").where({ id: free.body.id }).update({ campaign_step: 1 });
+    assert.equal((await resize(1)).status, 200);
+  });
+
   test("a selected Hired Sword type cannot be replaced, cleared, or relabeled", async () => {
     const free = await call(users.alice.token, "POST", "/rosters", { warbandId: aliceRoster.warbandId });
     assert.equal(free.status, 201);
