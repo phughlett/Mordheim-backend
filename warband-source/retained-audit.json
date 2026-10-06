@@ -1,0 +1,135 @@
+{
+  "audits": [
+    {
+      "warbandName": "Battle Monks of Cathay", "grade": "1c",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1c-warbands/battle-monks-of-cathay",
+      "checked": ["profiles", "hire costs", "starting experience", "caps", "equipment", "skill categories", "special rules"],
+      "findings": [
+        { "surface": "Dragon Monks profile", "before": {}, "after": { "M": "4", "WS": "4", "BS": "3", "S": "3", "T": "3", "W": "1", "I": "4", "A": "1", "Ld": "8" }, "reason": "The source prints a complete profile." },
+        { "surface": "Soldier equipment", "before": "No free dagger", "after": "First dagger free", "reason": "The online source includes the dagger entry." },
+        { "surface": "Equipment aliases", "before": "Katana", "after": "Dragon Sword alias retained in rules", "reason": "The source uses Dragon Sword; retain existing option IDs and document the alias." },
+        { "surface": "Emissary equipment", "before": "No cloak or horse", "after": "Cathayan silk cloak 40 GC and Horse 30 GC", "reason": "The source misc list restricts both items to the Emissary." }
+      ],
+      "manualRules": ["Monks cannot use poisons.", "Decree and Warmonger require manual campaign adjudication.", "Raging Peasants do not count as rout-test casualties."]
+    },
+    {
+      "warbandName": "Marauders of Chaos", "grade": "1c",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1c-warbands/marauders-of-chaos",
+      "checked": ["profiles", "hire costs", "starting experience", "caps", "equipment", "skill categories", "spells", "special rules"],
+      "findings": [
+        { "surface": "Marauders", "before": "25 GC, WS3 I3", "after": "35 GC, WS4 I4", "reason": "Matches the supplied Border Town Burning PDF and the online cost." },
+        { "surface": "Warhounds and Spawn", "before": "Empty profiles; Spawn gains XP", "after": "Complete profiles; Spawn cannot gain XP", "reason": "The supplied PDF contains both profiles and the No Brain rule." },
+        { "surface": "Hero equipment", "before": "Flail absent", "after": "Flail 15 GC", "reason": "Present in the source Hero list." }
+      ],
+      "manualRules": ["Norse, Kurgan and Hung tribe effects remain manual, including Hung capacity 12.", "Marks may permit extra conditional recruits; mark selection is not automated.", "Condemned Fate equipment unlock and variable-stat advances remain manual."]
+    },
+    {
+      "warbandName": "Night Goblins", "grade": "1c",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1c-warbands/night-goblins",
+      "checked": ["profiles", "hire costs", "starting experience", "caps", "equipment", "skill categories", "spells", "special rules"],
+      "findings": [
+        { "surface": "Cave Squig Movement", "before": "12", "after": "2D6", "reason": "The source uses a random Movement characteristic." },
+        { "surface": "Promotion", "before": "Fanatics and Troll eligible", "after": "Ineligible", "reason": "They cannot gain experience." },
+        { "surface": "Sneaky Git", "before": "All Heroes", "after": "Big Boss only", "reason": "Explicit source restriction." }
+      ],
+      "manualRules": ["The online missile section omits the short bow; retain the 5 GC short bow printed in the supplied v3.21 PDF.", "Snotlings must initially be hired as five models for 50 GC, replacements cost 10 GC each.", "The whole Snotling Mob counts as one model for capacity, income and rout tests; special counting remains manual.", "Fanatic mushrooms and Troll upkeep remain manual."]
+    }
+  ],
+  "warbands": [
+    {
+      "name": "Battle Monks of Cathay", "grade": "1c",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1c-warbands/battle-monks-of-cathay",
+      "specialRules": [
+        { "name": "Strictures", "summary": "Dragon and Warrior Monks cannot wear armour." },
+        { "name": "Distaste for Poison", "summary": "Dragon and Warrior Monks cannot use poisons or venom." },
+        { "name": "Outsiders", "summary": "Only Hired Swords explicitly permitting Battle Monks may be hired." }
+      ],
+      "warriors": [
+        { "name": "Emissary", "role": "Hero", "equipmentListKeys": ["battle-monk-soldier", "battle-monk-emissary-misc"], "specialRules": [{ "name": "Ride Horse", "summary": "Trained to ride horses." }, { "name": "Decree", "summary": "After the Emissary dies, replace him before buying other warriors or equipment; he resumes leadership." }] },
+        { "name": "Dragon Monks", "role": "Hero", "stats": { "M": "4", "WS": "4", "BS": "3", "S": "3", "T": "3", "W": "1", "I": "4", "A": "1", "Ld": "8" }, "equipmentListKeys": ["battle-monk-monk"], "allowedCategories": ["weapon"], "specialRules": [{ "name": "Unarmed Combat", "summary": "No unarmed penalties and +1 Attack when unarmed." }, { "name": "Art of Silent Death", "summary": "Unarmed attacks cause critical wounds on 5-6; quarter-staff attacks do not gain this benefit." }] },
+        { "name": "Warrior Monks", "role": "Henchman", "equipmentListKeys": ["battle-monk-monk"], "allowedCategories": ["weapon"], "promotionEligibility": "eligible", "specialRules": [{ "name": "Unarmed Combat", "summary": "No unarmed penalties and +1 Attack when unarmed." }] },
+        { "name": "Soldiers", "role": "Henchman", "promotionEligibility": "eligible" },
+        { "name": "Raging Peasants", "role": "Henchman", "promotionEligibility": "ineligible", "specialRules": [{ "name": "Simple Folk", "summary": "Cannot gain experience; fight unarmed without penalties." }, { "name": "Mob", "summary": "+1 Leadership per other allied peasant within 3 inches; cannot use the leader's Leadership." }, { "name": "Ignored", "summary": "Peasant casualties do not contribute to the rout-test casualty count." }] }
+      ],
+      "equipmentLists": [
+        { "key": "battle-monk-emissary-misc", "name": "Emissary Miscellaneous Equipment", "items": [
+          { "name": "Cathayan silk cloak", "category": "misc", "unitCost": 40, "allowedWarriorTypeNames": ["Emissary"], "ruleText": "Emissary only. Resolve the cloak's effects using the full source." },
+          { "name": "Horse", "category": "misc", "unitCost": 30, "allowedWarriorTypeNames": ["Emissary"], "ruleText": "Emissary only; Ride Horse is recorded on the Emissary's profile." }
+        ] },
+        { "key": "battle-monk-soldier", "name": "Soldier Equipment List", "items": [
+          { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+          { "name": "Katana", "category": "weapon", "unitCost": 20, "ruleText": "Dragon Sword: armour piercing; +1 Initiative when charging." },
+          { "name": "Cathayan longsword", "category": "weapon", "unitCost": 75 },
+          { "name": "Crossbow", "category": "weapon", "unitCost": 25 },
+          { "name": "Duelling pistol", "category": "weapon", "unitCost": 30, "profileName": "Duelling pistol", "ruleText": "Brace costs 60 gc." },
+          { "name": "Brace of Duelling Pistols", "category": "weapon", "unitCost": 60, "profileName": "Duelling pistol", "ruleText": "Source brace cost: 60 gc. Contains two pistols and counts as one missile weapon toward the two-missile-weapon carrying limit." },
+          { "name": "Handgun", "category": "weapon", "unitCost": 35 },
+          { "name": "Spear", "category": "weapon", "unitCost": 10 },
+          { "name": "Sword", "category": "weapon", "unitCost": 10 },
+          { "name": "Bow", "category": "weapon", "unitCost": 10 },
+          { "name": "Heavy armour", "category": "armour", "unitCost": 50 },
+          { "name": "Light armour", "category": "armour", "unitCost": 20 },
+          { "name": "Helmet", "category": "armour", "unitCost": 10 },
+          { "name": "Shield", "category": "shield", "unitCost": 5 }
+        ] }
+      ]
+    },
+    {
+      "name": "Marauders of Chaos", "grade": "1c",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1c-warbands/marauders-of-chaos",
+      "specialRules": [
+        { "name": "Eye of the Gods", "summary": "After a battle with an unmarked leader present, resolve the source's 2D6 reward or transformation test manually." },
+        { "name": "Tribes", "summary": "Choose Norse, Kurgan or Hung manually. Norse gain +1 rarity and a 13+ Eye threshold; Kurgan have unrestricted Warhound numbers, bow access and -1 rarity except their special weapons; Hung have capacity 12 and discounted warhorses." },
+        { "name": "Marks", "summary": "Marks affect magic, Leadership, recruits and bonuses; record the chosen mark and adjudicate its effects manually." },
+        { "name": "Hired Swords", "summary": "May hire Pit Fighters, Ogre Bodyguards, Norse Shamans and Imperial Assassins. Warlocks and Witches are forbidden while any warrior has the Mark of Arkhar; mark restrictions remain manual." }
+      ],
+      "hiredSwordPolicy": {
+        "allowedNames": ["Pit Fighter", "Ogre Bodyguard", "Norse Shaman", "Imperial Assassin", "Warlock (HS)"],
+        "conditionalNames": ["Warlock (HS)"],
+        "summary": "Marauders may hire Pit Fighters, Ogre Bodyguards, Norse Shamans and Imperial Assassins. Warlocks require no warrior with the Mark of Arkhar; verify this manually. Other Hired Swords must explicitly permit Marauders."
+      },
+      "warriors": [
+        { "name": "Marauders", "role": "Henchman", "stats": { "M": "4", "WS": "4", "BS": "3", "S": "3", "T": "3", "W": "1", "I": "4", "A": "1", "Ld": "7" }, "hireCost": 35, "promotionEligibility": "eligible" },
+        { "name": "Warhounds of Chaos", "role": "Henchman", "stats": { "M": "7", "WS": "4", "BS": "0", "S": "4", "T": "3", "W": "1", "I": "3", "A": "1", "Ld": "5" }, "canGainExperience": false, "promotionEligibility": "ineligible", "equipmentListKeys": [], "specialRules": [{ "name": "Animals", "summary": "Cannot gain experience or use equipment; fight with natural weapons." }] },
+        { "name": "Spawn of Chaos", "role": "Henchman", "stats": { "M": "2D6", "WS": "3", "BS": "0", "S": "4", "T": "5", "W": "3", "I": "2", "A": "D6+1", "Ld": "10" }, "canGainExperience": false, "promotionEligibility": "ineligible", "large": true, "equipmentListKeys": [], "specialRules": [{ "name": "Special Movement and Attacks", "summary": "Moves 2D6 straight ahead; contact counts as a charge. Roll D6+1 Attacks each combat phase." }, { "name": "Mindless", "summary": "Causes fear, automatically passes Leadership tests and gains no experience." }, { "name": "Large", "summary": "Counts as a Large Target." }] },
+        { "name": "Condemned", "role": "Hero", "specialRules": [{ "name": "Inconsistency", "summary": "Determine WS, S, T and A when needed each turn until individually fixed by advances." }, { "name": "Fate", "summary": "Uses no equipment until all variable characteristics are fixed; at 90 XP with any variable characteristics remaining, becomes a Spawn or leaves if a Spawn already exists." }, { "name": "Fear", "summary": "Causes fear." }] }
+      ],
+      "equipmentLists": [
+        { "key": "marauder-hero", "name": "Hero Equipment List", "items": [
+          { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+          { "name": "Hammer", "category": "weapon", "unitCost": 3 },
+          { "name": "Axe", "category": "weapon", "unitCost": 5 },
+          { "name": "Sword", "category": "weapon", "unitCost": 10 },
+          { "name": "Halberd", "category": "weapon", "unitCost": 10 },
+          { "name": "Morning star", "category": "weapon", "unitCost": 15 },
+          { "name": "Flail", "category": "weapon", "unitCost": 15 },
+          { "name": "Steel whip", "category": "weapon", "unitCost": 15, "ruleText": "Barbed Whip: retained legacy alias. Resolve its special rules from the source." },
+          { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+          { "name": "Great axe", "category": "weapon", "unitCost": 25 },
+          { "name": "Light armour", "category": "armour", "unitCost": 20 },
+          { "name": "Heavy armour", "category": "armour", "unitCost": 50 },
+          { "name": "Shield", "category": "shield", "unitCost": 5 },
+          { "name": "Helmet", "category": "armour", "unitCost": 10 }
+        ] }
+      ]
+    },
+    {
+      "name": "Night Goblins", "grade": "1c",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1c-warbands/night-goblins",
+      "specialRules": [
+        { "name": "Animosity", "summary": "Roll at the start of each turn; on 1 the Night Goblins squabble instead of acting. Non-goblins are unaffected." },
+        { "name": "Hate Stunties", "summary": "Night Goblins hate Dwarfs; Fanatics and non-goblins do not receive this hatred." },
+        { "name": "Snotling Mob", "summary": "Initially hire five Snotlings for 50 GC; replace losses for 10 GC each. The whole mob counts as one model for capacity, income and rout tests; adjust those special counts manually." }
+      ],
+      "warriors": [
+        { "name": "Cave Squigs", "role": "Henchman", "stats": { "M": "2D6", "WS": "4", "BS": "0", "S": "4", "T": "3", "W": "1", "I": "4", "A": "1", "Ld": "5" }, "specialRules": [{ "name": "Movement", "summary": "Move 2D6 inches; cannot run or declare charges, but contact counts as charging." }, { "name": "Minderz", "summary": "Remain within 6 inches of a Goblin; otherwise go wild and move randomly for the rest of the battle." }, { "name": "Animals", "summary": "No equipment or experience." }] },
+        { "name": "Fanatics", "role": "Henchman", "promotionEligibility": "ineligible", "specialRules": [{ "name": "Addict", "summary": "Needs Madcap Mushrooms each battle or cannot take part." }, { "name": "Mushroom Brain", "summary": "Cannot gain experience." }, { "name": "Looney and Frantic", "summary": "Frenzied; test mushroom damage after battle, and strike first ignoring Initiative and weapon ordering." }] },
+        { "name": "Troll", "role": "Henchman", "promotionEligibility": "ineligible", "specialRules": [{ "name": "Fear and Stupidity", "summary": "Causes fear and is subject to stupidity." }, { "name": "Regeneration", "summary": "Ignore wounds on 4+ except fire wounds; never roll post-battle injuries." }, { "name": "Always Hungry", "summary": "Pay 15 GC after each game or sacrifice two Goblins or Squigs; otherwise the Troll leaves." }, { "name": "Vomit Attack", "summary": "May replace normal attacks with one automatic S5 hit ignoring armour." }, { "name": "Dumb Monster", "summary": "No experience or equipment." }] },
+        { "name": "Snotling Mob", "role": "Henchman", "specialRules": [{ "name": "Mob", "summary": "Initially five models, stay within 1 inch and fight together." }, { "name": "Weedy", "summary": "Injury: 1 knocked down, 2-3 stunned, 4-6 out of action." }, { "name": "Dodgy", "summary": "6+ dodge save against shooting." }, { "name": "Insignificant", "summary": "Mob counts as one for capacity, income and rout tests; enemies earn casualty XP only for removing its last member." }] }
+      ],
+      "skills": [
+        { "name": "Sneaky Git", "listName": "NIGHT GOBLIN SPECIAL SKILLS", "summary": "After deployment move D3 friendly models; Big Boss only.", "appliesTo": ["Big Boss"] }
+      ]
+    }
+  ]
+}

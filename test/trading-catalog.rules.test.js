@@ -18,6 +18,28 @@ const hero = {
   permittedNames: [],
 };
 
+test("new warband source type aliases honor scoped shop restrictions without merging Amazon variants", () => {
+  for (const typeName of ["Chieftain", "Braves", "Shaman", "Red Toof Goblins"]) {
+    assert.equal(canEquipItem(item("squig-prodder"), {
+      ...hero, warbandName: "Forest Goblins", typeName, permittedNames: ["Squig Prodder"],
+    }), true, typeName);
+  }
+  assert.equal(canEquipItem(item("serpent-staff"), {
+    ...hero, warbandName: "Tomb Guardians", typeName: "Liche Priest", permittedNames: ["Serpent Staff"],
+  }), true);
+  assert.equal(canEquipItem(item("serpent-staff"), {
+    ...hero, warbandName: "Tomb Guardians", typeName: "Tomb Lord", permittedNames: ["Serpent Staff"],
+  }), false);
+  assert.equal(canEquipItem(item("conch-shell-horn"), {
+    ...hero, warbandName: "Amazons (Lustria)", typeName: "Piranha Warriors",
+  }), true);
+  assert.equal(canEquipItem(item("conch-shell-horn"), {
+    ...hero, warbandName: "Amazons (Lustria)", typeName: "Eagle Warriors",
+  }), false);
+  assert.equal(canBuyItem(item("sunstaff"), "Amazons (Lustria)"), false);
+  assert.equal(canEquipItem(item("squig-prodder"), { ...hero, typeName: "Shaman", permittedNames: ["Squig Prodder"] }), false);
+});
+
 test("every Core, 1a and 1b source row is represented with its price, rarity, grade and category", () => {
   assert.equal(source.rows.length, 178);
   assert.deepEqual(Object.fromEntries(["close-combat", "missile", "blackpowder", "armour", "miscellaneous", "animals"]

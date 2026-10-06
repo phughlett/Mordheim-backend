@@ -1,0 +1,1129 @@
+{
+  "audits": [
+    {
+      "warbandName": "Amazons",
+      "grade": "1b",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1b-warbands/amazons",
+      "checked": ["profiles", "starting experience", "hire costs", "capacity and recruit limits", "equipment lists, prices and permissions", "skill categories and skills", "spells and access", "band and warrior special rules"],
+      "findings": [
+        { "surface": "Heroine recruitment miscellaneous equipment", "before": "Amulet of the Moon and Healing Herbs absent from the effective list.", "after": "Amulet of the Moon 50 gc; Healing Herbs 35 gc, restricted to the existing Amazon Hero types.", "reason": "The source HTML recruitment table includes these fixed-price miscellaneous entries; the simplified page rendering omits that table." }
+      ],
+      "manualRules": [
+        { "name": "Not one of us", "summary": "May not hire Hired Swords or Dramatis Personae unless they are Amazons." },
+        { "name": "Healing Herbs consumption", "summary": "Printed rules omit consumption, while the source records an author clarification that herbs are single-use. Agree the interpretation before play; consumption is not automated." }
+      ]
+    },
+    {
+      "warbandName": "Averlander Mercenaries",
+      "grade": "1a",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1a-warbands/averlander",
+      "checked": ["profiles", "starting experience", "hire costs", "capacity and recruit limits", "equipment lists, prices and permissions", "skill categories and skills", "spells and access", "band and warrior special rules"],
+      "findings": [
+        { "surface": "Scout recruitment miscellaneous equipment", "before": "Hunting arrows absent.", "after": "Hunting arrows 35 gc; Bergjaeger only.", "reason": "Source Scout equipment list explicitly provides this fixed-price Hero restriction." },
+        { "surface": "Scout weapon permissions", "before": "Hunting rifle and Blunderbuss listed for Scouts.", "after": "Removed from the Scout list; this change does not alter the Marksman list.", "reason": "Source places these black-powder options in the Marksman list, not the Scout list." },
+        {
+          "surface": "Averlander roster",
+          "before": "No existing Sergeant warrior type is associated with this warband.",
+          "after": "Complete source definition adds up to one Sergeant: 35 gc, 8 starting XP, Mountainguard equipment, Combat/Strength/Speed skills.",
+          "reason": "The source treats Sergeant and Bergjaeger as distinct choices. Complete source fields permit creation of the missing scoped Hero without renaming an existing type."
+        }
+      ],
+      "manualRules": [
+        { "name": "Hired Sword eligibility", "summary": "Eligibility is unresolved here; do not treat the missing restriction as unrestricted permission to hire." },
+        { "name": "Set Traps", "summary": "A Bergjaeger may spend a turn placing a temporary S4 trap; resolve its trigger and hit effects from the source rule." }
+      ]
+    },
+    {
+      "warbandName": "Beastmen Raiders",
+      "grade": "1a",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1a-warbands/beastmen-raiders",
+      "checked": ["profiles", "starting experience", "hire costs", "capacity and recruit limits", "equipment lists, prices and permissions", "skill categories and skills", "spells and access", "band and warrior special rules"],
+      "findings": [],
+      "manualRules": [
+        { "name": "Hired Sword eligibility", "summary": "Eligibility is unresolved here; do not treat the missing restriction as unrestricted permission to hire." }
+      ]
+    },
+    {
+      "warbandName": "Bretonnian",
+      "grade": "1b",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1b-warbands/bretonnian",
+      "checked": ["profiles", "starting experience", "hire costs", "capacity and recruit limits", "equipment lists, prices and permissions", "skill categories and skills", "spells and access", "band and warrior special rules"],
+      "findings": [
+        { "surface": "Knight and Squire recruitment equipment", "before": "Warhorse, Horse and Bretonnian Barding absent; Sword costs 5 gc; Knight Axe and Squire Shield/Buckler absent; Knight Buckler incorrectly listed.", "after": "Knights may buy Warhorse 80 gc and Bretonnian Barding 30 gc; Squires may buy Horse 40 gc. Sword 10 gc in both corrected lists; Knight Axe 5 gc; Shield/Buckler 5 gc in Squire list; Knight Buckler removed.", "reason": "Full source HTML includes mount tables omitted by the simplified page rendering and provides the complete weapon/armour choices." },
+        {
+          "surface": "Questing Knight",
+          "before": "No membership limit recorded.",
+          "after": "Exactly one Questing Knight leads the warband.",
+          "reason": "The source makes a Questing Knight mandatory and the sole leader."
+        },
+        {
+          "surface": "Knight Errant",
+          "before": "No membership limit recorded.",
+          "after": "Maximum two.",
+          "reason": "Source choice-of-warriors limit."
+        },
+        {
+          "surface": "Squires",
+          "before": "No membership limit or knight dependency recorded.",
+          "after": "Maximum three and cannot outnumber Questing Knights plus Knight Errants.",
+          "reason": "Source choice-of-warriors rule."
+        }
+      ],
+      "manualRules": [
+        { "name": "Hired Sword eligibility", "summary": "Eligibility is unresolved here; do not treat the missing restriction as unrestricted permission to hire." },
+        { "name": "Lady's Blessing", "summary": "Before battle, test the leader's Leadership; a successful blessing restricts enemy black-powder shots and shots at Questing Knights or Knight Errants." }
+      ]
+    },
+    {
+      "warbandName": "Carnival of Chaos",
+      "grade": "1a",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1a-warbands/carnival-of-chaos",
+      "checked": ["profiles", "starting experience", "hire costs", "capacity and recruit limits", "equipment lists, prices and permissions", "skill categories and skills", "spells and access", "band and warrior special rules"],
+      "findings": [
+        {
+          "surface": "Plague Cart",
+          "before": "No membership limit recorded.",
+          "after": "Maximum one; hire cost 120 GC.",
+          "reason": "The source lists 0–1 Plague Cart. Existing cost already matches."
+        }
+      ],
+      "manualRules": [
+        { "name": "Hired Swords", "summary": "The band cannot hire Hired Swords." },
+        { "name": "Tainted", "summary": "Counts as a Possessed warband for exploration and serious-injury purposes." },
+        { "name": "Plague Cart", "summary": "Cart operation uses the optional wagon rules." }
+      ]
+    },
+    {
+      "warbandName": "Cult of the Possessed",
+      "grade": "core",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1a-warbands/cult-of-the-possessed",
+      "checked": ["profiles", "starting experience", "hire costs", "capacity and recruit limits", "equipment lists, prices and permissions", "skill categories and skills", "spells and access", "band and warrior special rules"],
+      "findings": [],
+      "manualRules": [
+        { "name": "Hired Sword eligibility", "summary": "Eligibility is unresolved here; do not treat the missing restriction as unrestricted permission to hire." }
+      ]
+    },
+    {
+      "warbandName": "Dark Elves",
+      "grade": "1b",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1b-warbands/dark-elves",
+      "checked": ["profiles", "starting experience", "hire costs", "capacity and recruit limits", "equipment lists, prices and permissions", "skill categories and skills", "spells and access", "band and warrior special rules"],
+      "findings": [
+        { "surface": "Recruitment miscellaneous gear and conditions", "before": "Dark Venom absent; Sea Dragon Cloak classified as armour; Light armour 50 gc; Beastlash has no recipient restriction.", "after": "Dark Venom 15 gc for Heroes; Sea Dragon Cloak misc at 50 gc for Heroes/Corsairs, with unresolved armour stacking recorded; Light armour 20 gc; Beastlash restricted to Beast Master.", "reason": "The source starting table explicitly lists miscellaneous categories and recipient footnotes. Dark Elf Blade is a paid sword/dagger upgrade, not a standalone weapon." },
+        {
+          "surface": "Dark Elf hero and henchman limits",
+          "before": "No membership limits recorded.",
+          "after": "High Born 1; Beast Master 1; Sorceress 1; Fellblades 2; Shades 5; Cold One Beasthounds 2.",
+          "reason": "Source choice-of-warriors limits."
+        },
+        {
+          "surface": "Cold One Beasthounds",
+          "before": "No Beast Master prerequisite recorded.",
+          "after": "May only be included when a Beast Master is in the warband.",
+          "reason": "Source roster restriction."
+        }
+      ],
+      "manualRules": [
+        { "name": "Hired Sword eligibility", "summary": "Eligibility is unresolved here; do not treat the missing restriction as unrestricted permission to hire." },
+        { "name": "Kindred Hatred", "summary": "Dark Elves hate High Elves, including High Elf Hired Swords." },
+        { "name": "Excellent Sight", "summary": "Elves spot hidden enemies at twice their Initiative in inches." },
+        { "name": "Black Powder Weapons", "summary": "Dark Elves may not use black-powder weapons." },
+        { "name": "Sea Dragon Cloak combination", "summary": "The source gives 5+ melee and 4+ missile saves but leaves armour/shield stacking unresolved. Agree the combination rule before play; do not automatically add a save bonus." }
+      ]
+    },
+    {
+      "warbandName": "Dwarf Treasure Hunters",
+      "grade": "1a",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1a-warbands/dwarf-treasure-hunters",
+      "checked": ["profiles", "starting experience", "hire costs", "capacity and recruit limits", "equipment lists, prices and permissions", "skill categories and skills", "spells and access", "band and warrior special rules"],
+      "findings": [],
+      "manualRules": [
+        { "name": "Hired Sword eligibility", "summary": "Eligibility is unresolved here; do not treat the missing restriction as unrestricted permission to hire." },
+        { "name": "Hard to Kill", "summary": "Dwarfs are taken out of action only on a 6; results 1-2 knock down and 3-5 stun." },
+        { "name": "Hard Head", "summary": "Ignores the special knock-out rules for clubs, maces, and similar weapons." },
+        { "name": "Armour", "summary": "Wearing armour does not reduce Dwarf movement." }
+      ]
+    },
+    {
+      "warbandName": "Kislevite",
+      "grade": "1a",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1a-warbands/kislevites",
+      "checked": ["profiles", "starting experience", "hire costs", "capacity and recruit limits", "equipment lists, prices and permissions", "skill categories and skills", "spells and access", "band and warrior special rules"],
+      "findings": [
+        {
+          "surface": "Bear Tamer starting experience",
+          "before": 10,
+          "after": 8,
+          "reason": "The Mordheimer starting-experience section lists the Bear Tamer at 8 XP."
+        }
+      ],
+      "manualRules": [
+        { "name": "May Hire", "summary": "Uses the Human Mercenary Hired Sword selection." },
+        { "name": "Ancient Enemies", "summary": "May not ally with warbands judged to be Chaotic." }
+      ]
+    },
+    {
+      "warbandName": "Lizardmen",
+      "grade": "1b",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1b-warbands/lizardmen",
+      "checked": ["profiles", "starting experience", "hire costs", "capacity and recruit limits", "equipment lists, prices and permissions", "skill categories and skills", "spells and access", "band and warrior special rules"],
+      "findings": [
+        {
+          "surface": "Lizardmen roster",
+          "before": "No membership limits or leader recorded.",
+          "after": "Skink Priest leads; Saurus Totem Warrior 1; Skink Great Crests 2; Saurus Braves 4; Kroxigor 1.",
+          "reason": "Source choice-of-warriors limits and leader requirement."
+        },
+        {
+          "surface": "Saurus Braves",
+          "before": "No Skink Brave dependency recorded.",
+          "after": "Cannot outnumber Skink Braves; maximum four.",
+          "reason": "Source Saurus Rarity rule and roster limit."
+        },
+        {
+          "surface": "Kroxigor",
+          "before": "Not marked Large; species abilities unrecorded.",
+          "after": "Large, with 4+ natural save, aquatic movement, fear, and source-targeting restrictions.",
+          "reason": "The source Kroxigor entry explicitly gives these rules and its Large target status."
+        }
+      ],
+      "manualRules": [
+        { "name": "Hired Sword eligibility", "summary": "Eligibility is unresolved here; do not treat the missing restriction as unrestricted permission to hire." },
+        { "name": "Scaly Skin", "summary": "Saurus have a natural 5+ save and Skinks a natural 6+ save, subject to the source's save restrictions." },
+        { "name": "Cold Blooded", "summary": "Use the lowest two of 3D6 for Psychology and Rout tests; Saurus and Kroxigor Leadership cannot be used for Rout tests." },
+        { "name": "Saurus Rarity", "summary": "Saurus Braves cannot outnumber Skink Braves." },
+        { "name": "Bite Attack", "summary": "Saurus have a natural bite that strikes last." },
+        { "name": "Aquatic", "summary": "Skinks and Kroxigor move through water without penalty and benefit from cover there." },
+        { "name": "Jungle Born", "summary": "Skinks move through jungle terrain without penalty." }
+      ]
+    },
+    {
+      "warbandName": "Mercenaries",
+      "grade": "core",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1a-warbands/mercenaries",
+      "checked": ["profiles", "starting experience", "hire costs", "capacity and recruit limits", "equipment lists, prices and permissions", "skill categories and skills", "spells and access", "band and warrior special rules"],
+      "findings": [
+        { "surface": "Faction-conditioned miscellaneous recruitment gear", "before": "Wolfcloak absent.", "after": "Wolfcloak 10 gc for Middenheim Heroes only; faction selection and later Strength-test requirement remain manual.", "reason": "The source recruitment table and item rule explicitly allow initial purchase without the later hunting test." }
+      ],
+      "manualRules": [
+        { "name": "Hired Sword eligibility", "summary": "Eligibility is unresolved here; do not treat the missing restriction as unrestricted permission to hire." },
+        { "name": "Faction choice", "summary": "Keep Reikland, Middenheim, and Marienburg as manual choices on this single catalog warband." },
+        { "name": "Reikland", "summary": "Captain Leadership may be used within 12 inches; Marksmen gain +1 BS." },
+        { "name": "Middenheim", "summary": "Captains and Champions start at Strength 4." },
+        { "name": "Marienburg", "summary": "Starts with +100 GC in campaigns (or +20% for one-off games) and receives +1 when seeking rare items." }
+      ]
+    },
+    {
+      "warbandName": "Norse",
+      "grade": "1b",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1b-warbands/norse",
+      "checked": ["profiles", "starting experience", "hire costs", "capacity and recruit limits", "equipment lists, prices and permissions", "skill categories and skills", "spells and access", "band and warrior special rules"],
+      "findings": [
+        {
+          "surface": "Norse roster",
+          "before": "No membership limits or leader recorded.",
+          "after": "Jarl 1; Berserkers 2; Bondsmen 2; Wulfin 1; Hunters 5; Wolves 5.",
+          "reason": "The Lustria source version matching the effective snapshot's Lustria4.pdf reference."
+        },
+        {
+          "surface": "Wolves",
+          "before": "No Wulfin prerequisite recorded.",
+          "after": "Wolves require a Wulfin; they cannot fight if no Wulfin is present.",
+          "reason": "Source Pack Leader rule."
+        }
+      ],
+      "manualRules": [
+        { "name": "Hired Sword eligibility", "summary": "Eligibility is unresolved here; do not treat the missing restriction as unrestricted permission to hire." },
+        { "name": "Berserkers", "summary": "Subject to Frenzy." },
+        { "name": "Wulfin", "summary": "Causes Fear, is immune to psychology, and cannot lead the warband." },
+        { "name": "Wolves", "summary": "Animals cannot gain experience; Wolves cannot fight without a Wulfin in the warband." },
+        { "name": "Version selection", "summary": "The source describes alternate Norse variants; this audit follows the Lustria version identified by the effective snapshot." }
+      ]
+    },
+    {
+      "warbandName": "Orc",
+      "grade": "1a",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1a-warbands/orc-mob",
+      "checked": ["profiles", "starting experience", "hire costs", "capacity and recruit limits", "equipment lists, prices and permissions", "skill categories and skills", "spells and access", "band and warrior special rules"],
+      "findings": [
+        { "surface": "Goblin miscellaneous recruitment gear", "before": "Squig Prodder and Mad Cap Mushrooms absent.", "after": "Squig Prodder 15 gc and Mad Cap Mushrooms 25 gc, restricted to Goblin Warriors; no equipment granted to Squigs.", "reason": "Source Goblin recruitment list includes both at fixed prices." },
+        { "surface": "Goblin Ball & chain", "before": "Absent from the effective Goblin list.", "after": "15 gc, Goblin Warriors only; mushroom requirement and exclusive-equipment/random-movement conditions recorded for manual resolution.", "reason": "Source recruitment list includes this weapon; its linked close-combat rules restrict use to Goblins taking Mad Cap Mushrooms." },
+        {
+          "surface": "Troll recruitment",
+          "before": "No Troll membership is associated with the Orc warband.",
+          "after": "Full source definition supplied for one Orc Henchman Troll: 200 GC, 0 XP, Large Target, no advancement or equipment, maximumProfile null.",
+          "reason": "The source lists 0–1 Troll. The snapshot's exact name is Troll, but it is associated only with Night Goblins; the migration requires complete source fields to create the missing Orc-scoped type safely."
+        }
+      ],
+      "manualRules": [
+        { "name": "Distasteful Company", "summary": "May hire only Pit Fighters, Ogre Bodyguards, or Warlocks as Hired Swords." },
+        { "name": "Animosity", "summary": "Orc and Goblin henchmen may quarrel at the start of a turn; resolve the source's D6 table manually." },
+        { "name": "Troll rules", "summary": "Full Orc-scoped Troll definition supplied without changing the existing Night Goblin Troll. Its upkeep, feeding alternatives, Regeneration exceptions and Vomit Attack remain manual." }
+      ]
+    },
+    {
+      "warbandName": "Ostlanders",
+      "grade": "1a",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1a-warbands/ostlander",
+      "checked": ["profiles", "starting experience", "hire costs", "capacity and recruit limits", "equipment lists, prices and permissions", "skill categories and skills", "spells and access", "band and warrior special rules"],
+      "findings": [],
+      "manualRules": [
+        { "name": "Self-Sufficient", "summary": "May not hire Mercenaries other than Ogres." }
+      ]
+    },
+    {
+      "warbandName": "Pirate",
+      "grade": "1b",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1b-warbands/pirates",
+      "checked": ["profiles", "starting experience", "hire costs", "capacity and recruit limits", "equipment lists, prices and permissions", "skill categories and skills", "spells and access", "band and warrior special rules"],
+      "findings": [
+        { "surface": "Pirate recruitment ammunition and conditions", "before": "Swivel Gun, ammunition and initial Hook Hand choice absent; Toughened leathers 7 gc; several lists contain options absent from their source tables.", "after": "Gunners may buy a 65 gc Swivel Gun with Ball Shot 5 gc, Chain Shot 2 gc or Grape Shot 2 gc. New Pirates may buy a 4 gc Hook Hand. Toughened leathers 5 gc; source-specific starting lists and brace prices retained.", "reason": "The source explicitly lists gun/ammunition prices and permits a Hook Hand at initial recruitment. Ammo lasts one game when used; gun limit, blackpowder rules and injury choices remain manual." }
+      ],
+      "manualRules": [
+        { "name": "Hired Sword eligibility", "summary": "Eligibility is unresolved here; do not treat the missing restriction as unrestricted permission to hire." },
+        { "name": "Swabbies", "summary": "Only humans may join as Swabbies." },
+        { "name": "Kidnapped", "summary": "A captured human Hero may join Pirates after a post-battle Leadership contest; otherwise the captive becomes a Swabbie." }
+      ]
+    },
+    {
+      "warbandName": "Pit Fighter",
+      "grade": "1b",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1b-warbands/pit-fighters",
+      "checked": ["profiles", "starting experience", "hire costs", "capacity and recruit limits", "equipment lists, prices and permissions", "skill categories and skills", "spells and access", "band and warrior special rules"],
+      "findings": [],
+      "manualRules": [
+        { "name": "Pit Fighter", "summary": "All Pit Fighters gain +1 WS and +1 Attack in ruins, buildings, and the Pit." },
+        { "name": "Hired Swords", "summary": "May hire all available Hired Swords except the Elf Ranger." }
+      ]
+    },
+    {
+      "warbandName": "Shadow Warrior",
+      "grade": "1b",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1b-warbands/shadow-warriors",
+      "checked": ["profiles", "starting experience", "hire costs", "capacity and recruit limits", "equipment lists, prices and permissions", "skill categories and skills", "spells and access", "band and warrior special rules"],
+      "findings": [
+        { "surface": "Ulthuan-price miscellaneous recruitment gear", "before": "Five listed miscellaneous options absent.", "after": "Standard of Nagarythe 75 gc, War Horn of Nagarythe 25 gc, Elven Cloak 75 gc, Elven Wine 50 gc and Elven Runestones 50 gc; source Hero/mage restrictions and initial-only/variable later prices recorded.", "reason": "Source starting table permits fixed prices without rarity rolls; later Trading Post prices are not fixed-price recruitment options." },
+        { "surface": "Ithilmar weapon permissions", "before": "Ithilmar bow, Ithilmar longbow and Ithilmar Elf Bow listed.", "after": "Removed missile variants; retained the source-supported Hero-only Ithilmar close-combat choices.", "reason": "The source's twice-price Ithilmar option belongs to its hand-to-hand table, not its missile table." }
+      ],
+      "manualRules": [
+        { "name": "Hired Sword eligibility", "summary": "Eligibility is unresolved here; do not treat the missing restriction as unrestricted permission to hire." },
+        { "name": "Hate Dark Elves", "summary": "Warband members other than Hired Swords hate Dark Elves." },
+        { "name": "Excellent Sight", "summary": "Elves spot hidden enemies at twice their Initiative in inches." },
+        { "name": "Distaste for Poison", "summary": "Warriors may not use poisons." },
+        { "name": "Unforgiving", "summary": "Cannot ally with warbands of a Chaotic nature." }
+      ]
+    },
+    {
+      "warbandName": "Sisters of Sigmar",
+      "grade": "core",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1a-warbands/sisters-of-sigmar",
+      "checked": ["profiles", "starting experience", "hire costs", "capacity and recruit limits", "equipment lists, prices and permissions", "skill categories and skills", "spells and access", "band and warrior special rules"],
+      "findings": [
+        { "surface": "Heroines-only miscellaneous recruitment gear", "before": "Holy tome, Blessed water and Holy relic absent.", "after": "Holy tome 120 gc, Blessed water 10 gc and Holy relic 15 gc, for Matriarch, Augur and Sister Superior only.", "reason": "Source HTML recruitment table explicitly gives fixed prices and the Heroines-only restriction; later Trading Post prices differ." }
+      ],
+      "manualRules": [
+        { "name": "Hired Sword eligibility", "summary": "Eligibility is unresolved here; do not treat the missing restriction as unrestricted permission to hire." }
+      ]
+    },
+    {
+      "warbandName": "Skaven",
+      "grade": "core",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1a-warbands/skaven-eshin",
+      "checked": ["profiles", "starting experience", "hire costs", "capacity and recruit limits", "equipment lists, prices and permissions", "skill categories and skills", "spells and access", "band and warrior special rules"],
+      "findings": [],
+      "manualRules": [
+        { "name": "Hired Sword eligibility", "summary": "Eligibility is unresolved here; do not treat the missing restriction as unrestricted permission to hire." }
+      ]
+    },
+    {
+      "warbandName": "Undead",
+      "grade": "core",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1a-warbands/undead",
+      "checked": ["profiles", "starting experience", "hire costs", "capacity and recruit limits", "equipment lists, prices and permissions", "skill categories and skills", "spells and access", "band and warrior special rules"],
+      "findings": [],
+      "manualRules": [
+        { "name": "Hired Sword eligibility", "summary": "Eligibility is unresolved here; do not treat the missing restriction as unrestricted permission to hire." }
+      ]
+    },
+    {
+      "warbandName": "Witch Hunters",
+      "grade": "core",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1a-warbands/witch-hunters",
+      "checked": ["profiles", "starting experience", "hire costs", "capacity and recruit limits", "equipment lists, prices and permissions", "skill categories and skills", "spells and access", "band and warrior special rules"],
+      "findings": [
+        {
+          "surface": "Witch Hunter roster",
+          "before": "No membership limits or mandatory leader recorded.",
+          "after": "Witch Hunter Captain mandatory (1); Warrior Priest 1; Witch Hunters 3; Flagellants 5; Warhounds 5.",
+          "reason": "Source choice-of-warriors limits and required Captain."
+        }
+      ],
+      "manualRules": [
+        { "name": "Hired Sword eligibility", "summary": "Eligibility is unresolved here; do not treat the missing restriction as unrestricted permission to hire." }
+      ]
+    }
+  ],
+  "warbands": [
+    {
+      "name": "Amazons",
+      "grade": "1b",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1b-warbands/amazons",
+      "specialRules": [
+        { "name": "Sacrifice", "summary": "Captives are handled using the Possessed warband captive rules." },
+        { "name": "Not one of us", "summary": "May not hire Hired Swords or Dramatis Personae unless they are Amazons." }
+      ],
+      "hiredSwordPolicy": {
+        "allowedNames": [],
+        "summary": "Only Amazon Hired Swords may be hired; the current catalog has no Amazon Hired Sword type."
+      },
+      "weaponProfiles": [
+        {
+          "name": "Claw of the Old Ones",
+          "weaponType": "close_combat",
+          "rangeText": "Close Combat",
+          "strengthModifier": "As user +1",
+          "specialRules": [
+            { "name": "No save", "summary": "Wounds allow no armour save." },
+            { "name": "Parry", "summary": "May parry as a sword; cannot parry attacks made at double or more the wielder's Strength." }
+          ],
+          "notes": "Rare 12."
+        },
+        {
+          "name": "Sun Gauntlet",
+          "weaponType": "missile",
+          "rangeText": "12 inches",
+          "strengthModifier": "4",
+          "specialRules": [
+            { "name": "Accurate", "summary": "No -1 long-range hit penalty." },
+            { "name": "No Save", "summary": "Wounds allow no armour save." },
+            { "name": "Hand-To-Hand", "summary": "May make a recurring Strength 4 attack with another close-combat weapon; it ignores armour and does not require a prepared shot." }
+          ],
+          "notes": "Rare 12; one-handed."
+        },
+        {
+          "name": "Sunstaff",
+          "weaponType": "missile",
+          "rangeText": "24 inches",
+          "strengthModifier": "4",
+          "specialRules": [
+            { "name": "Accurate", "summary": "No -1 long-range hit penalty." },
+            { "name": "No Save", "summary": "Wounds allow no armour save." }
+          ],
+          "notes": "Rare 12."
+        },
+        {
+          "name": "Javelins (Amazons)",
+          "weaponType": "missile",
+          "rangeText": "8 inches",
+          "strengthModifier": "As user",
+          "specialRules": [
+            { "name": "Thrown weapon", "summary": "No penalty for range or moving and shooting." }
+          ]
+        }
+      ],
+      "equipmentLists": [
+        {
+          "key": "amazon-heroine",
+          "name": "Heroine's Equipment List",
+          "items": [
+            { "name": "Claw of the Old Ones", "category": "weapon", "unitCost": 30, "profileName": "Claw of the Old Ones" },
+            { "name": "Sunstaff", "category": "weapon", "unitCost": 50, "profileName": "Sunstaff" },
+            { "name": "Sun Gauntlet", "category": "weapon", "unitCost": 40, "profileName": "Sun Gauntlet" },
+            { "name": "Club", "category": "weapon", "unitCost": 3, "profileName": "Hammer, staff, mace or club" },
+            { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true, "profileName": "Dagger" },
+            { "name": "Spear", "category": "weapon", "unitCost": 10, "profileName": "Spear" },
+            { "name": "Sword", "category": "weapon", "unitCost": 10, "profileName": "Sword" },
+            { "name": "Helmet", "category": "armour", "unitCost": 10, "profileName": "Helmet" },
+            { "name": "Buckler", "category": "shield", "unitCost": 5, "profileName": "Buckler" },
+            { "name": "Amulet of the Moon", "category": "misc", "unitCost": 50, "allowedWarriorTypeNames": ["Priestess", "Champions (Mercenaries & Amazons)", "Totem Warriors"], "ruleText": "Source heroine recruitment item. Enemy missile attacks suffer -1 to hit the wearer; grants a 5+ special save against missile fire." },
+            { "name": "Healing Herbs", "category": "misc", "unitCost": 35, "allowedWarriorTypeNames": ["Priestess", "Champions (Mercenaries & Amazons)", "Totem Warriors"], "ruleText": "Fixed recruitment price, not the variable Trading Post price. A Hero outside close combat may use these at the beginning of Recovery to restore all lost wounds. Consumption is disputed: printed rules omit it, while the author's clarification says single use; resolve manually." }
+          ]
+        },
+        {
+          "key": "amazon-scout",
+          "name": "Scout Equipment List",
+          "items": [
+            { "name": "Javelins", "category": "weapon", "unitCost": 5, "profileName": "Javelins (Amazons)" },
+            { "name": "Club", "category": "weapon", "unitCost": 3, "profileName": "Hammer, staff, mace or club" },
+            { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true, "profileName": "Dagger" },
+            { "name": "Sling", "category": "weapon", "unitCost": 5, "profileName": "Sling" },
+            { "name": "Spear", "category": "weapon", "unitCost": 10, "profileName": "Spear" },
+            { "name": "Sword", "category": "weapon", "unitCost": 10, "profileName": "Sword" },
+            { "name": "Bow", "category": "weapon", "unitCost": 10, "profileName": "Bow" },
+            { "name": "Helmet", "category": "armour", "unitCost": 10, "profileName": "Helmet" },
+            { "name": "Buckler", "category": "shield", "unitCost": 5, "profileName": "Buckler" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bretonnian",
+      "grade": "1b",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1b-warbands/bretonnian",
+      "leaderType": "Questing Knight",
+      "equipmentLists": [
+        { "key": "bretonnian-knight", "name": "Knights Equipment List", "items": [
+          { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+          { "name": "Axe", "category": "weapon", "unitCost": 5 },
+          { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+          { "name": "Lance", "category": "weapon", "unitCost": 20 },
+          { "name": "Mace", "category": "weapon", "unitCost": 3 },
+          { "name": "Morning star", "category": "weapon", "unitCost": 15 },
+          { "name": "Sword", "category": "weapon", "unitCost": 10 },
+          { "name": "Heavy armour", "category": "armour", "unitCost": 50 },
+          { "name": "Light armour", "category": "armour", "unitCost": 20 },
+          { "name": "Helmet", "category": "armour", "unitCost": 10 },
+          { "name": "Shield", "category": "shield", "unitCost": 5 },
+          { "name": "Bretonnian Barding", "category": "misc", "unitCost": 30, "allowedWarriorTypeNames": ["Questing Knight", "Knight Errant"], "ruleText": "Warhorses only; special Bretonnian mount armour, not armour worn by the rider. Adds +1 to the mounted rider's armour save beyond the ordinary mounted bonus. If the rider is taken out of action, the barded mount dies only on D6 result 1 rather than 1-2." },
+          { "name": "Warhorse", "category": "misc", "unitCost": 80, "allowedWarriorTypeNames": ["Questing Knight", "Knight Errant"], "ruleText": "Fixed-price Knight recruitment mount. Use Warhorse and mounted-combat rules; not an additional recruit or a warrior equipment set." }
+        ] },
+        { "key": "bretonnian-squire", "name": "Squires Equipment List", "items": [
+          { "name": "Axe", "category": "weapon", "unitCost": 5 },
+          { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+          { "name": "Hammer", "category": "weapon", "unitCost": 3 },
+          { "name": "Longbow", "category": "weapon", "unitCost": 15 },
+          { "name": "Spear", "category": "weapon", "unitCost": 10 },
+          { "name": "Sword", "category": "weapon", "unitCost": 10 },
+          { "name": "Bow", "category": "weapon", "unitCost": 10 },
+          { "name": "Light armour", "category": "armour", "unitCost": 20 },
+          { "name": "Helmet", "category": "armour", "unitCost": 10 },
+          { "name": "Shield", "category": "shield", "unitCost": 5 },
+          { "name": "Buckler", "category": "shield", "unitCost": 5 },
+          { "name": "Horse", "category": "misc", "unitCost": 40, "allowedWarriorTypeNames": ["Squires"], "ruleText": "Fixed-price Squire recruitment mount. Use riding-horse and mounted-combat rules; not an additional recruit." }
+        ] }
+      ],
+      "specialRules": [
+        {
+          "name": "Lady's Blessing",
+          "summary": "A successful pre-battle Leadership test by the leader curses enemy black-powder shots and shots aimed at Questing Knights or Knight Errants."
+        }
+      ],
+      "warriors": [
+        { "name": "Questing Knight", "role": "Hero", "maximumProfile": "Human", "maxCount": 1 },
+        { "name": "Knight Errant", "role": "Hero", "maximumProfile": "Human", "maxCount": 2 },
+        {
+          "name": "Squires",
+          "role": "Hero",
+          "maximumProfile": "Human",
+          "maxCount": 3,
+          "referenceTypes": ["Questing Knight", "Knight Errant"],
+          "maxCountMultiplier": 1
+        }
+      ]
+    },
+    {
+      "name": "Carnival of Chaos",
+      "grade": "1a",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1a-warbands/carnival-of-chaos",
+      "specialRules": [
+        { "name": "Dangerous to Know", "summary": "Cannot hire Hired Swords." },
+        { "name": "Tainted", "summary": "Counts as a Possessed warband for exploration and serious injuries." }
+      ],
+      "hiredSwordPolicy": {
+        "allowedNames": [],
+        "summary": "The source explicitly prohibits hiring Hired Swords."
+      },
+      "warriors": [
+        {
+          "name": "Plague Cart (CoC)",
+          "role": "Henchman",
+          "maximumProfile": null,
+          "hireCost": 120,
+          "maxCount": 1,
+          "specialRules": [{ "name": "Wagon", "summary": "Use the optional wagon rules for the cart's operation." }]
+        }
+      ]
+    },
+    {
+      "name": "Averlander Mercenaries",
+      "grade": "1a",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1a-warbands/averlander",
+      "equipmentLists": [
+        { "key": "averlander-scout", "name": "Scout Equipment List", "items": [
+          { "name": "Axe", "category": "weapon", "unitCost": 5 },
+          { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+          { "name": "Longbow", "category": "weapon", "unitCost": 15, "allowedWarriorTypeNames": ["Bergjaeger"], "ruleText": "Bergjaeger only." },
+          { "name": "Mace/hammer", "category": "weapon", "unitCost": 3, "profileName": "Hammer, staff, mace or club" },
+          { "name": "Sword", "category": "weapon", "unitCost": 10 },
+          { "name": "Bow", "category": "weapon", "unitCost": 10 },
+          { "name": "Light armour", "category": "armour", "unitCost": 20 },
+          { "name": "Helmet", "category": "armour", "unitCost": 10 },
+          { "name": "Buckler", "category": "shield", "unitCost": 5 },
+          { "name": "Hunting arrows", "category": "misc", "unitCost": 35, "allowedWarriorTypeNames": ["Bergjaeger"], "ruleText": "Bergjaeger only; fixed recruitment price. Add +1 to Injury rolls caused by these arrows; not a separate missile weapon." }
+        ] }
+      ],
+      "warriors": [
+        {
+          "name": "Sergeant",
+          "role": "Hero",
+          "stats": { "M": "4", "WS": "4", "BS": "3", "S": "3", "T": "3", "W": "1", "I": "3", "A": "1", "Ld": "7" },
+          "hireCost": 35,
+          "startingExperience": 8,
+          "canGainExperience": true,
+          "large": false,
+          "promotionEligibility": "not_applicable",
+          "maximumProfile": "Human",
+          "maxCount": 1,
+          "equipmentListKeys": ["averlander-mountainguard"],
+          "allowedCategories": ["weapon", "armour", "shield", "misc"],
+          "skillCategories": ["Combat", "Strength", "Speed"],
+          "specialRules": []
+        },
+        {
+          "name": "Bergjaeger",
+          "role": "Hero",
+          "maximumProfile": "Human",
+          "specialRules": [
+            { "name": "Set Traps", "summary": "May spend a turn placing a temporary S4 trap; resolve its trigger and hit effects from the source rule." }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dark Elves",
+      "grade": "1b",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1b-warbands/dark-elves",
+      "leaderType": "High Born",
+      "equipmentLists": [
+        { "key": "dark-elf", "name": "Dark Elf Equipment List", "items": [
+          { "name": "Beastlash", "category": "weapon", "unitCost": 10, "allowedWarriorTypeNames": ["Beast Master (Dark Elves)"], "ruleText": "Beast Master only. Close combat, user Strength -1; cannot be parried; causes fear in animals. Whipcrack grants one extra attack when charging, or a strike-first attack against a charger; only one whip gains this bonus." },
+          { "name": "Dark Elf Blade", "category": "weapon", "unitCost": 15, "allowedWarriorTypeNames": ["Beast Master (Dark Elves)", "Dark Elf Sorceress (Dark Elves)", "Fellblades", "High Born"], "ruleText": "Heroes only; +15 gc recruitment upgrade to a sword or dagger, retaining its rules; not a standalone weapon. Adds +1 on critical-hit tables and treats Injury rolls 2-4 as stunned. Later Trading Post upgrade costs +20 gc." },
+          { "name": "Sea Dragon Cloak", "category": "misc", "unitCost": 50, "allowedWarriorTypeNames": ["Beast Master (Dark Elves)", "Dark Elf Sorceress (Dark Elves)", "Fellblades", "High Born", "Corsairs (Dark Elves)"], "ruleText": "Heroes and Corsairs only. Gives a 5+ close-combat armour save and 4+ against missiles. Combining it with armour or shields is explicitly unresolved in the source; adjudicate manually, not as an automatic additive bonus." },
+          { "name": "Dark Venom", "category": "misc", "unitCost": 15, "allowedWarriorTypeNames": ["Beast Master (Dark Elves)", "Dark Elf Sorceress (Dark Elves)", "Fellblades", "High Born"], "ruleText": "Heroes only; fixed recruitment price. One dose coats a weapon for one battle, adding +1 Strength to its hits without improving the armour-save modifier." },
+          { "name": "Axe", "category": "weapon", "unitCost": 5 },
+          { "name": "Crossbow pistol", "category": "weapon", "unitCost": 35 },
+          { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+          { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+          { "name": "Halberd", "category": "weapon", "unitCost": 10 },
+          { "name": "Repeater crossbow", "category": "weapon", "unitCost": 35 },
+          { "name": "Spear", "category": "weapon", "unitCost": 10 },
+          { "name": "Sword", "category": "weapon", "unitCost": 10 },
+          { "name": "Light armour", "category": "armour", "unitCost": 20 },
+          { "name": "Helmet", "category": "armour", "unitCost": 10 },
+          { "name": "Shield", "category": "shield", "unitCost": 5 },
+          { "name": "Buckler", "category": "shield", "unitCost": 5 }
+        ] }
+      ],
+      "specialRules": [
+        { "name": "Kindred Hatred", "summary": "Hates High Elf warriors, including High Elf Hired Swords." },
+        { "name": "Excellent Sight", "summary": "Elves spot hidden enemies at twice their Initiative in inches." },
+        { "name": "Black Powder Weapons", "summary": "Cannot use black-powder weapons." }
+      ],
+      "warriors": [
+        { "name": "High Born", "role": "Hero", "maximumProfile": "Elf", "maxCount": 1 },
+        { "name": "Beast Master (Dark Elves)", "role": "Hero", "maximumProfile": "Elf", "maxCount": 1 },
+        { "name": "Dark Elf Sorceress (Dark Elves)", "role": "Hero", "maximumProfile": "Elf", "maxCount": 1 },
+        { "name": "Fellblades", "role": "Hero", "maximumProfile": "Elf", "maxCount": 2 },
+        { "name": "Shades (Dark Elves)", "role": "Henchman", "maximumProfile": "Elf", "maxCount": 5 },
+        {
+          "name": "Cold One Beasthounds",
+          "role": "Henchman",
+          "maximumProfile": null,
+          "maxCount": 2,
+          "conditionText": "Requires a Beast Master in the warband."
+        }
+      ]
+    },
+    {
+      "name": "Dwarf Treasure Hunters",
+      "grade": "1a",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1a-warbands/dwarf-treasure-hunters",
+      "specialRules": [
+        { "name": "Hard to Kill", "summary": "Dwarfs are taken out of action only on a 6; results 1-2 knock down and 3-5 stun." },
+        { "name": "Hard Head", "summary": "Ignores the special knock-out rules for clubs, maces, and similar weapons." },
+        { "name": "Armour", "summary": "Wearing armour does not reduce Dwarf movement." }
+      ]
+    },
+    {
+      "name": "Kislevite",
+      "grade": "1a",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1a-warbands/kislevites",
+      "warriors": [
+        { "name": "Bear Tamer", "role": "Hero", "maximumProfile": "Human", "startingExperience": 8 }
+      ],
+      "specialRules": [
+        { "name": "May Hire", "summary": "Uses the Human Mercenary Hired Sword selection." },
+        { "name": "Ancient Enemies", "summary": "May not ally with warbands judged to be Chaotic." }
+      ],
+      "hiredSwordPolicy": {
+        "inheritWarband": "Mercenaries",
+        "summary": "Uses the Human Mercenary Hired Sword selection."
+      }
+    },
+    {
+      "name": "Cult of the Possessed",
+      "grade": "core",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1a-warbands/cult-of-the-possessed",
+      "warriors": [
+        {
+          "name": "Magister",
+          "role": "Hero",
+          "maximumProfile": "Human",
+          "specialRules": [
+            { "name": "Magic User", "summary": "Starts with one randomly generated Chaos Ritual and may learn spells instead of skills." }
+          ]
+        },
+        {
+          "name": "The Possessed",
+          "role": "Hero",
+          "maximumProfile": "Possessed",
+          "specialRules": [
+            { "name": "Fear", "summary": "Causes Fear." },
+            { "name": "Mutations", "summary": "May start with one or more purchased mutations." }
+          ]
+        },
+        {
+          "name": "Mutants",
+          "role": "Hero",
+          "maximumProfile": "Human",
+          "specialRules": [
+            { "name": "Mutations", "summary": "Must start with one or more purchased mutations." }
+          ]
+        },
+        {
+          "name": "Darksouls",
+          "role": "Henchman",
+          "maximumProfile": "Human",
+          "specialRules": [
+            { "name": "Crazed", "summary": "Automatically pass Leadership tests." }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lizardmen",
+      "grade": "1b",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1b-warbands/lizardmen",
+      "leaderType": "Skink Priest",
+      "specialRules": [
+        { "name": "Scaly Skin", "summary": "Saurus have a natural 5+ save and Skinks a natural 6+ save, with the source's armour and save restrictions." },
+        { "name": "Cold Blooded", "summary": "Use the lowest two of 3D6 for Psychology and Rout tests; Saurus and Kroxigor Leadership cannot be used for Rout tests." },
+        { "name": "Saurus Rarity", "summary": "Saurus Braves cannot outnumber Skink Braves." },
+        { "name": "Bite Attack", "summary": "Saurus have a natural bite that strikes last." },
+        { "name": "Aquatic", "summary": "Skinks and Kroxigor move through water without penalty and benefit from cover while there." },
+        { "name": "Jungle Born", "summary": "Skinks move through jungle terrain without penalty." }
+      ],
+      "warriors": [
+        {
+          "name": "Skink Priest",
+          "role": "Hero",
+          "maximumProfile": null,
+          "maxCount": 1,
+          "specialRules": [
+            { "name": "Scaly Skin", "summary": "Has a natural 6+ save." },
+            { "name": "Aquatic", "summary": "Moves through water without penalty and benefits from cover there." },
+            { "name": "Jungle Born", "summary": "Moves through jungle terrain without penalty." }
+          ]
+        },
+        {
+          "name": "Saurus Totem Warrior",
+          "role": "Hero",
+          "maximumProfile": null,
+          "maxCount": 1,
+          "specialRules": [
+            { "name": "Scaly Skin", "summary": "Has a natural 5+ save." },
+            { "name": "Bite Attack", "summary": "Has a natural bite that strikes last." }
+          ]
+        },
+        {
+          "name": "Skink Great Crests",
+          "role": "Hero",
+          "maximumProfile": null,
+          "maxCount": 2,
+          "specialRules": [
+            { "name": "Scaly Skin", "summary": "Has a natural 6+ save." },
+            { "name": "Aquatic", "summary": "Moves through water without penalty and benefits from cover there." },
+            { "name": "Jungle Born", "summary": "Moves through jungle terrain without penalty." }
+          ]
+        },
+        {
+          "name": "Skink Braves",
+          "role": "Henchman",
+          "maximumProfile": null,
+          "specialRules": [
+            { "name": "Scaly Skin", "summary": "Has a natural 6+ save." },
+            { "name": "Aquatic", "summary": "Moves through water without penalty and benefits from cover there." },
+            { "name": "Jungle Born", "summary": "Moves through jungle terrain without penalty." }
+          ]
+        },
+        {
+          "name": "Saurus Braves",
+          "role": "Henchman",
+          "maximumProfile": null,
+          "maxCount": 4,
+          "referenceTypes": ["Skink Braves"],
+          "maxCountMultiplier": 1,
+          "specialRules": [
+            { "name": "Scaly Skin", "summary": "Has a natural 5+ save." },
+            { "name": "Bite Attack", "summary": "Has a natural bite that strikes last." }
+          ]
+        },
+        {
+          "name": "Kroxigor",
+          "role": "Henchman",
+          "maximumProfile": null,
+          "maxCount": 1,
+          "large": true,
+          "specialRules": [
+            { "name": "Scaly Skin", "summary": "Has a natural 4+ save." },
+            { "name": "Aquatic", "summary": "Moves through water without penalty and benefits from cover there." },
+            { "name": "Cause Fear", "summary": "Causes Fear." },
+            { "name": "Large", "summary": "May be targeted by an archer even when not the closest model." }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mercenaries",
+      "grade": "core",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1a-warbands/mercenaries",
+      "equipmentLists": [
+        { "key": "mercenary", "name": "Mercenary Equipment List", "items": [
+          { "name": "Brace of Duelling Pistols", "category": "weapon", "unitCost": 50, "profileName": "Duelling pistol", "ruleText": "Source recruitment brace price. Two pistols count as one missile weapon." },
+          { "name": "Brace of Pistols", "category": "weapon", "unitCost": 30, "profileName": "Pistol", "ruleText": "Source recruitment brace price. Two pistols count as one missile weapon." },
+          { "name": "Axe", "category": "weapon", "unitCost": 5 },
+          { "name": "Crossbow", "category": "weapon", "unitCost": 25 },
+          { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+          { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+          { "name": "Duelling pistol", "category": "weapon", "unitCost": 25, "profileName": "Duelling pistol" },
+          { "name": "Halberd", "category": "weapon", "unitCost": 10 },
+          { "name": "Hammer", "category": "weapon", "unitCost": 3 },
+          { "name": "Mace", "category": "weapon", "unitCost": 3 },
+          { "name": "Morning star", "category": "weapon", "unitCost": 15 },
+          { "name": "Pistol", "category": "weapon", "unitCost": 15, "profileName": "Pistol" },
+          { "name": "Spear", "category": "weapon", "unitCost": 10 },
+          { "name": "Sword", "category": "weapon", "unitCost": 10 },
+          { "name": "Bow", "category": "weapon", "unitCost": 10 },
+          { "name": "Heavy armour", "category": "armour", "unitCost": 50 },
+          { "name": "Light armour", "category": "armour", "unitCost": 20 },
+          { "name": "Helmet", "category": "armour", "unitCost": 10 },
+          { "name": "Shield", "category": "shield", "unitCost": 5 },
+          { "name": "Buckler", "category": "shield", "unitCost": 5 },
+          { "name": "Wolfcloak", "category": "misc", "unitCost": 10, "allowedWarriorTypeNames": ["Mercenary Captain", "Champions (Mercenaries & Amazons)", "Youngblood"], "ruleText": "Middenheim Heroes only; no availability test at warband creation. Gives +1 armour save against shooting. Later acquisition also requires a successful D6 Strength test after paying 10 gc. Faction choice and test remain manual." }
+        ] }
+      ],
+      "specialRules": [
+        { "name": "Reikland", "summary": "Captain Leadership may be used within 12 inches; Marksmen gain +1 BS." },
+        { "name": "Middenheim", "summary": "Captains and Champions start at Strength 4." },
+        { "name": "Marienburg", "summary": "Starts with +100 GC in campaigns (or +20% for one-off games) and receives +1 when seeking rare items." }
+      ]
+    },
+    {
+      "name": "Norse",
+      "grade": "1b",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1b-warbands/norse",
+      "leaderType": "Jarl",
+      "warriors": [
+        { "name": "Jarl", "role": "Hero", "maximumProfile": "Human", "maxCount": 1 },
+        {
+          "name": "Berserkers",
+          "role": "Hero",
+          "maximumProfile": "Human",
+          "maxCount": 2,
+          "specialRules": [{ "name": "Berserkers", "summary": "Subject to Frenzy." }]
+        },
+        { "name": "Bondsmen (Norse)", "role": "Hero", "maximumProfile": "Human", "maxCount": 2 },
+        {
+          "name": "Wulfin",
+          "role": "Hero",
+          "maximumProfile": null,
+          "maxCount": 1,
+          "specialRules": [
+            { "name": "Fear", "summary": "Causes Fear." },
+            { "name": "Bestial", "summary": "Immune to psychology and cannot become warband leader." }
+          ]
+        },
+        { "name": "Hunters (Norse)", "role": "Henchman", "maximumProfile": "Human", "maxCount": 5 },
+        { "name": "Marauders", "role": "Henchman", "maximumProfile": "Human" },
+        {
+          "name": "Wolves",
+          "role": "Henchman",
+          "maximumProfile": null,
+          "maxCount": 5,
+          "conditionText": "Requires a Wulfin; cannot be used if no Wulfin is present.",
+          "specialRules": [
+            { "name": "Animals", "summary": "Cannot gain experience." },
+            { "name": "Pack Leader", "summary": "Cannot fight without a Wulfin in the warband." }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Orc",
+      "grade": "1a",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1a-warbands/orc-mob",
+      "equipmentLists": [
+        { "key": "goblin", "name": "Goblin Equipment List", "items": [
+          { "name": "Ball & chain", "category": "weapon", "unitCost": 15, "allowedWarriorTypeNames": ["Goblin Warriors"], "ruleText": "Goblin only; requires Mad Cap Mushrooms and prohibits other weapons/equipment. User Strength +2, no armour saves, D3 wounds per wound. Moves 2D6 inches, initially chosen direction; later D6: 1 self-strangulation out of action (post-battle death on 1-3), 2-5 chosen direction, 6 random. Contact with any model counts as charging; obstruction causes out of action. Moves out of combat next turn; enemies have -1 to hit it. Ignores Animosity. Roll post-battle injury even if not taken out of action, once only. Resolve these conditions manually." },
+          { "name": "Club", "category": "weapon", "unitCost": 3 },
+          { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+          { "name": "Short bow", "category": "weapon", "unitCost": 5 },
+          { "name": "Spear", "category": "weapon", "unitCost": 10 },
+          { "name": "Sword", "category": "weapon", "unitCost": 10 },
+          { "name": "Helmet", "category": "armour", "unitCost": 10 },
+          { "name": "Shield", "category": "shield", "unitCost": 5 },
+          { "name": "Squig Prodder", "category": "misc", "unitCost": 15, "allowedWarriorTypeNames": ["Goblin Warriors"], "ruleText": "Goblin recruitment equipment, not gear for Squigs. Doubles the normal 6-inch Squig-control distance to 12 inches; counts as a spear in close combat." },
+          { "name": "Mad Cap Mushrooms", "category": "misc", "unitCost": 25, "allowedWarriorTypeNames": ["Goblin Warriors"], "ruleText": "Fixed Goblin recruitment price. Taken before battle to cause frenzy; afterward a D6 result of 1 causes permanent stupidity. Goblin ball-and-chain users require them to fight; apply that condition manually." }
+        ] }
+      ],
+      "specialRules": [
+        { "name": "Distasteful Company", "summary": "May hire only Pit Fighters, Ogre Bodyguards, or Warlocks as Hired Swords." },
+        { "name": "Animosity", "summary": "Orc and Goblin henchmen may quarrel at the start of a turn; resolve the source's D6 table manually." }
+      ],
+      "hiredSwordPolicy": {
+        "allowedNames": ["Pit Fighter", "Ogre Bodyguard", "Warlock (HS)"],
+        "summary": "May hire only Pit Fighters, Ogre Bodyguards, and Warlocks."
+      },
+      "warriors": [
+        {
+          "name": "Troll",
+          "role": "Henchman",
+          "stats": { "M": "6", "WS": "3", "BS": "1", "S": "5", "T": "4", "W": "3", "I": "1", "A": "3", "Ld": "4" },
+          "startingExperience": 0,
+          "hireCost": 200,
+          "canGainExperience": false,
+          "large": true,
+          "promotionEligibility": "ineligible",
+          "maximumProfile": null,
+          "maxCount": 1,
+          "equipmentListKeys": [],
+          "allowedCategories": [],
+          "skillCategories": [],
+          "specialRules": [
+            { "name": "Fear", "summary": "Causes Fear." },
+            { "name": "Stupidity", "summary": "Subject to Stupidity." },
+            { "name": "Regeneration", "summary": "Ignores an inflicted wound on 4+, except wounds from fire or fire-based magic. Never rolls for post-battle Injury." },
+            { "name": "Dumb Monster", "summary": "Cannot gain experience or learn skills." },
+            { "name": "Always Hungry", "summary": "After each game pay 15 gc upkeep. If funds are insufficient, sacrifice two Goblin Warriors or Cave Squigs instead; without payment or feeding the Troll leaves." },
+            { "name": "Vomit Attack", "summary": "Instead of normal attacks, make one automatically hitting Strength 5 close-combat attack that ignores armour saves." },
+            { "name": "Large Target", "summary": "Counts as a Large Target for shooting." },
+            { "name": "No Equipment", "summary": "Cannot be given weapons or armour; a carried club is descriptive, not purchased equipment." }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ostlanders",
+      "grade": "1a",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1a-warbands/ostlander",
+      "specialRules": [
+        { "name": "Self-Sufficient", "summary": "May not hire Mercenaries other than Ogres." }
+      ],
+      "hiredSwordPolicy": {
+        "allowedNames": ["Ogre Bodyguard"],
+        "summary": "May hire Ogres only; the current catalog's matching Hired Sword is Ogre Bodyguard."
+      }
+    },
+    {
+      "name": "Pirate",
+      "grade": "1b",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1b-warbands/pirates",
+      "armourProfiles": [
+        { "name": "Toughened leathers (Pirates)", "itemType": "armour", "saveText": "6+", "specialRules": [
+          { "name": "Limited combination", "summary": "Cannot combine with other armour except a helmet or buckler." },
+          { "name": "No resale", "summary": "Cannot sell back after a battle." },
+          { "name": "Spell casting", "summary": "Counts as armour and prevents spell casting." }
+        ] }
+      ],
+      "equipmentLists": [
+        { "key": "pirate", "name": "Pirate Equipment List", "items": [
+          { "name": "Brace of Duelling Pistols", "category": "weapon", "unitCost": 60, "profileName": "Duelling pistol", "ruleText": "Source brace price; two pistols count as one missile weapon." },
+          { "name": "Brace of Pistols", "category": "weapon", "unitCost": 30, "profileName": "Pistol", "ruleText": "Source brace price; two pistols count as one missile weapon." },
+          { "name": "Boat Hook", "category": "weapon", "unitCost": 8, "ruleText": "Close combat at user Strength -1. Two-handed; strikes first in the first round regardless of who charged. Cannot combine with another weapon, shield or buckler in close combat." },
+          { "name": "Cat O' Nine Tails", "category": "weapon", "unitCost": 8, "allowedWarriorTypeNames": ["Pirate Captain", "Ship's Mates", "Cabin Boys"], "ruleText": "Heroes only; close combat at user Strength. Cannot be parried; wounds grant the target +1 armour save, or 6+ if it has none. Uses Steel Whip's Whipcrack charge/charger extra-attack rule." },
+          { "name": "Cutlass", "category": "weapon", "unitCost": 10, "profileName": "Sword" },
+          { "name": "Belaying Pin", "category": "weapon", "unitCost": 3, "ruleText": "Thrown weapon, range 6 inches, user Strength -1. No range penalty, but moving still gives -1 to hit. Target gains +1 armour save, or 6+ if unarmoured." },
+          { "name": "Toughened leathers", "category": "armour", "unitCost": 5, "profileName": "Toughened leathers (Pirates)", "ruleText": "6+ armour save; cannot combine with other armour except a helmet or buckler. Cannot resell after a battle." },
+          { "name": "Axe", "category": "weapon", "unitCost": 5 },
+          { "name": "Crossbow", "category": "weapon", "unitCost": 25 },
+          { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+          { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+          { "name": "Duelling Pistol", "category": "weapon", "unitCost": 30, "profileName": "Duelling pistol" },
+          { "name": "Hammer/Mace", "category": "weapon", "unitCost": 3, "profileName": "Hammer, staff, mace or club" },
+          { "name": "Pistol", "category": "weapon", "unitCost": 15, "profileName": "Pistol" },
+          { "name": "Light armour", "category": "armour", "unitCost": 20 },
+          { "name": "Helmet", "category": "armour", "unitCost": 10 },
+          { "name": "Buckler", "category": "shield", "unitCost": 5 },
+          { "name": "Hook Hand", "category": "misc", "unitCost": 4, "ruleText": "Source expressly allows a newly recruited Pirate to start with one, even without a prior injury. Counts as a dagger in that hand and forbids two-handed weapons; later Hand Injury or Arm Wound is ignored on 4+ if taken by the hook." }
+        ] },
+        { "key": "pirate-gunner", "name": "Gunner Equipment List", "items": [
+          { "name": "Brace of Duelling Pistols", "category": "weapon", "unitCost": 60, "profileName": "Duelling pistol", "ruleText": "Source brace price; two pistols count as one missile weapon." },
+          { "name": "Brace of Pistols", "category": "weapon", "unitCost": 30, "profileName": "Pistol", "ruleText": "Source brace price; two pistols count as one missile weapon." },
+          { "name": "Cutlass", "category": "weapon", "unitCost": 10, "profileName": "Sword" },
+          { "name": "Toughened leathers", "category": "armour", "unitCost": 5, "profileName": "Toughened leathers (Pirates)", "ruleText": "6+ armour save; cannot combine with other armour except a helmet or buckler. Cannot resell after a battle." },
+          { "name": "Axe", "category": "weapon", "unitCost": 5 },
+          { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+          { "name": "Duelling Pistol", "category": "weapon", "unitCost": 30, "profileName": "Duelling pistol" },
+          { "name": "Hammer/Mace", "category": "weapon", "unitCost": 3, "profileName": "Hammer, staff, mace or club" },
+          { "name": "Handgun", "category": "weapon", "unitCost": 35 },
+          { "name": "Pistol", "category": "weapon", "unitCost": 15, "profileName": "Pistol" },
+          { "name": "Blunderbuss", "category": "weapon", "unitCost": 30 },
+          { "name": "Light armour", "category": "armour", "unitCost": 20 },
+          { "name": "Helmet", "category": "armour", "unitCost": 10 },
+          { "name": "Swivel Gun", "category": "weapon", "unitCost": 65, "allowedWarriorTypeNames": ["Gunners"], "ruleText": "Rare 8; maximum one per warband. Requires bought ammunition. Fires every other turn, never after movement or twice in one turn regardless of skills; bearer suffers -1 Movement and Initiative. Optional blackpowder rules are mandatory for this gun. Range and Strength depend on ammunition." },
+          { "name": "Ball Shot", "category": "misc", "unitCost": 5, "allowedWarriorTypeNames": ["Gunners"], "ruleText": "Swivel Gun ammunition, lasting one game when used; buy a new supply afterward. Range 36 inches, S5, -2 armour save; Injury rolls 2-4 stun. Declare ammunition before firing." },
+          { "name": "Chain Shot", "category": "misc", "unitCost": 2, "allowedWarriorTypeNames": ["Gunners"], "ruleText": "Swivel Gun ammunition, lasting one game when used. Range 24 inches, S4, -1 armour save. An unwounded hit target is knocked down on 4+, even if normally immune to knockdown. Declare ammunition before firing." },
+          { "name": "Grape Shot", "category": "misc", "unitCost": 2, "allowedWarriorTypeNames": ["Gunners"], "ruleText": "Swivel Gun ammunition, lasting one game when used. Range 24 inches, S3, no armour modifier. A hit also hits D6 other enemies within 4 inches of the target and in the firer's sight, nearest first, including hidden models. If the original target is in the open, models in cover are excluded; friendly Pirates are never hit. Declare ammunition before firing." },
+          { "name": "Hook Hand", "category": "misc", "unitCost": 4, "ruleText": "A new Pirate may start with one. Counts as a dagger in that hand and forbids two-handed weapons; later Hand Injury or Arm Wound is ignored on 4+ if taken by the hook." }
+        ] },
+        { "key": "pirate-swabbie", "name": "Swabbie Equipment List", "items": [
+          { "name": "Boat Hook", "category": "weapon", "unitCost": 8, "ruleText": "Close combat at user Strength -1. Two-handed; strikes first in the first round regardless of who charged. Cannot combine with another weapon, shield or buckler in close combat." },
+          { "name": "Cutlass", "category": "weapon", "unitCost": 10, "profileName": "Sword" },
+          { "name": "Toughened leathers", "category": "armour", "unitCost": 5, "profileName": "Toughened leathers (Pirates)", "ruleText": "6+ armour save; cannot combine with other armour except a helmet or buckler. Cannot resell after a battle." },
+          { "name": "Axe", "category": "weapon", "unitCost": 5 },
+          { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+          { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+          { "name": "Hammer/Mace", "category": "weapon", "unitCost": 3, "profileName": "Hammer, staff, mace or club" },
+          { "name": "Belaying Pin", "category": "weapon", "unitCost": 3, "ruleText": "Thrown weapon, range 6 inches, user Strength -1. No range penalty, but moving still gives -1 to hit. Target gains +1 armour save, or 6+ if unarmoured." },
+          { "name": "Bow", "category": "weapon", "unitCost": 10 },
+          { "name": "Buckler", "category": "shield", "unitCost": 5 },
+          { "name": "Hook Hand", "category": "misc", "unitCost": 4, "ruleText": "A new Pirate may start with one. Counts as a dagger in that hand and forbids two-handed weapons; later Hand Injury or Arm Wound is ignored on 4+ if taken by the hook." }
+        ] }
+      ],
+      "specialRules": [
+        { "name": "Swabbies", "summary": "Only humans may join as Swabbies; special recruitment mechanics apply." },
+        { "name": "Kidnapped", "summary": "A captured human Hero may join Pirates after a post-battle Leadership contest; otherwise the captive becomes a Swabbie." }
+      ]
+    },
+    {
+      "name": "Pit Fighter",
+      "grade": "1b",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1b-warbands/pit-fighters",
+      "specialRules": [
+        { "name": "Pit Fighter", "summary": "All Pit Fighters gain +1 WS and +1 Attack in ruins, buildings, and the Pit." },
+        { "name": "Hired Swords", "summary": "May hire all available Hired Swords except the Elf Ranger." }
+      ],
+      "hiredSwordPolicy": {
+        "excludedNames": ["Elf Ranger"],
+        "summary": "May hire all available Hired Swords except the Elf Ranger."
+      }
+    },
+    {
+      "name": "Shadow Warrior",
+      "grade": "1b",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1b-warbands/shadow-warriors",
+      "equipmentLists": [
+        { "key": "shadow-warrior", "name": "Shadow Warrior Equipment List", "items": [
+          { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+          { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+          { "name": "Elf Bow", "category": "weapon", "unitCost": 35 },
+          { "name": "Ithilmar dagger", "category": "weapon", "unitCost": 4, "allowedWarriorTypeNames": ["Shadow Master", "Shadow Walker", "Shadow Weaver"], "profileName": "Dagger", "materialName": "Ithilmar weapon", "ruleText": "Heroes only; twice ordinary cost." },
+          { "name": "Ithilmar double-handed weapon", "category": "weapon", "unitCost": 30, "allowedWarriorTypeNames": ["Shadow Master", "Shadow Walker", "Shadow Weaver"], "profileName": "Double-handed weapon", "materialName": "Ithilmar weapon", "ruleText": "Heroes only; twice ordinary cost." },
+          { "name": "Ithilmar spear", "category": "weapon", "unitCost": 20, "allowedWarriorTypeNames": ["Shadow Master", "Shadow Walker", "Shadow Weaver"], "profileName": "Spear", "materialName": "Ithilmar weapon", "ruleText": "Heroes only; twice ordinary cost." },
+          { "name": "Ithilmar sword", "category": "weapon", "unitCost": 20, "allowedWarriorTypeNames": ["Shadow Master", "Shadow Walker", "Shadow Weaver"], "profileName": "Sword", "materialName": "Ithilmar weapon", "ruleText": "Heroes only; twice ordinary cost." },
+          { "name": "Longbow", "category": "weapon", "unitCost": 15 },
+          { "name": "Spear", "category": "weapon", "unitCost": 10 },
+          { "name": "Sword", "category": "weapon", "unitCost": 10 },
+          { "name": "Bow", "category": "weapon", "unitCost": 10 },
+          { "name": "Light armour", "category": "armour", "unitCost": 20 },
+          { "name": "Ithilmar armour", "category": "armour", "unitCost": 60, "profileName": "Ithilmar armour", "allowedWarriorTypeNames": ["Shadow Master", "Shadow Walker", "Shadow Weaver"], "ruleText": "Heroes only; source starting price. Later use ordinary Trading Post price and rarity." },
+          { "name": "Helmet", "category": "armour", "unitCost": 10 },
+          { "name": "Shield", "category": "shield", "unitCost": 5 },
+          { "name": "Standard of Nagarythe", "category": "misc", "unitCost": 75, "allowedWarriorTypeNames": ["Shadow Master", "Shadow Walker", "Shadow Weaver"], "ruleText": "Heroes only; may only be purchased at warband creation, with no rarity roll. Shadow Warriors within 12 inches reroll failed Leadership tests; Hired Swords are unaffected. Losing the bearer out of action gives the band hatred and prohibits voluntary routing for the remaining battle. Requires a free hand; may fight as a spear at -1 to hit." },
+          { "name": "War Horn of Nagarythe", "category": "misc", "unitCost": 25, "allowedWarriorTypeNames": ["Shadow Master", "Shadow Walker", "Shadow Weaver"], "ruleText": "Heroes only; fixed starting price, no rarity roll. Once per battle, use at turn start or before a Rout test to give the band +1 Leadership until the next turn begins. Later price is 25+D6 gc, Rare 6." },
+          { "name": "Elven Cloak", "category": "misc", "unitCost": 75, "ruleText": "Fixed starting price, no rarity roll; not marked Heroes only in the source list. Shooting at the wearer suffers -1 to hit." },
+          { "name": "Elven Wine", "category": "misc", "unitCost": 50, "allowedWarriorTypeNames": ["Shadow Master", "Shadow Walker", "Shadow Weaver"], "ruleText": "Heroes only to purchase; fixed starting price, no rarity roll. Drinking before a battle makes the warband immune to fear for that battle. Later price is 50+3D6 gc, Rare 10." },
+          { "name": "Elven Runestones", "category": "misc", "unitCost": 50, "allowedWarriorTypeNames": ["Shadow Weaver"], "ruleText": "Source list marks Heroes only; item rules require a mage, so restrict to Shadow Weaver. Fixed starting price, no rarity roll. Attempt to dispel a successful spell against a band member by matching its Difficulty; Sorcery does not help. Later price is 50+2D6 gc, Rare 11." }
+        ] }
+      ],
+      "specialRules": [
+        { "name": "Hate Dark Elves", "summary": "Warband members other than Hired Swords hate Dark Elves." },
+        { "name": "Excellent Sight", "summary": "Elves spot hidden enemies at twice their Initiative in inches." },
+        { "name": "Distaste for Poison", "summary": "Warriors may not use poisons." },
+        { "name": "Unforgiving", "summary": "Cannot ally with warbands of a Chaotic nature." }
+      ]
+    },
+    {
+      "name": "Sisters of Sigmar",
+      "grade": "core",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1a-warbands/sisters-of-sigmar",
+      "weaponProfiles": [
+        { "name": "Sigmarite warhammer", "weaponType": "close_combat", "rangeText": "Close Combat", "strengthModifier": "As user +1", "specialRules": [
+          { "name": "Concussion", "summary": "Injury rolls 2-4 stun." },
+          { "name": "Holy Weapon", "summary": "+1 to wound against Possessed or Undead; critical wounds still require an unmodified 6." },
+          { "name": "Paired warhammers", "summary": "Only Matriarchs and Sister Superiors may carry two." }
+        ] },
+        { "name": "Steel whip", "weaponType": "close_combat", "rangeText": "Close Combat", "strengthModifier": "As user", "specialRules": [
+          { "name": "Cannot be parried", "summary": "Swords and bucklers cannot parry its attacks." },
+          { "name": "Whipcrack", "summary": "When charging, gain one additional attack that turn. When charged, gain one strike-first attack usable only against a charger. Multiple chargers or a second whip do not add further Whipcrack attacks." }
+        ] }
+      ],
+      "equipmentLists": [
+        { "key": "sisters", "name": "Sisters of Sigmar Equipment List", "items": [
+          { "name": "Steel whip", "category": "weapon", "unitCost": 10, "profileName": "Steel whip" },
+          { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+          { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
+          { "name": "Flail", "category": "weapon", "unitCost": 15 },
+          { "name": "Hammer", "category": "weapon", "unitCost": 3 },
+          { "name": "Mace", "category": "weapon", "unitCost": 3 },
+          { "name": "Sigmarite warhammer", "category": "weapon", "unitCost": 15, "profileName": "Sigmarite warhammer" },
+          { "name": "Sling", "category": "weapon", "unitCost": 2 },
+          { "name": "Heavy armour", "category": "armour", "unitCost": 50 },
+          { "name": "Light armour", "category": "armour", "unitCost": 20 },
+          { "name": "Helmet", "category": "armour", "unitCost": 10 },
+          { "name": "Shield", "category": "shield", "unitCost": 5 },
+          { "name": "Buckler", "category": "shield", "unitCost": 5 },
+          { "name": "Holy tome", "category": "misc", "unitCost": 120, "allowedWarriorTypeNames": ["Sigmarite Matriarch", "Augur", "Sister Superior"], "ruleText": "Heroines only; fixed recruitment price instead of the later 100+D6x10 gc. A Sister or Warrior Priest using the tome adds +1 to prayer-casting rolls; owning it does not grant prayers." },
+          { "name": "Blessed water", "category": "misc", "unitCost": 10, "allowedWarriorTypeNames": ["Sigmarite Matriarch", "Augur", "Sister Superior"], "ruleText": "Heroines only; fixed recruitment price. Single-use thrown attack at twice the thrower's Strength in inches, using BS without movement or range penalties. A hit automatically causes one wound on Undead, Daemon or Possessed models, with no armour save." },
+          { "name": "Holy relic", "category": "misc", "unitCost": 15, "allowedWarriorTypeNames": ["Sigmarite Matriarch", "Augur", "Sister Superior"], "ruleText": "Heroines only; fixed recruitment price. Automatically pass the first Leadership test required in the battle, including the leader's first Rout test if she has made no earlier Leadership test. Extra relics do not allow further automatic passes." }
+        ] }
+      ],
+      "warriors": [
+        {
+          "name": "Sigmarite Matriarch",
+          "role": "Hero",
+          "maximumProfile": "Human"
+        }
+      ]
+    },
+    {
+      "name": "Undead",
+      "grade": "core",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1a-warbands/undead",
+      "leaderType": "Vampire",
+      "warriors": [
+        {
+          "name": "Vampire",
+          "role": "Hero",
+          "maximumProfile": "Vampire",
+          "specialRules": [
+            { "name": "Cause Fear", "summary": "Causes Fear." }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Witch Hunters",
+      "grade": "core",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1a-warbands/witch-hunters",
+      "leaderType": "Witch Hunter Captain",
+      "specialRules": [
+        { "name": "Burn the Witch!", "summary": "Witch Hunters hate all models able to cast spells." }
+      ],
+      "warriors": [
+        {
+          "name": "Witch Hunter Captain",
+          "role": "Hero",
+          "maximumProfile": "Human",
+          "maxCount": 1,
+          "specialRules": [
+            { "name": "Burn the Witch!", "summary": "Hates all models able to cast spells." }
+          ]
+        },
+        { "name": "Warrior Priest", "role": "Hero", "maximumProfile": "Human", "maxCount": 1 },
+        {
+          "name": "Witch Hunters",
+          "role": "Hero",
+          "maximumProfile": "Human",
+          "maxCount": 3,
+          "specialRules": [
+            { "name": "Burn the Witch!", "summary": "Hates all models able to cast spells." }
+          ]
+        },
+        { "name": "Flagellants", "role": "Henchman", "maximumProfile": "Human", "maxCount": 5 },
+        { "name": "Warhounds", "role": "Henchman", "maximumProfile": null, "maxCount": 5 },
+        { "name": "Zealots", "role": "Henchman", "maximumProfile": "Human" }
+      ]
+    }
+  ]
+}

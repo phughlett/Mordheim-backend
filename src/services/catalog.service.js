@@ -17,6 +17,10 @@ function createCatalogService(repository) {
       return warbands.map((warband) => ({
         id: warband.id,
         name: warband.name,
+        displayName: warband.display_name ?? warband.name,
+        grade: warband.grade,
+        sourceUrl: warband.source_url,
+        specialRules: warband.special_rules ?? [],
         sourceReference: warband.source_reference,
         maxHeroes: warband.max_heroes,
         maxMembers: warband.max_members,

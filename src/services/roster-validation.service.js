@@ -4,7 +4,7 @@ function pickFields(body, allowedFields) {
   return Object.fromEntries(allowedFields.filter((field) => body?.[field] !== undefined).map((field) => [field, body[field]]));
 }
 
-async function resolveWarbandSelection(repository, values) {
+async function resolveWarbandSelection(repository, values, existingWarbandId = null) {
   if (values.warbandId === undefined) return true;
   const selectedId = values.warbandId;
   delete values.warbandId;
@@ -13,10 +13,11 @@ async function resolveWarbandSelection(repository, values) {
     values.warband = "";
     return true;
   }
-  const warband = await repository.findWarband(selectedId, ["id", "name"]);
+  const warband = await repository.findWarband(selectedId, ["id", "name", "is_selectable"]);
   if (!warband) {
     return { status: 400, body: { error: "Unknown warband." } };
   }
+  if (warband.is_selectable === false && warband.id !== existingWarbandId) return { status: 400, body: { error: "Choose Reikland, Middenheim or Marienburg Mercenaries for a new warband." } };
   values.warband_id = warband.id;
   values.warband = warband.name;
   return true;

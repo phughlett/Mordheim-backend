@@ -1,4 +1,5 @@
 const statKeys = ["M", "WS", "BS", "S", "T", "W", "I", "A", "Ld"];
+const { definitions } = require("./warband-source.service");
 const heroThresholds = [2, 4, 6, 8, 11, 14, 17, 20, 24, 28, 32, 36, 41, 46, 51, 57, 63, 69, 76, 83, 90];
 const henchmanThresholds = [2, 5, 9, 14];
 const heroStatGroups = [["S", "A"], ["WS", "BS"], ["I", "Ld"], ["W", "T"]];
@@ -29,6 +30,9 @@ function getAdvancesEarned(table, experience, role = table) {
 }
 
 function getStatMaximumProfile(warbandName, warriorTypeName) {
+  const sourceBand = definitions.find((band) => band.name === warbandName);
+  const sourceType = sourceBand?.warriors?.find((type) => type.name === warriorTypeName);
+  if (sourceType && Object.hasOwn(sourceType, "maximumProfile")) return sourceType.maximumProfile;
   const source = `${warbandName || ""} ${warriorTypeName || ""}`.toLowerCase();
   const typeName = (warriorTypeName || "").toLowerCase();
   if (/\b(vampire)\b/.test(typeName)) return "Vampire";

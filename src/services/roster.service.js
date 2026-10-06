@@ -1,5 +1,6 @@
 const { getStatMaximumProfile, racialMaximums } = require("./advancement-rules.service");
 const { toCampaign } = require("./campaign.service");
+const { warbandTitle } = require("./warband-identity.service");
 
 const statKeys = ["M", "WS", "BS", "S", "T", "W", "I", "A", "Ld"];
 
@@ -30,6 +31,9 @@ function createRosterService(repository) {
       leader: leader ? { id: leader.id, name: leader.name } : null,
       limitsSourceReference: warband?.limits_source_reference || "3Campaigns.pdf — Campaigns: Heroes and Henchmen",
       limitsRule: warband?.limits_rule || "Maximum 6 Heroes and 15 total warriors unless the warband or an eligible capacity modifier states otherwise.",
+      grade: warband?.grade ?? null,
+      sourceUrl: warband?.source_url ?? null,
+      specialRules: warband?.special_rules ?? [],
       selectedModifiers,
       availableModifiers,
     };
@@ -65,7 +69,7 @@ function toRoster(roster, members) {
   return {
     id: roster.id,
     name: roster.name,
-    warband: roster.warband || "",
+    warband: warbandTitle(roster.warband || ""),
     warbandId: roster.warband_id || null,
     maxHeroes: roster.max_heroes ?? 6,
     maxMembers: roster.max_members ?? 15,
@@ -113,6 +117,7 @@ function toMember(warrior) {
     stats: Object.fromEntries(statKeys.map((key) => [key, warrior.stats?.[key] ?? ""])),
     initialStats: Object.fromEntries(statKeys.map((key) => [key, warrior.initial_stats?.[key] ?? ""])),
     maximumStats: racialMaximums[getStatMaximumProfile(warrior.warband_name, warrior.warrior_type_name)] || null,
+    specialRules: warrior.type_special_rules ?? [],
     equipment: warrior.equipment,
     skills: warrior.skills,
     notes: warrior.notes,

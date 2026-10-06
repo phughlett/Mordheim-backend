@@ -898,6 +898,9 @@ function createRosterRepository(db) {
           const existing = await transaction("warrior_starting_gear_grants")
             .where({ warrior_id: warriorId, equipment_option_id: equipmentOptionId, model_index: model })
             .first("warrior_id");
+          if (option.firstFree && Number(option.unitCost) === 0 && (existing || quantity !== 1)) {
+            return { unavailableOption: true };
+          }
           const freeQuantity = option.firstFree && !existing ? 1 : 0;
           const paidQuantity = quantity - freeQuantity;
           if (freeQuantity) purchases.push({ model, quantity: freeQuantity, unitCost: 0 });
@@ -1504,6 +1507,7 @@ function createRosterRepository(db) {
         .select(
           "warrior.*",
           "warrior_type.stats as initial_stats",
+          "warrior_type.special_rules as type_special_rules",
           "warrior_type.name as warrior_type_name",
           "warband.name as warband_name",
           "warrior_type.member_limit_bonus",
@@ -1622,7 +1626,7 @@ function createRosterRepository(db) {
         pendingSkillAdvances,
         availableSkills: loadedSkills.filter((skill) => !knownSkillIds.has(skill.id)),
         learnedSkills: [
-          ...(leader?.id === warriorId ? [leaderAbility()] : []),
+          ...(leader?.id === warriorId ? [leaderAbility(leader.warband_name, leader.warrior_type_name)] : []),
           ...learnedSkills.map((row) => ({ warriorSkillId: row.warriorSkillId, acquiredAt: row.acquiredAt, notes: row.notes, purchaseCost: row.purchaseCost, ...mapSkillRow(row) })),
         ],
       };

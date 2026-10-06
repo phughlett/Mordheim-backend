@@ -14,6 +14,7 @@ COPY skill-category-eligibility.json ./skill-category-eligibility.json
 COPY hired-sword-skills.json ./hired-sword-skills.json
 COPY spells-catalog.json ./spells-catalog.json
 COPY spell-profile-access.json ./spell-profile-access.json
+COPY warband-source ./warband-source
 COPY migrations ./migrations
 COPY src ./src
 COPY test ./test

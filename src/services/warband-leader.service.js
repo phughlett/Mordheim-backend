@@ -1,3 +1,6 @@
+const { definitions } = require("./warband-source.service");
+const { mercenarySects } = require("./warband-identity.service");
+
 const standardLeaders = {
   Amazons: "Priestess",
   "Averlander Mercenaries": "Captain (Averlander)",
@@ -10,6 +13,7 @@ const standardLeaders = {
   Kislevite: "Druzhina Captain",
   Lizardmen: "Skink Priest",
   Mercenaries: "Mercenary Captain",
+  ...Object.fromEntries(mercenarySects.map((name) => [name, "Mercenary Captain"])),
   "Night Goblins": "Big Boss",
   Norse: "Jarl",
   Orc: "Orc Boss",
@@ -23,6 +27,7 @@ const standardLeaders = {
   "Witch Hunters": "Witch Hunter Captain",
   "Marauders of Chaos": "Marauder Chieftain",
   "Battle Monks of Cathay": "Emissary",
+  ...Object.fromEntries(definitions.filter((band) => band.leaderType).map((band) => [band.name, band.leaderType])),
 };
 
 function selectLeader(warbandName, warriors) {
@@ -44,13 +49,14 @@ async function getRosterLeader(query, rosterId) {
   return selectLeader(warriors[0]?.warband_name, warriors);
 }
 
-function leaderAbility() {
+function leaderAbility(warbandName, typeName) {
+  const range = warbandName === "Reikland Mercenaries" && typeName === "Mercenary Captain" ? 12 : 6;
   return {
     id: "00000000-0000-4000-8000-000000000001",
     warriorSkillId: "00000000-0000-4000-8000-000000000001",
     name: "Leader",
     category: "Special",
-    description: 'Warband members within 6" of this warrior may use this warrior\'s Leadership for Leadership tests.',
+    description: `Warband members within ${range}" of this warrior may use this warrior's Leadership for Leadership tests.`,
     sourceReference: "2Warbands.pdf — Leaders: Special Rules",
     warbandId: null, warriorTypeId: null, specialListName: null, appliesToWarriorTypeNames: null,
     acquiredAt: null, notes: "Granted only while this warrior leads the warband.",

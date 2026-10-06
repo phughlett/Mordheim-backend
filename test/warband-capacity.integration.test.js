@@ -5,6 +5,7 @@ const knexConfig = require("../knexfile");
 const { createApp } = require("../src/app");
 const capacities = require("../warband-capacity.json");
 const catalog = require("../catalog.json");
+const { index, definitions } = require("../src/services/warband-source.service");
 
 const db = knex(knexConfig[process.env.NODE_ENV || "development"] || knexConfig.development);
 let server;
@@ -50,21 +51,24 @@ describe("source-backed warband model limits", () => {
     const names = capacities.map(({ name }) => name);
     assert.equal(new Set(names).size, names.length);
     assert.deepEqual([...names].sort(), catalog.warbands.map(({ name }) => name).sort());
-    assert.deepEqual(warbands.map(({ name }) => name).sort(), [...names].sort());
+    assert.deepEqual(warbands.filter(({ name }) => !name.endsWith("Mercenaries") || name === "Averlander Mercenaries").map(({ name }) => name).sort(), index.warbands.filter(({ name }) => name !== "Mercenaries").map(({ name }) => name).sort());
     const twelve = new Set(["Bretonnian", "Dark Elves", "Dwarf Treasure Hunters", "Shadow Warrior", "Witch Hunters"]);
     const twenty = new Set(["Lizardmen", "Night Goblins", "Orc", "Skaven"]);
     for (const rule of capacities) {
-      const expected = twelve.has(rule.name) ? 12 : twenty.has(rule.name) ? 20 : 15;
-      assert.equal(rule.maxMembers, expected, rule.name);
+      if (rule.name === "Mercenaries") continue;
+      const correction = definitions.find((band) => band.name === rule.name);
+      const expected = correction?.maxMembers ?? (twelve.has(rule.name) ? 12 : twenty.has(rule.name) ? 20 : 15);
+      assert.equal(rule.maxMembers, twelve.has(rule.name) ? 12 : twenty.has(rule.name) ? 20 : 15, rule.name);
       const warband = warbands.find(({ name }) => name === rule.name);
       assert.equal(warband.maxMembers, expected, rule.name);
-      assert.equal(warband.limitsSourceReference, rule.source);
+      const source = correction?.maxMembers !== undefined ? correction.sourceUrl : rule.source;
+      assert.equal(warband.limitsSourceReference, source);
       const roster = await call("POST", "/rosters", { warbandId: warband.id });
       assert.equal(roster.status, 201);
       assert.equal(roster.body.maxMembers, expected, rule.name);
       assert.equal(roster.body.capacity.baseMaxMembers, expected, rule.name);
       assert.equal(roster.body.capacity.maxMembers, expected, rule.name);
-      assert.equal(roster.body.capacity.limitsSourceReference, rule.source);
+      assert.equal(roster.body.capacity.limitsSourceReference, source);
       const read = (await call("GET", `/rosters/${roster.body.id}`)).body;
       assert.equal(read.maxMembers, expected, rule.name);
       const updated = (await call("PATCH", `/rosters/${roster.body.id}`, { name: `${rule.name} audit` })).body;

@@ -38,7 +38,7 @@ describe("multi-user campaigns", () => {
     base = `http://127.0.0.1:${server.address().port}/api`;
     for (const name of ["alice", "bob", "carol"]) await register(name);
     const warbands = (await call(users.alice.token, "GET", "/warbands")).body;
-    const warband = warbands.find((item) => item.name === "Mercenaries") ?? warbands[0];
+    const warband = warbands.find((item) => item.name === "Reikland Mercenaries") ?? warbands[0];
     campaign = (await call(users.alice.token, "POST", "/campaigns", { name: `Test ${suffix}` })).body;
     assert.equal((await call(users.bob.token, "POST", "/campaigns/join", { code: campaign.inviteCode })).status, 200);
     aliceRoster = (await call(users.alice.token, "POST", "/rosters", { warbandId: warband.id, campaignId: campaign.id })).body;

@@ -66,7 +66,7 @@ describe("leader inventory drives cookbook capacity", () => {
     const auth = await call("POST", "/auth/register", { username: `leader_${Date.now()}`, password: "Leader-tests-0420b5d9!" });
     user = auth.body.user;
     token = auth.body.token;
-    warband = (await call("GET", "/warbands")).body.find((row) => row.name === "Mercenaries");
+    warband = (await call("GET", "/warbands")).body.find((row) => row.name === "Reikland Mercenaries");
     types = (await call("GET", `/warbands/${warband.id}/warrior-types`)).body;
   });
   after(async () => {

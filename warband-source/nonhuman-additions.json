@@ -1,0 +1,415 @@
+{
+  "warbands": [
+    {
+      "name": "Amazons (Lustria)",
+      "grade": "1b",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1b-warbands/amazons-lustria",
+      "maxMembers": 15,
+      "maxHeroes": 6,
+      "leaderType": "Serpent Priestess",
+      "specialRules": [
+        {"name":"Variant identity","summary":"Town Cryer 15 Lustria list; distinct from the existing Amazons (Mordheim) list with Priestess, Champions, Totem Warriors and Scouts. Do not replace its types or equipment."},
+        {"name":"Recruitment","summary":"Start with 500 gc and at least three models, including exactly one Serpent Priestess and at least one Amazon Warrior. Henchwomen groups contain 1–5 models."},
+        {"name":"Isolationists","summary":"Reroll missed attacks in the first combat round against Lizardmen and Norse."},
+        {"name":"Sacrifice","summary":"Handle captives as the Possessed do. Sacrificing a captured Lizardman also grants free Skins and Charms."},
+        {"name":"Norse Enmity","summary":"Against Norse, reroll the first failed Rout test; voluntary routing is forbidden while the leader remains in action."},
+        {"name":"Not one of us","summary":"Only Amazon Hired Swords and Dramatis Personae may join; no alliance with outsiders."},
+        {"name":"Magic sources","summary":"Amazon Rituals are detailed at https://mordheimer.net/docs/magic/amazon-rituals. Standard wizard casting restrictions apply."}
+      ],
+      "warriors": [
+        {"name":"Serpent Priestess","maximumProfile":"Human","role":"Hero","stats":{"M":"4","WS":"4","BS":"4","S":"3","T":"3","W":"1","I":"4","A":"1","Ld":"8"},"hireCost":70,"startingExperience":20,"large":false,"canGainExperience":true,"promotionEligibility":"not_applicable","maxCount":1,"specialRules":[{"name":"Wizard","summary":"Starts with one random Amazon Ritual."}],"skillCategories":["Combat","Academic","Speed","Special"],"specialListName":"Amazon Special Skills","equipmentListKeys":["lustria-heroines"]},
+        {"name":"Eagle Warriors","maximumProfile":"Human","role":"Hero","stats":{"M":"4","WS":"4","BS":"3","S":"3","T":"3","W":"1","I":"3","A":"1","Ld":"7"},"hireCost":35,"startingExperience":8,"large":false,"canGainExperience":true,"promotionEligibility":"not_applicable","maxCount":2,"specialRules":[],"skillCategories":["Combat","Strength","Speed","Special"],"specialListName":"Amazon Special Skills","equipmentListKeys":["lustria-heroines","lustria-special"]},
+        {"name":"Piranha Warriors","maximumProfile":"Human","role":"Hero","stats":{"M":"4","WS":"3","BS":"4","S":"3","T":"3","W":"1","I":"4","A":"1","Ld":"7"},"hireCost":30,"startingExperience":8,"large":false,"canGainExperience":true,"promotionEligibility":"not_applicable","maxCount":2,"specialRules":[],"skillCategories":["Combat","Shooting","Speed","Special"],"specialListName":"Amazon Special Skills","equipmentListKeys":["lustria-heroines","lustria-special"]},
+        {"name":"Amazon Warriors","maximumProfile":"Human","role":"Henchman","stats":{"M":"4","WS":"3","BS":"3","S":"3","T":"3","W":"1","I":"3","A":"1","Ld":"7"},"hireCost":25,"startingExperience":0,"large":false,"canGainExperience":true,"promotionEligibility":"eligible","maxCount":null,"specialRules":[],"skillCategories":[],"equipmentListKeys":["lustria-henchwomen"],"conditionText":"At least one Amazon Warrior is required. Scope this type to the Lustria variant rather than replacing the existing Mordheim type."},
+        {"name":"Jaguar Warriors","maximumProfile":"Human","role":"Henchman","stats":{"M":"4","WS":"3","BS":"3","S":"3","T":"3","W":"1","I":"3","A":"1","Ld":"7"},"hireCost":30,"startingExperience":0,"large":false,"canGainExperience":true,"promotionEligibility":"eligible","maxCount":3,"specialRules":[{"name":"One with the Jungle","summary":"Ignore movement penalties for jungle terrain."}],"skillCategories":[],"equipmentListKeys":["lustria-jaguars"]}
+      ],
+      "equipmentLists": [
+        {"key":"lustria-heroines","name":"Heroines Equipment List","items":[
+          {"name":"Dagger","category":"weapon","unitCost":2,"firstFree":true},
+          {"name":"Club","category":"weapon","unitCost":3,"profileName":"Hammer, staff, mace or club"},
+          {"name":"Sword","category":"weapon","unitCost":10},
+          {"name":"Spear","category":"weapon","unitCost":10},
+          {"name":"Double-handed weapon","category":"weapon","unitCost":15},
+          {"name":"Starblade","category":"weapon","unitCost":15,"profileName":"Starblade","ruleText":"User Strength; opponent gains +1 armour save. May parry the first successful combat hit on 4+."},
+          {"name":"Starsword","category":"weapon","unitCost":30,"profileName":"Starsword","ruleText":"User Strength +1; parry; ignore armour, but not ward or dodge saves."},
+          {"name":"Bow","category":"weapon","unitCost":10},
+          {"name":"Sunstaff (Lustria)","category":"weapon","unitCost":35,"profileName":"Sunstaff (Lustria)","ruleText":"User Strength in melee. Fires a 12-inch S4 sunbolt; ignores armour and long-range penalties, but ward and dodge saves apply. Not the Mordheim Sunstaff profile."},
+          {"name":"Buckler","category":"shield","unitCost":5},
+          {"name":"Helmet","category":"armour","unitCost":10},
+          {"name":"Enchanted Skins","category":"armour","unitCost":20,"profileName":"Enchanted Skins (Lustria)","ruleText":"6+ special save against wounds and ignore enemy magic on 5+; also called Skins and Charms."},
+          {"name":"Amulet of the Moon","category":"misc","unitCost":50,"ruleText":"Enemy missile attacks suffer -1 to hit; wearer has a 5+ special save against missiles."},
+          {"name":"Healing Herbs","category":"misc","unitCost":35,"ruleText":"Listed as fixed-price miscellaneous recruitment equipment in the Heroines list. Apply existing Healing Herbs rules; not a weapon or equipment set."}
+        ]},
+        {"key":"lustria-henchwomen","name":"Henchwomen Equipment List","items":[
+          {"name":"Dagger","category":"weapon","unitCost":2,"firstFree":true},
+          {"name":"Club","category":"weapon","unitCost":3,"profileName":"Hammer, staff, mace or club"},
+          {"name":"Sword","category":"weapon","unitCost":10},
+          {"name":"Spear","category":"weapon","unitCost":10},
+          {"name":"Sling","category":"weapon","unitCost":5},
+          {"name":"Bow","category":"weapon","unitCost":10},
+          {"name":"Sunstaff (Lustria)","category":"weapon","unitCost":35,"profileName":"Sunstaff (Lustria)","ruleText":"User Strength in melee; 12-inch S4 sunbolt ignores armour and long-range penalties, not ward/dodge saves."},
+          {"name":"Buckler","category":"shield","unitCost":5},
+          {"name":"Helmet","category":"armour","unitCost":10},
+          {"name":"Enchanted Skins","category":"armour","unitCost":20,"profileName":"Enchanted Skins (Lustria)","ruleText":"6+ special wound save; ignore enemy magic on 5+."}
+        ]},
+        {"key":"lustria-jaguars","name":"Jaguar Warrior Equipment List","items":[
+          {"name":"Dagger","category":"weapon","unitCost":2,"firstFree":true},
+          {"name":"Club","category":"weapon","unitCost":3,"profileName":"Hammer, staff, mace or club"},
+          {"name":"Sword","category":"weapon","unitCost":10},
+          {"name":"Spear","category":"weapon","unitCost":10},
+          {"name":"Sling","category":"weapon","unitCost":5},
+          {"name":"Bolas","category":"weapon","unitCost":5,"profileName":"Bolas (Lustria)","ruleText":"16-inch range, once per battle, recovered afterward. A hit prevents movement and gives -2 WS; free oneself on 4+ in Recovery. Natural 1 to hit causes an S3 hit on the thrower."},
+          {"name":"Javelins","category":"weapon","unitCost":5},
+          {"name":"Bow","category":"weapon","unitCost":10},
+          {"name":"Sunstaff (Lustria)","category":"weapon","unitCost":35,"profileName":"Sunstaff (Lustria)","ruleText":"User Strength in melee; 12-inch S4 sunbolt ignores armour and long-range penalties, not ward/dodge saves."},
+          {"name":"Helmet","category":"armour","unitCost":10},
+          {"name":"Enchanted Skins","category":"armour","unitCost":20,"profileName":"Enchanted Skins (Lustria)","ruleText":"6+ special wound save; ignore enemy magic on 5+."}
+        ]},
+        {"key":"lustria-special","name":"Special Equipment","items":[
+          {"name":"Starblade","category":"weapon","unitCost":15,"profileName":"Starblade","ruleText":"Rare 7. User Strength; +1 enemy armour save; parry first successful combat hit on 4+."},
+          {"name":"Starsword","category":"weapon","unitCost":30,"profileName":"Starsword","ruleText":"Rare 10. User Strength +1, parry, ignore armour except ward/dodge."},
+          {"name":"Bolas","category":"weapon","unitCost":5,"profileName":"Bolas (Lustria)","ruleText":"Common. 16 inches, once per battle and recovered; natural 1 hits thrower at S3. Hit target cannot move and has -2 WS until a 4+ Recovery roll frees it; shooting remains possible."},
+          {"name":"Sunstaff (Lustria)","category":"weapon","unitCost":35,"profileName":"Sunstaff (Lustria)","ruleText":"Rare 10. User Strength melee; 12-inch S4 sunbolt ignores armour and long-range penalties, not ward/dodge."},
+          {"name":"Enchanted Skins","category":"armour","unitCost":20,"profileName":"Enchanted Skins (Lustria)","ruleText":"Rare 6. 6+ special wound save; ignore enemy magic on 5+."},
+          {"name":"Amulet of the Moon","category":"misc","unitCost":50,"ruleText":"Rare 11. -1 to enemy missile hit rolls; 5+ special missile save."},
+          {"name":"Conch Shell Horn","category":"misc","unitCost":25,"allowedWarriorTypeNames":["Piranha Warriors"],"ruleText":"Rare 8; Piranha Warriors only. At game start reroll deployment order and first-turn determination. Multiple horns cannot force further rerolls."}
+        ]}
+      ],
+      "skills": [
+        {"name":"Skink Hunter","listName":"Amazon Special Skills","summary":"Always strike first in the first combat round against Skinks, irrespective of the charger."},
+        {"name":"Elixir of Life","listName":"Amazon Special Skills","summary":"Reroll one Serious Injury roll after a battle; accept the replacement."},
+        {"name":"Mesmerising Dance","listName":"Amazon Special Skills","summary":"At each turn's start, enemies in base contact test Leadership or cannot attack that turn, though they defend normally. Lizardmen and Undead are unaffected."},
+        {"name":"Savage Fury","listName":"Amazon Special Skills","summary":"+1 Attack when charging; immune to fear and charm effects."},
+        {"name":"Concealment","listName":"Amazon Special Skills","summary":"When hiding in jungle, halve enemy spotting ranges."}
+      ],
+      "spellDisciplines": [
+        {"name":"Amazon Rituals","kind":"Ritual","castingRuleSummary":"Wizard: one spell each Shooting phase, passing its difficulty on 2D6; cannot also shoot. Standard armour/shield/buckler restrictions apply. Source: https://mordheimer.net/docs/magic/amazon-rituals.","spells":[
+          {"roll":1,"name":"Singing Wind","difficulty":8,"effectSummary":"Hold a model within 10 inches until the caster's next turn: no movement, shooting or spellcasting; it can defend in melee but strikes last."},
+          {"roll":2,"name":"Serpent’s Strength","difficulty":9,"effectSummary":"Friendly models within 8 inches, including caster, gain +1 S until the end of their next turn. Cannot cast while in melee; entering melee afterward does not cancel it."},
+          {"roll":3,"name":"Wendala’s Maelstrom","difficulty":7,"effectSummary":"An 18-inch storm around the Priestess gives enemy missile fire -1 to hit until the Amazon player's next turn."},
+          {"roll":4,"name":"Shield of Thorns","difficulty":7,"effectSummary":"Caster becomes immune to ranged and magical attacks. Charging enemies may engage, but neither side strikes in the first combat round. Cannot cast in melee; duration is not specified."},
+          {"roll":5,"name":"The Living Jungle","difficulty":6,"effectSummary":"One model within 12 inches takes D6 S2 hits; only ward saves apply, not armour or dodge."},
+          {"roll":6,"name":"Siren’s Dreams","difficulty":7,"effectSummary":"Distracts enemies within 12 inches; the opposing warband makes Leadership tests at -1 until the end of its next turn. Lizardmen and Undead are immune."}
+        ]}
+      ],
+      "spellAccess": [{"warriorType":"Serpent Priestess","discipline":"Amazon Rituals","startingSpellCount":1,"isWizard":true,"selectionRule":"Random D6 ritual at recruitment; normal wizard advancement."}],
+      "weaponProfiles": [
+        {"name":"Starblade","weaponType":"close_combat","rangeText":"Close Combat","strengthModifier":"As user","specialRules":[{"name":"Enemy armour","summary":"Target gains +1 to armour save."},{"name":"Potential Parry","summary":"May parry the first successful combat hit on 4+."}]},
+        {"name":"Starsword","weaponType":"close_combat","rangeText":"Close Combat","strengthModifier":"As user +1","specialRules":[{"name":"Parry","summary":"May parry enemy blows."},{"name":"Ignores Armour","summary":"Ignore armour saves, but not ward or dodge saves."}]},
+        {"name":"Sunstaff (Lustria)","weaponType":"close_combat","rangeText":"Close Combat / 12-inch Sunbolt","strengthModifier":"As user (melee); 4 (Sunbolt)","specialRules":[{"name":"Sunbolt","summary":"In Shooting fires a 12-inch S4 bolt ignoring armour and long-range penalties; ward and dodge saves remain."}],"notes":"Dual-mode Lustria weapon, not the existing Mordheim Sunstaff."},
+        {"name":"Bolas (Lustria)","weaponType":"missile","rangeText":"16 inches","strengthModifier":"Special","specialRules":[{"name":"Dangerous","summary":"Natural 1 to hit causes an S3 hit on thrower."},{"name":"Entangle","summary":"Hit causes no damage but prevents movement and gives -2 WS. Shooting remains possible. A 4+ Recovery roll frees the target."},{"name":"Limited use","summary":"Use once per battle; recovered automatically afterward."}]}
+      ],
+      "armourProfiles": [
+        {"name":"Enchanted Skins (Lustria)","itemType":"armour","saveText":"6+ special wound save","specialRules":[{"name":"Magic protection","summary":"Ignore enemy magic on 5+."}],"notes":"Also called Skins and Charms; no ordinary armour save specified."}
+      ],
+      "hiredSwordPolicy": {"allowedNames":[],"summary":"Only Amazon Hired Swords or Dramatis Personae are permitted. No exact qualifying hire names are supplied by this source; do not inherit the broad existing Amazons hire list."}
+    },
+    {
+      "name":"Black Orcs","grade":"1b","sourceUrl":"https://mordheimer.net/docs/warbands/grade-1b-warbands/black-orcs","maxMembers":12,"maxHeroes":6,"leaderType":"Black Orc Boss",
+      "specialRules":[
+        {"name":"Recruitment","summary":"500 gc initially; minimum three models and exactly one Black Orc Boss. Henchmen groups have 1–5 members."},
+        {"name":"Let the goons do the work","summary":"Black Orcs cannot ride mounts; ordinary Orcs can."},
+        {"name":"Da Boss is Dead!","summary":"A Black Orc takes leadership before any other type, regardless of experience; the replacement gains Oi Behave!."},
+        {"name":"Animosity","summary":"Unengaged Orc/Goblin henchmen test each turn: D6 result 1 triggers a second roll. Second roll 1 attacks the nearest eligible friendly Orc/Goblin henchman or Hired Sword by charge or shot, then combatants separate by 1 inch; otherwise lose the turn. Results 2–5 lose the turn. Result 6 moves toward the nearest visible enemy, charging if possible, or grants a normal extra move if none is visible; charge in normal movement if brought within range."},
+        {"name":"Animosity source conflict","summary":"Boyz/Shootaz entries say Leadership test, but the referenced Annual chart triggers on a D6 result of 1. The source flags this discrepancy; resolve manually, not as an invented extra Leadership check."},
+        {"name":"Animosity friendly-Hero exception","summary":"On the attack-friend result, if the nearest friendly model is an Orc Hero, use the lost-turn result instead. Do not simply select a more distant eligible henchman."},
+        {"name":"Shootaz balance","summary":"Shootaz cannot outnumber Boyz when hired. If casualties upset the balance, the next hire must be a Boy."}
+      ],
+      "warriors":[
+        {"name":"Black Orc Boss","maximumProfile":null,"role":"Hero","stats":{"M":"4","WS":"4","BS":"4","S":"4","T":"4","W":"1","I":"3","A":"1","Ld":"8"},"hireCost":90,"startingExperience":20,"large":false,"canGainExperience":true,"promotionEligibility":"not_applicable","maxCount":1,"specialRules":[{"name":"Black Orc","summary":"Natural 6+ armour save, cumulative with equipment."},{"name":"Oi Behave!","summary":"When a henchman within 6 inches fails Animosity, optionally hit it automatically at a chosen Strength. If it remains standing, add that Strength to its Animosity-effect roll."}],"skillCategories":["Combat","Shooting","Strength","Speed","Special"],"specialListName":"Black Orc Special Skills","equipmentListKeys":["black-orc"]},
+        {"name":"Black Orcs","maximumProfile":null,"role":"Hero","stats":{"M":"4","WS":"4","BS":"3","S":"4","T":"4","W":"1","I":"3","A":"1","Ld":"7"},"hireCost":60,"startingExperience":8,"large":false,"canGainExperience":true,"promotionEligibility":"not_applicable","maxCount":2,"specialRules":[{"name":"Black Orc","summary":"Natural 6+ armour save, cumulative with equipment."}],"skillCategories":["Combat","Shooting","Strength","Speed","Special"],"specialListName":"Black Orc Special Skills","equipmentListKeys":["black-orc"]},
+        {"name":"Young’uns","maximumProfile":null,"role":"Hero","stats":{"M":"4","WS":"2","BS":"2","S":"3","T":"4","W":"1","I":"2","A":"1","Ld":"6"},"hireCost":25,"startingExperience":0,"large":false,"canGainExperience":true,"promotionEligibility":"not_applicable","maxCount":2,"specialRules":[{"name":"Black Orc Blood","summary":"One Young'un may be upgraded for +10 gc, making him eligible for Proven Warrior at 25 experience. This is an upgrade within the two Young'uns, not an extra hero."}],"skillCategories":["Combat","Shooting","Special"],"specialListName":"Black Orc Special Skills","equipmentListKeys":["black-orc-henchmen"]},
+        {"name":"Orc Boyz","maximumProfile":null,"role":"Henchman","stats":{"M":"4","WS":"3","BS":"3","S":"3","T":"4","W":"1","I":"2","A":"1","Ld":"6"},"hireCost":25,"startingExperience":0,"large":false,"canGainExperience":true,"promotionEligibility":"eligible","maxCount":null,"specialRules":[{"name":"Animosity","summary":"Subject to Animosity; see the warband's noted D6/Leadership wording conflict."}],"skillCategories":[],"equipmentListKeys":["black-orc-henchmen"]},
+        {"name":"Orc Shootaz","maximumProfile":null,"role":"Henchman","stats":{"M":"4","WS":"3","BS":"3","S":"3","T":"4","W":"1","I":"2","A":"1","Ld":"6"},"hireCost":25,"startingExperience":0,"large":false,"canGainExperience":true,"promotionEligibility":"eligible","maxCount":null,"referenceTypes":["Orc Boyz"],"maxCountMultiplier":1,"specialRules":[{"name":"Animosity","summary":"Subject to Animosity; see the warband's wording conflict."},{"name":"Uncommon","summary":"May not hire more Shootaz than Boyz; after excess caused by Boy casualties, next hire must restore the balance with a Boy."}],"skillCategories":[],"equipmentListKeys":["black-orc-henchmen"]},
+        {"name":"Orc Nuttaz","maximumProfile":null,"role":"Henchman","stats":{"M":"4","WS":"3","BS":"2","S":"3","T":"4","W":"1","I":"2","A":"1","Ld":"5"},"hireCost":40,"startingExperience":0,"large":false,"canGainExperience":true,"promotionEligibility":"eligible","maxCount":4,"specialRules":[{"name":"Unstable","summary":"Do not test Animosity."},{"name":"Crazy","summary":"Automatically pass Leadership-based tests; if promoted, never learn Academic skills."},{"name":"Savage","summary":"Run or charge maximally toward the nearest visible enemy; friendly models do not block sight. Gain +1 Attack in combat, outside the profile/racial cap. No visible enemy allows normal player control. Never use armour or ranged weapons. Cannot gain Leader or supply Rout Leadership unless only Nuttaz remain on the board."}],"skillCategories":[],"equipmentListKeys":["black-orc-nuttaz"],"allowedCategories":["weapon"]},
+        {"name":"Troll","maximumProfile":null,"role":"Henchman","stats":{"M":"6","WS":"3","BS":"1","S":"5","T":"4","W":"3","I":"1","A":"3","Ld":"4"},"hireCost":200,"startingExperience":0,"large":true,"canGainExperience":false,"promotionEligibility":"ineligible","maxCount":1,"specialRules":[{"name":"Fear","summary":"Causes fear."},{"name":"Stupidity","summary":"Subject to stupidity."},{"name":"Regeneration","summary":"Ignore wounds on 4+, except fire. No post-battle Injury roll unless fire took it out of action; then use normal henchman injuries."},{"name":"Dumb Monster","summary":"Never gains experience."},{"name":"Always Hungry","summary":"Pay 20 gc upkeep after each battle. Alternatively count it as two members and pay 5 gc, effectively leaving room for only eleven physical models."},{"name":"Vomit Attack","summary":"Instead of normal attacks, make one automatic S5 hit ignoring armour."},{"name":"Large Target","summary":"Large shooting target."}],"skillCategories":[],"equipmentListKeys":[],"conditionText":"Never uses weapons or armour."}
+      ],
+      "equipmentLists":[
+        {"key":"black-orc","name":"Black Orc List","items":[
+          {"name":"Dagger","category":"weapon","unitCost":2,"firstFree":true},{"name":"Axe","category":"weapon","unitCost":5},{"name":"Sword","category":"weapon","unitCost":10},{"name":"Choppa","category":"weapon","unitCost":10,"profileName":"Morning star","ruleText":"Counts as a morning star."},{"name":"Spear","category":"weapon","unitCost":10},{"name":"Double-handed weapon","category":"weapon","unitCost":15},{"name":"Bow","category":"weapon","unitCost":10},{"name":"Crossbow","category":"weapon","unitCost":25},{"name":"Buckler","category":"shield","unitCost":5},{"name":"Shield","category":"shield","unitCost":5},{"name":"Helmet","category":"armour","unitCost":10},{"name":"Light armour","category":"armour","unitCost":20},{"name":"Heavy armour","category":"armour","unitCost":50}
+        ]},
+        {"key":"black-orc-henchmen","name":"Henchmen List","items":[
+          {"name":"Dagger","category":"weapon","unitCost":2,"firstFree":true},{"name":"Axe","category":"weapon","unitCost":5},{"name":"Sword","category":"weapon","unitCost":10},{"name":"Choppa","category":"weapon","unitCost":10,"profileName":"Morning star","ruleText":"Counts as a morning star."},{"name":"Spear","category":"weapon","unitCost":10},{"name":"Double-handed weapon","category":"weapon","unitCost":15,"allowedWarriorTypeNames":["Orc Boyz","Orc Nuttaz"]},{"name":"Bow","category":"weapon","unitCost":10},{"name":"Crossbow","category":"weapon","unitCost":25,"allowedWarriorTypeNames":["Orc Shootaz"]},{"name":"Shield","category":"shield","unitCost":5},{"name":"Helmet","category":"armour","unitCost":10},{"name":"Light armour","category":"armour","unitCost":20}
+        ]},
+        {"key":"black-orc-nuttaz","name":"Nuttaz legal melee equipment","items":[
+          {"name":"Dagger","category":"weapon","unitCost":2,"firstFree":true},{"name":"Axe","category":"weapon","unitCost":5},{"name":"Sword","category":"weapon","unitCost":10},{"name":"Choppa","category":"weapon","unitCost":10,"profileName":"Morning star"},{"name":"Spear","category":"weapon","unitCost":10},{"name":"Double-handed weapon","category":"weapon","unitCost":15}
+        ]}
+      ],
+      "skills":[
+        {"name":"Proven Warrior","listName":"Black Orc Special Skills","appliesTo":["Young’uns"],"summary":"Requires Black Orc Blood and 25 experience. Retain the Young'un title but become a full Black Orc: its rules, equipment and skill access now apply."},
+        {"name":"’Ard Ead","listName":"Black Orc Special Skills","summary":"3+ save converts stunned to knocked down; 2+ with a helmet, replacing the normal helmet save."},
+        {"name":"Waaagh!","listName":"Black Orc Special Skills","summary":"Add D3 inches to charge range."},
+        {"name":"’Ere We Go!","listName":"Black Orc Special Skills","summary":"Ignore fear tests when charging."},
+        {"name":"Da Cunnin’ Plan","listName":"Black Orc Special Skills","appliesTo":["Black Orc Boss"],"summary":"Boss only: reroll failed Rout tests while he is not out of action."},
+        {"name":"’Eadbasher","listName":"Black Orc Special Skills","summary":"Melee injuries inflicted as knocked down become stunned."}
+      ],
+      "spellDisciplines":[],
+      "spellAccess":[],
+      "hiredSwordPolicy":{"allowedNames":[],"summary":"The supplied Black Orc source gives no complete hire whitelist. Eligibility remains unresolved; do not automatically inherit Orc or unrestricted hires."}
+    },
+    {
+      "name":"Dwarf Rangers","grade":"1b","sourceUrl":"https://mordheimer.net/docs/warbands/grade-1b-warbands/dwarf-rangers","maxMembers":12,"maxHeroes":6,"leaderType":"Runesmith",
+      "specialRules":[
+        {"name":"Recruitment","summary":"500 gc initially, minimum three models and exactly one Runesmith. Henchmen groups contain 1–5 models."},
+        {"name":"Don’t Trust ‘Em","summary":"May ally with other Dwarf warbands, but neither treats the other's members as friendly: they block marching and do not prevent All Alone tests. They are not enemies and can split treasure."},
+        {"name":"Hard to Kill","summary":"Injury rolls: 1–2 knocked down, 3–5 stunned, 6 out of action."},
+        {"name":"Hard Head","summary":"Ignore the concussion special rules of clubs, maces and similar weapons."},
+        {"name":"Armour","summary":"No movement penalties from armour."},
+        {"name":"Hate Orcs and Goblins","summary":"All Dwarfs hate Orcs and Goblins."},
+        {"name":"Grudgebearers","summary":"No Elven Hired Sword or Dramatis Persona may join."},
+        {"name":"Incomparable Miners","summary":"Add one to the number of wyrdstone pieces found after a battle."},
+        {"name":"No Arcane Lore","summary":"Dwarfs cannot take Arcane Lore or become spellcasters. Academic access does not override this."},
+        {"name":"Stronghold prices","summary":"Listed Gromril weapon triple prices and 75 gc Gromril armour apply only to a starting warband. Later purchases use normal Trading Post prices."},
+        {"name":"Gromril weapon scope","summary":"Source permits any normally purchasable weapon to be Gromril but supplies no ranged-specific effect. Ranged Gromril variants below reflect that literal clause, not a new ranged armour-piercing rule."}
+      ],
+      "warriors":[
+        {"name":"Runesmith","maximumProfile":"Dwarf","role":"Hero","stats":{"M":"3","WS":"5","BS":"4","S":"3","T":"4","W":"1","I":"2","A":"1","Ld":"10"},"hireCost":85,"startingExperience":20,"large":false,"canGainExperience":true,"promotionEligibility":"not_applicable","maxCount":1,"specialRules":[{"name":"Inscribe Runes","summary":"Knows one random minor rune initially. Before a game attempt inscription on one carried item; with an Apprentice, attempt two items. On a skill advance may learn a rune instead."}],"skillCategories":["Combat","Shooting","Academic","Strength","Special"],"specialListName":"Dwarf Special Skills","equipmentListKeys":["ranger-warrior"]},
+        {"name":"Apprentice Runesmith","maximumProfile":"Dwarf","role":"Hero","stats":{"M":"3","WS":"3","BS":"2","S":"3","T":"4","W":"1","I":"2","A":"1","Ld":"8"},"hireCost":40,"startingExperience":0,"large":false,"canGainExperience":true,"promotionEligibility":"not_applicable","maxCount":1,"specialRules":[{"name":"Extra Set of Hands","summary":"Allows the master Runesmith to inscribe two items before each game instead of one; does not grant independent rune casting."}],"skillCategories":["Combat","Academic","Strength","Special"],"specialListName":"Dwarf Special Skills","equipmentListKeys":["ranger-warrior"],"allowedCategories":["weapon"],"conditionText":"Entry grants weapons from the Dwarf Warrior list, not expressly armour; conservative weapons-only access pending adjudication."},
+        {"name":"Dwarf Troll Slayers","maximumProfile":"Dwarf","role":"Hero","stats":{"M":"3","WS":"4","BS":"3","S":"3","T":"4","W":"1","I":"2","A":"1","Ld":"9"},"hireCost":50,"startingExperience":8,"large":false,"canGainExperience":true,"promotionEligibility":"not_applicable","maxCount":2,"specialRules":[{"name":"Deathwish","summary":"Immune to all psychology and never test All Alone."},{"name":"Equipment restriction","summary":"No missile weapons or armour, including shields."},{"name":"Slayer Special Skills","summary":"May also select Ferocious Charge, Monster Slayer and Berserker from the Slayer-only list, in addition to common Dwarf skills."}],"skillCategories":["Combat","Strength","Special"],"specialListName":"Dwarf Special Skills","equipmentListKeys":["ranger-slayer"],"allowedCategories":["weapon"]},
+        {"name":"Dwarf Longbeards","maximumProfile":"Dwarf","role":"Henchman","stats":{"M":"3","WS":"5","BS":"3","S":"3","T":"4","W":"1","I":"3","A":"1","Ld":"9"},"hireCost":50,"startingExperience":0,"large":false,"canGainExperience":true,"promotionEligibility":"eligible","maxCount":5,"specialRules":[{"name":"Stubborn","summary":"Reroll any failed Leadership test once, accepting the replacement."}],"skillCategories":[],"equipmentListKeys":["ranger-warrior"]},
+        {"name":"Dwarf Clansmen","maximumProfile":"Dwarf","role":"Henchman","stats":{"M":"3","WS":"4","BS":"3","S":"3","T":"4","W":"1","I":"2","A":"1","Ld":"9"},"hireCost":40,"startingExperience":0,"large":false,"canGainExperience":true,"promotionEligibility":"eligible","maxCount":null,"specialRules":[],"skillCategories":[],"equipmentListKeys":["ranger-warrior"]},
+        {"name":"Dwarf Crossbowmen","maximumProfile":"Dwarf","role":"Henchman","stats":{"M":"3","WS":"4","BS":"3","S":"3","T":"4","W":"1","I":"2","A":"1","Ld":"9"},"hireCost":40,"startingExperience":0,"large":false,"canGainExperience":true,"promotionEligibility":"eligible","maxCount":5,"specialRules":[],"skillCategories":[],"equipmentListKeys":["ranger-crossbow"]},
+        {"name":"Beardlings","maximumProfile":"Dwarf","role":"Henchman","stats":{"M":"3","WS":"3","BS":"2","S":"3","T":"4","W":"1","I":"2","A":"1","Ld":"8"},"hireCost":25,"startingExperience":0,"large":false,"canGainExperience":true,"promotionEligibility":"eligible","maxCount":null,"specialRules":[],"skillCategories":[],"equipmentListKeys":["ranger-warrior"]}
+      ],
+      "equipmentLists":[
+        {"key":"ranger-warrior","name":"Dwarf Warrior Equipment List","items":[
+          {"name":"Brace of Pistols","category":"weapon","unitCost":30,"profileName":"Pistol","ruleText":"Two pistols; counts as one missile weapon. Source: https://mordheimer.net/docs/weapons-armour/blackpowder#pistol gives 15 gc single / 30 gc brace. Uses existing Pistol profile, whose rules include brace firing and first-round melee attacks."},
+          {"name":"Dagger","category":"weapon","unitCost":2,"firstFree":true},{"name":"Mace","category":"weapon","unitCost":3},{"name":"Hammer","category":"weapon","unitCost":3},{"name":"Axe","category":"weapon","unitCost":5},{"name":"Sword","category":"weapon","unitCost":10},{"name":"Dwarf axe","category":"weapon","unitCost":15,"profileName":"Dwarf axe","ruleText":"Extra -1 enemy armour modifier; parry. Two parrying weapons permit reroll of a failed parry, not two parries absent Combat Master."},{"name":"Double-handed weapon","category":"weapon","unitCost":15},{"name":"Spear","category":"weapon","unitCost":10},{"name":"Halberd","category":"weapon","unitCost":10},{"name":"Pistol","category":"weapon","unitCost":15,"profileName":"Pistol","ruleText":"Brace costs 30 gc; see the source Pistol entry for brace firing and close-combat rules."},
+          {"name":"Gromril dagger","category":"weapon","unitCost":6,"profileName":"Dagger","materialName":"Gromril weapon","ruleText":"Starting warband only: triple ordinary cost; later use Trading Post price."},
+          {"name":"Gromril mace","category":"weapon","unitCost":9,"profileName":"Hammer, staff, mace or club","materialName":"Gromril weapon","ruleText":"Starting warband price."},
+          {"name":"Gromril hammer","category":"weapon","unitCost":9,"profileName":"Hammer, staff, mace or club","materialName":"Gromril weapon","ruleText":"Starting warband price."},
+          {"name":"Gromril axe","category":"weapon","unitCost":15,"profileName":"Axe","materialName":"Gromril weapon","ruleText":"Starting warband price."},
+          {"name":"Gromril sword","category":"weapon","unitCost":30,"profileName":"Sword","materialName":"Gromril weapon","ruleText":"Starting warband price."},
+          {"name":"Gromril dwarf axe","category":"weapon","unitCost":45,"profileName":"Dwarf axe","materialName":"Gromril weapon","ruleText":"Starting warband price."},
+          {"name":"Gromril double-handed weapon","category":"weapon","unitCost":45,"profileName":"Double-handed weapon","materialName":"Gromril weapon","ruleText":"Starting warband price."},
+          {"name":"Gromril spear","category":"weapon","unitCost":30,"profileName":"Spear","materialName":"Gromril weapon","ruleText":"Starting warband price."},
+          {"name":"Gromril halberd","category":"weapon","unitCost":30,"profileName":"Halberd","materialName":"Gromril weapon","ruleText":"Starting warband price."},
+          {"name":"Gromril pistol","category":"weapon","unitCost":45,"profileName":"Pistol","ruleText":"Source allows any normally purchasable weapon at triple cost for a starting warband; Gromril material modifiers apply only to melee, not this pistol."},
+          {"name":"Light armour","category":"armour","unitCost":20},{"name":"Heavy armour","category":"armour","unitCost":50},{"name":"Gromril armour","category":"armour","unitCost":75,"ruleText":"Starting warband only; later use normal Trading Post price."},{"name":"Shield","category":"shield","unitCost":5},{"name":"Helmet","category":"armour","unitCost":10}
+        ]},
+        {"key":"ranger-crossbow","name":"Crossbowmen Equipment List","items":[
+          {"name":"Dagger","category":"weapon","unitCost":2,"firstFree":true},{"name":"Mace","category":"weapon","unitCost":3},{"name":"Hammer","category":"weapon","unitCost":3},{"name":"Axe","category":"weapon","unitCost":5},{"name":"Sword","category":"weapon","unitCost":10},{"name":"Crossbow","category":"weapon","unitCost":25},
+          {"name":"Gromril dagger","category":"weapon","unitCost":6,"profileName":"Dagger","materialName":"Gromril weapon","ruleText":"Any normally purchasable weapon may be Gromril at triple cost for a starting warband."},
+          {"name":"Gromril mace","category":"weapon","unitCost":9,"profileName":"Hammer, staff, mace or club","materialName":"Gromril weapon","ruleText":"Starting warband price."},
+          {"name":"Gromril hammer","category":"weapon","unitCost":9,"profileName":"Hammer, staff, mace or club","materialName":"Gromril weapon","ruleText":"Starting warband price."},
+          {"name":"Gromril axe","category":"weapon","unitCost":15,"profileName":"Axe","materialName":"Gromril weapon","ruleText":"Starting warband price."},
+          {"name":"Gromril sword","category":"weapon","unitCost":30,"profileName":"Sword","materialName":"Gromril weapon","ruleText":"Starting warband price."},
+          {"name":"Gromril crossbow","category":"weapon","unitCost":75,"profileName":"Crossbow","ruleText":"Literal any-weapon clause; starting price only. Gromril material modifiers apply only to melee, not this crossbow."},
+          {"name":"Light armour","category":"armour","unitCost":20},{"name":"Heavy armour","category":"armour","unitCost":50},{"name":"Shield","category":"shield","unitCost":5},{"name":"Helmet","category":"armour","unitCost":10}
+        ]},
+        {"key":"ranger-slayer","name":"Slayer legal melee equipment","items":[
+          {"name":"Dagger","category":"weapon","unitCost":2,"firstFree":true},{"name":"Mace","category":"weapon","unitCost":3},{"name":"Hammer","category":"weapon","unitCost":3},{"name":"Axe","category":"weapon","unitCost":5},{"name":"Sword","category":"weapon","unitCost":10},{"name":"Dwarf axe","category":"weapon","unitCost":15,"profileName":"Dwarf axe"},{"name":"Double-handed weapon","category":"weapon","unitCost":15},{"name":"Spear","category":"weapon","unitCost":10},{"name":"Halberd","category":"weapon","unitCost":10},
+          {"name":"Gromril dagger","category":"weapon","unitCost":6,"profileName":"Dagger","materialName":"Gromril weapon","ruleText":"Starting warband price."},
+          {"name":"Gromril mace","category":"weapon","unitCost":9,"profileName":"Hammer, staff, mace or club","materialName":"Gromril weapon","ruleText":"Starting warband price."},
+          {"name":"Gromril hammer","category":"weapon","unitCost":9,"profileName":"Hammer, staff, mace or club","materialName":"Gromril weapon","ruleText":"Starting warband price."},
+          {"name":"Gromril axe","category":"weapon","unitCost":15,"profileName":"Axe","materialName":"Gromril weapon","ruleText":"Starting warband price."},
+          {"name":"Gromril sword","category":"weapon","unitCost":30,"profileName":"Sword","materialName":"Gromril weapon","ruleText":"Starting warband price."},
+          {"name":"Gromril dwarf axe","category":"weapon","unitCost":45,"profileName":"Dwarf axe","materialName":"Gromril weapon","ruleText":"Starting warband price."},
+          {"name":"Gromril double-handed weapon","category":"weapon","unitCost":45,"profileName":"Double-handed weapon","materialName":"Gromril weapon","ruleText":"Starting warband price."},
+          {"name":"Gromril spear","category":"weapon","unitCost":30,"profileName":"Spear","materialName":"Gromril weapon","ruleText":"Starting warband price."},
+          {"name":"Gromril halberd","category":"weapon","unitCost":30,"profileName":"Halberd","materialName":"Gromril weapon","ruleText":"Starting warband price."}
+        ]}
+      ],
+      "skills":[
+        {"name":"Combat Master","listName":"Dwarf Special Skills","summary":"Parry on matching or beating the highest enemy hit die. With two parrying weapons, may parry two attacks by matching/beating the two highest dice."},
+        {"name":"Extra Tough","listName":"Dwarf Special Skills","summary":"Reroll the post-battle Serious Injury roll once; accept the replacement."},
+        {"name":"Resource Hunter","listName":"Dwarf Special Skills","summary":"Modify one Exploration die by +1 or -1."},
+        {"name":"True Grit","listName":"Dwarf Special Skills","summary":"Injury results: 1–3 knocked down, 4–5 stunned, 6 out of action."},
+        {"name":"Thick Skull","listName":"Dwarf Special Skills","summary":"3+ save turns stunned into knocked down; with helmet use 2+, replacing the normal helmet rule."},
+        {"name":"Ferocious Charge","listName":"Slayer Special Skills","appliesTo":["Dwarf Troll Slayers"],"summary":"Double Attacks on a charge, with -1 to hit that turn."},
+        {"name":"Monster Slayer","listName":"Slayer Special Skills","appliesTo":["Dwarf Troll Slayers"],"summary":"Wound on 4+ regardless of enemy Toughness, unless normal Strength/weapon rules allow a better result."},
+        {"name":"Berserker","listName":"Slayer Special Skills","appliesTo":["Dwarf Troll Slayers"],"summary":"+1 to hit on the turn the Slayer charges."}
+      ],
+      "spellDisciplines":[
+        {"name":"Dwarf Runes","kind":"Rune","castingRuleSummary":"Not wizard magic. Before each game roll 2D6 against difficulty to inscribe a known rune on a warrior's carried item. Success lasts that game only. Natural 2 destroys the item (replaceable before play); other failure gives no benefit. One item normally, two with an Apprentice. Rune bonuses cannot combine with other rune or magical-item bonuses.","spells":[
+          {"roll":null,"name":"Rune of Stone","difficulty":8,"effectSummary":"+1 armour save."},
+          {"roll":null,"name":"Rune of Sharpness","difficulty":6,"effectSummary":"Weapon adds -1 to enemy armour saves."},
+          {"roll":null,"name":"Rune of Speed","difficulty":7,"effectSummary":"Weapon doubles Initiative."},
+          {"roll":null,"name":"Rune of Warding","difficulty":8,"effectSummary":"4+ special save against spells affecting the wearer; inscribe on belt/armband or similar, replacement cost 1 gc."},
+          {"roll":null,"name":"Rune of Accuracy","difficulty":9,"effectSummary":"Weapon gives +1 to hit."},
+          {"roll":null,"name":"Rune of Striding","difficulty":8,"effectSummary":"+1 Movement; inscribe on boots/belt or similar, replacement cost 1 gc."}
+        ]}
+      ],
+      "spellAccess":[{"warriorType":"Runesmith","discipline":"Dwarf Runes","startingSpellCount":1,"isWizard":false,"selectionRule":"Random minor rune at recruitment; may learn another instead of a skill on a skill advance. Apprentice assists but receives no independent rune access."}],
+      "weaponProfiles":[
+        {"name":"Dwarf axe","weaponType":"close_combat","rangeText":"Close Combat","strengthModifier":"As user","specialRules":[{"name":"Cutting Edge","summary":"Extra -1 to enemy armour save."},{"name":"Parry","summary":"Beat highest enemy hit die to cancel one attack; cannot parry attacks of at least twice own Strength. Two parrying weapons allow a failed-parry reroll, not two parries absent Combat Master."}]}
+      ],
+      "hiredSwordPolicy":{"excludedNames":["Elf Ranger","Shadow Warrior (Hired Sword)","Dark Elf Assassin"],"summary":"Grudgebearers excludes every Elven Hired Sword or Dramatis Persona, not just these known names. Source does not supply a complete positive hire whitelist; do not infer one."}
+    },
+    {
+      "name":"Forest Goblins","grade":"1b","sourceUrl":"https://mordheimer.net/docs/warbands/grade-1b-warbands/forest-goblins","maxMembers":20,"maxHeroes":6,"leaderType":"Chieftain",
+      "specialRules":[
+        {"name":"Recruitment","summary":"Start with 500 gc, at least three models and exactly one Chieftain. Up to four Braves plus one Shaman fit the six-Hero limit; henchmen groups have 1–5 models."},
+        {"name":"Natives","summary":"Forest Goblins ignore movement penalties in wooded terrain."},
+        {"name":"Animosity","summary":"Unengaged Goblin henchmen, and Braves by their own rule, test each turn: D6 result 1 triggers another roll. Second roll 1 attacks nearest eligible friendly Orc/Goblin henchman or Hired Sword by charge/shot, separates combatants by 1 inch afterward, and prevents further actions; if no suitable target, lose the turn. Results 2–5 lose the turn. Result 6 moves toward nearest visible enemy, charging when possible; with no enemy visible grants an extra normal move. Must charge in normal movement if the extra move brings an enemy into range."},
+        {"name":"Animosity friendly-Hero exception","summary":"The reproduced Annual chart says that a nearest friendly Orc Hero changes the attack-friend result to losing the turn. It does not expressly extend this wording to Goblin Heroes; do not invent that extension."},
+        {"name":"Special equipment availability","summary":"Magic Gubbinz, poisoned-weapon upgrades, jewellery and riding Giant Spiders are Trading Post equipment, not additions to starting lists. A riding Giant Spider is distinct from the Gigantic Spider henchman and cannot coexist with Giant Wolves."},
+        {"name":"Magic sources","summary":"Forest Goblin Magic: https://mordheimer.net/docs/magic/forest-goblin-magic. Ordinary wizard rules apply."}
+      ],
+      "warriors":[
+        {"name":"Chieftain","maximumProfile":null,"role":"Hero","stats":{"M":"4","WS":"3","BS":"4","S":"3","T":"3","W":"1","I":"4","A":"1","Ld":"7"},"hireCost":50,"startingExperience":17,"large":false,"canGainExperience":true,"promotionEligibility":"not_applicable","maxCount":1,"specialRules":[{"name":"Ride Spiders","summary":"May ride Giant Spiders and the Gigantic Spider using Blazing Saddles rules."}],"skillCategories":["Combat","Shooting","Academic","Speed"],"equipmentListKeys":["forest-hero"]},
+        {"name":"Braves","maximumProfile":null,"role":"Hero","stats":{"M":"4","WS":"2","BS":"3","S":"3","T":"3","W":"1","I":"3","A":"1","Ld":"6"},"hireCost":20,"startingExperience":6,"large":false,"canGainExperience":true,"promotionEligibility":"not_applicable","maxCount":4,"specialRules":[{"name":"Animosity","summary":"Subject to Animosity despite being Heroes."}],"skillCategories":["Combat","Shooting","Speed","Special"],"specialListName":"Forest Goblin Brave Advancement","equipmentListKeys":["forest-hero"]},
+        {"name":"Shaman","maximumProfile":null,"role":"Hero","stats":{"M":"4","WS":"2","BS":"3","S":"3","T":"3","W":"1","I":"4","A":"1","Ld":"6"},"hireCost":20,"startingExperience":6,"large":false,"canGainExperience":true,"promotionEligibility":"not_applicable","maxCount":1,"specialRules":[{"name":"Wizard","summary":"Starts with one randomly determined Forest Goblin spell."}],"skillCategories":["Academic","Speed"],"equipmentListKeys":["forest-hero"]},
+        {"name":"Forest Goblins","maximumProfile":null,"role":"Henchman","stats":{"M":"4","WS":"2","BS":"3","S":"3","T":"3","W":"1","I":"3","A":"1","Ld":"6"},"hireCost":15,"startingExperience":0,"large":false,"canGainExperience":true,"promotionEligibility":"eligible","maxCount":null,"specialRules":[{"name":"Animosity","summary":"Subject to Animosity."}],"skillCategories":[],"equipmentListKeys":["forest-henchmen"]},
+        {"name":"Red Toof Goblins","maximumProfile":null,"role":"Henchman","stats":{"M":"4","WS":"2","BS":"3","S":"3","T":"3","W":"1","I":"3","A":"1","Ld":"6"},"hireCost":25,"startingExperience":0,"large":false,"canGainExperience":true,"promotionEligibility":"eligible","maxCount":5,"specialRules":[{"name":"Animosity","summary":"Subject to Animosity except when Berserkers exempts them."},{"name":"Berserkers","summary":"Frenzy; ignore Animosity when beginning the turn within charge range of an enemy."}],"skillCategories":[],"equipmentListKeys":["forest-henchmen"]},
+        {"name":"Sluggas","maximumProfile":null,"role":"Henchman","stats":{"M":"4","WS":"2","BS":"3","S":"3","T":"3","W":"1","I":"3","A":"1","Ld":"6"},"hireCost":20,"startingExperience":0,"large":false,"canGainExperience":true,"promotionEligibility":"eligible","maxCount":5,"specialRules":[{"name":"Animosity","summary":"Subject to Animosity."},{"name":"Sluggas","summary":"May fire thrown weapons up to three times in Shooting. Cannot combine this with Quick Shot after promotion."}],"skillCategories":[],"equipmentListKeys":["forest-henchmen"]},
+        {"name":"Gigantic Spider","maximumProfile":null,"role":"Henchman","stats":{"M":"6","WS":"3","BS":"0","S":"5","T":"5","W":"3","I":"4","A":"2","Ld":"4"},"hireCost":200,"startingExperience":0,"large":true,"canGainExperience":false,"promotionEligibility":"ineligible","maxCount":1,"specialRules":[{"name":"Fear","summary":"Causes fear."},{"name":"Large Monster","summary":"Large target; may always be shot at."},{"name":"Poisonous","summary":"When its wound causes an injury: 1 knocked down, 2–4 stunned, 5–6 out of action."},{"name":"Native","summary":"Ignore wooded-terrain movement penalties."},{"name":"Non-sentient","summary":"Stupidity; never gains experience; may climb normally."},{"name":"May Ride","summary":"Chieftain may ride it, gaining +1 armour save and using M6. Shooting hits rider on 1–2, spider on 3–6. Melee attacker chooses target. While ridden it does not test stupidity."}],"skillCategories":[],"equipmentListKeys":[],"conditionText":"Never uses weapons or armour."}
+      ],
+      "equipmentLists":[
+        {"key":"forest-hero","name":"Hero Equipment List","items":[
+          {"name":"Dagger","category":"weapon","unitCost":2,"firstFree":true},{"name":"Axe","category":"weapon","unitCost":5},{"name":"Sword","category":"weapon","unitCost":10},{"name":"Two-handed weapon","category":"weapon","unitCost":15,"profileName":"Double-handed weapon"},{"name":"Spear","category":"weapon","unitCost":5},{"name":"Halberd","category":"weapon","unitCost":10},{"name":"Boss Pole","category":"weapon","unitCost":20,"profileName":"Boss Pole (Forest Goblins)","ruleText":"User and Goblin henchmen within 6 inches ignore Animosity. Spear in melee."},
+          {"name":"Blowpipe","category":"weapon","unitCost":25,"profileName":"Blowpipe (Forest Goblins)","ruleText":"8 inches, S1; natural 6 to hit wounds automatically; no criticals. Target receives +1 armour save (6+ if none). May fire while hidden; target passes Initiative to reveal shooter."},{"name":"Short bow","category":"weapon","unitCost":5},{"name":"Light armour","category":"armour","unitCost":20},{"name":"Shield","category":"shield","unitCost":5}
+        ]},
+        {"key":"forest-henchmen","name":"Henchmen Equipment List","items":[
+          {"name":"Dagger","category":"weapon","unitCost":2,"firstFree":true},{"name":"Sword","category":"weapon","unitCost":10},{"name":"Spear","category":"weapon","unitCost":5},{"name":"Blowpipe","category":"weapon","unitCost":25,"profileName":"Blowpipe (Forest Goblins)","ruleText":"8 inches, S1; natural hit 6 auto-wounds, no criticals; +1 target armour save (6+ if none). Hidden shooting only reveals user if target passes Initiative."},{"name":"Throwing Weapons","category":"weapon","unitCost":15,"profileName":"Throwing star/knife"},{"name":"Bow","category":"weapon","unitCost":10},{"name":"Shield","category":"shield","unitCost":5}
+        ]},
+        {"key":"forest-trading-special","name":"Trading Post Special Equipment (not starting equipment)","items":[
+          {"name":"Magic Gubbinz","category":"misc","unitCost":50,"allowedWarriorTypeNames":["Shaman"],"ruleText":"Trading Post only, Rare 9. On 4+ may reroll a failed magic test."},
+          {"name":"Poisoned Weapon","category":"misc","unitCost":25,"ruleText":"Trading Post only, Common; +25 gc permanent upgrade to one existing weapon, not a separate weapon. +1 to its Injury rolls; cannot later trade or sell it."},
+          {"name":"Red Toof Tribal Jewellery","category":"misc","unitCost":40,"ruleText":"Trading Post only, Rare 9. Cannot remove; wearer gains Frenzy."},
+          {"name":"Giant Spider","category":"misc","unitCost":100,"ruleText":"Trading Post riding animal, Rare 11, Goblins only; incompatible with Giant Wolves. M7 WS3 BS0 S3(4) T3 W1 I4 A1 Ld4. Poison treats attacks as S4 without modifying armour. Rider/spider walk walls without Initiative tests; jumps at most 2 inches across/down, allowing diving charges, and rider tests Initiative or rolls Whoa Boy! Chieftain has explicit riding permission."}
+        ]}
+      ],
+      "skills":[{"name":"Remove Animosity","listName":"Forest Goblin Brave Advancement","appliesTo":["Braves"],"summary":"A Brave may remove his Animosity instead of choosing a skill on a skill advance; this is the table's only Special entry, not broad Orc special-skill access."}],
+      "spellDisciplines":[
+        {"name":"Forest Goblin Magic","kind":"Magic","castingRuleSummary":"Standard wizard casting: one spell in Shooting, pass difficulty on 2D6, no simultaneous missile shot or casting with armour/shield/buckler. Source: https://mordheimer.net/docs/magic/forest-goblin-magic.","spells":[
+          {"roll":1,"name":"Wind of Gork","difficulty":6,"effectSummary":"12 inches; first model in the path must roll under its Toughness or take an S2 hit and automatically be knocked down."},
+          {"roll":2,"name":"Gaze of Mork","difficulty":8,"effectSummary":"12 inches; first model in the path takes D3 S3 hits."},
+          {"roll":3,"name":"‘Eadbanger","difficulty":8,"effectSummary":"6 inches; fire bolts equal to caster's Attacks, each at Strength equal to caster's Toughness, at first model in path. After resolution, D6 result 1 takes caster out of action."},
+          {"roll":4,"name":"Leap of Waaagh!","difficulty":7,"effectSummary":"Move caster or one Goblin within 3 inches up to 12 inches; entry into combat counts as a charge."},
+          {"roll":5,"name":"Idol of Gork","difficulty":8,"effectSummary":"Caster gains +1 WS, S and A until suffering a wound."},
+          {"roll":6,"name":"‘Ere we go","difficulty":8,"effectSummary":"Friendly models within 6 inches treat stunned as knocked down until caster suffers a wound."}
+        ]}
+      ],
+      "spellAccess":[{"warriorType":"Shaman","discipline":"Forest Goblin Magic","startingSpellCount":1,"isWizard":true,"selectionRule":"Random D6 spell at recruitment; normal wizard advancement."}],
+      "weaponProfiles":[
+        {"name":"Boss Pole (Forest Goblins)","weaponType":"close_combat","rangeText":"Close Combat","strengthModifier":"As user","specialRules":[{"name":"Spear","summary":"Strike first in first combat round; only shield or buckler in other hand. Mounted charge gains +1 S when using mounted rules."},{"name":"Ignore Animosity","summary":"Bearer and Goblin henchmen within 6 inches ignore Animosity."}]},
+        {"name":"Blowpipe (Forest Goblins)","weaponType":"missile","rangeText":"8 inches","strengthModifier":"1","specialRules":[{"name":"Poison","summary":"Natural hit 6 wounds automatically; no critical hits."},{"name":"Enemy armour","summary":"+1 enemy armour save; 6+ if target normally has none."},{"name":"Stealthy","summary":"Firing while hidden does not reveal shooter unless target passes an Initiative test."}]}
+      ],
+      "hiredSwordPolicy":{"allowedNames":[],"summary":"The supplied Forest Goblin source does not give a complete hire whitelist. Do not silently assign unrestricted or inherited Orc eligibility."}
+    },
+    {
+      "name":"Skaven of Clan Pestilens","grade":"1b","sourceUrl":"https://mordheimer.net/docs/warbands/grade-1b-warbands/skaven-pestilens","maxMembers":15,"maxHeroes":6,"leaderType":"Plague Priest",
+      "specialRules":[
+        {"name":"Recruitment","summary":"500 warp tokens initially; minimum three models and exactly one Plague Priest. One Sorcerer, two Monks and two Initiates are separate limits, not mutually exclusive choices."},
+        {"name":"Pestilens substitutes","summary":"Clan Pestilens Banner replaces normal Banner; fog-enhancing shards replace Elven Cloak; Liber Bubonicus replaces Tome of Magic; Liturgicus Infecticus replaces War horn; Scroll of the Rat Familiar replaces Familiar; Warpstone Amulet replaces Rabbit's Foot."},
+        {"name":"Trade-only costs","summary":"Special equipment outside the starting lists is acquired from Trading Post. For variable prices, unitCost records only the fixed base; ruleText gives the mandatory full roll formula. Do not treat the base as the final price."},
+        {"name":"Magic sources","summary":"Horned Rat spells: https://mordheimer.net/docs/magic/magic-of-the-horned-rat. Initial one random spell and standard wizard restrictions: https://mordheimer.net/docs/magic."},
+        {"name":"Liber skill-name conflict","summary":"Source names Magical Aptitude for a Priest learning magic with Liber Bubonicus; editorial note identifies Arcane Lore as the intended Tome-of-Magic equivalent. Record the conflict for manual adjudication."}
+      ],
+      "warriors":[
+        {"name":"Plague Priest","maximumProfile":"Skaven","role":"Hero","stats":{"M":"5","WS":"4","BS":"4","S":"4","T":"4","W":"1","I":"5","A":"1","Ld":"7"},"hireCost":85,"startingExperience":20,"large":false,"canGainExperience":true,"promotionEligibility":"not_applicable","maxCount":1,"specialRules":[{"name":"Conditional spellcasting","summary":"Not initially a wizard. Liber Bubonicus plus the required Academic skill can grant one random Horned Rat spell and spellcasting; see the recorded skill-name conflict."}],"skillCategories":["Combat","Shooting","Academic","Strength","Speed","Special"],"specialListName":"Clan Pestilens Special Skills","equipmentListKeys":["pestilens-hero"]},
+        {"name":"Pestilens Sorcerer","maximumProfile":"Skaven","role":"Hero","stats":{"M":"5","WS":"3","BS":"3","S":"3","T":"3","W":"1","I":"4","A":"1","Ld":"6"},"hireCost":45,"startingExperience":8,"large":false,"canGainExperience":true,"promotionEligibility":"not_applicable","maxCount":1,"specialRules":[{"name":"Spellcaster","summary":"Uses Magic of the Horned Rat."}],"skillCategories":["Academic","Speed","Special"],"specialListName":"Clan Pestilens Special Skills","equipmentListKeys":["pestilens-hero"]},
+        {"name":"Plague Monks","maximumProfile":"Skaven","role":"Hero","stats":{"M":"5","WS":"4","BS":"3","S":"3","T":"4","W":"1","I":"5","A":"1","Ld":"6"},"hireCost":45,"startingExperience":8,"large":false,"canGainExperience":true,"promotionEligibility":"not_applicable","maxCount":2,"specialRules":[],"skillCategories":["Combat","Shooting","Strength","Speed","Special"],"specialListName":"Clan Pestilens Special Skills","equipmentListKeys":["pestilens-hero"]},
+        {"name":"Monk Initiates","maximumProfile":"Skaven","role":"Hero","stats":{"M":"5","WS":"2","BS":"3","S":"2","T":"2","W":"1","I":"4","A":"1","Ld":"4"},"hireCost":20,"startingExperience":0,"large":false,"canGainExperience":true,"promotionEligibility":"not_applicable","maxCount":2,"specialRules":[],"skillCategories":["Combat","Shooting","Speed","Special"],"specialListName":"Clan Pestilens Special Skills","equipmentListKeys":["pestilens-hero"]},
+        {"name":"Plague Novices","maximumProfile":"Skaven","role":"Henchman","stats":{"M":"5","WS":"3","BS":"3","S":"3","T":"3","W":"1","I":"4","A":"1","Ld":"5"},"hireCost":20,"startingExperience":0,"large":false,"canGainExperience":true,"promotionEligibility":"eligible","maxCount":null,"specialRules":[],"skillCategories":[],"equipmentListKeys":["pestilens-henchmen"]},
+        {"name":"Giant rats","maximumProfile":null,"role":"Henchman","stats":{"M":"6","WS":"2","BS":"0","S":"3","T":"3","W":"1","I":"4","A":"1","Ld":"4"},"hireCost":15,"startingExperience":0,"large":false,"canGainExperience":false,"promotionEligibility":"ineligible","maxCount":null,"specialRules":[{"name":"Experience","summary":"Animals; never gain experience."}],"skillCategories":[],"equipmentListKeys":[],"conditionText":"Never uses weapons or armour."},
+        {"name":"Rat ogre","maximumProfile":null,"role":"Henchman","stats":{"M":"6","WS":"3","BS":"3","S":"5","T":"5","W":"3","I":"4","A":"3","Ld":"4"},"hireCost":210,"startingExperience":0,"large":true,"canGainExperience":false,"promotionEligibility":"ineligible","maxCount":1,"specialRules":[{"name":"Fear","summary":"Causes fear."},{"name":"Stupidity","summary":"Subject to stupidity unless a Skaven Hero is within 6 inches."},{"name":"Experience","summary":"Never gains experience."},{"name":"Large Target","summary":"Large shooting target."}],"skillCategories":[],"equipmentListKeys":[],"conditionText":"Never uses weapons or armour."},
+        {"name":"Rat Familiar","maximumProfile":null,"role":"Henchman","stats":{"M":"6","WS":"2","BS":"0","S":"3","T":"3","W":"1","I":"4","A":"1","Ld":"4"},"hireCost":15,"startingExperience":0,"large":false,"canGainExperience":true,"promotionEligibility":"ineligible","maxCount":1,"referenceTypes":["Pestilens Sorcerer"],"maxCountMultiplier":1,"specialRules":[{"name":"Enchanted Animal","summary":"Gains henchman experience. Advancement 10–12 gives a cumulative +1 to its Sorcerer's casting rolls when within 6 inches, instead of promotion."},{"name":"Rat Familiar","summary":"Within 6 inches lets its Sorcerer reroll one casting-difficulty roll per game. Counts as a normal warband member; reverts to a Giant Rat if its Sorcerer dies."}],"skillCategories":[],"equipmentListKeys":[],"conditionText":"Not directly recruitable as a Familiar. Transform an existing 15 gc Giant Rat before battle using a Scroll of the Rat Familiar; scroll price is additional. One per Sorcerer; no weapons or armour."}
+      ],
+      "equipmentLists":[
+        {"key":"pestilens-hero","name":"Heroes Equipment List","items":[
+          {"name":"Dagger","category":"weapon","unitCost":2,"firstFree":true},{"name":"Club","category":"weapon","unitCost":3,"profileName":"Hammer, staff, mace or club"},{"name":"Sword","category":"weapon","unitCost":10},{"name":"Spear","category":"weapon","unitCost":10},{"name":"Halberd","category":"weapon","unitCost":10},{"name":"Flail","category":"weapon","unitCost":15},
+          {"name":"Disease Dagger","category":"weapon","unitCost":15,"profileName":"Disease Dagger (Pestilens)","ruleText":"Natural hit 6 forces target Toughness test; failure causes an extra wound. Undead/Possessed immune. Normal dagger armour bonus applies; two grant only normal extra-weapon attack."},
+          {"name":"Censer","category":"weapon","unitCost":40,"profileName":"Censer (Pestilens)","ruleText":"Two hands; +2 S only in first melee round. Each hit forces target Toughness test (6 always fails) for an extra wound; wielder also tests but only suffers on 6. Undead/Possessed ignore fumes. Fog-enhancing shards give -1 to enemy missile hits against bearer. Censer Bearer skill restricts its user's melee equipment; the starting list does not require that skill merely to buy a censer."},
+          {"name":"Sling","category":"weapon","unitCost":2},{"name":"Shield","category":"shield","unitCost":5},{"name":"Helmet","category":"armour","unitCost":10},{"name":"Light armour","category":"armour","unitCost":20}
+        ]},
+        {"key":"pestilens-henchmen","name":"Henchmen Equipment List","items":[
+          {"name":"Dagger","category":"weapon","unitCost":2,"firstFree":true},{"name":"Club","category":"weapon","unitCost":3,"profileName":"Hammer, staff, mace or club"},{"name":"Sword","category":"weapon","unitCost":10},{"name":"Spear","category":"weapon","unitCost":10},{"name":"Sling","category":"weapon","unitCost":2},{"name":"Light armour","category":"armour","unitCost":20},{"name":"Shield","category":"shield","unitCost":5},{"name":"Helmet","category":"armour","unitCost":10}
+        ]},
+        {"key":"pestilens-trading-special","name":"Trading Post Special Equipment (not starting equipment)","items":[
+          {"name":"Censer","category":"weapon","unitCost":40,"profileName":"Censer (Pestilens)","ruleText":"Trading Post Rare 9; two-handed, +2 S first combat round; struck target tests Toughness or takes extra wound (6 fails); bearer suffers on its own test only on 6. Undead/Possessed immune. With fog shards, -1 enemy missile hits."},
+          {"name":"Disease Dagger","category":"weapon","unitCost":15,"profileName":"Disease Dagger (Pestilens)","ruleText":"Trading Post Rare 8; natural hit 6 forces Toughness test for extra wound; Undead/Possessed immune; normal dagger armour bonus."},
+          {"name":"Clan Pestilens Banner","category":"weapon","unitCost":10,"profileName":"Clan Pestilens Banner","ruleText":"Trading Post Rare 5. One per warband. Allies within 12 inches reroll failed All Alone tests once. Staff is a two-handed weapon; replaces normal Banner."},
+          {"name":"Fog-enhancing Warpstone Shards","category":"misc","unitCost":100,"ruleText":"Trading Post Rare 9; full price 100 + D6 × 10 gc. With a censer, enemy missile shots at bearer suffer -1 to hit; replaces Elven Cloak."},
+          {"name":"Liber Bubonicus","category":"misc","unitCost":200,"allowedWarriorTypeNames":["Plague Priest","Pestilens Sorcerer"],"ruleText":"Trading Post Rare 12; full price 200 + D6 × 25 gc. One book/use per campaign. Sorcerer permanently learns a random Horned Rat spell; Priest with Magical Aptitude (editorial note: Arcane Lore) instead gains spellcasting and one random spell. Replaces Tome of Magic."},
+          {"name":"Liturgicus Infecticus","category":"misc","unitCost":30,"ruleText":"Trading Post Rare 8; full price 30 + 2D6 gc. Chant at turn start or just before Rout test for +1 warband Leadership until end of turn; replaces War horn."},
+          {"name":"Vial of Pestilens","category":"misc","unitCost":25,"ruleText":"Trading Post Rare 9; full price 25 + 2D6 gc. Once, when bearer is taken out of action, use against the responsible enemy in base contact: failed Toughness test takes enemy out of action with no save and leaves bearer stunned instead."},
+          {"name":"Scroll of the Rat Familiar","category":"misc","unitCost":25,"allowedWarriorTypeNames":["Pestilens Sorcerer"],"ruleText":"Trading Post Rare 8; full price 25 + D6 gc. Reusable before-battle enchantment transforms one existing Giant Rat into a Rat Familiar. One Familiar per Sorcerer; see conditional warrior entry. Replaces normal Familiar."},
+          {"name":"Warpstone Amulet","category":"misc","unitCost":10,"ruleText":"Trading Post Rare 5. Reroll one die during battle, or one exploration die if bearer is not out of action; replaces Rabbit's Foot."}
+        ]}
+      ],
+      "skills":[
+        {"name":"Black Hunger","listName":"Clan Pestilens Special Skills","summary":"Declare at own turn's start: +1 Attack and +D3 inches movement for that turn; at its end suffer D3 S3 hits without armour saves."},
+        {"name":"Censer Bearer","listName":"Clan Pestilens Special Skills","summary":"Requires Black Hunger. Gain Frenzy and may use only a censer in close combat."},
+        {"name":"Rotten Body","listName":"Clan Pestilens Special Skills","summary":"Immune to poison/disease; being taken out of action by own failed censer test does not require post-battle Injury roll."},
+        {"name":"Contagious","listName":"Clan Pestilens Special Skills","summary":"Requires Rotten Body. Enemy taking this warrior out of action in melee tests Toughness or suffers one automatic wound; 6 always fails. Undead/Possessed exempt."},
+        {"name":"Ignore Pain","listName":"Clan Pestilens Special Skills","summary":"Requires Resilient (Strength). Treat stunned as knocked down."}
+      ],
+      "spellDisciplines":[
+        {"name":"Magic of the Horned Rat","kind":"Magic","castingRuleSummary":"Standard wizard rules, except Children of the Horned Rat is automatic and pregame. Source: https://mordheimer.net/docs/magic/magic-of-the-horned-rat.","spells":[
+          {"roll":1,"name":"Warpfire","difficulty":8,"effectSummary":"8 inches, first model in path takes D3 S4 hits; each model within 2 inches of it takes one S3 hit."},
+          {"roll":2,"name":"Children of the Horned Rat","difficulty":null,"difficultyNote":"Auto","effectSummary":"Once before battle summon D3 Giant Rats within 6 inches. They vanish afterward and do not count toward warband maximum size."},
+          {"roll":3,"name":"Gnawdoom","difficulty":7,"effectSummary":"One model within 8 inches takes 2D6 S1 hits."},
+          {"roll":4,"name":"Black Fury","difficulty":8,"effectSummary":"Caster immediately charges an enemy within 12 inches, ignoring terrain/intervening models, and gains +2 Attacks and +1 S for that turn's melee."},
+          {"roll":5,"name":"Eye of the Warp","difficulty":8,"effectSummary":"Every standing model in base contact tests Leadership; failures suffer an S3 hit and flee 2D6 inches directly away as when failing an All Alone test."},
+          {"roll":6,"name":"Sorcerer’s Curse","difficulty":6,"effectSummary":"One model within 12 inches rerolls successful armour saves and hit rolls during the current Skaven melee phase and its own next Shooting and melee phases."}
+        ]}
+      ],
+      "spellAccess":[
+        {"warriorType":"Pestilens Sorcerer","discipline":"Magic of the Horned Rat","startingSpellCount":1,"isWizard":true,"selectionRule":"One random D6 spell initially under core wizard allocation; normal advancement and conditional Liber Bubonicus additional spell."},
+        {"warriorType":"Plague Priest","discipline":"Magic of the Horned Rat","startingSpellCount":0,"isWizard":false,"selectionRule":"Conditional access only: required Academic skill plus use of Liber Bubonicus grants wizard status and one random spell. Do not give access or wizard status at recruitment; source's Magical Aptitude/Arcane Lore naming conflict needs adjudication."}
+      ],
+      "weaponProfiles":[
+        {"name":"Disease Dagger (Pestilens)","weaponType":"close_combat","rangeText":"Close Combat","strengthModifier":"As user","specialRules":[{"name":"Enemy armour","summary":"+1 enemy armour save; 6+ if target normally has none."},{"name":"Infecting","summary":"Natural hit 6 forces Toughness test; failure causes an extra wound. Undead and Possessed exempt. Two Disease Daggers add only the normal extra-weapon attack."}]},
+        {"name":"Censer (Pestilens)","weaponType":"close_combat","rangeText":"Close Combat","strengthModifier":"As user +2","specialRules":[{"name":"Heavy","summary":"+2 S applies only in first combat round."},{"name":"Two-handed","summary":"No shield, buckler or additional weapon in melee."},{"name":"Fog of Death","summary":"Hit target tests Toughness for an extra wound; 6 always fails. Bearer also tests, suffering a wound only on 6. Undead/Possessed exempt. Fog-enhancing shards impose -1 on enemy missile hits against bearer."}]},
+        {"name":"Clan Pestilens Banner","weaponType":"close_combat","rangeText":"Close Combat","strengthModifier":"As user +2","specialRules":[{"name":"Double-handed weapon","summary":"Two hands, strikes last."},{"name":"Banner","summary":"One per warband; allies within 12 inches reroll failed All Alone tests once."}],"notes":"Source explicitly says staff counts as a two-handed weapon; use existing Double-handed weapon base rules."}
+      ],
+      "hiredSwordPolicy":{"allowedNames":[],"summary":"Supplied Clan Pestilens source has no complete hire whitelist. Do not infer that every hire available to existing Clan Eshin Skaven is allowed."}
+    },
+    {
+      "name":"Tomb Guardians","grade":"1b","sourceUrl":"https://mordheimer.net/docs/warbands/grade-1b-warbands/tomb-guardians","maxMembers":15,"maxHeroes":6,"leaderType":"Tomb Lord",
+      "specialRules":[
+        {"name":"Recruitment","summary":"500 gc initially; at least three models and exactly one Tomb Lord. Up to one Liche Priest, two Acolytes, two Tomb Guardians and three Tomb Scorpions."},
+        {"name":"Undead","summary":"Only warriors explicitly marked Undead cause fear, ignore psychology/poison, never leave combat, treat stunned as knocked down and cannot run (charging permitted)."},
+        {"name":"No Brain","summary":"Skeleton Warriors never gain experience. Tomb Lords, Liche Priests and Acolytes do. Town Cryer wording leaves Tomb Guardian experience ambiguous; see the explicit source conflict on that type."},
+        {"name":"Flammable","summary":"Fire-based hits deal double normal wounds to the Tomb Lord."},
+        {"name":"Do not Drink","summary":"Undead need neither food nor water; accompanying living animals normally follow water rules, with the Scorpions' specific exception."},
+        {"name":"Home Ground","summary":"Roll one extra Exploration die. Source gives no explicit setting restriction; desert-only versus other campaigns is flagged as unclear."},
+        {"name":"Source inconsistencies","summary":"The original skill table's Mummy means the listed Tomb Lord. Horrebe's Curse still refers to Mummies without defining eligible current types. Skeleton Chariot classification/counting is undefined; its rules and variable price are recorded as special equipment, not invented warrior slots."},
+        {"name":"Magic sources","summary":"Mortuary Cult Scrolls: https://mordheimer.net/docs/magic/mortuary-cult-scrolls. Initial spell allocation and casting use https://mordheimer.net/docs/magic."},
+        {"name":"Price formula","summary":"Skeleton Chariot unitCost is the fixed base only: full price is 200 + 10D6 gc."}
+      ],
+      "warriors":[
+        {"name":"Tomb Lord","maximumProfile":null,"role":"Hero","stats":{"M":"4","WS":"4","BS":"3","S":"4","T":"5","W":"3","I":"3","A":"2","Ld":"8"},"hireCost":150,"startingExperience":20,"large":false,"canGainExperience":true,"promotionEligibility":"not_applicable","maxCount":1,"specialRules":[{"name":"Undead","summary":"Apply warband Undead rules."},{"name":"Flammable","summary":"Double wounds from fire-based hits."}],"skillCategories":["Combat","Shooting","Strength"],"equipmentListKeys":["tomb-undead"]},
+        {"name":"Liche Priest","maximumProfile":null,"role":"Hero","stats":{"M":"4","WS":"2","BS":"2","S":"3","T":"3","W":"1","I":"3","A":"1","Ld":"7"},"hireCost":55,"startingExperience":8,"large":false,"canGainExperience":true,"promotionEligibility":"not_applicable","maxCount":1,"specialRules":[{"name":"Wizard","summary":"Uses Mortuary Cult Scrolls; no armour as it interferes with casting."},{"name":"Undead","summary":"Apply warband Undead rules."}],"skillCategories":["Academic"],"equipmentListKeys":["tomb-priest"],"allowedCategories":["weapon"]},
+        {"name":"Acolytes","maximumProfile":null,"role":"Hero","stats":{"M":"4","WS":"2","BS":"2","S":"3","T":"3","W":"1","I":"3","A":"1","Ld":"7"},"hireCost":20,"startingExperience":0,"large":false,"canGainExperience":true,"promotionEligibility":"not_applicable","maxCount":2,"specialRules":[{"name":"Undead","summary":"Apply warband Undead rules; no initial spellcasting."}],"skillCategories":["Combat","Academic"],"equipmentListKeys":["tomb-priest"],"allowedCategories":["weapon"]},
+        {"name":"Skeleton warriors","maximumProfile":null,"role":"Henchman","stats":{"M":"4","WS":"2","BS":"2","S":"3","T":"3","W":"1","I":"2","A":"1","Ld":"5"},"hireCost":20,"startingExperience":0,"large":false,"canGainExperience":false,"promotionEligibility":"ineligible","maxCount":null,"specialRules":[{"name":"Undead","summary":"Apply warband Undead rules."},{"name":"No Brain","summary":"Skeletons never gain experience."}],"skillCategories":[],"equipmentListKeys":["tomb-undead"]},
+        {"name":"Tomb Guardians","maximumProfile":null,"role":"Henchman","stats":{"M":"4","WS":"3","BS":"2","S":"4","T":"3","W":"1","I":"3","A":"1","Ld":"5"},"hireCost":30,"startingExperience":0,"large":false,"canGainExperience":false,"promotionEligibility":"ineligible","maxCount":2,"specialRules":[{"name":"Undead","summary":"Apply warband Undead rules."},{"name":"Experience source conflict","summary":"Town Cryer No Brain does not expressly exempt this type. The page notes the older Tomb Guards explicitly gained experience, recommending Tomb Lord maxima if that interpretation is chosen. Conservative Town Cryer baseline disables experience/promotion pending campaign adjudication; it is not a definitive ruling."}],"skillCategories":[],"equipmentListKeys":["tomb-undead"],"conditionText":"Experience and promotion are unresolved in the requested source; manually select the older experience-gaining interpretation if agreed. Do not silently infer eligibility."},
+        {"name":"Tomb Scorpions","maximumProfile":null,"role":"Henchman","stats":{"M":"5","WS":"2","BS":"-","S":"2","T":"2","W":"1","I":"4","A":"1","Ld":"4"},"hireCost":15,"startingExperience":0,"large":false,"canGainExperience":false,"promotionEligibility":"ineligible","maxCount":3,"specialRules":[{"name":"Living","summary":"Living creatures, normal psychology applies; need no water."},{"name":"Animals","summary":"Never gain experience."},{"name":"Scorpions sting","summary":"Attacks use Black Lotus poison; natural 6 to hit automatically wounds. Profile's S2 asterisk denotes this rule, not extra Strength."}],"skillCategories":[],"equipmentListKeys":[],"conditionText":"Never uses weapons or armour."}
+      ],
+      "equipmentLists":[
+        {"key":"tomb-undead","name":"Undead Equipment List","items":[
+          {"name":"Dagger","category":"weapon","unitCost":2,"firstFree":true},{"name":"Mace","category":"weapon","unitCost":3},{"name":"Axe","category":"weapon","unitCost":5},{"name":"Sword","category":"weapon","unitCost":10},{"name":"Halberd","category":"weapon","unitCost":10},{"name":"Spear","category":"weapon","unitCost":10},{"name":"Morning star","category":"weapon","unitCost":15},{"name":"Double-handed weapon","category":"weapon","unitCost":15},{"name":"Flail","category":"weapon","unitCost":15},{"name":"Bow","category":"weapon","unitCost":10},
+          {"name":"Asp Arrows","category":"misc","unitCost":10,"allowedWarriorTypeNames":["Tomb Lord"],"ruleText":"+1 to hit. Listed as a missile weapon in the source but functions as arrows; rarity and precise usage/duration are not specified. Do not invent them."},
+          {"name":"Nehekharan Javelin","category":"weapon","unitCost":10,"profileName":"Nehekharan Javelin","allowedWarriorTypeNames":["Tomb Lord"],"ruleText":"8-inch range, user Strength, +1 to hit. Source does not grant the normal Thrown Weapon exemption from range/movement penalties; editorial suggestion is not encoded as an automatic exemption."},
+          {"name":"Shield","category":"shield","unitCost":5},{"name":"Light armour","category":"armour","unitCost":20}
+        ]},
+        {"key":"tomb-priest","name":"Liche Priest Equipment List","items":[
+          {"name":"Dagger","category":"weapon","unitCost":2,"firstFree":true},{"name":"Mace","category":"weapon","unitCost":3},{"name":"Staff","category":"weapon","unitCost":3},{"name":"Axe","category":"weapon","unitCost":5},{"name":"Sword","category":"weapon","unitCost":10},{"name":"Morning star","category":"weapon","unitCost":15},
+          {"name":"Serpent Staff","category":"weapon","unitCost":30,"profileName":"Serpent Staff","allowedWarriorTypeNames":["Liche Priest"],"ruleText":"Two-handed, user Strength, parry. Alternatively forgo all normal attacks/parries for one always-strikes-first attack at WS4 S4."}
+        ]},
+        {"key":"tomb-trading-special","name":"Skeleton Chariot Special Equipment","items":[
+          {"name":"Skeleton Chariot","category":"misc","unitCost":200,"ruleText":"Maximum one; full price 200 + 10D6 gc. Classification and warband-member counting unresolved; misc records it for manual adjudication, not as an ordinary fixed-price purchase. Chariot profile M- WS- BS- S4 T4 W3 I- A- Ld-; each of two steeds M8 WS2 BS2 S3 T3 W1 I2 A1 Ld5. Mount/dismount as ridden steed. M8, no running; charge doubles move but requires Drive Chariot. Difficult ground causes D3 S4 hits, or 2D3 S6 on charge. One dead steed halves movement/charge and removes impacts; both dead immobilize chariot, rider fights on foot. Charge any visible enemy in open, not necessarily nearest. Moving over half normal move permits impacts on models in path: victims may dodge by Initiative; rider rolls to hit, dealing one S4 wound at -2 armour. Rider then fights normally. Melee attacker may target driver/chariot; chariot uses driver WS; contact only with steed permits only steed attacks. Large shooting target (+1 to hit); random hit allocation 1–2 steed, 3–4 chariot, 5–6 driver. Tomb Lord lacks Academic access to learn Drive Chariot; do not fabricate an exception."}
+        ]}
+      ],
+      "skills":[{"name":"Drive Chariot","listName":"Academic","appliesTo":["Liche Priest","Acolytes"],"summary":"Required to charge while driving a chariot. No skill means it cannot charge. Tomb Lord has no Academic access in the source."}],
+      "spellDisciplines":[
+        {"name":"Mortuary Cult Scrolls","kind":"Magic","castingRuleSummary":"Ancient scroll incantations cast as normal wizard spells: Shooting phase, 2D6 difficulty, one per turn; no missile shot or casting in armour/shield/buckler. Source: https://mordheimer.net/docs/magic/mortuary-cult-scrolls.","spells":[
+          {"roll":1,"name":"Menkare's scroll of Urgency","difficulty":6,"effectSummary":"One Skeleton Soldier within 6 inches immediately moves up to its M4 again; reaching base contact counts as charging."},
+          {"roll":2,"name":"Horrebe's Curse of the Mummy","difficulty":8,"effectSummary":"Enemy within 18 inches and in base contact with a Mummy suffers -1 to hit, wound and armour saves until next Tomb Guardian Shooting phase. Current list's eligible Mummy types are undefined; adjudicate manually."},
+          {"roll":3,"name":"Tawosret's Scroll of Tomb Dust","difficulty":7,"effectSummary":"One living warrior within 12 inches is automatically knocked down."},
+          {"roll":4,"name":"Neferre's Scroll of Quaking Horror","difficulty":7,"effectSummary":"One warrior within 12 inches tests Leadership or flees 2D6 inches away, continuing each Movement phase until rallying in Recovery. Undead and psychology-immune models unaffected."},
+          {"roll":5,"name":"Merneptah's Scroll of the Scarab Song","difficulty":7,"effectSummary":"One model within 8 inches takes 2D6 S1 hits. Cannot be shot again that Shooting phase or fight/be fought in melee; separate it 1 inch if engaged. Unless actually injured, next turn treat it as just stood up."},
+          {"roll":6,"name":"Djedre's summonation of the Vengeful Dead","difficulty":5,"effectSummary":"Restore a Skeleton Soldier taken out of action last turn within 6 inches of caster, not directly into melee."}
+        ]}
+      ],
+      "spellAccess":[{"warriorType":"Liche Priest","discipline":"Mortuary Cult Scrolls","startingSpellCount":1,"isWizard":true,"selectionRule":"One random D6 scroll under core wizard allocation; normal wizard advancement. Acolytes are not initially wizards."}],
+      "weaponProfiles":[
+        {"name":"Nehekharan Javelin","weaponType":"missile","rangeText":"8 inches","strengthModifier":"As user","specialRules":[{"name":"Accuracy","summary":"+1 to hit when thrown."}],"notes":"No Thrown Weapon rule in source. Editorial suggestion does not automatically exempt movement/range penalties."},
+        {"name":"Serpent Staff","weaponType":"close_combat","rangeText":"Close Combat","strengthModifier":"As user","specialRules":[{"name":"Two-handed Parry","summary":"Uses two hands and may parry."},{"name":"Serpent attack","summary":"Instead of all normal attacks/parries, make one always-strikes-first attack at WS4 S4."}]}
+      ],
+      "hiredSwordPolicy":{"allowedNames":[],"summary":"Requested Tomb Guardian source gives no complete Hired Sword whitelist. Do not inherit the existing Vampire-led Undead list or unrestricted hire eligibility."}
+    }
+  ]
+}

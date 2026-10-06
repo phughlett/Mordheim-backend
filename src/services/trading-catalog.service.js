@@ -1,4 +1,5 @@
 const catalog = require("../../trading-post-catalog.json");
+const { tradingWarbandNames } = require("./warband-identity.service");
 
 // 2Warbands.pdf: Possessed, Undead and animal entries; damobrules.pdf: Trolls.
 const noWeaponsOrArmour = [
@@ -17,14 +18,27 @@ function includesName(names, name) {
   return Boolean(normalized) && Array.isArray(names) && names.some((entry) => normalize(entry) === normalized);
 }
 
-function passesRestrictions(item, allowedKey, excludedKey, name) {
-  return (!Array.isArray(item[allowedKey]) || includesName(item[allowedKey], name)) &&
-    !includesName(item[excludedKey], name);
+function typeRestrictionNames(warbandName, typeName) {
+  const names = [typeName];
+  if (warbandName === "Forest Goblins") {
+    if (["Chieftain", "Braves"].includes(typeName)) names.push("Bosses (Forest Goblins)");
+    if (typeName === "Shaman") names.push("Forest Goblin Shaman");
+    if (typeName === "Red Toof Goblins") names.push("Red Toof Clan Goblins");
+  }
+  if (warbandName === "Tomb Guardians" && typeName === "Liche Priest") names.push("Liche Priest (Tomb Guardians)");
+  if (warbandName === "Amazons (Lustria)" && typeName === "Piranha Warriors") names.push("Piranha Warrior");
+  return names;
+}
+
+function passesTypeRestrictions(item, warbandName, typeName) {
+  const names = typeRestrictionNames(warbandName, typeName);
+  return (!Array.isArray(item.allowedTypeNames) || names.some((name) => includesName(item.allowedTypeNames, name)))
+    && !names.some((name) => includesName(item.excludedTypeNames, name));
 }
 
 function effectiveRarity(item, warbandName, typeName) {
   for (const override of item.rarityOverrides || []) {
-    if ((!Array.isArray(override.warbands) || includesName(override.warbands, warbandName)) &&
+    if ((!Array.isArray(override.warbands) || tradingWarbandNames(warbandName).some((name) => includesName(override.warbands, name))) &&
         (!Array.isArray(override.typeNames) || includesName(override.typeNames, typeName))) {
       return override.rarity;
     }
@@ -33,13 +47,15 @@ function effectiveRarity(item, warbandName, typeName) {
 }
 
 function canBuyItem(item, warbandName) {
-  return Boolean(item) && passesRestrictions(item, "allowedWarbands", "excludedWarbands", warbandName);
+  const names = tradingWarbandNames(warbandName);
+  return Boolean(item) && (!Array.isArray(item.allowedWarbands) || names.some((name) => includesName(item.allowedWarbands, name)))
+    && !names.some((name) => includesName(item.excludedWarbands, name));
 }
 
 function canEquipItem(item, context = {}) {
   const { warbandName, typeName, role, skillNames = [], permittedNames = [], spellcaster = false } = context;
   if (!canBuyItem(item, warbandName) ||
-      !passesRestrictions(item, "allowedTypeNames", "excludedTypeNames", typeName) ||
+      !passesTypeRestrictions(item, warbandName, typeName) ||
       (item.heroOnly && normalize(role) !== "hero") ||
       (item.allowedRoles && !includesName(item.allowedRoles, role)) ||
       (item.requiredSkill && !includesName(skillNames, item.requiredSkill)) ||

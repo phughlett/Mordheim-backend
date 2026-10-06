@@ -6,8 +6,8 @@ function createCatalogRepository(db) {
 
     listWarbands() {
       return db("warbands")
-        .where({ is_available: true })
-        .select("id", "name", "source_reference", "max_heroes", "max_members", "limits_source_reference", "limits_rule")
+        .where({ is_available: true, is_selectable: true })
+        .select("id", "name", "display_name", "grade", "source_url", "special_rules", "source_reference", "max_heroes", "max_members", "limits_source_reference", "limits_rule")
         .orderBy("name", "asc");
     },
 
@@ -30,6 +30,7 @@ function createCatalogRepository(db) {
         name: "warrior_types.name",
         category: "warrior_types.category",
         stats: "warrior_types.stats",
+        specialRules: "warrior_types.special_rules",
         startingExperience: "warrior_types.starting_experience",
         startingEquipment: "warrior_types.starting_equipment",
         equipmentChoices: "warrior_types.equipment_choices",

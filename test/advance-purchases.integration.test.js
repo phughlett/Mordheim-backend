@@ -49,7 +49,7 @@ describe("campaign paid advancements", () => {
       const auth = await response.json();
       users.push({ id: auth.user.id, token: auth.token });
     }
-    warband = (await call("GET", "/warbands")).body.find((item) => item.name === "Mercenaries");
+    warband = (await call("GET", "/warbands")).body.find((item) => item.name === "Reikland Mercenaries");
     types = (await call("GET", `/warbands/${warband.id}/warrior-types`)).body;
   });
   after(async () => {
@@ -127,7 +127,7 @@ describe("campaign paid advancements", () => {
       assert.ok(brace);
       assert.equal(brace.unitCost, single.unitCost * 2);
       assert.deepEqual(brace.stats, single.stats);
-      assert.match(brace.ruleText, /counts as one missile weapon/);
+      assert.match(brace.ruleText, /counts? as one missile weapon/);
       const before = Number((await rosterData(roster)).treasury);
       const bought = await call("POST", `/members/${member.id}/equipment`, { equipmentOptionId: brace.id, quantity: 1, modelIndex: -1 });
       assert.equal(bought.status, 201, JSON.stringify(bought.body));

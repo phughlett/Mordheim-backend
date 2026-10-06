@@ -166,7 +166,7 @@ function createRosterController(repository, rosterService) {
       if (values.name !== undefined && !isNonEmptyString(values.name)) {
         return response.status(400).json({ error: "Roster name must not be empty." });
       }
-      const warbandError = await resolveWarbandSelection(repository, values);
+      const warbandError = await resolveWarbandSelection(repository, values, rosterExists.warband_id);
       if (warbandError !== true) return response.status(warbandError.status).json(warbandError.body);
       if (values.warband_id !== undefined) {
         const assignedTypeIds = await repository.listAssignedWarriorTypeIds(rosterExists.id);

@@ -2,16 +2,19 @@ const { test } = require("node:test");
 const assert = require("node:assert/strict");
 const { standardLeaders, selectLeader, leaderAbility } = require("../src/services/warband-leader.service");
 const catalog = require("../catalog.json");
+const { additions } = require("../src/services/warband-source.service");
+const { mercenarySects } = require("../src/services/warband-identity.service");
 
 const hero = (id, type, leadership, created = "2026-01-01") => ({
   id, role: "Hero", warrior_type_name: type, stats: { Ld: leadership }, created_at: created,
 });
 
 test("every supported warband maps to one of its native Hero types", () => {
-  assert.deepEqual(Object.keys(standardLeaders).sort(), catalog.warbands.map((row) => row.name).sort());
+  assert.deepEqual(Object.keys(standardLeaders).sort(), [...catalog.warbands, ...additions].map((row) => row.name).concat(mercenarySects).sort());
   for (const [warband, leader] of Object.entries(standardLeaders)) {
-    assert.ok(catalog.associations.some((row) => row.warbandName === warband
-      && row.warriorName === leader && row.category === "Hero"), warband);
+    assert.ok(catalog.associations.some((row) => row.warbandName === (mercenarySects.includes(warband) ? "Mercenaries" : warband)
+      && row.warriorName === leader && row.category === "Hero")
+      || additions.find((band) => band.name === warband)?.warriors.some((type) => type.name === leader && type.role === "Hero"), warband);
   }
 });
 

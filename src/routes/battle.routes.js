@@ -1,5 +1,6 @@
 const express = require("express");
 const { PRE_BATTLE_STEPS, advanceCampaign, toCampaign } = require("../services/campaign.service");
+const { warbandTitle } = require("../services/warband-identity.service");
 
 const FORMATS = { "1v1": 1, "2v2": 2 };
 const TEAMS = ["A", "B"];
@@ -26,7 +27,7 @@ function createBattleRoutes(db) {
       participants: participants.map((row) => ({
         rosterId: row.id,
         name: row.name,
-        warband: row.warband,
+        warband: warbandTitle(row.warband),
         team: row.team,
         player: row.player ?? null,
         ownerId: row.user_id,

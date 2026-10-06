@@ -1,0 +1,4778 @@
+{
+  "warbands": [
+    {
+      "name": "Arabian Tomb Raiders",
+      "grade": "1b",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1b-warbands/arabian-tomb-raiders",
+      "maxMembers": 15,
+      "maxHeroes": 6,
+      "leaderType": "Sheikh",
+      "specialRules": [
+        {
+          "name": "Minimum warband size",
+          "summary": "The warband must contain at least three models."
+        },
+        {
+          "name": "Hate Undead",
+          "summary": "Arabian Tomb Raider Heroes hate Undead."
+        },
+        {
+          "name": "Henchman groups",
+          "summary": "Henchmen are recruited in groups of 1-5."
+        }
+      ],
+      "warriors": [
+        {
+          "name": "Sheikh",
+          "role": "Hero",
+          "stats": {
+            "M": "4",
+            "WS": "4",
+            "BS": "4",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "4",
+            "A": "1",
+            "Ld": "8"
+          },
+          "hireCost": 60,
+          "startingExperience": 20,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "ineligible",
+          "maxCount": 1,
+          "specialRules": [
+            {
+              "name": "Hate Undead",
+              "summary": "As a Hero, the Sheikh hates Undead."
+            }
+          ],
+          "skillCategories": [
+            "Combat",
+            "Shooting",
+            "Academic",
+            "Strength",
+            "Speed",
+            "Special"
+          ],
+          "specialListName": "Arabian Tomb Raiders special skills",
+          "equipmentListKeys": [
+            "warrior-equipment"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Champion",
+          "role": "Hero",
+          "stats": {
+            "M": "4",
+            "WS": "4",
+            "BS": "3",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 40,
+          "startingExperience": 8,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "ineligible",
+          "maxCount": 2,
+          "specialRules": [
+            {
+              "name": "Hate Undead",
+              "summary": "As a Hero, the Champion hates Undead."
+            }
+          ],
+          "skillCategories": [
+            "Combat",
+            "Strength",
+            "Speed",
+            "Special"
+          ],
+          "specialListName": "Arabian Tomb Raiders special skills",
+          "equipmentListKeys": [
+            "warrior-equipment"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Mystic",
+          "role": "Hero",
+          "stats": {
+            "M": "4",
+            "WS": "2",
+            "BS": "2",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 40,
+          "startingExperience": 8,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "ineligible",
+          "maxCount": 1,
+          "specialRules": [
+            {
+              "name": "Wizard",
+              "summary": "Uses Arabian Elemental Magic and starts with one randomly selected spell."
+            },
+            {
+              "name": "Hate Undead",
+              "summary": "As a Hero, the Mystic hates Undead."
+            }
+          ],
+          "skillCategories": [
+            "Academic",
+            "Speed",
+            "Special"
+          ],
+          "specialListName": "Arabian Tomb Raiders special skills",
+          "equipmentListKeys": [
+            "warrior-equipment"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Bedouin",
+          "role": "Henchman",
+          "stats": {
+            "M": "4",
+            "WS": "3",
+            "BS": "3",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 35,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "eligible",
+          "maxCount": 2,
+          "specialRules": [
+            {
+              "name": "Desert Trader",
+              "summary": "Adds +1 to the Equipping/Trading search result; multiple Bedouins do not stack."
+            }
+          ],
+          "skillCategories": [],
+          "equipmentListKeys": [
+            "warrior-equipment"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Warrior",
+          "role": "Henchman",
+          "stats": {
+            "M": "4",
+            "WS": "3",
+            "BS": "3",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 25,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "eligible",
+          "maxCount": null,
+          "specialRules": [],
+          "skillCategories": [],
+          "equipmentListKeys": [
+            "warrior-equipment"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Slave",
+          "role": "Henchman",
+          "stats": {
+            "M": "4",
+            "WS": "2",
+            "BS": "2",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "6"
+          },
+          "hireCost": 15,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "ineligible",
+          "maxCount": 5,
+          "specialRules": [
+            {
+              "name": "Life of Slavery",
+              "summary": "If a Slave rolls Lad's Got Talent, the Slave is executed and removed; the remaining group rerolls its advance."
+            }
+          ],
+          "skillCategories": [],
+          "equipmentListKeys": [
+            "slave-equipment"
+          ],
+          "maximumProfile": "Human"
+        }
+      ],
+      "equipmentLists": [
+        {
+          "key": "warrior-equipment",
+          "name": "Warrior Equipment",
+          "items": [
+            {
+              "name": "Dagger (Jambiya)",
+              "category": "weapon",
+              "unitCost": 2,
+              "firstFree": true,
+              "profileName": "Dagger"
+            },
+            {
+              "name": "Mace",
+              "category": "weapon",
+              "unitCost": 3,
+              "profileName": "Hammer, staff, mace or club"
+            },
+            {
+              "name": "Sword (Scimitar)",
+              "category": "weapon",
+              "unitCost": 10,
+              "profileName": "Sword"
+            },
+            {
+              "name": "Spear",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Flail",
+              "category": "weapon",
+              "unitCost": 15
+            },
+            {
+              "name": "Double-handed weapon",
+              "category": "weapon",
+              "unitCost": 15
+            },
+            {
+              "name": "Shortbow",
+              "category": "weapon",
+              "unitCost": 5,
+              "profileName": "Short bow"
+            },
+            {
+              "name": "Bow",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Tufenk",
+              "category": "weapon",
+              "unitCost": 15,
+              "ruleText": "The source lists this weapon and its cost but provides no range, Strength or special-rule profile; those details need separate source adjudication."
+            },
+            {
+              "name": "Handgun",
+              "category": "weapon",
+              "unitCost": 35
+            },
+            {
+              "name": "Shield",
+              "category": "shield",
+              "unitCost": 5
+            },
+            {
+              "name": "Buckler",
+              "category": "shield",
+              "unitCost": 5
+            },
+            {
+              "name": "Helmet",
+              "category": "armour",
+              "unitCost": 10
+            },
+            {
+              "name": "Light armour",
+              "category": "armour",
+              "unitCost": 50
+            }
+          ]
+        },
+        {
+          "key": "slave-equipment",
+          "name": "Slave Equipment",
+          "items": [
+            {
+              "name": "Dagger (Jambiya)",
+              "category": "weapon",
+              "unitCost": 2,
+              "firstFree": true,
+              "profileName": "Dagger"
+            },
+            {
+              "name": "Club",
+              "category": "weapon",
+              "unitCost": 3,
+              "profileName": "Hammer, staff, mace or club"
+            },
+            {
+              "name": "Katar",
+              "category": "weapon",
+              "unitCost": 5,
+              "ruleText": "The source lists this weapon and its cost but provides no range, Strength or special-rule profile; those details need separate source adjudication."
+            },
+            {
+              "name": "Sword (Scimitar)",
+              "category": "weapon",
+              "unitCost": 10,
+              "profileName": "Sword"
+            },
+            {
+              "name": "Spear",
+              "category": "weapon",
+              "unitCost": 10
+            }
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "name": "Sand Worm",
+          "listName": "Arabian Tomb Raiders special skills",
+          "summary": "May hide in open ground, but not inside buildings.",
+          "appliesTo": [
+            "Sheikh",
+            "Champion",
+            "Mystic"
+          ]
+        },
+        {
+          "name": "Hit and Run",
+          "listName": "Arabian Tomb Raiders special skills",
+          "summary": "May run and shoot at -2 to hit instead of the usual -1 moving penalty.",
+          "appliesTo": [
+            "Sheikh",
+            "Champion",
+            "Mystic"
+          ]
+        },
+        {
+          "name": "Weather Tolerant",
+          "listName": "Arabian Tomb Raiders special skills",
+          "summary": "Weather effects no longer affect this warrior.",
+          "appliesTo": [
+            "Sheikh",
+            "Champion",
+            "Mystic"
+          ]
+        }
+      ],
+      "spellDisciplines": [
+        {
+          "name": "Arabian Elemental Magic",
+          "kind": "Magic",
+          "castingRuleSummary": "The listed spells have individual casting difficulties; the source spell list does not state a general casting procedure.",
+          "spells": [
+            {
+              "roll": null,
+              "name": "Riding the Wind",
+              "difficulty": 6,
+              "effectSummary": "At the start of movement, move up to 12+D6 inches anywhere on the battlefield, ignoring terrain; cannot move into contact with an enemy and may shoot at -1."
+            },
+            {
+              "roll": null,
+              "name": "Skin of Stone",
+              "difficulty": 7,
+              "effectSummary": "A friendly target within 6 inches gains +2 armour save and -1 Initiative; maintainable while in range, only one target at a time."
+            },
+            {
+              "roll": null,
+              "name": "Burning Hand",
+              "difficulty": 8,
+              "effectSummary": "For one combat round, replace normal attacks with one S5 attack that causes two wounds; a hit ignites on 4+."
+            },
+            {
+              "roll": null,
+              "name": "Quicksand",
+              "difficulty": 6,
+              "effectSummary": "Creates a 3-inch area around a target within 6 inches until the next Recovery phase; models failing a Strength test cannot move, and combatants cannot attack."
+            },
+            {
+              "roll": null,
+              "name": "Storm of Magic",
+              "difficulty": 9,
+              "effectSummary": "A target within 12 inches takes one S5 hit; armour saves apply."
+            },
+            {
+              "roll": null,
+              "name": "Blessing of the Elements",
+              "difficulty": 6,
+              "effectSummary": "After battle, reroll one die or modify one die by +1 or -1; unavailable if the caster was taken out of action."
+            }
+          ]
+        }
+      ],
+      "spellAccess": [
+        {
+          "warriorType": "Mystic",
+          "discipline": "Arabian Elemental Magic",
+          "startingSpellCount": 1,
+          "isWizard": true,
+          "selectionRule": "Starts with one randomly selected spell."
+        }
+      ],
+      "hiredSwordPolicy": {
+        "summary": "The source provides no special Hired Sword eligibility rule; this absence must not be treated as confirmation that every Hired Sword is allowed."
+      }
+    },
+    {
+      "name": "Gunnery School of Nuln",
+      "grade": "1b",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1b-warbands/gunnery-school-of-nuln",
+      "maxMembers": 15,
+      "maxHeroes": 6,
+      "leaderType": "Senior Gunnery Officer",
+      "specialRules": [
+        {
+          "name": "Minimum warband size",
+          "summary": "The warband must contain at least three models and starts with 500 gold crowns."
+        },
+        {
+          "name": "Impeccable Care",
+          "summary": "Use the reduced black-powder prices in the starting lists, and add +2 when searching for any black-powder weapon."
+        },
+        {
+          "name": "Properly Used",
+          "summary": "With optional Misfire rules, after a misfire result of 1 roll a second die; on 3+ the shot still misses but the weapon does not explode."
+        },
+        {
+          "name": "Proud to a Fault",
+          "summary": "Warband members may never use non-black-powder ranged weapons; hired swords and dramatis personae are exempt."
+        },
+        {
+          "name": "Henchman groups",
+          "summary": "Henchmen are recruited in groups of 1-5."
+        }
+      ],
+      "warriors": [
+        {
+          "name": "Senior Gunnery Officer",
+          "role": "Hero",
+          "stats": {
+            "M": "4",
+            "WS": "4",
+            "BS": "4",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "4",
+            "A": "1",
+            "Ld": "8"
+          },
+          "hireCost": 60,
+          "startingExperience": 20,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "ineligible",
+          "maxCount": 1,
+          "specialRules": [
+            {
+              "name": "Hunter",
+              "summary": "Has the Hunter shooting skill."
+            }
+          ],
+          "skillCategories": [
+            "Combat",
+            "Shooting",
+            "Academic",
+            "Strength",
+            "Speed"
+          ],
+          "equipmentListKeys": [
+            "school"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Instructor",
+          "role": "Hero",
+          "stats": {
+            "M": "4",
+            "WS": "3",
+            "BS": "4",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "4",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 45,
+          "startingExperience": 12,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "ineligible",
+          "maxCount": 1,
+          "specialRules": [
+            {
+              "name": "Expert Weaponsmith",
+              "summary": "While present, Pistol weapons gain 3 inches of range and other black-powder weapons gain 6 inches."
+            }
+          ],
+          "skillCategories": [
+            "Combat",
+            "Shooting",
+            "Academic"
+          ],
+          "equipmentListKeys": [
+            "school",
+            "marksman"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Senior Student",
+          "role": "Hero",
+          "stats": {
+            "M": "4",
+            "WS": "4",
+            "BS": "3",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 45,
+          "startingExperience": 8,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "ineligible",
+          "maxCount": 1,
+          "specialRules": [],
+          "skillCategories": [
+            "Combat",
+            "Shooting",
+            "Strength",
+            "Speed"
+          ],
+          "equipmentListKeys": [
+            "school"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Underclassmen",
+          "role": "Hero",
+          "stats": {
+            "M": "4",
+            "WS": "3",
+            "BS": "2",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "6"
+          },
+          "hireCost": 20,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "ineligible",
+          "maxCount": 2,
+          "specialRules": [],
+          "skillCategories": [
+            "Combat",
+            "Shooting",
+            "Speed"
+          ],
+          "equipmentListKeys": [
+            "school"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Sons of the Guns",
+          "role": "Henchman",
+          "stats": {
+            "M": "4",
+            "WS": "3",
+            "BS": "3",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 25,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "eligible",
+          "maxCount": null,
+          "specialRules": [],
+          "skillCategories": [],
+          "equipmentListKeys": [
+            "school"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Marksmen",
+          "role": "Henchman",
+          "stats": {
+            "M": "4",
+            "WS": "3",
+            "BS": "4",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 30,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "eligible",
+          "maxCount": 7,
+          "specialRules": [
+            {
+              "name": "Quick Reload",
+              "summary": "Has the Hunter skill; a Marksman promoted to Hero gains no extra effect from selecting Hunter again."
+            }
+          ],
+          "skillCategories": [],
+          "equipmentListKeys": [
+            "marksman"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Pistoliers",
+          "role": "Henchman",
+          "stats": {
+            "M": "4",
+            "WS": "4",
+            "BS": "3",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 35,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "eligible",
+          "maxCount": 5,
+          "specialRules": [
+            {
+              "name": "Crack Shot",
+              "summary": "In the first combat round, reroll missed pistol attacks."
+            }
+          ],
+          "skillCategories": [],
+          "equipmentListKeys": [
+            "school"
+          ],
+          "maximumProfile": "Human"
+        }
+      ],
+      "equipmentLists": [
+        {
+          "key": "school",
+          "name": "Gunnery School Equipment",
+          "items": [
+            {
+              "name": "Dagger",
+              "category": "weapon",
+              "unitCost": 2,
+              "firstFree": true
+            },
+            {
+              "name": "Mace",
+              "category": "weapon",
+              "unitCost": 3,
+              "profileName": "Hammer, staff, mace or club"
+            },
+            {
+              "name": "Hammer",
+              "category": "weapon",
+              "unitCost": 3,
+              "profileName": "Hammer, staff, mace or club"
+            },
+            {
+              "name": "Axe",
+              "category": "weapon",
+              "unitCost": 5
+            },
+            {
+              "name": "Sword",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Spear",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Halberd",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Morning star",
+              "category": "weapon",
+              "unitCost": 15
+            },
+            {
+              "name": "Double-handed weapon",
+              "category": "weapon",
+              "unitCost": 15
+            },
+            {
+              "name": "Pistol",
+              "category": "weapon",
+              "unitCost": 10,
+              "ruleText": "Brace costs 20 gc."
+            },
+            {
+              "name": "Brace of Pistols",
+              "category": "weapon",
+              "unitCost": 20,
+              "profileName": "Pistol",
+              "ruleText": "Source brace cost: 20 gc. Contains two pistols and counts as one missile weapon toward the two-missile-weapon carrying limit."
+            },
+            {
+              "name": "Double-Barrelled Pistol",
+              "category": "weapon",
+              "unitCost": 20,
+              "profileName": "Double-Barrelled Pistol",
+              "ruleText": "Brace costs 35 gc."
+            },
+            {
+              "name": "Brace of Double-Barrelled Pistols",
+              "category": "weapon",
+              "unitCost": 35,
+              "profileName": "Double-Barrelled Pistol",
+              "ruleText": "Source brace cost: 35 gc. Contains two pistols and counts as one missile weapon toward the two-missile-weapon carrying limit."
+            },
+            {
+              "name": "Duelling Pistol",
+              "category": "weapon",
+              "unitCost": 20,
+              "profileName": "Duelling pistol",
+              "ruleText": "Brace costs 35 gc."
+            },
+            {
+              "name": "Brace of Duelling Pistols",
+              "category": "weapon",
+              "unitCost": 35,
+              "profileName": "Duelling pistol",
+              "ruleText": "Source brace cost: 35 gc. Contains two pistols and counts as one missile weapon toward the two-missile-weapon carrying limit."
+            },
+            {
+              "name": "Double-Barrelled Duelling Pistol",
+              "category": "weapon",
+              "unitCost": 35,
+              "profileName": "Double-Barrelled Duelling Pistol",
+              "ruleText": "Brace costs 65 gc."
+            },
+            {
+              "name": "Brace of Double-Barrelled Duelling Pistols",
+              "category": "weapon",
+              "unitCost": 65,
+              "profileName": "Double-Barrelled Duelling Pistol",
+              "ruleText": "Source brace cost: 65 gc. Contains two pistols and counts as one missile weapon toward the two-missile-weapon carrying limit."
+            },
+            {
+              "name": "Handgun",
+              "category": "weapon",
+              "unitCost": 25
+            },
+            {
+              "name": "Double-Barrelled Handgun",
+              "category": "weapon",
+              "unitCost": 45,
+              "profileName": "Double-Barrelled Handgun"
+            },
+            {
+              "name": "Light armour",
+              "category": "armour",
+              "unitCost": 20
+            },
+            {
+              "name": "Heavy armour",
+              "category": "armour",
+              "unitCost": 50
+            },
+            {
+              "name": "Shield",
+              "category": "shield",
+              "unitCost": 5
+            },
+            {
+              "name": "Buckler",
+              "category": "shield",
+              "unitCost": 5
+            },
+            {
+              "name": "Helmet",
+              "category": "armour",
+              "unitCost": 10
+            },
+            {
+              "name": "Superior Black Powder",
+              "category": "misc",
+              "unitCost": 25,
+              "ruleText": "Black-powder quality upgrade from the source recruitment equipment list; cost 25 gc.",
+              "allowedWarriorTypeNames": [
+                "Senior Gunnery Officer",
+                "Instructor",
+                "Senior Student",
+                "Underclassmen"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "marksman",
+          "name": "Marksman Equipment",
+          "items": [
+            {
+              "name": "Dagger",
+              "category": "weapon",
+              "unitCost": 2,
+              "firstFree": true
+            },
+            {
+              "name": "Mace",
+              "category": "weapon",
+              "unitCost": 3,
+              "profileName": "Hammer, staff, mace or club"
+            },
+            {
+              "name": "Hammer",
+              "category": "weapon",
+              "unitCost": 3,
+              "profileName": "Hammer, staff, mace or club"
+            },
+            {
+              "name": "Axe",
+              "category": "weapon",
+              "unitCost": 5
+            },
+            {
+              "name": "Sword",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Pistol",
+              "category": "weapon",
+              "unitCost": 10,
+              "ruleText": "Brace costs 20 gc."
+            },
+            {
+              "name": "Double-Barrelled Pistol",
+              "category": "weapon",
+              "unitCost": 20,
+              "profileName": "Double-Barrelled Pistol",
+              "ruleText": "Brace costs 35 gc."
+            },
+            {
+              "name": "Brace of Pistols",
+              "category": "weapon",
+              "unitCost": 20,
+              "profileName": "Pistol",
+              "ruleText": "Source brace cost: 20 gc. Contains two pistols and counts as one missile weapon toward the two-missile-weapon carrying limit."
+            },
+            {
+              "name": "Brace of Double-Barrelled Pistols",
+              "category": "weapon",
+              "unitCost": 35,
+              "profileName": "Double-Barrelled Pistol",
+              "ruleText": "Source brace cost: 35 gc. Contains two pistols and counts as one missile weapon toward the two-missile-weapon carrying limit."
+            },
+            {
+              "name": "Repeater Pistol",
+              "category": "weapon",
+              "unitCost": 25,
+              "profileName": "Repeater Pistol"
+            },
+            {
+              "name": "Blunderbuss",
+              "category": "weapon",
+              "unitCost": 20
+            },
+            {
+              "name": "Handgun",
+              "category": "weapon",
+              "unitCost": 25
+            },
+            {
+              "name": "Double-Barrelled Handgun",
+              "category": "weapon",
+              "unitCost": 45,
+              "profileName": "Double-Barrelled Handgun"
+            },
+            {
+              "name": "Hochland Long Rifle",
+              "category": "weapon",
+              "unitCost": 100,
+              "profileName": "Hochland long rifle"
+            },
+            {
+              "name": "Repeater Handgun",
+              "category": "weapon",
+              "unitCost": 50,
+              "profileName": "Repeater Handgun"
+            },
+            {
+              "name": "Hand-held Mortar",
+              "category": "weapon",
+              "unitCost": 70,
+              "profileName": "Hand-held Mortar"
+            },
+            {
+              "name": "Pigeon Bombs",
+              "category": "weapon",
+              "unitCost": 25,
+              "profileName": "Hersten-Wenkler Pigeon Bombs"
+            },
+            {
+              "name": "Light armour",
+              "category": "armour",
+              "unitCost": 20
+            },
+            {
+              "name": "Shield",
+              "category": "shield",
+              "unitCost": 5
+            },
+            {
+              "name": "Helmet",
+              "category": "armour",
+              "unitCost": 10
+            },
+            {
+              "name": "Superior Black Powder",
+              "category": "misc",
+              "unitCost": 25,
+              "ruleText": "Black-powder quality upgrade from the source recruitment equipment list; cost 25 gc.",
+              "allowedWarriorTypeNames": [
+                "Marksmen"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "special-blackpowder",
+          "name": "Gunnery School Special Black-powder Equipment",
+          "items": [
+            {
+              "name": "Double-barrelled Duelling Pistol",
+              "category": "weapon",
+              "unitCost": 45,
+              "profileName": "Double-Barrelled Duelling Pistol",
+              "ruleText": "Rare 11; brace 80+4D6 gc, Rare 12. Range 9, S4; +1 to hit, -2 save, pistol close-combat attack and double-barrel reload rules."
+            },
+            {
+              "name": "Brace of Double-Barrelled Duelling Pistols",
+              "category": "weapon",
+              "unitCost": 80,
+              "profileName": "Double-Barrelled Duelling Pistol",
+              "ruleText": "Source price: 80+4D6 gc, Rare 12. Contains two pistols and counts as one missile weapon toward the two-missile-weapon carrying limit; each pistol has the listed double-barrel rules."
+            },
+            {
+              "name": "Double-barrelled Handgun",
+              "category": "weapon",
+              "unitCost": 60,
+              "profileName": "Double-Barrelled Handgun",
+              "ruleText": "60+2D6 gc, Rare 10. Range 24, S4; reloads every other turn, move-or-fire, -2 save, and double-barrel rules."
+            },
+            {
+              "name": "Double-barrelled Pistol",
+              "category": "weapon",
+              "unitCost": 25,
+              "profileName": "Double-Barrelled Pistol",
+              "ruleText": "25+1D6 gc, Rare 9; brace 46+2D6 gc, Rare 10. Range 6, S4, -2 save; double-barrel and pistol close-combat rules."
+            },
+            {
+              "name": "Brace of Double-Barrelled Pistols",
+              "category": "weapon",
+              "unitCost": 46,
+              "profileName": "Double-Barrelled Pistol",
+              "ruleText": "Source price: 46+2D6 gc, Rare 10. Contains two pistols and counts as one missile weapon toward the two-missile-weapon carrying limit; each pistol has the listed double-barrel rules."
+            },
+            {
+              "name": "Hand-held Mortar",
+              "category": "weapon",
+              "unitCost": 80,
+              "profileName": "Hand-held Mortar",
+              "ruleText": "80+2D6 gc, Rare 12. Range 24, S4; reloads every other turn, move-or-fire, -2 save, scatters on a miss, experimental, and hits models within 1.5 inches."
+            },
+            {
+              "name": "Hersten-Wenkler Pigeon Bombs",
+              "category": "weapon",
+              "unitCost": 30,
+              "profileName": "Hersten-Wenkler Pigeon Bombs",
+              "ruleText": "30+2D6 gc, Rare 8. Unlimited range, S4; move-or-fire, hits on a D6 result of 5-6, misfire can hit the user, blast radius 1.5 inches, supply replenishes each game."
+            },
+            {
+              "name": "Repeater Handgun",
+              "category": "weapon",
+              "unitCost": 60,
+              "profileName": "Repeater Handgun",
+              "ruleText": "60+2D6 gc, Rare 11. Range 24, S4; up to three shots at -1 when firing multiple shots, experimental, move-or-fire, -2 save, and requires a full turn to reload."
+            },
+            {
+              "name": "Repeater Pistol",
+              "category": "weapon",
+              "unitCost": 30,
+              "profileName": "Repeater Pistol",
+              "ruleText": "30+2D6 gc, Rare 9. Range 6, S4; up to three shots at -1 when firing multiple shots, experimental, -2 save, quick reload, and not an additional hand weapon after the first combat round."
+            }
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "name": "Hunter",
+          "listName": "Shooting Skills",
+          "summary": "The Senior Gunnery Officer has the Hunter skill.",
+          "appliesTo": [
+            "Senior Gunnery Officer"
+          ]
+        },
+        {
+          "name": "Hunter",
+          "listName": "Shooting Skills",
+          "summary": "Marksmen have Hunter; selecting it again after promotion has no additional effect.",
+          "appliesTo": [
+            "Marksmen"
+          ]
+        }
+      ],
+      "spellDisciplines": [],
+      "spellAccess": [],
+      "weaponProfiles": [
+        {
+          "name": "Double-Barrelled Pistol",
+          "weaponType": "blackpowder",
+          "rangeText": "6 inches",
+          "strengthModifier": "4",
+          "specialRules": [
+            {
+              "name": "Save modifier",
+              "summary": "Wounds impose a -2 armour-save modifier."
+            },
+            {
+              "name": "Pistol close combat",
+              "summary": "May be used in close combat; its bonus attack is S4 with a -2 save modifier, once per combat. A brace can make two such attacks in the first combat round."
+            },
+            {
+              "name": "Double-barrelled",
+              "summary": "The shooter declares one or both barrels; firing both uses the source’s double-barrel hit and reload procedure."
+            }
+          ]
+        },
+        {
+          "name": "Double-Barrelled Duelling Pistol",
+          "weaponType": "blackpowder",
+          "rangeText": "9 inches",
+          "strengthModifier": "4",
+          "specialRules": [
+            {
+              "name": "Accuracy",
+              "summary": "Gains +1 to hit when shooting."
+            },
+            {
+              "name": "Save modifier",
+              "summary": "Wounds impose a -2 armour-save modifier."
+            },
+            {
+              "name": "Pistol close combat",
+              "summary": "May be used in close combat; its bonus attack is S4 with a -2 save modifier, once per combat. A brace can make two such attacks in the first combat round."
+            },
+            {
+              "name": "Double-barrelled",
+              "summary": "The shooter declares one or both barrels; firing both uses the source’s double-barrel hit and reload procedure."
+            }
+          ]
+        },
+        {
+          "name": "Double-Barrelled Handgun",
+          "weaponType": "blackpowder",
+          "rangeText": "24 inches",
+          "strengthModifier": "4",
+          "specialRules": [
+            {
+              "name": "Prepare shot",
+              "summary": "After firing both barrels, it takes a complete turn to reload and may fire only every other turn."
+            },
+            {
+              "name": "Move or fire",
+              "summary": "Cannot move and fire in the same turn, apart from pivoting or standing up."
+            },
+            {
+              "name": "Save modifier",
+              "summary": "Wounds impose a -2 armour-save modifier."
+            },
+            {
+              "name": "Double-barrelled",
+              "summary": "The shooter declares one or both barrels; firing both uses the source’s double-barrel hit and reload procedure."
+            }
+          ]
+        },
+        {
+          "name": "Repeater Pistol",
+          "weaponType": "blackpowder",
+          "rangeText": "6 inches",
+          "strengthModifier": "4",
+          "specialRules": [
+            {
+              "name": "Repeater",
+              "summary": "May fire up to three shots, with the source’s penalty when firing multiple shots."
+            },
+            {
+              "name": "Save modifier",
+              "summary": "Wounds impose a -2 armour-save modifier."
+            },
+            {
+              "name": "Experimental",
+              "summary": "Uses the optional black-powder experimental rules."
+            },
+            {
+              "name": "Reload",
+              "summary": "Quick reload; it is not an additional hand weapon after the first combat round."
+            }
+          ]
+        },
+        {
+          "name": "Repeater Handgun",
+          "weaponType": "blackpowder",
+          "rangeText": "24 inches",
+          "strengthModifier": "4",
+          "specialRules": [
+            {
+              "name": "Repeater",
+              "summary": "May fire up to three shots, with the source’s penalty when firing multiple shots."
+            },
+            {
+              "name": "Prepare shot",
+              "summary": "Requires a complete turn to reload."
+            },
+            {
+              "name": "Move or fire",
+              "summary": "Cannot move and fire in the same turn, apart from pivoting or standing up."
+            },
+            {
+              "name": "Save modifier",
+              "summary": "Wounds impose a -2 armour-save modifier."
+            },
+            {
+              "name": "Experimental",
+              "summary": "Uses the optional black-powder experimental rules."
+            }
+          ]
+        },
+        {
+          "name": "Hand-held Mortar",
+          "weaponType": "blackpowder",
+          "rangeText": "24 inches",
+          "strengthModifier": "4",
+          "specialRules": [
+            {
+              "name": "Prepare shot",
+              "summary": "Takes a complete turn to reload and may fire only every other turn."
+            },
+            {
+              "name": "Move or fire",
+              "summary": "Cannot move and fire in the same turn, apart from pivoting or standing up."
+            },
+            {
+              "name": "Save modifier",
+              "summary": "Wounds impose a -2 armour-save modifier."
+            },
+            {
+              "name": "Scatter",
+              "summary": "A missed shot scatters 2D6 inches in a random direction."
+            },
+            {
+              "name": "Experimental",
+              "summary": "Uses the optional black-powder experimental rules; a result other than “BOOM!” jams or exhausts the loaded barrels and requires reloading."
+            },
+            {
+              "name": "Explosive radius",
+              "summary": "The target and models within 1.5 inches take one S4 hit."
+            }
+          ]
+        },
+        {
+          "name": "Hersten-Wenkler Pigeon Bombs",
+          "weaponType": "blackpowder",
+          "rangeText": "Unlimited",
+          "strengthModifier": "4",
+          "specialRules": [
+            {
+              "name": "Move or fire",
+              "summary": "Cannot move and fire in the same turn."
+            },
+            {
+              "name": "Hit",
+              "summary": "Hits on a D6 roll of 5-6."
+            },
+            {
+              "name": "Misfire",
+              "summary": "A misfire may hit the user."
+            },
+            {
+              "name": "Blast",
+              "summary": "The bomb affects models within 1.5 inches."
+            },
+            {
+              "name": "Supply",
+              "summary": "The supply replenishes each game."
+            }
+          ]
+        }
+      ],
+      "hiredSwordPolicy": {
+        "summary": "The source provides no special Hired Sword eligibility rule; this absence must not be treated as confirmation that every Hired Sword is allowed."
+      }
+    },
+    {
+      "name": "Hochland Bandits",
+      "grade": "1b",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1b-warbands/hochland-bandits",
+      "maxMembers": 12,
+      "maxHeroes": 6,
+      "leaderType": "Bandit Prince",
+      "specialRules": [
+        {
+          "name": "Minimum warband size",
+          "summary": "The warband must contain at least three models and starts with 500 gold crowns."
+        },
+        {
+          "name": "Hired Swords",
+          "summary": "May hire any Hired Swords permitted to a Human Mercenary warband."
+        },
+        {
+          "name": "Powder's Expensive!",
+          "summary": "Only Bandit Heroes may buy black-powder weapons; henchmen cannot buy or maintain them."
+        },
+        {
+          "name": "Foragers",
+          "summary": "When resolving income, use the next lower warband-size column; warbands of 1-3 still use the first column."
+        },
+        {
+          "name": "Know Who To Sell To",
+          "summary": "When selling equipment, receive half of the random price component as well as the normal half of base cost."
+        },
+        {
+          "name": "Henchman groups",
+          "summary": "Henchmen are recruited in groups of 1-5."
+        }
+      ],
+      "warriors": [
+        {
+          "name": "Bandit Prince",
+          "role": "Hero",
+          "stats": {
+            "M": "4",
+            "WS": "4",
+            "BS": "3",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "4",
+            "A": "1",
+            "Ld": "8"
+          },
+          "hireCost": 60,
+          "startingExperience": 20,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "ineligible",
+          "maxCount": 1,
+          "specialRules": [],
+          "skillCategories": [
+            "Combat",
+            "Shooting",
+            "Strength",
+            "Speed",
+            "Special"
+          ],
+          "specialListName": "Bandit Special Skills",
+          "equipmentListKeys": [
+            "bandit"
+          ],
+          "conditionText": "The entry names a separate Bandit Heroes Equipment list, but this source page provides no separate table; do not infer additional options beyond the listed Bandit equipment.",
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Footpad",
+          "role": "Hero",
+          "stats": {
+            "M": "4",
+            "WS": "3",
+            "BS": "3",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 45,
+          "startingExperience": 8,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "ineligible",
+          "maxCount": 2,
+          "specialRules": [
+            {
+              "name": "Concealment",
+              "summary": "Unseen charges against a Footpad require an Initiative test at -1 (a 6 always fails); halve Initiative when checking detection range while he is hiding."
+            }
+          ],
+          "skillCategories": [
+            "Combat",
+            "Shooting",
+            "Speed",
+            "Special"
+          ],
+          "specialListName": "Bandit Special Skills",
+          "equipmentListKeys": [
+            "bandit"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Duelist",
+          "role": "Hero",
+          "stats": {
+            "M": "4",
+            "WS": "4",
+            "BS": "4",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "4",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 45,
+          "startingExperience": 12,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "ineligible",
+          "maxCount": 1,
+          "specialRules": [
+            {
+              "name": "Swordmaster",
+              "summary": "Parries successfully on a roll equal to or greater than the opponent's hit roll, if using parrying equipment."
+            },
+            {
+              "name": "Weapon Knowledge",
+              "summary": "May use any close-combat or missile weapon available to the warband; listed Duelist equipment is only the starting choice."
+            }
+          ],
+          "skillCategories": [
+            "Combat",
+            "Shooting",
+            "Speed",
+            "Special"
+          ],
+          "specialListName": "Bandit Special Skills",
+          "equipmentListKeys": [
+            "duelist"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Huckster",
+          "role": "Hero",
+          "stats": {
+            "M": "4",
+            "WS": "2",
+            "BS": "3",
+            "S": "2",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "6"
+          },
+          "hireCost": 40,
+          "startingExperience": 8,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "ineligible",
+          "maxCount": 1,
+          "specialRules": [
+            {
+              "name": "Convincing Manner",
+              "summary": "Enemies charging a warband member within 12 inches must pass a Leadership test; Stupidity-affected models and animals are immune."
+            },
+            {
+              "name": "Slick Operator",
+              "summary": "Between games, a 2-6 on D6 earns the warband 2D6 gc; on 1 the Huckster misses the next game and earns nothing."
+            }
+          ],
+          "skillCategories": [
+            "Combat",
+            "Academic",
+            "Special"
+          ],
+          "specialListName": "Bandit Special Skills",
+          "equipmentListKeys": [
+            "coward"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Thugs",
+          "role": "Henchman",
+          "stats": {
+            "M": "4",
+            "WS": "3",
+            "BS": "3",
+            "S": "4",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 30,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "eligible",
+          "maxCount": null,
+          "specialRules": [],
+          "skillCategories": [],
+          "equipmentListKeys": [
+            "bandit"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Looters",
+          "role": "Henchman",
+          "stats": {
+            "M": "4",
+            "WS": "2",
+            "BS": "4",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "6"
+          },
+          "hireCost": 25,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "eligible",
+          "maxCount": 4,
+          "specialRules": [
+            {
+              "name": "Looting the Dead",
+              "summary": "For each warrior removed after being taken Out of Action, a Looter may roll once; on 4+ the Bandit player keeps that warrior's equipment, including equipment of warriors from any participating warband."
+            }
+          ],
+          "skillCategories": [],
+          "equipmentListKeys": [
+            "coward"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Blackhearts",
+          "role": "Henchman",
+          "stats": {
+            "M": "4",
+            "WS": "3",
+            "BS": "3",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 35,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "eligible",
+          "maxCount": 2,
+          "specialRules": [
+            {
+              "name": "Hardened",
+              "summary": "Immune to Fear and never take All-Alone tests."
+            }
+          ],
+          "skillCategories": [],
+          "equipmentListKeys": [
+            "bandit"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Poachers",
+          "role": "Henchman",
+          "stats": {
+            "M": "4",
+            "WS": "3",
+            "BS": "4",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 35,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "eligible",
+          "maxCount": 2,
+          "specialRules": [
+            {
+              "name": "Trailblazers",
+              "summary": "Each Poacher allows one Exploration die to be rerolled."
+            }
+          ],
+          "skillCategories": [],
+          "equipmentListKeys": [
+            "poacher"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Gutterscum",
+          "role": "Henchman",
+          "stats": {
+            "M": "4",
+            "WS": "2",
+            "BS": "2",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "6"
+          },
+          "hireCost": 10,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": false,
+          "promotionEligibility": "ineligible",
+          "maxCount": null,
+          "specialRules": [
+            {
+              "name": "Utterly Inept",
+              "summary": "Does not gain experience."
+            }
+          ],
+          "skillCategories": [],
+          "equipmentListKeys": [
+            "coward"
+          ],
+          "maximumProfile": "Human"
+        }
+      ],
+      "equipmentLists": [
+        {
+          "key": "bandit",
+          "name": "Bandit Equipment",
+          "items": [
+            {
+              "name": "Dagger",
+              "category": "weapon",
+              "unitCost": 2,
+              "firstFree": true
+            },
+            {
+              "name": "Hammer",
+              "category": "weapon",
+              "unitCost": 3,
+              "profileName": "Hammer, staff, mace or club"
+            },
+            {
+              "name": "Axe",
+              "category": "weapon",
+              "unitCost": 5
+            },
+            {
+              "name": "Sword",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Spear",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Double-handed weapon",
+              "category": "weapon",
+              "unitCost": 15
+            },
+            {
+              "name": "Throwing Axe",
+              "category": "weapon",
+              "unitCost": 15,
+              "ruleText": "The source lists this weapon and its cost but provides no range, Strength or special-rule profile; those details need separate source adjudication."
+            },
+            {
+              "name": "Light armour",
+              "category": "armour",
+              "unitCost": 20
+            },
+            {
+              "name": "Shield",
+              "category": "shield",
+              "unitCost": 5
+            },
+            {
+              "name": "Helmet",
+              "category": "armour",
+              "unitCost": 10
+            }
+          ]
+        },
+        {
+          "key": "duelist",
+          "name": "Duelist Equipment",
+          "items": [
+            {
+              "name": "Dagger",
+              "category": "weapon",
+              "unitCost": 2,
+              "firstFree": true
+            },
+            {
+              "name": "Rapier",
+              "category": "weapon",
+              "unitCost": 15,
+              "profileName": "Rapier"
+            },
+            {
+              "name": "Main Gauche",
+              "category": "weapon",
+              "unitCost": 7,
+              "profileName": "Main Gauche"
+            },
+            {
+              "name": "Sword",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Spear",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Pistol",
+              "category": "weapon",
+              "unitCost": 20,
+              "ruleText": "Brace costs 40 gc."
+            },
+            {
+              "name": "Brace of Pistols",
+              "category": "weapon",
+              "unitCost": 40,
+              "profileName": "Pistol",
+              "ruleText": "Source brace cost: 40 gc. Contains two pistols and counts as one missile weapon toward the two-missile-weapon carrying limit."
+            },
+            {
+              "name": "Duelling Pistol",
+              "category": "weapon",
+              "unitCost": 30,
+              "profileName": "Duelling pistol",
+              "ruleText": "Brace costs 60 gc."
+            },
+            {
+              "name": "Brace of Duelling Pistols",
+              "category": "weapon",
+              "unitCost": 60,
+              "profileName": "Duelling pistol",
+              "ruleText": "Source brace cost: 60 gc. Contains two pistols and counts as one missile weapon toward the two-missile-weapon carrying limit."
+            },
+            {
+              "name": "Shield",
+              "category": "shield",
+              "unitCost": 5
+            },
+            {
+              "name": "Buckler",
+              "category": "shield",
+              "unitCost": 10
+            }
+          ]
+        },
+        {
+          "key": "coward",
+          "name": "Coward Equipment",
+          "items": [
+            {
+              "name": "Dagger",
+              "category": "weapon",
+              "unitCost": 2,
+              "firstFree": true
+            },
+            {
+              "name": "Spear",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Sling",
+              "category": "weapon",
+              "unitCost": 2
+            }
+          ]
+        },
+        {
+          "key": "poacher",
+          "name": "Poacher Equipment",
+          "items": [
+            {
+              "name": "Dagger",
+              "category": "weapon",
+              "unitCost": 2,
+              "firstFree": true
+            },
+            {
+              "name": "Spear",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Short Bow",
+              "category": "weapon",
+              "unitCost": 5,
+              "profileName": "Short bow"
+            },
+            {
+              "name": "Bow",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Long bow",
+              "category": "weapon",
+              "unitCost": 15
+            },
+            {
+              "name": "Crossbow",
+              "category": "weapon",
+              "unitCost": 25
+            },
+            {
+              "name": "Helmet",
+              "category": "armour",
+              "unitCost": 10
+            }
+          ]
+        },
+        {
+          "key": "bandit-special",
+          "name": "Bandit Special Equipment",
+          "items": [
+            {
+              "name": "Main Gauche",
+              "category": "weapon",
+              "unitCost": 7,
+              "profileName": "Main Gauche",
+              "ruleText": "Rare 7; may parry, but gives the target +1 armour save."
+            },
+            {
+              "name": "Rapier",
+              "category": "weapon",
+              "unitCost": 15,
+              "profileName": "Rapier",
+              "ruleText": "Rare 5; may parry; failed wounds can generate another attack at -1 to hit; enemy armour saves improve by +1."
+            }
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "name": "Banditry",
+          "listName": "Bandit Special Skills",
+          "summary": "Instead of searching for rare equipment, roll D6: 2-6 gains D6+1 gc; 1 causes a Serious Injury roll. Cannot be combined with a Huckster's Slick Operator.",
+          "appliesTo": [
+            "Bandit Prince",
+            "Footpad",
+            "Huckster",
+            "Duelist"
+          ]
+        },
+        {
+          "name": "Hide in Shadows",
+          "listName": "Bandit Special Skills",
+          "summary": "Halve (round up) an enemy's Initiative before measuring hidden detection distance.",
+          "appliesTo": [
+            "Bandit Prince",
+            "Footpad",
+            "Huckster",
+            "Duelist"
+          ]
+        },
+        {
+          "name": "Jump Back",
+          "listName": "Bandit Special Skills",
+          "summary": "At the start of movement while engaged and not knocked down or stunned, pass an Initiative test to move 1 inch away; on failure strike last that round.",
+          "appliesTo": [
+            "Bandit Prince",
+            "Footpad",
+            "Huckster",
+            "Duelist"
+          ]
+        },
+        {
+          "name": "Sniper",
+          "listName": "Bandit Special Skills",
+          "summary": "May shoot or cast spells while hidden and remain hidden; not usable with a black-powder weapon.",
+          "appliesTo": [
+            "Bandit Prince",
+            "Footpad",
+            "Huckster",
+            "Duelist"
+          ]
+        },
+        {
+          "name": "Throw Voice",
+          "listName": "Bandit Special Skills",
+          "summary": "When an enemy tries to detect the hidden warrior, a D6 result of 4+ keeps the warrior undetected.",
+          "appliesTo": [
+            "Bandit Prince",
+            "Footpad",
+            "Huckster",
+            "Duelist"
+          ]
+        }
+      ],
+      "hiredSwordPolicy": {
+        "excludedNames": [],
+        "summary": "May hire any Hired Swords permitted to a Human Mercenary warband."
+      },
+      "spellDisciplines": [],
+      "spellAccess": [],
+      "weaponProfiles": [
+        {
+          "name": "Rapier",
+          "weaponType": "close_combat",
+          "rangeText": "Close Combat",
+          "strengthModifier": "As user",
+          "specialRules": [
+            {
+              "name": "Parry",
+              "summary": "May parry using the normal sword parry procedure."
+            },
+            {
+              "name": "Barrage",
+              "summary": "After a hit that fails to wound, may continue attacking at -1 to hit until an attack misses; required roll cannot worsen beyond 6."
+            },
+            {
+              "name": "Armour save",
+              "summary": "The target improves its armour save by +1."
+            }
+          ]
+        },
+        {
+          "name": "Main Gauche",
+          "weaponType": "close_combat",
+          "rangeText": "Close Combat",
+          "strengthModifier": "As user",
+          "specialRules": [
+            {
+              "name": "Parry",
+              "summary": "May parry enemy blows."
+            },
+            {
+              "name": "+1 Enemy armour save",
+              "summary": "An enemy wounded by a Main Gauche gains +1 to its armour save, or a 6+ save if it has none."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Horned Hunters",
+      "grade": "1b",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1b-warbands/horned-hunters",
+      "maxMembers": 12,
+      "maxHeroes": 6,
+      "leaderType": "Horned Hunter",
+      "specialRules": [
+        {
+          "name": "Minimum warband size",
+          "summary": "The warband must contain at least three models and starts with 500 gold crowns."
+        },
+        {
+          "name": "Woodcraft",
+          "summary": "The warband ignores movement penalties from difficult terrain."
+        },
+        {
+          "name": "Henchman groups",
+          "summary": "Henchmen are recruited in groups of 1-5."
+        }
+      ],
+      "warriors": [
+        {
+          "name": "Horned Hunter",
+          "role": "Hero",
+          "stats": {
+            "M": "4",
+            "WS": "4",
+            "BS": "4",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "4",
+            "A": "1",
+            "Ld": "8"
+          },
+          "hireCost": 60,
+          "startingExperience": 20,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "ineligible",
+          "maxCount": 1,
+          "specialRules": [
+            {
+              "name": "Hang the Bandit!",
+              "summary": "Hates Bandits and Outlaws."
+            }
+          ],
+          "skillCategories": [
+            "Combat",
+            "Shooting",
+            "Strength",
+            "Speed",
+            "Special"
+          ],
+          "specialListName": "Horned Hunter Special Skills",
+          "equipmentListKeys": [
+            "hero-equipment"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Priest of Taal",
+          "role": "Hero",
+          "stats": {
+            "M": "4",
+            "WS": "2",
+            "BS": "3",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 45,
+          "startingExperience": 12,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "ineligible",
+          "maxCount": 1,
+          "specialRules": [
+            {
+              "name": "Prayers",
+              "summary": "May use Prayers of Taal; the warband source does not state a starting prayer count."
+            },
+            {
+              "name": "Strictures",
+              "summary": "May never wear heavy armour."
+            }
+          ],
+          "skillCategories": [
+            "Combat",
+            "Academic",
+            "Strength",
+            "Speed",
+            "Special"
+          ],
+          "specialListName": "Horned Hunter Special Skills",
+          "equipmentListKeys": [
+            "hero-equipment",
+            "special-equipment"
+          ],
+          "allowedCategories": [
+            "weapon",
+            "armour",
+            "shield",
+            "misc"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Initiates",
+          "role": "Hero",
+          "stats": {
+            "M": "4",
+            "WS": "3",
+            "BS": "3",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 40,
+          "startingExperience": 8,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "ineligible",
+          "maxCount": 3,
+          "specialRules": [
+            {
+              "name": "Infiltrator",
+              "summary": "Deploy after the opposing warband out of sight and more than 12 inches from enemies; if both sides infiltrate, the lower D6 sets up first."
+            },
+            {
+              "name": "Hang the Bandit!",
+              "summary": "Hates Bandits and Outlaws."
+            },
+            {
+              "name": "Strictures",
+              "summary": "May never wear armour."
+            }
+          ],
+          "skillCategories": [
+            "Combat",
+            "Shooting",
+            "Strength",
+            "Speed",
+            "Special"
+          ],
+          "specialListName": "Horned Hunter Special Skills",
+          "equipmentListKeys": [
+            "hero-equipment"
+          ],
+          "allowedCategories": [
+            "weapon"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Drunken Gang",
+          "role": "Henchman",
+          "stats": {
+            "M": "4",
+            "WS": "3",
+            "BS": "3",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 30,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "eligible",
+          "maxCount": 5,
+          "specialRules": [
+            {
+              "name": "Drunk",
+              "summary": "Automatically passes all Leadership-based tests."
+            }
+          ],
+          "skillCategories": [],
+          "equipmentListKeys": [
+            "henchmen-equipment"
+          ],
+          "allowedCategories": [
+            "weapon"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Zealots",
+          "role": "Henchman",
+          "stats": {
+            "M": "4",
+            "WS": "2",
+            "BS": "2",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 20,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "eligible",
+          "maxCount": null,
+          "specialRules": [
+            {
+              "name": "Strictures",
+              "summary": "May never wear armour."
+            }
+          ],
+          "skillCategories": [],
+          "equipmentListKeys": [
+            "henchmen-equipment"
+          ],
+          "allowedCategories": [
+            "weapon"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Warhounds",
+          "role": "Henchman",
+          "stats": {
+            "M": "6",
+            "WS": "4",
+            "BS": "0",
+            "S": "4",
+            "T": "3",
+            "W": "1",
+            "I": "4",
+            "A": "1",
+            "Ld": "5"
+          },
+          "hireCost": 15,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": false,
+          "promotionEligibility": "not_applicable",
+          "maxCount": 5,
+          "specialRules": [
+            {
+              "name": "Animals",
+              "summary": "Warhounds do not gain experience."
+            },
+            {
+              "name": "Equipment",
+              "summary": "Warhounds never use or need weapons or armour."
+            }
+          ],
+          "skillCategories": [],
+          "equipmentListKeys": [],
+          "allowedCategories": [],
+          "maximumProfile": null
+        }
+      ],
+      "equipmentLists": [
+        {
+          "key": "hero-equipment",
+          "name": "Horned Hunter Equipment",
+          "items": [
+            {
+              "name": "Dagger",
+              "category": "weapon",
+              "unitCost": 2,
+              "firstFree": true
+            },
+            {
+              "name": "Mace",
+              "category": "weapon",
+              "unitCost": 3,
+              "profileName": "Hammer, staff, mace or club"
+            },
+            {
+              "name": "Hammer",
+              "category": "weapon",
+              "unitCost": 3,
+              "profileName": "Hammer, staff, mace or club"
+            },
+            {
+              "name": "Axe",
+              "category": "weapon",
+              "unitCost": 5
+            },
+            {
+              "name": "Sword",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Spear",
+              "category": "weapon",
+              "unitCost": 5
+            },
+            {
+              "name": "Double-handed weapon",
+              "category": "weapon",
+              "unitCost": 15
+            },
+            {
+              "name": "Short Bow",
+              "category": "weapon",
+              "unitCost": 5,
+              "profileName": "Short bow"
+            },
+            {
+              "name": "Bow",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Long bow",
+              "category": "weapon",
+              "unitCost": 15
+            },
+            {
+              "name": "Toughened Leathers",
+              "category": "armour",
+              "unitCost": 5,
+              "ruleText": "The source lists this armour and its cost but does not give a saving throw or special-rule profile; those details need separate source adjudication."
+            },
+            {
+              "name": "Light armour",
+              "category": "armour",
+              "unitCost": 20
+            },
+            {
+              "name": "Shield",
+              "category": "shield",
+              "unitCost": 5
+            },
+            {
+              "name": "Hunting arrows",
+              "category": "misc",
+              "unitCost": 20,
+              "ruleText": "Cost 20 gc; available through the Horned Hunter hero equipment list.",
+              "allowedWarriorTypeNames": [
+                "Horned Hunter",
+                "Priest of Taal",
+                "Initiates"
+              ]
+            },
+            {
+              "name": "Blessed Stag Hide",
+              "category": "misc",
+              "unitCost": 40,
+              "ruleText": "Cost 40 gc; Rare 10; wearer may reroll one failed Initiative test once per turn.",
+              "allowedWarriorTypeNames": [
+                "Horned Hunter",
+                "Priest of Taal",
+                "Initiates"
+              ]
+            },
+            {
+              "name": "Trip wire",
+              "category": "misc",
+              "unitCost": 15,
+              "ruleText": "Cost 15 gc; Common; a Hero spends one turn placing a marker; on 3+ when a model moves within 2 inches, it takes an S4 hit; a wounded model is placed knocked down or stunned 2 inches away; marker is removed after triggering or failing to trigger.",
+              "allowedWarriorTypeNames": [
+                "Horned Hunter",
+                "Priest of Taal",
+                "Initiates"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "henchmen-equipment",
+          "name": "Horned Hunter Henchmen Equipment",
+          "items": [
+            {
+              "name": "Dagger",
+              "category": "weapon",
+              "unitCost": 2,
+              "firstFree": true
+            },
+            {
+              "name": "Mace",
+              "category": "weapon",
+              "unitCost": 3,
+              "profileName": "Hammer, staff, mace or club"
+            },
+            {
+              "name": "Hammer",
+              "category": "weapon",
+              "unitCost": 3,
+              "profileName": "Hammer, staff, mace or club"
+            },
+            {
+              "name": "Axe",
+              "category": "weapon",
+              "unitCost": 5
+            },
+            {
+              "name": "Sword",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Spear",
+              "category": "weapon",
+              "unitCost": 5
+            },
+            {
+              "name": "Bow",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Toughened Leathers",
+              "category": "armour",
+              "unitCost": 5,
+              "ruleText": "The source lists this armour and its cost but does not give a saving throw or special-rule profile; those details need separate source adjudication."
+            },
+            {
+              "name": "Shield",
+              "category": "shield",
+              "unitCost": 5
+            }
+          ]
+        },
+        {
+          "key": "special-equipment",
+          "name": "Horned Hunter Special Equipment",
+          "items": [
+            {
+              "name": "Blessed Stag Hide",
+              "category": "misc",
+              "unitCost": 40,
+              "ruleText": "Rare 10; once per turn reroll a failed Initiative test.",
+              "conditionText": "The special-equipment section does not state which warrior types may buy or wear this item; resolve eligibility manually."
+            },
+            {
+              "name": "Trip wire",
+              "category": "misc",
+              "unitCost": 15,
+              "ruleText": "Common; traps use a 2-inch trigger radius and deal one S4 hit on a D6 roll of 3+.",
+              "conditionText": "The special-equipment section describes a Hero placing the trap but does not expressly limit purchase to Heroes; resolve eligibility manually."
+            }
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "name": "Master Trapper",
+          "listName": "Horned Hunter Special Skills",
+          "summary": "Extends trip-wire range to 4 inches and traps trigger on 2+.",
+          "appliesTo": [
+            "Horned Hunter",
+            "Priest of Taal",
+            "Initiates"
+          ]
+        },
+        {
+          "name": "Infiltration",
+          "listName": "Horned Hunter Special Skills",
+          "summary": "Deploy after the opponent, out of sight and more than 12 inches from enemies; lowest D6 sets up first if both sides infiltrate.",
+          "appliesTo": [
+            "Horned Hunter",
+            "Priest of Taal",
+            "Initiates"
+          ]
+        },
+        {
+          "name": "Foul Odour",
+          "listName": "Horned Hunter Special Skills",
+          "summary": "Living enemies except Undead and Possessed suffer -1 to hit in close combat; cannot carry open flames and fire attacks against the warrior gain +1 Strength.",
+          "appliesTo": [
+            "Horned Hunter",
+            "Priest of Taal",
+            "Initiates"
+          ]
+        },
+        {
+          "name": "Animal Friendship",
+          "listName": "Horned Hunter Special Skills",
+          "summary": "Normal animals will not attack; up to two wardogs owned by the warrior do not count toward warband size.",
+          "appliesTo": [
+            "Horned Hunter",
+            "Priest of Taal",
+            "Initiates"
+          ]
+        },
+        {
+          "name": "Pathfinder",
+          "listName": "Horned Hunter Special Skills",
+          "summary": "Roll one extra Exploration die; only one Pathfinder per warband.",
+          "appliesTo": [
+            "Horned Hunter",
+            "Priest of Taal",
+            "Initiates"
+          ]
+        },
+        {
+          "name": "Hide in Shadows",
+          "listName": "Horned Hunter Special Skills",
+          "summary": "Enemies halve Initiative when measuring to detect the hidden warrior.",
+          "appliesTo": [
+            "Horned Hunter",
+            "Priest of Taal",
+            "Initiates"
+          ]
+        }
+      ],
+      "spellDisciplines": [
+        {
+          "name": "Prayers of Taal",
+          "kind": "Prayer",
+          "castingRuleSummary": "Work like Prayers of Sigmar. The linked prayer source clarifies the Priest's armour restriction is Heavy Armour only.",
+          "spells": [
+            {
+              "roll": 1,
+              "name": "Stag's Leap",
+              "difficulty": 7,
+              "effectSummary": "Move immediately up to 9 inches, including into contact; counts as a charge and grants +1 Strength in the first combat round."
+            },
+            {
+              "roll": 2,
+              "name": "Blessed Ale",
+              "difficulty": 5,
+              "effectSummary": "Restore a model within 2 inches to full Wounds; living enemies in range lose one Attack in the next combat round."
+            },
+            {
+              "roll": 3,
+              "name": "Bear's Paw",
+              "difficulty": 7,
+              "effectSummary": "The Priest or a friendly model within 6 inches gains +2 Strength until the Priest's next turn."
+            },
+            {
+              "roll": 4,
+              "name": "Earthshudder",
+              "difficulty": 9,
+              "effectSummary": "Targets a building within 4 inches; enemies touching it take one S3 hit, the building collapses and is removed."
+            },
+            {
+              "roll": 5,
+              "name": "Tanglefoot",
+              "difficulty": 8,
+              "effectSummary": "Until the next Shooting phase, models within 12 inches move at half speed, except Ostlander Jaegers and friendly Horned Hunter Zealots."
+            },
+            {
+              "roll": 6,
+              "name": "Summon Squirrels",
+              "difficulty": 7,
+              "effectSummary": "One enemy within 12 inches takes 2D6 S1 hits with no armour saves."
+            }
+          ]
+        }
+      ],
+      "spellAccess": [
+        {
+          "warriorType": "Priest of Taal",
+          "discipline": "Prayers of Taal",
+          "startingSpellCount": null,
+          "isWizard": false,
+          "selectionRule": "May use the discipline; starting prayer count and selection method are not stated in the warband source."
+        }
+      ],
+      "hiredSwordPolicy": {
+        "summary": "The source provides no special Hired Sword eligibility rule; this absence must not be treated as confirmation that every Hired Sword is allowed."
+      }
+    },
+    {
+      "name": "Imperial Outriders",
+      "grade": "1b",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1b-warbands/imperial-outriders",
+      "maxMembers": 12,
+      "maxHeroes": 6,
+      "leaderType": "Knight",
+      "specialRules": [
+        {
+          "name": "Minimum warband size",
+          "summary": "The warband must include at least three models and starts with 500 gold crowns."
+        },
+        {
+          "name": "Mounted warband",
+          "summary": "All listed warrior types begin with a Riding Horse; a model without a mount cannot take part in battle. A surviving mount may be assigned to the rider's replacement at 40 gc less."
+        },
+        {
+          "name": "Mounted combat",
+          "summary": "Mounted warriors cannot use two weapons or two-handed weapons; shields and bucklers remain usable. A pistol used in the first combat round replaces the usual weapon."
+        },
+        {
+          "name": "Targeting mounts",
+          "summary": "Ridden horses cannot be targeted. Riders may be selected as shooting targets regardless of nearer enemies but do not grant a +1 hit bonus."
+        },
+        {
+          "name": "Mount recovery",
+          "summary": "Resolve rider injuries on the Whoa Boy! table; a bolting horse can be remounted before it leaves and is recovered after battle. Replace dead horses before spending other income, selling all Treasures if needed."
+        },
+        {
+          "name": "Dense terrain",
+          "summary": "In dense terrain the warband may ignore the normal two-mount limit."
+        },
+        {
+          "name": "Henchman groups",
+          "summary": "Henchmen are recruited in groups of 1-5."
+        }
+      ],
+      "warriors": [
+        {
+          "name": "Knight",
+          "role": "Hero",
+          "stats": {
+            "M": "4",
+            "WS": "4",
+            "BS": "3",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "4",
+            "A": "1",
+            "Ld": "8"
+          },
+          "hireCost": 85,
+          "startingExperience": 20,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "ineligible",
+          "maxCount": 1,
+          "specialRules": [
+            {
+              "name": "Ride",
+              "summary": "Has the Ride skill from Blazing Saddles."
+            },
+            {
+              "name": "Starting mount",
+              "summary": "Comes with a Riding Horse; may upgrade it to a Warhorse for 40 gc."
+            }
+          ],
+          "skillCategories": [
+            "Combat",
+            "Shooting",
+            "Academic",
+            "Strength",
+            "Speed"
+          ],
+          "equipmentListKeys": [
+            "hand-to-hand",
+            "armour",
+            "mounts"
+          ],
+          "allowedCategories": [
+            "weapon",
+            "armour",
+            "shield",
+            "set",
+            "misc"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Outriders",
+          "role": "Hero",
+          "stats": {
+            "M": "4",
+            "WS": "4",
+            "BS": "3",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 65,
+          "startingExperience": 8,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "ineligible",
+          "maxCount": 2,
+          "specialRules": [
+            {
+              "name": "Ride",
+              "summary": "Has the Ride skill from Blazing Saddles."
+            },
+            {
+              "name": "Starting mount",
+              "summary": "Comes with a Riding Horse; may upgrade it to a Warhorse for 40 gc."
+            }
+          ],
+          "skillCategories": [
+            "Combat",
+            "Shooting",
+            "Strength"
+          ],
+          "equipmentListKeys": [
+            "hand-to-hand",
+            "armour",
+            "outrider-missiles",
+            "mounts"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Scouts",
+          "role": "Hero",
+          "stats": {
+            "M": "4",
+            "WS": "2",
+            "BS": "2",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "6"
+          },
+          "hireCost": 45,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "ineligible",
+          "maxCount": 2,
+          "specialRules": [
+            {
+              "name": "Ride",
+              "summary": "Has the Ride skill from Blazing Saddles."
+            },
+            {
+              "name": "Starting mount",
+              "summary": "Comes with a Riding Horse."
+            }
+          ],
+          "skillCategories": [
+            "Combat",
+            "Shooting",
+            "Speed"
+          ],
+          "equipmentListKeys": [
+            "hand-to-hand",
+            "armour",
+            "scout-missiles",
+            "mounts"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Chasseurs",
+          "role": "Henchman",
+          "stats": {
+            "M": "4",
+            "WS": "3",
+            "BS": "4",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 55,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "eligible",
+          "maxCount": 5,
+          "specialRules": [
+            {
+              "name": "Ride",
+              "summary": "Has the Ride skill and comes with a Riding Horse."
+            }
+          ],
+          "skillCategories": [],
+          "equipmentListKeys": [
+            "hand-to-hand",
+            "armour",
+            "outrider-missiles",
+            "mounts"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Hussars",
+          "role": "Henchman",
+          "stats": {
+            "M": "4",
+            "WS": "3",
+            "BS": "3",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 60,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "eligible",
+          "maxCount": 5,
+          "specialRules": [
+            {
+              "name": "Ride",
+              "summary": "Has the Ride skill and comes with a Riding Horse, which may be upgraded to a Warhorse for 40 gc."
+            },
+            {
+              "name": "Combat Riding",
+              "summary": "Has the Combat Riding skill from Blazing Saddles."
+            }
+          ],
+          "skillCategories": [],
+          "equipmentListKeys": [
+            "hand-to-hand",
+            "armour",
+            "mounts"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Grooms",
+          "role": "Henchman",
+          "stats": {
+            "M": "4",
+            "WS": "3",
+            "BS": "2",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "6"
+          },
+          "hireCost": 50,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "eligible",
+          "maxCount": 2,
+          "specialRules": [
+            {
+              "name": "Ride",
+              "summary": "Has the Ride skill and comes with a Riding Horse."
+            },
+            {
+              "name": "Horse Handling",
+              "summary": "Has the Animal Handling skill from Blazing Saddles."
+            }
+          ],
+          "skillCategories": [],
+          "equipmentListKeys": [
+            "hand-to-hand",
+            "armour",
+            "scout-missiles",
+            "mounts"
+          ],
+          "conditionText": "The source's Grooms entry references both the Imperial Outriders equipment list for hand-to-hand weapons, missile weapons and armour, and the Scouts' Missile Weapon List. The Imperial list has no missile table; the explicit Scout-list missile options are Throwing Knives.",
+          "maximumProfile": "Human"
+        }
+      ],
+      "equipmentLists": [
+        {
+          "key": "hand-to-hand",
+          "name": "Imperial Outriders Hand-to-hand Weapons",
+          "items": [
+            {
+              "name": "Dagger",
+              "category": "weapon",
+              "unitCost": 2,
+              "firstFree": true
+            },
+            {
+              "name": "Hammer",
+              "category": "weapon",
+              "unitCost": 3,
+              "profileName": "Hammer, staff, mace or club"
+            },
+            {
+              "name": "Axe",
+              "category": "weapon",
+              "unitCost": 5
+            },
+            {
+              "name": "Sword",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Spear",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Morning Star",
+              "category": "weapon",
+              "unitCost": 15,
+              "profileName": "Morning star"
+            },
+            {
+              "name": "Lance",
+              "category": "weapon",
+              "unitCost": 40
+            }
+          ]
+        },
+        {
+          "key": "armour",
+          "name": "Imperial Outriders Armour",
+          "items": [
+            {
+              "name": "Buckler",
+              "category": "shield",
+              "unitCost": 5
+            },
+            {
+              "name": "Shield",
+              "category": "shield",
+              "unitCost": 5
+            },
+            {
+              "name": "Helmet",
+              "category": "armour",
+              "unitCost": 10
+            },
+            {
+              "name": "Light armour",
+              "category": "armour",
+              "unitCost": 20
+            },
+            {
+              "name": "Heavy armour",
+              "category": "armour",
+              "unitCost": 50
+            },
+            {
+              "name": "Barding",
+              "category": "armour",
+              "unitCost": 80,
+              "ruleText": "The source lists this armour and its cost but does not give a saving throw or special-rule profile; those details need separate source adjudication."
+            },
+            {
+              "name": "Ithilmar armour",
+              "category": "armour",
+              "unitCost": 90
+            },
+            {
+              "name": "Gromril Armour",
+              "category": "armour",
+              "unitCost": 150,
+              "profileName": "Gromril armour"
+            }
+          ]
+        },
+        {
+          "key": "outrider-missiles",
+          "name": "Outrider Missile Weapons",
+          "items": [
+            {
+              "name": "Pistol",
+              "category": "weapon",
+              "unitCost": 15
+            },
+            {
+              "name": "Handgun",
+              "category": "weapon",
+              "unitCost": 35
+            },
+            {
+              "name": "Blunderbuss",
+              "category": "weapon",
+              "unitCost": 30
+            },
+            {
+              "name": "Hochland Long Rifle",
+              "category": "weapon",
+              "unitCost": 200,
+              "profileName": "Hochland long rifle"
+            }
+          ]
+        },
+        {
+          "key": "scout-missiles",
+          "name": "Scout Missile Weapons",
+          "items": [
+            {
+              "name": "Throwing Knives",
+              "category": "weapon",
+              "unitCost": 15,
+              "profileName": "Throwing star/knife"
+            }
+          ]
+        },
+        {
+          "key": "mounts",
+          "name": "Starting Mounts and Upgrades",
+          "items": [
+            {
+              "name": "Riding Horse",
+              "category": "misc",
+              "unitCost": 0,
+              "firstFree": true,
+              "allowedWarriorTypeNames": [
+                "Knight",
+                "Outriders",
+                "Scouts",
+                "Chasseurs",
+                "Hussars",
+                "Grooms"
+              ],
+              "ruleText": "Included with recruitment for this warrior type; a model without a mount cannot take part in battle."
+            },
+            {
+              "name": "Warhorse upgrade",
+              "category": "misc",
+              "unitCost": 40,
+              "allowedWarriorTypeNames": [
+                "Knight",
+                "Outriders",
+                "Hussars"
+              ],
+              "ruleText": "Upgrade the included Riding Horse for 40 gc."
+            }
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "name": "Ride",
+          "listName": "Cavalry Skills",
+          "summary": "Skill reference is Blazing Saddles; the warband page does not restate its full rules.",
+          "appliesTo": [
+            "Knight",
+            "Outriders",
+            "Scouts",
+            "Chasseurs",
+            "Hussars",
+            "Grooms"
+          ]
+        },
+        {
+          "name": "Combat Riding",
+          "listName": "Cavalry Skills",
+          "summary": "Skill reference is Blazing Saddles.",
+          "appliesTo": [
+            "Hussars"
+          ]
+        },
+        {
+          "name": "Animal Handling",
+          "listName": "Cavalry Skills",
+          "summary": "Grooms have this skill as detailed in Blazing Saddles.",
+          "appliesTo": [
+            "Grooms"
+          ]
+        }
+      ],
+      "spellDisciplines": [],
+      "spellAccess": [],
+      "hiredSwordPolicy": {
+        "allowedNames": [
+          "Freelancer",
+          "Freelancer's Warhorse",
+          "Roadwarden",
+          "Roadwarden's Horse"
+        ],
+        "excludedNames": [
+          "Highwayman"
+        ],
+        "summary": "Only mounted Hired Swords may accompany the warband. The source names the Freelance Knight (catalog name: Freelancer) and Roadwarden and excludes the Highwayman; associated horse entries match the existing catalog, but whether the examples exhaust every mounted choice needs adjudication."
+      }
+    },
+    {
+      "name": "Mootlanders",
+      "grade": "1b",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1b-warbands/mootlanders",
+      "maxMembers": 20,
+      "maxHeroes": 6,
+      "leaderType": "Moot Elder",
+      "specialRules": [
+        {
+          "name": "Minimum warband size",
+          "summary": "The warband must contain at least three models and starts with 500 gold crowns."
+        },
+        {
+          "name": "Halfling injury",
+          "summary": "When rolling injury for a Halfling, treat a result of 2 as Stunned."
+        },
+        {
+          "name": "Halfling Thieves cap",
+          "summary": "The page's choice-of-warriors limit and correction note resolve the cap as three Thieves, despite the hero heading showing two."
+        }
+      ],
+      "warriors": [
+        {
+          "name": "Moot Elder",
+          "role": "Hero",
+          "stats": {
+            "M": "4",
+            "WS": "3",
+            "BS": "5",
+            "S": "2",
+            "T": "2",
+            "W": "1",
+            "I": "6",
+            "A": "1",
+            "Ld": "9"
+          },
+          "hireCost": 55,
+          "startingExperience": 20,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "ineligible",
+          "maxCount": 1,
+          "specialRules": [],
+          "skillCategories": [
+            "Combat",
+            "Shooting",
+            "Academic",
+            "Speed"
+          ],
+          "equipmentListKeys": [
+            "halfling"
+          ],
+          "maximumProfile": "Halfling"
+        },
+        {
+          "name": "Master Chef",
+          "role": "Hero",
+          "stats": {
+            "M": "4",
+            "WS": "3",
+            "BS": "4",
+            "S": "3",
+            "T": "2",
+            "W": "1",
+            "I": "5",
+            "A": "1",
+            "Ld": "9"
+          },
+          "hireCost": 35,
+          "startingExperience": 8,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "ineligible",
+          "maxCount": 1,
+          "specialRules": [
+            {
+              "name": "Inspired Cooking",
+              "summary": "Halflings within 6 inches may reroll failed combat hits once per turn."
+            }
+          ],
+          "skillCategories": [
+            "Combat",
+            "Shooting",
+            "Strength",
+            "Speed"
+          ],
+          "equipmentListKeys": [
+            "chef"
+          ],
+          "maximumProfile": "Halfling"
+        },
+        {
+          "name": "Halfling Thieves",
+          "role": "Hero",
+          "stats": {
+            "M": "4",
+            "WS": "3",
+            "BS": "4",
+            "S": "2",
+            "T": "2",
+            "W": "1",
+            "I": "5",
+            "A": "1",
+            "Ld": "9"
+          },
+          "hireCost": 25,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "ineligible",
+          "maxCount": 3,
+          "specialRules": [
+            {
+              "name": "Sneaky",
+              "summary": "Always imposes an additional -1 hit modifier on enemy shooting at the Thief."
+            }
+          ],
+          "skillCategories": [
+            "Shooting",
+            "Academic",
+            "Speed"
+          ],
+          "equipmentListKeys": [
+            "halfling"
+          ],
+          "maximumProfile": "Halfling"
+        },
+        {
+          "name": "Warriors",
+          "role": "Henchman",
+          "stats": {
+            "M": "4",
+            "WS": "2",
+            "BS": "4",
+            "S": "2",
+            "T": "2",
+            "W": "1",
+            "I": "5",
+            "A": "1",
+            "Ld": "8"
+          },
+          "hireCost": 15,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "eligible",
+          "maxCount": null,
+          "specialRules": [],
+          "skillCategories": [],
+          "equipmentListKeys": [
+            "halfling"
+          ],
+          "maximumProfile": "Halfling"
+        },
+        {
+          "name": "Scouts",
+          "role": "Henchman",
+          "stats": {
+            "M": "4",
+            "WS": "2",
+            "BS": "4",
+            "S": "2",
+            "T": "2",
+            "W": "1",
+            "I": "5",
+            "A": "1",
+            "Ld": "8"
+          },
+          "hireCost": 20,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "eligible",
+          "maxCount": 5,
+          "specialRules": [
+            {
+              "name": "Keen Eyesight",
+              "summary": "Scouts detect hidden enemies at twice their Initiative distance."
+            }
+          ],
+          "skillCategories": [],
+          "equipmentListKeys": [
+            "halfling"
+          ],
+          "maximumProfile": "Halfling"
+        }
+      ],
+      "equipmentLists": [
+        {
+          "key": "halfling",
+          "name": "Halfling Equipment",
+          "items": [
+            {
+              "name": "Dagger",
+              "category": "weapon",
+              "unitCost": 2,
+              "firstFree": true
+            },
+            {
+              "name": "Spear",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Sword",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Mace",
+              "category": "weapon",
+              "unitCost": 3,
+              "profileName": "Hammer, staff, mace or club"
+            },
+            {
+              "name": "Bow",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Short Bow",
+              "category": "weapon",
+              "unitCost": 5,
+              "profileName": "Short bow"
+            },
+            {
+              "name": "Sling",
+              "category": "weapon",
+              "unitCost": 2
+            },
+            {
+              "name": "Light armour",
+              "category": "armour",
+              "unitCost": 20
+            },
+            {
+              "name": "Shield",
+              "category": "shield",
+              "unitCost": 5
+            },
+            {
+              "name": "Cooking Pot Helmet",
+              "category": "armour",
+              "unitCost": 8,
+              "profileName": "Cooking Pot Helmet",
+              "ruleText": "A Master Chef wearing this helmet gains a 5+ special save against being Stunned; the save is unmodified."
+            },
+            {
+              "name": "Pistol",
+              "category": "weapon",
+              "unitCost": 15,
+              "allowedWarriorTypeNames": [
+                "Moot Elder"
+              ],
+              "ruleText": "The Moot Elder may additionally be armed with one pistol for 15 gc, usually an old family heirloom; the source gives no brace option."
+            }
+          ]
+        },
+        {
+          "key": "chef",
+          "name": "Halfling Master Chef Utensils",
+          "items": [
+            {
+              "name": "Kitchen Knife",
+              "category": "weapon",
+              "unitCost": 2,
+              "profileName": "Kitchen Knife",
+              "ruleText": "A wounded enemy gains +1 armour save, and receives a 6+ save if it otherwise has none."
+            },
+            {
+              "name": "Cleaver",
+              "category": "weapon",
+              "unitCost": 3,
+              "profileName": "Cleaver",
+              "ruleText": "Applies -1 to the enemy armour save."
+            },
+            {
+              "name": "Ladle",
+              "category": "weapon",
+              "unitCost": 2,
+              "profileName": "Ladle",
+              "ruleText": "Only shields and skills allow saves against it; a hit roll of 6 makes the enemy drop its weapon."
+            },
+            {
+              "name": "Tenderiser",
+              "category": "weapon",
+              "unitCost": 3,
+              "profileName": "Tenderiser",
+              "ruleText": "Stuns on rolls of 2-4."
+            },
+            {
+              "name": "Cooking Pot Helmet",
+              "category": "armour",
+              "unitCost": 8,
+              "profileName": "Cooking Pot Helmet",
+              "ruleText": "A Master Chef wearing it gains a 5+ special save against being Stunned; the save is unmodified."
+            }
+          ]
+        }
+      ],
+      "skills": [],
+      "spellDisciplines": [],
+      "spellAccess": [],
+      "weaponProfiles": [
+        {
+          "name": "Kitchen Knife",
+          "weaponType": "close_combat",
+          "rangeText": "Close Combat",
+          "strengthModifier": "As user",
+          "specialRules": [
+            {
+              "name": "+1 Enemy armour save",
+              "summary": "A wounded target gains +1 to its armour save, or a 6+ save if it has none."
+            }
+          ]
+        },
+        {
+          "name": "Cleaver",
+          "weaponType": "close_combat",
+          "rangeText": "Close Combat",
+          "strengthModifier": "As user",
+          "specialRules": [
+            {
+              "name": "Save modifier",
+              "summary": "Imposes a -1 armour-save modifier."
+            }
+          ]
+        },
+        {
+          "name": "Ladle",
+          "weaponType": "close_combat",
+          "rangeText": "Close Combat",
+          "strengthModifier": "As user",
+          "specialRules": [
+            {
+              "name": "No save except shields",
+              "summary": "Only shields and skills grant saving throws against its hits."
+            },
+            {
+              "name": "Knuckle cracking",
+              "summary": "On a hit roll of 6, the target drops its weapon."
+            }
+          ]
+        },
+        {
+          "name": "Tenderiser",
+          "weaponType": "close_combat",
+          "rangeText": "Close Combat",
+          "strengthModifier": "As user",
+          "specialRules": [
+            {
+              "name": "Stuns on 2-4",
+              "summary": "Injury rolls of 2-4 are treated as stunned."
+            }
+          ]
+        }
+      ],
+      "armourProfiles": [
+        {
+          "name": "Cooking Pot Helmet",
+          "itemType": "helmet",
+          "saveText": "5+ special save against being stunned; no ordinary armour save is specified.",
+          "specialRules": [
+            {
+              "name": "Avoid stun",
+              "summary": "A 5+ special save prevents being stunned; this save is never modified."
+            }
+          ]
+        }
+      ],
+      "hiredSwordPolicy": {
+        "summary": "The source provides no special Hired Sword eligibility rule; this absence must not be treated as confirmation that every Hired Sword is allowed."
+      }
+    },
+    {
+      "name": "Outlaws of Stirwood Forest",
+      "grade": "1b",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1b-warbands/outlaws-of-stirwood-forest",
+      "maxMembers": 15,
+      "maxHeroes": 6,
+      "leaderType": "Bandit Leader",
+      "specialRules": [
+        {
+          "name": "Minimum warband size",
+          "summary": "The warband must contain at least three models and starts with 500 gold crowns."
+        },
+        {
+          "name": "Missile weapon restriction",
+          "summary": "A warrior may carry only one missile weapon; all must carry a bow other than a crossbow, except the Cleric may choose not to carry a bow. Skills do not remove this restriction."
+        },
+        {
+          "name": "Cleric substitution",
+          "summary": "A Cleric may be recruited only instead of either a Champion or a Petty Thief; the source does not define a separate shared-cap calculation."
+        },
+        {
+          "name": "Henchman groups",
+          "summary": "Henchmen are recruited in groups of 1-5."
+        }
+      ],
+      "warriors": [
+        {
+          "name": "Bandit Leader",
+          "role": "Hero",
+          "stats": {
+            "M": "4",
+            "WS": "4",
+            "BS": "4",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "4",
+            "A": "1",
+            "Ld": "8"
+          },
+          "hireCost": 60,
+          "startingExperience": 20,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "ineligible",
+          "maxCount": 1,
+          "specialRules": [],
+          "skillCategories": [
+            "Combat",
+            "Shooting",
+            "Academic",
+            "Strength",
+            "Speed"
+          ],
+          "equipmentListKeys": [
+            "outlaws"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Champions",
+          "role": "Hero",
+          "stats": {
+            "M": "4",
+            "WS": "3",
+            "BS": "4",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 35,
+          "startingExperience": 8,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "ineligible",
+          "maxCount": 2,
+          "specialRules": [],
+          "skillCategories": [
+            "Combat",
+            "Shooting",
+            "Strength"
+          ],
+          "equipmentListKeys": [
+            "outlaws"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Cleric",
+          "role": "Hero",
+          "stats": {
+            "M": "4",
+            "WS": "3",
+            "BS": "3",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 35,
+          "startingExperience": 8,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "ineligible",
+          "maxCount": 1,
+          "referenceTypes": [
+            "Champions",
+            "Petty Thieves"
+          ],
+          "specialRules": [
+            {
+              "name": "Disciple of Sigmar",
+              "summary": "Starts knowing one Prayer of Sigmar; cannot learn Sorcery or Arcane Lore. Prayers are not spells, so armour is allowed."
+            }
+          ],
+          "skillCategories": [
+            "Academic"
+          ],
+          "equipmentListKeys": [
+            "outlaws"
+          ],
+          "conditionText": "May be taken only in place of either one Champion or one Petty Thief. The source does not specify a mechanical shared cap beyond that replacement instruction.",
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Petty Thieves",
+          "role": "Hero",
+          "stats": {
+            "M": "4",
+            "WS": "2",
+            "BS": "3",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "6"
+          },
+          "hireCost": 20,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "ineligible",
+          "maxCount": 2,
+          "specialRules": [],
+          "skillCategories": [
+            "Combat",
+            "Shooting",
+            "Speed"
+          ],
+          "equipmentListKeys": [
+            "outlaws"
+          ],
+          "allowedCategories": [
+            "weapon"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Marksmen",
+          "role": "Henchman",
+          "stats": {
+            "M": "4",
+            "WS": "3",
+            "BS": "4",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 25,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "eligible",
+          "maxCount": 7,
+          "specialRules": [],
+          "skillCategories": [],
+          "equipmentListKeys": [
+            "outlaws"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Outlaws",
+          "role": "Henchman",
+          "stats": {
+            "M": "4",
+            "WS": "3",
+            "BS": "3",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 25,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "eligible",
+          "maxCount": null,
+          "specialRules": [],
+          "skillCategories": [],
+          "equipmentListKeys": [
+            "outlaws"
+          ],
+          "maximumProfile": "Human"
+        }
+      ],
+      "equipmentLists": [
+        {
+          "key": "outlaws",
+          "name": "Outlaws Equipment",
+          "items": [
+            {
+              "name": "Dagger",
+              "category": "weapon",
+              "unitCost": 2,
+              "firstFree": true
+            },
+            {
+              "name": "Staff",
+              "category": "weapon",
+              "unitCost": 3,
+              "profileName": "Hammer, staff, mace or club"
+            },
+            {
+              "name": "Club",
+              "category": "weapon",
+              "unitCost": 3,
+              "profileName": "Hammer, staff, mace or club"
+            },
+            {
+              "name": "Mace",
+              "category": "weapon",
+              "unitCost": 3,
+              "profileName": "Hammer, staff, mace or club"
+            },
+            {
+              "name": "Axe",
+              "category": "weapon",
+              "unitCost": 5
+            },
+            {
+              "name": "Sword",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Spear",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Double-handed weapon",
+              "category": "weapon",
+              "unitCost": 15
+            },
+            {
+              "name": "Short Bow",
+              "category": "weapon",
+              "unitCost": 5,
+              "profileName": "Short bow"
+            },
+            {
+              "name": "Bow",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Long bow",
+              "category": "weapon",
+              "unitCost": 15,
+              "allowedWarriorTypeNames": [
+                "Bandit Leader",
+                "Champions",
+                "Cleric",
+                "Petty Thieves",
+                "Marksmen"
+              ]
+            },
+            {
+              "name": "Shield",
+              "category": "shield",
+              "unitCost": 5
+            },
+            {
+              "name": "Helmet",
+              "category": "armour",
+              "unitCost": 10
+            },
+            {
+              "name": "Light armour",
+              "category": "armour",
+              "unitCost": 20,
+              "allowedWarriorTypeNames": [
+                "Bandit Leader",
+                "Champions",
+                "Cleric",
+                "Petty Thieves",
+                "Marksmen"
+              ]
+            },
+            {
+              "name": "Hunting Arrows",
+              "category": "misc",
+              "unitCost": 30,
+              "allowedWarriorTypeNames": [
+                "Bandit Leader",
+                "Champions",
+                "Cleric",
+                "Petty Thieves",
+                "Marksmen"
+              ],
+              "ruleText": "Cost 30 gc; Heroes may take them at initial recruitment without a rarity roll; later purchases require a normal rarity roll."
+            },
+            {
+              "name": "Forest Cloak",
+              "category": "misc",
+              "unitCost": 50,
+              "allowedWarriorTypeNames": [
+                "Bandit Leader",
+                "Champions",
+                "Cleric",
+                "Petty Thieves"
+              ],
+              "ruleText": "Heroes only; Rare 10; cost 50 gc. Beside a tree, bush or hedge, shooters suffer an additional -1 BS to hit; a spellcaster must roll 4+ to target the wearer unless within the wearer’s Initiative range."
+            }
+          ]
+        },
+        {
+          "key": "outlaws-special",
+          "name": "Outlaws Special Equipment",
+          "items": [
+            {
+              "name": "Forest Cloak",
+              "category": "misc",
+              "unitCost": 50,
+              "allowedWarriorTypeNames": [
+                "Bandit Leader",
+                "Champions",
+                "Cleric",
+                "Petty Thieves"
+              ],
+              "ruleText": "Rare 10; beside a tree, bush or hedge, shooters suffer an additional -1 BS to hit; a spellcaster must roll 4+ to target the wearer unless within the wearer's Initiative range."
+            }
+          ]
+        }
+      ],
+      "spellDisciplines": [
+        {
+          "name": "Prayers of Sigmar",
+          "kind": "Prayer",
+          "castingRuleSummary": "Prayers are not spells; armour may be worn and spell-specific protections do not affect them. The source prayer page does not state a general casting procedure.",
+          "spells": [
+            {
+              "roll": null,
+              "name": "The Hammer of Sigmar",
+              "difficulty": 7,
+              "effectSummary": "The wielder gains +2 Strength in close combat and hits cause double damage."
+            },
+            {
+              "roll": null,
+              "name": "Hearts of Steel",
+              "difficulty": 8,
+              "effectSummary": "Allies within 8 inches ignore Fear and All Alone; the warband gains +1 to Rout tests until the caster is knocked down, stunned or taken out."
+            },
+            {
+              "roll": null,
+              "name": "Soulfire",
+              "difficulty": 9,
+              "effectSummary": "Enemies within 4 inches take S3 with no armour saves; Undead and Possessed take S5 instead."
+            },
+            {
+              "roll": null,
+              "name": "Shield of Faith",
+              "difficulty": 6,
+              "effectSummary": "The Priest is immune to spells; roll in Recovery each turn and the shield ends on 1-2."
+            },
+            {
+              "roll": null,
+              "name": "Healing Hand",
+              "difficulty": 5,
+              "effectSummary": "A model within 2 inches returns to full Wounds; knocked-down or stunned allies in range recover immediately."
+            },
+            {
+              "roll": null,
+              "name": "Armour of Righteousness",
+              "difficulty": 9,
+              "effectSummary": "The Priest has a 2+ armour save replacing the normal save and causes Fear until the next Shooting phase."
+            }
+          ]
+        }
+      ],
+      "spellAccess": [
+        {
+          "warriorType": "Cleric",
+          "discipline": "Prayers of Sigmar",
+          "startingSpellCount": 1,
+          "isWizard": false,
+          "selectionRule": "Starts the campaign knowing one Prayer of Sigmar; the warband page does not specify how it is selected."
+        }
+      ],
+      "skills": [],
+      "hiredSwordPolicy": {
+        "excludedNames": [
+          "Wolf Priest of Ulric",
+          "Norse Shaman",
+          "Dark Elf Assassin"
+        ],
+        "summary": "Wolf Priest of Ulric, Norse Shaman and Dark Elf Assassin are explicitly unavailable. Bounty Hunter is also source-prohibited but not catalogued; its prohibition remains a manual restriction without a selectable catalog reference."
+      }
+    },
+    {
+      "name": "Tileans",
+      "grade": "1b",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1b-warbands/tileans",
+      "maxMembers": 15,
+      "maxHeroes": 6,
+      "leaderType": "Captain",
+      "specialRules": [
+        {
+          "name": "Minimum warband size and budget",
+          "summary": "At least three models; the article says the warband has 500 'points' to assemble, without clarifying whether this means gold crowns."
+        },
+        {
+          "name": "City-state selection (manual)",
+          "summary": "The source presents one Tilean warband with Miraglean, Remasen or Trantio rules and skill tables. Select one city-state before applying conditional skills or benefits; no default or separate roster is specified."
+        },
+        {
+          "name": "Miraglean rules (conditional)",
+          "summary": "Heroes gain +1 to hit with crossbows; Marksmen gain +1 to hit with any missile weapon; the warband hates Skaven but its Hired Swords do not, and cannot hire Skaven Hired Swords."
+        },
+        {
+          "name": "Remasen rules (conditional)",
+          "summary": "When fighting Dark Elves, the player may reroll one Rout test and must accept the second roll; Captain, Champions and Youngbloods have +1 Leadership in all battles; cannot hire Dark Elf Hired Swords."
+        },
+        {
+          "name": "Trantio rules (conditional)",
+          "summary": "Adds 100 gc to the starting allowance in a one-off game, or 20% in a Lustrian campaign."
+        },
+        {
+          "name": "Henchman groups",
+          "summary": "Henchmen are recruited in groups of 1-5."
+        }
+      ],
+      "warriors": [
+        {
+          "name": "Captain",
+          "role": "Hero",
+          "stats": {
+            "M": "4",
+            "WS": "4",
+            "BS": "4",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "4",
+            "A": "2",
+            "Ld": "8"
+          },
+          "hireCost": 60,
+          "startingExperience": 20,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "ineligible",
+          "maxCount": 1,
+          "specialRules": [
+            {
+              "name": "Remasen Leadership (conditional)",
+              "summary": "If the chosen city-state is Remas, the Captain has +1 Leadership."
+            }
+          ],
+          "skillCategories": [
+            "Combat",
+            "Shooting",
+            "Academic",
+            "Strength",
+            "Speed"
+          ],
+          "equipmentListKeys": [
+            "tilean"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Champions",
+          "role": "Hero",
+          "stats": {
+            "M": "4",
+            "WS": "4",
+            "BS": "3",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "4",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 35,
+          "startingExperience": 8,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "ineligible",
+          "maxCount": 2,
+          "specialRules": [
+            {
+              "name": "Remasen Leadership (conditional)",
+              "summary": "If the chosen city-state is Remas, each Champion has +1 Leadership."
+            }
+          ],
+          "skillCategories": [
+            "Combat",
+            "Shooting",
+            "Academic",
+            "Strength",
+            "Speed"
+          ],
+          "equipmentListKeys": [
+            "tilean"
+          ],
+          "conditionText": "Apply only the skill categories in the table for the chosen city-state: Miragleans Combat/Shooting/Speed; Remasens Combat/Academic/Strength; Trantios Combat/Speed.",
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Youngbloods",
+          "role": "Hero",
+          "stats": {
+            "M": "4",
+            "WS": "2",
+            "BS": "2",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "6"
+          },
+          "hireCost": 15,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "ineligible",
+          "maxCount": 2,
+          "specialRules": [
+            {
+              "name": "Remasen Leadership (conditional)",
+              "summary": "If the chosen city-state is Remas, each Youngblood has +1 Leadership."
+            }
+          ],
+          "skillCategories": [
+            "Combat",
+            "Shooting",
+            "Academic",
+            "Strength",
+            "Speed"
+          ],
+          "equipmentListKeys": [
+            "tilean"
+          ],
+          "conditionText": "Apply only the skill categories in the table for the chosen city-state: Miragleans Shooting/Strength/Speed; Remasens Combat/Academic/Speed; Trantios Combat/Shooting/Strength.",
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Warriors",
+          "role": "Henchman",
+          "stats": {
+            "M": "4",
+            "WS": "3",
+            "BS": "3",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 25,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "eligible",
+          "maxCount": null,
+          "specialRules": [],
+          "skillCategories": [],
+          "equipmentListKeys": [
+            "tilean"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Marksmen",
+          "role": "Henchman",
+          "stats": {
+            "M": "4",
+            "WS": "3",
+            "BS": "3",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 25,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "eligible",
+          "maxCount": 7,
+          "specialRules": [
+            {
+              "name": "Miraglean accuracy (conditional)",
+              "summary": "If the chosen city-state is Miragliano, Marksmen gain +1 to hit with any missile weapon."
+            }
+          ],
+          "skillCategories": [],
+          "equipmentListKeys": [
+            "marksman"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Duelists",
+          "role": "Henchman",
+          "stats": {
+            "M": "4",
+            "WS": "4",
+            "BS": "3",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "4",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 35,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "eligible",
+          "maxCount": 5,
+          "specialRules": [
+            {
+              "name": "Cloak & Dagger",
+              "summary": "Counts as using a buckler in close combat."
+            }
+          ],
+          "skillCategories": [],
+          "equipmentListKeys": [
+            "tilean"
+          ],
+          "maximumProfile": "Human"
+        }
+      ],
+      "equipmentLists": [
+        {
+          "key": "tilean",
+          "name": "Tilean Equipment",
+          "items": [
+            {
+              "name": "Dagger",
+              "category": "weapon",
+              "unitCost": 2,
+              "firstFree": true
+            },
+            {
+              "name": "Mace",
+              "category": "weapon",
+              "unitCost": 3,
+              "profileName": "Hammer, staff, mace or club"
+            },
+            {
+              "name": "Hammer",
+              "category": "weapon",
+              "unitCost": 3,
+              "profileName": "Hammer, staff, mace or club"
+            },
+            {
+              "name": "Axe",
+              "category": "weapon",
+              "unitCost": 5
+            },
+            {
+              "name": "Sword",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Spear",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Halberd",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Pike",
+              "category": "weapon",
+              "unitCost": 12,
+              "profileName": "Pike (Tileans)",
+              "ruleText": "Rare 7 special equipment; source recommends the Pike (Merchant Caravans) rules. See special equipment list."
+            },
+            {
+              "name": "Morning star",
+              "category": "weapon",
+              "unitCost": 15
+            },
+            {
+              "name": "Double-handed weapon",
+              "category": "weapon",
+              "unitCost": 15
+            },
+            {
+              "name": "Rapier",
+              "category": "weapon",
+              "unitCost": 15,
+              "profileName": "Rapier"
+            },
+            {
+              "name": "Crossbow",
+              "category": "weapon",
+              "unitCost": 25
+            },
+            {
+              "name": "Pistol",
+              "category": "weapon",
+              "unitCost": 15,
+              "ruleText": "Brace costs 30 gc."
+            },
+            {
+              "name": "Brace of Pistols",
+              "category": "weapon",
+              "unitCost": 30,
+              "profileName": "Pistol",
+              "ruleText": "Source brace cost: 30 gc. Contains two pistols and counts as one missile weapon toward the two-missile-weapon carrying limit."
+            },
+            {
+              "name": "Duelling Pistol",
+              "category": "weapon",
+              "unitCost": 25,
+              "profileName": "Duelling pistol",
+              "ruleText": "Brace costs 50 gc."
+            },
+            {
+              "name": "Brace of Duelling Pistols",
+              "category": "weapon",
+              "unitCost": 50,
+              "profileName": "Duelling pistol",
+              "ruleText": "Source brace cost: 50 gc. Contains two pistols and counts as one missile weapon toward the two-missile-weapon carrying limit."
+            },
+            {
+              "name": "Bow",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Light armour",
+              "category": "armour",
+              "unitCost": 20
+            },
+            {
+              "name": "Shield",
+              "category": "shield",
+              "unitCost": 5
+            },
+            {
+              "name": "Buckler",
+              "category": "shield",
+              "unitCost": 5
+            },
+            {
+              "name": "Helmet",
+              "category": "armour",
+              "unitCost": 10
+            }
+          ]
+        },
+        {
+          "key": "marksman",
+          "name": "Tilean Marksman Equipment",
+          "items": [
+            {
+              "name": "Dagger",
+              "category": "weapon",
+              "unitCost": 2,
+              "firstFree": true
+            },
+            {
+              "name": "Mace",
+              "category": "weapon",
+              "unitCost": 3,
+              "profileName": "Hammer, staff, mace or club"
+            },
+            {
+              "name": "Hammer",
+              "category": "weapon",
+              "unitCost": 3,
+              "profileName": "Hammer, staff, mace or club"
+            },
+            {
+              "name": "Axe",
+              "category": "weapon",
+              "unitCost": 5
+            },
+            {
+              "name": "Sword",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Crossbow",
+              "category": "weapon",
+              "unitCost": 25
+            },
+            {
+              "name": "Pistol",
+              "category": "weapon",
+              "unitCost": 15,
+              "ruleText": "Brace costs 30 gc."
+            },
+            {
+              "name": "Brace of Pistols",
+              "category": "weapon",
+              "unitCost": 30,
+              "profileName": "Pistol",
+              "ruleText": "Source brace cost: 30 gc. Contains two pistols and counts as one missile weapon toward the two-missile-weapon carrying limit."
+            },
+            {
+              "name": "Duelling Pistol",
+              "category": "weapon",
+              "unitCost": 25,
+              "profileName": "Duelling pistol",
+              "ruleText": "Brace costs 50 gc."
+            },
+            {
+              "name": "Brace of Duelling Pistols",
+              "category": "weapon",
+              "unitCost": 50,
+              "profileName": "Duelling pistol",
+              "ruleText": "Source brace cost: 50 gc. Contains two pistols and counts as one missile weapon toward the two-missile-weapon carrying limit."
+            },
+            {
+              "name": "Long bow",
+              "category": "weapon",
+              "unitCost": 15
+            },
+            {
+              "name": "Handgun",
+              "category": "weapon",
+              "unitCost": 35
+            },
+            {
+              "name": "Hunting Rifle",
+              "category": "weapon",
+              "unitCost": 200,
+              "ruleText": "The source lists this weapon and its cost but provides no range, Strength or special-rule profile; those details need separate source adjudication."
+            },
+            {
+              "name": "Light armour",
+              "category": "armour",
+              "unitCost": 20
+            },
+            {
+              "name": "Helmet",
+              "category": "armour",
+              "unitCost": 10
+            }
+          ]
+        },
+        {
+          "key": "tilean-special",
+          "name": "Tilean Special Equipment",
+          "items": [
+            {
+              "name": "Pike (Tileans)",
+              "category": "weapon",
+              "unitCost": 12,
+              "profileName": "Pike (Tileans)",
+              "ruleText": "Rare 7; 3-inch close-combat reach; strikes first in the first round even against a spear, then Initiative order; two-handed and only one attack; cannot use shield or buckler; only man-sized or larger models. Source recommends the Merchant Caravans Pike rules because its Reach rule was removed."
+            },
+            {
+              "name": "Rapier",
+              "category": "weapon",
+              "unitCost": 15,
+              "profileName": "Rapier",
+              "ruleText": "Rare 5; may parry; after a hit that fails to wound, may continue attacks at -1 to hit until a miss; enemy armour saves improve by +1."
+            }
+          ]
+        }
+      ],
+      "skills": [],
+      "spellDisciplines": [],
+      "spellAccess": [],
+      "hiredSwordPolicy": {
+        "summary": "Miragleans cannot hire Skaven Hired Swords and Remasens cannot hire Dark Elf Hired Swords. No general whitelist or other city-state restrictions are stated; do not infer unrestricted eligibility, and apply the named exclusions only after city-state selection."
+      },
+      "weaponProfiles": [
+        {
+          "name": "Rapier",
+          "weaponType": "close_combat",
+          "rangeText": "Close Combat",
+          "strengthModifier": "As user",
+          "specialRules": [
+            {
+              "name": "Parry",
+              "summary": "May parry using the normal sword parry procedure."
+            },
+            {
+              "name": "Barrage",
+              "summary": "After a hit that fails to wound, may continue attacking at -1 to hit until an attack misses; required roll cannot worsen beyond 6."
+            },
+            {
+              "name": "Armour save",
+              "summary": "The target improves its armour save by +1."
+            }
+          ]
+        },
+        {
+          "name": "Pike (Tileans)",
+          "weaponType": "close_combat",
+          "rangeText": "Close Combat (3 inches)",
+          "strengthModifier": "As user",
+          "specialRules": [
+            {
+              "name": "Strike first",
+              "summary": "Strikes first in the first combat round even against a spear; later rounds use Initiative order."
+            },
+            {
+              "name": "Reach",
+              "summary": "May attack an enemy up to 3 inches away without joining its melee; the article recommends the Merchant Caravans Pike rules because Mordheim removed Reach."
+            },
+            {
+              "name": "Unwieldy",
+              "summary": "Uses two hands, permits only one attack, and prevents use of a shield or buckler."
+            },
+            {
+              "name": "Large",
+              "summary": "Only man-sized or larger models may use it."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ostermarkers",
+      "grade": "1b",
+      "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1a-warbands/mercenaries",
+      "maxMembers": 15,
+      "maxHeroes": 6,
+      "leaderType": "Mercenary Captain",
+      "specialRules": [
+        {
+          "name": "Minimum warband size",
+          "summary": "At least three models; 500 gold crowns are available for recruitment."
+        },
+        {
+          "name": "Ostermarker resolve",
+          "summary": "Heroes and Henchmen may reroll a failed Leadership test for being All Alone and a failed Rout test; the second result must be accepted."
+        },
+        {
+          "name": "Starting wardog",
+          "summary": "The Captain may have a wardog as part of starting equipment; the Ostermark rule gives no separate price."
+        },
+        {
+          "name": "Skill table selection (manual)",
+          "summary": "The Ostermark article has no skill table; it says to choose one of the Reikland, Middenheim or Marienburg Mercenary skill sets. Select one; do not apply that province's other bonuses to Ostermark."
+        },
+        {
+          "name": "Henchman groups",
+          "summary": "Henchmen are recruited in groups of 1-5."
+        },
+        {
+          "name": "Source grade discrepancy (manual)",
+          "summary": "The catalog indexes Ostermarkers as Grade 1b, but the supplied Mercenaries rules are hosted in the Grade 1a section; retain the indexed grade pending editorial resolution."
+        }
+      ],
+      "warriors": [
+        {
+          "name": "Mercenary Captain",
+          "role": "Hero",
+          "stats": {
+            "M": "4",
+            "WS": "4",
+            "BS": "4",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "4",
+            "A": "1",
+            "Ld": "8"
+          },
+          "hireCost": 60,
+          "startingExperience": 20,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "ineligible",
+          "maxCount": 1,
+          "specialRules": [],
+          "skillCategories": [
+            "Combat",
+            "Shooting",
+            "Academic",
+            "Strength",
+            "Speed"
+          ],
+          "equipmentListKeys": [
+            "mercenary"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Champions",
+          "role": "Hero",
+          "stats": {
+            "M": "4",
+            "WS": "4",
+            "BS": "3",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 35,
+          "startingExperience": 8,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "ineligible",
+          "maxCount": 2,
+          "specialRules": [],
+          "skillCategories": [
+            "Combat",
+            "Shooting",
+            "Strength",
+            "Speed"
+          ],
+          "equipmentListKeys": [
+            "mercenary"
+          ],
+          "conditionText": "Choose one province's skill table: Reikland gives Combat/Shooting/Strength; Middenheim gives Combat/Strength/Speed; Marienburg gives Combat/Speed.",
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Youngbloods",
+          "role": "Hero",
+          "stats": {
+            "M": "4",
+            "WS": "2",
+            "BS": "2",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "6"
+          },
+          "hireCost": 15,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "ineligible",
+          "maxCount": 2,
+          "specialRules": [],
+          "skillCategories": [
+            "Combat",
+            "Shooting",
+            "Strength",
+            "Speed"
+          ],
+          "equipmentListKeys": [
+            "mercenary"
+          ],
+          "conditionText": "Choose one province's skill table: Reikland gives Combat/Shooting/Speed; Middenheim gives Combat/Strength/Speed; Marienburg gives Combat/Speed.",
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Warriors",
+          "role": "Henchman",
+          "stats": {
+            "M": "4",
+            "WS": "3",
+            "BS": "3",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 25,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "eligible",
+          "maxCount": null,
+          "specialRules": [],
+          "skillCategories": [],
+          "equipmentListKeys": [
+            "mercenary"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Marksmen",
+          "role": "Henchman",
+          "stats": {
+            "M": "4",
+            "WS": "3",
+            "BS": "3",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 25,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "eligible",
+          "maxCount": 7,
+          "specialRules": [],
+          "skillCategories": [],
+          "equipmentListKeys": [
+            "marksman"
+          ],
+          "maximumProfile": "Human"
+        },
+        {
+          "name": "Swordsmen",
+          "role": "Henchman",
+          "stats": {
+            "M": "4",
+            "WS": "4",
+            "BS": "3",
+            "S": "3",
+            "T": "3",
+            "W": "1",
+            "I": "3",
+            "A": "1",
+            "Ld": "7"
+          },
+          "hireCost": 35,
+          "startingExperience": 0,
+          "large": false,
+          "canGainExperience": true,
+          "promotionEligibility": "eligible",
+          "maxCount": 5,
+          "specialRules": [
+            {
+              "name": "Expert Swordsmen",
+              "summary": "When charging with a normal sword, may reroll failed hits; does not apply to double-handed swords or other weapons."
+            }
+          ],
+          "skillCategories": [],
+          "equipmentListKeys": [
+            "mercenary"
+          ],
+          "maximumProfile": "Human"
+        }
+      ],
+      "equipmentLists": [
+        {
+          "key": "mercenary",
+          "name": "Mercenary Equipment",
+          "items": [
+            {
+              "name": "Dagger",
+              "category": "weapon",
+              "unitCost": 2,
+              "firstFree": true
+            },
+            {
+              "name": "Mace",
+              "category": "weapon",
+              "unitCost": 3,
+              "profileName": "Hammer, staff, mace or club"
+            },
+            {
+              "name": "Hammer",
+              "category": "weapon",
+              "unitCost": 3,
+              "profileName": "Hammer, staff, mace or club"
+            },
+            {
+              "name": "Axe",
+              "category": "weapon",
+              "unitCost": 5
+            },
+            {
+              "name": "Sword",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Morning star",
+              "category": "weapon",
+              "unitCost": 15
+            },
+            {
+              "name": "Double-handed weapon",
+              "category": "weapon",
+              "unitCost": 15
+            },
+            {
+              "name": "Spear",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Halberd",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Crossbow",
+              "category": "weapon",
+              "unitCost": 25
+            },
+            {
+              "name": "Pistol",
+              "category": "weapon",
+              "unitCost": 15,
+              "ruleText": "Brace costs 30 gc."
+            },
+            {
+              "name": "Duelling Pistol",
+              "category": "weapon",
+              "unitCost": 25,
+              "profileName": "Duelling pistol",
+              "ruleText": "Brace costs 50 gc."
+            },
+            {
+              "name": "Brace of Pistols",
+              "category": "weapon",
+              "unitCost": 30,
+              "profileName": "Pistol",
+              "ruleText": "Source brace cost: 30 gc. Contains two pistols and counts as one missile weapon toward the two-missile-weapon carrying limit."
+            },
+            {
+              "name": "Brace of Duelling Pistols",
+              "category": "weapon",
+              "unitCost": 50,
+              "profileName": "Duelling pistol",
+              "ruleText": "Source brace cost: 50 gc. Contains two pistols and counts as one missile weapon toward the two-missile-weapon carrying limit."
+            },
+            {
+              "name": "Bow",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Light armour",
+              "category": "armour",
+              "unitCost": 20
+            },
+            {
+              "name": "Heavy armour",
+              "category": "armour",
+              "unitCost": 50
+            },
+            {
+              "name": "Shield",
+              "category": "shield",
+              "unitCost": 5
+            },
+            {
+              "name": "Buckler",
+              "category": "shield",
+              "unitCost": 5
+            },
+            {
+              "name": "Helmet",
+              "category": "armour",
+              "unitCost": 10
+            }
+          ]
+        },
+        {
+          "key": "marksman",
+          "name": "Mercenary Marksman Equipment",
+          "items": [
+            {
+              "name": "Dagger",
+              "category": "weapon",
+              "unitCost": 2,
+              "firstFree": true
+            },
+            {
+              "name": "Mace",
+              "category": "weapon",
+              "unitCost": 3,
+              "profileName": "Hammer, staff, mace or club"
+            },
+            {
+              "name": "Hammer",
+              "category": "weapon",
+              "unitCost": 3,
+              "profileName": "Hammer, staff, mace or club"
+            },
+            {
+              "name": "Axe",
+              "category": "weapon",
+              "unitCost": 5
+            },
+            {
+              "name": "Sword",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Crossbow",
+              "category": "weapon",
+              "unitCost": 25
+            },
+            {
+              "name": "Pistol",
+              "category": "weapon",
+              "unitCost": 15,
+              "ruleText": "Brace costs 30 gc."
+            },
+            {
+              "name": "Brace of Pistols",
+              "category": "weapon",
+              "unitCost": 30,
+              "profileName": "Pistol",
+              "ruleText": "Source brace cost: 30 gc. Contains two pistols and counts as one missile weapon toward the two-missile-weapon carrying limit."
+            },
+            {
+              "name": "Bow",
+              "category": "weapon",
+              "unitCost": 10
+            },
+            {
+              "name": "Long bow",
+              "category": "weapon",
+              "unitCost": 15
+            },
+            {
+              "name": "Blunderbuss",
+              "category": "weapon",
+              "unitCost": 30
+            },
+            {
+              "name": "Handgun",
+              "category": "weapon",
+              "unitCost": 35
+            },
+            {
+              "name": "Hunting Rifle",
+              "category": "weapon",
+              "unitCost": 200,
+              "ruleText": "The source lists this weapon and its cost but provides no range, Strength or special-rule profile; those details need separate source adjudication."
+            },
+            {
+              "name": "Light armour",
+              "category": "armour",
+              "unitCost": 20
+            },
+            {
+              "name": "Shield",
+              "category": "shield",
+              "unitCost": 5
+            },
+            {
+              "name": "Helmet",
+              "category": "armour",
+              "unitCost": 10
+            }
+          ]
+        }
+      ],
+      "skills": [],
+      "spellDisciplines": [],
+      "spellAccess": [],
+      "hiredSwordPolicy": {
+        "inheritWarband": "Mercenaries",
+        "summary": "Ostermarkers follow Mercenary rules. Priest of Morr is identified as an additional Grade 1b Hired Sword but has no existing warrior-type profile to link here; Wolf Priest of Ulric is Middenheim-only. No Ostermark-specific whitelist is stated."
+      }
+    }
+  ]
+}

@@ -445,6 +445,11 @@
       "name": "Thunderer Equipment List",
       "sourceReference": "DwarfTreasurehunters.pdf — Thunderer Equipment List",
       "items": [
+        { "name": "Dagger", "category": "weapon", "unitCost": 2, "firstFree": true },
+        { "name": "Mace", "category": "weapon", "unitCost": 3 },
+        { "name": "Hammer", "category": "weapon", "unitCost": 3 },
+        { "name": "Axe", "category": "weapon", "unitCost": 5 },
+        { "name": "Sword", "category": "weapon", "unitCost": 10 },
         { "name": "Crossbow", "category": "weapon", "unitCost": 25 },
         { "name": "Handgun", "category": "weapon", "unitCost": 35 },
         { "name": "Pistol", "category": "weapon", "unitCost": 15 },

@@ -1,0 +1,25 @@
+{
+  "sourceUrl": "https://mordheimer.net/docs/warbands/grade-1a-warbands/mercenaries",
+  "captainSkills": ["Combat", "Shooting", "Academic", "Strength", "Speed"],
+  "sects": [
+    {
+      "name": "Reikland Mercenaries",
+      "championSkills": ["Combat", "Shooting", "Strength"],
+      "youngbloodSkills": ["Combat", "Shooting", "Speed"],
+      "tradingEquipment": ["Rapier", "Cathayan Silk Clothes"]
+    },
+    {
+      "name": "Middenheim Mercenaries",
+      "championSkills": ["Combat", "Strength", "Speed"],
+      "youngbloodSkills": ["Combat", "Strength", "Speed"],
+      "recruitmentEquipment": ["Wolfcloak"],
+      "tradingEquipment": ["Wolfcloak", "Cathayan Silk Clothes"]
+    },
+    {
+      "name": "Marienburg Mercenaries",
+      "championSkills": ["Combat", "Shooting", "Speed"],
+      "youngbloodSkills": ["Combat", "Shooting", "Speed"],
+      "tradingEquipment": ["Rapier", "Cathayan Silk Clothes"]
+    }
+  ]
+}
