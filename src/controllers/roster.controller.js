@@ -165,13 +165,10 @@ function createRosterController(repository, rosterService) {
       if (values.warband_id !== undefined) {
         const targetWarband = values.warband_id ? await repository.findWarband(values.warband_id) : null;
         const currentCapacity = await rosterService.getRosterCapacity(rosterExists);
-        const selectedModifiers = await repository.listSelectedCapacityModifiers(rosterExists.id);
-        if (targetWarband && selectedModifiers.some((modifier) => modifier.excluded_warbands.includes(targetWarband.name))) {
-          return response.status(409).json({ error: "The selected capacity item cannot be used by the new warband." });
-        }
+        const targetCapacity = await rosterService.getRosterCapacity({ ...rosterExists, warband_id: values.warband_id });
         const targetMax = (targetWarband?.max_members ?? 15)
           + currentCapacity.memberTypeBonus
-          + selectedModifiers.reduce((total, modifier) => total + modifier.member_limit_bonus, 0);
+          + targetCapacity.itemBonus;
         if (currentCapacity.currentMembers > targetMax) {
           return response.status(409).json({ error: "The roster exceeds the new warband's maximum size." });
         }
@@ -193,27 +190,7 @@ function createRosterController(repository, rosterService) {
     async setCapacityModifiers(request, response) {
       const roster = await repository.findRoster(request.params.rosterId);
       if (!roster) return response.status(404).json({ error: "Roster not found." });
-      if (!Array.isArray(request.body?.modifierIds)) return response.status(400).json({ error: "modifierIds must be an array." });
-
-      const modifierIds = [...new Set(request.body.modifierIds)];
-      const modifiers = modifierIds.length
-        ? await repository.findCapacityModifiers(modifierIds)
-        : [];
-      if (modifiers.length !== modifierIds.length) return response.status(400).json({ error: "Unknown capacity modifier." });
-      const warband = roster.warband_id ? await repository.findWarband(roster.warband_id) : null;
-      if (!warband) return response.status(400).json({ error: "Select a warband before applying capacity items." });
-      const unavailable = modifiers.find((modifier) => modifier.excluded_warbands.includes(warband.name));
-      if (unavailable) return response.status(400).json({ error: `${unavailable.name} cannot be used by ${warband.name}.` });
-
-      const currentCapacity = await rosterService.getRosterCapacity(roster);
-      const maxMembers = warband.max_members + currentCapacity.memberTypeBonus
-        + modifiers.reduce((total, modifier) => total + modifier.member_limit_bonus, 0);
-      if (currentCapacity.currentMembers > maxMembers) {
-        return response.status(409).json({ error: "Removing this capacity bonus would put the roster over its maximum size." });
-      }
-
-      await repository.replaceCapacityModifiers(roster.id, modifiers);
-      response.json(await rosterService.toRosterResponse(roster, await rosterService.fetchRosterMembers(roster.id)));
+      return response.status(409).json({ error: "Capacity item bonuses are automatic. The warband leader must carry the Halfling Cookbook in their inventory." });
     },
 
     async delete(request, response) {

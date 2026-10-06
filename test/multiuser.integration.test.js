@@ -225,7 +225,11 @@ describe("multi-user campaigns", () => {
     await db("rosters").where({ id: free.body.id }).update({ campaign_step: 8 });
     assert.equal((await resize(2)).status, 200);
     await db("rosters").where({ id: free.body.id }).update({ campaign_step: 1 });
-    assert.equal((await resize(1)).status, 200);
+    assert.equal((await resize(1)).status, 409);
+    assert.equal((await call(users.alice.token, "POST", `/rosters/${free.body.id}/casualties`, {
+      memberId: member.body.id, modelIndex: 1,
+    })).status, 200);
+    assert.equal(Number((await read()).body.treasury), type.hireCost);
   });
 
   test("Henchman resizing refunds paid gear assigned to removed models", async () => {
@@ -245,12 +249,12 @@ describe("multi-user campaigns", () => {
     assert.equal(member.status, 201);
     const equipment = await call(users.alice.token, "GET", `/members/${member.body.id}/equipment`);
     const option = equipment.body.availableOptions.find((item) =>
-      item.allowIndividualGroupGear && item.unitCost > 0 && !item.firstFree);
-    assert.ok(option, "expected an individually assignable paid equipment option");
+      item.unitCost > 0 && !item.firstFree);
+    assert.ok(option, "expected a paid equipment option");
 
     const purchase = await call(users.alice.token, "POST", `/members/${member.body.id}/equipment`, {
       equipmentOptionId: option.id,
-      modelIndex: 1,
+      modelIndex: -1,
     });
     assert.equal(purchase.status, 201, JSON.stringify(purchase.body));
     const treasuryBeforeRemoval = Number((await call(users.alice.token, "GET", `/rosters/${roster.body.id}`)).body.treasury);

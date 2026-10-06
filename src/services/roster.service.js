@@ -9,12 +9,11 @@ function createRosterService(repository) {
   }
 
   async function getRosterCapacity(roster) {
-    const { warband, warriors, modifiers, selectedRows } = await repository.getCapacityData(roster);
-    const selectedIds = new Set(selectedRows);
-    const selectedModifiers = modifiers.filter((modifier) => selectedIds.has(modifier.id));
+    const { warband, warriors, modifiers, leader, hasLeaderCookbook } = await repository.getCapacityData(roster);
     const availableModifiers = warband
       ? modifiers.filter((modifier) => !modifier.excluded_warbands.includes(warband.name))
       : [];
+    const selectedModifiers = availableModifiers.filter((modifier) => modifier.modifier_key === "halfling-cookbook" && hasLeaderCookbook);
     const memberTypeBonus = warriors.reduce((total, warrior) => total + (warrior.member_limit_bonus || 0), 0);
     const itemBonus = selectedModifiers.reduce((total, modifier) => total + modifier.member_limit_bonus, 0);
     const baseMaxHeroes = warband?.max_heroes ?? 6;
@@ -28,6 +27,7 @@ function createRosterService(repository) {
       maxMembers: baseMaxMembers + memberTypeBonus + itemBonus,
       memberTypeBonus,
       itemBonus,
+      leader: leader ? { id: leader.id, name: leader.name } : null,
       limitsSourceReference: warband?.limits_source_reference || "3Campaigns.pdf — Campaigns: Heroes and Henchmen",
       limitsRule: warband?.limits_rule || "Maximum 6 Heroes and 15 total warriors unless the warband or an eligible capacity modifier states otherwise.",
       selectedModifiers,

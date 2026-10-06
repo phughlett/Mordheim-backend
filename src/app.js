@@ -8,6 +8,7 @@ const { createCatalogRoutes } = require("./routes/catalog.routes");
 const { createCorrectionRoutes } = require("./routes/corrections.routes");
 const { createMemberRoutes } = require("./routes/member.routes");
 const { createRosterRoutes } = require("./routes/roster.routes");
+const { createTradingRoutes } = require("./routes/trading.routes");
 
 function logApiRequest(request, response, next) {
   const startedAt = process.hrtime.bigint();
@@ -47,6 +48,7 @@ function createApp(db, options = {}) {
   app.use("/api", createBattleRoutes(db));
   app.use("/api", createRosterRoutes(db));
   app.use("/api", createMemberRoutes(db));
+  app.use("/api", createTradingRoutes(db));
   app.use((error, _request, response, _next) => {
     console.error(error);
     response.status(500).json({ error: "Internal server error." });

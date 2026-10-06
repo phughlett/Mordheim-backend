@@ -6,6 +6,7 @@ COPY knexfile.js ./
 COPY catalog.json ./catalog.json
 COPY warband-capacity.json ./warband-capacity.json
 COPY equipment-catalog.json ./equipment-catalog.json
+COPY trading-catalog.json ./trading-catalog.json
 COPY promotion-eligible.json ./promotion-eligible.json
 COPY skills-catalog.json ./skills-catalog.json
 COPY skill-category-eligibility.json ./skill-category-eligibility.json

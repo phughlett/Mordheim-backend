@@ -108,17 +108,9 @@ describe("source-backed warband model limits", () => {
         const cookbook = full.capacity.availableModifiers.find((item) => item.name === "Halfling Cookbook");
         assert.ok(cookbook);
         const extended = await call("PUT", `/rosters/${roster.id}/capacity-modifiers`, { modifierIds: [cookbook.id] });
-        assert.equal(extended.status, 200);
-        assert.equal(extended.body.capacity.baseMaxMembers, 20);
-        assert.equal(extended.body.capacity.maxMembers, 21);
-        const hired = await call("POST", `/rosters/${roster.id}/members`, {
-          name: "Bonus slot", role: "Henchman", warriorTypeId: type.id,
-        });
-        assert.equal(hired.status, 201);
-        const overBonus = await call("POST", `/rosters/${roster.id}/members`, {
-          name: "Over bonus capacity", role: "Henchman", warriorTypeId: type.id,
-        });
-        assert.equal(overBonus.status, 409);
+        assert.equal(extended.status, 409);
+        assert.match(extended.body.error, /leader must carry/);
+        assert.equal((await call("GET", `/rosters/${roster.id}`)).body.capacity.maxMembers, 20);
         assert.equal((await call("PUT", `/rosters/${roster.id}/capacity-modifiers`, { modifierIds: [] })).status, 409);
       }
     }

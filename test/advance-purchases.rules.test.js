@@ -4,6 +4,7 @@ const { defaultPurchaseRules, validatePurchaseRules, canPurchaseAdvances } = req
 
 test("paid advancement defaults include all requested prices and uncapped purchases", () => {
   assert.equal(defaultPurchaseRules.enabled, false);
+  assert.equal(defaultPurchaseRules.skillsEnabled, true);
   assert.equal(defaultPurchaseRules.skillCost, 40);
   assert.deepEqual(Object.entries(defaultPurchaseRules.stats).map(([stat, rule]) => [stat, rule.firstCost, rule.additionalCost, rule.maxIncreases]), [
     ["M", 15, 15, null], ["WS", 15, 15, null], ["BS", 15, 15, null], ["S", 25, 35, null],
@@ -18,6 +19,16 @@ test("paid advancement defaults include all requested prices and uncapped purcha
     const invalid = structuredClone(defaultPurchaseRules);
     invalid.stats.S.maxIncreases = maxIncreases;
     assert.ok(validatePurchaseRules(invalid).error);
+  }
+});
+
+test("skill purchases can be independently disabled and legacy rules remain compatible", () => {
+  const disabled = { ...defaultPurchaseRules, enabled: true, skillsEnabled: false };
+  assert.deepEqual(validatePurchaseRules(disabled).rules, disabled);
+  const { skillsEnabled, ...legacy } = defaultPurchaseRules;
+  assert.equal(validatePurchaseRules(legacy).rules.skillsEnabled, true);
+  for (const skillsEnabled of [null, "false", 0]) {
+    assert.ok(validatePurchaseRules({ ...defaultPurchaseRules, skillsEnabled }).error);
   }
 });
 

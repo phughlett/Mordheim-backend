@@ -86,6 +86,61 @@ describe("campaign paid advancements", () => {
     assert.equal((await call("POST", "/campaigns", { name: "Invalid", advancePurchaseRules: invalid })).status, 400);
   });
 
+  test("disabling skill purchases preserves stat purchases and rejects direct skill requests", async () => {
+    const custom = { ...rules(), skillsEnabled: false };
+    const { campaign, roster, member } = await fixture(custom);
+    assert.equal((await call("GET", `/campaigns/${campaign.id}`)).body.advancePurchaseRules.skillsEnabled, false);
+    const first = await purchase(member, { stat: "A" });
+    assert.equal(first.status, 201, JSON.stringify(first.body));
+    assert.equal(first.body.purchases.skillsEnabled, false);
+    assert.equal(first.body.purchases.skillAllowance, 0);
+    assert.deepEqual(first.body.purchases.availableSkills, []);
+    const skill = await db("skills").where({ category: "Combat", warband_id: null }).first("id");
+    const before = await rosterData(roster);
+    const rejected = await purchase(member, { skillId: skill.id });
+    assert.equal(rejected.status, 409);
+    assert.match(rejected.body.error, /disabled/);
+    assert.equal((await rosterData(roster)).treasury, before.treasury);
+    assert.equal((await advanceData(member)).experience, first.body.experience);
+    assert.equal((await purchase(member, { stat: "WS" })).status, 201);
+  });
+
+  test("legacy campaign settings retain skill purchase access", async () => {
+    const { campaign, member } = await fixture();
+    const legacy = rules();
+    delete legacy.skillsEnabled;
+    await db("campaigns").where({ id: campaign.id }).update({ advance_purchase_rules: JSON.stringify(legacy) });
+    assert.equal((await call("GET", `/campaigns/${campaign.id}`)).body.advancePurchaseRules.skillsEnabled, true);
+    const first = await purchase(member, { stat: "A" });
+    assert.equal(first.status, 201);
+    assert.equal(first.body.purchases.skillsEnabled, true);
+    assert.ok(first.body.purchases.availableSkills.length > 0);
+  });
+
+  test("pistol singles and braces have separate prices, inventory units and refunds", async () => {
+    const { roster, member } = await fixture();
+    const gear = (await call("GET", `/members/${member.id}/equipment`)).body;
+    for (const [singleName, braceName] of [["Pistol", "Brace of Pistols"], ["Duelling pistol", "Brace of Duelling Pistols"]]) {
+      const single = gear.availableOptions.find((option) => option.name === singleName);
+      const brace = gear.availableOptions.find((option) => option.name === braceName && option.listKey === single?.listKey);
+      assert.ok(single);
+      assert.ok(brace);
+      assert.equal(brace.unitCost, single.unitCost * 2);
+      assert.deepEqual(brace.stats, single.stats);
+      assert.match(brace.ruleText, /counts as one missile weapon/);
+      const before = Number((await rosterData(roster)).treasury);
+      const bought = await call("POST", `/members/${member.id}/equipment`, { equipmentOptionId: brace.id, quantity: 1, modelIndex: -1 });
+      assert.equal(bought.status, 201, JSON.stringify(bought.body));
+      const inventory = (await call("GET", `/members/${member.id}/equipment`)).body.inventory;
+      const owned = inventory.find((item) => item.equipmentOptionId === brace.id);
+      assert.equal(owned.quantity, 1);
+      assert.equal(owned.unitCostPaid, brace.unitCost);
+      assert.equal(Number((await rosterData(roster)).treasury), before - brace.unitCost);
+      assert.equal((await call("DELETE", `/members/${member.id}/equipment/${owned.id}`)).status, 200);
+      assert.equal(Number((await rosterData(roster)).treasury), before);
+    }
+  });
+
   test("stat and skill purchases advance XP once, obey normal eligibility, and refund recorded prices", async () => {
     const { roster, member } = await fixture();
     const startingGold = Number((await rosterData(roster)).treasury);

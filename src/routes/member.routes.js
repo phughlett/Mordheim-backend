@@ -23,6 +23,12 @@ function createMemberRoutes(db) {
         if (next_ > current) actions.push("hire");
         else if (next_ < current) actions.push("remove");
       }
+      if (actions.includes("remove")) {
+        const roster = await repository.findRoster(warrior.roster_id);
+        if (roster?.campaign_id && roster.campaign_phase === "post_battle" && roster.campaign_step === 1) {
+          return response.status(409).json({ error: "Record a model's death with the casualty action during injuries; deaths do not refund hire fees or carried equipment." });
+        }
+      }
       for (const action of actions) {
         const blocked = await check(warrior.roster_id, action);
         if (blocked) return response.status(409).json(blocked);
@@ -65,7 +71,14 @@ function createMemberRoutes(db) {
   router.put("/members/:memberId/skill-category-overrides", controller.setLadsGotTalentChoices);
   router.post("/members/:memberId/promote", guard("advance", fromMember), controller.promote);
   router.patch("/members/:memberId", guardUpdate, controller.update);
-  router.delete("/members/:memberId", guard("remove", fromMember), controller.delete);
+  router.delete("/members/:memberId", guard("remove", fromMember), async (request, response, next) => {
+    const warrior = await repository.findWarrior(request.params.memberId, ["roster_id"]);
+    const roster = warrior ? await repository.findRoster(warrior.roster_id) : null;
+    if (roster?.campaign_id && roster.campaign_phase === "post_battle" && roster.campaign_step === 1) {
+      return response.status(409).json({ error: "Use the casualty action during injuries. Dead warriors lose their equipment without a refund." });
+    }
+    return controller.delete(request, response, next);
+  });
 
   return router;
 }

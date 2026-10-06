@@ -1,6 +1,8 @@
 const crypto = require("crypto");
 const express = require("express");
 const { defaultPurchaseRules, validatePurchaseRules } = require("../services/advance-purchase-rules.service");
+const { defaultTradingRules, validateTradingRules } = require("../services/trading-rules.service");
+const { catalog } = require("../services/trading-catalog.service");
 
 function toCampaignResponse(campaign, warbandCount = 0, userId = null) {
   return {
@@ -10,7 +12,8 @@ function toCampaignResponse(campaign, warbandCount = 0, userId = null) {
     warbandCount: Number(warbandCount),
     inviteCode: campaign.invite_code,
     isOwner: Boolean(userId) && campaign.owner_id === userId,
-    advancePurchaseRules: campaign.advance_purchase_rules || defaultPurchaseRules,
+    advancePurchaseRules: { skillsEnabled: true, ...(campaign.advance_purchase_rules || defaultPurchaseRules) },
+    tradingRules: campaign.trading_rules || defaultTradingRules,
   };
 }
 
@@ -81,8 +84,24 @@ function createCampaignRoutes(db) {
     if (!validateMaxGc(maxGc)) return response.status(400).json({ error: "Maximum GC must be a whole number of 0 or more." });
     const purchaseRules = validatePurchaseRules(request.body?.advancePurchaseRules === undefined ? defaultPurchaseRules : request.body.advancePurchaseRules);
     if (purchaseRules.error) return response.status(400).json({ error: purchaseRules.error });
+    const trading = validateTradingRules(request.body?.tradingRules ?? defaultTradingRules, catalog);
+    if (trading.error) return response.status(400).json({ error: trading.error });
+    const [warbands, types, skills] = await Promise.all([
+      db("warbands").pluck("name"), db("warrior_types").pluck("name"), db("skills").pluck("name"),
+    ]);
+    for (const item of trading.rules.customItems) {
+      if ([...(item.allowedWarbands ?? []), ...(item.excludedWarbands ?? [])].some((name) => !warbands.includes(name))
+        || [...(item.allowedTypeNames ?? []), ...(item.excludedTypeNames ?? [])].some((name) => !types.includes(name))
+        || (item.requiredSkill && !skills.includes(item.requiredSkill))) {
+        return response.status(400).json({ error: `${item.name}: choose existing warband, warrior-type and skill names for restrictions.` });
+      }
+    }
     const campaign = await db.transaction(async (trx) => {
-      const [created] = await trx("campaigns").insert({ name, max_gc: maxGc, owner_id: request.user.id, invite_code: newInviteCode(), advance_purchase_rules: JSON.stringify(purchaseRules.rules) }).returning("*");
+      const [created] = await trx("campaigns").insert({ name, max_gc: maxGc, owner_id: request.user.id, invite_code: newInviteCode(), advance_purchase_rules: JSON.stringify(purchaseRules.rules), trading_rules: JSON.stringify(trading.rules) }).returning("*");
+      for (const item of trading.rules.customItems) {
+        await trx("shop_items").insert({ id: `${created.id}/${item.id}`, campaign_id: created.id,
+          definition: JSON.stringify({ ...item, id: `${created.id}/${item.id}` }) });
+      }
       await trx("campaign_members").insert({ campaign_id: created.id, user_id: request.user.id });
       return created;
     });

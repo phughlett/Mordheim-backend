@@ -20,6 +20,7 @@ function createAdvancePurchaseRepository(db, { getSkillEligibilityContext, loadA
 
   async function state(query, warrior) {
     const rules = warrior.rules || defaultPurchaseRules;
+    const skillsEnabled = rules.skillsEnabled !== false;
     const history = await query("warrior_advances").where({ warrior_id: warrior.id, advance_table: "Hero" }).whereNull("consumed_at");
     const paid = history.filter((advance) => advance.purchase_cost !== null);
     const statPurchases = paid.filter((advance) => advance.result === "stat_increase");
@@ -42,14 +43,15 @@ function createAdvancePurchaseRepository(db, { getSkillEligibilityContext, loadA
       };
     });
     let skills = [];
-    if (canPurchase && statPurchases.length > skillsPurchased) {
+    if (canPurchase && skillsEnabled && statPurchases.length > skillsPurchased) {
       const context = await getSkillEligibilityContext(query, warrior.id);
       const known = new Set(await query("warrior_skills").where({ warrior_id: warrior.id }).pluck("skill_id"));
       skills = (await loadAvailableSkills(query, context)).filter((skill) => !known.has(skill.id));
     }
     return {
       enabled, canPurchase, pendingAdvances: pending, nextExperience, stats,
-      skillCost: rules.skillCost, skillAllowance: statPurchases.length - skillsPurchased, availableSkills: skills,
+      skillsEnabled, skillCost: rules.skillCost,
+      skillAllowance: skillsEnabled ? statPurchases.length - skillsPurchased : 0, availableSkills: skills,
     };
   }
 
@@ -74,6 +76,7 @@ function createAdvancePurchaseRepository(db, { getSkillEligibilityContext, loadA
           if (!choice) return { error: "This characteristic is at its purchase cap, racial maximum, or is unavailable." };
           cost = choice.cost;
         } else {
+          if (!options.skillsEnabled) return { error: "Skill purchases are disabled for this campaign." };
           if (options.skillAllowance < 1) return { error: "Each purchased characteristic increase allows one purchased skill." };
           const context = await getSkillEligibilityContext(transaction, warriorId);
           const skill = await transaction("skills").where({ id: skillId }).first();

@@ -106,6 +106,7 @@ function createMemberController(repository, rosterService) {
         quantity,
       });
       if (purchase.missingWarrior) return response.status(404).json({ error: "Warrior not found." });
+      if (purchase.shopOnly) return response.status(409).json({ error: "After roster creation, buy equipment from the trading shop into your warband stash, then transfer it to an eligible warrior." });
       if (purchase.unavailableOption) return response.status(400).json({ error: "This item is not allowed for this warrior." });
       if (purchase.invalidModelIndex) return response.status(400).json({ error: "This group must use identical equipment or the selected model does not exist." });
       if (purchase.insufficientFunds) {
@@ -121,6 +122,7 @@ function createMemberController(repository, rosterService) {
       if (sale.missingWarrior) return response.status(404).json({ error: "Warrior not found." });
       if (sale.missingItem) return response.status(404).json({ error: "Inventory item not found." });
       if (sale.freeItem) return response.status(409).json({ error: "Free equipment cannot be sold." });
+      if (sale.shopItem) return response.status(409).json({ error: "Trading-shop equipment cannot use recruitment refunds. Transfer it to the warband stash instead." });
 
       const equipment = await repository.getWarriorEquipment(request.params.memberId);
       response.json({ ...equipment, refundAmount: sale.refundAmount, treasury: String(sale.treasury) });
@@ -138,6 +140,7 @@ function createMemberController(repository, rosterService) {
       if (sale.missingWarrior) return response.status(404).json({ error: "Warrior not found." });
       if (sale.missingItem) return response.status(404).json({ error: "One or more inventory items were not found." });
       if (sale.freeItem) return response.status(409).json({ error: "Free equipment cannot be sold." });
+      if (sale.shopItem) return response.status(409).json({ error: "Trading-shop equipment cannot use recruitment refunds. Transfer it to the warband stash instead." });
 
       const equipment = await repository.getWarriorEquipment(request.params.memberId);
       response.json({ ...equipment, refundAmount: sale.refundAmount, treasury: String(sale.treasury) });
@@ -300,6 +303,7 @@ function createMemberController(repository, rosterService) {
         return response.status(400).json({ error: "unitCostPaid must be a non-negative whole number no greater than 1000000." });
       }
       const result = await repository.addWarriorMagicTome(request.params.memberId, unitCostPaid ?? null);
+      if (result.shopOnly) return response.status(409).json({ error: "In campaigns, buy a Tome of Magic from the trading shop and transfer it from the stash." });
       if (result.missingWarrior) return response.status(404).json({ error: "Warrior not found." });
       if (result.tomeNotAllowed) return response.status(409).json({ error: "The Tome of Magic is not available to this warband." });
       if (result.academicSkillRequired) return response.status(409).json({ error: "Academic skill access is required to record a Tome of Magic for spell learning." });

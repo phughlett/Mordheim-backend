@@ -1,0 +1,499 @@
+[
+  {
+    "id": "axe", "name": "Axe", "category": "weapon", "baseCost": 5, "priceDice": 0, "priceMultiplier": 1, "rarity": null,
+    "description": "Close-combat axe with an additional armour-save penalty.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.24 — Axe",
+    "weaponNames": ["Axe"], "profileName": "Axe", "ranged": false, "excludedTypeNames": ["The Possessed", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "club-mace-hammer", "name": "Club, Mace or Hammer", "category": "weapon", "baseCost": 3, "priceDice": 0, "priceMultiplier": 1, "rarity": null,
+    "description": "These blunt close-combat weapons share the concussion profile.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.24 — Hammer, staff, mace or club",
+    "weaponNames": ["Club", "Mace", "Hammer", "Staff"], "profileName": "Club", "ranged": false, "excludedTypeNames": ["The Possessed", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "dagger", "name": "Dagger", "category": "weapon", "baseCost": 2, "priceDice": 0, "priceMultiplier": 1, "rarity": null,
+    "description": "Additional daggers cost 2 gc; the first dagger is free. This trading price does not apply a recruitment discount automatically.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.24 — Dagger",
+    "weaponNames": ["Dagger"], "profileName": "Dagger", "ranged": false, "excludedTypeNames": ["The Possessed", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "double-handed-weapon", "name": "Double-Handed Weapon", "category": "weapon", "baseCost": 15, "priceDice": 0, "priceMultiplier": 1, "rarity": null,
+    "description": "A two-handed close-combat weapon: increased Strength, requires both hands and strikes last.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.27 — Double-handed weapon",
+    "weaponNames": ["Double-handed weapon", "Double handed weapon", "Two-handed weapon"], "profileName": "Double-handed weapon", "ranged": false, "excludedTypeNames": ["The Possessed", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "flail", "name": "Flail", "category": "weapon", "baseCost": 15, "priceDice": 0, "priceMultiplier": 1, "rarity": null,
+    "description": "Two-handed close-combat weapon with a Strength bonus in the first combat round.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.25 — Flail",
+    "weaponNames": ["Flail"], "profileName": "Flail", "ranged": false, "excludedTypeNames": ["The Possessed", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "halberd", "name": "Halberd", "category": "weapon", "baseCost": 10, "priceDice": 0, "priceMultiplier": 1, "rarity": null,
+    "description": "Two-handed polearm with increased close-combat Strength.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.26 — Halberd",
+    "weaponNames": ["Halberd"], "profileName": "Halberd", "ranged": false, "excludedTypeNames": ["The Possessed", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "lance", "name": "Lance", "category": "weapon", "baseCost": 40, "priceDice": 0, "priceMultiplier": 1, "rarity": 8,
+    "description": "Mounted close-combat weapon with a Strength bonus on the charge. Requires a horse or warhorse and the optional mounted rules.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.26 — Lance",
+    "weaponNames": ["Lance"], "profileName": "Lance", "ranged": false, "excludedTypeNames": ["The Possessed", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "morning-star", "name": "Morning Star", "category": "weapon", "baseCost": 15, "priceDice": 0, "priceMultiplier": 1, "rarity": null,
+    "description": "Heavy one-handed weapon with increased Strength in the first combat round; may accompany a shield but not another weapon.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.25 — Morning star",
+    "weaponNames": ["Morning star"], "profileName": "Morning star", "ranged": false, "excludedTypeNames": ["The Possessed", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "spear", "name": "Spear", "category": "weapon", "baseCost": 10, "priceDice": 0, "priceMultiplier": 1, "rarity": null,
+    "description": "Close-combat spear with strike-first and mounted cavalry bonuses under its weapon rules.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.26 — Spear",
+    "weaponNames": ["Spear"], "profileName": "Spear", "ranged": false, "excludedTypeNames": ["The Possessed", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "sword", "name": "Sword", "category": "weapon", "baseCost": 10, "priceDice": 0, "priceMultiplier": 1, "rarity": null,
+    "description": "Close-combat sword with the parry rule.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.24 — Sword",
+    "weaponNames": ["Sword"], "profileName": "Sword", "ranged": false, "excludedTypeNames": ["The Possessed", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "gromril-axe", "name": "Gromril Axe", "category": "weapon", "baseCost": 20, "priceDice": 0, "priceMultiplier": 1, "rarity": 11,
+    "description": "Axe profile with an extra -1 armour-save modifier; four times the normal axe price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Gromril Weapon; 1Rules.pdf p.27 — Gromril weapon",
+    "weaponNames": ["Axe"], "profileName": "Axe", "materialName": "Gromril", "ranged": false, "excludedTypeNames": ["The Possessed", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "gromril-club-mace-hammer", "name": "Gromril Club, Mace or Hammer", "category": "weapon", "baseCost": 12, "priceDice": 0, "priceMultiplier": 1, "rarity": 11,
+    "description": "Blunt-weapon profile with an extra -1 armour-save modifier; four times the normal weapon price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Gromril Weapon; 1Rules.pdf p.27 — Gromril weapon",
+    "weaponNames": ["Club", "Mace", "Hammer", "Staff"], "profileName": "Club", "materialName": "Gromril", "ranged": false, "excludedTypeNames": ["The Possessed", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "gromril-dagger", "name": "Gromril Dagger", "category": "weapon", "baseCost": 8, "priceDice": 0, "priceMultiplier": 1, "rarity": 11,
+    "description": "Dagger profile with an extra -1 armour-save modifier; four times the normal purchased dagger price. Not a free starting dagger.",
+    "sourceReference": "3Campaigns.pdf p.104 — Gromril Weapon; 1Rules.pdf p.27 — Gromril weapon",
+    "weaponNames": ["Dagger"], "profileName": "Dagger", "materialName": "Gromril", "ranged": false, "excludedTypeNames": ["The Possessed", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "gromril-double-handed-weapon", "name": "Gromril Double-Handed Weapon", "category": "weapon", "baseCost": 60, "priceDice": 0, "priceMultiplier": 1, "rarity": 11,
+    "description": "Double-handed weapon profile with an extra -1 armour-save modifier; four times the normal weapon price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Gromril Weapon; 1Rules.pdf p.27 — Gromril weapon",
+    "weaponNames": ["Double-handed weapon", "Double handed weapon", "Two-handed weapon"], "profileName": "Double-handed weapon", "materialName": "Gromril", "ranged": false, "excludedTypeNames": ["The Possessed", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "gromril-flail", "name": "Gromril Flail", "category": "weapon", "baseCost": 60, "priceDice": 0, "priceMultiplier": 1, "rarity": 11,
+    "description": "Flail profile with an extra -1 armour-save modifier; four times the normal flail price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Gromril Weapon; 1Rules.pdf p.27 — Gromril weapon",
+    "weaponNames": ["Flail"], "profileName": "Flail", "materialName": "Gromril", "ranged": false, "excludedTypeNames": ["The Possessed", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "gromril-halberd", "name": "Gromril Halberd", "category": "weapon", "baseCost": 40, "priceDice": 0, "priceMultiplier": 1, "rarity": 11,
+    "description": "Halberd profile with an extra -1 armour-save modifier; four times the normal halberd price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Gromril Weapon; 1Rules.pdf p.27 — Gromril weapon",
+    "weaponNames": ["Halberd"], "profileName": "Halberd", "materialName": "Gromril", "ranged": false, "excludedTypeNames": ["The Possessed", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "gromril-lance", "name": "Gromril Lance", "category": "weapon", "baseCost": 160, "priceDice": 0, "priceMultiplier": 1, "rarity": 11,
+    "description": "Lance profile with an extra -1 armour-save modifier; four times the normal lance price. Still requires a mount and the optional mounted rules.",
+    "sourceReference": "3Campaigns.pdf p.104 — Gromril Weapon; 1Rules.pdf p.27 — Gromril weapon",
+    "weaponNames": ["Lance"], "profileName": "Lance", "materialName": "Gromril", "ranged": false, "excludedTypeNames": ["The Possessed", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "gromril-morning-star", "name": "Gromril Morning Star", "category": "weapon", "baseCost": 60, "priceDice": 0, "priceMultiplier": 1, "rarity": 11,
+    "description": "Morning star profile with an extra -1 armour-save modifier; four times the normal weapon price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Gromril Weapon; 1Rules.pdf p.27 — Gromril weapon",
+    "weaponNames": ["Morning star"], "profileName": "Morning star", "materialName": "Gromril", "ranged": false, "excludedTypeNames": ["The Possessed", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "gromril-spear", "name": "Gromril Spear", "category": "weapon", "baseCost": 40, "priceDice": 0, "priceMultiplier": 1, "rarity": 11,
+    "description": "Spear profile with an extra -1 armour-save modifier; four times the normal spear price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Gromril Weapon; 1Rules.pdf p.27 — Gromril weapon",
+    "weaponNames": ["Spear"], "profileName": "Spear", "materialName": "Gromril", "ranged": false, "excludedTypeNames": ["The Possessed", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "gromril-sword", "name": "Gromril Sword", "category": "weapon", "baseCost": 40, "priceDice": 0, "priceMultiplier": 1, "rarity": 11,
+    "description": "Sword profile with an extra -1 armour-save modifier; four times the normal sword price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Gromril Weapon; 1Rules.pdf p.27 — Gromril weapon",
+    "weaponNames": ["Sword"], "profileName": "Sword", "materialName": "Gromril", "ranged": false, "excludedTypeNames": ["The Possessed", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "ithilmar-axe", "name": "Ithilmar Axe", "category": "weapon", "baseCost": 15, "priceDice": 0, "priceMultiplier": 1, "rarity": 9,
+    "description": "Axe profile with +1 Initiative in close combat; three times the normal axe price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Ithilmar Weapon; 1Rules.pdf p.27 — Ithilmar weapon",
+    "weaponNames": ["Axe"], "profileName": "Axe", "materialName": "Ithilmar", "ranged": false, "excludedTypeNames": ["The Possessed", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "ithilmar-club-mace-hammer", "name": "Ithilmar Club, Mace or Hammer", "category": "weapon", "baseCost": 9, "priceDice": 0, "priceMultiplier": 1, "rarity": 9,
+    "description": "Blunt-weapon profile with +1 Initiative in close combat; three times the normal weapon price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Ithilmar Weapon; 1Rules.pdf p.27 — Ithilmar weapon",
+    "weaponNames": ["Club", "Mace", "Hammer", "Staff"], "profileName": "Club", "materialName": "Ithilmar", "ranged": false, "excludedTypeNames": ["The Possessed", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "ithilmar-dagger", "name": "Ithilmar Dagger", "category": "weapon", "baseCost": 6, "priceDice": 0, "priceMultiplier": 1, "rarity": 9,
+    "description": "Dagger profile with +1 Initiative in close combat; three times the normal purchased dagger price. Not a free starting dagger.",
+    "sourceReference": "3Campaigns.pdf p.104 — Ithilmar Weapon; 1Rules.pdf p.27 — Ithilmar weapon",
+    "weaponNames": ["Dagger"], "profileName": "Dagger", "materialName": "Ithilmar", "ranged": false, "excludedTypeNames": ["The Possessed", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "ithilmar-double-handed-weapon", "name": "Ithilmar Double-Handed Weapon", "category": "weapon", "baseCost": 45, "priceDice": 0, "priceMultiplier": 1, "rarity": 9,
+    "description": "Double-handed weapon profile with +1 Initiative in close combat; three times the normal weapon price. Its strike-last rule still applies.",
+    "sourceReference": "3Campaigns.pdf p.104 — Ithilmar Weapon; 1Rules.pdf p.27 — Ithilmar weapon",
+    "weaponNames": ["Double-handed weapon", "Double handed weapon", "Two-handed weapon"], "profileName": "Double-handed weapon", "materialName": "Ithilmar", "ranged": false, "excludedTypeNames": ["The Possessed", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "ithilmar-flail", "name": "Ithilmar Flail", "category": "weapon", "baseCost": 45, "priceDice": 0, "priceMultiplier": 1, "rarity": 9,
+    "description": "Flail profile with +1 Initiative in close combat; three times the normal flail price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Ithilmar Weapon; 1Rules.pdf p.27 — Ithilmar weapon",
+    "weaponNames": ["Flail"], "profileName": "Flail", "materialName": "Ithilmar", "ranged": false, "excludedTypeNames": ["The Possessed", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "ithilmar-halberd", "name": "Ithilmar Halberd", "category": "weapon", "baseCost": 30, "priceDice": 0, "priceMultiplier": 1, "rarity": 9,
+    "description": "Halberd profile with +1 Initiative in close combat; three times the normal halberd price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Ithilmar Weapon; 1Rules.pdf p.27 — Ithilmar weapon",
+    "weaponNames": ["Halberd"], "profileName": "Halberd", "materialName": "Ithilmar", "ranged": false, "excludedTypeNames": ["The Possessed", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "ithilmar-lance", "name": "Ithilmar Lance", "category": "weapon", "baseCost": 120, "priceDice": 0, "priceMultiplier": 1, "rarity": 9,
+    "description": "Lance profile with +1 Initiative in close combat; three times the normal lance price. Still requires a mount and the optional mounted rules.",
+    "sourceReference": "3Campaigns.pdf p.104 — Ithilmar Weapon; 1Rules.pdf p.27 — Ithilmar weapon",
+    "weaponNames": ["Lance"], "profileName": "Lance", "materialName": "Ithilmar", "ranged": false, "excludedTypeNames": ["The Possessed", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "ithilmar-morning-star", "name": "Ithilmar Morning Star", "category": "weapon", "baseCost": 45, "priceDice": 0, "priceMultiplier": 1, "rarity": 9,
+    "description": "Morning star profile with +1 Initiative in close combat; three times the normal weapon price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Ithilmar Weapon; 1Rules.pdf p.27 — Ithilmar weapon",
+    "weaponNames": ["Morning star"], "profileName": "Morning star", "materialName": "Ithilmar", "ranged": false, "excludedTypeNames": ["The Possessed", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "ithilmar-spear", "name": "Ithilmar Spear", "category": "weapon", "baseCost": 30, "priceDice": 0, "priceMultiplier": 1, "rarity": 9,
+    "description": "Spear profile with +1 Initiative in close combat; three times the normal spear price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Ithilmar Weapon; 1Rules.pdf p.27 — Ithilmar weapon",
+    "weaponNames": ["Spear"], "profileName": "Spear", "materialName": "Ithilmar", "ranged": false, "excludedTypeNames": ["The Possessed", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "ithilmar-sword", "name": "Ithilmar Sword", "category": "weapon", "baseCost": 30, "priceDice": 0, "priceMultiplier": 1, "rarity": 9,
+    "description": "Sword profile with +1 Initiative in close combat; three times the normal sword price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Ithilmar Weapon; 1Rules.pdf p.27 — Ithilmar weapon",
+    "weaponNames": ["Sword"], "profileName": "Sword", "materialName": "Ithilmar", "ranged": false, "excludedTypeNames": ["The Possessed", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "bow", "name": "Bow", "category": "weapon", "baseCost": 10, "priceDice": 0, "priceMultiplier": 1, "rarity": null,
+    "description": "Standard missile bow.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.28 — Bow",
+    "weaponNames": ["Bow"], "profileName": "Bow", "ranged": true, "excludedTypeNames": ["The Possessed", "Flagellants", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "blunderbuss", "name": "Blunderbuss", "category": "weapon", "baseCost": 30, "priceDice": 0, "priceMultiplier": 1, "rarity": 9,
+    "description": "Blackpowder weapon with a once-per-battle scatter shot.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.33 — Blunderbuss",
+    "weaponNames": ["Blunderbuss"], "profileName": "Blunderbuss", "ranged": true, "excludedTypeNames": ["The Possessed", "Flagellants", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "crossbow", "name": "Crossbow", "category": "weapon", "baseCost": 25, "priceDice": 0, "priceMultiplier": 1, "rarity": null,
+    "description": "Powerful missile weapon that may not be fired after moving.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.29 — Crossbow",
+    "weaponNames": ["Crossbow"], "profileName": "Crossbow", "ranged": true, "excludedTypeNames": ["The Possessed", "Flagellants", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "crossbow-pistol", "name": "Crossbow Pistol", "category": "weapon", "baseCost": 35, "priceDice": 0, "priceMultiplier": 1, "rarity": 9,
+    "description": "Compact crossbow with the shoot-in-hand-to-hand-combat rule.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.30 — Crossbow pistol",
+    "weaponNames": ["Crossbow pistol"], "profileName": "Crossbow pistol", "ranged": true, "excludedTypeNames": ["The Possessed", "Flagellants", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "duelling-pistol", "name": "Duelling Pistol", "category": "weapon", "baseCost": 30, "priceDice": 0, "priceMultiplier": 1, "rarity": 10,
+    "description": "Accurate blackpowder pistol. Trading price is 30 gc, not a warband-specific recruitment price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.32 — Duelling pistol",
+    "weaponNames": ["Duelling pistol"], "profileName": "Duelling pistol", "ranged": true, "excludedTypeNames": ["The Possessed", "Flagellants", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "duelling-pistol-brace", "name": "Duelling Pistol Brace", "category": "weapon", "baseCost": 60, "priceDice": 0, "priceMultiplier": 1, "rarity": 10,
+    "description": "A pair of duelling pistols; apply the brace rules manually.",
+    "sourceReference": "3Campaigns.pdf p.104 — Duelling Pistol/brace; 1Rules.pdf p.32 — Duelling pistol",
+    "weaponNames": ["Duelling pistol", "Brace of duelling pistols", "Duelling pistol brace"], "profileName": "Duelling pistol", "ranged": true, "excludedTypeNames": ["The Possessed", "Flagellants", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "elf-bow", "name": "Elf Bow", "category": "weapon", "baseCost": 35, "priceDice": 3, "priceMultiplier": 1, "rarity": 12,
+    "description": "Long-ranged Elven bow with an additional armour-save penalty. Not restricted to Elves by the base trading chart.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.29 — Elf bow",
+    "weaponNames": ["Elf bow", "Elven bow"], "profileName": "Elf bow", "ranged": true, "excludedTypeNames": ["The Possessed", "Flagellants", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "handgun", "name": "Handgun", "category": "weapon", "baseCost": 35, "priceDice": 0, "priceMultiplier": 1, "rarity": 8,
+    "description": "Blackpowder firearm with reload, move-or-fire and armour-penetration rules.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.31 — Handgun",
+    "weaponNames": ["Handgun"], "profileName": "Handgun", "ranged": true, "excludedTypeNames": ["The Possessed", "Flagellants", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "hunting-rifle", "name": "Hunting Rifle", "category": "weapon", "baseCost": 200, "priceDice": 0, "priceMultiplier": 1, "rarity": 11,
+    "description": "Long-ranged blackpowder rifle with its own accuracy, reload and move-or-fire rules.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.33 — Hochland long rifle",
+    "weaponNames": ["Hunting rifle", "Hochland long rifle", "Long rifle"], "profileName": "Hunting rifle", "ranged": true, "excludedTypeNames": ["The Possessed", "Flagellants", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "long-bow", "name": "Long Bow", "category": "weapon", "baseCost": 15, "priceDice": 0, "priceMultiplier": 1, "rarity": null,
+    "description": "Long-ranged bow.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.28 — Long bow",
+    "weaponNames": ["Long bow", "Longbow"], "profileName": "Long bow", "ranged": true, "excludedTypeNames": ["The Possessed", "Flagellants", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "pistol", "name": "Pistol", "category": "weapon", "baseCost": 15, "priceDice": 0, "priceMultiplier": 1, "rarity": 8,
+    "description": "Blackpowder pistol usable at range and under its close-combat pistol rules.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.31 — Pistol",
+    "weaponNames": ["Pistol"], "profileName": "Pistol", "ranged": true, "excludedTypeNames": ["The Possessed", "Flagellants", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "pistol-brace", "name": "Pistol Brace", "category": "weapon", "baseCost": 30, "priceDice": 0, "priceMultiplier": 1, "rarity": 8,
+    "description": "A pair of pistols; apply the brace rules manually.",
+    "sourceReference": "3Campaigns.pdf p.104 — Pistol/brace; 1Rules.pdf p.31 — Pistol",
+    "weaponNames": ["Pistol", "Brace of pistols", "Pistol brace"], "profileName": "Pistol", "ranged": true, "excludedTypeNames": ["The Possessed", "Flagellants", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "repeater-crossbow", "name": "Repeater Crossbow", "category": "weapon", "baseCost": 40, "priceDice": 0, "priceMultiplier": 1, "rarity": 8,
+    "description": "Crossbow with a multiple-shot option.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.30 — Repeater crossbow",
+    "weaponNames": ["Repeater crossbow", "Repeating crossbow"], "profileName": "Repeater crossbow", "ranged": true, "excludedTypeNames": ["The Possessed", "Flagellants", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "sling", "name": "Sling", "category": "weapon", "baseCost": 2, "priceDice": 0, "priceMultiplier": 1, "rarity": null,
+    "description": "Inexpensive missile weapon with a short-range double-shot option.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.29 — Sling",
+    "weaponNames": ["Sling"], "profileName": "Sling", "ranged": true, "excludedTypeNames": ["The Possessed", "Flagellants", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "short-bow", "name": "Short Bow", "category": "weapon", "baseCost": 5, "priceDice": 0, "priceMultiplier": 1, "rarity": null,
+    "description": "Short-ranged bow.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.28 — Short bow",
+    "weaponNames": ["Short bow", "Shortbow"], "profileName": "Short bow", "ranged": true, "excludedTypeNames": ["The Possessed", "Flagellants", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "throwing-knives-stars", "name": "Throwing Knives/Stars", "category": "weapon", "baseCost": 15, "priceDice": 0, "priceMultiplier": 1, "rarity": 5,
+    "description": "Thrown missile weapons sharing the same profile.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.30 — Throwing stars/knives",
+    "weaponNames": ["Throwing knives", "Throwing stars", "Throwing knives/stars", "Throwing stars/knives"], "profileName": "Throwing knives", "ranged": true, "excludedTypeNames": ["The Possessed", "Flagellants", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "warplock-pistol", "name": "Warplock Pistol", "category": "weapon", "baseCost": 35, "priceDice": 0, "priceMultiplier": 1, "rarity": 11,
+    "description": "Skaven-only warpstone pistol, Strength 5 and -3 save modifier; fires every other turn.",
+    "sourceReference": "2Warbands.pdf p.29 — Warplock pistol",
+    "weaponNames": ["Warplock pistol"], "profileName": "Warplock pistol", "ranged": true, "allowedWarbands": ["Skaven"], "excludedTypeNames": ["Rat Ogre", "Rat Ogres", "Giant Rats"]
+  },
+  {
+    "id": "warplock-pistol-brace", "name": "Warplock Pistol Brace", "category": "weapon", "baseCost": 70, "priceDice": 0, "priceMultiplier": 1, "rarity": 11,
+    "description": "A pair of Skaven-only warplock pistols; apply pistol-brace rules manually.",
+    "sourceReference": "2Warbands.pdf p.29 — Warplock pistol (70 for a brace)",
+    "weaponNames": ["Warplock pistol", "Brace of warplock pistols", "Warplock pistol brace"], "profileName": "Warplock pistol", "ranged": true, "allowedWarbands": ["Skaven"], "excludedTypeNames": ["Rat Ogre", "Rat Ogres", "Giant Rats"]
+  },
+  {
+    "id": "barding", "name": "Barding", "category": "armour", "baseCost": 80, "priceDice": 0, "priceMultiplier": 1, "rarity": 8,
+    "description": "Armour for a warhorse, not a normal horse or an unmounted warrior. Under the optional mounted rules it improves the rider's save but reduces the warhorse's Movement.",
+    "sourceReference": "3Campaigns.pdf pp.104, 120 — Price chart; Horses & warhorses",
+    "weaponNames": ["Barding"], "profileName": "Barding", "heroOnly": true
+  },
+  {
+    "id": "buckler", "name": "Buckler", "category": "shield", "baseCost": 5, "priceDice": 0, "priceMultiplier": 1, "rarity": null,
+    "description": "Small shield used to parry blows; does not itself confer the shield armour-save bonus.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.35 — Buckler",
+    "weaponNames": ["Buckler"], "profileName": "Buckler", "excludedTypeNames": ["Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "gromril-armour", "name": "Gromril Armour", "category": "armour", "baseCost": 150, "priceDice": 0, "priceMultiplier": 1, "rarity": 11,
+    "description": "Gromril armour gives a 4+ basic save without the heavy-armour-and-shield movement penalty.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.35 — Gromril armour",
+    "weaponNames": ["Heavy armour", "Gromril armour"], "profileName": "Gromril armour", "materialName": "Gromril", "excludedTypeNames": ["The Possessed", "Augur", "Flagellants", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "heavy-armour", "name": "Heavy Armour", "category": "armour", "baseCost": 50, "priceDice": 0, "priceMultiplier": 1, "rarity": null,
+    "description": "Armour with a 5+ basic save; wearing it with a shield reduces Movement.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.34 — Heavy armour",
+    "weaponNames": ["Heavy armour"], "profileName": "Heavy armour", "excludedTypeNames": ["The Possessed", "Augur", "Flagellants", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "helmet", "name": "Helmet", "category": "armour", "baseCost": 10, "priceDice": 0, "priceMultiplier": 1, "rarity": null,
+    "description": "Helmet with a separate save against a stunned result, rather than a basic armour save.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.35 — Helmet",
+    "weaponNames": ["Helmet"], "profileName": "Helmet", "excludedTypeNames": ["The Possessed", "Augur", "Flagellants", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "ithilmar-armour", "name": "Ithilmar Armour", "category": "armour", "baseCost": 90, "priceDice": 0, "priceMultiplier": 1, "rarity": 11,
+    "description": "Ithilmar armour gives a 5+ basic save without the heavy-armour-and-shield movement penalty.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.35 — Ithilmar armour",
+    "weaponNames": ["Heavy armour", "Ithilmar armour"], "profileName": "Ithilmar armour", "materialName": "Ithilmar", "excludedTypeNames": ["The Possessed", "Augur", "Flagellants", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "light-armour", "name": "Light Armour", "category": "armour", "baseCost": 20, "priceDice": 0, "priceMultiplier": 1, "rarity": null,
+    "description": "Armour with a 6+ basic save.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.34 — Light armour",
+    "weaponNames": ["Light armour"], "profileName": "Light armour", "excludedTypeNames": ["The Possessed", "Augur", "Flagellants", "Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "shield", "name": "Shield", "category": "shield", "baseCost": 5, "priceDice": 0, "priceMultiplier": 1, "rarity": null,
+    "description": "Shield improves the armour save by one. Hand-use and heavy-armour movement restrictions still apply.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.34 — Shield",
+    "weaponNames": ["Shield"], "profileName": "Shield", "excludedTypeNames": ["Rat Ogre", "Rat Ogres", "Giant Rats", "Warhounds", "Ghouls", "Zombies"]
+  },
+  {
+    "id": "black-lotus", "name": "Black Lotus", "category": "misc", "baseCost": 10, "priceDice": 1, "priceMultiplier": 1, "rarity": 9,
+    "description": "Hero-only poison for one non-blackpowder weapon for one battle; a hit roll of 6 wounds automatically. Armour saves and critical-hit rules still apply.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.36 — Poisons and drugs",
+    "heroOnly": true, "excludedWarbands": ["Witch Hunters", "Sisters of Sigmar"], "excludedTypeNames": ["Warrior Priest", "Warrior-Priest"],
+    "rarityOverrides": [{"warbands": ["Skaven"], "rarity": 7}]
+  },
+  {
+    "id": "blessed-water", "name": "Blessed Water", "category": "misc", "baseCost": 10, "priceDice": 3, "priceMultiplier": 1, "rarity": 6,
+    "description": "Hero-only, single-use thrown holy water against Undead, Daemons and Possessed. Undead and Possessed models cannot use it.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.37 — Blessed water",
+    "heroOnly": true, "excludedWarbands": ["Undead"], "excludedTypeNames": ["The Possessed", "Vampire", "Vampires (Blooddragon)", "Lahmia Vampire", "Lahmia Vampire (Blood Sister)", "Zombies", "Ghouls", "Skeletons (Lahmia)", "Skeletons (Strigoi)", "Skeleton Warriors", "Skeleton (Necromancer)"],
+    "rarityOverrides": [{"warbands": ["Sisters of Sigmar"], "rarity": null}, {"typeNames": ["Warrior Priest", "Warrior-Priest"], "rarity": null}]
+  },
+  {
+    "id": "bugmans-ale", "name": "Bugman's Ale", "category": "misc", "baseCost": 50, "priceDice": 3, "priceMultiplier": 1, "rarity": 9,
+    "description": "A Hero's barrel supplies the warband for one battle, granting immunity to fear. Elves cannot drink it.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.37 — Bugman's ale",
+    "heroOnly": true, "excludedWarbands": ["Dark Elves", "Shadow Warrior"], "excludedTypeNames": ["Elf", "Elf Mage", "Elf Ranger", "Dark Elf Sorceress (Dark Elves)", "Dark Elf Sorceress (Druchii)", "High Born", "Fellblades", "Beast Master (Dark Elves)", "Shadow Master", "Shadow Walker", "Shadow Weaver"]
+  },
+  {
+    "id": "cathayan-silk-clothes", "name": "Cathayan Silk Clothes", "category": "misc", "baseCost": 50, "priceDice": 2, "priceMultiplier": 1, "rarity": 9,
+    "description": "Hero-only silk clothing. Its Rout-test benefit requires the leader of a Mercenary warband to wear it; clothing may be ruined if that leader goes out of action.",
+    "sourceReference": "3Campaigns.pdf p.104 — Cathayan Silk Clothes; 1Rules.pdf p.39 — Cathayan silk cloak",
+    "heroOnly": true
+  },
+  {
+    "id": "crimson-shade", "name": "Crimson Shade", "category": "misc", "baseCost": 35, "priceDice": 1, "priceMultiplier": 1, "rarity": 8,
+    "description": "Hero-only drug giving temporary Initiative, Movement and Strength benefits, with addiction and lasting-change risks. Has no effect on Undead or Possessed models; lack of effect is not a purchase ban.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.36 — Crimson Shade",
+    "heroOnly": true
+  },
+  {
+    "id": "dark-venom", "name": "Dark Venom", "category": "misc", "baseCost": 30, "priceDice": 2, "priceMultiplier": 1, "rarity": 8,
+    "description": "Hero-only poison for one non-blackpowder weapon for one battle, increasing the Strength of hits by one.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.36 — Poisons and drugs",
+    "heroOnly": true, "excludedWarbands": ["Witch Hunters", "Sisters of Sigmar"], "excludedTypeNames": ["Warrior Priest", "Warrior-Priest"]
+  },
+  {
+    "id": "elven-cloak", "name": "Elven Cloak", "category": "misc", "baseCost": 100, "priceDice": 1, "priceMultiplier": 10, "rarity": 12,
+    "description": "Hero-only cloak that penalizes missile attacks against its wearer. Not restricted to Elves.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.37 — Elven cloak",
+    "heroOnly": true
+  },
+  {
+    "id": "garlic", "name": "Garlic", "category": "misc", "baseCost": 1, "priceDice": 0, "priceMultiplier": 1, "rarity": null,
+    "description": "Hero-only, one-battle protection that makes a Vampire test Leadership to charge the carrier.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.37 — Garlic",
+    "heroOnly": true, "excludedWarbands": ["Undead"]
+  },
+  {
+    "id": "halfling-cookbook", "name": "Halfling Cookbook", "category": "misc", "baseCost": 30, "priceDice": 3, "priceMultiplier": 1, "rarity": 7,
+    "description": "Adds one to the warband's maximum membership only while carried by its current leader. Copies in the stash or on other Heroes do not add slots, and multiple copies do not stack. Lost if the bearer dies. Undead and Carnival of Chaos warbands cannot use it.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.38 — Halfling cookbook",
+    "heroOnly": true, "excludedWarbands": ["Undead", "Carnival of Chaos"]
+  },
+  {
+    "id": "healing-herbs", "name": "Healing Herbs", "category": "misc", "baseCost": 20, "priceDice": 2, "priceMultiplier": 1, "rarity": 8,
+    "description": "Hero-only herbs usable in a recovery phase when not engaged in close combat, restoring wounds lost during that game.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.38 — Healing herbs",
+    "heroOnly": true
+  },
+  {
+    "id": "holy-unholy-relic", "name": "Holy (Unholy) Relic", "category": "misc", "baseCost": 15, "priceDice": 3, "priceMultiplier": 1, "rarity": 8,
+    "description": "Hero-only relic that passes the bearer's first Leadership test, potentially a leader's first Rout test. Multiple relics do not protect later tests.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.38 — Holy (unholy) relic",
+    "heroOnly": true, "rarityOverrides": [{"warbands": ["Sisters of Sigmar"], "rarity": 6}, {"typeNames": ["Warrior Priest", "Warrior-Priest"], "rarity": 6}]
+  },
+  {
+    "id": "holy-tome", "name": "Holy Tome", "category": "misc", "baseCost": 100, "priceDice": 1, "priceMultiplier": 10, "rarity": 8,
+    "description": "Hero-only prayer book for Warrior-Priests and Sisters of Sigmar, giving a bonus to prayer-casting rolls.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.38 — Holy tome; 2Warbands.pdf pp.22-23 — Sisters of Sigmar",
+    "heroOnly": true, "allowedTypeNames": ["Warrior Priest", "Warrior-Priest", "Sigmarite Matriarch", "Sister Superior", "Augur", "Sisters of Sigmar", "Sigmarite Sister", "Novices"]
+  },
+  {
+    "id": "horse", "name": "Horse", "category": "misc", "baseCost": 40, "priceDice": 0, "priceMultiplier": 1, "rarity": 8,
+    "description": "Human Heroes only, using the optional mounted rules. This base-rule allowlist covers evidenced human Hero types, including living members of Undead and Possessed warbands; unverified expansion types are not assumed human.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.38 — Horses & Warhorses; 2Warbands.pdf — Human Hero entries",
+    "heroOnly": true, "excludedWarbands": ["Skaven", "Dark Elves", "Shadow Warrior", "Dwarf Treasure Hunters", "Lizardmen", "Night Goblins", "Orc", "Beastmen Raiders"],
+    "allowedTypeNames": ["Mercenary Captain", "Champions (Mercenaries & Amazons)", "Youngblood", "Witch Hunter Captain", "Witch Hunters", "Warrior Priest", "Warrior-Priest", "Sigmarite Matriarch", "Sister Superior", "Augur", "Magister", "Mutants", "Dregs", "Necromancer (Lahmia & Undead))", "Necromancer", "Marksmen (All Others)", "Swordsmen", "Warriors (All Other)", "Brethren", "Darksouls", "Flagellants", "Zealots", "Novices", "Sigmarite Sister"]
+  },
+  {
+    "id": "hunting-arrows", "name": "Hunting Arrows", "category": "misc", "baseCost": 25, "priceDice": 1, "priceMultiplier": 1, "rarity": 8,
+    "description": "Hero-only arrows giving +1 to Injury rolls when used with a short bow, bow, long bow or Elf bow. They are not ammunition for crossbows or firearms; weapon possession is checked during play, not assumed from recruitment access.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.37 — Hunting arrows",
+    "heroOnly": true
+  },
+  {
+    "id": "lantern", "name": "Lantern", "category": "misc", "baseCost": 10, "priceDice": 0, "priceMultiplier": 1, "rarity": null,
+    "description": "Hero-only lantern extending the distance at which hidden enemies can be spotted by 4 inches.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.39 — Lantern",
+    "heroOnly": true
+  },
+  {
+    "id": "lucky-charm", "name": "Lucky Charm", "category": "misc", "baseCost": 10, "priceDice": 0, "priceMultiplier": 1, "rarity": 6,
+    "description": "Hero-only charm with a chance to discard the first hit suffered in a battle. Multiple charms do not confer additional attempts.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.37 — Lucky charm",
+    "heroOnly": true
+  },
+  {
+    "id": "mad-cap-mushrooms", "name": "Mad Cap Mushrooms", "category": "misc", "baseCost": 30, "priceDice": 3, "priceMultiplier": 1, "rarity": 9,
+    "description": "Hero-only mushrooms causing frenzy for a battle, with a risk of permanent stupidity. Have no effect on Undead or Possessed models; lack of effect is not a purchase ban.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.36 — Mad Cap Mushrooms",
+    "heroOnly": true
+  },
+  {
+    "id": "mandrake-root", "name": "Mandrake Root", "category": "misc", "baseCost": 25, "priceDice": 1, "priceMultiplier": 1, "rarity": 8,
+    "description": "Hero-only drug with a temporary Toughness bonus and protection from stunned results, but a risk of permanent Toughness loss. Has no effect on Undead or Possessed models; lack of effect is not a purchase ban.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.36 — Mandrake Root",
+    "heroOnly": true
+  },
+  {
+    "id": "mordheim-map", "name": "Mordheim Map", "category": "misc", "baseCost": 20, "priceDice": 4, "priceMultiplier": 1, "rarity": 9,
+    "description": "Hero-only map. Roll separately on the map table when purchased to determine authenticity and exploration or scenario benefits; results are not applied automatically.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.39 — Mordheim map",
+    "heroOnly": true
+  },
+  {
+    "id": "net", "name": "Net", "category": "misc", "baseCost": 5, "priceDice": 0, "priceMultiplier": 1, "rarity": null,
+    "description": "Hero-only single-use net, thrown instead of shooting. Its target tests Strength to escape or loses movement, shooting and spellcasting for its next turn.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.37 — Net",
+    "heroOnly": true
+  },
+  {
+    "id": "rope-hook", "name": "Rope & Hook", "category": "misc", "baseCost": 5, "priceDice": 0, "priceMultiplier": 1, "rarity": null,
+    "description": "Hero-only climbing equipment allowing failed climbing Initiative tests to be re-rolled.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.36 — Rope & hook",
+    "heroOnly": true
+  },
+  {
+    "id": "superior-blackpowder", "name": "Superior Blackpowder", "category": "misc", "baseCost": 30, "priceDice": 0, "priceMultiplier": 1, "rarity": 11,
+    "description": "Hero-only powder increasing the Strength of the bearer's blackpowder weapons for one battle. Requires a suitable weapon to benefit, not merely access to its recruitment option.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.39 — Superior blackpowder",
+    "heroOnly": true
+  },
+  {
+    "id": "tears-of-shallaya", "name": "Tears of Shallaya", "category": "misc", "baseCost": 10, "priceDice": 2, "priceMultiplier": 1, "rarity": 7,
+    "description": "Hero-only vial consumed at the start of a battle for immunity to poison. Undead and Possessed warriors cannot use it.",
+    "sourceReference": "3Campaigns.pdf p.104 — Tears of Shallaya; 1Rules.pdf p.39 — Tears of Shallaya",
+    "heroOnly": true, "excludedWarbands": ["Undead", "Cult of the Possessed"], "excludedTypeNames": ["The Possessed", "Vampire", "Vampires (Blooddragon)", "Lahmia Vampire", "Lahmia Vampire (Blood Sister)", "Zombies", "Ghouls", "Skeletons (Lahmia)", "Skeletons (Strigoi)", "Skeleton Warriors", "Skeleton (Necromancer)"]
+  },
+  {
+    "id": "tome-of-magic", "name": "Tome of Magic", "category": "misc", "baseCost": 200, "priceDice": 1, "priceMultiplier": 25, "rarity": 12,
+    "description": "Hero-only tome granting one wizard an additional spell from their own list or Lesser Magic. Native base wizards need no Arcane Lore; a Hero with Arcane Lore can use a tome to learn Lesser Magic. Other expansion wizards need separate verification because this catalog's eligibility context has no spellcasting field. Spell selection is not automatic.",
+    "sourceReference": "3Campaigns.pdf pp.84, 104 — Arcane Lore; Price chart; 1Rules.pdf p.38 — Tome of magic",
+    "heroOnly": true, "excludedWarbands": ["Witch Hunters", "Sisters of Sigmar"],
+    "excludedTypeNames": ["Warrior Priest", "Warrior-Priest"]
+  },
+  {
+    "id": "warhorse", "name": "Warhorse", "category": "misc", "baseCost": 80, "priceDice": 0, "priceMultiplier": 1, "rarity": 11,
+    "description": "Human Heroes only, using the optional mounted rules. Can attack and may wear barding. This base-rule allowlist covers evidenced human Hero types; unverified expansion types are not assumed human.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.38 — Horses & Warhorses; 2Warbands.pdf — Human Hero entries",
+    "heroOnly": true, "excludedWarbands": ["Skaven", "Dark Elves", "Shadow Warrior", "Dwarf Treasure Hunters", "Lizardmen", "Night Goblins", "Orc", "Beastmen Raiders"],
+    "allowedTypeNames": ["Mercenary Captain", "Champions (Mercenaries & Amazons)", "Youngblood", "Witch Hunter Captain", "Witch Hunters", "Warrior Priest", "Warrior-Priest", "Sigmarite Matriarch", "Sister Superior", "Augur", "Magister", "Mutants", "Dregs", "Necromancer (Lahmia & Undead))", "Necromancer", "Marksmen (All Others)", "Swordsmen", "Warriors (All Other)", "Brethren", "Darksouls", "Flagellants", "Zealots", "Novices", "Sigmarite Sister"]
+  },
+  {
+    "id": "wardog", "name": "Wardog", "category": "misc", "baseCost": 25, "priceDice": 2, "priceMultiplier": 1, "rarity": 10,
+    "description": "Hero-owned animal fighting as a warband member and counting toward the membership limit. Gains no experience and uses Henchman recovery rules. Animal creation and capacity changes are not automatic.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.38 — Wardogs",
+    "heroOnly": true, "excludedWarbands": ["Skaven"]
+  }
+]

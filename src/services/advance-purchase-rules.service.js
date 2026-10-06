@@ -1,5 +1,6 @@
 const defaultPurchaseRules = {
   enabled: false,
+  skillsEnabled: true,
   skillCost: 40,
   stats: Object.fromEntries(Object.entries({
     M: [15, 15], WS: [15, 15], BS: [15, 15], S: [25, 35], T: [30, 45],
@@ -12,6 +13,9 @@ function validatePurchaseRules(value) {
     return { error: "Stat purchase rules require an enabled boolean." };
   }
   const validPrice = (number) => Number.isSafeInteger(number) && number >= 0 && number <= 100000;
+  if (value.skillsEnabled !== undefined && typeof value.skillsEnabled !== "boolean") {
+    return { error: "Skill purchase rules require a skillsEnabled boolean." };
+  }
   if (!validPrice(value.skillCost)) return { error: "Purchased skill cost must be a whole number from 0 to 100000." };
   if (!value.stats || typeof value.stats !== "object" || Array.isArray(value.stats)
     || Object.keys(value.stats).length !== Object.keys(defaultPurchaseRules.stats).length) {
@@ -26,7 +30,7 @@ function validatePurchaseRules(value) {
     }
     stats[stat] = { firstCost: rule.firstCost, additionalCost: rule.additionalCost, maxIncreases: rule.maxIncreases };
   }
-  return { rules: { enabled: value.enabled, skillCost: value.skillCost, stats } };
+  return { rules: { enabled: value.enabled, skillsEnabled: value.skillsEnabled ?? true, skillCost: value.skillCost, stats } };
 }
 
 function canPurchaseAdvances(warrior, rules) {
