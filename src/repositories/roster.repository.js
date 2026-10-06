@@ -14,6 +14,8 @@ const tomeIneligibleWarbands = new Set(["Witch Hunters", "Sisters of Sigmar"]);
 const { getMutationAccess, priceMutations, mutationOptions } = require("../services/mutation-rules.service");
 const { createAdvancePurchaseRepository } = require("./advance-purchase.repository");
 const { selectLeader, getRosterLeader, leaderAbility } = require("../services/warband-leader.service");
+const { createTradingRepository } = require("./trading.repository");
+const { canRecruitEquipment, TradingError } = require("../services/trading-rules.service");
 
 // Builds a compact `stats` object for an equipment row (from a query joined against
 // weapon_profiles / armour_profiles / weapon_material_modifiers / weapon_poisons), or
@@ -171,17 +173,20 @@ function createRosterRepository(db) {
     const removedItems = await transaction("warrior_inventory")
       .where({ warrior_id: warriorId })
       .where("model_index", ">=", groupSize)
-      .select("id", "quantity", "unit_cost_paid", "shop_item_id");
-    const shopItems = removedItems.filter((item) => item.shop_item_id);
+      .select("id", "equipment_option_id", "quantity", "unit_cost_paid", "shop_item_id", "bound_warrior_id", "nontransferable");
+    const warrior = await transaction("warriors").where({ id: warriorId }).first("roster_id");
+    const roster = await transaction("rosters").where({ id: warrior.roster_id }).first();
+    const recruitment = canRecruitEquipment(roster);
+    const shopItems = removedItems.filter((item) => (item.shop_item_id || !recruitment) && !item.nontransferable);
     if (shopItems.length) {
-      const warrior = await transaction("warriors").where({ id: warriorId }).first("roster_id");
       await transaction("warband_stash").insert(shopItems.map((item) => ({
-        roster_id: warrior.roster_id, shop_item_id: item.shop_item_id,
+        roster_id: warrior.roster_id, shop_item_id: item.shop_item_id, equipment_option_id: item.equipment_option_id,
         quantity: item.quantity, unit_cost_paid: item.unit_cost_paid,
+        bound_warrior_id: item.bound_warrior_id,
       })));
     }
     const refundAmount = removedItems.reduce((total, item) =>
-      total + (item.shop_item_id ? 0 : Number(item.unit_cost_paid) * Number(item.quantity)), 0);
+      total + (item.shop_item_id || !recruitment ? 0 : Number(item.unit_cost_paid) * Number(item.quantity)), 0);
     if (removedItems.length) {
       await transaction("warrior_inventory")
         .whereIn("id", removedItems.map((item) => item.id))
@@ -551,8 +556,12 @@ function createRosterRepository(db) {
         .join("rosters as roster", "roster.id", "warrior.roster_id")
         .where("warrior.id", warriorId)
         .forUpdate("warrior", "roster")
-        .first({ rosterId: "roster.id", treasury: "roster.treasury" });
+        .first({ rosterId: "roster.id", treasury: "roster.treasury",
+          campaign_id: "roster.campaign_id", campaign_phase: "roster.campaign_phase", battles_fought: "roster.battles_fought" });
       if (!warrior) return { missingWarrior: true };
+      if (!canRecruitEquipment(warrior)) {
+        return createTradingRepository(db).sell(warrior.rosterId, { source: "member", inventoryIds: inventoryItemIds, memberId: warriorId }, transaction);
+      }
 
       const inventoryItems = await transaction("warrior_inventory")
         .where({ warrior_id: warriorId })
@@ -574,6 +583,9 @@ function createRosterRepository(db) {
         .whereIn("id", inventoryItemIds)
         .delete();
       return { refundAmount, treasury: Number(warrior.treasury) + refundAmount };
+    }).catch((error) => {
+      if (error instanceof TradingError) return { error: error.message, status: error.status };
+      throw error;
     });
   }
 
@@ -665,6 +677,10 @@ function createRosterRepository(db) {
           warriorTypeName: "warrior_type.name",
           warbandId: "roster.warband_id",
           campaignId: "roster.campaign_id",
+          rosterId: "roster.id",
+          campaign_phase: "roster.campaign_phase",
+          campaign_id: "roster.campaign_id",
+          battles_fought: "roster.battles_fought",
         });
       if (!warrior) return null;
 
@@ -784,10 +800,15 @@ function createRosterRepository(db) {
         for (const key of statKeys) delete clean[key];
         return { ...clean, stats };
       };
-      const availableOptions = availableOptionRows.map(stripStatColumns);
-      const inventory = inventoryRows.map(stripStatColumns);
+      const trading = await createTradingRepository(db).getTrading(warrior.rosterId);
+      const availableOptions = canRecruitEquipment(warrior) ? availableOptionRows.map(stripStatColumns) : [];
+      const inventory = inventoryRows.map((row) => {
+        const entry = trading.memberInventory.find((item) => item.id === row.id);
+        return { ...stripStatColumns(row), unitSaleValue: entry.unitSaleValue, saleRestriction: entry.saleRestriction };
+      });
 
-      return { role: warrior.role, groupSize: warrior.groupSize || 1, availableOptions, inventory, mutations };
+      return { role: warrior.role, groupSize: warrior.groupSize || 1, availableOptions, inventory, mutations,
+        canSell: trading.canSell, recruitmentRefund: canRecruitEquipment(warrior) };
     },
 
     async setWarriorMutations(warriorId, mutationIds) {
@@ -839,9 +860,10 @@ function createRosterRepository(db) {
             treasury: "roster.treasury",
             campaignId: "roster.campaign_id",
             phase: "roster.campaign_phase",
+            battlesFought: "roster.battles_fought",
           });
         if (!warrior) return { missingWarrior: true };
-        if (warrior.campaignId && warrior.phase !== "setup") return { shopOnly: true };
+        if (!canRecruitEquipment({ campaign_id: warrior.campaignId, campaign_phase: warrior.phase, battles_fought: warrior.battlesFought })) return { shopOnly: true };
         if (!warrior.warriorTypeId) return { unavailableOption: true };
 
         const option = await transaction("equipment_options as option")
@@ -1444,7 +1466,7 @@ function createRosterRepository(db) {
           }
           const promotedInventory = await transaction("warrior_inventory")
             .where({ warrior_id: warrior.id, model_index: 0 })
-            .select("equipment_option_id", "shop_item_id", "quantity", "unit_cost_paid");
+            .select("equipment_option_id", "shop_item_id", "quantity", "unit_cost_paid", "nontransferable", "bound_warrior_id");
           if (promotedInventory.length) {
             await transaction("warrior_inventory").insert(promotedInventory.map((item) => ({
               ...item,
@@ -1659,10 +1681,11 @@ function createRosterRepository(db) {
           .join("rosters as roster", "roster.id", "warrior.roster_id")
           .leftJoin("warbands as warband", "warband.id", "roster.warband_id")
           .where("warrior.id", warriorId)
-          .forUpdate("warrior")
-          .first({ id: "warrior.id", warbandId: "roster.warband_id", warbandName: "warband.name", campaignId: "roster.campaign_id" });
+          .forUpdate("warrior", "roster")
+          .first({ id: "warrior.id", warbandId: "roster.warband_id", warbandName: "warband.name",
+            campaignId: "roster.campaign_id", battlesFought: "roster.battles_fought" });
         if (!warrior) return { missingWarrior: true };
-        if (warrior.campaignId) return { shopOnly: true };
+        if (warrior.campaignId || Number(warrior.battlesFought) >= 1) return { shopOnly: true };
         if (tomeIneligibleWarbands.has(warrior.warbandName)) return { tomeNotAllowed: true };
         const skillContext = await getSkillEligibilityContext(transaction, warriorId);
         if (!skillContext?.categoryRows.some((row) => row.category === "Academic")) return { academicSkillRequired: true };

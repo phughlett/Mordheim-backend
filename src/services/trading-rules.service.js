@@ -15,7 +15,7 @@ function validateTradingRules(value, catalog) {
     return { error: "Trading rules require item overrides and at most 100 custom items." };
   }
   const prices = (rule) => (rule.baseCost === undefined || integer(rule.baseCost, 0, 100000))
-    && (rule.priceDice === undefined || integer(rule.priceDice, 0, 6))
+    && (rule.priceDice === undefined || integer(rule.priceDice, 0, 10))
     && (rule.priceMultiplier === undefined || integer(rule.priceMultiplier, 1, 100))
     && (rule.rarity === undefined || rule.rarity === null || integer(rule.rarity, 2, 20));
   const overrides = {};
@@ -73,10 +73,14 @@ function tradingPermissions(roster) {
   const freebuild = !roster.campaign_id;
   const post = roster.campaign_phase === "post_battle";
   return {
-    canPurchase: freebuild || (post && [6, 7, 8].includes(roster.campaign_step)),
+    canPurchase: (freebuild && Number(roster.battles_fought) >= 1) || (!freebuild && post && [6, 7, 8].includes(roster.campaign_step)),
+    canSell: (freebuild && Number(roster.battles_fought) >= 1) || (!freebuild && post && [6, 7, 8].includes(roster.campaign_step)),
     canSearch: !freebuild && post && roster.campaign_step === 6,
     canTransfer: freebuild || roster.campaign_phase === "setup" || roster.campaign_phase === "pre_battle"
       || (post && roster.campaign_step === 9),
   };
 }
-module.exports = { defaultTradingRules, validateTradingRules, diceFor, tradingPermissions, TradingError, fail, integer, uuid };
+function canRecruitEquipment(roster) {
+  return roster.campaign_id ? roster.campaign_phase === "setup" : Number(roster.battles_fought) === 0;
+}
+module.exports = { defaultTradingRules, validateTradingRules, diceFor, tradingPermissions, canRecruitEquipment, TradingError, fail, integer, uuid };

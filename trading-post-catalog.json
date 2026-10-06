@@ -1,0 +1,4783 @@
+[
+  {
+    "id": "axe",
+    "name": "Axe",
+    "category": "weapon",
+    "baseCost": 5,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "description": "Close-combat axe with an additional armour-save penalty.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.24 — Axe; https://mordheimer.net/docs/weapons-armour/close-combat#axe",
+    "weaponNames": [
+      "Axe"
+    ],
+    "profileName": "Axe",
+    "ranged": false,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Axe"
+  },
+  {
+    "id": "ball-and-chain",
+    "name": "Ball and Chain",
+    "category": "weapon",
+    "baseCost": 15,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "grade": "1a",
+    "shopCategory": "close-combat",
+    "sourceName": "Ball and Chain",
+    "description": "Ball and Chain from the 1A trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/close-combat#ball-and-chain",
+    "weaponNames": [
+      "Ball and Chain"
+    ],
+    "profileName": "Ball and Chain",
+    "ranged": false,
+    "allowedTypeNames": [
+      "Goblin Warriors",
+      "Night Goblins",
+      "Forest Goblins",
+      "Red Toof Clan Goblins",
+      "Bosses (Night Goblins)",
+      "Bosses (Forest Goblins)",
+      "Forest Goblin Shaman",
+      "Shaman (Night Goblins)"
+    ],
+    "typeGrantsAccess": true
+  },
+  {
+    "id": "beastlash",
+    "name": "Beastlash",
+    "category": "weapon",
+    "baseCost": 10,
+    "priceDice": 1,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "grade": "1b",
+    "shopCategory": "close-combat",
+    "sourceName": "Beastlash",
+    "description": "Beastlash from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/close-combat#beastlash",
+    "weaponNames": [
+      "Beastlash"
+    ],
+    "profileName": "Beastlash",
+    "ranged": false,
+    "allowedWarbands": [
+      "Dark Elves"
+    ],
+    "allowedTypeNames": [
+      "Beastmaster",
+      "Beast Master (Dark Elves)"
+    ],
+    "typeGrantsAccess": true
+  },
+  {
+    "id": "boat-hook",
+    "name": "Boat Hook",
+    "category": "weapon",
+    "baseCost": 8,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "grade": "1b",
+    "shopCategory": "close-combat",
+    "sourceName": "Boat Hook",
+    "description": "Boat Hook from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/close-combat#boat-hook",
+    "weaponNames": [
+      "Boat Hook"
+    ],
+    "profileName": "Boat Hook",
+    "ranged": false,
+    "allowedWarbands": [
+      "Pirate"
+    ]
+  },
+  {
+    "id": "boss-pole",
+    "name": "Boss Pole",
+    "category": "weapon",
+    "baseCost": 20,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "grade": "1b",
+    "shopCategory": "close-combat",
+    "sourceName": "Boss Pole",
+    "description": "Boss Pole from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/close-combat#boss-pole",
+    "weaponNames": [
+      "Boss Pole"
+    ],
+    "profileName": "Boss Pole",
+    "ranged": false,
+    "allowedWarbands": [
+      "Forest Goblins",
+      "Night Goblins"
+    ]
+  },
+  {
+    "id": "brass-knuckles",
+    "name": "Brass Knuckles",
+    "category": "weapon",
+    "baseCost": 20,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 6,
+    "grade": "1b",
+    "shopCategory": "close-combat",
+    "sourceName": "Brass Knuckles",
+    "description": "Brass Knuckles from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/close-combat#brass-knuckles",
+    "weaponNames": [
+      "Brass Knuckles"
+    ],
+    "profileName": "Brass Knuckles",
+    "ranged": false
+  },
+  {
+    "id": "brazier-iron",
+    "name": "Brazier Iron",
+    "category": "weapon",
+    "baseCost": 35,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 7,
+    "grade": "1a",
+    "shopCategory": "close-combat",
+    "sourceName": "Brazier Iron",
+    "description": "Brazier Iron from the 1A trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/close-combat#brazier-iron",
+    "weaponNames": [
+      "Brazier Iron"
+    ],
+    "profileName": "Brazier Iron",
+    "ranged": false,
+    "allowedWarbands": [
+      "Witch Hunters"
+    ]
+  },
+  {
+    "id": "cat-o-nine-tails",
+    "name": "Cat O' Nine Tails",
+    "category": "weapon",
+    "baseCost": 8,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "grade": "1b",
+    "shopCategory": "close-combat",
+    "sourceName": "Cat O' Nine Tails",
+    "description": "Cat O' Nine Tails from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/close-combat#cat-o'-nine-tails",
+    "weaponNames": [
+      "Cat O' Nine Tails"
+    ],
+    "profileName": "Cat O' Nine Tails",
+    "ranged": false,
+    "allowedWarbands": [
+      "Pirate"
+    ],
+    "heroOnly": true
+  },
+  {
+    "id": "censer",
+    "name": "Censer",
+    "category": "weapon",
+    "baseCost": 40,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "grade": "1b",
+    "shopCategory": "close-combat",
+    "sourceName": "Censer",
+    "description": "Censer from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/close-combat#censer",
+    "weaponNames": [
+      "Censer"
+    ],
+    "profileName": "Censer",
+    "ranged": false,
+    "allowedWarbands": [
+      "Skaven of Clan Pestilens"
+    ]
+  },
+  {
+    "id": "claw-of-the-old-ones",
+    "name": "Claw of the Old Ones",
+    "category": "weapon",
+    "baseCost": 30,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 12,
+    "grade": "1b",
+    "shopCategory": "close-combat",
+    "sourceName": "Claw of the Old Ones",
+    "description": "Claw of the Old Ones from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/close-combat#claw-of-the-old-ones",
+    "weaponNames": [
+      "Claw of the Old Ones"
+    ],
+    "profileName": "Claw of the Old Ones",
+    "ranged": false,
+    "allowedWarbands": [
+      "Amazons"
+    ]
+  },
+  {
+    "id": "cleaver",
+    "name": "Cleaver",
+    "category": "weapon",
+    "baseCost": 3,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "grade": "1b",
+    "shopCategory": "close-combat",
+    "sourceName": "Cleaver",
+    "description": "Cleaver from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/close-combat#cleaver",
+    "weaponNames": [
+      "Cleaver"
+    ],
+    "profileName": "Cleaver",
+    "ranged": false,
+    "allowedWarbands": [
+      "Mootlanders"
+    ]
+  },
+  {
+    "id": "club-mace-hammer",
+    "name": "Club, Mace or Hammer",
+    "category": "weapon",
+    "baseCost": 3,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "description": "These blunt close-combat weapons share the concussion profile.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.24 — Hammer, staff, mace or club; https://mordheimer.net/docs/weapons-armour/close-combat#club,-mace-or-hammer",
+    "weaponNames": [
+      "Club",
+      "Mace",
+      "Hammer",
+      "Staff"
+    ],
+    "profileName": "Club",
+    "ranged": false,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Club, Mace or Hammer"
+  },
+  {
+    "id": "dagger",
+    "name": "Dagger",
+    "category": "weapon",
+    "baseCost": 2,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "description": "Additional daggers cost 2 gc; the first dagger is free. This trading price does not apply a recruitment discount automatically.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.24 — Dagger; https://mordheimer.net/docs/weapons-armour/close-combat#dagger",
+    "weaponNames": [
+      "Dagger"
+    ],
+    "profileName": "Dagger",
+    "ranged": false,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Dagger"
+  },
+  {
+    "id": "dark-elf-blade-sword",
+    "name": "Dark Elf Blade (Sword)",
+    "category": "weapon",
+    "baseCost": 30,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "grade": "1b",
+    "shopCategory": "close-combat",
+    "sourceName": "Dark Elf Blade",
+    "description": "A new sword with the 20 GC Dark Elf Blade upgrade included in its purchase price. Retains the base weapon rules; apply the blade's critical and injury modifiers manually.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/close-combat#dark-elf-blade",
+    "weaponNames": [
+      "Sword"
+    ],
+    "profileName": "Sword",
+    "ranged": false,
+    "allowedWarbands": [
+      "Dark Elves"
+    ]
+  },
+  {
+    "id": "dark-elf-blade-dagger",
+    "name": "Dark Elf Blade (Dagger)",
+    "category": "weapon",
+    "baseCost": 22,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "grade": "1b",
+    "shopCategory": "close-combat",
+    "sourceName": "Dark Elf Blade",
+    "description": "A new dagger with the 20 GC Dark Elf Blade upgrade included in its purchase price. Retains the base weapon rules; apply the blade's critical and injury modifiers manually.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/close-combat#dark-elf-blade",
+    "weaponNames": [
+      "Dagger"
+    ],
+    "profileName": "Dagger",
+    "ranged": false,
+    "allowedWarbands": [
+      "Dark Elves"
+    ]
+  },
+  {
+    "id": "disease-dagger",
+    "name": "Disease Dagger",
+    "category": "weapon",
+    "baseCost": 15,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "grade": "1b",
+    "shopCategory": "close-combat",
+    "sourceName": "Disease Dagger",
+    "description": "Disease Dagger from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/close-combat#disease-dagger",
+    "weaponNames": [
+      "Disease Dagger"
+    ],
+    "profileName": "Disease Dagger",
+    "ranged": false,
+    "allowedWarbands": [
+      "Skaven of Clan Pestilens"
+    ]
+  },
+  {
+    "id": "double-handed-weapon",
+    "name": "Double-Handed Weapon",
+    "category": "weapon",
+    "baseCost": 15,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "description": "A two-handed close-combat weapon: increased Strength, requires both hands and strikes last.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.27 — Double-handed weapon; https://mordheimer.net/docs/weapons-armour/close-combat#double-handed-weapon",
+    "weaponNames": [
+      "Double-handed weapon",
+      "Double handed weapon",
+      "Two-handed weapon"
+    ],
+    "profileName": "Double-handed weapon",
+    "ranged": false,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Double-handed weapon"
+  },
+  {
+    "id": "dwarf-axe",
+    "name": "Dwarf Axe",
+    "category": "weapon",
+    "baseCost": 15,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "grade": "1a",
+    "shopCategory": "close-combat",
+    "sourceName": "Dwarf Axe",
+    "description": "Dwarf Axe from the 1A trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/close-combat#dwarf-axe",
+    "weaponNames": [
+      "Dwarf Axe"
+    ],
+    "profileName": "Dwarf Axe",
+    "ranged": false,
+    "allowedWarbands": [
+      "Dwarf Treasure Hunters"
+    ]
+  },
+  {
+    "id": "fighting-claws",
+    "name": "Fighting Claws",
+    "category": "weapon",
+    "baseCost": 35,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 7,
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Fighting Claws",
+    "description": "Fighting Claws from the CORE trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/close-combat#fighting-claws",
+    "weaponNames": [
+      "Fighting Claws"
+    ],
+    "profileName": "Fighting Claws",
+    "ranged": false,
+    "allowedWarbands": [
+      "Skaven"
+    ]
+  },
+  {
+    "id": "flail",
+    "name": "Flail",
+    "category": "weapon",
+    "baseCost": 15,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "description": "Two-handed close-combat weapon with a Strength bonus in the first combat round.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.25 — Flail; https://mordheimer.net/docs/weapons-armour/close-combat#flail",
+    "weaponNames": [
+      "Flail"
+    ],
+    "profileName": "Flail",
+    "ranged": false,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Flail"
+  },
+  {
+    "id": "halberd",
+    "name": "Halberd",
+    "category": "weapon",
+    "baseCost": 10,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "description": "Two-handed polearm with increased close-combat Strength.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.26 — Halberd; https://mordheimer.net/docs/weapons-armour/close-combat#halberd",
+    "weaponNames": [
+      "Halberd"
+    ],
+    "profileName": "Halberd",
+    "ranged": false,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Halberd"
+  },
+  {
+    "id": "horsemans-hammer",
+    "name": "Horseman's Hammer",
+    "category": "weapon",
+    "baseCost": 12,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 10,
+    "grade": "1a",
+    "shopCategory": "close-combat",
+    "sourceName": "Horseman's Hammer",
+    "description": "Horseman's Hammer from the 1A trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/close-combat#horseman's-hammer",
+    "weaponNames": [
+      "Horseman's Hammer"
+    ],
+    "profileName": "Horseman's Hammer",
+    "ranged": false
+  },
+  {
+    "id": "kitchen-knife",
+    "name": "Kitchen Knife",
+    "category": "weapon",
+    "baseCost": 2,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "grade": "1b",
+    "shopCategory": "close-combat",
+    "sourceName": "Kitchen Knife",
+    "description": "Kitchen Knife from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/close-combat#kitchen-knife",
+    "weaponNames": [
+      "Kitchen Knife"
+    ],
+    "profileName": "Kitchen Knife",
+    "ranged": false,
+    "allowedWarbands": [
+      "Mootlanders"
+    ]
+  },
+  {
+    "id": "ladle",
+    "name": "Ladle",
+    "category": "weapon",
+    "baseCost": 2,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "grade": "1b",
+    "shopCategory": "close-combat",
+    "sourceName": "Ladle",
+    "description": "Ladle from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/close-combat#ladle",
+    "weaponNames": [
+      "Ladle"
+    ],
+    "profileName": "Ladle",
+    "ranged": false,
+    "allowedWarbands": [
+      "Mootlanders"
+    ]
+  },
+  {
+    "id": "lance",
+    "name": "Lance",
+    "category": "weapon",
+    "baseCost": 40,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "description": "Mounted close-combat weapon with a Strength bonus on the charge. Requires a horse or warhorse and the optional mounted rules.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.26 — Lance; https://mordheimer.net/docs/weapons-armour/close-combat#lance",
+    "weaponNames": [
+      "Lance"
+    ],
+    "profileName": "Lance",
+    "ranged": false,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Lance"
+  },
+  {
+    "id": "main-gauche",
+    "name": "Main Gauche",
+    "category": "weapon",
+    "baseCost": 7,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 7,
+    "grade": "1b",
+    "shopCategory": "close-combat",
+    "sourceName": "Main Gauche",
+    "description": "Main Gauche from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/close-combat#main-gauche",
+    "weaponNames": [
+      "Main Gauche"
+    ],
+    "profileName": "Main Gauche",
+    "ranged": false,
+    "allowedWarbands": [
+      "Hochland Bandits"
+    ]
+  },
+  {
+    "id": "morning-star",
+    "name": "Morning Star",
+    "category": "weapon",
+    "baseCost": 15,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "description": "Heavy one-handed weapon with increased Strength in the first combat round; may accompany a shield but not another weapon.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.25 — Morning star; https://mordheimer.net/docs/weapons-armour/close-combat#morning-star",
+    "weaponNames": [
+      "Morning star"
+    ],
+    "profileName": "Morning star",
+    "ranged": false,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Morning Star"
+  },
+  {
+    "id": "pike-tileans",
+    "name": "Pike (Tileans)",
+    "category": "weapon",
+    "baseCost": 12,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 7,
+    "grade": "1b",
+    "shopCategory": "close-combat",
+    "sourceName": "Pike (Tileans)",
+    "description": "Pike (Tileans) from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/close-combat#pike-(tileans)",
+    "weaponNames": [
+      "Pike (Tileans)"
+    ],
+    "profileName": "Pike (Tileans)",
+    "ranged": false,
+    "allowedWarbands": [
+      "Tileans"
+    ]
+  },
+  {
+    "id": "rapier",
+    "name": "Rapier",
+    "category": "weapon",
+    "baseCost": 15,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 5,
+    "grade": "1a",
+    "shopCategory": "close-combat",
+    "sourceName": "Rapier",
+    "description": "Rapier from the 1A trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/close-combat#rapier",
+    "weaponNames": [
+      "Rapier"
+    ],
+    "profileName": "Rapier",
+    "ranged": false,
+    "allowedWarbands": [
+      "Reiklanders",
+      "Marienburgers",
+      "Tileans",
+      "Hochland Bandits",
+      "Merchant Caravans"
+    ]
+  },
+  {
+    "id": "serpent-staff",
+    "name": "Serpent Staff",
+    "category": "weapon",
+    "baseCost": 30,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "grade": "1b",
+    "shopCategory": "close-combat",
+    "sourceName": "Serpent Staff",
+    "description": "Serpent Staff from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/close-combat#serpent-staff",
+    "weaponNames": [
+      "Serpent Staff"
+    ],
+    "profileName": "Serpent Staff",
+    "ranged": false,
+    "allowedWarbands": [
+      "Tomb Guardians"
+    ],
+    "allowedTypeNames": [
+      "Liche Priest (Tomb Guardians)"
+    ],
+    "typeGrantsAccess": true
+  },
+  {
+    "id": "sigmarite-warhammer",
+    "name": "Sigmarite Warhammer",
+    "category": "weapon",
+    "baseCost": 15,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Sigmarite Warhammer",
+    "description": "Sigmarite Warhammer from the CORE trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/close-combat#sigmarite-warhammer",
+    "weaponNames": [
+      "Sigmarite Warhammer"
+    ],
+    "profileName": "Sigmarite Warhammer",
+    "ranged": false,
+    "allowedWarbands": [
+      "Sisters of Sigmar"
+    ]
+  },
+  {
+    "id": "spear",
+    "name": "Spear",
+    "category": "weapon",
+    "baseCost": 10,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "description": "Close-combat spear with strike-first and mounted cavalry bonuses under its weapon rules.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.26 — Spear; https://mordheimer.net/docs/weapons-armour/close-combat#spear",
+    "weaponNames": [
+      "Spear"
+    ],
+    "profileName": "Spear",
+    "ranged": false,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Spear"
+  },
+  {
+    "id": "starblade",
+    "name": "Starblade",
+    "category": "weapon",
+    "baseCost": 15,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 7,
+    "grade": "1b",
+    "shopCategory": "close-combat",
+    "sourceName": "Starblade",
+    "description": "Starblade from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/close-combat#starblade",
+    "weaponNames": [
+      "Starblade"
+    ],
+    "profileName": "Starblade",
+    "ranged": false,
+    "allowedWarbands": [
+      "Amazons (Lustria)"
+    ]
+  },
+  {
+    "id": "starsword",
+    "name": "Starsword",
+    "category": "weapon",
+    "baseCost": 30,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 10,
+    "grade": "1b",
+    "shopCategory": "close-combat",
+    "sourceName": "Starsword",
+    "description": "Starsword from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/close-combat#starsword",
+    "weaponNames": [
+      "Starsword"
+    ],
+    "profileName": "Starsword",
+    "ranged": false,
+    "allowedWarbands": [
+      "Amazons (Lustria)"
+    ]
+  },
+  {
+    "id": "steel-whip",
+    "name": "Steel Whip",
+    "category": "weapon",
+    "baseCost": 10,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Steel Whip",
+    "description": "Steel Whip from the CORE trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/close-combat#steel-whip",
+    "weaponNames": [
+      "Steel Whip"
+    ],
+    "profileName": "Steel Whip",
+    "ranged": false,
+    "allowedWarbands": [
+      "Sisters of Sigmar",
+      "Chaos Dwarfs"
+    ]
+  },
+  {
+    "id": "sword",
+    "name": "Sword",
+    "category": "weapon",
+    "baseCost": 10,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "description": "Close-combat sword with the parry rule.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.24 — Sword; https://mordheimer.net/docs/weapons-armour/close-combat#sword",
+    "weaponNames": [
+      "Sword"
+    ],
+    "profileName": "Sword",
+    "ranged": false,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Sword"
+  },
+  {
+    "id": "sword-breaker",
+    "name": "Sword Breaker",
+    "category": "weapon",
+    "baseCost": 30,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "grade": "1a",
+    "shopCategory": "close-combat",
+    "sourceName": "Sword Breaker",
+    "description": "Sword Breaker from the 1A trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/close-combat#sword-breaker",
+    "weaponNames": [
+      "Sword Breaker"
+    ],
+    "profileName": "Sword Breaker",
+    "ranged": false
+  },
+  {
+    "id": "tenderiser",
+    "name": "Tenderiser",
+    "category": "weapon",
+    "baseCost": 3,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "grade": "1b",
+    "shopCategory": "close-combat",
+    "sourceName": "Tenderiser",
+    "description": "Tenderiser from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/close-combat#tenderiser",
+    "weaponNames": [
+      "Tenderiser"
+    ],
+    "profileName": "Tenderiser",
+    "ranged": false,
+    "allowedWarbands": [
+      "Mootlanders"
+    ]
+  },
+  {
+    "id": "trident",
+    "name": "Trident",
+    "category": "weapon",
+    "baseCost": 15,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 7,
+    "grade": "1b",
+    "shopCategory": "close-combat",
+    "sourceName": "Trident",
+    "description": "Trident from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/close-combat#trident",
+    "weaponNames": [
+      "Trident"
+    ],
+    "profileName": "Trident",
+    "ranged": false,
+    "allowedWarbands": [
+      "Pit Fighter"
+    ]
+  },
+  {
+    "id": "weeping-blades",
+    "name": "Weeping Blades",
+    "category": "weapon",
+    "baseCost": 50,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Weeping Blades",
+    "description": "Weeping Blades from the CORE trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/close-combat#weeping-blades",
+    "weaponNames": [
+      "Weeping Blades"
+    ],
+    "profileName": "Weeping Blades",
+    "ranged": false,
+    "allowedWarbands": [
+      "Skaven"
+    ]
+  },
+  {
+    "id": "belaying-pins",
+    "name": "Belaying Pins",
+    "category": "weapon",
+    "baseCost": 3,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "grade": "1b",
+    "shopCategory": "missile",
+    "sourceName": "Belaying Pins",
+    "description": "Belaying Pins from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/missile#belaying-pins",
+    "weaponNames": [
+      "Belaying Pins"
+    ],
+    "profileName": "Belaying Pins",
+    "ranged": true,
+    "allowedWarbands": [
+      "Pirate"
+    ]
+  },
+  {
+    "id": "blowpipe",
+    "name": "Blowpipe",
+    "category": "weapon",
+    "baseCost": 25,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 7,
+    "grade": "core",
+    "shopCategory": "missile",
+    "sourceName": "Blowpipe",
+    "description": "Blowpipe from the CORE trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/missile#blowpipe",
+    "weaponNames": [
+      "Blowpipe"
+    ],
+    "profileName": "Blowpipe",
+    "ranged": true,
+    "allowedWarbands": [
+      "Skaven",
+      "Lizardmen",
+      "Forest Goblins"
+    ],
+    "rarityOverrides": [
+      {
+        "warbands": [
+          "Forest Goblins"
+        ],
+        "rarity": null
+      }
+    ]
+  },
+  {
+    "id": "bolas",
+    "name": "Bolas",
+    "category": "weapon",
+    "baseCost": 5,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "grade": "1b",
+    "shopCategory": "missile",
+    "sourceName": "Bolas",
+    "description": "Bolas from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/missile#bolas",
+    "weaponNames": [
+      "Bolas"
+    ],
+    "profileName": "Bolas",
+    "ranged": true,
+    "allowedWarbands": [
+      "Lizardmen",
+      "Amazons (Lustria)"
+    ]
+  },
+  {
+    "id": "bow",
+    "name": "Bow",
+    "category": "weapon",
+    "baseCost": 10,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "description": "Standard missile bow.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.28 — Bow; https://mordheimer.net/docs/weapons-armour/missile#bow",
+    "weaponNames": [
+      "Bow"
+    ],
+    "profileName": "Bow",
+    "ranged": true,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Flagellants",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "missile",
+    "sourceName": "Bow"
+  },
+  {
+    "id": "crossbow",
+    "name": "Crossbow",
+    "category": "weapon",
+    "baseCost": 25,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "description": "Powerful missile weapon that may not be fired after moving.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.29 — Crossbow; https://mordheimer.net/docs/weapons-armour/missile#crossbow",
+    "weaponNames": [
+      "Crossbow"
+    ],
+    "profileName": "Crossbow",
+    "ranged": true,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Flagellants",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "missile",
+    "sourceName": "Crossbow"
+  },
+  {
+    "id": "crossbow-pistol",
+    "name": "Crossbow Pistol",
+    "category": "weapon",
+    "baseCost": 35,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "description": "Compact crossbow with the shoot-in-hand-to-hand-combat rule.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.30 — Crossbow pistol; https://mordheimer.net/docs/weapons-armour/missile#crossbow-pistol",
+    "weaponNames": [
+      "Crossbow pistol"
+    ],
+    "profileName": "Crossbow pistol",
+    "ranged": true,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Flagellants",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "missile",
+    "sourceName": "Crossbow pistol"
+  },
+  {
+    "id": "elf-bow",
+    "name": "Elf Bow",
+    "category": "weapon",
+    "baseCost": 35,
+    "priceDice": 3,
+    "priceMultiplier": 1,
+    "rarity": 12,
+    "description": "Long-ranged Elven bow with an additional armour-save penalty. Not restricted to Elves by the base trading chart.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.29 — Elf bow; https://mordheimer.net/docs/weapons-armour/missile#elf-bow",
+    "weaponNames": [
+      "Elf bow",
+      "Elven bow"
+    ],
+    "profileName": "Elf bow",
+    "ranged": true,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Flagellants",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "missile",
+    "sourceName": "Elf Bow"
+  },
+  {
+    "id": "javelins",
+    "name": "Javelins",
+    "category": "weapon",
+    "baseCost": 5,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "grade": "1b",
+    "shopCategory": "missile",
+    "sourceName": "Javelins",
+    "description": "Javelins from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/missile#javelins",
+    "weaponNames": [
+      "Javelins"
+    ],
+    "profileName": "Javelins",
+    "ranged": true,
+    "allowedWarbands": [
+      "Amazons",
+      "Norse",
+      "Pit Fighter"
+    ]
+  },
+  {
+    "id": "long-bow",
+    "name": "Long Bow",
+    "category": "weapon",
+    "baseCost": 15,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "description": "Long-ranged bow.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.28 — Long bow; https://mordheimer.net/docs/weapons-armour/missile#long-bow",
+    "weaponNames": [
+      "Long bow",
+      "Longbow"
+    ],
+    "profileName": "Long bow",
+    "ranged": true,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Flagellants",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "missile",
+    "sourceName": "Long Bow"
+  },
+  {
+    "id": "nehekharan-javelins",
+    "name": "Nehekharan Javelins",
+    "category": "weapon",
+    "baseCost": 10,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "grade": "1b",
+    "shopCategory": "missile",
+    "sourceName": "Nehekharan Javelins",
+    "description": "Nehekharan Javelins from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/missile#nehekharan-javelins",
+    "weaponNames": [
+      "Nehekharan Javelins"
+    ],
+    "profileName": "Nehekharan Javelins",
+    "ranged": true,
+    "allowedWarbands": [
+      "Tomb Guardians"
+    ],
+    "allowedTypeNames": [
+      "Tomb Lord"
+    ],
+    "typeGrantsAccess": true
+  },
+  {
+    "id": "repeater-crossbow",
+    "name": "Repeater Crossbow",
+    "category": "weapon",
+    "baseCost": 40,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "description": "Crossbow with a multiple-shot option.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.30 — Repeater crossbow; https://mordheimer.net/docs/weapons-armour/missile#repeater-crossbow",
+    "weaponNames": [
+      "Repeater crossbow",
+      "Repeating crossbow"
+    ],
+    "profileName": "Repeater crossbow",
+    "ranged": true,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Flagellants",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "missile",
+    "sourceName": "Repeater Crossbow"
+  },
+  {
+    "id": "short-bow",
+    "name": "Short Bow",
+    "category": "weapon",
+    "baseCost": 5,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "description": "Short-ranged bow.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.28 — Short bow; https://mordheimer.net/docs/weapons-armour/missile#short-bow",
+    "weaponNames": [
+      "Short bow",
+      "Shortbow"
+    ],
+    "profileName": "Short bow",
+    "ranged": true,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Flagellants",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "missile",
+    "sourceName": "Short Bow"
+  },
+  {
+    "id": "sling",
+    "name": "Sling",
+    "category": "weapon",
+    "baseCost": 2,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "description": "Inexpensive missile weapon with a short-range double-shot option.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.29 — Sling; https://mordheimer.net/docs/weapons-armour/missile#sling",
+    "weaponNames": [
+      "Sling"
+    ],
+    "profileName": "Sling",
+    "ranged": true,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Flagellants",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "missile",
+    "sourceName": "Sling"
+  },
+  {
+    "id": "sun-gauntlet",
+    "name": "Sun Gauntlet",
+    "category": "weapon",
+    "baseCost": 40,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 12,
+    "grade": "1b",
+    "shopCategory": "missile",
+    "sourceName": "Sun Gauntlet",
+    "description": "Sun Gauntlet from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/missile#sun-gauntlet",
+    "weaponNames": [
+      "Sun Gauntlet"
+    ],
+    "profileName": "Sun Gauntlet",
+    "ranged": true,
+    "allowedWarbands": [
+      "Amazons"
+    ]
+  },
+  {
+    "id": "sunstaff",
+    "name": "Sunstaff",
+    "category": "weapon",
+    "baseCost": 50,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 12,
+    "grade": "1b",
+    "shopCategory": "missile",
+    "sourceName": "Sunstaff",
+    "description": "Sunstaff from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/missile#sunstaff",
+    "weaponNames": [
+      "Sunstaff"
+    ],
+    "profileName": "Sunstaff",
+    "ranged": true,
+    "allowedWarbands": [
+      "Amazons"
+    ]
+  },
+  {
+    "id": "sunstaff-lustria",
+    "name": "Sunstaff (Lustria)",
+    "category": "weapon",
+    "baseCost": 35,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 10,
+    "grade": "1b",
+    "shopCategory": "missile",
+    "sourceName": "Sunstaff (Lustria)",
+    "description": "Sunstaff (Lustria) from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/missile#sunstaff-(lustria)",
+    "weaponNames": [
+      "Sunstaff (Lustria)"
+    ],
+    "profileName": "Sunstaff (Lustria)",
+    "ranged": true,
+    "allowedWarbands": [
+      "Amazons (Lustria)"
+    ]
+  },
+  {
+    "id": "throwing-knives-stars",
+    "name": "Throwing Knives/Stars",
+    "category": "weapon",
+    "baseCost": 15,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 5,
+    "description": "Thrown missile weapons sharing the same profile.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.30 — Throwing stars/knives; https://mordheimer.net/docs/weapons-armour/missile#throwing-knives/stars",
+    "weaponNames": [
+      "Throwing knives",
+      "Throwing stars",
+      "Throwing knives/stars",
+      "Throwing stars/knives"
+    ],
+    "profileName": "Throwing knives",
+    "ranged": true,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Flagellants",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "missile",
+    "sourceName": "Throwing Knives/Stars"
+  },
+  {
+    "id": "blunderbuss",
+    "name": "Blunderbuss",
+    "category": "weapon",
+    "baseCost": 30,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "description": "Blackpowder weapon with a once-per-battle scatter shot.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.33 — Blunderbuss; https://mordheimer.net/docs/weapons-armour/blackpowder#blunderbuss",
+    "weaponNames": [
+      "Blunderbuss"
+    ],
+    "profileName": "Blunderbuss",
+    "ranged": true,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Flagellants",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "blackpowder",
+    "sourceName": "Blunderbuss"
+  },
+  {
+    "id": "double-barrelled-duelling-pistol",
+    "name": "Double-barrelled Duelling Pistol",
+    "category": "weapon",
+    "baseCost": 45,
+    "priceDice": 2,
+    "priceMultiplier": 1,
+    "rarity": 11,
+    "grade": "1b",
+    "shopCategory": "blackpowder",
+    "sourceName": "Double-barrelled Duelling Pistol",
+    "description": "Double-barrelled Duelling Pistol from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/blackpowder#double-barrelled-duelling-pistol",
+    "weaponNames": [
+      "Double-barrelled Duelling Pistol"
+    ],
+    "profileName": "Double-barrelled Duelling Pistol",
+    "ranged": true,
+    "allowedWarbands": [
+      "Gunnery School of Nuln"
+    ]
+  },
+  {
+    "id": "double-barrelled-duelling-pistol-brace",
+    "name": "Double-barrelled Duelling Pistol Brace",
+    "category": "weapon",
+    "baseCost": 80,
+    "priceDice": 4,
+    "priceMultiplier": 1,
+    "rarity": 12,
+    "grade": "1b",
+    "shopCategory": "blackpowder",
+    "sourceName": "Double-barrelled Duelling Pistol",
+    "description": "Double-barrelled Duelling Pistol from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/blackpowder#double-barrelled-duelling-pistol",
+    "weaponNames": [
+      "Double-barrelled Duelling Pistol",
+      "Double-barrelled Duelling Pistol Brace"
+    ],
+    "profileName": "Double-barrelled Duelling Pistol",
+    "ranged": true,
+    "allowedWarbands": [
+      "Gunnery School of Nuln"
+    ]
+  },
+  {
+    "id": "double-barrelled-handgun",
+    "name": "Double-barrelled Handgun",
+    "category": "weapon",
+    "baseCost": 60,
+    "priceDice": 2,
+    "priceMultiplier": 1,
+    "rarity": 10,
+    "grade": "1b",
+    "shopCategory": "blackpowder",
+    "sourceName": "Double-barrelled Handgun",
+    "description": "Double-barrelled Handgun from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/blackpowder#double-barrelled-handgun",
+    "weaponNames": [
+      "Double-barrelled Handgun"
+    ],
+    "profileName": "Double-barrelled Handgun",
+    "ranged": true,
+    "allowedWarbands": [
+      "Gunnery School of Nuln"
+    ]
+  },
+  {
+    "id": "double-barrelled-pistol",
+    "name": "Double-barrelled Pistol",
+    "category": "weapon",
+    "baseCost": 25,
+    "priceDice": 1,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "grade": "1b",
+    "shopCategory": "blackpowder",
+    "sourceName": "Double-barrelled Pistol",
+    "description": "Double-barrelled Pistol from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/blackpowder#double-barrelled-pistol",
+    "weaponNames": [
+      "Double-barrelled Pistol"
+    ],
+    "profileName": "Double-barrelled Pistol",
+    "ranged": true,
+    "allowedWarbands": [
+      "Gunnery School of Nuln"
+    ]
+  },
+  {
+    "id": "double-barrelled-pistol-brace",
+    "name": "Double-barrelled Pistol Brace",
+    "category": "weapon",
+    "baseCost": 46,
+    "priceDice": 2,
+    "priceMultiplier": 1,
+    "rarity": 10,
+    "grade": "1b",
+    "shopCategory": "blackpowder",
+    "sourceName": "Double-barrelled Pistol",
+    "description": "Double-barrelled Pistol from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/blackpowder#double-barrelled-pistol",
+    "weaponNames": [
+      "Double-barrelled Pistol",
+      "Double-barrelled Pistol Brace"
+    ],
+    "profileName": "Double-barrelled Pistol",
+    "ranged": true,
+    "allowedWarbands": [
+      "Gunnery School of Nuln"
+    ]
+  },
+  {
+    "id": "duelling-pistol",
+    "name": "Duelling Pistol",
+    "category": "weapon",
+    "baseCost": 30,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 10,
+    "description": "Accurate blackpowder pistol. Trading price is 30 gc, not a warband-specific recruitment price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.32 — Duelling pistol; https://mordheimer.net/docs/weapons-armour/blackpowder#duelling-pistol",
+    "weaponNames": [
+      "Duelling pistol"
+    ],
+    "profileName": "Duelling pistol",
+    "ranged": true,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Flagellants",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "blackpowder",
+    "sourceName": "Duelling Pistol"
+  },
+  {
+    "id": "duelling-pistol-brace",
+    "name": "Duelling Pistol Brace",
+    "category": "weapon",
+    "baseCost": 60,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 10,
+    "description": "Accurate blackpowder pistol. Trading price is 30 gc, not a warband-specific recruitment price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.32 — Duelling pistol; https://mordheimer.net/docs/weapons-armour/blackpowder#duelling-pistol",
+    "weaponNames": [
+      "Duelling pistol",
+      "Duelling Pistol Brace"
+    ],
+    "profileName": "Duelling pistol",
+    "ranged": true,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Flagellants",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "blackpowder",
+    "sourceName": "Duelling Pistol"
+  },
+  {
+    "id": "hand-held-mortar",
+    "name": "Hand-held Mortar",
+    "category": "weapon",
+    "baseCost": 80,
+    "priceDice": 2,
+    "priceMultiplier": 1,
+    "rarity": 12,
+    "grade": "1b",
+    "shopCategory": "blackpowder",
+    "sourceName": "Hand-held Mortar",
+    "description": "Hand-held Mortar from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/blackpowder#hand-held-mortar",
+    "weaponNames": [
+      "Hand-held Mortar"
+    ],
+    "profileName": "Hand-held Mortar",
+    "ranged": true,
+    "allowedWarbands": [
+      "Gunnery School of Nuln",
+      "Maneaters"
+    ]
+  },
+  {
+    "id": "handgun",
+    "name": "Handgun",
+    "category": "weapon",
+    "baseCost": 35,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "description": "Blackpowder firearm with reload, move-or-fire and armour-penetration rules.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.31 — Handgun; https://mordheimer.net/docs/weapons-armour/blackpowder#handgun",
+    "weaponNames": [
+      "Handgun"
+    ],
+    "profileName": "Handgun",
+    "ranged": true,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Flagellants",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "blackpowder",
+    "sourceName": "Handgun"
+  },
+  {
+    "id": "hersten-wenkler-pigeon-bombs",
+    "name": "Hersten-Wenkler Pigeon Bombs",
+    "category": "weapon",
+    "baseCost": 30,
+    "priceDice": 2,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "grade": "1b",
+    "shopCategory": "blackpowder",
+    "sourceName": "Hersten-Wenkler Pigeon Bombs",
+    "description": "Hersten-Wenkler Pigeon Bombs from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/blackpowder#hersten-wenkler-pigeon-bombs",
+    "weaponNames": [
+      "Hersten-Wenkler Pigeon Bombs"
+    ],
+    "profileName": "Hersten-Wenkler Pigeon Bombs",
+    "ranged": true,
+    "allowedWarbands": [
+      "Gunnery School of Nuln"
+    ]
+  },
+  {
+    "id": "hunting-rifle",
+    "name": "Hunting Rifle",
+    "category": "weapon",
+    "baseCost": 200,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 11,
+    "description": "Long-ranged blackpowder rifle with its own accuracy, reload and move-or-fire rules.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.33 — Hochland long rifle; https://mordheimer.net/docs/weapons-armour/blackpowder#hunting-rifle",
+    "weaponNames": [
+      "Hunting rifle",
+      "Hochland long rifle",
+      "Long rifle"
+    ],
+    "profileName": "Hunting rifle",
+    "ranged": true,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Flagellants",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "blackpowder",
+    "sourceName": "Hunting Rifle"
+  },
+  {
+    "id": "ostlander-double-barrelled-hunting-rifle",
+    "name": "Ostlander Double-barrelled Hunting Rifle",
+    "category": "weapon",
+    "baseCost": 300,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 12,
+    "grade": "1a",
+    "shopCategory": "blackpowder",
+    "sourceName": "Ostlander Double-barrelled Hunting Rifle",
+    "description": "Ostlander Double-barrelled Hunting Rifle from the 1A trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/blackpowder#ostlander-double-barrelled-hunting-rifle",
+    "weaponNames": [
+      "Ostlander Double-barrelled Hunting Rifle"
+    ],
+    "profileName": "Ostlander Double-barrelled Hunting Rifle",
+    "ranged": true,
+    "allowedWarbands": [
+      "Ostlanders"
+    ]
+  },
+  {
+    "id": "ostlander-double-barrelled-pistol",
+    "name": "Ostlander Double-barrelled Pistol",
+    "category": "weapon",
+    "baseCost": 30,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 10,
+    "grade": "1a",
+    "shopCategory": "blackpowder",
+    "sourceName": "Ostlander Double-barrelled Pistol",
+    "description": "Ostlander Double-barrelled Pistol from the 1A trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/blackpowder#ostlander-double-barrelled-pistol",
+    "weaponNames": [
+      "Ostlander Double-barrelled Pistol"
+    ],
+    "profileName": "Ostlander Double-barrelled Pistol",
+    "ranged": true,
+    "allowedWarbands": [
+      "Ostlanders"
+    ]
+  },
+  {
+    "id": "ostlander-double-barrelled-pistol-brace",
+    "name": "Ostlander Double-barrelled Pistol Brace",
+    "category": "weapon",
+    "baseCost": 60,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 10,
+    "grade": "1a",
+    "shopCategory": "blackpowder",
+    "sourceName": "Ostlander Double-barrelled Pistol",
+    "description": "Ostlander Double-barrelled Pistol from the 1A trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/blackpowder#ostlander-double-barrelled-pistol",
+    "weaponNames": [
+      "Ostlander Double-barrelled Pistol",
+      "Ostlander Double-barrelled Pistol Brace"
+    ],
+    "profileName": "Ostlander Double-barrelled Pistol",
+    "ranged": true,
+    "allowedWarbands": [
+      "Ostlanders"
+    ]
+  },
+  {
+    "id": "pistol",
+    "name": "Pistol",
+    "category": "weapon",
+    "baseCost": 15,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "description": "Blackpowder pistol usable at range and under its close-combat pistol rules.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.31 — Pistol; https://mordheimer.net/docs/weapons-armour/blackpowder#pistol",
+    "weaponNames": [
+      "Pistol"
+    ],
+    "profileName": "Pistol",
+    "ranged": true,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Flagellants",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "blackpowder",
+    "sourceName": "Pistol"
+  },
+  {
+    "id": "pistol-brace",
+    "name": "Pistol Brace",
+    "category": "weapon",
+    "baseCost": 30,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "description": "Blackpowder pistol usable at range and under its close-combat pistol rules.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.31 — Pistol; https://mordheimer.net/docs/weapons-armour/blackpowder#pistol",
+    "weaponNames": [
+      "Pistol",
+      "Pistol Brace"
+    ],
+    "profileName": "Pistol",
+    "ranged": true,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Flagellants",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "blackpowder",
+    "sourceName": "Pistol"
+  },
+  {
+    "id": "repeater-handgun",
+    "name": "Repeater Handgun",
+    "category": "weapon",
+    "baseCost": 60,
+    "priceDice": 2,
+    "priceMultiplier": 1,
+    "rarity": 11,
+    "grade": "1b",
+    "shopCategory": "blackpowder",
+    "sourceName": "Repeater Handgun",
+    "description": "Repeater Handgun from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/blackpowder#repeater-handgun",
+    "weaponNames": [
+      "Repeater Handgun"
+    ],
+    "profileName": "Repeater Handgun",
+    "ranged": true,
+    "allowedWarbands": [
+      "Gunnery School of Nuln"
+    ]
+  },
+  {
+    "id": "repeater-pistol",
+    "name": "Repeater Pistol",
+    "category": "weapon",
+    "baseCost": 30,
+    "priceDice": 2,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "grade": "1b",
+    "shopCategory": "blackpowder",
+    "sourceName": "Repeater Pistol",
+    "description": "Repeater Pistol from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/blackpowder#repeater-pistol",
+    "weaponNames": [
+      "Repeater Pistol"
+    ],
+    "profileName": "Repeater Pistol",
+    "ranged": true,
+    "allowedWarbands": [
+      "Gunnery School of Nuln"
+    ]
+  },
+  {
+    "id": "swivel-gun",
+    "name": "Swivel Gun",
+    "category": "weapon",
+    "baseCost": 65,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "grade": "1b",
+    "shopCategory": "blackpowder",
+    "sourceName": "Swivel Gun",
+    "description": "Swivel Gun from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/blackpowder#swivel-gun",
+    "weaponNames": [
+      "Swivel Gun"
+    ],
+    "profileName": "Swivel Gun",
+    "ranged": true,
+    "allowedWarbands": [
+      "Pirate"
+    ],
+    "allowedTypeNames": [
+      "Gunners"
+    ],
+    "typeGrantsAccess": true,
+    "maxPerWarband": 1
+  },
+  {
+    "id": "warplock-pistol",
+    "name": "Warplock Pistol",
+    "category": "weapon",
+    "baseCost": 35,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 11,
+    "description": "Skaven-only warpstone pistol, Strength 5 and -3 save modifier; fires every other turn.",
+    "sourceReference": "2Warbands.pdf p.29 — Warplock pistol; https://mordheimer.net/docs/weapons-armour/blackpowder#warplock-pistol",
+    "weaponNames": [
+      "Warplock pistol"
+    ],
+    "profileName": "Warplock pistol",
+    "ranged": true,
+    "allowedWarbands": [
+      "Skaven"
+    ],
+    "excludedTypeNames": [
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats"
+    ],
+    "grade": "core",
+    "shopCategory": "blackpowder",
+    "sourceName": "Warplock pistol"
+  },
+  {
+    "id": "warplock-pistol-brace",
+    "name": "Warplock Pistol Brace",
+    "category": "weapon",
+    "baseCost": 70,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 11,
+    "description": "Skaven-only warpstone pistol, Strength 5 and -3 save modifier; fires every other turn.",
+    "sourceReference": "2Warbands.pdf p.29 — Warplock pistol; https://mordheimer.net/docs/weapons-armour/blackpowder#warplock-pistol",
+    "weaponNames": [
+      "Warplock pistol",
+      "Warplock Pistol Brace"
+    ],
+    "profileName": "Warplock pistol",
+    "ranged": true,
+    "allowedWarbands": [
+      "Skaven"
+    ],
+    "excludedTypeNames": [
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats"
+    ],
+    "grade": "core",
+    "shopCategory": "blackpowder",
+    "sourceName": "Warplock pistol"
+  },
+  {
+    "id": "barding",
+    "name": "Barding",
+    "category": "armour",
+    "baseCost": 80,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "description": "Armour for a warhorse, not a normal horse or an unmounted warrior. Under the optional mounted rules it improves the rider's save but reduces the warhorse's Movement.",
+    "sourceReference": "3Campaigns.pdf pp.104, 120 — Price chart; Horses & warhorses; https://mordheimer.net/docs/weapons-armour/armour#barding",
+    "weaponNames": [
+      "Barding"
+    ],
+    "profileName": "Barding",
+    "heroOnly": true,
+    "grade": "core",
+    "shopCategory": "armour",
+    "sourceName": "Barding",
+    "requiresOwnedItem": "warhorse"
+  },
+  {
+    "id": "bretonnian-barding",
+    "name": "Bretonnian Barding",
+    "category": "armour",
+    "baseCost": 30,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 11,
+    "grade": "1b",
+    "shopCategory": "armour",
+    "sourceName": "Bretonnian Barding",
+    "description": "Bretonnian Barding from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/armour#bretonnian-barding",
+    "profileName": "Bretonnian Barding",
+    "allowedWarbands": [
+      "Bretonnian"
+    ],
+    "requiresOwnedItem": "warhorse"
+  },
+  {
+    "id": "buckler",
+    "name": "Buckler",
+    "category": "shield",
+    "baseCost": 5,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "description": "Small shield used to parry blows; does not itself confer the shield armour-save bonus.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.35 — Buckler; https://mordheimer.net/docs/weapons-armour/armour#buckler",
+    "weaponNames": [
+      "Buckler"
+    ],
+    "profileName": "Buckler",
+    "excludedTypeNames": [
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "armour",
+    "sourceName": "Buckler"
+  },
+  {
+    "id": "cooking-pot-helmet",
+    "name": "Cooking Pot Helmet",
+    "category": "armour",
+    "baseCost": 8,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "grade": "1b",
+    "shopCategory": "armour",
+    "sourceName": "Cooking Pot Helmet",
+    "description": "Cooking Pot Helmet from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/armour#cooking-pot-helmet",
+    "profileName": "Cooking Pot Helmet",
+    "allowedWarbands": [
+      "Mootlanders"
+    ]
+  },
+  {
+    "id": "enchanted-skins",
+    "name": "Enchanted Skins",
+    "category": "armour",
+    "baseCost": 20,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 6,
+    "grade": "1b",
+    "shopCategory": "armour",
+    "sourceName": "Enchanted Skins",
+    "description": "Enchanted Skins from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/armour#enchanted-skins",
+    "profileName": "Enchanted Skins",
+    "allowedWarbands": [
+      "Amazons (Lustria)"
+    ]
+  },
+  {
+    "id": "gromril-armour",
+    "name": "Gromril Armour",
+    "category": "armour",
+    "baseCost": 150,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 11,
+    "description": "Gromril armour gives a 4+ basic save without the heavy-armour-and-shield movement penalty.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.35 — Gromril armour; https://mordheimer.net/docs/weapons-armour/armour#gromril-armour",
+    "weaponNames": [
+      "Heavy armour",
+      "Gromril armour"
+    ],
+    "profileName": "Gromril armour",
+    "materialName": "Gromril",
+    "excludedTypeNames": [
+      "The Possessed",
+      "Augur",
+      "Flagellants",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "armour",
+    "sourceName": "Gromril Armour"
+  },
+  {
+    "id": "heavy-armour",
+    "name": "Heavy Armour",
+    "category": "armour",
+    "baseCost": 50,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "description": "Armour with a 5+ basic save; wearing it with a shield reduces Movement.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.34 — Heavy armour; https://mordheimer.net/docs/weapons-armour/armour#heavy-armour",
+    "weaponNames": [
+      "Heavy armour"
+    ],
+    "profileName": "Heavy armour",
+    "excludedTypeNames": [
+      "The Possessed",
+      "Augur",
+      "Flagellants",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "armour",
+    "sourceName": "Heavy Armour"
+  },
+  {
+    "id": "helmet",
+    "name": "Helmet",
+    "category": "armour",
+    "baseCost": 10,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "description": "Helmet with a separate save against a stunned result, rather than a basic armour save.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.35 — Helmet; https://mordheimer.net/docs/weapons-armour/armour#helmet",
+    "weaponNames": [
+      "Helmet"
+    ],
+    "profileName": "Helmet",
+    "excludedTypeNames": [
+      "The Possessed",
+      "Augur",
+      "Flagellants",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "armour",
+    "sourceName": "Helmet"
+  },
+  {
+    "id": "ithilmar-armour",
+    "name": "Ithilmar Armour",
+    "category": "armour",
+    "baseCost": 90,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 11,
+    "description": "Ithilmar armour gives a 5+ basic save without the heavy-armour-and-shield movement penalty.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.35 — Ithilmar armour; https://mordheimer.net/docs/weapons-armour/armour#ithilmar-armour",
+    "weaponNames": [
+      "Heavy armour",
+      "Ithilmar armour"
+    ],
+    "profileName": "Ithilmar armour",
+    "materialName": "Ithilmar",
+    "excludedTypeNames": [
+      "The Possessed",
+      "Augur",
+      "Flagellants",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "armour",
+    "sourceName": "Ithilmar Armour"
+  },
+  {
+    "id": "light-armour",
+    "name": "Light Armour",
+    "category": "armour",
+    "baseCost": 20,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "description": "Armour with a 6+ basic save.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.34 — Light armour; https://mordheimer.net/docs/weapons-armour/armour#light-armour",
+    "weaponNames": [
+      "Light armour"
+    ],
+    "profileName": "Light armour",
+    "excludedTypeNames": [
+      "The Possessed",
+      "Augur",
+      "Flagellants",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "armour",
+    "sourceName": "Light Armour"
+  },
+  {
+    "id": "pavise",
+    "name": "Pavise",
+    "category": "shield",
+    "baseCost": 25,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "grade": "1a",
+    "shopCategory": "armour",
+    "sourceName": "Pavise",
+    "description": "Pavise from the 1A trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/armour#pavise",
+    "profileName": "Pavise"
+  },
+  {
+    "id": "shield",
+    "name": "Shield",
+    "category": "shield",
+    "baseCost": 5,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "description": "Shield improves the armour save by one. Hand-use and heavy-armour movement restrictions still apply.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.34 — Shield; https://mordheimer.net/docs/weapons-armour/armour#shield",
+    "weaponNames": [
+      "Shield"
+    ],
+    "profileName": "Shield",
+    "excludedTypeNames": [
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "armour",
+    "sourceName": "Shield"
+  },
+  {
+    "id": "toughened-leathers",
+    "name": "Toughened Leathers",
+    "category": "armour",
+    "baseCost": 5,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "grade": "1a",
+    "shopCategory": "armour",
+    "sourceName": "Toughened Leathers",
+    "description": "Toughened Leathers from the 1A trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/armour#toughened-leathers",
+    "profileName": "Toughened Leathers"
+  },
+  {
+    "id": "amulet-of-the-moon",
+    "name": "Amulet of the Moon",
+    "category": "misc",
+    "baseCost": 50,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 12,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Amulet of the Moon",
+    "description": "Amulet of the Moon from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#amulet-of-the-moon",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Amazons",
+      "Amazons (Lustria)"
+    ],
+    "rarityOverrides": [
+      {
+        "warbands": [
+          "Amazons (Lustria)"
+        ],
+        "rarity": 11
+      }
+    ]
+  },
+  {
+    "id": "asp-arrows",
+    "name": "Asp Arrows",
+    "category": "misc",
+    "baseCost": 10,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Asp Arrows",
+    "description": "Asp Arrows from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#asp-arrows",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Tomb Guardians"
+    ],
+    "allowedTypeNames": [
+      "Tomb Lord"
+    ]
+  },
+  {
+    "id": "banner",
+    "name": "Banner",
+    "category": "misc",
+    "baseCost": 10,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 5,
+    "grade": "1a",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Banner",
+    "description": "Banner from the 1A trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#banner",
+    "heroOnly": true
+  },
+  {
+    "id": "bear-claw-necklace",
+    "name": "Bear-Claw Necklace",
+    "category": "misc",
+    "baseCost": 75,
+    "priceDice": 3,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Bear-Claw Necklace",
+    "description": "Bear-Claw Necklace from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#bear-claw-necklace",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Kislevite"
+    ]
+  },
+  {
+    "id": "black-lotus",
+    "name": "Black Lotus",
+    "category": "misc",
+    "baseCost": 10,
+    "priceDice": 1,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "description": "Hero-only poison for one non-blackpowder weapon for one battle; a hit roll of 6 wounds automatically. Armour saves and critical-hit rules still apply.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.36 — Poisons and drugs; https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#black-lotus",
+    "heroOnly": true,
+    "excludedWarbands": [
+      "Witch Hunters",
+      "Sisters of Sigmar"
+    ],
+    "excludedTypeNames": [
+      "Warrior Priest",
+      "Warrior-Priest"
+    ],
+    "rarityOverrides": [
+      {
+        "typeNames": [
+          "Skink Priest",
+          "Skink Great Crests"
+        ],
+        "rarity": null
+      },
+      {
+        "warbands": [
+          "Skaven",
+          "Lizardmen"
+        ],
+        "rarity": 7
+      }
+    ],
+    "grade": "core",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Black Lotus",
+    "priceOverrides": [
+      {
+        "typeNames": [
+          "Skink Priest",
+          "Skink Great Crests"
+        ],
+        "baseCost": 10,
+        "priceDice": 0,
+        "priceMultiplier": 1
+      }
+    ]
+  },
+  {
+    "id": "blessed-stag-hide",
+    "name": "Blessed Stag Hide",
+    "category": "misc",
+    "baseCost": 40,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 10,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Blessed Stag Hide",
+    "description": "Blessed Stag Hide from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#blessed-stag-hide",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Horned Hunters"
+    ]
+  },
+  {
+    "id": "blessed-water",
+    "name": "Blessed Water",
+    "category": "misc",
+    "baseCost": 10,
+    "priceDice": 3,
+    "priceMultiplier": 1,
+    "rarity": 6,
+    "description": "Hero-only, single-use thrown holy water against Undead, Daemons and Possessed. Undead and Possessed models cannot use it.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.37 — Blessed water; https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#blessed-water",
+    "heroOnly": true,
+    "excludedWarbands": [
+      "Undead"
+    ],
+    "excludedTypeNames": [
+      "The Possessed",
+      "Vampire",
+      "Vampires (Blooddragon)",
+      "Lahmia Vampire",
+      "Lahmia Vampire (Blood Sister)",
+      "Zombies",
+      "Ghouls",
+      "Skeletons (Lahmia)",
+      "Skeletons (Strigoi)",
+      "Skeleton Warriors",
+      "Skeleton (Necromancer)"
+    ],
+    "rarityOverrides": [
+      {
+        "warbands": [
+          "Sisters of Sigmar"
+        ],
+        "rarity": null
+      },
+      {
+        "typeNames": [
+          "Warrior Priest",
+          "Warrior-Priest"
+        ],
+        "rarity": null
+      }
+    ],
+    "grade": "core",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Blessed Water"
+  },
+  {
+    "id": "book-of-the-dead",
+    "name": "Book of the Dead",
+    "category": "misc",
+    "baseCost": 200,
+    "priceDice": 1,
+    "priceMultiplier": 25,
+    "rarity": 12,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Book of the Dead",
+    "description": "Book of the Dead from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#book-of-the-dead",
+    "heroOnly": true,
+    "allowedTypeNames": [
+      "Vampire",
+      "Lahmia Vampire",
+      "Necromancer (Lahmia & Undead))",
+      "Necromancer"
+    ]
+  },
+  {
+    "id": "bugmans-ale",
+    "name": "Bugman's Ale",
+    "category": "misc",
+    "baseCost": 50,
+    "priceDice": 3,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "description": "A Hero's barrel supplies the warband for one battle, granting immunity to fear. Elves cannot drink it.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.37 — Bugman's ale; https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#bugman's-ale",
+    "heroOnly": true,
+    "excludedWarbands": [
+      "Dark Elves",
+      "Shadow Warrior"
+    ],
+    "excludedTypeNames": [
+      "Elf",
+      "Elf Mage",
+      "Elf Ranger",
+      "Dark Elf Sorceress (Dark Elves)",
+      "Dark Elf Sorceress (Druchii)",
+      "High Born",
+      "Fellblades",
+      "Beast Master (Dark Elves)",
+      "Shadow Master",
+      "Shadow Walker",
+      "Shadow Weaver"
+    ],
+    "grade": "core",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Bugman's Ale"
+  },
+  {
+    "id": "caltrops",
+    "name": "Caltrops",
+    "category": "misc",
+    "baseCost": 15,
+    "priceDice": 2,
+    "priceMultiplier": 1,
+    "rarity": 6,
+    "grade": "1a",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Caltrops",
+    "description": "Caltrops from the 1A trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#caltrops",
+    "heroOnly": true
+  },
+  {
+    "id": "cathayan-silk-clothes",
+    "name": "Cathayan Silk Clothes",
+    "category": "misc",
+    "baseCost": 50,
+    "priceDice": 2,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "description": "Hero-only silk clothing. Its Rout-test benefit requires the leader of a Mercenary warband to wear it; clothing may be ruined if that leader goes out of action.",
+    "sourceReference": "3Campaigns.pdf p.104 — Cathayan Silk Clothes; 1Rules.pdf p.39 — Cathayan silk cloak; https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#cathayan-silk-clothes",
+    "heroOnly": true,
+    "grade": "core",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Cathayan Silk Clothes"
+  },
+  {
+    "id": "clan-pestilens-banner",
+    "name": "Clan Pestilens Banner",
+    "category": "misc",
+    "baseCost": 10,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 5,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Clan Pestilens Banner",
+    "description": "Clan Pestilens Banner from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#clan-pestilens-banner",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Skaven of Clan Pestilens"
+    ]
+  },
+  {
+    "id": "compass",
+    "name": "Compass",
+    "category": "misc",
+    "baseCost": 45,
+    "priceDice": 2,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Compass",
+    "description": "Compass from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#compass",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Pirate"
+    ]
+  },
+  {
+    "id": "conch-shell-horn",
+    "name": "Conch Shell Horn",
+    "category": "misc",
+    "baseCost": 25,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Conch Shell Horn",
+    "description": "Conch Shell Horn from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#conch-shell-horn",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Amazons (Lustria)"
+    ],
+    "allowedTypeNames": [
+      "Piranha Warrior"
+    ]
+  },
+  {
+    "id": "crimson-shade",
+    "name": "Crimson Shade",
+    "category": "misc",
+    "baseCost": 35,
+    "priceDice": 1,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "description": "Hero-only drug giving temporary Initiative, Movement and Strength benefits, with addiction and lasting-change risks. Has no effect on Undead or Possessed models; lack of effect is not a purchase ban.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.36 — Crimson Shade; https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#crimson-shade",
+    "heroOnly": true,
+    "grade": "core",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Crimson Shade"
+  },
+  {
+    "id": "dark-venom",
+    "name": "Dark Venom",
+    "category": "misc",
+    "baseCost": 30,
+    "priceDice": 2,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "description": "Hero-only poison for one non-blackpowder weapon for one battle, increasing the Strength of hits by one.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.36 — Poisons and drugs; https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#dark-venom",
+    "heroOnly": true,
+    "excludedWarbands": [
+      "Witch Hunters",
+      "Sisters of Sigmar"
+    ],
+    "excludedTypeNames": [
+      "Warrior Priest",
+      "Warrior-Priest"
+    ],
+    "grade": "core",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Dark Venom",
+    "priceOverrides": [
+      {
+        "typeNames": [
+          "Skink Priest",
+          "Skink Great Crests"
+        ],
+        "baseCost": 20,
+        "priceDice": 0,
+        "priceMultiplier": 1
+      }
+    ],
+    "rarityOverrides": [
+      {
+        "typeNames": [
+          "Skink Priest",
+          "Skink Great Crests"
+        ],
+        "rarity": null
+      },
+      {
+        "warbands": [
+          "Dark Elves",
+          "Lizardmen"
+        ],
+        "rarity": 6
+      }
+    ]
+  },
+  {
+    "id": "elven-boots",
+    "name": "Elven Boots",
+    "category": "misc",
+    "baseCost": 75,
+    "priceDice": 1,
+    "priceMultiplier": 10,
+    "rarity": 12,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Elven Boots",
+    "description": "Elven Boots from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#elven-boots",
+    "heroOnly": true
+  },
+  {
+    "id": "elven-cloak",
+    "name": "Elven Cloak",
+    "category": "misc",
+    "baseCost": 100,
+    "priceDice": 1,
+    "priceMultiplier": 10,
+    "rarity": 12,
+    "description": "Hero-only cloak that penalizes missile attacks against its wearer. Not restricted to Elves.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.37 — Elven cloak; https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#elven-cloak",
+    "heroOnly": true,
+    "grade": "core",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Elven Cloak"
+  },
+  {
+    "id": "elven-runestones",
+    "name": "Elven Runestones",
+    "category": "misc",
+    "baseCost": 50,
+    "priceDice": 2,
+    "priceMultiplier": 1,
+    "rarity": 11,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Elven Runestones",
+    "description": "Elven Runestones from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#elven-runestones",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Shadow Warrior"
+    ],
+    "allowedTypeNames": [
+      "Shadow Weaver"
+    ]
+  },
+  {
+    "id": "elven-wine",
+    "name": "Elven Wine",
+    "category": "misc",
+    "baseCost": 50,
+    "priceDice": 3,
+    "priceMultiplier": 1,
+    "rarity": 10,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Elven Wine",
+    "description": "Elven Wine from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#elven-wine",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Shadow Warrior"
+    ]
+  },
+  {
+    "id": "familiar",
+    "name": "Familiar",
+    "category": "misc",
+    "baseCost": 20,
+    "priceDice": 1,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Familiar",
+    "description": "Pay the quoted ritual cost before a rarity attempt, even if it fails. Only spellcasters, not prayer users, may summon or carry a familiar.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#familiar",
+    "heroOnly": true,
+    "purchaseAction": "ritual",
+    "spellcasterOnly": true
+  },
+  {
+    "id": "fire-arrows",
+    "name": "Fire Arrows",
+    "category": "misc",
+    "baseCost": 30,
+    "priceDice": 1,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "grade": "1a",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Fire Arrows",
+    "description": "Fire Arrows from the 1A trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#fire-arrows",
+    "heroOnly": true
+  },
+  {
+    "id": "fire-bomb",
+    "name": "Fire Bomb",
+    "category": "misc",
+    "baseCost": 35,
+    "priceDice": 2,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "grade": "1a",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Fire Bomb",
+    "description": "Fire Bomb from the 1A trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#fire-bomb",
+    "heroOnly": true
+  },
+  {
+    "id": "flash-powder",
+    "name": "Flash Powder",
+    "category": "misc",
+    "baseCost": 25,
+    "priceDice": 2,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "grade": "1a",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Flash Powder",
+    "description": "Flash Powder from the 1A trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#flash-powder",
+    "heroOnly": true
+  },
+  {
+    "id": "fog-enhancing-warpstone-shards",
+    "name": "Fog-enhancing Warpstone Shards",
+    "category": "misc",
+    "baseCost": 100,
+    "priceDice": 1,
+    "priceMultiplier": 10,
+    "rarity": 9,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Fog-enhancing Warpstone Shards",
+    "description": "Fog-enhancing Warpstone Shards from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#fog-enhancing-warpstone-shards",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Skaven of Clan Pestilens"
+    ]
+  },
+  {
+    "id": "forest-cloak",
+    "name": "Forest Cloak",
+    "category": "misc",
+    "baseCost": 50,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 10,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Forest Cloak",
+    "description": "Forest Cloak from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#forest-cloak",
+    "heroOnly": true
+  },
+  {
+    "id": "garlic",
+    "name": "Garlic",
+    "category": "misc",
+    "baseCost": 1,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "description": "Hero-only, one-battle protection that makes a Vampire test Leadership to charge the carrier.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.37 — Garlic; https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#garlic",
+    "heroOnly": true,
+    "excludedWarbands": [
+      "Undead"
+    ],
+    "grade": "core",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Garlic"
+  },
+  {
+    "id": "halfling-cookbook",
+    "name": "Halfling Cookbook",
+    "category": "misc",
+    "baseCost": 30,
+    "priceDice": 3,
+    "priceMultiplier": 1,
+    "rarity": 7,
+    "description": "Adds one to the warband's maximum membership only while carried by its current leader. Copies in the stash or on other Heroes do not add slots, and multiple copies do not stack. Lost if the bearer dies. Undead and Carnival of Chaos warbands cannot use it.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.38 — Halfling cookbook; https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#halfling-cookbook",
+    "heroOnly": true,
+    "excludedWarbands": [
+      "Undead",
+      "Carnival of Chaos"
+    ],
+    "grade": "core",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Halfling Cookbook"
+  },
+  {
+    "id": "hammer-of-witches",
+    "name": "Hammer of Witches",
+    "category": "misc",
+    "baseCost": 100,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 10,
+    "grade": "1a",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Hammer of Witches",
+    "description": "Hammer of Witches from the 1A trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#hammer-of-witches",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Witch Hunters"
+    ]
+  },
+  {
+    "id": "hardtack-biscuits",
+    "name": "Hardtack Biscuits",
+    "category": "misc",
+    "baseCost": 5,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Hardtack Biscuits",
+    "description": "Hardtack Biscuits from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#hardtack-biscuits",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Pirate"
+    ]
+  },
+  {
+    "id": "healing-herbs",
+    "name": "Healing Herbs",
+    "category": "misc",
+    "baseCost": 20,
+    "priceDice": 2,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "description": "Hero-only herbs usable in a recovery phase when not engaged in close combat, restoring wounds lost during that game.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.38 — Healing herbs; https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#healing-herbs",
+    "heroOnly": true,
+    "grade": "core",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Healing Herbs",
+    "rarityOverrides": [
+      {
+        "warbands": [
+          "Amazons (Lustria)"
+        ],
+        "rarity": null
+      }
+    ]
+  },
+  {
+    "id": "holy-unholy-relic",
+    "name": "Holy (Unholy) Relic",
+    "category": "misc",
+    "baseCost": 15,
+    "priceDice": 3,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "description": "Hero-only relic that passes the bearer's first Leadership test, potentially a leader's first Rout test. Multiple relics do not protect later tests.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.38 — Holy (unholy) relic; https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#holy-(unholy)-relic",
+    "heroOnly": true,
+    "rarityOverrides": [
+      {
+        "warbands": [
+          "Sisters of Sigmar"
+        ],
+        "rarity": 6
+      },
+      {
+        "typeNames": [
+          "Warrior Priest",
+          "Warrior-Priest"
+        ],
+        "rarity": 6
+      }
+    ],
+    "grade": "core",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Holy (Unholy) Relic"
+  },
+  {
+    "id": "holy-tome",
+    "name": "Holy Tome",
+    "category": "misc",
+    "baseCost": 100,
+    "priceDice": 1,
+    "priceMultiplier": 10,
+    "rarity": 8,
+    "description": "Hero-only prayer book for Warrior-Priests and Sisters of Sigmar, giving a bonus to prayer-casting rolls.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.38 — Holy tome; 2Warbands.pdf pp.22-23 — Sisters of Sigmar; https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#holy-tome",
+    "heroOnly": true,
+    "allowedTypeNames": [
+      "Warrior Priest",
+      "Warrior-Priest",
+      "Sigmarite Matriarch",
+      "Sister Superior",
+      "Augur",
+      "Sisters of Sigmar",
+      "Sigmarite Sister",
+      "Novices"
+    ],
+    "grade": "core",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Holy Tome"
+  },
+  {
+    "id": "hook-hand",
+    "name": "Hook Hand",
+    "category": "misc",
+    "baseCost": 4,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Hook Hand",
+    "description": "Hook Hand from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#hook-hand",
+    "heroOnly": false,
+    "allowedWarbands": [
+      "Pirate"
+    ]
+  },
+  {
+    "id": "hunting-arrows",
+    "name": "Hunting Arrows",
+    "category": "misc",
+    "baseCost": 25,
+    "priceDice": 1,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "description": "Hero-only arrows giving +1 to Injury rolls when used with a short bow, bow, long bow or Elf bow. They are not ammunition for crossbows or firearms; weapon possession is checked during play, not assumed from recruitment access.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.37 — Hunting arrows; https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#hunting-arrows",
+    "heroOnly": true,
+    "grade": "core",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Hunting Arrows"
+  },
+  {
+    "id": "iron-shod-boots",
+    "name": "Iron Shod Boots",
+    "category": "misc",
+    "baseCost": 20,
+    "priceDice": 3,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Iron Shod Boots",
+    "description": "Iron Shod Boots from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#iron-shod-boots",
+    "heroOnly": true
+  },
+  {
+    "id": "jolly-roger",
+    "name": "Jolly Roger",
+    "category": "misc",
+    "baseCost": 40,
+    "priceDice": 2,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Jolly Roger",
+    "description": "Jolly Roger from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#jolly-roger",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Pirate"
+    ]
+  },
+  {
+    "id": "lantern",
+    "name": "Lantern",
+    "category": "misc",
+    "baseCost": 10,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "description": "Hero-only lantern extending the distance at which hidden enemies can be spotted by 4 inches.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.39 — Lantern; https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#lantern",
+    "heroOnly": true,
+    "grade": "core",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Lantern"
+  },
+  {
+    "id": "liber-bubonicus",
+    "name": "Liber Bubonicus",
+    "category": "misc",
+    "baseCost": 200,
+    "priceDice": 1,
+    "priceMultiplier": 25,
+    "rarity": 12,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Liber Bubonicus",
+    "description": "Liber Bubonicus from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#liber-bubonicus",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Skaven of Clan Pestilens"
+    ]
+  },
+  {
+    "id": "liturgicus-infecticus",
+    "name": "Liturgicus Infecticus",
+    "category": "misc",
+    "baseCost": 30,
+    "priceDice": 2,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Liturgicus Infecticus",
+    "description": "Liturgicus Infecticus from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#liturgicus-infecticus",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Skaven of Clan Pestilens"
+    ]
+  },
+  {
+    "id": "lock-picks",
+    "name": "Lock Picks",
+    "category": "misc",
+    "baseCost": 15,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "grade": "1a",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Lock Picks",
+    "description": "Lock Picks from the 1A trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#lock-picks",
+    "heroOnly": true
+  },
+  {
+    "id": "lucky-charm",
+    "name": "Lucky Charm",
+    "category": "misc",
+    "baseCost": 10,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 6,
+    "description": "Hero-only charm with a chance to discard the first hit suffered in a battle. Multiple charms do not confer additional attempts.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.37 — Lucky charm; https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#lucky-charm",
+    "heroOnly": true,
+    "grade": "core",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Lucky Charm"
+  },
+  {
+    "id": "mad-cap-mushrooms",
+    "name": "Mad Cap Mushrooms",
+    "category": "misc",
+    "baseCost": 30,
+    "priceDice": 3,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "description": "Hero-only mushrooms causing frenzy for a battle, with a risk of permanent stupidity. Have no effect on Undead or Possessed models; lack of effect is not a purchase ban.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.36 — Mad Cap Mushrooms; https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#mad-cap-mushrooms",
+    "heroOnly": true,
+    "grade": "core",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Mad Cap Mushrooms"
+  },
+  {
+    "id": "magic-gubbinz",
+    "name": "Magic Gubbinz",
+    "category": "misc",
+    "baseCost": 50,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Magic Gubbinz",
+    "description": "Magic Gubbinz from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#magic-gubbinz",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Forest Goblins"
+    ]
+  },
+  {
+    "id": "mandrake-root",
+    "name": "Mandrake Root",
+    "category": "misc",
+    "baseCost": 25,
+    "priceDice": 1,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "description": "Hero-only drug with a temporary Toughness bonus and protection from stunned results, but a risk of permanent Toughness loss. Has no effect on Undead or Possessed models; lack of effect is not a purchase ban.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.36 — Mandrake Root; https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#mandrake-root",
+    "heroOnly": true,
+    "grade": "core",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Mandrake Root"
+  },
+  {
+    "id": "mordheim-map",
+    "name": "Mordheim Map",
+    "category": "misc",
+    "baseCost": 20,
+    "priceDice": 4,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "description": "Hero-only map. Roll separately on the map table when purchased to determine authenticity and exploration or scenario benefits; results are not applied automatically.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.39 — Mordheim map; https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#mordheim-map",
+    "heroOnly": true,
+    "grade": "core",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Mordheim Map"
+  },
+  {
+    "id": "net",
+    "name": "Net",
+    "category": "misc",
+    "baseCost": 5,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "description": "Hero-only single-use net, thrown instead of shooting. Its target tests Strength to escape or loses movement, shooting and spellcasting for its next turn.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.37 — Net; https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#net",
+    "heroOnly": true,
+    "grade": "core",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Net"
+  },
+  {
+    "id": "opulent-coach",
+    "name": "Opulent Coach",
+    "category": "misc",
+    "baseCost": 250,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 10,
+    "grade": "1a",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Opulent Coach",
+    "description": "Opulent Coach from the 1A trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#opulent-coach",
+    "heroOnly": true
+  },
+  {
+    "id": "parrot",
+    "name": "Parrot",
+    "category": "misc",
+    "baseCost": 15,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Parrot",
+    "description": "Parrot from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#parrot",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Pirate"
+    ],
+    "allowedTypeNames": [
+      "Pirate Captain",
+      "Mates",
+      "Ship's Mates"
+    ]
+  },
+  {
+    "id": "peg-leg",
+    "name": "Peg Leg",
+    "category": "misc",
+    "baseCost": 8,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Peg Leg",
+    "description": "Peg Leg from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#peg-leg",
+    "heroOnly": false,
+    "allowedWarbands": [
+      "Pirate"
+    ],
+    "maxPerModel": 1
+  },
+  {
+    "id": "poisoned-weapon",
+    "name": "Poisoned Weapon",
+    "category": "misc",
+    "baseCost": 25,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Poisoned Weapon",
+    "description": "Pay 25 GC to permanently poison one carried weapon. Its injury rolls gain +1; it cannot subsequently be traded or sold.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#poisoned-weapon",
+    "heroOnly": false,
+    "allowedWarbands": [
+      "Forest Goblins"
+    ],
+    "purchaseAction": "permanent-upgrade"
+  },
+  {
+    "id": "rabbits-foot",
+    "name": "Rabbit's Foot",
+    "category": "misc",
+    "baseCost": 10,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 5,
+    "grade": "1a",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Rabbit's Foot",
+    "description": "Rabbit's Foot from the 1A trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#rabbit's-foot",
+    "heroOnly": true
+  },
+  {
+    "id": "red-toof-tribal-jewellery",
+    "name": "Red Toof Tribal Jewellery",
+    "category": "misc",
+    "baseCost": 40,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Red Toof Tribal Jewellery",
+    "description": "Red Toof Tribal Jewellery from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#red-toof-tribal-jewellery",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Forest Goblins"
+    ]
+  },
+  {
+    "id": "reptile-venom",
+    "name": "Reptile Venom",
+    "category": "misc",
+    "baseCost": 5,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Reptile Venom",
+    "description": "Reptile Venom from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#reptile-venom",
+    "heroOnly": false,
+    "allowedWarbands": [
+      "Lizardmen"
+    ],
+    "allowedTypeNames": [
+      "Skink Braves"
+    ],
+    "allowedRoles": [
+      "Henchman"
+    ]
+  },
+  {
+    "id": "river-barge",
+    "name": "River Barge",
+    "category": "misc",
+    "baseCost": 200,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "River Barge",
+    "description": "River Barge from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/optional-rules/wagons-and-boats",
+    "heroOnly": true
+  },
+  {
+    "id": "riverboat",
+    "name": "Riverboat",
+    "category": "misc",
+    "baseCost": 100,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Riverboat",
+    "description": "Riverboat from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/optional-rules/wagons-and-boats",
+    "heroOnly": true
+  },
+  {
+    "id": "rope-hook",
+    "name": "Rope & Hook",
+    "category": "misc",
+    "baseCost": 5,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "description": "Hero-only climbing equipment allowing failed climbing Initiative tests to be re-rolled.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.36 — Rope & hook; https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#rope-and-hook",
+    "heroOnly": true,
+    "grade": "core",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Rope & Hook"
+  },
+  {
+    "id": "rowboat",
+    "name": "Rowboat",
+    "category": "misc",
+    "baseCost": 40,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 7,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Rowboat",
+    "description": "Rowboat from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/optional-rules/wagons-and-boats",
+    "heroOnly": true
+  },
+  {
+    "id": "scroll-of-the-rat-familiar",
+    "name": "Scroll of the Rat Familiar",
+    "category": "misc",
+    "baseCost": 25,
+    "priceDice": 1,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Scroll of the Rat Familiar",
+    "description": "Scroll of the Rat Familiar from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#scroll-of-the-rat-familiar",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Skaven of Clan Pestilens"
+    ]
+  },
+  {
+    "id": "sea-dragon-cloak",
+    "name": "Sea Dragon Cloak",
+    "category": "misc",
+    "baseCost": 50,
+    "priceDice": 2,
+    "priceMultiplier": 1,
+    "rarity": 10,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Sea Dragon Cloak",
+    "description": "Sea Dragon Cloak from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#sea-dragon-cloak",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Dark Elves"
+    ]
+  },
+  {
+    "id": "skeleton-chariot",
+    "name": "Skeleton Chariot",
+    "category": "misc",
+    "baseCost": 200,
+    "priceDice": 10,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Skeleton Chariot",
+    "description": "Skeleton Chariot from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#skeleton-chariot",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Tomb Guardians"
+    ]
+  },
+  {
+    "id": "spy-glass",
+    "name": "Spy Glass",
+    "category": "misc",
+    "baseCost": 20,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Spy Glass",
+    "description": "Spy Glass from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#spy-glass",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Pirate"
+    ]
+  },
+  {
+    "id": "squig-prodder",
+    "name": "Squig Prodder",
+    "category": "misc",
+    "baseCost": 15,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "grade": "1a",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Squig Prodder",
+    "description": "Squig Prodder from the 1A trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#squig-prodder",
+    "heroOnly": true,
+    "allowedTypeNames": [
+      "Goblin Warriors",
+      "Night Goblins",
+      "Forest Goblins",
+      "Red Toof Clan Goblins",
+      "Bosses (Night Goblins)",
+      "Bosses (Forest Goblins)",
+      "Forest Goblin Shaman",
+      "Shaman (Night Goblins)"
+    ]
+  },
+  {
+    "id": "standard-of-nagarythe",
+    "name": "Standard of Nagarythe",
+    "category": "misc",
+    "baseCost": 75,
+    "priceDice": 3,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Standard of Nagarythe",
+    "description": "Standard of Nagarythe from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#standard-of-nagarythe",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Shadow Warrior"
+    ],
+    "creationOnly": true
+  },
+  {
+    "id": "superior-blackpowder",
+    "name": "Superior Blackpowder",
+    "category": "misc",
+    "baseCost": 30,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 11,
+    "description": "Hero-only powder increasing the Strength of the bearer's blackpowder weapons for one battle. Requires a suitable weapon to benefit, not merely access to its recruitment option.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.39 — Superior blackpowder; https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#superior-blackpowder",
+    "heroOnly": true,
+    "grade": "core",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Superior Blackpowder"
+  },
+  {
+    "id": "tarot-cards",
+    "name": "Tarot Cards",
+    "category": "misc",
+    "baseCost": 50,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 7,
+    "grade": "1a",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Tarot Cards",
+    "description": "Tarot Cards from the 1A trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#tarot-cards",
+    "heroOnly": true,
+    "excludedWarbands": [
+      "Witch Hunters",
+      "Sisters of Sigmar"
+    ]
+  },
+  {
+    "id": "tears-of-shallaya",
+    "name": "Tears of Shallaya",
+    "category": "misc",
+    "baseCost": 10,
+    "priceDice": 2,
+    "priceMultiplier": 1,
+    "rarity": 7,
+    "description": "Hero-only vial consumed at the start of a battle for immunity to poison. Undead and Possessed warriors cannot use it.",
+    "sourceReference": "3Campaigns.pdf p.104 — Tears of Shallaya; 1Rules.pdf p.39 — Tears of Shallaya; https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#tears-of-shallaya",
+    "heroOnly": true,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Vampire",
+      "Vampires (Blooddragon)",
+      "Lahmia Vampire",
+      "Lahmia Vampire (Blood Sister)",
+      "Zombies",
+      "Ghouls",
+      "Skeletons (Lahmia)",
+      "Skeletons (Strigoi)",
+      "Skeleton Warriors",
+      "Skeleton (Necromancer)"
+    ],
+    "grade": "core",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Tears of Shallaya"
+  },
+  {
+    "id": "telescope",
+    "name": "Telescope",
+    "category": "misc",
+    "baseCost": 75,
+    "priceDice": 3,
+    "priceMultiplier": 1,
+    "rarity": 10,
+    "grade": "1a",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Telescope",
+    "description": "Telescope from the 1A trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#telescope",
+    "heroOnly": true
+  },
+  {
+    "id": "tome-of-magic",
+    "name": "Tome of Magic",
+    "category": "misc",
+    "baseCost": 200,
+    "priceDice": 1,
+    "priceMultiplier": 25,
+    "rarity": 12,
+    "description": "Hero-only tome granting one wizard an additional spell from their own list or Lesser Magic. Native base wizards need no Arcane Lore; a Hero with Arcane Lore can use a tome to learn Lesser Magic. Other expansion wizards need separate verification because this catalog's eligibility context has no spellcasting field. Spell selection is not automatic.",
+    "sourceReference": "3Campaigns.pdf pp.84, 104 — Arcane Lore; Price chart; 1Rules.pdf p.38 — Tome of magic; https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#tome-of-magic",
+    "heroOnly": true,
+    "excludedWarbands": [
+      "Witch Hunters",
+      "Sisters of Sigmar"
+    ],
+    "excludedTypeNames": [
+      "Warrior Priest",
+      "Warrior-Priest"
+    ],
+    "grade": "core",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Tome of Magic"
+  },
+  {
+    "id": "torch",
+    "name": "Torch",
+    "category": "misc",
+    "baseCost": 2,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "grade": "1a",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Torch",
+    "description": "Torch from the 1A trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#torch",
+    "heroOnly": true
+  },
+  {
+    "id": "treasure-map",
+    "name": "Treasure Map",
+    "category": "misc",
+    "baseCost": 75,
+    "priceDice": 4,
+    "priceMultiplier": 1,
+    "rarity": 10,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Treasure Map",
+    "description": "Treasure Map from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#treasure-map",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Pirate"
+    ]
+  },
+  {
+    "id": "trip-wire",
+    "name": "Trip Wire",
+    "category": "misc",
+    "baseCost": 15,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Trip Wire",
+    "description": "Trip Wire from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#trip-wire",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Horned Hunters"
+    ]
+  },
+  {
+    "id": "vial-of-pestilens",
+    "name": "Vial of Pestilens",
+    "category": "misc",
+    "baseCost": 25,
+    "priceDice": 2,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Vial of Pestilens",
+    "description": "Vial of Pestilens from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#vial-of-pestilens",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Skaven"
+    ]
+  },
+  {
+    "id": "vodka",
+    "name": "Vodka",
+    "category": "misc",
+    "baseCost": 35,
+    "priceDice": 2,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Vodka",
+    "description": "Vodka from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#vodka",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Kislevite"
+    ]
+  },
+  {
+    "id": "wagon-stagecoach",
+    "name": "Wagon, Stagecoach",
+    "category": "misc",
+    "baseCost": 100,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 7,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Wagon, Stagecoach",
+    "description": "Wagon, Stagecoach from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#wagon-stagecoach",
+    "heroOnly": true
+  },
+  {
+    "id": "war-horn",
+    "name": "War Horn",
+    "category": "misc",
+    "baseCost": 30,
+    "priceDice": 2,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "grade": "1a",
+    "shopCategory": "miscellaneous",
+    "sourceName": "War Horn",
+    "description": "War Horn from the 1A trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#war-horn",
+    "heroOnly": true
+  },
+  {
+    "id": "war-horn-of-nagarythe",
+    "name": "War Horn of Nagarythe",
+    "category": "misc",
+    "baseCost": 25,
+    "priceDice": 1,
+    "priceMultiplier": 1,
+    "rarity": 6,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "War Horn of Nagarythe",
+    "description": "War Horn of Nagarythe from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#war-horn-of-nagarythe",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Shadow Warrior"
+    ]
+  },
+  {
+    "id": "warpstone-amulet",
+    "name": "Warpstone Amulet",
+    "category": "misc",
+    "baseCost": 10,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 5,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Warpstone Amulet",
+    "description": "Warpstone Amulet from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#warpstone-amulet",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Skaven of Clan Pestilens"
+    ]
+  },
+  {
+    "id": "wolfcloak",
+    "name": "Wolfcloak",
+    "category": "misc",
+    "baseCost": 10,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": null,
+    "grade": "1b",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Wolfcloak",
+    "description": "Wolfcloak from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#wolfcloak",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Middenheimers",
+      "Norse",
+      "Marauders of Chaos"
+    ]
+  },
+  {
+    "id": "wyrdstone-pendulum",
+    "name": "Wyrdstone Pendulum",
+    "category": "misc",
+    "baseCost": 25,
+    "priceDice": 3,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "grade": "1a",
+    "shopCategory": "miscellaneous",
+    "sourceName": "Wyrdstone Pendulum",
+    "description": "Wyrdstone Pendulum from the 1A trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#wyrdstone-pendulum",
+    "heroOnly": true
+  },
+  {
+    "id": "chaos-steed",
+    "name": "Chaos Steed",
+    "category": "misc",
+    "baseCost": 90,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 11,
+    "grade": "1b",
+    "shopCategory": "animals",
+    "sourceName": "Chaos Steed",
+    "description": "Chaos Steed from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/animal-bestiary#chaos-steed",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Cult of the Possessed",
+      "Marauders of Chaos"
+    ],
+    "skillByWarband": {
+      "Marauders of Chaos": "Chosen of Chaos"
+    },
+    "excludedTypeNames": [
+      "The Possessed",
+      "Possessed"
+    ]
+  },
+  {
+    "id": "cold-one",
+    "name": "Cold One",
+    "category": "misc",
+    "baseCost": 100,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 11,
+    "grade": "1b",
+    "shopCategory": "animals",
+    "sourceName": "Cold One",
+    "description": "Cold One from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/animal-bestiary#cold-one",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Dark Elves",
+      "Lizardmen",
+      "Norse",
+      "Marauders of Chaos"
+    ]
+  },
+  {
+    "id": "elven-steed",
+    "name": "Elven Steed",
+    "category": "misc",
+    "baseCost": 90,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 10,
+    "grade": "1b",
+    "shopCategory": "animals",
+    "sourceName": "Elven Steed",
+    "description": "Elven Steed from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/animal-bestiary#elven-steed",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Dark Elves",
+      "Shadow Warrior",
+      "Wood Elves"
+    ]
+  },
+  {
+    "id": "giant-spider",
+    "name": "Giant Spider",
+    "category": "misc",
+    "baseCost": 100,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 11,
+    "grade": "1b",
+    "shopCategory": "animals",
+    "sourceName": "Giant Spider",
+    "description": "Giant Spider from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/animal-bestiary#giant-spider",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Forest Goblins",
+      "Night Goblins",
+      "Orc"
+    ],
+    "allowedTypeNames": [
+      "Goblin Warriors",
+      "Night Goblins",
+      "Forest Goblins",
+      "Red Toof Clan Goblins",
+      "Bosses (Night Goblins)",
+      "Bosses (Forest Goblins)",
+      "Forest Goblin Shaman",
+      "Shaman (Night Goblins)"
+    ],
+    "excludesOwnedItems": [
+      "giant-wolf"
+    ]
+  },
+  {
+    "id": "giant-wolf",
+    "name": "Giant Wolf",
+    "category": "misc",
+    "baseCost": 85,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 10,
+    "grade": "1b",
+    "shopCategory": "animals",
+    "sourceName": "Giant Wolf",
+    "description": "Giant Wolf from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/animal-bestiary#giant-wolf",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Forest Goblins",
+      "Night Goblins",
+      "Orc"
+    ],
+    "allowedTypeNames": [
+      "Goblin Warriors",
+      "Night Goblins",
+      "Forest Goblins",
+      "Red Toof Clan Goblins",
+      "Bosses (Night Goblins)",
+      "Bosses (Forest Goblins)",
+      "Forest Goblin Shaman",
+      "Shaman (Night Goblins)"
+    ],
+    "excludesOwnedItems": [
+      "giant-spider"
+    ]
+  },
+  {
+    "id": "mule",
+    "name": "Mule",
+    "category": "misc",
+    "baseCost": 30,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 7,
+    "grade": "1b",
+    "shopCategory": "animals",
+    "sourceName": "Mule",
+    "description": "Mule from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/animal-bestiary#mule",
+    "heroOnly": true
+  },
+  {
+    "id": "nightmare",
+    "name": "Nightmare",
+    "category": "misc",
+    "baseCost": 95,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 11,
+    "grade": "1b",
+    "shopCategory": "animals",
+    "sourceName": "Nightmare",
+    "description": "Nightmare from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/animal-bestiary#nightmare",
+    "heroOnly": true,
+    "allowedTypeNames": [
+      "Vampire",
+      "Lahmia Vampire",
+      "Necromancer (Lahmia & Undead))",
+      "Necromancer",
+      "Grave Guard"
+    ]
+  },
+  {
+    "id": "horse",
+    "name": "Horse",
+    "category": "misc",
+    "baseCost": 40,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 8,
+    "description": "Human Heroes only, using the optional mounted rules. Includes confirmed human Hero types and living members of Undead and Possessed warbands; unknown species are not assumed human.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.38 — Horses & Warhorses; 2Warbands.pdf — Human Hero entries; https://mordheimer.net/docs/weapons-armour/animal-bestiary#riding/draft-horse",
+    "heroOnly": true,
+    "excludedWarbands": [
+      "Skaven",
+      "Dark Elves",
+      "Shadow Warrior",
+      "Dwarf Treasure Hunters",
+      "Lizardmen",
+      "Night Goblins",
+      "Orc",
+      "Beastmen Raiders"
+    ],
+    "allowedTypeNames": [
+      "Mercenary Captain",
+      "Champions (Mercenaries & Amazons)",
+      "Youngblood",
+      "Witch Hunter Captain",
+      "Witch Hunters",
+      "Warrior Priest",
+      "Warrior-Priest",
+      "Sigmarite Matriarch",
+      "Sister Superior",
+      "Augur",
+      "Magister",
+      "Mutants",
+      "Dregs",
+      "Necromancer (Lahmia & Undead))",
+      "Necromancer",
+      "Marksmen (All Others)",
+      "Swordsmen",
+      "Warriors (All Other)",
+      "Brethren",
+      "Darksouls",
+      "Flagellants",
+      "Zealots",
+      "Novices",
+      "Sigmarite Sister",
+      "Captain (Averlander)",
+      "Bergjaeger",
+      "Questing Knight",
+      "Knight Errant",
+      "Squires",
+      "Druzhina Captain",
+      "Esaul",
+      "Bear Tamer",
+      "Youths",
+      "Jarl",
+      "Berserkers",
+      "Bondsmen (Norse)",
+      "Elder",
+      "Blood Brothers",
+      "Priest of Taal",
+      "Pirate Captain",
+      "Ship's Mates",
+      "Cabin Boys",
+      "Pit King",
+      "Pit Veterans",
+      "Marauder Chieftain",
+      "Seer",
+      "Champion",
+      "Emissary",
+      "Officer",
+      "Dragon Monks",
+      "Priestess",
+      "Totem Warriors"
+    ],
+    "grade": "core",
+    "shopCategory": "animals",
+    "sourceName": "Riding/Draft Horse"
+  },
+  {
+    "id": "war-boar",
+    "name": "War Boar",
+    "category": "misc",
+    "baseCost": 90,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 11,
+    "grade": "1b",
+    "shopCategory": "animals",
+    "sourceName": "War Boar",
+    "description": "War Boar from the 1B trading list. Resolve its tabletop effects using the linked rules.",
+    "sourceReference": "https://mordheimer.net/docs/weapons-armour/animal-bestiary#war-boar",
+    "heroOnly": true,
+    "allowedWarbands": [
+      "Orc"
+    ],
+    "allowedTypeNames": [
+      "Orc Boss",
+      "Big 'Uns",
+      "Orc Shaman",
+      "Orc Boyz"
+    ]
+  },
+  {
+    "id": "wardog",
+    "name": "Wardog",
+    "category": "misc",
+    "baseCost": 25,
+    "priceDice": 2,
+    "priceMultiplier": 1,
+    "rarity": 10,
+    "description": "Hero-owned animal fighting as a warband member and counting toward the membership limit. Gains no experience and uses Henchman recovery rules. Animal creation and capacity changes are not automatic.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.38 — Wardogs; https://mordheimer.net/docs/weapons-armour/animal-bestiary#wardogs",
+    "heroOnly": true,
+    "excludedWarbands": [
+      "Skaven"
+    ],
+    "grade": "core",
+    "shopCategory": "animals",
+    "sourceName": "Wardogs"
+  },
+  {
+    "id": "warhorse",
+    "name": "Warhorse",
+    "category": "misc",
+    "baseCost": 80,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 11,
+    "description": "Human Heroes only, using the optional mounted rules. Includes confirmed human Hero types and living members of Undead and Possessed warbands; unknown species are not assumed human.",
+    "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.38 — Horses & Warhorses; 2Warbands.pdf — Human Hero entries; https://mordheimer.net/docs/weapons-armour/animal-bestiary#warhorse",
+    "heroOnly": true,
+    "excludedWarbands": [
+      "Skaven",
+      "Dark Elves",
+      "Shadow Warrior",
+      "Dwarf Treasure Hunters",
+      "Lizardmen",
+      "Night Goblins",
+      "Orc",
+      "Beastmen Raiders"
+    ],
+    "allowedTypeNames": [
+      "Mercenary Captain",
+      "Champions (Mercenaries & Amazons)",
+      "Youngblood",
+      "Witch Hunter Captain",
+      "Witch Hunters",
+      "Warrior Priest",
+      "Warrior-Priest",
+      "Sigmarite Matriarch",
+      "Sister Superior",
+      "Augur",
+      "Magister",
+      "Mutants",
+      "Dregs",
+      "Necromancer (Lahmia & Undead))",
+      "Necromancer",
+      "Marksmen (All Others)",
+      "Swordsmen",
+      "Warriors (All Other)",
+      "Brethren",
+      "Darksouls",
+      "Flagellants",
+      "Zealots",
+      "Novices",
+      "Sigmarite Sister",
+      "Captain (Averlander)",
+      "Bergjaeger",
+      "Questing Knight",
+      "Knight Errant",
+      "Squires",
+      "Druzhina Captain",
+      "Esaul",
+      "Bear Tamer",
+      "Youths",
+      "Jarl",
+      "Berserkers",
+      "Bondsmen (Norse)",
+      "Elder",
+      "Blood Brothers",
+      "Priest of Taal",
+      "Pirate Captain",
+      "Ship's Mates",
+      "Cabin Boys",
+      "Pit King",
+      "Pit Veterans",
+      "Marauder Chieftain",
+      "Seer",
+      "Champion",
+      "Emissary",
+      "Officer",
+      "Dragon Monks",
+      "Priestess",
+      "Totem Warriors"
+    ],
+    "grade": "core",
+    "shopCategory": "animals",
+    "sourceName": "Warhorse"
+  },
+  {
+    "id": "gromril-axe",
+    "name": "Gromril Axe",
+    "category": "weapon",
+    "baseCost": 20,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 11,
+    "description": "Axe profile with an extra -1 armour-save modifier; four times the normal axe price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Gromril Weapon; 1Rules.pdf p.27 — Gromril weapon",
+    "weaponNames": [
+      "Axe"
+    ],
+    "profileName": "Axe",
+    "materialName": "Gromril",
+    "ranged": false,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Gromril Weapon"
+  },
+  {
+    "id": "gromril-club-mace-hammer",
+    "name": "Gromril Club, Mace or Hammer",
+    "category": "weapon",
+    "baseCost": 12,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 11,
+    "description": "Blunt-weapon profile with an extra -1 armour-save modifier; four times the normal weapon price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Gromril Weapon; 1Rules.pdf p.27 — Gromril weapon",
+    "weaponNames": [
+      "Club",
+      "Mace",
+      "Hammer",
+      "Staff"
+    ],
+    "profileName": "Club",
+    "materialName": "Gromril",
+    "ranged": false,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Gromril Weapon"
+  },
+  {
+    "id": "gromril-dagger",
+    "name": "Gromril Dagger",
+    "category": "weapon",
+    "baseCost": 8,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 11,
+    "description": "Dagger profile with an extra -1 armour-save modifier; four times the normal purchased dagger price. Not a free starting dagger.",
+    "sourceReference": "3Campaigns.pdf p.104 — Gromril Weapon; 1Rules.pdf p.27 — Gromril weapon",
+    "weaponNames": [
+      "Dagger"
+    ],
+    "profileName": "Dagger",
+    "materialName": "Gromril",
+    "ranged": false,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Gromril Weapon"
+  },
+  {
+    "id": "gromril-double-handed-weapon",
+    "name": "Gromril Double-Handed Weapon",
+    "category": "weapon",
+    "baseCost": 60,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 11,
+    "description": "Double-handed weapon profile with an extra -1 armour-save modifier; four times the normal weapon price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Gromril Weapon; 1Rules.pdf p.27 — Gromril weapon",
+    "weaponNames": [
+      "Double-handed weapon",
+      "Double handed weapon",
+      "Two-handed weapon"
+    ],
+    "profileName": "Double-handed weapon",
+    "materialName": "Gromril",
+    "ranged": false,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Gromril Weapon"
+  },
+  {
+    "id": "gromril-flail",
+    "name": "Gromril Flail",
+    "category": "weapon",
+    "baseCost": 60,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 11,
+    "description": "Flail profile with an extra -1 armour-save modifier; four times the normal flail price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Gromril Weapon; 1Rules.pdf p.27 — Gromril weapon",
+    "weaponNames": [
+      "Flail"
+    ],
+    "profileName": "Flail",
+    "materialName": "Gromril",
+    "ranged": false,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Gromril Weapon"
+  },
+  {
+    "id": "gromril-halberd",
+    "name": "Gromril Halberd",
+    "category": "weapon",
+    "baseCost": 40,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 11,
+    "description": "Halberd profile with an extra -1 armour-save modifier; four times the normal halberd price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Gromril Weapon; 1Rules.pdf p.27 — Gromril weapon",
+    "weaponNames": [
+      "Halberd"
+    ],
+    "profileName": "Halberd",
+    "materialName": "Gromril",
+    "ranged": false,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Gromril Weapon"
+  },
+  {
+    "id": "gromril-lance",
+    "name": "Gromril Lance",
+    "category": "weapon",
+    "baseCost": 160,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 11,
+    "description": "Lance profile with an extra -1 armour-save modifier; four times the normal lance price. Still requires a mount and the optional mounted rules.",
+    "sourceReference": "3Campaigns.pdf p.104 — Gromril Weapon; 1Rules.pdf p.27 — Gromril weapon",
+    "weaponNames": [
+      "Lance"
+    ],
+    "profileName": "Lance",
+    "materialName": "Gromril",
+    "ranged": false,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Gromril Weapon"
+  },
+  {
+    "id": "gromril-morning-star",
+    "name": "Gromril Morning Star",
+    "category": "weapon",
+    "baseCost": 60,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 11,
+    "description": "Morning star profile with an extra -1 armour-save modifier; four times the normal weapon price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Gromril Weapon; 1Rules.pdf p.27 — Gromril weapon",
+    "weaponNames": [
+      "Morning star"
+    ],
+    "profileName": "Morning star",
+    "materialName": "Gromril",
+    "ranged": false,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Gromril Weapon"
+  },
+  {
+    "id": "gromril-spear",
+    "name": "Gromril Spear",
+    "category": "weapon",
+    "baseCost": 40,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 11,
+    "description": "Spear profile with an extra -1 armour-save modifier; four times the normal spear price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Gromril Weapon; 1Rules.pdf p.27 — Gromril weapon",
+    "weaponNames": [
+      "Spear"
+    ],
+    "profileName": "Spear",
+    "materialName": "Gromril",
+    "ranged": false,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Gromril Weapon"
+  },
+  {
+    "id": "gromril-sword",
+    "name": "Gromril Sword",
+    "category": "weapon",
+    "baseCost": 40,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 11,
+    "description": "Sword profile with an extra -1 armour-save modifier; four times the normal sword price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Gromril Weapon; 1Rules.pdf p.27 — Gromril weapon",
+    "weaponNames": [
+      "Sword"
+    ],
+    "profileName": "Sword",
+    "materialName": "Gromril",
+    "ranged": false,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Gromril Weapon"
+  },
+  {
+    "id": "ithilmar-axe",
+    "name": "Ithilmar Axe",
+    "category": "weapon",
+    "baseCost": 15,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "description": "Axe profile with +1 Initiative in close combat; three times the normal axe price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Ithilmar Weapon; 1Rules.pdf p.27 — Ithilmar weapon",
+    "weaponNames": [
+      "Axe"
+    ],
+    "profileName": "Axe",
+    "materialName": "Ithilmar",
+    "ranged": false,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Ithilmar Weapon"
+  },
+  {
+    "id": "ithilmar-club-mace-hammer",
+    "name": "Ithilmar Club, Mace or Hammer",
+    "category": "weapon",
+    "baseCost": 9,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "description": "Blunt-weapon profile with +1 Initiative in close combat; three times the normal weapon price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Ithilmar Weapon; 1Rules.pdf p.27 — Ithilmar weapon",
+    "weaponNames": [
+      "Club",
+      "Mace",
+      "Hammer",
+      "Staff"
+    ],
+    "profileName": "Club",
+    "materialName": "Ithilmar",
+    "ranged": false,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Ithilmar Weapon"
+  },
+  {
+    "id": "ithilmar-dagger",
+    "name": "Ithilmar Dagger",
+    "category": "weapon",
+    "baseCost": 6,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "description": "Dagger profile with +1 Initiative in close combat; three times the normal purchased dagger price. Not a free starting dagger.",
+    "sourceReference": "3Campaigns.pdf p.104 — Ithilmar Weapon; 1Rules.pdf p.27 — Ithilmar weapon",
+    "weaponNames": [
+      "Dagger"
+    ],
+    "profileName": "Dagger",
+    "materialName": "Ithilmar",
+    "ranged": false,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Ithilmar Weapon"
+  },
+  {
+    "id": "ithilmar-double-handed-weapon",
+    "name": "Ithilmar Double-Handed Weapon",
+    "category": "weapon",
+    "baseCost": 45,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "description": "Double-handed weapon profile with +1 Initiative in close combat; three times the normal weapon price. Its strike-last rule still applies.",
+    "sourceReference": "3Campaigns.pdf p.104 — Ithilmar Weapon; 1Rules.pdf p.27 — Ithilmar weapon",
+    "weaponNames": [
+      "Double-handed weapon",
+      "Double handed weapon",
+      "Two-handed weapon"
+    ],
+    "profileName": "Double-handed weapon",
+    "materialName": "Ithilmar",
+    "ranged": false,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Ithilmar Weapon"
+  },
+  {
+    "id": "ithilmar-flail",
+    "name": "Ithilmar Flail",
+    "category": "weapon",
+    "baseCost": 45,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "description": "Flail profile with +1 Initiative in close combat; three times the normal flail price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Ithilmar Weapon; 1Rules.pdf p.27 — Ithilmar weapon",
+    "weaponNames": [
+      "Flail"
+    ],
+    "profileName": "Flail",
+    "materialName": "Ithilmar",
+    "ranged": false,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Ithilmar Weapon"
+  },
+  {
+    "id": "ithilmar-halberd",
+    "name": "Ithilmar Halberd",
+    "category": "weapon",
+    "baseCost": 30,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "description": "Halberd profile with +1 Initiative in close combat; three times the normal halberd price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Ithilmar Weapon; 1Rules.pdf p.27 — Ithilmar weapon",
+    "weaponNames": [
+      "Halberd"
+    ],
+    "profileName": "Halberd",
+    "materialName": "Ithilmar",
+    "ranged": false,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Ithilmar Weapon"
+  },
+  {
+    "id": "ithilmar-lance",
+    "name": "Ithilmar Lance",
+    "category": "weapon",
+    "baseCost": 120,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "description": "Lance profile with +1 Initiative in close combat; three times the normal lance price. Still requires a mount and the optional mounted rules.",
+    "sourceReference": "3Campaigns.pdf p.104 — Ithilmar Weapon; 1Rules.pdf p.27 — Ithilmar weapon",
+    "weaponNames": [
+      "Lance"
+    ],
+    "profileName": "Lance",
+    "materialName": "Ithilmar",
+    "ranged": false,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Ithilmar Weapon"
+  },
+  {
+    "id": "ithilmar-morning-star",
+    "name": "Ithilmar Morning Star",
+    "category": "weapon",
+    "baseCost": 45,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "description": "Morning star profile with +1 Initiative in close combat; three times the normal weapon price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Ithilmar Weapon; 1Rules.pdf p.27 — Ithilmar weapon",
+    "weaponNames": [
+      "Morning star"
+    ],
+    "profileName": "Morning star",
+    "materialName": "Ithilmar",
+    "ranged": false,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Ithilmar Weapon"
+  },
+  {
+    "id": "ithilmar-spear",
+    "name": "Ithilmar Spear",
+    "category": "weapon",
+    "baseCost": 30,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "description": "Spear profile with +1 Initiative in close combat; three times the normal spear price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Ithilmar Weapon; 1Rules.pdf p.27 — Ithilmar weapon",
+    "weaponNames": [
+      "Spear"
+    ],
+    "profileName": "Spear",
+    "materialName": "Ithilmar",
+    "ranged": false,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Ithilmar Weapon"
+  },
+  {
+    "id": "ithilmar-sword",
+    "name": "Ithilmar Sword",
+    "category": "weapon",
+    "baseCost": 30,
+    "priceDice": 0,
+    "priceMultiplier": 1,
+    "rarity": 9,
+    "description": "Sword profile with +1 Initiative in close combat; three times the normal sword price.",
+    "sourceReference": "3Campaigns.pdf p.104 — Ithilmar Weapon; 1Rules.pdf p.27 — Ithilmar weapon",
+    "weaponNames": [
+      "Sword"
+    ],
+    "profileName": "Sword",
+    "materialName": "Ithilmar",
+    "ranged": false,
+    "excludedTypeNames": [
+      "The Possessed",
+      "Rat Ogre",
+      "Rat Ogres",
+      "Giant Rats",
+      "Warhounds",
+      "Ghouls",
+      "Zombies"
+    ],
+    "grade": "core",
+    "shopCategory": "close-combat",
+    "sourceName": "Ithilmar Weapon"
+  }
+]

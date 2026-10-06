@@ -73,6 +73,7 @@ function toRoster(roster, members) {
     wyrdstone: String(roster.wyrdstone),
     rating: String(calculateWarbandRating(members)),
     memberOrderCustomized: Boolean(roster.member_order_customized),
+    battlesFought: Number(roster.battles_fought) || 0,
     campaign: toCampaign(roster),
     members,
   };

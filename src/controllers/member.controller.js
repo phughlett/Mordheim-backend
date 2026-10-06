@@ -119,6 +119,7 @@ function createMemberController(repository, rosterService) {
 
     async sellEquipment(request, response) {
       const sale = await repository.refundWarriorEquipment(request.params.memberId, request.params.inventoryItemId);
+      if (sale.error) return response.status(sale.status).json({ error: sale.error });
       if (sale.missingWarrior) return response.status(404).json({ error: "Warrior not found." });
       if (sale.missingItem) return response.status(404).json({ error: "Inventory item not found." });
       if (sale.freeItem) return response.status(409).json({ error: "Free equipment cannot be sold." });
@@ -137,6 +138,7 @@ function createMemberController(repository, rosterService) {
       }
 
       const sale = await repository.refundWarriorEquipmentItems(request.params.memberId, inventoryItemIds);
+      if (sale.error) return response.status(sale.status).json({ error: sale.error });
       if (sale.missingWarrior) return response.status(404).json({ error: "Warrior not found." });
       if (sale.missingItem) return response.status(404).json({ error: "One or more inventory items were not found." });
       if (sale.freeItem) return response.status(409).json({ error: "Free equipment cannot be sold." });
@@ -303,7 +305,7 @@ function createMemberController(repository, rosterService) {
         return response.status(400).json({ error: "unitCostPaid must be a non-negative whole number no greater than 1000000." });
       }
       const result = await repository.addWarriorMagicTome(request.params.memberId, unitCostPaid ?? null);
-      if (result.shopOnly) return response.status(409).json({ error: "In campaigns, buy a Tome of Magic from the trading shop and transfer it from the stash." });
+      if (result.shopOnly) return response.status(409).json({ error: "In campaigns or after the first Freebuild battle, acquire a Tome of Magic through the Mordheim shop and transfer it from the stash." });
       if (result.missingWarrior) return response.status(404).json({ error: "Warrior not found." });
       if (result.tomeNotAllowed) return response.status(409).json({ error: "The Tome of Magic is not available to this warband." });
       if (result.academicSkillRequired) return response.status(409).json({ error: "Academic skill access is required to record a Tome of Magic for spell learning." });

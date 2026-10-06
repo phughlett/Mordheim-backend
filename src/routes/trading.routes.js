@@ -22,11 +22,16 @@ function createTradingRoutes(db) {
   }));
   router.post("/rosters/:rosterId/trading/search", handle(async (request, response) => {
     if (!uuid(request.body?.heroId) || typeof request.body?.itemId !== "string") return invalid(response, "Hero and shop item are required.");
-    await repository.search(request.params.rosterId, request.body);
-    response.status(201).json(await repository.getTrading(request.params.rosterId));
+    if (request.body.quoteId !== undefined && !uuid(request.body.quoteId)) return invalid(response, "Supply a valid ritual quote ID.");
+    const attempt = await repository.search(request.params.rosterId, request.body);
+    response.status(201).json({ ...await repository.getTrading(request.params.rosterId), attempt: {
+      heroName: attempt.hero_name, success: attempt.success, dice: typeof attempt.dice === "string" ? JSON.parse(attempt.dice) : attempt.dice,
+      total: attempt.total, modifier: attempt.modifier,
+    } });
   }));
   router.post("/rosters/:rosterId/trading/quote", handle(async (request, response) => {
     if (typeof request.body?.itemId !== "string") return invalid(response, "Shop item is required.");
+    if (request.body.buyerId !== undefined && !uuid(request.body.buyerId)) return invalid(response, "Supply a valid buyer ID.");
     response.status(201).json(await repository.quote(request.params.rosterId, request.body));
   }));
   router.post("/rosters/:rosterId/trading/purchase", handle(async (request, response) => {
@@ -46,6 +51,23 @@ function createTradingRoutes(db) {
     if (!["to_member", "to_stash"].includes(direction) || !uuid(inventoryId) || !uuid(memberId)
       || !integer(quantity, 1, 1000) || !integer(modelIndex, -1, 4)) return invalid(response, "Supply transfer direction, inventory/member IDs, quantity and model index.");
     await repository.transfer(request.params.rosterId, { direction, inventoryId, memberId, quantity, modelIndex });
+    response.json(await repository.getTrading(request.params.rosterId));
+  }));
+  router.post("/rosters/:rosterId/trading/sell", handle(async (request, response) => {
+    const { source, inventoryIds, quantity } = request.body ?? {};
+    if (!["stash", "member"].includes(source) || !Array.isArray(inventoryIds) || !inventoryIds.length
+      || inventoryIds.length > 1000 || inventoryIds.some((id) => !uuid(id)) || new Set(inventoryIds).size !== inventoryIds.length
+      || (source === "stash" && (inventoryIds.length !== 1 || !integer(quantity, 1, 1000)))
+      || (source === "member" && quantity !== undefined)) {
+      return invalid(response, "Supply a stash stack and quantity (1-1000), or unique carried inventory IDs.");
+    }
+    const sale = await repository.sell(request.params.rosterId, { source, inventoryIds, quantity });
+    response.json({ ...await repository.getTrading(request.params.rosterId), saleAmount: sale.refundAmount });
+  }));
+  router.post("/rosters/:rosterId/trading/upgrade", handle(async (request, response) => {
+    const { itemId, inventoryId, quoteId } = request.body ?? {};
+    if (typeof itemId !== "string" || !uuid(inventoryId) || !uuid(quoteId)) return invalid(response, "Select an upgrade, carried weapon and price quote.");
+    await repository.upgrade(request.params.rosterId, { itemId, inventoryId, quoteId });
     response.json(await repository.getTrading(request.params.rosterId));
   }));
   router.post("/rosters/:rosterId/trading/hero-status", handle(async (request, response) => {

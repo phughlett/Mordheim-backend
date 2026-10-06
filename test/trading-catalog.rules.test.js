@@ -1,6 +1,8 @@
 const { test } = require("node:test");
 const assert = require("node:assert/strict");
-const { catalog, effectiveRarity, canBuyItem, canEquipItem } = require("../src/services/trading-catalog.service");
+const { catalog, effectiveRarity, effectivePrice, canBuyItem, canEquipItem } = require("../src/services/trading-catalog.service");
+const originalCatalog = require("../trading-catalog.json");
+const source = require("./fixtures/trading-post-source.json");
 
 function item(id) {
   const found = catalog.find((entry) => entry.id === id);
@@ -16,20 +18,81 @@ const hero = {
   permittedNames: [],
 };
 
+test("every Core, 1a and 1b source row is represented with its price, rarity, grade and category", () => {
+  assert.equal(source.rows.length, 178);
+  assert.deepEqual(Object.fromEntries(["close-combat", "missile", "blackpowder", "armour", "miscellaneous", "animals"]
+    .map((category) => [category, source.rows.filter((row) => row.category === category).length])),
+  { "close-combat": 41, missile: 17, blackpowder: 16, armour: 13, miscellaneous: 80, animals: 11 });
+  for (const row of source.rows) {
+    const matches = catalog.filter((entry) => entry.sourceName === row.name);
+    assert.ok(matches.length, row.name);
+    for (const entry of matches) {
+      assert.equal(entry.grade, row.grade, row.name);
+      assert.equal(entry.shopCategory, row.category, row.name);
+    }
+    if (/Price/i.test(row.cost)) continue;
+    const primary = matches.find((entry) => !entry.id.endsWith("-brace"));
+    const main = row.cost.split("(")[0];
+    const dice = main.match(/(?:(\d+)\s*)?D6(?:\s*x\s*(\d+))?/i);
+    const base = /1st free/.test(main) ? 2 : Number(main.match(/\d+/)?.[0]);
+    assert.equal(primary.baseCost - (row.name === "Dark Elf Blade" ? 10 : 0), base, row.name);
+    assert.equal(primary.priceDice, dice ? Number(dice[1] ?? 1) : 0, row.name);
+    assert.equal(primary.priceMultiplier, dice ? Number(dice[2] ?? 1) : 1, row.name);
+    assert.equal(primary.rarity, /Rare\s+(\d+)/i.test(row.availability) ? Number(row.availability.match(/Rare\s+(\d+)/i)[1]) : null, row.name);
+    const bracePrice = row.cost.match(/\((\d+)(?:\s*\+\s*(\d+)D6)?\s*gc for a brace\)/i);
+    if (bracePrice) {
+      const brace = matches.find((entry) => entry.id.endsWith("-brace"));
+      assert.ok(brace, row.name);
+      assert.equal(brace.baseCost, Number(bracePrice[1]), row.name);
+      assert.equal(brace.priceDice, Number(bracePrice[2] ?? 0), row.name);
+      assert.equal(brace.rarity, /Rare (\d+) for a brace/.test(row.availability)
+        ? Number(row.availability.match(/Rare (\d+) for a brace/)[1]) : primary.rarity, row.name);
+    }
+  }
+});
+
+test("special item data encodes upgrades, summoning, prerequisites and species restrictions", () => {
+  assert.deepEqual([item("dark-elf-blade-sword").baseCost, item("dark-elf-blade-dagger").baseCost], [30, 22]);
+  assert.equal(item("dark-elf-blade-sword").profileName, item("sword").profileName);
+  assert.equal(item("familiar").purchaseAction, "ritual");
+  assert.equal(canEquipItem(item("familiar"), { ...hero, spellcaster: true }), true);
+  assert.equal(canEquipItem(item("familiar"), { ...hero, typeName: "Warrior Priest" }), false);
+  assert.equal(item("poisoned-weapon").purchaseAction, "permanent-upgrade");
+  assert.equal(item("standard-of-nagarythe").creationOnly, true);
+  assert.equal(item("swivel-gun").maxPerWarband, 1);
+  assert.equal(item("peg-leg").maxPerModel, 1);
+  assert.equal(item("barding").requiresOwnedItem, "warhorse");
+  assert.equal(item("skeleton-chariot").priceDice, 10);
+  assert.equal(canEquipItem(item("chaos-steed"), { ...hero, warbandName: "Marauders of Chaos" }), false);
+  assert.equal(canEquipItem(item("chaos-steed"), { ...hero, warbandName: "Marauders of Chaos", skillNames: ["Chosen of Chaos"] }), true);
+  assert.equal(canEquipItem(item("chaos-steed"), { ...hero, warbandName: "Cult of the Possessed", typeName: "The Possessed" }), false);
+  assert.equal(canEquipItem(item("giant-wolf"), { ...hero, warbandName: "Orc", typeName: "Orc Boss" }), false);
+  assert.equal(canEquipItem(item("giant-wolf"), { ...hero, warbandName: "Orc", typeName: "Goblin Warriors" }), true);
+  assert.equal(canEquipItem(item("reptile-venom"), { ...hero, warbandName: "Lizardmen", typeName: "Skink Braves", role: "Henchman" }), true);
+  assert.equal(canEquipItem(item("reptile-venom"), { ...hero, warbandName: "Lizardmen", typeName: "Skink Braves", role: "Hero" }), false);
+  assert.equal(canBuyItem(item("tarot-cards"), "Witch Hunters"), false);
+  assert.deepEqual([effectivePrice(item("black-lotus"), "Skink Priest").baseCost, effectivePrice(item("black-lotus"), "Skink Priest").priceDice], [10, 0]);
+  assert.deepEqual([effectivePrice(item("dark-venom"), "Skink Great Crests").baseCost, effectivePrice(item("dark-venom"), "Skink Great Crests").priceDice], [20, 0]);
+  assert.equal(effectivePrice(item("dark-venom"), "Mercenary Captain").priceDice, 2);
+});
+
 test("trading catalog satisfies the documented data contract with stable unique slugs", () => {
-  assert.equal(catalog.length, 82);
+  assert.equal(catalog.length, 203);
   assert.equal(new Set(catalog.map((entry) => entry.id)).size, catalog.length);
   const allowedKeys = new Set([
     "id", "name", "category", "baseCost", "priceDice", "priceMultiplier", "rarity",
     "description", "sourceReference", "weaponNames", "allowedWarbands", "excludedWarbands",
     "allowedTypeNames", "excludedTypeNames", "heroOnly", "requiredSkill", "rarityOverrides",
     "profileName", "materialName", "ranged",
+    "grade", "shopCategory", "sourceName", "purchaseAction", "creationOnly", "maxPerWarband",
+    "maxPerModel", "requiresOwnedItem", "skillByWarband", "spellcasterOnly", "priceOverrides",
+    "excludesOwnedItems", "allowedRoles", "typeGrantsAccess",
   ]);
   for (const entry of catalog) {
     assert.match(entry.id, /^[a-z0-9]+(?:-[a-z0-9]+)*$/);
     assert.ok(["weapon", "armour", "shield", "misc"].includes(entry.category), entry.id);
     assert.ok(Number.isInteger(entry.baseCost) && entry.baseCost >= 0, entry.id);
-    assert.ok(Number.isInteger(entry.priceDice) && entry.priceDice >= 0 && entry.priceDice <= 6, entry.id);
+    assert.ok(Number.isInteger(entry.priceDice) && entry.priceDice >= 0 && entry.priceDice <= 10, entry.id);
     assert.ok(Number.isInteger(entry.priceMultiplier) && entry.priceMultiplier >= 1 && entry.priceMultiplier <= 25, entry.id);
     assert.ok(entry.rarity === null || Number.isInteger(entry.rarity), entry.id);
     for (const key of ["name", "description", "sourceReference"]) assert.ok(entry[key].trim(), `${entry.id}.${key}`);
@@ -42,7 +105,8 @@ test("trading catalog satisfies the documented data contract with stable unique 
       assert.ok(entry.weaponNames.length > 0, entry.id);
       assert.ok(entry.profileName, entry.id);
     }
-    if (entry.category === "misc") assert.equal(entry.heroOnly, true, entry.id);
+    assert.ok(["core", "1a", "1b"].includes(entry.grade), entry.id);
+    assert.ok(["close-combat", "missile", "blackpowder", "armour", "miscellaneous", "animals"].includes(entry.shopCategory), entry.id);
     for (const override of entry.rarityOverrides || []) {
       assert.ok(override.rarity === null || Number.isInteger(override.rarity), entry.id);
     }
@@ -87,7 +151,7 @@ test("all miscellaneous chart items and variable-price premiums are represented 
     "tome-of-magic": [200, 1, 25, 12], warhorse: [80, 0, 1, 11],
     wardog: [25, 2, 1, 10], "elf-bow": [35, 3, 1, 12],
   };
-  assert.equal(catalog.filter((entry) => entry.category === "misc").length, 26);
+  for (const old of originalCatalog) assert.ok(catalog.some((entry) => entry.id === old.id), `Preserve ${old.id}`);
   for (const [id, tuple] of Object.entries(expected)) {
     const entry = item(id);
     assert.deepEqual([entry.baseCost, entry.priceDice, entry.priceMultiplier, entry.rarity], tuple, id);
@@ -95,7 +159,7 @@ test("all miscellaneous chart items and variable-price premiums are represented 
 });
 
 test("every chart close-combat profile has explicit Gromril and Ithilmar variants", () => {
-  const bases = catalog.filter((entry) => entry.category === "weapon" && !entry.ranged && !entry.materialName);
+  const bases = originalCatalog.filter((entry) => entry.category === "weapon" && !entry.ranged && !entry.materialName);
   assert.equal(bases.length, 10);
   for (const base of bases) {
     for (const [material, multiplier, rarity] of [["gromril", 4, 11], ["ithilmar", 3, 9]]) {
@@ -179,7 +243,7 @@ test("poison warband bans and Warrior-Priest type bans are separate checks", () 
 });
 
 test("only Heroes may carry miscellaneous items, independent of recruitment aliases or skills", () => {
-  for (const entry of catalog.filter((entry) => entry.category === "misc")) {
+  for (const entry of catalog.filter((entry) => entry.category === "misc" && entry.heroOnly)) {
     for (const role of ["Henchman", "Hired Sword", undefined]) {
       assert.equal(canEquipItem(entry, {
         ...hero, role, warbandName: "Mercenaries",
@@ -210,11 +274,13 @@ test("holy tome is for priest and Sister types, not every Witch Hunter or arbitr
 });
 
 test("chart purchase bans apply even to living Heroes of excluded warbands", () => {
-  for (const id of ["blessed-water", "garlic", "halfling-cookbook", "tears-of-shallaya"]) {
+  for (const id of ["blessed-water", "garlic", "halfling-cookbook"]) {
     assert.equal(canBuyItem(item(id), "Undead"), false, id);
     assert.equal(canEquipItem(item(id), { ...hero, warbandName: "Undead", typeName: "Dregs" }), false, id);
   }
-  assert.equal(canBuyItem(item("tears-of-shallaya"), "Cult of the Possessed"), false);
+  assert.equal(canBuyItem(item("tears-of-shallaya"), "Cult of the Possessed"), true);
+  assert.equal(canEquipItem(item("tears-of-shallaya"), { ...hero, warbandName: "Undead", typeName: "Dregs" }), true);
+  assert.equal(canEquipItem(item("tears-of-shallaya"), { ...hero, warbandName: "Undead", typeName: "Vampire" }), false);
   assert.equal(canBuyItem(item("halfling-cookbook"), "Carnival of Chaos"), false);
   assert.equal(canBuyItem(item("wardog"), "Skaven"), false);
   assert.equal(canEquipItem(item("blessed-water"), { ...hero, warbandName: "Cult of the Possessed", typeName: "Magister" }), true);
@@ -280,7 +346,8 @@ test("human mounts allow evidenced living types but not Vampire, Possessed or un
     assert.match(mount.description, /optional mounted rules/);
   }
   assert.equal(canEquipItem(item("barding"), { ...hero, permittedNames: ["Heavy armour"] }), false);
-  assert.equal(canEquipItem(item("barding"), { ...hero, permittedNames: ["Barding"] }), true);
+  assert.equal(canEquipItem(item("barding"), { ...hero, permittedNames: ["Barding"] }), false);
+  assert.equal(canEquipItem(item("barding"), { ...hero, ownedItemIds: ["warhorse"] }), true);
   assert.match(item("barding").description, /not a normal horse/);
 });
 

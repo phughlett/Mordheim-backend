@@ -21,7 +21,7 @@ async function hire(roster, name, typeName, role = "Hero", groupSize = 1) {
 }
 async function fixture(campaign = false) {
   const campaignId = campaign ? (await call("POST", "/campaigns", { name: "Leader casualties" })).body.id : undefined;
-  const response = await call("POST", "/rosters", { warbandId: warband.id, treasury: 10000, campaignId });
+  const response = await call("POST", "/rosters", { warbandId: warband.id, treasury: 10000, campaignId, ...(!campaign ? { battlesFought: 1 } : {}) });
   assert.equal(response.status, 201, JSON.stringify(response.body));
   const roster = response.body;
   const captain = await hire(roster, "Captain", "Mercenary Captain");

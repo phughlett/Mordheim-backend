@@ -27,16 +27,19 @@ test("physical dice must match dice count and range and simulated dice are D6s",
 });
 
 test("campaign trading and transfers are locked to their exact phases", () => {
-  assert.deepEqual(tradingPermissions({ campaign_id: null }), { canPurchase: true, canSearch: false, canTransfer: true });
+  assert.deepEqual(tradingPermissions({ campaign_id: null, battles_fought: 0 }), { canPurchase: false, canSell: false, canSearch: false, canTransfer: true });
+  assert.deepEqual(tradingPermissions({ campaign_id: null, battles_fought: 1 }), { canPurchase: true, canSell: true, canSearch: false, canTransfer: true });
   for (const campaign_phase of ["setup", "pre_battle", "battle"]) {
     const result = tradingPermissions({ campaign_id: "campaign", campaign_phase, campaign_step: 1 });
     assert.equal(result.canPurchase, false);
+    assert.equal(result.canSell, false);
     assert.equal(result.canSearch, false);
     assert.equal(result.canTransfer, campaign_phase !== "battle");
   }
   for (let campaign_step = 1; campaign_step <= 10; campaign_step++) {
     const result = tradingPermissions({ campaign_id: "campaign", campaign_phase: "post_battle", campaign_step });
     assert.equal(result.canPurchase, [6, 7, 8].includes(campaign_step));
+    assert.equal(result.canSell, [6, 7, 8].includes(campaign_step));
     assert.equal(result.canSearch, campaign_step === 6);
     assert.equal(result.canTransfer, campaign_step === 9);
   }

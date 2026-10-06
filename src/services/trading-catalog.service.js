@@ -1,4 +1,4 @@
-const catalog = require("../../trading-catalog.json");
+const catalog = require("../../trading-post-catalog.json");
 
 // 2Warbands.pdf: Possessed, Undead and animal entries; damobrules.pdf: Trolls.
 const noWeaponsOrArmour = [
@@ -37,11 +37,14 @@ function canBuyItem(item, warbandName) {
 }
 
 function canEquipItem(item, context = {}) {
-  const { warbandName, typeName, role, skillNames = [], permittedNames = [] } = context;
+  const { warbandName, typeName, role, skillNames = [], permittedNames = [], spellcaster = false } = context;
   if (!canBuyItem(item, warbandName) ||
       !passesRestrictions(item, "allowedTypeNames", "excludedTypeNames", typeName) ||
       (item.heroOnly && normalize(role) !== "hero") ||
-      (item.requiredSkill && !includesName(skillNames, item.requiredSkill))) {
+      (item.allowedRoles && !includesName(item.allowedRoles, role)) ||
+      (item.requiredSkill && !includesName(skillNames, item.requiredSkill)) ||
+      (item.spellcasterOnly && !spellcaster) ||
+      (item.skillByWarband?.[warbandName] && !includesName(skillNames, item.skillByWarband[warbandName]))) {
     return false;
   }
   // 3Campaigns.pdf p.84: Arcane Lore also permits learning magic from a tome.
@@ -61,6 +64,8 @@ function canEquipItem(item, context = {}) {
       includesName(["Flagellants", "Flagellant"], typeName)) return false;
   if (item.category === "armour" &&
       includesName(["Augur", "Orc Shaman"], typeName)) return false;
+  if (item.requiresOwnedItem) return includesName(context.ownedItemIds, item.requiresOwnedItem);
+  if (item.typeGrantsAccess && item.category === "weapon") return true;
   if (item.custom === true) return true;
 
   const aliases = item.weaponNames || [item.name];
@@ -73,4 +78,9 @@ function canEquipItem(item, context = {}) {
   return Boolean(skill) && includesName(skillNames, skill);
 }
 
-module.exports = { catalog, effectiveRarity, canBuyItem, canEquipItem };
+function effectivePrice(item, typeName) {
+  const override = item.priceOverrides?.find((entry) => includesName(entry.typeNames, typeName));
+  return override ? { ...item, ...override } : item;
+}
+
+module.exports = { catalog, effectiveRarity, effectivePrice, canBuyItem, canEquipItem };

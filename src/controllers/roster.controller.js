@@ -12,9 +12,22 @@ const {
 const { getAdvanceTable, getAdvancesEarned } = require("../services/advancement-rules.service");
 const { getMutationAccess, priceMutations } = require("../services/mutation-rules.service");
 
-const rosterFields = ["name", "warband", "warbandId", "treasury", "wyrdstone"];
+const rosterFields = ["name", "warband", "warbandId", "treasury", "wyrdstone", "battlesFought"];
 const memberFields = ["name", "type", "warriorTypeId", "equipmentChoiceId", "groupSize", "role", "experience", "equipment", "skills", "notes"];
 const warriorCategories = ["Hero", "Henchman", "Hired Sword"];
+
+function validateBattles(values, campaign) {
+  if (values.battlesFought === undefined) return null;
+  if (campaign) return { status: 409, error: "Campaign battle counts are managed by the battle sequence." };
+  const count = values.battlesFought;
+  if ((typeof count !== "number" && !(typeof count === "string" && /^\d+$/.test(count)))
+    || !Number.isSafeInteger(Number(count)) || Number(count) < 0 || Number(count) > 2147483647) {
+    return { status: 400, error: "battlesFought must be a whole number from 0 to 2147483647." };
+  }
+  values.battles_fought = Number(count);
+  delete values.battlesFought;
+  return null;
+}
 
 function createRosterController(repository, rosterService) {
   return {
@@ -58,6 +71,8 @@ function createRosterController(repository, rosterService) {
 
     async create(request, response) {
       const values = pickFields(request.body, rosterFields);
+      const battleError = validateBattles(values, Boolean(request.body?.campaignId));
+      if (battleError) return response.status(battleError.status).json({ error: battleError.error });
       values.user_id = request.user.id;
       if (request.body?.campaignId) {
         const campaign = await repository.findCampaign(request.body.campaignId);
@@ -143,6 +158,8 @@ function createRosterController(repository, rosterService) {
       const values = pickFields(request.body, rosterFields);
       const rosterExists = await repository.findRoster(request.params.rosterId);
       if (!rosterExists) return response.status(404).json({ error: "Roster not found." });
+      const battleError = validateBattles(values, Boolean(rosterExists.campaign_id));
+      if (battleError) return response.status(battleError.status).json({ error: battleError.error });
       if (rosterExists.campaign_id && (values.treasury !== undefined || values.wyrdstone !== undefined)) {
         return response.status(409).json({ error: "Gold Crowns and Wyrdstone cannot be edited directly in Campaign mode." });
       }

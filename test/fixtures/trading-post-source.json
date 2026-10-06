@@ -1,0 +1,1251 @@
+{
+  "sourceUrl": "https://mordheimer.net/docs/trading-post",
+  "rows": [
+    {
+      "name": "Axe",
+      "cost": "5 gc",
+      "availability": "Common",
+      "grade": "core",
+      "category": "close-combat"
+    },
+    {
+      "name": "Ball and Chain",
+      "cost": "15 gc",
+      "availability": "Common",
+      "grade": "1a",
+      "category": "close-combat"
+    },
+    {
+      "name": "Beastlash",
+      "cost": "10 + 1D6 gc",
+      "availability": "Rare 8",
+      "grade": "1b",
+      "category": "close-combat"
+    },
+    {
+      "name": "Boat Hook",
+      "cost": "8 gc",
+      "availability": "Common",
+      "grade": "1b",
+      "category": "close-combat"
+    },
+    {
+      "name": "Boss Pole",
+      "cost": "20 gc",
+      "availability": "Common",
+      "grade": "1b",
+      "category": "close-combat"
+    },
+    {
+      "name": "Brass Knuckles",
+      "cost": "20 gc per pair",
+      "availability": "Rare 6",
+      "grade": "1b",
+      "category": "close-combat"
+    },
+    {
+      "name": "Brazier Iron",
+      "cost": "35 gc",
+      "availability": "Rare 7",
+      "grade": "1a",
+      "category": "close-combat"
+    },
+    {
+      "name": "Cat O' Nine Tails",
+      "cost": "8 gc",
+      "availability": "Common",
+      "grade": "1b",
+      "category": "close-combat"
+    },
+    {
+      "name": "Censer",
+      "cost": "40 gc",
+      "availability": "Rare 9",
+      "grade": "1b",
+      "category": "close-combat"
+    },
+    {
+      "name": "Claw of the Old Ones",
+      "cost": "30 gc",
+      "availability": "Rare 12",
+      "grade": "1b",
+      "category": "close-combat"
+    },
+    {
+      "name": "Cleaver",
+      "cost": "3 gc",
+      "availability": "Common",
+      "grade": "1b",
+      "category": "close-combat"
+    },
+    {
+      "name": "Club, Mace or Hammer",
+      "cost": "3 gc",
+      "availability": "Common",
+      "grade": "core",
+      "category": "close-combat"
+    },
+    {
+      "name": "Dagger",
+      "cost": "1st free/2 gc",
+      "availability": "Common",
+      "grade": "core",
+      "category": "close-combat"
+    },
+    {
+      "name": "Dark Elf Blade",
+      "cost": "+ 20 gc",
+      "availability": "Rare 9",
+      "grade": "1b",
+      "category": "close-combat"
+    },
+    {
+      "name": "Disease Dagger",
+      "cost": "15 gc",
+      "availability": "Rare 8",
+      "grade": "1b",
+      "category": "close-combat"
+    },
+    {
+      "name": "Double-handed weapon",
+      "cost": "15 gc",
+      "availability": "Common",
+      "grade": "core",
+      "category": "close-combat"
+    },
+    {
+      "name": "Dwarf Axe",
+      "cost": "15 gc",
+      "availability": "Rare 8",
+      "grade": "1a",
+      "category": "close-combat"
+    },
+    {
+      "name": "Fighting Claws",
+      "cost": "35 gc per pair",
+      "availability": "Rare 7",
+      "grade": "core",
+      "category": "close-combat"
+    },
+    {
+      "name": "Flail",
+      "cost": "15 gc",
+      "availability": "Common",
+      "grade": "core",
+      "category": "close-combat"
+    },
+    {
+      "name": "Gromril Weapon",
+      "cost": "4 x Price",
+      "availability": "Rare 11",
+      "grade": "core",
+      "category": "close-combat"
+    },
+    {
+      "name": "Halberd",
+      "cost": "10 gc",
+      "availability": "Common",
+      "grade": "core",
+      "category": "close-combat"
+    },
+    {
+      "name": "Horseman's Hammer",
+      "cost": "12 gc",
+      "availability": "Rare 10",
+      "grade": "1a",
+      "category": "close-combat"
+    },
+    {
+      "name": "Ithilmar Weapon",
+      "cost": "3 x Price",
+      "availability": "Rare 9",
+      "grade": "core",
+      "category": "close-combat"
+    },
+    {
+      "name": "Kitchen Knife",
+      "cost": "2 gc",
+      "availability": "Common",
+      "grade": "1b",
+      "category": "close-combat"
+    },
+    {
+      "name": "Ladle",
+      "cost": "2 gc",
+      "availability": "Common",
+      "grade": "1b",
+      "category": "close-combat"
+    },
+    {
+      "name": "Lance",
+      "cost": "40 gc",
+      "availability": "Rare 8",
+      "grade": "core",
+      "category": "close-combat"
+    },
+    {
+      "name": "Main Gauche",
+      "cost": "7 gc",
+      "availability": "Rare 7",
+      "grade": "1b",
+      "category": "close-combat"
+    },
+    {
+      "name": "Morning Star",
+      "cost": "15 gc",
+      "availability": "Common",
+      "grade": "core",
+      "category": "close-combat"
+    },
+    {
+      "name": "Pike (Tileans)",
+      "cost": "12 gc",
+      "availability": "Rare 7",
+      "grade": "1b",
+      "category": "close-combat"
+    },
+    {
+      "name": "Rapier",
+      "cost": "15 gc",
+      "availability": "Rare 5",
+      "grade": "1a",
+      "category": "close-combat"
+    },
+    {
+      "name": "Serpent Staff",
+      "cost": "30 gc",
+      "availability": "Common",
+      "grade": "1b",
+      "category": "close-combat"
+    },
+    {
+      "name": "Sigmarite Warhammer",
+      "cost": "15 gc",
+      "availability": "Common",
+      "grade": "core",
+      "category": "close-combat"
+    },
+    {
+      "name": "Spear",
+      "cost": "10 gc",
+      "availability": "Common",
+      "grade": "core",
+      "category": "close-combat"
+    },
+    {
+      "name": "Starblade",
+      "cost": "15 gc",
+      "availability": "Rare 7",
+      "grade": "1b",
+      "category": "close-combat"
+    },
+    {
+      "name": "Starsword",
+      "cost": "30 gc",
+      "availability": "Rare 10",
+      "grade": "1b",
+      "category": "close-combat"
+    },
+    {
+      "name": "Steel Whip",
+      "cost": "10 gc",
+      "availability": "Common",
+      "grade": "core",
+      "category": "close-combat"
+    },
+    {
+      "name": "Sword",
+      "cost": "10 gc",
+      "availability": "Common",
+      "grade": "core",
+      "category": "close-combat"
+    },
+    {
+      "name": "Sword Breaker",
+      "cost": "30 gc",
+      "availability": "Rare 8",
+      "grade": "1a",
+      "category": "close-combat"
+    },
+    {
+      "name": "Tenderiser",
+      "cost": "3 gc",
+      "availability": "Common",
+      "grade": "1b",
+      "category": "close-combat"
+    },
+    {
+      "name": "Trident",
+      "cost": "15 gc",
+      "availability": "Rare 7",
+      "grade": "1b",
+      "category": "close-combat"
+    },
+    {
+      "name": "Weeping Blades",
+      "cost": "50 gc per pair",
+      "availability": "Rare 9",
+      "grade": "core",
+      "category": "close-combat"
+    },
+    {
+      "name": "Belaying Pins",
+      "cost": "3 gc",
+      "availability": "Common",
+      "grade": "1b",
+      "category": "missile"
+    },
+    {
+      "name": "Blowpipe",
+      "cost": "25 gc",
+      "availability": "Rare 7",
+      "grade": "core",
+      "category": "missile"
+    },
+    {
+      "name": "Bolas",
+      "cost": "5 gc",
+      "availability": "Common",
+      "grade": "1b",
+      "category": "missile"
+    },
+    {
+      "name": "Bow",
+      "cost": "10 gc",
+      "availability": "Common",
+      "grade": "core",
+      "category": "missile"
+    },
+    {
+      "name": "Crossbow",
+      "cost": "25 gc",
+      "availability": "Common",
+      "grade": "core",
+      "category": "missile"
+    },
+    {
+      "name": "Crossbow pistol",
+      "cost": "35 gc",
+      "availability": "Rare 9",
+      "grade": "core",
+      "category": "missile"
+    },
+    {
+      "name": "Elf Bow",
+      "cost": "35 + 3D6 gc",
+      "availability": "Rare 12",
+      "grade": "core",
+      "category": "missile"
+    },
+    {
+      "name": "Javelins",
+      "cost": "5 gc",
+      "availability": "Common",
+      "grade": "1b",
+      "category": "missile"
+    },
+    {
+      "name": "Long Bow",
+      "cost": "15 gc",
+      "availability": "Common",
+      "grade": "core",
+      "category": "missile"
+    },
+    {
+      "name": "Nehekharan Javelins",
+      "cost": "10 gc",
+      "availability": "Common",
+      "grade": "1b",
+      "category": "missile"
+    },
+    {
+      "name": "Repeater Crossbow",
+      "cost": "40 gc",
+      "availability": "Rare 8",
+      "grade": "core",
+      "category": "missile"
+    },
+    {
+      "name": "Short Bow",
+      "cost": "5 gc",
+      "availability": "Common",
+      "grade": "core",
+      "category": "missile"
+    },
+    {
+      "name": "Sling",
+      "cost": "2 gc",
+      "availability": "Common",
+      "grade": "core",
+      "category": "missile"
+    },
+    {
+      "name": "Sun Gauntlet",
+      "cost": "40 gc",
+      "availability": "Rare 12",
+      "grade": "1b",
+      "category": "missile"
+    },
+    {
+      "name": "Sunstaff",
+      "cost": "50 gc",
+      "availability": "Rare 12",
+      "grade": "1b",
+      "category": "missile"
+    },
+    {
+      "name": "Sunstaff (Lustria)",
+      "cost": "35 gc",
+      "availability": "Rare 10",
+      "grade": "1b",
+      "category": "missile"
+    },
+    {
+      "name": "Throwing Knives/Stars",
+      "cost": "15 gc",
+      "availability": "Rare 5",
+      "grade": "core",
+      "category": "missile"
+    },
+    {
+      "name": "Blunderbuss",
+      "cost": "30 gc",
+      "availability": "Rare 9",
+      "grade": "core",
+      "category": "blackpowder"
+    },
+    {
+      "name": "Double-barrelled Duelling Pistol",
+      "cost": "45 + 2D6 gc (80 + 4D6 gc for a brace)",
+      "availability": "Rare 11 (Rare 12 for a brace)",
+      "grade": "1b",
+      "category": "blackpowder"
+    },
+    {
+      "name": "Double-barrelled Handgun",
+      "cost": "60 + 2D6 gc",
+      "availability": "Rare 10",
+      "grade": "1b",
+      "category": "blackpowder"
+    },
+    {
+      "name": "Double-barrelled Pistol",
+      "cost": "25 + 1D6 gc (46 + 2D6 gc for a brace)",
+      "availability": "Rare 9 (Rare 10 for a brace)",
+      "grade": "1b",
+      "category": "blackpowder"
+    },
+    {
+      "name": "Duelling Pistol",
+      "cost": "30 gc (60 gc for a brace)",
+      "availability": "Rare 10",
+      "grade": "core",
+      "category": "blackpowder"
+    },
+    {
+      "name": "Hand-held Mortar",
+      "cost": "80 + 2D6 gc",
+      "availability": "Rare 12",
+      "grade": "1b",
+      "category": "blackpowder"
+    },
+    {
+      "name": "Handgun",
+      "cost": "35 gc",
+      "availability": "Rare 8",
+      "grade": "core",
+      "category": "blackpowder"
+    },
+    {
+      "name": "Hersten-Wenkler Pigeon Bombs",
+      "cost": "30 + 2D6 gc",
+      "availability": "Rare 8",
+      "grade": "1b",
+      "category": "blackpowder"
+    },
+    {
+      "name": "Hunting Rifle",
+      "cost": "200 gc",
+      "availability": "Rare 11",
+      "grade": "core",
+      "category": "blackpowder"
+    },
+    {
+      "name": "Ostlander Double-barrelled Hunting Rifle",
+      "cost": "300 gc",
+      "availability": "Rare 12",
+      "grade": "1a",
+      "category": "blackpowder"
+    },
+    {
+      "name": "Ostlander Double-barrelled Pistol",
+      "cost": "30 gc (60 gc for a brace)",
+      "availability": "Rare 10",
+      "grade": "1a",
+      "category": "blackpowder"
+    },
+    {
+      "name": "Pistol",
+      "cost": "15 gc (30 gc for a brace)",
+      "availability": "Rare 8",
+      "grade": "core",
+      "category": "blackpowder"
+    },
+    {
+      "name": "Repeater Handgun",
+      "cost": "60 + 2D6 gc",
+      "availability": "Rare 11",
+      "grade": "1b",
+      "category": "blackpowder"
+    },
+    {
+      "name": "Repeater Pistol",
+      "cost": "30 + 2D6 gc",
+      "availability": "Rare 9",
+      "grade": "1b",
+      "category": "blackpowder"
+    },
+    {
+      "name": "Swivel Gun",
+      "cost": "65 gc",
+      "availability": "Rare 8",
+      "grade": "1b",
+      "category": "blackpowder"
+    },
+    {
+      "name": "Warplock pistol",
+      "cost": "35 gc (70 gc for a brace)",
+      "availability": "Rare 11",
+      "grade": "core",
+      "category": "blackpowder"
+    },
+    {
+      "name": "Barding",
+      "cost": "80 gc",
+      "availability": "Rare 8",
+      "grade": "core",
+      "category": "armour"
+    },
+    {
+      "name": "Bretonnian Barding",
+      "cost": "30 gc",
+      "availability": "Rare 11",
+      "grade": "1b",
+      "category": "armour"
+    },
+    {
+      "name": "Buckler",
+      "cost": "5 gc",
+      "availability": "Common",
+      "grade": "core",
+      "category": "armour"
+    },
+    {
+      "name": "Cooking Pot Helmet",
+      "cost": "8 gc",
+      "availability": "Common",
+      "grade": "1b",
+      "category": "armour"
+    },
+    {
+      "name": "Enchanted Skins",
+      "cost": "20 gc",
+      "availability": "Rare 6",
+      "grade": "1b",
+      "category": "armour"
+    },
+    {
+      "name": "Gromril Armour",
+      "cost": "150 gc",
+      "availability": "Rare 11",
+      "grade": "core",
+      "category": "armour"
+    },
+    {
+      "name": "Heavy Armour",
+      "cost": "50 gc",
+      "availability": "Common",
+      "grade": "core",
+      "category": "armour"
+    },
+    {
+      "name": "Helmet",
+      "cost": "10 gc",
+      "availability": "Common",
+      "grade": "core",
+      "category": "armour"
+    },
+    {
+      "name": "Ithilmar Armour",
+      "cost": "90 gc",
+      "availability": "Rare 11",
+      "grade": "core",
+      "category": "armour"
+    },
+    {
+      "name": "Light Armour",
+      "cost": "20 gc",
+      "availability": "Common",
+      "grade": "core",
+      "category": "armour"
+    },
+    {
+      "name": "Pavise",
+      "cost": "25 gc",
+      "availability": "Rare 8",
+      "grade": "1a",
+      "category": "armour"
+    },
+    {
+      "name": "Shield",
+      "cost": "5 gc",
+      "availability": "Common",
+      "grade": "core",
+      "category": "armour"
+    },
+    {
+      "name": "Toughened Leathers",
+      "cost": "5 gc",
+      "availability": "Common",
+      "grade": "1a",
+      "category": "armour"
+    },
+    {
+      "name": "Amulet of the Moon",
+      "cost": "50 gc",
+      "availability": "Rare 12",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Asp Arrows",
+      "cost": "10 gc",
+      "availability": "Common",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Banner",
+      "cost": "10 gc",
+      "availability": "Rare 5",
+      "grade": "1a",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Bear-Claw Necklace",
+      "cost": "75 + 3D6 gc",
+      "availability": "Rare 9",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Black Lotus",
+      "cost": "10 + 1D6 gc",
+      "availability": "Rare 9",
+      "grade": "core",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Blessed Stag Hide",
+      "cost": "40 gc",
+      "availability": "Rare 10",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Blessed Water",
+      "cost": "10 + 3D6 gc",
+      "availability": "Rare 6",
+      "grade": "core",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Book of the Dead",
+      "cost": "200 + D6 x 25 gc",
+      "availability": "Rare 12",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Bugman's Ale",
+      "cost": "50 + 3D6 gc",
+      "availability": "Rare 9",
+      "grade": "core",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Caltrops",
+      "cost": "15 + 2D6 gc",
+      "availability": "Rare 6",
+      "grade": "1a",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Cathayan Silk Clothes",
+      "cost": "50 + 2D6 gc",
+      "availability": "Rare 9",
+      "grade": "core",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Clan Pestilens Banner",
+      "cost": "10 gc",
+      "availability": "Rare 5",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Compass",
+      "cost": "45 + 2D6 gc",
+      "availability": "Rare 9",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Conch Shell Horn",
+      "cost": "25 gc",
+      "availability": "Rare 8",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Crimson Shade",
+      "cost": "35 + 1D6 gc",
+      "availability": "Rare 8",
+      "grade": "core",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Dark Venom",
+      "cost": "30 + 2D6 gc",
+      "availability": "Rare 8",
+      "grade": "core",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Elven Boots",
+      "cost": "75 + D6 x 10 gc",
+      "availability": "Rare 12",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Elven Cloak",
+      "cost": "100 + D6 x 10 gc",
+      "availability": "Rare 12",
+      "grade": "core",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Elven Runestones",
+      "cost": "50 + 2D6 gc",
+      "availability": "Rare 11",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Elven Wine",
+      "cost": "50 + 3D6 gc",
+      "availability": "Rare 10",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Familiar",
+      "cost": "20 + 1D6 gc (Gold is spent even on unsuccessful rare roll)",
+      "availability": "Rare 8",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Fire Arrows",
+      "cost": "30 + 1D6 gc",
+      "availability": "Rare 9",
+      "grade": "1a",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Fire Bomb",
+      "cost": "35 + 2D6 gc",
+      "availability": "Rare 9",
+      "grade": "1a",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Flash Powder",
+      "cost": "25 + 2D6 gc",
+      "availability": "Rare 8",
+      "grade": "1a",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Fog-enhancing Warpstone Shards",
+      "cost": "100 + D6 x 10 gc",
+      "availability": "Rare 9",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Forest Cloak",
+      "cost": "50 gc",
+      "availability": "Rare 10",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Garlic",
+      "cost": "1 gc",
+      "availability": "Common",
+      "grade": "core",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Halfling Cookbook",
+      "cost": "30 + 3D6 gc",
+      "availability": "Rare 7",
+      "grade": "core",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Hammer of Witches",
+      "cost": "100 gc",
+      "availability": "Rare 10",
+      "grade": "1a",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Hardtack Biscuits",
+      "cost": "5 gc",
+      "availability": "Common",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Healing Herbs",
+      "cost": "20 + 2D6 gc",
+      "availability": "Rare 8",
+      "grade": "core",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Holy (Unholy) Relic",
+      "cost": "15 + 3D6 gc",
+      "availability": "Rare 8",
+      "grade": "core",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Holy Tome",
+      "cost": "100 + D6 x 10 gc",
+      "availability": "Rare 8",
+      "grade": "core",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Hook Hand",
+      "cost": "4 gc",
+      "availability": "Common",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Hunting Arrows",
+      "cost": "25 + 1D6 gc",
+      "availability": "Rare 8",
+      "grade": "core",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Iron Shod Boots",
+      "cost": "20 + 3D6 gc",
+      "availability": "Rare 8",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Jolly Roger",
+      "cost": "40 + 2D6 gc",
+      "availability": "Rare 9",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Lantern",
+      "cost": "10 gc",
+      "availability": "Common",
+      "grade": "core",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Liber Bubonicus",
+      "cost": "200 + D6 x 25 gc",
+      "availability": "Rare 12",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Liturgicus Infecticus",
+      "cost": "30 + 2D6 gc",
+      "availability": "Rare 8",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Lock Picks",
+      "cost": "15 gc",
+      "availability": "Rare 8",
+      "grade": "1a",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Lucky Charm",
+      "cost": "10 gc",
+      "availability": "Rare 6",
+      "grade": "core",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Mad Cap Mushrooms",
+      "cost": "30 + 3D6 gc",
+      "availability": "Rare 9",
+      "grade": "core",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Magic Gubbinz",
+      "cost": "50 gc",
+      "availability": "Rare 9",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Mandrake Root",
+      "cost": "25 + 1D6 gc",
+      "availability": "Rare 8",
+      "grade": "core",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Mordheim Map",
+      "cost": "20 + 4D6 gc",
+      "availability": "Rare 9",
+      "grade": "core",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Net",
+      "cost": "5 gc",
+      "availability": "Common",
+      "grade": "core",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Opulent Coach",
+      "cost": "250 gc",
+      "availability": "Rare 10",
+      "grade": "1a",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Parrot",
+      "cost": "15 gc",
+      "availability": "Rare 8",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Peg Leg",
+      "cost": "8 gc",
+      "availability": "Common",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Poisoned Weapon",
+      "cost": "+25 gc",
+      "availability": "Common",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Rabbit's Foot",
+      "cost": "10 gc",
+      "availability": "Rare 5",
+      "grade": "1a",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Red Toof Tribal Jewellery",
+      "cost": "40 gc",
+      "availability": "Rare 9",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Reptile Venom",
+      "cost": "5 gc",
+      "availability": "Common",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "River Barge",
+      "cost": "200 gc",
+      "availability": "Rare 9",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Riverboat",
+      "cost": "100 gc",
+      "availability": "Rare 8",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Rope & Hook",
+      "cost": "5 gc",
+      "availability": "Common",
+      "grade": "core",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Rowboat",
+      "cost": "40 gc",
+      "availability": "Rare 7",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Scroll of the Rat Familiar",
+      "cost": "25 + 1D6 gc",
+      "availability": "Rare 8",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Sea Dragon Cloak",
+      "cost": "50 + 2D6 gc",
+      "availability": "Rare 10",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Skeleton Chariot",
+      "cost": "200 + 10D6 gc",
+      "availability": "Common",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Spy Glass",
+      "cost": "20 gc",
+      "availability": "Rare 8",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Squig Prodder",
+      "cost": "15 gc",
+      "availability": "Common",
+      "grade": "1a",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Standard of Nagarythe",
+      "cost": "75 + 3D6 gc",
+      "availability": "Rare 9",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Superior Blackpowder",
+      "cost": "30 gc",
+      "availability": "Rare 11",
+      "grade": "core",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Tarot Cards",
+      "cost": "50 gc",
+      "availability": "Rare 7",
+      "grade": "1a",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Tears of Shallaya",
+      "cost": "10 + 2D6 gc",
+      "availability": "Rare 7",
+      "grade": "core",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Telescope",
+      "cost": "75 + 3D6 gc",
+      "availability": "Rare 10",
+      "grade": "1a",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Tome of Magic",
+      "cost": "200 + D6 x 25 gc",
+      "availability": "Rare 12",
+      "grade": "core",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Torch",
+      "cost": "2 gc",
+      "availability": "Common",
+      "grade": "1a",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Treasure Map",
+      "cost": "75 + 4D6 gc",
+      "availability": "Rare 10",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Trip Wire",
+      "cost": "15 gc",
+      "availability": "Common",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Vial of Pestilens",
+      "cost": "25 + 2D6 gc",
+      "availability": "Rare 9",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Vodka",
+      "cost": "35 + 2D6 gc",
+      "availability": "Rare 8",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Wagon, Stagecoach",
+      "cost": "100 gc",
+      "availability": "Rare 7",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "War Horn",
+      "cost": "30 + 2D6 gc",
+      "availability": "Rare 8",
+      "grade": "1a",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "War Horn of Nagarythe",
+      "cost": "25 + 1D6 gc",
+      "availability": "Rare 6",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Warpstone Amulet",
+      "cost": "10 gc",
+      "availability": "Rare 5",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Wolfcloak",
+      "cost": "10 gc",
+      "availability": "Common",
+      "grade": "1b",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Wyrdstone Pendulum",
+      "cost": "25 + 3D6 gc",
+      "availability": "Rare 9",
+      "grade": "1a",
+      "category": "miscellaneous"
+    },
+    {
+      "name": "Chaos Steed",
+      "cost": "90 gc",
+      "availability": "Rare 11",
+      "grade": "1b",
+      "category": "animals"
+    },
+    {
+      "name": "Cold One",
+      "cost": "100 gc",
+      "availability": "Rare 11",
+      "grade": "1b",
+      "category": "animals"
+    },
+    {
+      "name": "Elven Steed",
+      "cost": "90 gc",
+      "availability": "Rare 10",
+      "grade": "1b",
+      "category": "animals"
+    },
+    {
+      "name": "Giant Spider",
+      "cost": "100 gc",
+      "availability": "Rare 11",
+      "grade": "1b",
+      "category": "animals"
+    },
+    {
+      "name": "Giant Wolf",
+      "cost": "85 gc",
+      "availability": "Rare 10",
+      "grade": "1b",
+      "category": "animals"
+    },
+    {
+      "name": "Mule",
+      "cost": "30 gc",
+      "availability": "Rare 7",
+      "grade": "1b",
+      "category": "animals"
+    },
+    {
+      "name": "Nightmare",
+      "cost": "95 gc",
+      "availability": "Rare 11",
+      "grade": "1b",
+      "category": "animals"
+    },
+    {
+      "name": "Riding/Draft Horse",
+      "cost": "40 gc",
+      "availability": "Rare 8",
+      "grade": "core",
+      "category": "animals"
+    },
+    {
+      "name": "War Boar",
+      "cost": "90 gc",
+      "availability": "Rare 11",
+      "grade": "1b",
+      "category": "animals"
+    },
+    {
+      "name": "Wardogs",
+      "cost": "25 + 2D6 gc",
+      "availability": "Rare 10",
+      "grade": "core",
+      "category": "animals"
+    },
+    {
+      "name": "Warhorse",
+      "cost": "80 gc",
+      "availability": "Rare 11",
+      "grade": "core",
+      "category": "animals"
+    }
+  ]
+}
