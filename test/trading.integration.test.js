@@ -57,6 +57,51 @@ describe("warband stash and trading", () => {
     if (server) await new Promise((resolve) => server.close(resolve));
     await db.destroy();
   });
+  test("Freebuild combat spoils are free, persist, and transfer with zero paid cost", async () => {
+    const { roster, member } = await fixture();
+    await db("rosters").where({ id: roster.id }).update({ treasury: 0 });
+    for (const itemId of ["sword", "healing-herbs"]) {
+      const added = await call("POST", path(roster, "/spoils"), { itemId, quantity: 2 });
+      assert.equal(added.status, 201, JSON.stringify(added.body));
+      assert.equal(Number(added.body.treasury), 0);
+      const entry = added.body.stash.find((row) => row.shopItemId === itemId);
+      assert.equal(entry.quantity, 2);
+      assert.equal(entry.unitCostPaid, 0);
+    }
+    assert.equal(await db("trading_quotes").where({ roster_id: roster.id }).count("* as count").first().then((row) => Number(row.count)), 0);
+    assert.equal(await db("trading_searches").where({ roster_id: roster.id }).count("* as count").first().then((row) => Number(row.count)), 0);
+    const state = (await call("GET", path(roster))).body;
+    const sword = state.stash.find((row) => row.shopItemId === "sword");
+    const assigned = await call("POST", path(roster, "/transfer"), {
+      direction: "to_member", inventoryId: sword.id, memberId: member.id, quantity: 1, modelIndex: 0,
+    });
+    assert.equal(assigned.status, 200, JSON.stringify(assigned.body));
+    const carried = assigned.body.memberInventory.find((row) => row.shopItemId === "sword");
+    assert.equal(carried.unitCostPaid, 0);
+    const returned = await call("POST", path(roster, "/transfer"), {
+      direction: "to_stash", inventoryId: carried.id, memberId: member.id, quantity: 1, modelIndex: 0,
+    });
+    assert.equal(returned.status, 200, JSON.stringify(returned.body));
+    assert.equal(Number(returned.body.treasury), 0);
+    assert.equal(returned.body.stash.filter((row) => row.shopItemId === "sword").reduce((total, row) => total + row.quantity, 0), 2);
+  });
+  test("combat spoils reject campaigns, unavailable items, invalid quantities and non-owners", async () => {
+    const { roster } = await fixture();
+    for (const quantity of [0, -1, 1001, 1.5, "2"]) {
+      assert.equal((await call("POST", path(roster, "/spoils"), { itemId: "sword", quantity })).status, 400);
+    }
+    assert.equal((await call("POST", path(roster, "/spoils"), {})).status, 400);
+    assert.equal((await call("POST", path(roster, "/spoils"), { itemId: "missing" })).status, 404);
+    assert.equal((await call("POST", path(roster, "/spoils"), { itemId: "warplock-pistol" })).status, 409);
+    assert.equal((await call("POST", path(roster, "/spoils"), { itemId: "sword" }, users[1])).status, 403);
+    const campaign = await fixture(true);
+    for (const [phase, step] of [["setup", 0], ["battle", 0], ["post_battle", 6]]) {
+      await stage(campaign.roster, phase, step);
+      assert.equal((await call("POST", path(campaign.roster, "/spoils"), { itemId: "sword" })).status, 409);
+    }
+    assert.equal((await call("GET", path(roster))).body.stash.length, 0);
+    assert.equal((await call("GET", path(campaign.roster))).body.stash.length, 0);
+  });
   test("campaign rarity overrides replace item-specific availability exceptions", async () => {
     const { roster, member } = await fixture(true, {
       overrides: { "hunting-rifle": { rarity: 12 } }, customItems: [],

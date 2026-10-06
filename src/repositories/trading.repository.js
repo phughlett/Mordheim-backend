@@ -201,6 +201,17 @@ function createTradingRepository(db) {
       if (found) await trx("trading_searches").where({ id: found.id }).update({ purchased: true });
     });
   }
+  async function addSpoils(rosterId, { itemId, quantity }) {
+    return db.transaction(async (trx) => {
+      const ctx = await context(trx, rosterId, true);
+      if (ctx.roster.campaign_id) fail("Manual combat spoils are only available in Freebuild.", 409);
+      const item = findItem(ctx, itemId);
+      await trx("warband_stash").insert({
+        roster_id: rosterId, shop_item_id: item.id, quantity, unit_cost_paid: 0,
+      });
+      await trx("rosters").where({ id: rosterId }).update({ updated_at: new Date() });
+    });
+  }
   async function transfer(rosterId, { direction, inventoryId, memberId, quantity, modelIndex }) {
     return db.transaction(async (trx) => {
       const ctx = await context(trx, rosterId, true);
@@ -299,6 +310,6 @@ function createTradingRepository(db) {
       await trx("warriors").where({ id: memberId }).update({ group_size: member.group_size - 1, updated_at: new Date() });
     });
   }
-  return { getTrading, search, quote, purchase, transfer, heroStatus, casualty };
+  return { getTrading, search, quote, purchase, addSpoils, transfer, heroStatus, casualty };
 }
 module.exports = { createTradingRepository };

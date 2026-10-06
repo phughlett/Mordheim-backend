@@ -35,6 +35,12 @@ function createTradingRoutes(db) {
     await repository.purchase(request.params.rosterId, { quoteId, quantity, searchId });
     response.status(201).json(await repository.getTrading(request.params.rosterId));
   }));
+  router.post("/rosters/:rosterId/trading/spoils", handle(async (request, response) => {
+    const { itemId, quantity = 1 } = request.body ?? {};
+    if (typeof itemId !== "string" || !itemId.trim() || !integer(quantity, 1, 1000)) return invalid(response, "Supply a shop item and quantity (1-1000).");
+    await repository.addSpoils(request.params.rosterId, { itemId, quantity });
+    response.status(201).json(await repository.getTrading(request.params.rosterId));
+  }));
   router.post("/rosters/:rosterId/trading/transfer", handle(async (request, response) => {
     const { direction, inventoryId, memberId, quantity = 1, modelIndex = -1 } = request.body ?? {};
     if (!["to_member", "to_stash"].includes(direction) || !uuid(inventoryId) || !uuid(memberId)
