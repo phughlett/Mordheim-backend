@@ -173,7 +173,7 @@ function createRosterRepository(db) {
     const removedItems = await transaction("warrior_inventory")
       .where({ warrior_id: warriorId })
       .where("model_index", ">=", groupSize)
-      .select("id", "equipment_option_id", "quantity", "unit_cost_paid", "shop_item_id", "bound_warrior_id", "nontransferable");
+      .select("id", "equipment_option_id", "quantity", "unit_cost_paid", "shop_item_id", "bound_warrior_id", "nontransferable", "map_result");
     const warrior = await transaction("warriors").where({ id: warriorId }).first("roster_id");
     const roster = await transaction("rosters").where({ id: warrior.roster_id }).first();
     const recruitment = canRecruitEquipment(roster);
@@ -183,6 +183,7 @@ function createRosterRepository(db) {
         roster_id: warrior.roster_id, shop_item_id: item.shop_item_id, equipment_option_id: item.equipment_option_id,
         quantity: item.quantity, unit_cost_paid: item.unit_cost_paid,
         bound_warrior_id: item.bound_warrior_id,
+        map_result: item.map_result,
       })));
     }
     const refundAmount = removedItems.reduce((total, item) =>
@@ -804,7 +805,9 @@ function createRosterRepository(db) {
       const availableOptions = canRecruitEquipment(warrior) ? availableOptionRows.map(stripStatColumns) : [];
       const inventory = inventoryRows.map((row) => {
         const entry = trading.memberInventory.find((item) => item.id === row.id);
-        return { ...stripStatColumns(row), unitSaleValue: entry.unitSaleValue, saleRestriction: entry.saleRestriction };
+        return { ...stripStatColumns(row),
+          ...(entry.mapResult ? { name: entry.name, description: entry.description, mapResult: entry.mapResult } : {}),
+          unitSaleValue: entry.unitSaleValue, saleRestriction: entry.saleRestriction };
       });
 
       return { role: warrior.role, groupSize: warrior.groupSize || 1, availableOptions, inventory, mutations,
@@ -1469,7 +1472,7 @@ function createRosterRepository(db) {
           }
           const promotedInventory = await transaction("warrior_inventory")
             .where({ warrior_id: warrior.id, model_index: 0 })
-            .select("equipment_option_id", "shop_item_id", "quantity", "unit_cost_paid", "nontransferable", "bound_warrior_id");
+            .select("equipment_option_id", "shop_item_id", "quantity", "unit_cost_paid", "nontransferable", "bound_warrior_id", "map_result");
           if (promotedInventory.length) {
             await transaction("warrior_inventory").insert(promotedInventory.map((item) => ({
               ...item,

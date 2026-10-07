@@ -72,6 +72,63 @@ describe("warband stash and trading", () => {
     if (server) await new Promise((resolve) => server.close(resolve));
     await db.destroy();
   });
+  test("map purchases record separate D6 results, persist through transfers, and reject invalid choices atomically", async () => {
+    const { roster, member } = await fixture();
+    const quote = await call("POST", path(roster, "/quote"), { itemId: "mordheim-map", mode: "manual", dice: [1, 1, 1, 1] });
+    assert.equal(quote.status, 201);
+    const purchase = { quoteId: quote.body.id, quantity: 2 };
+    const before = (await call("GET", path(roster))).body;
+    for (const mapSelection of [undefined, { mode: "choose", type: "unknown" }, { mode: "manual", dice: [6] }]) {
+      assert.equal((await call("POST", path(roster, "/purchase"), { ...purchase, mapSelection })).status, 400);
+      const unchanged = (await call("GET", path(roster))).body;
+      assert.equal(unchanged.treasury, before.treasury);
+      assert.deepEqual(unchanged.stash, before.stash);
+    }
+    const bought = await call("POST", path(roster, "/purchase"), { ...purchase, mapSelection: { mode: "manual", dice: [2, 6] } });
+    assert.equal(bought.status, 201, JSON.stringify(bought.body));
+    assert.equal(Number(bought.body.treasury), Number(before.treasury) - quote.body.price * 2);
+    const maps = bought.body.stash.filter((entry) => entry.shopItemId === "mordheim-map");
+    assert.equal(maps.length, 2);
+    assert.deepEqual(maps.map((entry) => entry.mapResult.type).sort(), ["master", "vague"]);
+    const master = maps.find((entry) => entry.mapResult.type === "master");
+    const sent = await call("POST", path(roster, "/transfer"), {
+      direction: "to_member", inventoryId: master.id, memberId: member.id, quantity: 1, modelIndex: 0,
+    });
+    assert.equal(sent.status, 200, JSON.stringify(sent.body));
+    const carried = sent.body.memberInventory.find((entry) => entry.shopItemId === "mordheim-map");
+    assert.deepEqual(carried.mapResult, master.mapResult);
+    const equipment = (await call("GET", `/members/${member.id}/equipment`)).body.inventory.find((entry) => entry.id === carried.id);
+    assert.equal(equipment.name, "Mordheim Map (Master map)");
+    assert.match(equipment.description, /Hero.*not taken out of action/);
+    const returned = await call("POST", path(roster, "/transfer"), {
+      direction: "to_stash", inventoryId: carried.id, memberId: member.id, quantity: 1, modelIndex: 0,
+    });
+    assert.equal(returned.status, 200);
+    assert.deepEqual(returned.body.stash.find((entry) => entry.mapResult?.type === "master").mapResult, master.mapResult);
+  });
+  test("map spoils support all manual types and simulated results; legacy stacks resolve one copy only", async () => {
+    const { roster, member } = await fixture();
+    for (const type of ["fake", "vague", "catacomb", "accurate", "master"]) {
+      const added = await call("POST", path(roster, "/spoils"), { itemId: "mordheim-map", mapSelection: { mode: "choose", type } });
+      assert.equal(added.status, 201, JSON.stringify(added.body));
+      assert.ok(added.body.stash.some((entry) => entry.mapResult?.type === type && entry.mapResult.roll === null));
+    }
+    const simulated = await call("POST", path(roster, "/spoils"), { itemId: "mordheim-map", quantity: 3, mapSelection: { mode: "simulated" } });
+    assert.equal(simulated.status, 201);
+    assert.equal(simulated.body.stash.filter((entry) => entry.mapResult?.mode === "simulated").length, 3);
+    const [legacy] = await db("warband_stash").insert({ roster_id: roster.id, shop_item_id: "mordheim-map", quantity: 2, unit_cost_paid: 24 }).returning("*");
+    const resolved = await call("POST", path(roster, "/map"), { source: "stash", inventoryId: legacy.id, mapSelection: { mode: "manual", dice: [4] } });
+    assert.equal(resolved.status, 200, JSON.stringify(resolved.body));
+    assert.equal(resolved.body.stash.find((entry) => entry.id === legacy.id).quantity, 1);
+    const catacomb = resolved.body.stash.find((entry) => entry.mapResult?.roll === 4);
+    assert.equal(catacomb.mapResult.type, "catacomb");
+    assert.equal((await call("POST", path(roster, "/map"), { source: "stash", inventoryId: catacomb.id, mapSelection: { mode: "simulated" } })).status, 409);
+    assert.equal((await call("POST", path(roster, "/map"), { source: "stash", inventoryId: legacy.id, mapSelection: { mode: "simulated" } }, users[1])).status, 403);
+    const [carried] = await db("warrior_inventory").insert({ warrior_id: member.id, shop_item_id: "mordheim-map", quantity: 1, model_index: 0, unit_cost_paid: 24 }).returning("*");
+    const recorded = await call("POST", path(roster, "/map"), { source: "member", inventoryId: carried.id, mapSelection: { mode: "choose", type: "accurate" } });
+    assert.equal(recorded.status, 200);
+    assert.equal(recorded.body.memberInventory.find((entry) => entry.id === carried.id).mapResult.type, "accurate");
+  });
   test("Freebuild combat spoils are free, persist, and transfer with zero paid cost", async () => {
     const { roster, member } = await fixture();
     await db("rosters").where({ id: roster.id }).update({ treasury: 0 });

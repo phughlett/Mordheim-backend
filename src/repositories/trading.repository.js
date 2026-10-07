@@ -2,6 +2,18 @@ const { randomUUID } = require("node:crypto");
 const { catalog, effectiveRarity, effectivePrice, canBuyItem, canEquipItem } = require("../services/trading-catalog.service");
 const { defaultTradingRules, diceFor, tradingPermissions, fail, integer } = require("../services/trading-rules.service");
 const { equipmentSale } = require("../services/equipment-sale.service");
+const { mapTypes, resolveMaps, describeMap } = require("../services/mordheim-map.service");
+
+async function insertAcquired(trx, rosterId, item, quantity, cost, mapSelection) {
+  const base = { roster_id: rosterId, shop_item_id: item.id, unit_cost_paid: cost };
+  if (item.id === "mordheim-map") {
+    const results = resolveMaps(mapSelection, quantity);
+    await trx("warband_stash").insert(results.map((result) => ({ ...base, quantity: 1, map_result: result })));
+  } else {
+    if (mapSelection !== undefined) fail("Map type selection is only valid for Mordheim maps.", 400);
+    await trx("warband_stash").insert({ ...base, quantity });
+  }
+}
 
 function createTradingRepository(db) {
   async function context(query, rosterId, lock = false) {
@@ -140,6 +152,7 @@ function createTradingRepository(db) {
         description: item?.description ?? option.rule_text ?? "", memberId: row.warrior_id,
         modelIndex: row.model_index,
         nontransferable: row.nontransferable, boundWarriorId: row.bound_warrior_id,
+        ...describeMap(row.map_result),
         ...equipmentSale(row, option, item, ctx.shop),
         ...(!row.warrior_id ? { eligibleRecipients: recipients
           .filter((recipient) => canReceive(row, option, shopRows.get(row.shop_item_id), ctx, recipient))
@@ -167,7 +180,7 @@ function createTradingRepository(db) {
     const statuses = await db("trading_hero_status").where({ roster_id: rosterId, battle_number: ctx.battle });
     const heroes = await db("warriors").where({ roster_id: rosterId, role: "Hero" }).select("id", "name");
     return {
-      shop: ctx.shop.map((item) => ({ ...item, canPurchase: canPurchaseItem(ctx, item), disabled: Boolean(item.disabled || !canBuyItem(item, ctx.warbandName)),
+      shop: ctx.shop.map((item) => ({ ...item, ...(item.id === "mordheim-map" ? { mapTypes } : {}), canPurchase: canPurchaseItem(ctx, item), disabled: Boolean(item.disabled || !canBuyItem(item, ctx.warbandName)),
         rarity: purchaseRarity(ctx, item) })),
       ...await inventory(db, ctx),
       heroes: await Promise.all(heroes.map(async (hero) => ({
@@ -251,7 +264,7 @@ function createTradingRepository(db) {
       return { id: row.id, itemId, price, dice: rolled };
     });
   }
-  async function purchase(rosterId, { quoteId, quantity, searchId }) {
+  async function purchase(rosterId, { quoteId, quantity, searchId, mapSelection }) {
     return db.transaction(async (trx) => {
       const ctx = await context(trx, rosterId, true);
       const offer = await trx("trading_quotes").where({ id: quoteId, roster_id: rosterId, battle_number: ctx.battle }).first();
@@ -276,15 +289,13 @@ function createTradingRepository(db) {
       }
       const total = offer.price * quantity;
       if (!integer(total, 0, 2147483647) || total > Number(ctx.roster.treasury)) fail("Not enough Gold Crowns for this purchase.");
-      await trx("warband_stash").insert({
-        roster_id: rosterId, shop_item_id: item.id, quantity, unit_cost_paid: offer.price,
-      });
+      await insertAcquired(trx, rosterId, item, quantity, offer.price, mapSelection);
       await trx("rosters").where({ id: rosterId }).update({ treasury: Number(ctx.roster.treasury) - total, updated_at: new Date() });
       await trx("trading_quotes").where({ id: offer.id }).update({ consumed: true });
       if (found) await trx("trading_searches").where({ id: found.id }).update({ purchased: true });
     });
   }
-  async function addSpoils(rosterId, { itemId, quantity }) {
+  async function addSpoils(rosterId, { itemId, quantity, mapSelection }) {
     return db.transaction(async (trx) => {
       const ctx = await context(trx, rosterId, true);
       if (ctx.roster.campaign_id) fail("Manual combat spoils are only available in Freebuild.", 409);
@@ -292,9 +303,7 @@ function createTradingRepository(db) {
       if (item.purchaseAction) fail("This item requires its special purchase action and cannot be added as free spoils.");
       if (!canPurchaseItem(ctx, item)) fail("Combat spoils require at least one Freebuild battle; creation-only items cannot be acquired after creation.");
       await checkStockLimit(trx, ctx, item, quantity);
-      await trx("warband_stash").insert({
-        roster_id: rosterId, shop_item_id: item.id, quantity, unit_cost_paid: 0,
-      });
+      await insertAcquired(trx, rosterId, item, quantity, 0, mapSelection);
       await trx("rosters").where({ id: rosterId }).update({ updated_at: new Date() });
     });
   }
@@ -417,7 +426,7 @@ function createTradingRepository(db) {
       if (total > source.quantity) fail("Not enough copies in this inventory.");
       if (total === source.quantity) await trx(table).where({ id: source.id }).delete();
       else await trx(table).where({ id: source.id }).update({ quantity: source.quantity - total });
-      const origin = { equipment_option_id: source.equipment_option_id, shop_item_id: source.shop_item_id, quantity, unit_cost_paid: source.unit_cost_paid, bound_warrior_id: source.bound_warrior_id, nontransferable: source.nontransferable };
+      const origin = { equipment_option_id: source.equipment_option_id, shop_item_id: source.shop_item_id, quantity, unit_cost_paid: source.unit_cost_paid, bound_warrior_id: source.bound_warrior_id, nontransferable: source.nontransferable, map_result: source.map_result };
       if (direction === "to_member") await trx("warrior_inventory").insert(indices.map((index) => ({ ...origin, warrior_id: memberId, model_index: index })));
       else await trx("warband_stash").insert({ ...origin, roster_id: rosterId });
     });
@@ -511,6 +520,28 @@ function createTradingRepository(db) {
       await trx("warriors").where({ id: memberId }).update({ group_size: member.group_size - 1, updated_at: new Date() });
     });
   }
-  return { getTrading, search, quote, purchase, addSpoils, upgrade, transfer, sell, heroStatus, casualty };
+  async function resolveMap(rosterId, { source, inventoryId, mapSelection }) {
+    return db.transaction(async (trx) => {
+      const ctx = await context(trx, rosterId, true);
+      if (!ctx.canTransfer && !ctx.canPurchase) fail("Resolve maps during purchasing or equipment reallocation.");
+      const table = source === "stash" ? "warband_stash" : "warrior_inventory";
+      const query = trx(table).where({ id: inventoryId }).forUpdate();
+      if (source === "stash") query.where({ roster_id: rosterId });
+      else query.whereIn("warrior_id", trx("warriors").where({ roster_id: rosterId }).select("id"));
+      const row = await query.first();
+      if (!row) fail("Inventory entry not found in this warband.", 404);
+      if (row.shop_item_id !== "mordheim-map") fail("This item is not a Mordheim map.", 400);
+      if (row.map_result) fail("This map's type has already been recorded.");
+      const [result] = resolveMaps(mapSelection, 1);
+      if (row.quantity === 1) await trx(table).where({ id: row.id }).update({ map_result: result });
+      else {
+        await trx(table).where({ id: row.id }).decrement("quantity", 1);
+        const { id, created_at, ...copy } = row;
+        await trx(table).insert({ ...copy, quantity: 1, map_result: result });
+      }
+      await trx("rosters").where({ id: rosterId }).update({ updated_at: new Date() });
+    });
+  }
+  return { getTrading, search, quote, purchase, addSpoils, resolveMap, upgrade, transfer, sell, heroStatus, casualty };
 }
 module.exports = { createTradingRepository };

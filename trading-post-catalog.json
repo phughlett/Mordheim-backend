@@ -3201,7 +3201,7 @@
     "priceDice": 4,
     "priceMultiplier": 1,
     "rarity": 9,
-    "description": "Hero-only map. Roll separately on the map table when purchased to determine authenticity and exploration or scenario benefits; results are not applied automatically.",
+    "description": "Hero-only map. Choose its type or resolve a separate D6: 1 Fake, 2-3 Vague, 4 Catacomb, 5 Accurate, 6 Master. Scenario and exploration effects are not applied automatically; resolve them at the tabletop.",
     "sourceReference": "3Campaigns.pdf p.104 — Price chart; 1Rules.pdf p.39 — Mordheim map; https://mordheimer.net/docs/weapons-armour/miscellaneous-equipment#mordheim-map",
     "heroOnly": true,
     "grade": "core",

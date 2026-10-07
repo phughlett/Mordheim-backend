@@ -35,16 +35,22 @@ function createTradingRoutes(db) {
     response.status(201).json(await repository.quote(request.params.rosterId, request.body));
   }));
   router.post("/rosters/:rosterId/trading/purchase", handle(async (request, response) => {
-    const { quoteId, quantity = 1, searchId } = request.body ?? {};
+    const { quoteId, quantity = 1, searchId, mapSelection } = request.body ?? {};
     if (!uuid(quoteId) || !integer(quantity, 1, 1000) || (searchId !== undefined && !uuid(searchId))) return invalid(response, "Valid quote, quantity (1-1000), and optional search ID required.");
-    await repository.purchase(request.params.rosterId, { quoteId, quantity, searchId });
+    await repository.purchase(request.params.rosterId, { quoteId, quantity, searchId, mapSelection });
     response.status(201).json(await repository.getTrading(request.params.rosterId));
   }));
   router.post("/rosters/:rosterId/trading/spoils", handle(async (request, response) => {
-    const { itemId, quantity = 1 } = request.body ?? {};
+    const { itemId, quantity = 1, mapSelection } = request.body ?? {};
     if (typeof itemId !== "string" || !itemId.trim() || !integer(quantity, 1, 1000)) return invalid(response, "Supply a shop item and quantity (1-1000).");
-    await repository.addSpoils(request.params.rosterId, { itemId, quantity });
+    await repository.addSpoils(request.params.rosterId, { itemId, quantity, mapSelection });
     response.status(201).json(await repository.getTrading(request.params.rosterId));
+  }));
+  router.post("/rosters/:rosterId/trading/map", handle(async (request, response) => {
+    const { source, inventoryId, mapSelection } = request.body ?? {};
+    if (!["stash", "member"].includes(source) || !uuid(inventoryId)) return invalid(response, "Select a stash or carried map.");
+    await repository.resolveMap(request.params.rosterId, { source, inventoryId, mapSelection });
+    response.json(await repository.getTrading(request.params.rosterId));
   }));
   router.post("/rosters/:rosterId/trading/transfer", handle(async (request, response) => {
     const { direction, inventoryId, memberId, quantity = 1, modelIndex = -1 } = request.body ?? {};
