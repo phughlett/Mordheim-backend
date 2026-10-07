@@ -38,7 +38,7 @@
   {
     "name": "Expert Swordsman",
     "category": "Combat",
-    "description": "This warrior has been expertly taught in the art of swordsmanship. He may re-roll all missed attacks if he is using a sword in the hand-to-hand phase of the turn that he charges. Note that this only applies when they are armed with normal swords or weeping blades, and not with double-handed swords or any other weapons.",
+    "description": "This warrior has been expertly taught in the art of swordsmanship. He may re-roll all missed attacks if he is using a sword in the hand-to-hand phase of the turn that he charges. Note that this only applies when they are armed with normal swords or weeping blades, and not with doublehanded swords or any other weapons.",
     "warband": null,
     "specialListName": null,
     "appliesTo": null,
@@ -146,7 +146,7 @@
   {
     "name": "Streetwise",
     "category": "Academic",
-    "description": "A warrior with this skill has good contacts and knows where to purchase rare items. He may add +2 to the roll that determines his chances of finding such items (see the Trading section).",
+    "description": "A warrior with this skill has good contacts and knows where to purchase rare items. He may add +2 to the roll that determines his chances of finding such items (see the Trading section ).",
     "warband": null,
     "specialListName": null,
     "appliesTo": null,
@@ -245,7 +245,7 @@
   {
     "name": "Leap",
     "category": "Speed",
-    "description": "The warrior may leap D6\" in the movement phase in addition to his normal movement. He may move and leap, run and leap, or charge and leap, but he can only leap once per turn. A leaping warrior may jump over opposing man-sized models, including enemies, and obstacles 1\" high, without penalty. The leap may also be used to leap over gaps, but in this case you must commit the warrior to making the leap before rolling the dice to see how far he jumps. If he fails to make it all the way across, he falls through the gap (see page 28).",
+    "description": "The warrior may leap D6\" in the movement phase in addition to his normal movement. He may move and leap, run and leap, or charge and leap, but he can only leap once per turn. A leaping warrior may jump over opposing man-sized models, including enemies, and obstacles 1\" high, without penalty. The leap may also be used to leap over gaps, but in this case you must commit the warrior to making the leap before rolling the dice to see how far he jumps. If he fails to make it all the way across, he falls through the gap (see Falling).",
     "warband": null,
     "specialListName": null,
     "appliesTo": null,
@@ -335,7 +335,7 @@
   {
     "name": "Righteous Fury",
     "category": "Special",
-    "description": "The Sister feels cold fury and utter contempt towards any evil that pollutes the soil of the holy Empire with its presence. The model hates all Skaven, Undead or Possessed warbands and all models in them.",
+    "description": "The Sister feels cold fury and utter contempt towards any evil that pollutes the soil of the holy Empire with its presence. The model all Skaven, Undead, Possessed, Beastmen, Dark Elves and any other 'evil' warband and all models in them. Non-Chaos humans who just like to kill, loot, etc, are not included.",
     "warband": "Sisters of Sigmar",
     "specialListName": "Sisters of Sigmar Special Skills",
     "appliesTo": null,
@@ -344,7 +344,7 @@
   {
     "name": "Absolute Faith",
     "category": "Special",
-    "description": "The Sister puts her faith in Sigmar, and faces dangers unflinchingly. She may re-roll any Fear tests and does not have to test if she is fighting alone against several opponents.",
+    "description": "The Sister puts her faith in Sigmar, and faces dangers unflinchingly. She may re-roll any tests and does not have to test if she is fighting alone against several opponents.",
     "warband": "Sisters of Sigmar",
     "specialListName": "Sisters of Sigmar Special Skills",
     "appliesTo": null,
@@ -362,7 +362,7 @@
   {
     "name": "Tail Fighting",
     "category": "Special",
-    "description": "The Skaven may wield a shield, knife or a sword with its tail. The model gains an extra attack with the appropriate weapon or a +1 bonus to its armour save.",
+    "description": "The Skaven may wield a shield , knife or a sword with its tail. The model gains an extra attack with the appropriate weapon or a +1 bonus to its armour save.",
     "warband": "Skaven",
     "specialListName": "Skaven Special Skills",
     "appliesTo": null,
@@ -380,7 +380,7 @@
   {
     "name": "Infiltration",
     "category": "Special",
-    "description": "A Skaven with this skill is always placed on the battlefield after the opposing warband and can be placed anywhere on the table as long as it is out of sight of the opposing warband and more than 12\" away from any enemy model. If both players have models which infiltrate, roll a D6 for each, and the lowest roll sets up first.",
+    "description": "A warrior with this skill is always placed on the battlefield after the opposing warband and can be placed anywhere on the table as long as it is out of sight of the opposing warband and more than 12\" away from any enemy model. If both players have models which infiltrate, roll a D6 for each, and the lowest roll sets up first.",
     "warband": "Skaven",
     "specialListName": "Skaven Special Skills",
     "appliesTo": null,
@@ -389,7 +389,7 @@
   {
     "name": "Art of Silent Death",
     "category": "Special",
-    "description": "The Skaven has patiently mastered the deadly art of open-hand fighting, as taught by the mystics of Cathay in the temples of the far East. In hand-to-hand combat, the Skaven can fight with his bare paws without any penalties and counts as having two weapons (ie, +1 attack). In addition, a Skaven Hero with this skill will cause a critical hit on a To Wound roll of 5-6 instead of just 6. This skill may be used in conjunction with the Eshin Fighting Claws (+2 Attacks instead of +1).",
+    "description": "The Skaven has patiently mastered the deadly art of open-hand fighting, as taught by the mystics of Cathay in the temples of the far East. In hand-to-hand combat, the Skaven can fight with his bare paws without any penalties and counts as having two weapons (ie, +1 attack). In addition, a Skaven Hero with this skill will cause a critical hit on a To Wound roll of 5-6 instead of just 6 . This skill may be used in conjunction with the Eshin Fighting Claws (+2 Attacks instead of +1).",
     "warband": "Skaven",
     "specialListName": "Skaven Special Skills",
     "appliesTo": null,
@@ -398,7 +398,7 @@
   {
     "name": "Fury of Khaine",
     "category": "Special",
-    "description": "The Dark Elf is infused with an intense raging thirst for blood and is a whirlwind in hand-to-hand combat, moving from opponent to opponent. The Dark Elf may make a 4\" follow up move if he takes all of his opponents out of action. If he comes into contact with another enemy this starts a new combat. This new combat takes place in the following turn and the model counts as charging. May not follow up in the opponent's turn.",
+    "description": "The Dark Elf is infused with an intense raging thirst for blood and is a whirlwind in hand-to-hand combat, moving from opponent to opponent. The Dark Elf may make a 4\" follow up move if he takes all of his opponents Out Of Action. If he comes into contact with another enemy this starts a new combat. This new combat takes place in the following turn and the model counts as charging. May not follow up in the opponent’s turn.",
     "warband": "Dark Elves",
     "specialListName": "Dark Elf Special Skills",
     "appliesTo": null,
@@ -407,7 +407,7 @@
   {
     "name": "Powerful Build",
     "category": "Special",
-    "description": "The warrior is strongly built for an Elf and is capable of feats of strength. A warrior with this skill may choose skills from the Strength table. The Sorceress may never take this skill and no more than two warriors in the warband may take this skill at any one time.",
+    "description": "The warrior is strongly built for an Elf, and is capable of feats of strength not often seen among the people of Ulthuan. A warrior with this skill may choose skills from the Strength skills table from now on. This skill may not be taken by Shadow Weavers. There may never be more than two Elves with this skill in the warband at any one time.",
     "warband": "Dark Elves",
     "specialListName": "Dark Elf Special Skills",
     "appliesTo": null,
@@ -416,7 +416,7 @@
   {
     "name": "Fey Quickness",
     "category": "Special",
-    "description": "Few can ever hope to match an Elf's inhuman quickness and agility. An Elf with Fey Quickness can avoid melee or missile attacks on a roll of 6. If the Elf also has Step Aside or Dodge this will increase to a 4+ in the relevant area. For example, an Elf with Fey Quickness and Step Aside avoids melee attacks on a 4+ and missile attacks on a 6.",
+    "description": "Few can ever hope to match an Elf’s inhuman quickness and agility. An Elf with Fey Quickness can avoid melee or missile attacks on a roll of 6. If the Elf also has Step Aside or Dodge this will increase to a 4+ in the relevant area. For example, an Elf with Fey Quickness and Step Aside avoids melee attacks on a 4+ and missile attacks on a 6.",
     "warband": "Dark Elves",
     "specialListName": "Dark Elf Special Skills",
     "appliesTo": null,
@@ -425,7 +425,7 @@
   {
     "name": "Infiltration",
     "category": "Special",
-    "description": "The Dark Elf can Infiltrate, this skill is exactly the same as the Skaven skill.",
+    "description": "A warrior with this skill is always placed on the battlefield after the opposing warband and can be placed anywhere on the table as long as it is out of sight of the opposing warband and more than 12\" away from any enemy model. If both players have models which infiltrate, roll a D6 for each, and the lowest roll sets up first.",
     "warband": "Dark Elves",
     "specialListName": "Dark Elf Special Skills",
     "appliesTo": null,
@@ -434,7 +434,7 @@
   {
     "name": "Master of Poisons",
     "category": "Special",
-    "description": "The Dark Elf is proficient in concocting different poisons. If the Hero doesn't search for rare items, he may make D3-1 doses of Dark Venom instead. There is a chance of getting none, as the hero doesn't have access to a stable workplace. The poison must be used in the next battle and cannot be sold or traded to other warbands as the Dark Elves guard their secrets very carefully.",
+    "description": "The Dark Elf is proficient in concocting different poisons. If the Hero doesn’t search for rare items, he may make D3–1 doses of Dark Venom instead. There is a chance of getting none, as the hero doesn’t have access to a stable workplace. The poison must be used in the next battle and cannot be sold or traded to other warbands as the Dark Elves guard their secrets very carefully.",
     "warband": "Dark Elves",
     "specialListName": "Dark Elf Special Skills",
     "appliesTo": null,
@@ -443,7 +443,7 @@
   {
     "name": "energy focus",
     "category": "Special",
-    "description": "If fighting unarmed the Hero may choose to reduce his Attacks by -1 and thus gain +1 Strength in close combat. The monk may sacrifice any number of attacks this way.",
+    "description": "If fighting unarmed, the Hero may choose to reduce his Attacks by –1 and thus gain +1 Strength in close combat. The monk may sacrifice any number of attacks this way.",
     "warband": "Battle Monks of Cathay",
     "specialListName": "Battle Monks special skills",
     "appliesTo": [
@@ -454,7 +454,7 @@
   {
     "name": "human shield",
     "category": "Special",
-    "description": "If two or more models are engaged in close combat with the monk, he may choose to grab one to use it as a shield instead of his normal attacks. To do this he must pass an Initiative test after the first model has attacked, but before the second model attacks. On a successful roll, the monk grabs the first model - the second model directs its full attacks on the friendly model. After the combat phase the model breaks free and the battle goes on as usual. On a failed roll the monk and the second model use their normal attacks.",
+    "description": "If two or more models are engaged in close combat with the monk, he may choose to grab one to use it as a shield instead of his normal attacks. To do this, he must pass an Initiative test after the first model has attacked, but before the second model attacks. On a successful roll, the monk grabs the first model – the second model directs its full attacks on the friendly model. After the combat phase, the model breaks free and the battle goes on as usual. On a failed roll, the monk and the second model use their normal attacks.",
     "warband": "Battle Monks of Cathay",
     "specialListName": "Battle Monks special skills",
     "appliesTo": [
@@ -465,7 +465,7 @@
   {
     "name": "lightning speed",
     "category": "Special",
-    "description": "The monk may triple his Movement whilst running or charging and may run even when there are enemy models within 8\".",
+    "description": "The monk may triple his Movement whilst running or charging and may run even when there are enemy models within 8”.",
     "warband": "Battle Monks of Cathay",
     "specialListName": "Battle Monks special skills",
     "appliesTo": [
@@ -476,7 +476,7 @@
   {
     "name": "leap of faith",
     "category": "Special",
-    "description": "The Hero cannot be intercepted whilst charging. He may escape from combat (as described on p. 161 in the Mordheim rulebook) by leaping away without having to pass a Ld test and may declare a leaping charge at the same time in the same turn.",
+    "description": "The Hero cannot be intercepted whilst charging. He may escape from combat (as described on p. 161 in the Mordheim rulebook) by leaping away without having to pass an Ld test and may declare a leaping charge at the same time in the same turn.",
     "warband": "Battle Monks of Cathay",
     "specialListName": "Battle Monks special skills",
     "appliesTo": [
@@ -487,7 +487,7 @@
   {
     "name": "warmonger",
     "category": "Special",
-    "description": "The Emissary may make a Ld test before the battle. If the test is successful, D3+1 Raging Peasants join the warband for the next game (this may exceed the maximum number of warriors). Each Raging Peasant in the warband is subject to Hatred for the duration of the battle.",
+    "description": "The Emissary may make an Ld test before the battle. If the test is successful, D3+1 Raging Peasants join the warband for the next game (this may exceed the maximum number of warriors). Each Raging Peasant in the warband is subject to Hatred for the duration of the battle.",
     "warband": "Battle Monks of Cathay",
     "specialListName": "Battle Monks special skills",
     "appliesTo": [
@@ -498,7 +498,7 @@
   {
     "name": "Shaggy Hide",
     "category": "Special",
-    "description": "The bestial hero is titanic in size and may use a double-handed weapon in one hand.",
+    "description": "The Beastman’s massively shaggy hide acts as armour, deflecting sword strokes and protecting him from harm. The model gains a 6+ Armour Save that can be combined with other armour as normal.",
     "warband": "Beastmen Raiders",
     "specialListName": "Beastmen Special Skills",
     "appliesTo": null,
@@ -507,7 +507,7 @@
   {
     "name": "Mutant",
     "category": "Special",
-    "description": "The Beastman may buy one mutation. See Mutants section on special rules.",
+    "description": "The Hero may buy one mutation. See Mutants section on special rules.",
     "warband": "Beastmen Raiders",
     "specialListName": "Beastmen Special Skills",
     "appliesTo": null,
@@ -516,7 +516,7 @@
   {
     "name": "Fearless",
     "category": "Special",
-    "description": "Immune to fear and terror and All Alone test.",
+    "description": "Immune to and tests.",
     "warband": "Beastmen Raiders",
     "specialListName": "Beastmen Special Skills",
     "appliesTo": null,
@@ -543,7 +543,7 @@
   {
     "name": "Manhater",
     "category": "Special",
-    "description": "Will be affected by the rules of hatred when fighting any Human warbands.",
+    "description": "Will be affected by the rules of when fighting any Human warbands.",
     "warband": "Beastmen Raiders",
     "specialListName": "Beastmen Special Skills",
     "appliesTo": null,
@@ -552,7 +552,7 @@
   {
     "name": "Master of Blades",
     "category": "Special",
-    "description": "This Dwarf's martial skills surpass those of a normal warrior; he has fought unscathed against hordes of Orcs and Goblins. When using a weapon that has a Parry special rule, this hero parries successfully if he beats or matches his opponents highest 'to hit' roll, not just if he beats the roll. In addition, if this warrior is using two weapons that have the Parry special rule, he is allowed to parry two attacks (if his two dice match or beat the two highest Attack dice against him) instead of the normal maximum of one. Note that if this Dwarf has two Dwarf axes (as detailed above) he can re-roll any failed parries.",
+    "description": "This Dwarf’s martial skills surpass those of a normal warrior; he has fought unscathed against hordes of Orcs and Goblins. When using a weapon that has a Parry special rule, this hero parries successfully if he beats or matches his opponent’s highest ‘to hit’ roll, not just if he beats the roll. In addition, if this warrior is using two weapons that have the Parry special rule, he is allowed to parry two attacks (if his two dice match or beat the two highest Attack dice against him) instead of the normal maximum of one. Note that if this Dwarf has two Dwarf axes (as detailed above) he can re-roll any failed parries.",
     "warband": "Dwarf Treasure Hunters",
     "specialListName": "Dwarf special skills",
     "appliesTo": [
@@ -612,7 +612,7 @@
   {
     "name": "Ferocious Charge",
     "category": "Special",
-    "description": "The Slayer may double his attacks on the turn in which he charges. He will suffer a -1 'to hit' penalty on that turn.",
+    "description": "The Slayer may double his attacks on the turn in which he charges. He will suffer a –1 to hit penalty on that turn.",
     "warband": "Dwarf Treasure Hunters",
     "specialListName": "TROLL SLAYER SKILLS",
     "appliesTo": [
@@ -623,7 +623,7 @@
   {
     "name": "Monster Slayer",
     "category": "Special",
-    "description": "The Slayer always wounds any opponent on a roll of 4+, regardless of Toughness, unless his own Strength (after all modifiers due to weapon bonuses, etc) would mean that a lower roll than this is needed.",
+    "description": "The Slayer always wounds any opponent on a roll of 4+, regardless of Toughness, unless his own strength (with weapon modifiers) would mean that a lower roll than this is needed.",
     "warband": "Dwarf Treasure Hunters",
     "specialListName": "TROLL SLAYER SKILLS",
     "appliesTo": [
@@ -634,7 +634,7 @@
   {
     "name": "Berserker",
     "category": "Special",
-    "description": "The Slayer may add +1 to his close combat 'to hit' rolls during the turn in which he charges.",
+    "description": "The Slayer may add +1 to his to hit rolls during the turn in which he charges.",
     "warband": "Dwarf Treasure Hunters",
     "specialListName": "TROLL SLAYER SKILLS",
     "appliesTo": [
@@ -657,7 +657,7 @@
   {
     "name": "Great Hunter",
     "category": "Special",
-    "description": "The Skink Great Crest is adept at making the most of the cover available and imposes an additional -1 to hit the Skink if he is in cover, IE a -2 to hit penalty.",
+    "description": "The Skink Great Crest is adept at making the most of the cover available and imposes an additional –1 to hit the Skink if he is in cover, IE a –2 to hit penalty.",
     "warband": "Lizardmen",
     "specialListName": "Lizardmen Special Skills & Sacred Markings",
     "appliesTo": [
@@ -669,7 +669,7 @@
   {
     "name": "Bellowing Battle Roar",
     "category": "Special",
-    "description": "The Saurus' roar is so deafening that enemy models in base contact suffer -1 to hit in the first round of combat against them.",
+    "description": "The Saurus’ roar is so deafening that enemy models in base contact suffer –1 to hit in the first round of combat against them.",
     "warband": "Lizardmen",
     "specialListName": "Lizardmen Special Skills & Sacred Markings",
     "appliesTo": [
@@ -680,7 +680,7 @@
   {
     "name": "Toughened Hide",
     "category": "Special",
-    "description": "Through years of battle the Saurus' hide has become hardened and the Saurus will only be taken out of action on a 6+.",
+    "description": "Through years of battle the Saurus’ hide has become hardened and the Saurus will only be taken out of action on a 6+.",
     "warband": "Lizardmen",
     "specialListName": "Lizardmen Special Skills & Sacred Markings",
     "appliesTo": [
@@ -691,7 +691,7 @@
   {
     "name": "chosen of chaos",
     "category": "Special",
-    "description": "The Hero has been found worthy of his god's service and entered the rank of a Chaos Warrior. He uses the maximum profile for Warriors of Chaos and the Hero equipment list (if he does not already).",
+    "description": "The Hero has been found worthy of his god’s service and entered the rank of a Chaos Warrior. He uses the maximum profile for Warriors of Chaos and the Hero equipment list (if he does not already).",
     "warband": "Marauders of Chaos",
     "specialListName": "Marauder special skills",
     "appliesTo": null,
@@ -718,7 +718,7 @@
   {
     "name": "mutant",
     "category": "Special",
-    "description": "The Hero may buy one mutation. See the Mutations section of the Possessed on special rules. Heroes with the Mark of Onogal may choose a Blessing of Nurgle instead (see Empire in Flames, page 66) except the Mark of Nurgle. Unlike other skills this may be taken more than once.",
+    "description": "The Hero may buy one mutation. See the Mutations section of the Possessed on special rules. Heroes with the Mark of Onogal may choose a Blessing of Nurgle instead except the Mark of Nurgle. Note that unlike other skills Marauder Heroes may take this skill more than once.",
     "warband": "Marauders of Chaos",
     "specialListName": "Marauder special skills",
     "appliesTo": null,
@@ -727,7 +727,7 @@
   {
     "name": "heart of the warrior",
     "category": "Special",
-    "description": "Only the warband's leader may have this skill. He may re-roll any failed Rout test and is immune to fear and all alone tests.",
+    "description": "Only the warband’s leader may have this skill. He may re-roll any failed Rout test and is immune to and tests.",
     "warband": "Marauders of Chaos",
     "specialListName": "Marauder special skills",
     "appliesTo": null,
@@ -754,7 +754,7 @@
   {
     "name": "Infiltrate",
     "category": "Special",
-    "description": "As Skaven skill.",
+    "description": "A warrior with this skill is always placed on the battlefield after the opposing warband and can be placed anywhere on the table as long as it is out of sight of the opposing warband and more than 12\" away from any enemy model. If both players have models which infiltrate, roll a D6 for each, and the lowest roll sets up first.",
     "warband": "Night Goblins",
     "specialListName": "NIGHT GOBLIN SPECIAL SKILLS",
     "appliesTo": null,
@@ -772,7 +772,7 @@
   {
     "name": "Shield Master",
     "category": "Special",
-    "description": "Norse warriors begin training with shields when they are still children. Some warriors become so skilled with these weapons that they can block almost any blow against them. When this hero is armed with a shield he may parry with it in addition to getting a 6+ save.",
+    "description": "Norse warriors begin training with shields when they are still children. Some warriors become so skilled with these weapons they can block almost any blow against them. When this hero is armed with a shield he may parry with it in addition to getting a 6+ save.",
     "warband": "Norse",
     "specialListName": "Norse Special Skills",
     "appliesTo": null,
@@ -790,7 +790,7 @@
   {
     "name": "Crushing Blow",
     "category": "Special",
-    "description": "Norse warriors train in almost all of their spare time. They are expert fighters and learn to put all of their strength into very powerful attacks. No enemy may parry an attack made by this hero because it strikes with such power that it pushes right threw a buckler or sword.",
+    "description": "Norse warriors train in almost all of their spare time. They are expert fighters and learn to put all of their strength into very powerful attacks. No enemy may parry an attack made by this hero because it strikes with such great power that it pushes right through a buckler or sword.",
     "warband": "Norse",
     "specialListName": "Norse Special Skills",
     "appliesTo": null,
@@ -799,7 +799,7 @@
   {
     "name": "Battle Tongue",
     "category": "Special",
-    "description": "Only a hero with the leader skill may gain this skill. It allows models within 12\" of him use his leadership, rather than the normal 6\".",
+    "description": "Only a hero with the leader skill may gain this skill. It allows models within 12\" of him to use his leadership, rather than the normal 6\".",
     "warband": "Norse",
     "specialListName": "Norse Special Skills",
     "appliesTo": null,
@@ -808,7 +808,7 @@
   {
     "name": "Barbarian Courage",
     "category": "Special",
-    "description": "As Norse warriors strive to die bravely in battle, they learn to fear nothing and embrace hardship. This hero never needs to take all alone tests and may re-roll failed fear tests.",
+    "description": "As Norse warriors strive to die bravely in battle, they learn to fear nothing and embrace hardship. This hero never needs to take tests and may re-roll failed tests.",
     "warband": "Norse",
     "specialListName": "Norse Special Skills",
     "appliesTo": null,
@@ -853,7 +853,7 @@
   {
     "name": "\u2019ere we go!",
     "category": "Special",
-    "description": "Orcs often charge even the most fearsome opponents. The model may ignore Fear and Terror tests when charging.",
+    "description": "Orcs often charge even the most fearsome opponents. The model may ignore tests when charging.",
     "warband": "Orc",
     "specialListName": "Orc special skills",
     "appliesTo": null,
@@ -871,7 +871,7 @@
   {
     "name": "Bull Rush",
     "category": "Special",
-    "description": "This warrior is huge, even by Ostlander standards, and can use his massive girth to overpower his opponents. When he charges, this Hero may attempt to knock down his opponent rather than making his normal attacks. Roll to hit once with a +1 to hit modifier, though no \u2018to wound\u2019 roll is necessary. Instead, if the warrior hits with this attack, the opposing model is Knocked Down. (Models with the Bull Rush skill should have a suitably large beer-belly modelled out of putty whenever possible.)",
+    "description": "This warrior is huge, even by Ostlander standards, and can use his massive girth to overpower his opponents. When he charges, this Hero may attempt to knock down his opponent rather than making his normal attacks. Roll to hit once with a +1 to hit modifier, though no ‘to wound’ roll is necessary. Instead, if the warrior hits with this attack, the opposing model is Knocked Down (Models with the Bull Rush skill should have a suitably large beer-belly modelled out of putty whenever possible!).",
     "warband": "Ostlanders",
     "specialListName": "Ostlander Special Skills",
     "appliesTo": null,
@@ -880,7 +880,7 @@
   {
     "name": "Foul Odour",
     "category": "Special",
-    "description": "Ostlanders are one and all prodigious drinkers and none too hygienic! This warrior rises head and shoulders above the rest. After a lifetime of drinking, liquor has little effect on him any more... not that this stops him from consuming massive quantities! His unwashed clothes and sweat reek of alcohol and all living enemies (not Undead or Possessed) are at -1 to hit him in hand-to-hand combat. In addition, the warrior cannot carry any open flames (torch, lantern, etc.) and fire attacks made against him are resolved at +1 Strength as his beer soaked clothing burns readily.",
+    "description": "Ostlanders are prodigious drinkers and none too hygienic! This warrior rises head and shoulders above the rest. After a lifetime of drinking, liquor has little effect on him any more... not that this stops him from consuming massive quantities! His unwashed clothes and sweat reek of alcohol and all living enemies (not Undead or Possessed) are at -1 to hit him in hand-to-hand combat. In addition, the warrior cannot carry any open flames (torch, lantern, etc) and fire attacks made against him are resolved at +1 Strength as his booze soaked clothing burns readily.",
     "warband": "Ostlanders",
     "specialListName": "Ostlander Special Skills",
     "appliesTo": null,
@@ -889,7 +889,7 @@
   {
     "name": "Taunt",
     "category": "Special",
-    "description": "After years of baiting opponents into drunken brawls the Ostlander has learned some of most vile insults in the Empire. During the shooting phase the warrior may choose to taunt one enemy instead of shooting with a missile weapon or casting a spell. The warrior must be able to see the enemy and taunting follows all the LOS rules for shooting (you must taunt the nearest opponent, etc.). The player should insult the enemy model in some manner whenever possible (perhaps his hat looks like a strangled parrot or his mother was a Bretonnian.). The enemy then takes a Leadership test. If he passes, nothing happens but if he fails he must spend his next movement phase trying to get into close combat with the warrior who taunted him.",
+    "description": "After years of baiting opponents into drunken brawls, this Ostlander has learned some of the most vile insults in the Empire. During the Shooting phase, the warrior may choose to taunt one enemy instead of shooting with a missile weapon or casting a spell. The warrior must be able to see the enemy and taunting follows all the LOS rules for shooting (you must taunt the nearest opponent, etc). The player should insult the enemy model in some manner whenever possible (perhaps his hat looks like a strangled parrot or his mother was a Bretonnian!). The enemy then takes a Leadership test. If he passes, nothing happens, but if he fails he must spend his next Movement phase trying to get into close combat with the warrior who taunted him.",
     "warband": "Ostlanders",
     "specialListName": "Ostlander Special Skills",
     "appliesTo": null,
@@ -898,7 +898,7 @@
   {
     "name": "Animal Friendship",
     "category": "Special",
-    "description": "Having grown up amidst the animals of the forest this warrior exudes a certain charm to all \u2018normal\u2019 animals (i.e. warhorses, warhounds, etc.). Animals will never attack him and up to two wardogs (see Mordheim book, page 54) that the warrior owns do not count against the maximum number of models in the Warband.",
+    "description": "Having grown up amidst the animals of the forest, this warrior exudes a certain charm to all ‘normal’ animals (ie, warhorses, warhounds, etc). Animals will never attack him and up to two that the warrior owns do not count against the maximum number of models in the warband.",
     "warband": "Ostlanders",
     "specialListName": "Ostlander Special Skills",
     "appliesTo": null,
@@ -907,7 +907,7 @@
   {
     "name": "Blood Oath",
     "category": "Special",
-    "description": "The leader of an Ostlander Warband sometimes takes a Blood Oath never to leave any of his fallen \u2018family\u2019 members behind. Such is his determination to protect his fallen Blood-kin that it is extremely difficult to cause him to Rout from the field. Only a Warband\u2019s leader may have this skill, which allows him to re-roll a single Rout test once per game.",
+    "description": "The leader of an Ostlander warband sometimes takes a blood oath never to leave any of his fallen ‘family’ members behind. Such is his determination to protect his fallen blood-kin that it is extremely difficult to cause him to rout from the field. Only a warband’s leader may have this skill, which allows him to re-roll a single Rout test once per game.",
     "warband": "Ostlanders",
     "specialListName": "Ostlander Special Skills",
     "appliesTo": null,
@@ -916,7 +916,7 @@
   {
     "name": "Sea Shanty Singer",
     "category": "Special",
-    "description": "The pirate is renowned throughout the seas as one of the greatest singers aboard a ship, able to raise the spirits of any crew with his stirring renditions of \u2018The Sloop Johan Bee\u2019, \u2018What do you do with a Drunken Halfling?\u2019, and other famous pirate ditties. At the start of his Close Combat phase he can suddenly burst out in song, distracting one opponent in base contact of his choosing. That enemy must pass a Leadership test, or loose 1 Attack that turn. This does not effect Undead or other non-living creatures, such as Possessed.",
+    "description": "The pirate is renowned throughout the seas as one of the greatest singers aboard a ship, able to raise the spirits of any crew with his stirring renditions of ‘The Sloop Johan Bee’, ‘What do you do with a Drunken Halfling?’, and other famous pirate ditties. At the start of his Close Combat phase he can suddenly burst out in song, distracting one opponent in base contact of his choosing. That enemy must pass a Leadership test, or lose 1 Attack that turn. This does not affect Undead or other non-living creatures, such as Possessed.",
     "warband": "Pirate",
     "specialListName": "Pirate Special Skills",
     "appliesTo": null,
@@ -925,7 +925,7 @@
   {
     "name": "Sea Legs",
     "category": "Special",
-    "description": "Even in the strongest seas, the pirate has learned to keep his footing and equilibrium. If he Falls during a battle, he may ignore the effects of the D3 hits on a roll of 4+ (make a single roll to see if the any of the hits take effect or not). In addition, if he is knocked down or stunned within 1\" of a precipice he may re-roll his Initiative test to see if he falls down or not.",
+    "description": "Even in the strongest seas, the pirate has learned to keep his footing and equilibrium. If he Falls during a battle, he may ignore the effects of the D3 hits on a roll of 4+ (make a single roll to see if any of the hits take effect or not). In addition, if he is knocked down or stunned within 1\" of a precipice he may re-roll his Initiative test to see if he falls down or not.",
     "warband": "Pirate",
     "specialListName": "Pirate Special Skills",
     "appliesTo": null,
@@ -934,7 +934,7 @@
   {
     "name": "Cutlass Master",
     "category": "Special",
-    "description": "These short, single bladed swords are the mainstay weapon of any pirate crew, and in the hands of a trained seaman they are superb weapons for close quarters fighting. If the pirate is equipped with a Sword, this skill will give him the additional benefit of also being able to parry successfully if the player rolls equal to number rolled to hit, not just higher as normal. This extra ability only apply if the Pirate is not in the open; ie., only when in cover or in a building, within 2\" of a terrain feature like a wall or tree, etc.",
+    "description": "These short, single bladed swords are the mainstay weapon of any pirate crew, and in the hands of a trained seaman they are superb weapons for close quarters fighting. If the pirate is equipped with a Sword, this skill will give him the additional benefit of also being able to parry successfully if the player rolls equal to the number rolled to hit, not just higher as normal. This extra ability only applies if the Pirate is not in the open; ie., only when in cover or in a building, within 2\" of a terrain feature like a wall or tree, etc.",
     "warband": "Pirate",
     "specialListName": "Pirate Special Skills",
     "appliesTo": null,
@@ -952,7 +952,7 @@
   {
     "name": "Hardy Constitution",
     "category": "Special",
-    "description": "Many months at sea, and especially many months eating hardtack, have hardened the pirate\u2019s body to effects that would cause a lesser man to collapse. During the battle, the pirate may ignore any Critical Hits on a roll of 5+ (the wound is treated as normal if the roll is successful). If the roll is failed, the Critical Hit is worked out as normal.",
+    "description": "Many months at sea, and especially many months eating hardtack, have hardened the pirate’s body to effects that would cause a lesser man to collapse. During the battle, the pirate may ignore any Critical Hits on a roll of 5+ (the wound is treated as normal if the roll is successful). If the roll is failed, the Critical Hit is worked out as normal.",
     "warband": "Pirate",
     "specialListName": "Pirate Special Skills",
     "appliesTo": null,
@@ -961,7 +961,7 @@
   {
     "name": "Swashbuckler",
     "category": "Special",
-    "description": "The pirate cuts a dashing figure in combat, mixing dazzling swordplay and acrobatic feats with charm and witty comments. Even the basest villains in Mordheim respect (and curse) his ability to always seem to effortlessly slip from their grasp. The pirate may make a Leadership Test at the end of any Hand-to-Hand phase (pirate\u2019s or enemy\u2019s turn) if he is still in base contact with any enemy models. If he passes he may make a normal movement away from the enemy (he may not run or charge), without the enemy striking any blows on him. If he fails the test he remains in combat and must fight as normal in the following turn.",
+    "description": "The pirate cuts a dashing figure in combat, mixing dazzling swordplay and acrobatic feats with charm and witty comments. Even the basest villains in Mordheim respect (and curse) his ability to always seem to effortlessly slip from their grasp. The pirate may make a Leadership Test at the end of any Hand-to-Hand phase (pirate’s or enemy’s turn) if he is still in base contact with any enemy models. If he passes he may make a normal movement away from the enemy (he may not run or charge), without the enemy striking any blows on him. If he fails the test he remains in combat and must fight as normal in the following turn.",
     "warband": "Pirate",
     "specialListName": "Pirate Special Skills",
     "appliesTo": null,
@@ -970,7 +970,7 @@
   {
     "name": "Bulging Biceps",
     "category": "Special",
-    "description": "The Pit Fighter may ignore the entire \u2018heavy\u2019 weapons special rule penalty. The Strength bonus will now apply to all rounds in Close-Combat. So a Morning Star will give +1 Strength in all turns not only the first one.",
+    "description": "The Pit Fighter may ignore the entire ‘heavy’ weapons special rule penalty. The Strength bonus will now apply to all rounds in Close-Combat. So a Morning Star will give +1 Strength in all turns not only the first one.",
     "warband": "Pit Fighter",
     "specialListName": "Pit Fighter Skills",
     "appliesTo": [
@@ -982,7 +982,7 @@
   {
     "name": "Force of Will",
     "category": "Special",
-    "description": "When the Pit Fighter loses his last wound and is taken Out-of-Action, he must roll a D6 equal or under his Toughness, each following round he has to roll again on his toughness but then with a -1 modifier for each subsequent round. If he succeeds he gets up and may continue to fight, when he gets taken Out-of-Action a second time he\u2019ll be removed as normal.",
+    "description": "When the Pit Fighter loses his last wound and is taken Out-of-Action, he must roll a D6 equal to or under his Toughness. Each following round he has to roll again on his toughness but then with a -1 modifier for each subsequent round. If he succeeds he gets up and may continue to fight. When he gets taken Out-of-Action a second time he’ll be removed as normal.",
     "warband": "Pit Fighter",
     "specialListName": "Pit Fighter Skills",
     "appliesTo": [
@@ -994,7 +994,7 @@
   {
     "name": "Arms master",
     "category": "Special",
-    "description": "The Pit Fighter may now ignore all \u2018difficult to use\u2019 rules for all weapons. This enables him to combine certain types of weapons, he can combine a Morning Star with buckler, or even a Morning Star with a Morning Star.",
+    "description": "The Pit Fighter may now ignore all ‘difficult to use’ rules for all weapons. This enables him to combine certain types of weapons. He can combine a Morning Star with a buckler, or even a Morning Star with a Morning Star.",
     "warband": "Pit Fighter",
     "specialListName": "Pit Fighter Skills",
     "appliesTo": [
@@ -1006,7 +1006,7 @@
   {
     "name": "Body Slam",
     "category": "Special",
-    "description": "Instead of making a normal charge, the Pit Fighter may attempt to slam his opponent to the ground, he burrows his shoulder deep into his opponent\u2019s stomach. Instead of making his normal attacks the Pit fighter may make a single attack resolved as following: +1Str, +1 to Hit, no weapon bonuses or abilities. Critical hit on a 5+.",
+    "description": "Instead of making a normal charge, the Pit Fighter may attempt to slam his opponent to the ground, he burrows his shoulder deep into his opponent’s stomach. Instead of making his normal attacks the Pit Fighter may make a single attack resolved as following: +1 Str, +1 to Hit, no weapon bonuses or abilities. Critical hit on a 5+.",
     "warband": "Pit Fighter",
     "specialListName": "Pit Fighter Skills",
     "appliesTo": [
@@ -1018,7 +1018,7 @@
   {
     "name": "Grizzled Veteran",
     "category": "Special",
-    "description": "The Pit Fighter is used to fighting fearsome monsters and being cornered in the pit when there\u2019s no escape. He has been close to death so many times that he has made his peace and the thought of death no longer bothers him. The Pit Fighter is immune to all psychology.",
+    "description": "The Pit Fighter is used to fighting fearsome monsters and being cornered in the pit when there’s no escape. He has been close to death so many times that he has made his peace and the thought of death no longer bothers him. The Pit Fighter is immune to all psychology.",
     "warband": "Pit Fighter",
     "specialListName": "Pit Fighter Skills",
     "appliesTo": [
@@ -1030,7 +1030,7 @@
   {
     "name": "Ferocious Charge",
     "category": "Special",
-    "description": "The Slayer may double his attacks on the turn that he charges. He will suffer a -1 to hit penalty on that turn.",
+    "description": "The Slayer may double his attacks on the turn in which he charges. He will suffer a –1 to hit penalty on that turn.",
     "warband": "Pit Fighter",
     "specialListName": "Troll Slayer Special Skills List",
     "appliesTo": [
@@ -1041,7 +1041,7 @@
   {
     "name": "Monster Slayer",
     "category": "Special",
-    "description": "The Slayer always wounds any opponent on a roll of 4+, regardless of Toughness, unless his own Strength (after all modifiers due to weapon bonuses, etc) would mean that a lower roll than this is needed.",
+    "description": "The Slayer always wounds any opponent on a roll of 4+, regardless of Toughness, unless his own strength (with weapon modifiers) would mean that a lower roll than this is needed.",
     "warband": "Pit Fighter",
     "specialListName": "Troll Slayer Special Skills List",
     "appliesTo": [
@@ -1052,7 +1052,7 @@
   {
     "name": "Berserker",
     "category": "Special",
-    "description": "The Slayer may add +1 to his close combat to hit rolls during the turn which he charges. (may not be used with Ferocious Charge).",
+    "description": "The Slayer may add +1 to his to hit rolls during the turn in which he charges.",
     "warband": "Pit Fighter",
     "specialListName": "Troll Slayer Special Skills List",
     "appliesTo": [
@@ -1063,7 +1063,7 @@
   {
     "name": "Infiltration",
     "category": "Special",
-    "description": "This skill is exactly the same as the Skaven skill of the same name.",
+    "description": "A warrior with this skill is always placed on the battlefield after the opposing warband and can be placed anywhere on the table as long as it is out of sight of the opposing warband and more than 12\" away from any enemy model. If both players have models which infiltrate, roll a D6 for each, and the lowest roll sets up first.",
     "warband": "Shadow Warrior",
     "specialListName": "Shadow Warrior Special Skills",
     "appliesTo": null,
@@ -1072,7 +1072,7 @@
   {
     "name": "See in Shadows",
     "category": "Special",
-    "description": "The warrior\u2019s senses have become especially keen from years spent walking the shadows. As long as he has movement to reach them, the warrior may always roll to charge opponents he cannot see (instead of the normal 4\").",
+    "description": "The warrior’s senses have become especially keen from years spent walking the shadows. As long as he has movement to reach them, the warrior may always roll to charge opponents he cannot see (instead of the normal 4\").",
     "warband": "Shadow Warrior",
     "specialListName": "Shadow Warrior Special Skills",
     "appliesTo": null,
@@ -1090,7 +1090,7 @@
   {
     "name": "Sniper",
     "category": "Special",
-    "description": "Long years of guerrilla warfare against the Dark Elves have taught Shadow Warriors how to strike from the shadows without being seen. If Hidden, a warrior with this skill may shoot or cast spells and still remain Hidden.",
+    "description": "Long years of guerrilla warfare against the Dark Elves have taught Shadow Warriors how to strike from the shadows without being seen. If Hidden, a warrior with this skill may shoot or cast spells and still remain Hidden. If his target is not immediately taken out of action by the Sniper they get to test against their Initiative in an attempt to spot him. A successful test means that the Sniper has been spotted and is no longer hidden.",
     "warband": "Shadow Warrior",
     "specialListName": "Shadow Warrior Special Skills",
     "appliesTo": null,
@@ -1117,7 +1117,7 @@
   {
     "name": "Virtue of Purity",
     "category": "Special",
-    "description": "The Knight\u2019s sole purpose is to serve the Lady of the Lake. His purity of heart and discipline endow him with the strength of spirit to resist enemy magic. Any spell cast against the knight will be dispelled on the D6 roll of a 4+. This is a natural dispel on account of the knights extreme piety.",
+    "description": "The Knight's sole purpose is to serve the Lady of the Lake. His purity of heart and discipline endow him with the strength of spirit to resist enemy magic. Any spell cast against the knight will be dispelled on the D6 roll of a 4+. This is a natural dispel on account of the knight's extreme piety.",
     "warband": "Bretonnian",
     "specialListName": "Bretonnian Special Skills",
     "appliesTo": null,
@@ -1144,7 +1144,7 @@
   {
     "name": "Virtue of Noble Disdain",
     "category": "Special",
-    "description": "The Knight has nothing but contempt for enemies who hide behind weapons of dishonour. The Knight is subject to Hatred of all enemies armed with shooting weapons. See the Leadership and Psychology section (p38).",
+    "description": "The Knight has nothing but contempt for enemies who hide behind weapons of dishonour. The Knight is subject to of all enemies armed with shooting weapons.",
     "warband": "Bretonnian",
     "specialListName": "Bretonnian Special Skills",
     "appliesTo": null,
