@@ -1,5 +1,6 @@
 const catalog = require("../../trading-post-catalog.json");
 const { tradingWarbandNames } = require("./warband-identity.service");
+const { canUseEquipment } = require("./equipment-access.service");
 
 // 2Warbands.pdf: Possessed, Undead and animal entries; damobrules.pdf: Trolls.
 const noWeaponsOrArmour = [
@@ -53,6 +54,7 @@ function canBuyItem(item, warbandName) {
 }
 
 function canEquipItem(item, context = {}) {
+  if (!item || !canUseEquipment(item, context)) return false;
   const { warbandName, typeName, role, skillNames = [], permittedNames = [], spellcaster = false } = context;
   if (!canBuyItem(item, warbandName) ||
       !passesTypeRestrictions(item, warbandName, typeName) ||
@@ -73,6 +75,7 @@ function canEquipItem(item, context = {}) {
     // Possessed can carry a shield or buckler with the Extra Arm mutation.
     if (!(normalize(typeName) === "the possessed" || normalize(typeName) === "possessed") ||
         item.category !== "shield") return false;
+    return context.mutationIds?.includes("extra-arm") === true;
   }
   if (includesName(slayerTypes, typeName) &&
       (item.category !== "weapon" || item.ranged !== false)) return false;

@@ -606,9 +606,9 @@
         { "name": "Sword", "category": "weapon", "unitCost": 10 },
         { "name": "Spear", "category": "weapon", "unitCost": 10 },
         { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
-        { "name": "Throwing axes", "category": "weapon", "unitCost": 15 },
+        { "name": "Javelins", "category": "weapon", "unitCost": 5 },
+        { "name": "Bow", "category": "weapon", "unitCost": 10 },
         { "name": "Helmet", "category": "armour", "unitCost": 10 },
-        { "name": "Light armour", "category": "armour", "unitCost": 20 },
         { "name": "Shield", "category": "shield", "unitCost": 5 }
       ]
     },
@@ -624,9 +624,9 @@
         { "name": "Sword", "category": "weapon", "unitCost": 10 },
         { "name": "Spear", "category": "weapon", "unitCost": 10 },
         { "name": "Double-handed weapon", "category": "weapon", "unitCost": 15 },
-        { "name": "Javelins", "category": "weapon", "unitCost": 5 },
-        { "name": "Bow", "category": "weapon", "unitCost": 10 },
+        { "name": "Throwing axes", "category": "weapon", "unitCost": 15 },
         { "name": "Helmet", "category": "armour", "unitCost": 10 },
+        { "name": "Light armour", "category": "armour", "unitCost": 20 },
         { "name": "Shield", "category": "shield", "unitCost": 5 }
       ]
     },
@@ -1103,11 +1103,12 @@
     { "warbandName": "Dwarf Treasure Hunters", "listKey": "dwarf-thunderer", "warriorTypeNames": ["Dwarf Thunderers", "Dwarf Engineer"], "sourceReference": "DwarfTreasurehunters.pdf — Thunderer Equipment List", "ruleText": "Dwarf Thunderers and Engineers use the Thunderer Equipment list." },
     { "warbandName": "Dwarf Treasure Hunters", "listKey": "dwarf-troll-slayer", "warriorTypeNames": ["Dwarf Troll Slayers"], "sourceReference": "DwarfTreasurehunters.pdf — Troll Slayer", "ruleText": "Troll Slayers may use weapons only; they may never use missiles or armour." },
     { "warbandName": "Kislevite", "listKey": "kislev-warrior", "roles": ["Hero", "Henchman"], "excludeWarriorTypes": ["Streltsi", "Trained Bear"], "sourceReference": "Kislevwarband.pdf — Kislevite Warrior Equipment List", "ruleText": "Use the Kislevite Warrior Equipment list." },
+    { "warbandName": "Kislevite", "listKey": "kislev-warrior", "warriorTypeNames": ["Esaul", "Youths"], "allowedCategories": ["weapon"], "sourceReference": "Kislevwarband.pdf — Esaul and Youths: Weapons and Armour", "ruleText": "Esaul and Youths may choose weapons from the Kislevite Warrior Equipment list." },
     { "warbandName": "Kislevite", "listKey": "kislev-streltsi", "warriorTypeNames": ["Streltsi"], "sourceReference": "Kislevwarband.pdf — Streltsi Equipment List", "ruleText": "Streltsi use the Streltsi Equipment list." },
     { "warbandName": "Dark Elves", "listKey": "dark-elf", "roles": ["Hero", "Henchman"], "excludeWarriorTypes": ["Shades (Dark Elves)", "Cold One Beasthounds"], "sourceReference": "Lustria3.pdf — Dark Elf Equipment List", "ruleText": "Use the Dark Elf Equipment list." },
     { "warbandName": "Dark Elves", "listKey": "dark-elf-shades", "warriorTypeNames": ["Shades (Dark Elves)"], "sourceReference": "Lustria3.pdf — Shades Equipment List", "ruleText": "Shades use the Shades Equipment list." },
     { "warbandName": "Norse", "listKey": "norse-hero", "roles": ["Hero"], "excludeWarriorTypes": ["Jarl", "Berserkers", "Wulfin"], "sourceReference": "Lustria4.pdf — Hero Equipment List", "ruleText": "Use the Hero Equipment list." },
-    { "warbandName": "Norse", "listKey": "norse-hero", "warriorTypeNames": ["Jarl"], "allowedCategories": ["weapon"], "sourceReference": "Lustria4.pdf — Jarl", "ruleText": "Jarls may use weapons from the Hero Equipment list but never wear armour." },
+    { "warbandName": "Norse", "listKey": "norse-hero", "warriorTypeNames": ["Jarl"], "sourceReference": "Lustria4.pdf — Jarl", "ruleText": "Jarls may use weapons and armour from the Hero Equipment list." },
     { "warbandName": "Norse", "listKey": "norse-hero", "warriorTypeNames": ["Berserkers"], "allowedCategories": ["weapon"], "sourceReference": "Lustria4.pdf — Berserker rule", "ruleText": "Berserkers may buy weapons but never wear armour." },
     { "warbandName": "Norse", "listKey": "norse-hunter", "warriorTypeNames": ["Hunters (Norse)"], "sourceReference": "Lustria4.pdf — Hunters Equipment List", "ruleText": "Hunters use the Hunters Equipment list." },
     { "warbandName": "Norse", "listKey": "norse-henchman", "warriorTypeNames": ["Marauders"], "sourceReference": "Lustria4.pdf — Henchmen Equipment List", "ruleText": "Marauders use the Henchmen Equipment list." },
@@ -1137,7 +1138,8 @@
     { "warbandName": "Pit Fighter", "listKey": "pit-ogre-slayer", "warriorTypeNames": ["Ogre Pit Fighter", "Dwarf Troll Slayer (Pit Fighter)"], "sourceReference": "PitFighter.pdf — Ogre & Slayer Equipment List", "ruleText": "Use the Ogre & Slayer Equipment list." },
     { "warbandName": "Pit Fighter", "listKey": "pit-pursuer", "warriorTypeNames": ["Pursuers"], "sourceReference": "PitFighter.pdf — Pursuer Equipment List", "ruleText": "Pursuers use the Pursuer Equipment list." },
     { "warbandName": "Shadow Warrior", "listKey": "shadow-warrior", "roles": ["Hero", "Henchman"], "sourceReference": "ShadowWarriors.pdf — Shadow Warrior Equipment List", "ruleText": "Use the Shadow Warrior Equipment list." },
-    { "warbandName": "Cult of the Possessed", "listKey": "possessed", "roles": ["Hero", "Henchman"], "excludeWarriorTypes": ["Darksouls", "Beastmen"], "sourceReference": "2Warbands.pdf — Weapons and Armour", "ruleText": "Use the Possessed Equipment list." },
+    { "warbandName": "Cult of the Possessed", "listKey": "possessed", "roles": ["Hero", "Henchman"], "excludeWarriorTypes": ["Darksouls", "Beastmen", "The Possessed"], "sourceReference": "2Warbands.pdf — Weapons and Armour", "ruleText": "Use the Possessed Equipment list." },
+    { "warbandName": "Cult of the Possessed", "listKey": "possessed", "warriorTypeNames": ["The Possessed"], "allowedCategories": ["shield"], "sourceReference": "2Warbands.pdf — The Possessed and Extra Arm mutation", "ruleText": "Possessed cannot use weapons or armour. A shield is available only with the Extra Arm mutation." },
     { "warbandName": "Cult of the Possessed", "listKey": "darksouls", "warriorTypeNames": ["Darksouls", "Beastmen"], "sourceReference": "2Warbands.pdf — Darksouls Equipment List", "ruleText": "Darksouls and Beastmen use this list." },
     { "warbandName": "Witch Hunters", "listKey": "witch-hunter", "roles": ["Hero", "Henchman"], "excludeWarriorTypes": ["Zealots", "Flagellants", "Warhounds"], "sourceReference": "2Warbands.pdf — Weapons and Armour", "ruleText": "Use the Witch Hunter Equipment list." },
     { "warbandName": "Witch Hunters", "listKey": "zealot", "warriorTypeNames": ["Zealots"], "sourceReference": "2Warbands.pdf — Zealot Equipment List", "ruleText": "Zealots use the Zealot Equipment list." },
@@ -1145,7 +1147,9 @@
     { "warbandName": "Sisters of Sigmar", "listKey": "sisters", "roles": ["Hero", "Henchman"], "excludeWarriorTypes": ["Augur"], "sourceReference": "2Warbands.pdf — Weapons and Armour", "ruleText": "Use the Sisters of Sigmar Equipment list." },
     { "warbandName": "Sisters of Sigmar", "listKey": "sisters", "warriorTypeNames": ["Augur"], "allowedCategories": ["weapon"], "sourceReference": "2Warbands.pdf — Augur", "ruleText": "Augurs may choose weapons only and never wear armour." },
     { "warbandName": "Undead", "listKey": "undead", "roles": ["Hero", "Henchman"], "excludeWarriorTypes": ["Ghouls", "Zombies", "Dire Wolves"], "sourceReference": "2Warbands.pdf — Weapons and Armour", "ruleText": "Use the Undead Equipment list." },
-    { "warbandName": "Skaven", "listKey": "skaven-hero", "roles": ["Hero"], "sourceReference": "2Warbands.pdf — Heroes Equipment List", "ruleText": "Heroes use the Skaven Heroes Equipment list." },
+    { "warbandName": "Orc", "listKey": "orc", "warriorTypeNames": ["Orc Shaman"], "allowedCategories": ["weapon"], "sourceReference": "damobrules.pdf — Orc Shaman: Weapons/Armour", "ruleText": "Orc Shamans may choose weapons only and may never wear armour." },
+    { "warbandName": "Skaven", "listKey": "skaven-hero", "roles": ["Hero"], "excludeWarriorTypes": ["Night Runners"], "sourceReference": "2Warbands.pdf — Heroes Equipment List", "ruleText": "Heroes other than Night Runners use the Skaven Heroes Equipment list." },
+    { "warbandName": "Skaven", "listKey": "skaven-henchman", "warriorTypeNames": ["Night Runners"], "sourceReference": "2Warbands.pdf — Night Runners: Weapons/Armour", "ruleText": "Night Runners use the Skaven Henchmen Equipment list, despite being Heroes." },
     { "warbandName": "Skaven", "listKey": "skaven-henchman", "roles": ["Henchman"], "excludeWarriorTypes": ["Giant Rats", "Rat Ogre"], "sourceReference": "2Warbands.pdf — Henchmen Equipment List", "ruleText": "Henchmen use the Skaven Henchmen Equipment list." }
   ]
 }

@@ -16,6 +16,7 @@ const { createAdvancePurchaseRepository } = require("./advance-purchase.reposito
 const { selectLeader, getRosterLeader, leaderAbility } = require("../services/warband-leader.service");
 const { createTradingRepository } = require("./trading.repository");
 const { canRecruitEquipment, TradingError } = require("../services/trading-rules.service");
+const { canUseEquipment } = require("../services/equipment-access.service");
 
 // Builds a compact `stats` object for an equipment row (from a query joined against
 // weapon_profiles / armour_profiles / weapon_material_modifiers / weapon_poisons), or
@@ -129,6 +130,8 @@ function createRosterRepository(db) {
         this.on("option.warband_id", "permission.warband_id").andOn("option.list_key", "permission.list_key");
       })
       .join("warrior_types as warrior_type", "warrior_type.id", "permission.warrior_type_id")
+      .join("warbands as warband", "warband.id", "permission.warband_id")
+      .leftJoin("weapon_profiles as weapon", "weapon.id", "option.weapon_profile_id")
       .where({
         "permission.warband_id": warbandId,
         "permission.warrior_type_id": warrior.warrior_type_id,
@@ -137,8 +140,12 @@ function createRosterRepository(db) {
       .whereRaw("permission.allowed_categories @> jsonb_build_array(option.category)")
       .where((query) => query.whereNull("option.allowed_warrior_type_names")
         .orWhereRaw("option.allowed_warrior_type_names @> jsonb_build_array(warrior_type.name::text)"))
-      .select("option.id as equipment_option_id");
-    if (!freeOptions.length) return;
+      .select("option.id as equipment_option_id", "option.name", "option.category",
+        "weapon.weapon_type as weaponType", "warband.name as warbandName", "warrior_type.name as typeName");
+    const permittedFreeOptions = freeOptions.filter((option) => canUseEquipment(option, {
+      warbandName: option.warbandName, typeName: option.typeName, stats: warrior.stats,
+    }));
+    if (!permittedFreeOptions.length) return;
 
     const modelCount = warrior.role === "Henchman" ? warrior.group_size || 1 : 1;
     const existing = await transaction("warrior_starting_gear_grants")
@@ -146,7 +153,7 @@ function createRosterRepository(db) {
       .select("equipment_option_id", "model_index");
     const existingItems = new Set(existing.map((item) => `${item.equipment_option_id}/${item.model_index}`));
     const startingItems = [];
-    for (const option of freeOptions) {
+    for (const option of permittedFreeOptions) {
       for (let modelIndex = 0; modelIndex < modelCount; modelIndex += 1) {
         const key = `${option.equipment_option_id}/${modelIndex}`;
         if (existingItems.has(key)) continue;
@@ -385,10 +392,12 @@ function createRosterRepository(db) {
       .leftJoin("equipment_options as option", "option.id", "inventory.equipment_option_id")
       .leftJoin("shop_items as shop", "shop.id", "inventory.shop_item_id")
       .where("inventory.warrior_id", warriorId)
+      .where("inventory.quantity", ">", 0)
       .where((q) => q.where({ "option.warband_id": warrior.warbandId, "option.list_key": "magic-items", "option.name": "Tome of Magic" })
         .orWhere("inventory.shop_item_id", "tome-of-magic"))
       .select(
         "inventory.id",
+        "inventory.quantity",
         "inventory.unit_cost_paid as unitCostPaid",
         "inventory.created_at as acquiredAt",
       )
@@ -523,7 +532,7 @@ function createRosterRepository(db) {
       isWizard,
       hasArcaneLore: Boolean(hasArcaneLore),
       hasAcademicSkillAccess,
-      canLearnLesserMagic: Boolean(hasAcademicSkillAccess && hasArcaneLore && tomeInventory.length && tomeAllowed && !warrior.lesserMagicUnlocked),
+      canLearnLesserMagic: Boolean(warrior.role === "Hero" && hasAcademicSkillAccess && hasArcaneLore && tomeInventory.length && tomeAllowed && !warrior.lesserMagicUnlocked),
       lesserMagicUnlocked: Boolean(warrior.lesserMagicUnlocked),
       castingRollBonus: isWizard && hasSorcery ? 1 : 0,
       tomeAllowed,
@@ -676,6 +685,7 @@ function createRosterRepository(db) {
           groupSize: "warrior.group_size",
           warriorTypeId: "warrior.warrior_type_id",
           warriorTypeName: "warrior_type.name",
+          stats: "warrior.stats",
           warbandId: "roster.warband_id",
           campaignId: "roster.campaign_id",
           rosterId: "roster.id",
@@ -802,7 +812,10 @@ function createRosterRepository(db) {
         return { ...clean, stats };
       };
       const trading = await createTradingRepository(db).getTrading(warrior.rosterId);
-      const availableOptions = canRecruitEquipment(warrior) ? availableOptionRows.map(stripStatColumns) : [];
+      const availableOptions = canRecruitEquipment(warrior) ? availableOptionRows.filter((option) => canUseEquipment(option, {
+        warbandName: warband?.name, typeName: warrior.warriorTypeName, stats: warrior.stats,
+        mutationIds: mutationRows.map((row) => row.mutation_id),
+      })).map(stripStatColumns) : [];
       const inventory = inventoryRows.map((row) => {
         const entry = trading.memberInventory.find((item) => item.id === row.id);
         return { ...stripStatColumns(row),
@@ -849,6 +862,7 @@ function createRosterRepository(db) {
       return db.transaction(async (transaction) => {
         const warrior = await transaction("warriors as warrior")
           .join("rosters as roster", "roster.id", "warrior.roster_id")
+          .join("warbands as warband", "warband.id", "roster.warband_id")
           .leftJoin("warrior_types as warrior_type", "warrior_type.id", "warrior.warrior_type_id")
           .where("warrior.id", warriorId)
           .forUpdate("warrior", "roster")
@@ -858,6 +872,8 @@ function createRosterRepository(db) {
             groupSize: "warrior.group_size",
             warriorTypeId: "warrior.warrior_type_id",
             warriorTypeName: "warrior_type.name",
+            warbandName: "warband.name",
+            stats: "warrior.stats",
             rosterId: "roster.id",
             warbandId: "roster.warband_id",
             treasury: "roster.treasury",
@@ -870,6 +886,7 @@ function createRosterRepository(db) {
         if (!warrior.warriorTypeId) return { unavailableOption: true };
 
         const option = await transaction("equipment_options as option")
+          .leftJoin("weapon_profiles as weapon", "weapon.id", "option.weapon_profile_id")
           .join("warrior_equipment_lists as permission", function joinPermission() {
             this.on("permission.warband_id", "option.warband_id").andOn("permission.list_key", "option.list_key");
           })
@@ -880,11 +897,19 @@ function createRosterRepository(db) {
           .where((query) => query.whereNull("option.allowed_warrior_type_names")
             .orWhereRaw("option.allowed_warrior_type_names @> jsonb_build_array(?::text)", [warrior.warriorTypeName]))
           .first({
+            name: "option.name",
+            category: "option.category",
+            weaponType: "weapon.weapon_type",
             unitCost: "option.unit_cost",
             firstFree: "option.first_free",
             allowIndividualGroupGear: "permission.allow_individual_group_gear",
           });
         if (!option) return { unavailableOption: true };
+        const mutationIds = warrior.warbandName === "Cult of the Possessed" && warrior.warriorTypeName === "The Possessed"
+          ? await transaction("warrior_mutations").where({ warrior_id: warriorId }).pluck("mutation_id") : [];
+        if (!canUseEquipment(option, {
+          warbandName: warrior.warbandName, typeName: warrior.warriorTypeName, stats: warrior.stats, mutationIds,
+        })) return { unavailableOption: true };
 
         const groupSize = warrior.groupSize || 1;
         if (warrior.role !== "Henchman" && modelIndex !== -1) return { invalidModelIndex: true };
@@ -1682,37 +1707,6 @@ function createRosterRepository(db) {
       });
     },
 
-    async addWarriorMagicTome(warriorId, unitCostPaid = null) {
-      return db.transaction(async (transaction) => {
-        const warrior = await transaction("warriors as warrior")
-          .join("rosters as roster", "roster.id", "warrior.roster_id")
-          .leftJoin("warbands as warband", "warband.id", "roster.warband_id")
-          .where("warrior.id", warriorId)
-          .forUpdate("warrior", "roster")
-          .first({ id: "warrior.id", warbandId: "roster.warband_id", warbandName: "warband.name",
-            campaignId: "roster.campaign_id", battlesFought: "roster.battles_fought" });
-        if (!warrior) return { missingWarrior: true };
-        if (warrior.campaignId || Number(warrior.battlesFought) >= 1) return { shopOnly: true };
-        if (tomeIneligibleWarbands.has(warrior.warbandName)) return { tomeNotAllowed: true };
-        const skillContext = await getSkillEligibilityContext(transaction, warriorId);
-        if (!skillContext?.categoryRows.some((row) => row.category === "Academic")) return { academicSkillRequired: true };
-        const option = await transaction("equipment_options")
-          .where({ warband_id: warrior.warbandId, list_key: "magic-items", name: "Tome of Magic" })
-          .first("id");
-        if (!option) throw new Error(`Tome of Magic inventory option is missing for warband ${warrior.warbandId}.`);
-        const [tome] = await transaction("warrior_inventory")
-          .insert({
-            warrior_id: warriorId,
-            equipment_option_id: option.id,
-            model_index: -1,
-            quantity: 1,
-            unit_cost_paid: unitCostPaid ?? 0,
-          })
-          .returning(["id", "unit_cost_paid as unitCostPaid", "created_at as acquiredAt"]);
-        return { tome };
-      });
-    },
-
     async consumeWarriorMagicTome(warriorId) {
       return db.transaction(async (transaction) => {
         const warrior = await transaction("warriors")
@@ -1722,6 +1716,7 @@ function createRosterRepository(db) {
         if (!warrior) return { missingWarrior: true };
         const context = await getWarriorSpellContext(transaction, warriorId);
         if (!context) return { missingWarrior: true };
+        if (context.warrior.role !== "Hero") return { heroRequired: true };
         if (!context.hasAcademicSkillAccess) return { academicSkillRequired: true };
         if (!context.hasArcaneLore) return { arcaneLoreRequired: true };
         if (!context.tomeAllowed) return { tomeNotAllowed: true };
@@ -1729,7 +1724,8 @@ function createRosterRepository(db) {
         const tome = await transaction("warrior_inventory as inventory")
           .leftJoin("equipment_options as option", "option.id", "inventory.equipment_option_id")
           .where("inventory.warrior_id", warriorId)
-          .where((q) => q.where({ "option.list_key": "magic-items", "option.name": "Tome of Magic" })
+          .where("inventory.quantity", ">", 0)
+          .where((q) => q.where({ "option.warband_id": context.warrior.warbandId, "option.list_key": "magic-items", "option.name": "Tome of Magic" })
             .orWhere("inventory.shop_item_id", "tome-of-magic"))
           .forUpdate("inventory")
           .orderBy("inventory.created_at")

@@ -299,23 +299,13 @@ function createMemberController(repository, rosterService) {
     },
 
     async addMagicTome(request, response) {
-      const unitCostPaid = request.body?.unitCostPaid;
-      if (unitCostPaid !== undefined && unitCostPaid !== null
-        && (!Number.isSafeInteger(unitCostPaid) || unitCostPaid < 0 || unitCostPaid > 1000000)) {
-        return response.status(400).json({ error: "unitCostPaid must be a non-negative whole number no greater than 1000000." });
-      }
-      const result = await repository.addWarriorMagicTome(request.params.memberId, unitCostPaid ?? null);
-      if (result.shopOnly) return response.status(409).json({ error: "In campaigns or after the first Freebuild battle, acquire a Tome of Magic through the Mordheim shop and transfer it from the stash." });
-      if (result.missingWarrior) return response.status(404).json({ error: "Warrior not found." });
-      if (result.tomeNotAllowed) return response.status(409).json({ error: "The Tome of Magic is not available to this warband." });
-      if (result.academicSkillRequired) return response.status(409).json({ error: "Academic skill access is required to record a Tome of Magic for spell learning." });
-      const spells = await repository.getWarriorSpells(request.params.memberId);
-      response.status(201).json(spells);
+      response.status(409).json({ error: "Manual Tome recording is no longer available. Acquire a Tome of Magic through the Trading Post and transfer it from Warband stash to the Hero's inventory." });
     },
 
     async consumeMagicTome(request, response) {
       const result = await repository.consumeWarriorMagicTome(request.params.memberId);
       if (result.missingWarrior) return response.status(404).json({ error: "Warrior not found." });
+      if (result.heroRequired) return response.status(409).json({ error: "Only a Hero can use a Tome of Magic to learn Lesser Magic." });
       if (result.academicSkillRequired) return response.status(409).json({ error: "Academic skill access is required to learn Lesser Magic." });
       if (result.arcaneLoreRequired) return response.status(409).json({ error: "Learn Arcane Lore before using a Tome of Magic to learn Lesser Magic." });
       if (result.tomeNotAllowed) return response.status(409).json({ error: "The Tome of Magic is not available to this warband." });

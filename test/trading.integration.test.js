@@ -529,6 +529,107 @@ describe("warband stash and trading", () => {
     assert.equal(assigned.status, 200, JSON.stringify(assigned.body));
     assert.ok(assigned.body.memberInventory.some((row) => row.name === "Tome of Magic"));
   });
+  test("Arcane Lore learning requires a carried Trading Post Tome and consumes it atomically", async () => {
+    const { roster, member } = await fixture(false, undefined, "Mercenaries", "Mercenary Captain");
+    const learnPath = `/members/${member.id}/spells/learn-lesser-magic`;
+    const skill = await db("skills").where({ name: "Arcane Lore" }).first();
+    assert.ok(skill);
+    await db("rosters").where({ id: roster.id }).update({ treasury: 1500 });
+    const bought = await buy(roster, "tome-of-magic", 2, [1]);
+    assert.equal(bought.status, 201, JSON.stringify(bought.body));
+    const stash = bought.body.stash.find((row) => row.shopItemId === "tome-of-magic");
+    assert.ok(stash);
+    const noLore = await call("POST", learnPath);
+    assert.equal(noLore.status, 409);
+    assert.match(noLore.body.error, /Arcane Lore/);
+    await db("warrior_skills").insert({ warrior_id: member.id, skill_id: skill.id });
+    assert.equal((await call("GET", `/members/${member.id}/spells`)).body.canLearnLesserMagic, false);
+    const inStash = await call("POST", learnPath);
+    assert.equal(inStash.status, 409);
+    assert.match(inStash.body.error, /inventory is required/);
+    assert.equal((await db("warband_stash").where({ id: stash.id }).first()).quantity, 2);
+    const assigned = await call("POST", path(roster, "/transfer"), {
+      direction: "to_member", inventoryId: stash.id, memberId: member.id, quantity: 2, modelIndex: 0,
+    });
+    assert.equal(assigned.status, 200, JSON.stringify(assigned.body));
+    const carried = assigned.body.memberInventory.find((row) => row.shopItemId === "tome-of-magic");
+    assert.ok(carried);
+    await db("warrior_skills").where({ warrior_id: member.id, skill_id: skill.id }).delete();
+    const carriedWithoutLore = await call("POST", learnPath);
+    assert.equal(carriedWithoutLore.status, 409);
+    assert.match(carriedWithoutLore.body.error, /Arcane Lore/);
+    assert.equal((await db("warrior_inventory").where({ id: carried.id }).first()).quantity, 2);
+    await db("warrior_skills").insert({ warrior_id: member.id, skill_id: skill.id });
+    const ready = (await call("GET", `/members/${member.id}/spells`)).body;
+    assert.equal(ready.canLearnLesserMagic, true);
+    assert.equal(ready.tomeInventory[0].quantity, 2);
+    const treasury = (await db("rosters").where({ id: roster.id }).first()).treasury;
+    const results = await Promise.all([call("POST", learnPath), call("POST", learnPath)]);
+    assert.deepEqual(results.map((result) => result.status).sort(), [200, 409]);
+    const learned = results.find((result) => result.status === 200).body;
+    assert.equal(learned.lesserMagicUnlocked, true);
+    assert.equal(learned.canLearnLesserMagic, false);
+    assert.ok(learned.availableDisciplines.some((row) => row.name === "Lesser Magic"));
+    assert.equal(learned.tomeInventory[0].quantity, 1);
+    assert.equal((await db("warrior_inventory").where({ id: carried.id }).first()).quantity, 1);
+    assert.equal((await db("rosters").where({ id: roster.id }).first()).treasury, treasury);
+    assert.match(results.find((result) => result.status === 409).body.error, /already been learned/);
+  });
+  test("a Tome assigned to another Hero does not unlock learning and a single carried Tome is deleted", async () => {
+    const { member } = await fixture(false, undefined, "Mercenaries", "Mercenary Captain");
+    const { member: other } = await fixture(false, undefined, "Mercenaries", "Mercenary Captain");
+    const lore = await db("skills").where({ name: "Arcane Lore" }).first();
+    await db("warrior_skills").insert([member, other].map((hero) => ({ warrior_id: hero.id, skill_id: lore.id })));
+    const [tome] = await db("warrior_inventory").insert({
+      warrior_id: other.id, shop_item_id: "tome-of-magic", model_index: 0, quantity: 1, unit_cost_paid: 225,
+    }).returning("*");
+    const missing = await call("POST", `/members/${member.id}/spells/learn-lesser-magic`);
+    assert.equal(missing.status, 409);
+    assert.match(missing.body.error, /inventory is required/);
+    assert.equal((await call("POST", `/members/${other.id}/spells/learn-lesser-magic`)).status, 200);
+    assert.equal(await db("warrior_inventory").where({ id: tome.id }).first(), undefined);
+    assert.deepEqual((await call("GET", `/members/${other.id}/equipment`)).body.inventory.filter((row) => row.shopItemId === "tome-of-magic"), []);
+  });
+  test("manual Tome recording is rejected even before the first Freebuild battle", async () => {
+    const { roster, member } = await fixture(false, undefined, "Mercenaries", "Mercenary Captain");
+    await db("rosters").where({ id: roster.id }).update({ battles_fought: 0 });
+    const before = await db("warrior_inventory").where({ warrior_id: member.id });
+    const recorded = await call("POST", `/members/${member.id}/spells/tomes`, { unitCostPaid: 0 });
+    assert.equal(recorded.status, 409);
+    assert.match(recorded.body.error, /Trading Post/);
+    assert.deepEqual(await db("warrior_inventory").where({ warrior_id: member.id }), before);
+  });
+  test("existing inventory Tomes remain consumable and non-Heroes cannot use them", async () => {
+    const { roster, member } = await fixture(false, undefined, "Mercenaries", "Mercenary Captain");
+    const lore = await db("skills").where({ name: "Arcane Lore" }).first();
+    await db("warrior_skills").insert({ warrior_id: member.id, skill_id: lore.id });
+    const legacy = await db("equipment_options").where({
+      warband_id: warband.id, list_key: "magic-items", name: "Tome of Magic",
+    }).first();
+    assert.ok(legacy);
+    const [tome] = await db("warrior_inventory").insert({
+      warrior_id: member.id, equipment_option_id: legacy.id, model_index: -1, quantity: 1, unit_cost_paid: 225,
+    }).returning("*");
+    assert.equal((await call("GET", `/members/${member.id}/spells`)).body.canLearnLesserMagic, true);
+    const learned = await call("POST", `/members/${member.id}/spells/learn-lesser-magic`);
+    assert.equal(learned.status, 200, JSON.stringify(learned.body));
+    assert.equal(await db("warrior_inventory").where({ id: tome.id }).first(), undefined);
+    const hired = await call("POST", `/rosters/${roster.id}/members`, {
+      role: "Henchman", warriorTypeId: types.find((row) => row.name === "Warriors (All Other)").id,
+      name: "Not a Hero", groupSize: 1,
+    });
+    assert.equal(hired.status, 201);
+    const henchman = hired.body;
+    await db("warrior_skills").insert({ warrior_id: henchman.id, skill_id: lore.id });
+    const [forbidden] = await db("warrior_inventory").insert({
+      warrior_id: henchman.id, shop_item_id: "tome-of-magic", model_index: 0, quantity: 1, unit_cost_paid: 225,
+    }).returning("*");
+    assert.equal((await call("GET", `/members/${henchman.id}/spells`)).body.canLearnLesserMagic, false);
+    const rejected = await call("POST", `/members/${henchman.id}/spells/learn-lesser-magic`);
+    assert.equal(rejected.status, 409);
+    assert.match(rejected.body.error, /Only a Hero/);
+    assert.deepEqual(await db("warrior_inventory").where({ id: forbidden.id }).first(), forbidden);
+  });
   test("voluntary Henchman resizing returns shop gear to stash without a purchase refund", async () => {
     const { roster } = await fixture();
     const hired = await call("POST", `/rosters/${roster.id}/members`, {

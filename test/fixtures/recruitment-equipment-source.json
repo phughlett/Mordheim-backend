@@ -1,0 +1,2723 @@
+{
+  "scope": "All available or conditional Hero/Henchman warband associations, including legacy Mercenaries.",
+  "sources": "Supplied warband JSON, local rule PDFs and existing source-backed supplements; identifiers only, not copied rule text.",
+  "rows": [
+    {
+      "warband": "Amazons",
+      "type": "Amazon Warriors",
+      "role": "Henchman",
+      "source": "1b/amazons.json",
+      "sourceFighter": "Amazon Warrior",
+      "lists": [
+        "amazon-henchwoman"
+      ]
+    },
+    {
+      "warband": "Amazons",
+      "type": "Champions (Mercenaries & Amazons)",
+      "role": "Hero",
+      "source": "1b/amazons.json",
+      "sourceFighter": "Champion",
+      "lists": [
+        "amazon-heroine"
+      ]
+    },
+    {
+      "warband": "Amazons",
+      "type": "Priestess",
+      "role": "Hero",
+      "source": "1b/amazons.json",
+      "sourceFighter": "Priestess",
+      "lists": [
+        "amazon-heroine"
+      ]
+    },
+    {
+      "warband": "Amazons",
+      "type": "Scouts",
+      "role": "Henchman",
+      "source": "1b/amazons.json",
+      "sourceFighter": "Scout",
+      "lists": [
+        "amazon-scout"
+      ]
+    },
+    {
+      "warband": "Amazons",
+      "type": "Totem Warriors",
+      "role": "Hero",
+      "source": "1b/amazons.json",
+      "sourceFighter": "Totem Warrior",
+      "lists": [
+        "amazon-heroine"
+      ]
+    },
+    {
+      "warband": "Amazons (Lustria)",
+      "type": "Amazon Warriors",
+      "role": "Henchman",
+      "source": "1b/amazons-lustria.json",
+      "sourceFighter": "Amazon Warrior",
+      "lists": [
+        "lustria-henchwomen"
+      ]
+    },
+    {
+      "warband": "Amazons (Lustria)",
+      "type": "Eagle Warriors",
+      "role": "Hero",
+      "source": "1b/amazons-lustria.json",
+      "sourceFighter": "Eagle Warrior",
+      "lists": [
+        "lustria-heroines",
+        "lustria-special"
+      ],
+      "interpretation": "Heroine miscellaneous source equipment supplement."
+    },
+    {
+      "warband": "Amazons (Lustria)",
+      "type": "Jaguar Warriors",
+      "role": "Henchman",
+      "source": "1b/amazons-lustria.json",
+      "sourceFighter": "Jaguar Warrior",
+      "lists": [
+        "lustria-jaguars"
+      ]
+    },
+    {
+      "warband": "Amazons (Lustria)",
+      "type": "Piranha Warriors",
+      "role": "Hero",
+      "source": "1b/amazons-lustria.json",
+      "sourceFighter": "Piranha Warrior",
+      "lists": [
+        "lustria-heroines",
+        "lustria-special"
+      ],
+      "interpretation": "Heroine miscellaneous source equipment supplement."
+    },
+    {
+      "warband": "Amazons (Lustria)",
+      "type": "Serpent Priestess",
+      "role": "Hero",
+      "source": "1b/amazons-lustria.json",
+      "sourceFighter": "Serpent Priestess",
+      "lists": [
+        "lustria-heroines"
+      ]
+    },
+    {
+      "warband": "Arabian Tomb Raiders",
+      "type": "Bedouin",
+      "role": "Henchman",
+      "source": "1b/arabian-tomb-raiders.json",
+      "sourceFighter": "Bedouin",
+      "lists": [
+        "warrior-equipment"
+      ]
+    },
+    {
+      "warband": "Arabian Tomb Raiders",
+      "type": "Champion",
+      "role": "Hero",
+      "source": "1b/arabian-tomb-raiders.json",
+      "sourceFighter": "Champion",
+      "lists": [
+        "warrior-equipment"
+      ]
+    },
+    {
+      "warband": "Arabian Tomb Raiders",
+      "type": "Mystic",
+      "role": "Hero",
+      "source": "1b/arabian-tomb-raiders.json",
+      "sourceFighter": "Mystic",
+      "lists": [
+        "warrior-equipment"
+      ]
+    },
+    {
+      "warband": "Arabian Tomb Raiders",
+      "type": "Sheikh",
+      "role": "Hero",
+      "source": "1b/arabian-tomb-raiders.json",
+      "sourceFighter": "Sheikh",
+      "lists": [
+        "warrior-equipment"
+      ]
+    },
+    {
+      "warband": "Arabian Tomb Raiders",
+      "type": "Slave",
+      "role": "Henchman",
+      "source": "1b/arabian-tomb-raiders.json",
+      "sourceFighter": "Slave",
+      "lists": [
+        "slave-equipment"
+      ]
+    },
+    {
+      "warband": "Arabian Tomb Raiders",
+      "type": "Warrior",
+      "role": "Henchman",
+      "source": "1b/arabian-tomb-raiders.json",
+      "sourceFighter": "Nomad Warrior",
+      "lists": [
+        "warrior-equipment"
+      ]
+    },
+    {
+      "warband": "Averlander Mercenaries",
+      "type": "Bergjaeger",
+      "role": "Hero",
+      "source": "1a/averlander.json",
+      "sourceFighter": "Bergjaeger",
+      "lists": [
+        "averlander-scout"
+      ]
+    },
+    {
+      "warband": "Averlander Mercenaries",
+      "type": "Captain (Averlander)",
+      "role": "Hero",
+      "source": "1a/averlander.json",
+      "sourceFighter": "Captain",
+      "lists": [
+        "averlander-mountainguard"
+      ]
+    },
+    {
+      "warband": "Averlander Mercenaries",
+      "type": "Halfling Scouts",
+      "role": "Henchman",
+      "source": "1a/averlander.json",
+      "sourceFighter": "Halfling Scouts",
+      "lists": [
+        "averlander-scout"
+      ]
+    },
+    {
+      "warband": "Averlander Mercenaries",
+      "type": "Marksmen (All Others)",
+      "role": "Henchman",
+      "source": "1a/averlander.json",
+      "sourceFighter": "Marksmen",
+      "lists": [
+        "averlander-marksman"
+      ]
+    },
+    {
+      "warband": "Averlander Mercenaries",
+      "type": "Mountainguard",
+      "role": "Henchman",
+      "source": "1a/averlander.json",
+      "sourceFighter": "Mountainguard",
+      "lists": [
+        "averlander-mountainguard"
+      ]
+    },
+    {
+      "warband": "Averlander Mercenaries",
+      "type": "Sergeant",
+      "role": "Hero",
+      "source": "1a/averlander.json",
+      "sourceFighter": "Sergeant",
+      "lists": [
+        "averlander-mountainguard"
+      ]
+    },
+    {
+      "warband": "Averlander Mercenaries",
+      "type": "Youngblood",
+      "role": "Hero",
+      "source": "1a/averlander.json",
+      "sourceFighter": "Youngblood",
+      "lists": [
+        "averlander-mountainguard"
+      ]
+    },
+    {
+      "warband": "Battle Monks of Cathay",
+      "type": "Dragon Monks",
+      "role": "Hero",
+      "source": "1c/battle-monks-of-cathay.json",
+      "sourceFighter": "Dragon Monk",
+      "lists": [
+        "battle-monk-monk"
+      ]
+    },
+    {
+      "warband": "Battle Monks of Cathay",
+      "type": "Emissary",
+      "role": "Hero",
+      "source": "1c/battle-monks-of-cathay.json",
+      "sourceFighter": "Emissary",
+      "lists": [
+        "battle-monk-emissary-misc",
+        "battle-monk-soldier"
+      ],
+      "interpretation": "Emissary-only miscellaneous source equipment supplement."
+    },
+    {
+      "warband": "Battle Monks of Cathay",
+      "type": "Officer",
+      "role": "Hero",
+      "source": "1c/battle-monks-of-cathay.json",
+      "sourceFighter": "Officer",
+      "lists": [
+        "battle-monk-soldier"
+      ]
+    },
+    {
+      "warband": "Battle Monks of Cathay",
+      "type": "Raging Peasants",
+      "role": "Henchman",
+      "source": "1c/battle-monks-of-cathay.json",
+      "sourceFighter": "Raging Peasant",
+      "lists": []
+    },
+    {
+      "warband": "Battle Monks of Cathay",
+      "type": "Soldiers",
+      "role": "Henchman",
+      "source": "1c/battle-monks-of-cathay.json",
+      "sourceFighter": "Soldier",
+      "lists": [
+        "battle-monk-soldier"
+      ]
+    },
+    {
+      "warband": "Battle Monks of Cathay",
+      "type": "Warrior Monks",
+      "role": "Henchman",
+      "source": "1c/battle-monks-of-cathay.json",
+      "sourceFighter": "Warrior Monk",
+      "lists": [
+        "battle-monk-monk"
+      ]
+    },
+    {
+      "warband": "Beastmen Raiders",
+      "type": "Beastmen Chieftain",
+      "role": "Hero",
+      "source": "1a/beastmen-raiders.json",
+      "sourceFighter": "Beastmen Chieftain",
+      "lists": [
+        "beastman"
+      ]
+    },
+    {
+      "warband": "Beastmen Raiders",
+      "type": "Beastmen Shaman",
+      "role": "Hero",
+      "source": "1a/beastmen-raiders.json",
+      "sourceFighter": "Beastmen Shaman",
+      "lists": [
+        "beastman"
+      ]
+    },
+    {
+      "warband": "Beastmen Raiders",
+      "type": "Bestigors",
+      "role": "Hero",
+      "source": "1a/beastmen-raiders.json",
+      "sourceFighter": "Bestigors",
+      "lists": [
+        "beastman"
+      ]
+    },
+    {
+      "warband": "Beastmen Raiders",
+      "type": "Centigors",
+      "role": "Hero",
+      "source": "1a/beastmen-raiders.json",
+      "sourceFighter": "Centigor",
+      "lists": [
+        "beastman"
+      ]
+    },
+    {
+      "warband": "Beastmen Raiders",
+      "type": "Gor",
+      "role": "Henchman",
+      "source": "1a/beastmen-raiders.json",
+      "sourceFighter": "Gor",
+      "lists": [
+        "beastman"
+      ]
+    },
+    {
+      "warband": "Beastmen Raiders",
+      "type": "Minotaur",
+      "role": "Henchman",
+      "source": "1a/beastmen-raiders.json",
+      "sourceFighter": "Minotaur",
+      "lists": [
+        "beastman"
+      ]
+    },
+    {
+      "warband": "Beastmen Raiders",
+      "type": "Ungor",
+      "role": "Henchman",
+      "source": "1a/beastmen-raiders.json",
+      "sourceFighter": "Ungor",
+      "lists": [
+        "ungor"
+      ]
+    },
+    {
+      "warband": "Beastmen Raiders",
+      "type": "Warhounds of Chaos",
+      "role": "Henchman",
+      "source": "1a/beastmen-raiders.json",
+      "sourceFighter": "Warhounds of Chaos",
+      "lists": []
+    },
+    {
+      "warband": "Black Orcs",
+      "type": "Black Orc Boss",
+      "role": "Hero",
+      "source": "1b/black-orcs.json",
+      "sourceFighter": "Black Orc Boss",
+      "lists": [
+        "black-orc"
+      ]
+    },
+    {
+      "warband": "Black Orcs",
+      "type": "Black Orcs",
+      "role": "Hero",
+      "source": "1b/black-orcs.json",
+      "sourceFighter": "Black Orc",
+      "lists": [
+        "black-orc"
+      ]
+    },
+    {
+      "warband": "Black Orcs",
+      "type": "Orc Boyz",
+      "role": "Henchman",
+      "source": "1b/black-orcs.json",
+      "sourceFighter": "Orc Boy",
+      "lists": [
+        "black-orc-henchmen"
+      ]
+    },
+    {
+      "warband": "Black Orcs",
+      "type": "Orc Nuttaz",
+      "role": "Henchman",
+      "source": "1b/black-orcs.json",
+      "sourceFighter": "Orc Nutta",
+      "lists": [
+        "black-orc-nuttaz"
+      ],
+      "interpretation": "Dedicated melee-only list implements Nuttaz restriction."
+    },
+    {
+      "warband": "Black Orcs",
+      "type": "Orc Shootaz",
+      "role": "Henchman",
+      "source": "1b/black-orcs.json",
+      "sourceFighter": "Orc Shoota",
+      "lists": [
+        "black-orc-henchmen"
+      ]
+    },
+    {
+      "warband": "Black Orcs",
+      "type": "Troll",
+      "role": "Henchman",
+      "source": "1b/black-orcs.json",
+      "sourceFighter": "Troll",
+      "lists": []
+    },
+    {
+      "warband": "Black Orcs",
+      "type": "Young’uns",
+      "role": "Hero",
+      "source": "1b/black-orcs.json",
+      "sourceFighter": "Young’un",
+      "lists": [
+        "black-orc-henchmen"
+      ]
+    },
+    {
+      "warband": "Bretonnian",
+      "type": "Bowmen",
+      "role": "Henchman",
+      "source": "1b/bretonnian.json",
+      "sourceFighter": "Bowman",
+      "lists": [
+        "bretonnian-bowman"
+      ]
+    },
+    {
+      "warband": "Bretonnian",
+      "type": "Knight Errant",
+      "role": "Hero",
+      "source": "1b/bretonnian.json",
+      "sourceFighter": "Knight Errant",
+      "lists": [
+        "bretonnian-knight"
+      ]
+    },
+    {
+      "warband": "Bretonnian",
+      "type": "Men-at-Arms",
+      "role": "Henchman",
+      "source": "1b/bretonnian.json",
+      "sourceFighter": "Man-at-Arms",
+      "lists": [
+        "bretonnian-men-at-arms"
+      ]
+    },
+    {
+      "warband": "Bretonnian",
+      "type": "Questing Knight",
+      "role": "Hero",
+      "source": "1b/bretonnian.json",
+      "sourceFighter": "Questing Knight",
+      "lists": [
+        "bretonnian-knight"
+      ]
+    },
+    {
+      "warband": "Bretonnian",
+      "type": "Squires",
+      "role": "Hero",
+      "source": "1b/bretonnian.json",
+      "sourceFighter": "Squire",
+      "lists": [
+        "bretonnian-squire"
+      ]
+    },
+    {
+      "warband": "Carnival of Chaos",
+      "type": "Brethren",
+      "role": "Henchman",
+      "source": "1a/carnival-of-chaos.json",
+      "sourceFighter": "Brethren",
+      "lists": [
+        "carnival"
+      ]
+    },
+    {
+      "warband": "Carnival of Chaos",
+      "type": "Brutes (Carnival of Chaos)",
+      "role": "Hero",
+      "source": "1a/carnival-of-chaos.json",
+      "sourceFighter": "Brute",
+      "lists": [
+        "carnival-brute"
+      ]
+    },
+    {
+      "warband": "Carnival of Chaos",
+      "type": "Carnival Master",
+      "role": "Hero",
+      "source": "1a/carnival-of-chaos.json",
+      "sourceFighter": "Carnival Master",
+      "lists": [
+        "carnival"
+      ]
+    },
+    {
+      "warband": "Carnival of Chaos",
+      "type": "Nurglings",
+      "role": "Henchman",
+      "source": "1a/carnival-of-chaos.json",
+      "sourceFighter": "Nurgling",
+      "lists": []
+    },
+    {
+      "warband": "Carnival of Chaos",
+      "type": "Plague Bearers",
+      "role": "Henchman",
+      "source": "1a/carnival-of-chaos.json",
+      "sourceFighter": "Plague Bearer",
+      "lists": []
+    },
+    {
+      "warband": "Carnival of Chaos",
+      "type": "Plague Cart (CoC)",
+      "role": "Henchman",
+      "source": "1a/carnival-of-chaos.json",
+      "sourceFighter": "Plague Cart",
+      "lists": []
+    },
+    {
+      "warband": "Carnival of Chaos",
+      "type": "Plague Cart Guardian (CoC)",
+      "role": "Henchman",
+      "source": "1a/carnival-of-chaos.json",
+      "sourceFighter": null,
+      "lists": [],
+      "interpretation": "Plague Cart component profile; not an independent equipment-bearing warrior."
+    },
+    {
+      "warband": "Carnival of Chaos",
+      "type": "Plague Cart Horse (CoC)",
+      "role": "Henchman",
+      "source": "1a/carnival-of-chaos.json",
+      "sourceFighter": null,
+      "lists": [],
+      "interpretation": "Plague Cart component profile; not an independent equipment-bearing warrior."
+    },
+    {
+      "warband": "Carnival of Chaos",
+      "type": "Plague Cart Wheel (CoC)",
+      "role": "Henchman",
+      "source": "1a/carnival-of-chaos.json",
+      "sourceFighter": null,
+      "lists": [],
+      "interpretation": "Plague Cart component profile; not an independent equipment-bearing warrior."
+    },
+    {
+      "warband": "Carnival of Chaos",
+      "type": "Tainted Ones",
+      "role": "Hero",
+      "source": "1a/carnival-of-chaos.json",
+      "sourceFighter": "Tainted One",
+      "lists": [
+        "carnival"
+      ]
+    },
+    {
+      "warband": "Cult of the Possessed",
+      "type": "Beastmen",
+      "role": "Henchman",
+      "source": "1a/cult-of-the-posessed.json",
+      "sourceFighter": "Beastmen",
+      "lists": [
+        "darksouls"
+      ]
+    },
+    {
+      "warband": "Cult of the Possessed",
+      "type": "Brethren",
+      "role": "Henchman",
+      "source": "1a/cult-of-the-posessed.json",
+      "sourceFighter": "Brethren",
+      "lists": [
+        "possessed"
+      ]
+    },
+    {
+      "warband": "Cult of the Possessed",
+      "type": "Darksouls",
+      "role": "Henchman",
+      "source": "1a/cult-of-the-posessed.json",
+      "sourceFighter": "Darksouls",
+      "lists": [
+        "darksouls"
+      ]
+    },
+    {
+      "warband": "Cult of the Possessed",
+      "type": "Magister",
+      "role": "Hero",
+      "source": "1a/cult-of-the-posessed.json",
+      "sourceFighter": "Magister",
+      "lists": [
+        "possessed"
+      ]
+    },
+    {
+      "warband": "Cult of the Possessed",
+      "type": "Mutants",
+      "role": "Hero",
+      "source": "1a/cult-of-the-posessed.json",
+      "sourceFighter": "Mutants",
+      "lists": [
+        "possessed"
+      ]
+    },
+    {
+      "warband": "Cult of the Possessed",
+      "type": "The Possessed",
+      "role": "Hero",
+      "source": "1a/cult-of-the-posessed.json",
+      "sourceFighter": "The Possessed",
+      "lists": [
+        "possessed"
+      ],
+      "interpretation": "No equipment; Extra Arm permits shields/bucklers."
+    },
+    {
+      "warband": "Dark Elves",
+      "type": "Beast Master (Dark Elves)",
+      "role": "Hero",
+      "source": "1b/dark-elves.json",
+      "sourceFighter": "Beastmaster",
+      "lists": [
+        "dark-elf"
+      ]
+    },
+    {
+      "warband": "Dark Elves",
+      "type": "Cold One Beasthounds",
+      "role": "Henchman",
+      "source": "1b/dark-elves.json",
+      "sourceFighter": "Cold One Beasthound",
+      "lists": []
+    },
+    {
+      "warband": "Dark Elves",
+      "type": "Corsairs (Dark Elves)",
+      "role": "Henchman",
+      "source": "1b/dark-elves.json",
+      "sourceFighter": "Corsair",
+      "lists": [
+        "dark-elf"
+      ]
+    },
+    {
+      "warband": "Dark Elves",
+      "type": "Dark Elf Sorceress (Dark Elves)",
+      "role": "Hero",
+      "source": "1b/dark-elves.json",
+      "sourceFighter": "Dark Elf Sorceress",
+      "lists": [
+        "dark-elf"
+      ]
+    },
+    {
+      "warband": "Dark Elves",
+      "type": "Fellblades",
+      "role": "Hero",
+      "source": "1b/dark-elves.json",
+      "sourceFighter": "Fellblade",
+      "lists": [
+        "dark-elf"
+      ]
+    },
+    {
+      "warband": "Dark Elves",
+      "type": "High Born",
+      "role": "Hero",
+      "source": "1b/dark-elves.json",
+      "sourceFighter": "High Born",
+      "lists": [
+        "dark-elf"
+      ]
+    },
+    {
+      "warband": "Dark Elves",
+      "type": "Shades (Dark Elves)",
+      "role": "Henchman",
+      "source": "1b/dark-elves.json",
+      "sourceFighter": "Shade",
+      "lists": [
+        "dark-elf-shades"
+      ]
+    },
+    {
+      "warband": "Dwarf Rangers",
+      "type": "Apprentice Runesmith",
+      "role": "Hero",
+      "source": "1b/dwarf-rangers.json",
+      "sourceFighter": "Apprentice Runesmith",
+      "lists": [
+        "ranger-warrior"
+      ]
+    },
+    {
+      "warband": "Dwarf Rangers",
+      "type": "Beardlings",
+      "role": "Henchman",
+      "source": "1b/dwarf-rangers.json",
+      "sourceFighter": "Beardling",
+      "lists": [
+        "ranger-warrior"
+      ]
+    },
+    {
+      "warband": "Dwarf Rangers",
+      "type": "Dwarf Clansmen",
+      "role": "Henchman",
+      "source": "1b/dwarf-rangers.json",
+      "sourceFighter": "Dwarf Clansmen",
+      "lists": [
+        "ranger-warrior"
+      ]
+    },
+    {
+      "warband": "Dwarf Rangers",
+      "type": "Dwarf Crossbowmen",
+      "role": "Henchman",
+      "source": "1b/dwarf-rangers.json",
+      "sourceFighter": "Dwarf Crossbowmen",
+      "lists": [
+        "ranger-crossbow"
+      ]
+    },
+    {
+      "warband": "Dwarf Rangers",
+      "type": "Dwarf Longbeards",
+      "role": "Henchman",
+      "source": "1b/dwarf-rangers.json",
+      "sourceFighter": "Dwarf Longbeard",
+      "lists": [
+        "ranger-warrior"
+      ]
+    },
+    {
+      "warband": "Dwarf Rangers",
+      "type": "Dwarf Troll Slayers",
+      "role": "Hero",
+      "source": "1b/dwarf-rangers.json",
+      "sourceFighter": "Dwarf Troll Slayers",
+      "lists": [
+        "ranger-slayer"
+      ],
+      "interpretation": "Dedicated melee-only list implements Slayer restriction."
+    },
+    {
+      "warband": "Dwarf Rangers",
+      "type": "Runesmith",
+      "role": "Hero",
+      "source": "1b/dwarf-rangers.json",
+      "sourceFighter": "Runesmith",
+      "lists": [
+        "ranger-warrior"
+      ]
+    },
+    {
+      "warband": "Dwarf Treasure Hunters",
+      "type": "Beardlings",
+      "role": "Henchman",
+      "source": "1a/dwarf-treasure-hunters.json",
+      "sourceFighter": "Beardling",
+      "lists": [
+        "dwarf-warrior"
+      ]
+    },
+    {
+      "warband": "Dwarf Treasure Hunters",
+      "type": "Dwarf Clansmen",
+      "role": "Henchman",
+      "source": "1a/dwarf-treasure-hunters.json",
+      "sourceFighter": "Dwarf Clansman",
+      "lists": [
+        "dwarf-warrior"
+      ]
+    },
+    {
+      "warband": "Dwarf Treasure Hunters",
+      "type": "Dwarf Engineer",
+      "role": "Hero",
+      "source": "1a/dwarf-treasure-hunters.json",
+      "sourceFighter": "Dwarf Engineer",
+      "lists": [
+        "dwarf-thunderer"
+      ]
+    },
+    {
+      "warband": "Dwarf Treasure Hunters",
+      "type": "Dwarf Noble",
+      "role": "Hero",
+      "source": "1a/dwarf-treasure-hunters.json",
+      "sourceFighter": "Dwarf Noble",
+      "lists": [
+        "dwarf-warrior"
+      ]
+    },
+    {
+      "warband": "Dwarf Treasure Hunters",
+      "type": "Dwarf Thunderers",
+      "role": "Henchman",
+      "source": "1a/dwarf-treasure-hunters.json",
+      "sourceFighter": "Dwarf Thunderer",
+      "lists": [
+        "dwarf-thunderer"
+      ]
+    },
+    {
+      "warband": "Dwarf Treasure Hunters",
+      "type": "Dwarf Troll Slayers",
+      "role": "Hero",
+      "source": "1a/dwarf-treasure-hunters.json",
+      "sourceFighter": "Dwarf Troll Slayer",
+      "lists": [
+        "dwarf-troll-slayer"
+      ],
+      "interpretation": "Dedicated melee-only list implements Slayer restriction."
+    },
+    {
+      "warband": "Forest Goblins",
+      "type": "Braves",
+      "role": "Hero",
+      "source": "1b/forest-goblins.json",
+      "sourceFighter": "Braves",
+      "lists": [
+        "forest-hero"
+      ]
+    },
+    {
+      "warband": "Forest Goblins",
+      "type": "Chieftain",
+      "role": "Hero",
+      "source": "1b/forest-goblins.json",
+      "sourceFighter": "Chieftain",
+      "lists": [
+        "forest-hero"
+      ]
+    },
+    {
+      "warband": "Forest Goblins",
+      "type": "Forest Goblins",
+      "role": "Henchman",
+      "source": "1b/forest-goblins.json",
+      "sourceFighter": "Forest Goblin",
+      "lists": [
+        "forest-henchmen"
+      ]
+    },
+    {
+      "warband": "Forest Goblins",
+      "type": "Gigantic Spider",
+      "role": "Henchman",
+      "source": "1b/forest-goblins.json",
+      "sourceFighter": "Gigantic Spider",
+      "lists": []
+    },
+    {
+      "warband": "Forest Goblins",
+      "type": "Red Toof Goblins",
+      "role": "Henchman",
+      "source": "1b/forest-goblins.json",
+      "sourceFighter": "Red Toof Goblin",
+      "lists": [
+        "forest-henchmen"
+      ]
+    },
+    {
+      "warband": "Forest Goblins",
+      "type": "Shaman",
+      "role": "Hero",
+      "source": "1b/forest-goblins.json",
+      "sourceFighter": "Shaman",
+      "lists": [
+        "forest-hero"
+      ]
+    },
+    {
+      "warband": "Forest Goblins",
+      "type": "Sluggas",
+      "role": "Henchman",
+      "source": "1b/forest-goblins.json",
+      "sourceFighter": "Slugga",
+      "lists": [
+        "forest-henchmen"
+      ]
+    },
+    {
+      "warband": "Gunnery School of Nuln",
+      "type": "Instructor",
+      "role": "Hero",
+      "source": "1b/gunnery-school-of-nuln.json",
+      "sourceFighter": "Instructor",
+      "lists": [
+        "marksman",
+        "school"
+      ]
+    },
+    {
+      "warband": "Gunnery School of Nuln",
+      "type": "Marksmen",
+      "role": "Henchman",
+      "source": "1b/gunnery-school-of-nuln.json",
+      "sourceFighter": "Marksmen",
+      "lists": [
+        "marksman"
+      ]
+    },
+    {
+      "warband": "Gunnery School of Nuln",
+      "type": "Pistoliers",
+      "role": "Henchman",
+      "source": "1b/gunnery-school-of-nuln.json",
+      "sourceFighter": "Pistolier",
+      "lists": [
+        "school"
+      ]
+    },
+    {
+      "warband": "Gunnery School of Nuln",
+      "type": "Senior Gunnery Officer",
+      "role": "Hero",
+      "source": "1b/gunnery-school-of-nuln.json",
+      "sourceFighter": "Senior Gunnery Officer",
+      "lists": [
+        "school"
+      ]
+    },
+    {
+      "warband": "Gunnery School of Nuln",
+      "type": "Senior Student",
+      "role": "Hero",
+      "source": "1b/gunnery-school-of-nuln.json",
+      "sourceFighter": "Senior Student",
+      "lists": [
+        "school"
+      ]
+    },
+    {
+      "warband": "Gunnery School of Nuln",
+      "type": "Sons of the Guns",
+      "role": "Henchman",
+      "source": "1b/gunnery-school-of-nuln.json",
+      "sourceFighter": "Sons of the Gun",
+      "lists": [
+        "school"
+      ]
+    },
+    {
+      "warband": "Gunnery School of Nuln",
+      "type": "Underclassmen",
+      "role": "Hero",
+      "source": "1b/gunnery-school-of-nuln.json",
+      "sourceFighter": "Underclassmen",
+      "lists": [
+        "school"
+      ]
+    },
+    {
+      "warband": "Hochland Bandits",
+      "type": "Bandit Prince",
+      "role": "Hero",
+      "source": "1b/hochland-bandits.json",
+      "sourceFighter": "Bandit Prince",
+      "lists": [
+        "bandit"
+      ]
+    },
+    {
+      "warband": "Hochland Bandits",
+      "type": "Blackhearts",
+      "role": "Henchman",
+      "source": "1b/hochland-bandits.json",
+      "sourceFighter": "Blackheart",
+      "lists": [
+        "bandit"
+      ]
+    },
+    {
+      "warband": "Hochland Bandits",
+      "type": "Duelist",
+      "role": "Hero",
+      "source": "1b/hochland-bandits.json",
+      "sourceFighter": "Duelist",
+      "lists": [
+        "duelist"
+      ]
+    },
+    {
+      "warband": "Hochland Bandits",
+      "type": "Footpad",
+      "role": "Hero",
+      "source": "1b/hochland-bandits.json",
+      "sourceFighter": "Footpad",
+      "lists": [
+        "bandit"
+      ]
+    },
+    {
+      "warband": "Hochland Bandits",
+      "type": "Gutterscum",
+      "role": "Henchman",
+      "source": "1b/hochland-bandits.json",
+      "sourceFighter": "Gutterscum",
+      "lists": [
+        "coward"
+      ]
+    },
+    {
+      "warband": "Hochland Bandits",
+      "type": "Huckster",
+      "role": "Hero",
+      "source": "1b/hochland-bandits.json",
+      "sourceFighter": "Huckster",
+      "lists": [
+        "coward"
+      ]
+    },
+    {
+      "warband": "Hochland Bandits",
+      "type": "Looters",
+      "role": "Henchman",
+      "source": "1b/hochland-bandits.json",
+      "sourceFighter": "Looter",
+      "lists": [
+        "coward"
+      ]
+    },
+    {
+      "warband": "Hochland Bandits",
+      "type": "Poachers",
+      "role": "Henchman",
+      "source": "1b/hochland-bandits.json",
+      "sourceFighter": "Poacher",
+      "lists": [
+        "poacher"
+      ]
+    },
+    {
+      "warband": "Hochland Bandits",
+      "type": "Thugs",
+      "role": "Henchman",
+      "source": "1b/hochland-bandits.json",
+      "sourceFighter": "Thug",
+      "lists": [
+        "bandit"
+      ]
+    },
+    {
+      "warband": "Horned Hunters",
+      "type": "Drunken Gang",
+      "role": "Henchman",
+      "source": "1b/horned-hunters.json",
+      "sourceFighter": "Drunken Gang",
+      "lists": [
+        "henchmen-equipment"
+      ]
+    },
+    {
+      "warband": "Horned Hunters",
+      "type": "Horned Hunter",
+      "role": "Hero",
+      "source": "1b/horned-hunters.json",
+      "sourceFighter": "Horned Hunter",
+      "lists": [
+        "hero-equipment"
+      ]
+    },
+    {
+      "warband": "Horned Hunters",
+      "type": "Initiates",
+      "role": "Hero",
+      "source": "1b/horned-hunters.json",
+      "sourceFighter": "Initiate",
+      "lists": [
+        "hero-equipment"
+      ]
+    },
+    {
+      "warband": "Horned Hunters",
+      "type": "Priest of Taal",
+      "role": "Hero",
+      "source": "1b/horned-hunters.json",
+      "sourceFighter": "Priest of Taal",
+      "lists": [
+        "hero-equipment",
+        "special-equipment"
+      ],
+      "interpretation": "Priest-only miscellaneous source equipment supplement."
+    },
+    {
+      "warband": "Horned Hunters",
+      "type": "Warhounds",
+      "role": "Henchman",
+      "source": "1b/horned-hunters.json",
+      "sourceFighter": "Warhound",
+      "lists": []
+    },
+    {
+      "warband": "Horned Hunters",
+      "type": "Zealots",
+      "role": "Henchman",
+      "source": "1b/horned-hunters.json",
+      "sourceFighter": "Zealot",
+      "lists": [
+        "henchmen-equipment"
+      ]
+    },
+    {
+      "warband": "Imperial Outriders",
+      "type": "Chasseurs",
+      "role": "Henchman",
+      "source": "1b/imperial-outriders.json",
+      "sourceFighter": "Chasseur",
+      "lists": [
+        "armour",
+        "hand-to-hand",
+        "mounts",
+        "outrider-missiles"
+      ]
+    },
+    {
+      "warband": "Imperial Outriders",
+      "type": "Grooms",
+      "role": "Henchman",
+      "source": "1b/imperial-outriders.json",
+      "sourceFighter": "Groom",
+      "lists": [
+        "armour",
+        "hand-to-hand",
+        "mounts",
+        "scout-missiles"
+      ]
+    },
+    {
+      "warband": "Imperial Outriders",
+      "type": "Hussars",
+      "role": "Henchman",
+      "source": "1b/imperial-outriders.json",
+      "sourceFighter": "Hussar",
+      "lists": [
+        "armour",
+        "hand-to-hand",
+        "mounts"
+      ]
+    },
+    {
+      "warband": "Imperial Outriders",
+      "type": "Knight",
+      "role": "Hero",
+      "source": "1b/imperial-outriders.json",
+      "sourceFighter": "Knight",
+      "lists": [
+        "armour",
+        "hand-to-hand",
+        "mounts"
+      ]
+    },
+    {
+      "warband": "Imperial Outriders",
+      "type": "Outriders",
+      "role": "Hero",
+      "source": "1b/imperial-outriders.json",
+      "sourceFighter": "Outrider",
+      "lists": [
+        "armour",
+        "hand-to-hand",
+        "mounts",
+        "outrider-missiles"
+      ]
+    },
+    {
+      "warband": "Imperial Outriders",
+      "type": "Scouts",
+      "role": "Hero",
+      "source": "1b/imperial-outriders.json",
+      "sourceFighter": "Scout",
+      "lists": [
+        "armour",
+        "hand-to-hand",
+        "mounts",
+        "scout-missiles"
+      ]
+    },
+    {
+      "warband": "Kislevite",
+      "type": "Bear Tamer",
+      "role": "Hero",
+      "source": "1a/kislevites.json",
+      "sourceFighter": "Bear Tamer",
+      "lists": [
+        "kislev-warrior"
+      ]
+    },
+    {
+      "warband": "Kislevite",
+      "type": "Cossacks",
+      "role": "Henchman",
+      "source": "1a/kislevites.json",
+      "sourceFighter": "Cossack",
+      "lists": [
+        "kislev-warrior"
+      ]
+    },
+    {
+      "warband": "Kislevite",
+      "type": "Druzhina Captain",
+      "role": "Hero",
+      "source": "1a/kislevites.json",
+      "sourceFighter": "Druzhina Captain",
+      "lists": [
+        "kislev-warrior"
+      ]
+    },
+    {
+      "warband": "Kislevite",
+      "type": "Esaul",
+      "role": "Hero",
+      "source": "1a/kislevites.json",
+      "sourceFighter": "Esaul",
+      "lists": [
+        "kislev-warrior"
+      ]
+    },
+    {
+      "warband": "Kislevite",
+      "type": "Streltsi",
+      "role": "Henchman",
+      "source": "1a/kislevites.json",
+      "sourceFighter": "Streltsi",
+      "lists": [
+        "kislev-streltsi"
+      ]
+    },
+    {
+      "warband": "Kislevite",
+      "type": "Trained Bear",
+      "role": "Henchman",
+      "source": "1a/kislevites.json",
+      "sourceFighter": "Trained Bear",
+      "lists": []
+    },
+    {
+      "warband": "Kislevite",
+      "type": "Warriors (All Other)",
+      "role": "Henchman",
+      "source": "1a/kislevites.json",
+      "sourceFighter": "Warrior",
+      "lists": [
+        "kislev-warrior"
+      ]
+    },
+    {
+      "warband": "Kislevite",
+      "type": "Youths",
+      "role": "Hero",
+      "source": "1a/kislevites.json",
+      "sourceFighter": "Youth",
+      "lists": [
+        "kislev-warrior"
+      ]
+    },
+    {
+      "warband": "Lizardmen",
+      "type": "Kroxigor",
+      "role": "Henchman",
+      "source": "1b/lizardmen.json",
+      "sourceFighter": "Kroxigor",
+      "lists": []
+    },
+    {
+      "warband": "Lizardmen",
+      "type": "Saurus Braves",
+      "role": "Henchman",
+      "source": "1b/lizardmen.json",
+      "sourceFighter": "Saurus Brave",
+      "lists": [
+        "lizardmen-saurus"
+      ]
+    },
+    {
+      "warband": "Lizardmen",
+      "type": "Saurus Totem Warrior",
+      "role": "Hero",
+      "source": "1b/lizardmen.json",
+      "sourceFighter": "Saurus Totem Warrior",
+      "lists": [
+        "lizardmen-saurus"
+      ]
+    },
+    {
+      "warband": "Lizardmen",
+      "type": "Skink Braves",
+      "role": "Henchman",
+      "source": "1b/lizardmen.json",
+      "sourceFighter": "Skink Brave",
+      "lists": [
+        "lizardmen-skinks"
+      ]
+    },
+    {
+      "warband": "Lizardmen",
+      "type": "Skink Great Crests",
+      "role": "Hero",
+      "source": "1b/lizardmen.json",
+      "sourceFighter": "Skink Great Crest",
+      "lists": [
+        "lizardmen-skinks"
+      ]
+    },
+    {
+      "warband": "Lizardmen",
+      "type": "Skink Priest",
+      "role": "Hero",
+      "source": "1b/lizardmen.json",
+      "sourceFighter": "Skink Priest",
+      "lists": [
+        "lizardmen-skinks"
+      ]
+    },
+    {
+      "warband": "Marauders of Chaos",
+      "type": "Champion",
+      "role": "Hero",
+      "source": "1c/marauders-of-chaos.json",
+      "sourceFighter": "Champion",
+      "lists": [
+        "marauder-hero"
+      ]
+    },
+    {
+      "warband": "Marauders of Chaos",
+      "type": "Condemned",
+      "role": "Hero",
+      "source": "1c/marauders-of-chaos.json",
+      "sourceFighter": "Condemned",
+      "lists": [
+        "marauder-hero"
+      ],
+      "interpretation": "No equipment while variable; Fate unlocks ordinary Hero equipment when all four attributes are fixed."
+    },
+    {
+      "warband": "Marauders of Chaos",
+      "type": "Marauder Chieftain",
+      "role": "Hero",
+      "source": "1c/marauders-of-chaos.json",
+      "sourceFighter": "Marauder Chieftain",
+      "lists": [
+        "marauder-hero"
+      ]
+    },
+    {
+      "warband": "Marauders of Chaos",
+      "type": "Marauders",
+      "role": "Henchman",
+      "source": "1c/marauders-of-chaos.json",
+      "sourceFighter": "Chaos Marauder",
+      "lists": [
+        "marauder-henchman"
+      ]
+    },
+    {
+      "warband": "Marauders of Chaos",
+      "type": "Seer",
+      "role": "Hero",
+      "source": "1c/marauders-of-chaos.json",
+      "sourceFighter": "Seer",
+      "lists": [
+        "marauder-hero"
+      ]
+    },
+    {
+      "warband": "Marauders of Chaos",
+      "type": "Spawn of Chaos",
+      "role": "Henchman",
+      "source": "1c/marauders-of-chaos.json",
+      "sourceFighter": "Spawn of Chaos",
+      "lists": []
+    },
+    {
+      "warband": "Marauders of Chaos",
+      "type": "Warhounds of Chaos",
+      "role": "Henchman",
+      "source": "1c/marauders-of-chaos.json",
+      "sourceFighter": "Warhound of Chaos",
+      "lists": []
+    },
+    {
+      "warband": "Marienburg Mercenaries",
+      "type": "Champions (Mercenaries & Amazons)",
+      "role": "Hero",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": "Champion",
+      "lists": [
+        "mercenary"
+      ]
+    },
+    {
+      "warband": "Marienburg Mercenaries",
+      "type": "Marksmen (All Others)",
+      "role": "Henchman",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": "Marksman",
+      "lists": [
+        "marksman"
+      ]
+    },
+    {
+      "warband": "Marienburg Mercenaries",
+      "type": "Mercenary Captain",
+      "role": "Hero",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": "Mercenary Captain",
+      "lists": [
+        "mercenary"
+      ]
+    },
+    {
+      "warband": "Marienburg Mercenaries",
+      "type": "Swordsmen",
+      "role": "Henchman",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": "Swordsman",
+      "lists": [
+        "mercenary"
+      ]
+    },
+    {
+      "warband": "Marienburg Mercenaries",
+      "type": "Warriors (All Other)",
+      "role": "Henchman",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": "Warrior",
+      "lists": [
+        "mercenary"
+      ]
+    },
+    {
+      "warband": "Marienburg Mercenaries",
+      "type": "Youngblood",
+      "role": "Hero",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": "Youngblood",
+      "lists": [
+        "mercenary"
+      ]
+    },
+    {
+      "warband": "Mercenaries",
+      "type": "Champions (Mercenaries & Amazons)",
+      "role": "Hero",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": "Champion",
+      "lists": [
+        "mercenary"
+      ]
+    },
+    {
+      "warband": "Mercenaries",
+      "type": "Marksmen (All Others)",
+      "role": "Henchman",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": "Marksman",
+      "lists": [
+        "marksman"
+      ]
+    },
+    {
+      "warband": "Mercenaries",
+      "type": "Mercenary Captain",
+      "role": "Hero",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": "Mercenary Captain",
+      "lists": [
+        "mercenary"
+      ]
+    },
+    {
+      "warband": "Mercenaries",
+      "type": "Swordsmen",
+      "role": "Henchman",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": "Swordsman",
+      "lists": [
+        "mercenary"
+      ]
+    },
+    {
+      "warband": "Mercenaries",
+      "type": "Warriors (All Other)",
+      "role": "Henchman",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": "Warrior",
+      "lists": [
+        "mercenary"
+      ]
+    },
+    {
+      "warband": "Mercenaries",
+      "type": "Wolf Companion",
+      "role": "Henchman",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": null,
+      "lists": [],
+      "interpretation": "Wolf Priest Hired Sword companion; animal uses no equipment."
+    },
+    {
+      "warband": "Mercenaries",
+      "type": "Youngblood",
+      "role": "Hero",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": "Youngblood",
+      "lists": [
+        "mercenary"
+      ]
+    },
+    {
+      "warband": "Middenheim Mercenaries",
+      "type": "Champions (Mercenaries & Amazons)",
+      "role": "Hero",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": "Champion",
+      "lists": [
+        "mercenary"
+      ]
+    },
+    {
+      "warband": "Middenheim Mercenaries",
+      "type": "Marksmen (All Others)",
+      "role": "Henchman",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": "Marksman",
+      "lists": [
+        "marksman"
+      ]
+    },
+    {
+      "warband": "Middenheim Mercenaries",
+      "type": "Mercenary Captain",
+      "role": "Hero",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": "Mercenary Captain",
+      "lists": [
+        "mercenary"
+      ]
+    },
+    {
+      "warband": "Middenheim Mercenaries",
+      "type": "Swordsmen",
+      "role": "Henchman",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": "Swordsman",
+      "lists": [
+        "mercenary"
+      ]
+    },
+    {
+      "warband": "Middenheim Mercenaries",
+      "type": "Warriors (All Other)",
+      "role": "Henchman",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": "Warrior",
+      "lists": [
+        "mercenary"
+      ]
+    },
+    {
+      "warband": "Middenheim Mercenaries",
+      "type": "Wolf Companion",
+      "role": "Henchman",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": null,
+      "lists": [],
+      "interpretation": "Wolf Priest Hired Sword companion; animal uses no equipment."
+    },
+    {
+      "warband": "Middenheim Mercenaries",
+      "type": "Youngblood",
+      "role": "Hero",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": "Youngblood",
+      "lists": [
+        "mercenary"
+      ]
+    },
+    {
+      "warband": "Mootlanders",
+      "type": "Halfling Thieves",
+      "role": "Hero",
+      "source": "1b/mootlanders.json",
+      "sourceFighter": "Halfling Thief",
+      "lists": [
+        "halfling"
+      ]
+    },
+    {
+      "warband": "Mootlanders",
+      "type": "Master Chef",
+      "role": "Hero",
+      "source": "1b/mootlanders.json",
+      "sourceFighter": "Master Chef",
+      "lists": [
+        "chef"
+      ]
+    },
+    {
+      "warband": "Mootlanders",
+      "type": "Moot Elder",
+      "role": "Hero",
+      "source": "1b/mootlanders.json",
+      "sourceFighter": "Moot Elder",
+      "lists": [
+        "halfling"
+      ]
+    },
+    {
+      "warband": "Mootlanders",
+      "type": "Scouts",
+      "role": "Henchman",
+      "source": "1b/mootlanders.json",
+      "sourceFighter": "Scout",
+      "lists": [
+        "halfling"
+      ]
+    },
+    {
+      "warband": "Mootlanders",
+      "type": "Warriors",
+      "role": "Henchman",
+      "source": "1b/mootlanders.json",
+      "sourceFighter": "Warrior",
+      "lists": [
+        "halfling"
+      ]
+    },
+    {
+      "warband": "Night Goblins",
+      "type": "Big Boss",
+      "role": "Hero",
+      "source": "1c/night-goblins.json",
+      "sourceFighter": "Big Boss",
+      "lists": [
+        "night-goblin"
+      ]
+    },
+    {
+      "warband": "Night Goblins",
+      "type": "Bosses (Night Goblins)",
+      "role": "Hero",
+      "source": "1c/night-goblins.json",
+      "sourceFighter": "Bosses",
+      "lists": [
+        "night-goblin"
+      ]
+    },
+    {
+      "warband": "Night Goblins",
+      "type": "Cave Squigs",
+      "role": "Henchman",
+      "source": "1c/night-goblins.json",
+      "sourceFighter": "Cave Squig",
+      "lists": []
+    },
+    {
+      "warband": "Night Goblins",
+      "type": "Fanatics",
+      "role": "Henchman",
+      "source": "1c/night-goblins.json",
+      "sourceFighter": "Fanatic",
+      "lists": [
+        "night-goblin-fanatic"
+      ]
+    },
+    {
+      "warband": "Night Goblins",
+      "type": "Night Goblins",
+      "role": "Henchman",
+      "source": "1c/night-goblins.json",
+      "sourceFighter": "Night Goblin",
+      "lists": [
+        "night-goblin"
+      ]
+    },
+    {
+      "warband": "Night Goblins",
+      "type": "Shaman (Night Goblins)",
+      "role": "Hero",
+      "source": "1c/night-goblins.json",
+      "sourceFighter": "Shaman",
+      "lists": [
+        "night-goblin"
+      ]
+    },
+    {
+      "warband": "Night Goblins",
+      "type": "Snotling Mob",
+      "role": "Henchman",
+      "source": "1c/night-goblins.json",
+      "sourceFighter": "Snotling Mob (consists of 5 Snotlings)",
+      "lists": []
+    },
+    {
+      "warband": "Night Goblins",
+      "type": "Troll",
+      "role": "Henchman",
+      "source": "1c/night-goblins.json",
+      "sourceFighter": "Troll",
+      "lists": []
+    },
+    {
+      "warband": "Norse",
+      "type": "Berserkers",
+      "role": "Hero",
+      "source": "1b/norse.json",
+      "sourceFighter": "Berserker",
+      "lists": [
+        "norse-hero"
+      ]
+    },
+    {
+      "warband": "Norse",
+      "type": "Bondsmen (Norse)",
+      "role": "Hero",
+      "source": "1b/norse.json",
+      "sourceFighter": "Bondsman",
+      "lists": [
+        "norse-hero"
+      ]
+    },
+    {
+      "warband": "Norse",
+      "type": "Hunters (Norse)",
+      "role": "Henchman",
+      "source": "1b/norse.json",
+      "sourceFighter": "Hunter",
+      "lists": [
+        "norse-hunter"
+      ]
+    },
+    {
+      "warband": "Norse",
+      "type": "Jarl",
+      "role": "Hero",
+      "source": "1b/norse.json",
+      "sourceFighter": "Jarl",
+      "lists": [
+        "norse-hero"
+      ]
+    },
+    {
+      "warband": "Norse",
+      "type": "Marauders",
+      "role": "Henchman",
+      "source": "1b/norse.json",
+      "sourceFighter": "Marauder",
+      "lists": [
+        "norse-henchman"
+      ]
+    },
+    {
+      "warband": "Norse",
+      "type": "Wolves",
+      "role": "Henchman",
+      "source": "1b/norse.json",
+      "sourceFighter": "Wolf",
+      "lists": []
+    },
+    {
+      "warband": "Norse",
+      "type": "Wulfin",
+      "role": "Hero",
+      "source": "1b/norse.json",
+      "sourceFighter": "Wulfen",
+      "lists": []
+    },
+    {
+      "warband": "Orc",
+      "type": "Cave Squigs",
+      "role": "Henchman",
+      "source": "1a/orc-mob.json",
+      "sourceFighter": "Cave Squig",
+      "lists": []
+    },
+    {
+      "warband": "Orc",
+      "type": "Goblin Warriors",
+      "role": "Henchman",
+      "source": "1a/orc-mob.json",
+      "sourceFighter": "Goblin Warrior",
+      "lists": [
+        "goblin"
+      ]
+    },
+    {
+      "warband": "Orc",
+      "type": "Orc Big 'Uns",
+      "role": "Hero",
+      "source": "1a/orc-mob.json",
+      "sourceFighter": "Orc Big ‘Un",
+      "lists": [
+        "orc"
+      ]
+    },
+    {
+      "warband": "Orc",
+      "type": "Orc Boss",
+      "role": "Hero",
+      "source": "1a/orc-mob.json",
+      "sourceFighter": "Orc Boss",
+      "lists": [
+        "orc"
+      ]
+    },
+    {
+      "warband": "Orc",
+      "type": "Orc Boyz",
+      "role": "Henchman",
+      "source": "1a/orc-mob.json",
+      "sourceFighter": "Orc Boy",
+      "lists": [
+        "orc"
+      ]
+    },
+    {
+      "warband": "Orc",
+      "type": "Orc Shaman",
+      "role": "Hero",
+      "source": "1a/orc-mob.json",
+      "sourceFighter": "Orc Shaman",
+      "lists": [
+        "orc"
+      ]
+    },
+    {
+      "warband": "Orc",
+      "type": "Troll",
+      "role": "Henchman",
+      "source": "1a/orc-mob.json",
+      "sourceFighter": "Troll",
+      "lists": []
+    },
+    {
+      "warband": "Ostermarkers",
+      "type": "Champions",
+      "role": "Hero",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": "Champion",
+      "lists": [
+        "mercenary"
+      ]
+    },
+    {
+      "warband": "Ostermarkers",
+      "type": "Marksmen",
+      "role": "Henchman",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": "Marksman",
+      "lists": [
+        "marksman"
+      ]
+    },
+    {
+      "warband": "Ostermarkers",
+      "type": "Mercenary Captain",
+      "role": "Hero",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": "Mercenary Captain",
+      "lists": [
+        "mercenary"
+      ]
+    },
+    {
+      "warband": "Ostermarkers",
+      "type": "Swordsmen",
+      "role": "Henchman",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": "Swordsman",
+      "lists": [
+        "mercenary"
+      ]
+    },
+    {
+      "warband": "Ostermarkers",
+      "type": "Warriors",
+      "role": "Henchman",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": "Warrior",
+      "lists": [
+        "mercenary"
+      ]
+    },
+    {
+      "warband": "Ostermarkers",
+      "type": "Youngbloods",
+      "role": "Hero",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": "Youngblood",
+      "lists": [
+        "mercenary"
+      ]
+    },
+    {
+      "warband": "Ostlanders",
+      "type": "Blood Brothers",
+      "role": "Hero",
+      "source": "1a/ostlander.json",
+      "sourceFighter": "Blood-Brother",
+      "lists": [
+        "ostlander"
+      ]
+    },
+    {
+      "warband": "Ostlanders",
+      "type": "Elder",
+      "role": "Hero",
+      "source": "1a/ostlander.json",
+      "sourceFighter": "Elder",
+      "lists": [
+        "ostlander"
+      ]
+    },
+    {
+      "warband": "Ostlanders",
+      "type": "Jaeger",
+      "role": "Henchman",
+      "source": "1a/ostlander.json",
+      "sourceFighter": "Jaeger",
+      "lists": [
+        "ostlander-jaeger"
+      ]
+    },
+    {
+      "warband": "Ostlanders",
+      "type": "Kin",
+      "role": "Henchman",
+      "source": "1a/ostlander.json",
+      "sourceFighter": "Kin",
+      "lists": [
+        "ostlander"
+      ]
+    },
+    {
+      "warband": "Ostlanders",
+      "type": "Ogre",
+      "role": "Henchman",
+      "source": "1a/ostlander.json",
+      "sourceFighter": "Ogre",
+      "lists": [
+        "ostlander-ogre-kin"
+      ]
+    },
+    {
+      "warband": "Ostlanders",
+      "type": "Priest of Taal",
+      "role": "Hero",
+      "source": "1a/ostlander.json",
+      "sourceFighter": "Priest of Taal",
+      "lists": [
+        "ostlander"
+      ]
+    },
+    {
+      "warband": "Ostlanders",
+      "type": "Ruffians",
+      "role": "Henchman",
+      "source": "1a/ostlander.json",
+      "sourceFighter": "Ruffian",
+      "lists": [
+        "ostlander-ruffian"
+      ]
+    },
+    {
+      "warband": "Outlaws of Stirwood Forest",
+      "type": "Bandit Leader",
+      "role": "Hero",
+      "source": "1b/outlaws-of-stirwood-forest.json",
+      "sourceFighter": "Bandit Leader",
+      "lists": [
+        "outlaws"
+      ]
+    },
+    {
+      "warband": "Outlaws of Stirwood Forest",
+      "type": "Champions",
+      "role": "Hero",
+      "source": "1b/outlaws-of-stirwood-forest.json",
+      "sourceFighter": "Champion",
+      "lists": [
+        "outlaws"
+      ]
+    },
+    {
+      "warband": "Outlaws of Stirwood Forest",
+      "type": "Cleric",
+      "role": "Hero",
+      "source": "1b/outlaws-of-stirwood-forest.json",
+      "sourceFighter": "Cleric",
+      "lists": [
+        "outlaws"
+      ]
+    },
+    {
+      "warband": "Outlaws of Stirwood Forest",
+      "type": "Marksmen",
+      "role": "Henchman",
+      "source": "1b/outlaws-of-stirwood-forest.json",
+      "sourceFighter": "Marksman",
+      "lists": [
+        "outlaws"
+      ]
+    },
+    {
+      "warband": "Outlaws of Stirwood Forest",
+      "type": "Outlaws",
+      "role": "Henchman",
+      "source": "1b/outlaws-of-stirwood-forest.json",
+      "sourceFighter": "Outlaw",
+      "lists": [
+        "outlaws"
+      ]
+    },
+    {
+      "warband": "Outlaws of Stirwood Forest",
+      "type": "Petty Thieves",
+      "role": "Hero",
+      "source": "1b/outlaws-of-stirwood-forest.json",
+      "sourceFighter": "Petty Thief",
+      "lists": [
+        "outlaws"
+      ]
+    },
+    {
+      "warband": "Pirate",
+      "type": "Boatswains",
+      "role": "Henchman",
+      "source": "1b/pirates.json",
+      "sourceFighter": "Boatswain",
+      "lists": [
+        "pirate"
+      ],
+      "interpretation": "Equipment paragraph explicitly grants Pirate list; source equipmentLists field omitted."
+    },
+    {
+      "warband": "Pirate",
+      "type": "Cabin Boys",
+      "role": "Hero",
+      "source": "1b/pirates.json",
+      "sourceFighter": "Cabin Boy",
+      "lists": [
+        "pirate"
+      ]
+    },
+    {
+      "warband": "Pirate",
+      "type": "Crew",
+      "role": "Henchman",
+      "source": "1b/pirates.json",
+      "sourceFighter": "Crew",
+      "lists": [
+        "pirate"
+      ]
+    },
+    {
+      "warband": "Pirate",
+      "type": "Gunners",
+      "role": "Henchman",
+      "source": "1b/pirates.json",
+      "sourceFighter": "Gunner",
+      "lists": [
+        "pirate-gunner"
+      ]
+    },
+    {
+      "warband": "Pirate",
+      "type": "Pirate Captain",
+      "role": "Hero",
+      "source": "1b/pirates.json",
+      "sourceFighter": "Pirate Captain",
+      "lists": [
+        "pirate"
+      ]
+    },
+    {
+      "warband": "Pirate",
+      "type": "Ship's Mates",
+      "role": "Hero",
+      "source": "1b/pirates.json",
+      "sourceFighter": "Ship’s Mate",
+      "lists": [
+        "pirate"
+      ]
+    },
+    {
+      "warband": "Pirate",
+      "type": "Swabbies",
+      "role": "Henchman",
+      "source": "1b/pirates.json",
+      "sourceFighter": "Swabbie",
+      "lists": [
+        "pirate-swabbie"
+      ]
+    },
+    {
+      "warband": "Pit Fighter",
+      "type": "Dwarf Troll Slayer (Pit Fighter)",
+      "role": "Hero",
+      "source": "1b/pit-fighters.json",
+      "sourceFighter": "Dwarf Troll Slayer",
+      "lists": [
+        "pit-ogre-slayer"
+      ]
+    },
+    {
+      "warband": "Pit Fighter",
+      "type": "Ogre Pit Fighter",
+      "role": "Henchman",
+      "source": "1b/pit-fighters.json",
+      "sourceFighter": "Ogre Pit Fighter",
+      "lists": [
+        "pit-ogre-slayer"
+      ]
+    },
+    {
+      "warband": "Pit Fighter",
+      "type": "Pit Fighters (Pit Fighter)",
+      "role": "Henchman",
+      "source": "1b/pit-fighters.json",
+      "sourceFighter": "Pit Fighter",
+      "lists": [
+        "pit-fighter"
+      ]
+    },
+    {
+      "warband": "Pit Fighter",
+      "type": "Pit King",
+      "role": "Hero",
+      "source": "1b/pit-fighters.json",
+      "sourceFighter": "Pit King",
+      "lists": [
+        "pit-fighter"
+      ]
+    },
+    {
+      "warband": "Pit Fighter",
+      "type": "Pit Veterans",
+      "role": "Hero",
+      "source": "1b/pit-fighters.json",
+      "sourceFighter": "Pit Veteran",
+      "lists": [
+        "pit-fighter"
+      ]
+    },
+    {
+      "warband": "Pit Fighter",
+      "type": "Pursuers",
+      "role": "Henchman",
+      "source": "1b/pit-fighters.json",
+      "sourceFighter": "Pursuer",
+      "lists": [
+        "pit-pursuer"
+      ]
+    },
+    {
+      "warband": "Reikland Mercenaries",
+      "type": "Champions (Mercenaries & Amazons)",
+      "role": "Hero",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": "Champion",
+      "lists": [
+        "mercenary"
+      ]
+    },
+    {
+      "warband": "Reikland Mercenaries",
+      "type": "Marksmen (All Others)",
+      "role": "Henchman",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": "Marksman",
+      "lists": [
+        "marksman"
+      ]
+    },
+    {
+      "warband": "Reikland Mercenaries",
+      "type": "Mercenary Captain",
+      "role": "Hero",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": "Mercenary Captain",
+      "lists": [
+        "mercenary"
+      ]
+    },
+    {
+      "warband": "Reikland Mercenaries",
+      "type": "Swordsmen",
+      "role": "Henchman",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": "Swordsman",
+      "lists": [
+        "mercenary"
+      ]
+    },
+    {
+      "warband": "Reikland Mercenaries",
+      "type": "Warriors (All Other)",
+      "role": "Henchman",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": "Warrior",
+      "lists": [
+        "mercenary"
+      ]
+    },
+    {
+      "warband": "Reikland Mercenaries",
+      "type": "Youngblood",
+      "role": "Hero",
+      "source": "1a/mercenaries.json",
+      "sourceFighter": "Youngblood",
+      "lists": [
+        "mercenary"
+      ]
+    },
+    {
+      "warband": "Shadow Warrior",
+      "type": "Shadow Master",
+      "role": "Hero",
+      "source": "1b/shadow-warriors.json",
+      "sourceFighter": "Shadow Master",
+      "lists": [
+        "shadow-warrior"
+      ]
+    },
+    {
+      "warband": "Shadow Warrior",
+      "type": "Shadow Walker",
+      "role": "Hero",
+      "source": "1b/shadow-warriors.json",
+      "sourceFighter": "Shadow Walker",
+      "lists": [
+        "shadow-warrior"
+      ]
+    },
+    {
+      "warband": "Shadow Warrior",
+      "type": "Shadow Warrior Novices",
+      "role": "Henchman",
+      "source": "1b/shadow-warriors.json",
+      "sourceFighter": "Shadow Warrior Novice",
+      "lists": [
+        "shadow-warrior"
+      ]
+    },
+    {
+      "warband": "Shadow Warrior",
+      "type": "Shadow Warriors",
+      "role": "Henchman",
+      "source": "1b/shadow-warriors.json",
+      "sourceFighter": "Shadow Warrior",
+      "lists": [
+        "shadow-warrior"
+      ]
+    },
+    {
+      "warband": "Shadow Warrior",
+      "type": "Shadow Weaver",
+      "role": "Hero",
+      "source": "1b/shadow-warriors.json",
+      "sourceFighter": "Shadow Weaver",
+      "lists": [
+        "shadow-warrior"
+      ]
+    },
+    {
+      "warband": "Sisters of Sigmar",
+      "type": "Augur",
+      "role": "Hero",
+      "source": "1a/sisters-of-sigmar.json",
+      "sourceFighter": "Augur",
+      "lists": [
+        "sisters"
+      ]
+    },
+    {
+      "warband": "Sisters of Sigmar",
+      "type": "Novices",
+      "role": "Henchman",
+      "source": "1a/sisters-of-sigmar.json",
+      "sourceFighter": "Novice",
+      "lists": [
+        "sisters"
+      ]
+    },
+    {
+      "warband": "Sisters of Sigmar",
+      "type": "Sigmarite Matriarch",
+      "role": "Hero",
+      "source": "1a/sisters-of-sigmar.json",
+      "sourceFighter": "Sigmarite Matriarch",
+      "lists": [
+        "sisters"
+      ]
+    },
+    {
+      "warband": "Sisters of Sigmar",
+      "type": "Sigmarite Sister",
+      "role": "Henchman",
+      "source": "1a/sisters-of-sigmar.json",
+      "sourceFighter": "Sigmarite Sister",
+      "lists": [
+        "sisters"
+      ]
+    },
+    {
+      "warband": "Sisters of Sigmar",
+      "type": "Sister Superior",
+      "role": "Hero",
+      "source": "1a/sisters-of-sigmar.json",
+      "sourceFighter": "Sister Superior",
+      "lists": [
+        "sisters"
+      ]
+    },
+    {
+      "warband": "Skaven",
+      "type": "Assassin Adept",
+      "role": "Hero",
+      "source": "1a/skaven.json",
+      "sourceFighter": "Assassin Adept",
+      "lists": [
+        "skaven-hero"
+      ]
+    },
+    {
+      "warband": "Skaven",
+      "type": "Black Skaven",
+      "role": "Hero",
+      "source": "1a/skaven.json",
+      "sourceFighter": "Black Skaven",
+      "lists": [
+        "skaven-hero"
+      ]
+    },
+    {
+      "warband": "Skaven",
+      "type": "Eshin Sorcerer",
+      "role": "Hero",
+      "source": "1a/skaven.json",
+      "sourceFighter": "Eshin Sorcerer",
+      "lists": [
+        "skaven-hero"
+      ]
+    },
+    {
+      "warband": "Skaven",
+      "type": "Giant Rats",
+      "role": "Henchman",
+      "source": "1a/skaven.json",
+      "sourceFighter": "Giant Rats",
+      "lists": []
+    },
+    {
+      "warband": "Skaven",
+      "type": "Night Runners",
+      "role": "Hero",
+      "source": "1a/skaven.json",
+      "sourceFighter": "Night Runners",
+      "lists": [
+        "skaven-henchman"
+      ]
+    },
+    {
+      "warband": "Skaven",
+      "type": "Rat Ogre",
+      "role": "Henchman",
+      "source": "1a/skaven.json",
+      "sourceFighter": "Rat Ogre",
+      "lists": []
+    },
+    {
+      "warband": "Skaven",
+      "type": "Verminkin",
+      "role": "Henchman",
+      "source": "1a/skaven.json",
+      "sourceFighter": "Verminkin",
+      "lists": [
+        "skaven-henchman"
+      ]
+    },
+    {
+      "warband": "Skaven of Clan Pestilens",
+      "type": "Giant rats",
+      "role": "Henchman",
+      "source": "1b/skaven-pestilens.json",
+      "sourceFighter": "Giant Rat",
+      "lists": []
+    },
+    {
+      "warband": "Skaven of Clan Pestilens",
+      "type": "Monk Initiates",
+      "role": "Hero",
+      "source": "1b/skaven-pestilens.json",
+      "sourceFighter": "Monk Initiate",
+      "lists": [
+        "pestilens-hero"
+      ]
+    },
+    {
+      "warband": "Skaven of Clan Pestilens",
+      "type": "Pestilens Sorcerer",
+      "role": "Hero",
+      "source": "1b/skaven-pestilens.json",
+      "sourceFighter": "Pestilens Sorcerer",
+      "lists": [
+        "pestilens-hero"
+      ]
+    },
+    {
+      "warband": "Skaven of Clan Pestilens",
+      "type": "Plague Monks",
+      "role": "Hero",
+      "source": "1b/skaven-pestilens.json",
+      "sourceFighter": "Plague Monk",
+      "lists": [
+        "pestilens-hero"
+      ]
+    },
+    {
+      "warband": "Skaven of Clan Pestilens",
+      "type": "Plague Novices",
+      "role": "Henchman",
+      "source": "1b/skaven-pestilens.json",
+      "sourceFighter": "Plague Novice",
+      "lists": [
+        "pestilens-henchmen"
+      ]
+    },
+    {
+      "warband": "Skaven of Clan Pestilens",
+      "type": "Plague Priest",
+      "role": "Hero",
+      "source": "1b/skaven-pestilens.json",
+      "sourceFighter": "Plague Priest",
+      "lists": [
+        "pestilens-hero"
+      ]
+    },
+    {
+      "warband": "Skaven of Clan Pestilens",
+      "type": "Rat Familiar",
+      "role": "Henchman",
+      "source": "1b/skaven-pestilens.json",
+      "sourceFighter": null,
+      "lists": [],
+      "interpretation": "Enchanted Giant Rat companion; animal uses no equipment."
+    },
+    {
+      "warband": "Skaven of Clan Pestilens",
+      "type": "Rat ogre",
+      "role": "Henchman",
+      "source": "1b/skaven-pestilens.json",
+      "sourceFighter": "Rat Ogre",
+      "lists": []
+    },
+    {
+      "warband": "Tileans",
+      "type": "Captain",
+      "role": "Hero",
+      "source": "1b/tileans.json",
+      "sourceFighter": "Captain",
+      "lists": [
+        "tilean"
+      ]
+    },
+    {
+      "warband": "Tileans",
+      "type": "Champions",
+      "role": "Hero",
+      "source": "1b/tileans.json",
+      "sourceFighter": "Champion",
+      "lists": [
+        "tilean"
+      ]
+    },
+    {
+      "warband": "Tileans",
+      "type": "Duelists",
+      "role": "Henchman",
+      "source": "1b/tileans.json",
+      "sourceFighter": "Duelist",
+      "lists": [
+        "tilean"
+      ]
+    },
+    {
+      "warband": "Tileans",
+      "type": "Marksmen",
+      "role": "Henchman",
+      "source": "1b/tileans.json",
+      "sourceFighter": "Marksman",
+      "lists": [
+        "marksman"
+      ]
+    },
+    {
+      "warband": "Tileans",
+      "type": "Warriors",
+      "role": "Henchman",
+      "source": "1b/tileans.json",
+      "sourceFighter": "Warrior",
+      "lists": [
+        "tilean"
+      ]
+    },
+    {
+      "warband": "Tileans",
+      "type": "Youngbloods",
+      "role": "Hero",
+      "source": "1b/tileans.json",
+      "sourceFighter": "Youngblood",
+      "lists": [
+        "tilean"
+      ]
+    },
+    {
+      "warband": "Tomb Guardians",
+      "type": "Acolytes",
+      "role": "Hero",
+      "source": "1b/tomb-guardians.json",
+      "sourceFighter": "Acolyte",
+      "lists": [
+        "tomb-priest"
+      ]
+    },
+    {
+      "warband": "Tomb Guardians",
+      "type": "Liche Priest",
+      "role": "Hero",
+      "source": "1b/tomb-guardians.json",
+      "sourceFighter": "Liche Priest",
+      "lists": [
+        "tomb-priest"
+      ]
+    },
+    {
+      "warband": "Tomb Guardians",
+      "type": "Skeleton warriors",
+      "role": "Henchman",
+      "source": "1b/tomb-guardians.json",
+      "sourceFighter": "Skeleton Warrior",
+      "lists": [
+        "tomb-undead"
+      ]
+    },
+    {
+      "warband": "Tomb Guardians",
+      "type": "Tomb Guardians",
+      "role": "Henchman",
+      "source": "1b/tomb-guardians.json",
+      "sourceFighter": "Tomb Guardian",
+      "lists": [
+        "tomb-undead"
+      ]
+    },
+    {
+      "warband": "Tomb Guardians",
+      "type": "Tomb Lord",
+      "role": "Hero",
+      "source": "1b/tomb-guardians.json",
+      "sourceFighter": "Tomb Lord",
+      "lists": [
+        "tomb-undead"
+      ]
+    },
+    {
+      "warband": "Tomb Guardians",
+      "type": "Tomb Scorpions",
+      "role": "Henchman",
+      "source": "1b/tomb-guardians.json",
+      "sourceFighter": "Tomb Scorpion",
+      "lists": []
+    },
+    {
+      "warband": "Undead",
+      "type": "Dire Wolves",
+      "role": "Henchman",
+      "source": "1a/undead.json",
+      "sourceFighter": "Dire wolves",
+      "lists": []
+    },
+    {
+      "warband": "Undead",
+      "type": "Dregs",
+      "role": "Hero",
+      "source": "1a/undead.json",
+      "sourceFighter": "Dregs",
+      "lists": [
+        "undead"
+      ]
+    },
+    {
+      "warband": "Undead",
+      "type": "Ghouls",
+      "role": "Henchman",
+      "source": "1a/undead.json",
+      "sourceFighter": "Ghouls",
+      "lists": []
+    },
+    {
+      "warband": "Undead",
+      "type": "Necromancer (Lahmia & Undead))",
+      "role": "Hero",
+      "source": "1a/undead.json",
+      "sourceFighter": "Necromancer",
+      "lists": [
+        "undead"
+      ]
+    },
+    {
+      "warband": "Undead",
+      "type": "Vampire",
+      "role": "Hero",
+      "source": "1a/undead.json",
+      "sourceFighter": "Vampire",
+      "lists": [
+        "undead"
+      ]
+    },
+    {
+      "warband": "Undead",
+      "type": "Zombies",
+      "role": "Henchman",
+      "source": "1a/undead.json",
+      "sourceFighter": "Zombies",
+      "lists": []
+    },
+    {
+      "warband": "Witch Hunters",
+      "type": "Flagellants",
+      "role": "Henchman",
+      "source": "1a/witch-hunters.json",
+      "sourceFighter": "Flagellants",
+      "lists": [
+        "flagellant"
+      ]
+    },
+    {
+      "warband": "Witch Hunters",
+      "type": "Warhounds",
+      "role": "Henchman",
+      "source": "1a/witch-hunters.json",
+      "sourceFighter": "War hounds",
+      "lists": []
+    },
+    {
+      "warband": "Witch Hunters",
+      "type": "Warrior Priest",
+      "role": "Hero",
+      "source": "1a/witch-hunters.json",
+      "sourceFighter": "Warrior-Priest",
+      "lists": [
+        "witch-hunter"
+      ]
+    },
+    {
+      "warband": "Witch Hunters",
+      "type": "Witch Hunter Captain",
+      "role": "Hero",
+      "source": "1a/witch-hunters.json",
+      "sourceFighter": "Witch Hunter Captain",
+      "lists": [
+        "witch-hunter"
+      ]
+    },
+    {
+      "warband": "Witch Hunters",
+      "type": "Witch Hunters",
+      "role": "Hero",
+      "source": "1a/witch-hunters.json",
+      "sourceFighter": "Witch Hunter",
+      "lists": [
+        "witch-hunter"
+      ]
+    },
+    {
+      "warband": "Witch Hunters",
+      "type": "Zealots",
+      "role": "Henchman",
+      "source": "1a/witch-hunters.json",
+      "sourceFighter": "Zealots",
+      "lists": [
+        "zealot"
+      ]
+    }
+  ]
+}

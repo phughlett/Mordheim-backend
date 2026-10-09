@@ -3,6 +3,7 @@ const { catalog, effectiveRarity, effectivePrice, canBuyItem, canEquipItem } = r
 const { defaultTradingRules, diceFor, tradingPermissions, fail, integer } = require("../services/trading-rules.service");
 const { equipmentSale } = require("../services/equipment-sale.service");
 const { mapTypes, resolveMaps, describeMap } = require("../services/mordheim-map.service");
+const { canUseEquipment } = require("../services/equipment-access.service");
 
 async function insertAcquired(trx, rosterId, item, quantity, cost, mapSelection) {
   const base = { roster_id: rosterId, shop_item_id: item.id, unit_cost_paid: cost };
@@ -82,10 +83,11 @@ function createTradingRepository(db) {
     if (!member) fail("Choose a member of this warband.", 404);
     const permissions = await query("warrior_equipment_lists as p")
       .join("equipment_options as o", function join() { this.on("o.warband_id", "p.warband_id").andOn("o.list_key", "p.list_key"); })
+      .leftJoin("weapon_profiles as weapon", "weapon.id", "o.weapon_profile_id")
       .where({ "p.warband_id": ctx.roster.warband_id, "p.warrior_type_id": member.warrior_type_id })
       .whereRaw("p.allowed_categories @> jsonb_build_array(o.category)")
       .where((q) => q.whereNull("o.allowed_warrior_type_names").orWhereRaw("o.allowed_warrior_type_names @> jsonb_build_array(?::text)", [member.typeName]))
-      .select("o.id", "o.name", "p.allow_individual_group_gear");
+      .select("o.id", "o.name", "o.category", "weapon.weapon_type as weaponType", "p.allow_individual_group_gear");
     const skills = await query("warrior_skills as known").join("skills as skill", "skill.id", "known.skill_id")
       .where({ "known.warrior_id": member.id }).pluck("skill.name");
     const spellAccess = await query("warrior_type_spell_disciplines as access")
@@ -99,12 +101,16 @@ function createTradingRepository(db) {
       .join("spell_disciplines as discipline", "discipline.id", "spell.spell_discipline_id")
       .where({ "known.warrior_id": member.id }).whereNot("discipline.kind", "Prayer").first("known.id");
     const owned = await query("warrior_inventory").where({ warrior_id: member.id }).select("shop_item_id", "model_index", "quantity");
-    return { member, permissions, owned, eligibility: {
+    const mutationIds = await query("warrior_mutations").where({ warrior_id: member.id }).pluck("mutation_id");
+    const eligibility = {
       warbandName: ctx.warbandName, typeName: member.typeName, role: member.role,
-      skillNames: skills, permittedNames: permissions.map((option) => option.name),
+      skillNames: skills, stats: member.stats, mutationIds,
       spellcaster: Boolean(spellAccess || learnedMagic),
       ownedItemIds: owned.map((row) => row.shop_item_id).filter(Boolean),
-    } };
+    };
+    const permitted = permissions.filter((option) => canUseEquipment(option, eligibility));
+    return { member, permissions: permitted, owned,
+      eligibility: { ...eligibility, permittedNames: permitted.map((option) => option.name) } };
   }
   function canReceive(source, option, shop, ctx, recipient) {
     const { member, permissions, eligibility } = recipient;
@@ -122,6 +128,7 @@ function createTradingRepository(db) {
         && canEquipItem(shop.definition, eligibility));
     }
     if (!option) return false;
+    if (!canUseEquipment(option, eligibility)) return false;
     if (permissions.some((entry) => entry.id === source.equipment_option_id)) return true;
     const item = catalog.find((entry) => entry.name.toLowerCase() === option.name.toLowerCase());
     return (!option.allowed_warrior_type_names || option.allowed_warrior_type_names.includes(member.typeName))
@@ -134,7 +141,9 @@ function createTradingRepository(db) {
     ]);
     const rows = [...stash, ...carried];
     const [options, shopItems] = await Promise.all([
-      query("equipment_options").whereIn("id", [...new Set(rows.map((row) => row.equipment_option_id).filter(Boolean))]),
+      query("equipment_options as option").leftJoin("weapon_profiles as weapon", "weapon.id", "option.weapon_profile_id")
+        .whereIn("option.id", [...new Set(rows.map((row) => row.equipment_option_id).filter(Boolean))])
+        .select("option.*", "weapon.weapon_type as weaponType"),
       query("shop_items").whereIn("id", [...new Set(rows.map((row) => row.shop_item_id).filter(Boolean))]),
     ]);
     const byOption = new Map(options.map((row) => [row.id, row]));
@@ -379,7 +388,9 @@ function createTradingRepository(db) {
           fail("This Henchman group must be equipped identically; transfer to all models.");
         }
         if (member.role === "Henchman" && !all && modelIndex >= member.group_size) fail("That model does not exist.", 400);
-        const option = source.equipment_option_id ? await trx("equipment_options").where({ id: source.equipment_option_id }).first() : null;
+        const option = source.equipment_option_id ? await trx("equipment_options as option")
+          .leftJoin("weapon_profiles as weapon", "weapon.id", "option.weapon_profile_id")
+          .where("option.id", source.equipment_option_id).first("option.*", "weapon.weapon_type as weaponType") : null;
         const shop = source.shop_item_id ? await trx("shop_items").where({ id: source.shop_item_id }).first() : null;
         if (!canReceive(source, option, shop, ctx, recipient)) {
           fail("This warrior cannot use this item. Check equipment lists, warband restrictions, and required skills.");
