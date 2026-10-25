@@ -821,6 +821,7 @@ function createRosterRepository(db) {
       const inventory = inventoryRows.map((row) => {
         const entry = trading.memberInventory.find((item) => item.id === row.id);
         return { ...stripStatColumns(row),
+          stackKey: entry.stackKey,
           ...(entry.mapResult ? { name: entry.name, description: entry.description, mapResult: entry.mapResult } : {}),
           unitSaleValue: entry.unitSaleValue, saleRestriction: entry.saleRestriction };
       });

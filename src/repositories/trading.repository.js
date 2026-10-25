@@ -157,6 +157,7 @@ function createTradingRepository(db) {
       const item = byShop.get(row.shop_item_id);
       return {
         id: row.id, name: item?.name ?? option.name, category: item?.category ?? option.category,
+        stackKey: equipmentKey({ ...row, name: option?.name, category: option?.category }),
         quantity: row.quantity, unitCostPaid: row.unit_cost_paid,
         shopItemId: row.shop_item_id ?? null, equipmentOptionId: row.equipment_option_id ?? null,
         description: item?.description ?? option.rule_text ?? "", memberId: row.warrior_id,
@@ -342,10 +343,13 @@ function createTradingRepository(db) {
         if (source === "member") {
           const recipient = await memberContext(trx, ctx, row.warrior_id);
           if (recipient.member.role === "Henchman" && !recipient.permissions.some((entry) => entry.allow_individual_group_gear)) {
-            const matching = await trx("warrior_inventory").where({
-              warrior_id: row.warrior_id, equipment_option_id: row.equipment_option_id,
-              shop_item_id: row.shop_item_id, unit_cost_paid: row.unit_cost_paid,
-            });
+            const key = equipmentKey({ ...row, name: option?.name, category: option?.category });
+            const carried = await trx("warrior_inventory as inventory")
+              .leftJoin("equipment_options as option", "option.id", "inventory.equipment_option_id")
+              .where("inventory.warrior_id", row.warrior_id)
+              .select("inventory.*", "option.name", "option.category");
+            const matching = carried.filter((entry) => equipmentKey(entry) === key
+              && (entry.shop_item_id || Number(entry.unit_cost_paid) > 0));
             if (matching.some((entry) => !inventoryIds.includes(entry.id))) fail("Sell the matching equipment from every model in this Henchman group.");
             const counts = Array.from({ length: recipient.member.group_size }, (_, index) =>
               matching.filter((entry) => entry.model_index === index).reduce((sum, entry) => sum + entry.quantity, 0));

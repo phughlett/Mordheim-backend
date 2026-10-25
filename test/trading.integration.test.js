@@ -827,7 +827,10 @@ describe("warband stash and trading", () => {
       assert.equal(stock.eligibleRecipients.find((recipient) => recipient.memberId === memberId).missingCopies, 1);
       stocks.push(stock);
     }
-    const campaign = (await call("POST", "/campaigns", { name: "Equipment readiness regression" })).body;
+    const campaign = (await call("POST", "/campaigns", {
+      name: "Equipment readiness regression",
+      tradingRules: { overrides: { crossbow: { baseCost: 31 }, "club-mace-hammer": { baseCost: 9 } }, customItems: [] },
+    })).body;
     const opponent = (await call("POST", "/rosters", { warbandId: warband.id, campaignId: campaign.id })).body;
     const { PRE_BATTLE_STEPS } = require("../src/services/campaign.service");
     await db("rosters").whereIn("id", [roster.id, opponent.id]).update({
@@ -857,6 +860,10 @@ describe("warband stash and trading", () => {
     assert.equal((await status()).valid, true);
     assert.equal((await call("GET", `/rosters/${roster.id}`)).body.treasury, treasury);
     assert.ok((await status()).items.every((item) => item.total === 4 && item.quantities.every((count) => count === 1)));
+    const crossbows = (await call("GET", `/members/${memberId}/equipment`)).body.inventory.filter((item) => item.name === "Crossbow");
+    assert.equal(crossbows.length, 4);
+    assert.deepEqual([...new Set(crossbows.map((item) => item.stackKey))], ["shop:crossbow"]);
+    assert.ok(crossbows.every((item) => item.unitSaleValue === 15));
     assert.equal((await start()).status, 200);
     await stage(roster, "post_battle", 9);
     const carriedCrossbow = (await call("GET", path(roster))).body.memberInventory
@@ -870,6 +877,17 @@ describe("warband stash and trading", () => {
       .reduce((sum, entry) => sum + entry.quantity, 0), 4);
     assert.equal(returned.body.memberInventory.filter((entry) => entry.memberId === memberId && entry.name === "Crossbow").length, 0);
     assert.equal((await status()).valid, true);
+    await stage(roster, "post_battle", 8);
+    const maces = (await call("GET", `/members/${memberId}/equipment`)).body.inventory
+      .filter((item) => item.stackKey === "shop:club-mace-hammer");
+    assert.equal(maces.length, 4);
+    assert.ok(maces.every((item) => item.unitSaleValue === 4));
+    const sell = (items) => call("DELETE", `/members/${memberId}/equipment`, { inventoryItemIds: items.map((item) => item.id) });
+    assert.equal((await sell(maces.slice(0, 3))).status, 409);
+    const sold = await sell(maces);
+    assert.equal(sold.status, 200, JSON.stringify(sold.body));
+    assert.equal(sold.body.refundAmount, 16);
+    assert.ok(!sold.body.inventory.some((item) => item.stackKey === "shop:club-mace-hammer"));
   });
 
   test("completion is atomic when stock is insufficient and rejects inappropriate transfer targets", async () => {
