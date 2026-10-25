@@ -53,10 +53,10 @@ function createTradingRoutes(db) {
     response.json(await repository.getTrading(request.params.rosterId));
   }));
   router.post("/rosters/:rosterId/trading/transfer", handle(async (request, response) => {
-    const { direction, inventoryId, memberId, quantity = 1, modelIndex = -1 } = request.body ?? {};
+    const { direction, inventoryId, memberId, quantity = 1, modelIndex = -1, fillMissing = false } = request.body ?? {};
     if (!["to_member", "to_stash"].includes(direction) || !uuid(inventoryId) || !uuid(memberId)
-      || !integer(quantity, 1, 1000) || !integer(modelIndex, -1, 4)) return invalid(response, "Supply transfer direction, inventory/member IDs, quantity and model index.");
-    await repository.transfer(request.params.rosterId, { direction, inventoryId, memberId, quantity, modelIndex });
+      || !integer(quantity, 1, 1000) || !integer(modelIndex, -1, 4) || typeof fillMissing !== "boolean") return invalid(response, "Supply transfer direction, inventory/member IDs, quantity and model index.");
+    await repository.transfer(request.params.rosterId, { direction, inventoryId, memberId, quantity, modelIndex, fillMissing });
     response.json(await repository.getTrading(request.params.rosterId));
   }));
   router.post("/rosters/:rosterId/trading/sell", handle(async (request, response) => {

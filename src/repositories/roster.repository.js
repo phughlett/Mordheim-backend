@@ -17,6 +17,7 @@ const { selectLeader, getRosterLeader, leaderAbility } = require("../services/wa
 const { createTradingRepository } = require("./trading.repository");
 const { canRecruitEquipment, TradingError } = require("../services/trading-rules.service");
 const { canUseEquipment } = require("../services/equipment-access.service");
+const { getGroupEquipment } = require("../services/group-equipment.service");
 
 // Builds a compact `stats` object for an equipment row (from a query joined against
 // weapon_profiles / armour_profiles / weapon_material_modifiers / weapon_poisons), or
@@ -601,6 +602,7 @@ function createRosterRepository(db) {
 
   return {
     ...purchaseRepository,
+    getGroupEquipment: (rosterId) => getGroupEquipment(db, rosterId),
     listRosters(userId) {
       return db("rosters").where({ user_id: userId }).select("*").orderBy("created_at", "asc");
     },

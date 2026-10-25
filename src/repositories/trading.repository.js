@@ -4,6 +4,7 @@ const { defaultTradingRules, diceFor, tradingPermissions, fail, integer } = requ
 const { equipmentSale } = require("../services/equipment-sale.service");
 const { mapTypes, resolveMaps, describeMap } = require("../services/mordheim-map.service");
 const { canUseEquipment } = require("../services/equipment-access.service");
+const { equipmentKey, getGroupEquipment } = require("../services/group-equipment.service");
 
 async function insertAcquired(trx, rosterId, item, quantity, cost, mapSelection) {
   const base = { roster_id: rosterId, shop_item_id: item.id, unit_cost_paid: cost };
@@ -121,8 +122,7 @@ function createTradingRepository(db) {
         const counts = Array.from({ length: member.role === "Henchman" ? member.group_size : 1 }, (_, index) =>
           recipient.owned.filter((row) => row.shop_item_id === shop.id && (member.role !== "Henchman" || row.model_index === index))
             .reduce((sum, row) => sum + row.quantity, 0));
-        const individual = permissions.some((entry) => entry.allow_individual_group_gear);
-        if (individual ? counts.every((count) => count >= shop.definition.maxPerModel) : counts.some((count) => count >= shop.definition.maxPerModel)) return false;
+        if (counts.every((count) => count >= shop.definition.maxPerModel)) return false;
       }
       return Boolean(shop && (!shop.campaign_id || shop.campaign_id === ctx.roster.campaign_id)
         && canEquipItem(shop.definition, eligibility));
@@ -151,6 +151,7 @@ function createTradingRepository(db) {
     const shopRows = new Map(shopItems.map((row) => [row.id, row]));
     const members = await query("warriors").where({ roster_id: ctx.roster.id }).pluck("id");
     const recipients = await Promise.all(members.map((id) => memberContext(query, ctx, id)));
+    const groups = await getGroupEquipment(query, ctx.roster.id);
     const describe = (row) => {
       const option = byOption.get(row.equipment_option_id);
       const item = byShop.get(row.shop_item_id);
@@ -168,6 +169,8 @@ function createTradingRepository(db) {
           .map(({ member, permissions }) => ({
             memberId: member.id,
             allowIndividualGroupGear: permissions.some((entry) => entry.allow_individual_group_gear),
+            missingCopies: groups.find((group) => group.memberId === member.id && !group.allowIndividualGroupGear)
+              ?.items.find((entry) => entry.key === equipmentKey({ ...row, name: option?.name }))?.missing ?? 0,
           })) } : {}),
       };
     };
@@ -177,8 +180,9 @@ function createTradingRepository(db) {
         && !recipient.permissions.some((entry) => entry.allow_individual_group_gear);
       const quantities = shared ? Array.from({ length: recipient.member.group_size }, (_, index) =>
         carried.filter((entry) => entry.warrior_id === row.warrior_id && entry.model_index === index
-          && entry.equipment_option_id === row.equipment_option_id && entry.shop_item_id === row.shop_item_id
-          && entry.unit_cost_paid === row.unit_cost_paid).reduce((sum, entry) => sum + entry.quantity, 0)) : [row.quantity];
+          && !entry.nontransferable && equipmentKey({ ...entry, name: byOption.get(entry.equipment_option_id)?.name })
+          === equipmentKey({ ...row, name: byOption.get(row.equipment_option_id)?.name }))
+          .reduce((sum, entry) => sum + entry.quantity, 0)) : [row.quantity];
       return { ...describe(row), returnQuantity: Math.min(...quantities),
         upgradeQuantity: shared ? recipient.member.group_size : 1, returnModelIndex: shared ? -1 : row.model_index };
     }) };
@@ -367,7 +371,7 @@ function createTradingRepository(db) {
     };
     return transaction ? execute(transaction) : db.transaction(execute);
   }
-  async function transfer(rosterId, { direction, inventoryId, memberId, quantity, modelIndex }) {
+  async function transfer(rosterId, { direction, inventoryId, memberId, quantity, modelIndex, fillMissing = false }) {
     return db.transaction(async (trx) => {
       const ctx = await context(trx, rosterId, true);
       if (!ctx.canTransfer) fail("Equipment can be moved only during setup, pre-battle, or post-battle reallocation (step 9).");
@@ -383,6 +387,19 @@ function createTradingRepository(db) {
         if (barding) fail("Return the warhorse's barding to stash before returning its mount.");
       }
       const all = member.role === "Henchman" && modelIndex === -1;
+      let additions;
+      if (fillMissing) {
+        if (direction !== "to_member" || !all || permissions.some((entry) => entry.allow_individual_group_gear)) {
+          fail("Complete equipment is only available for identically equipped Henchman groups.", 400);
+        }
+        const option = source.equipment_option_id
+          ? await trx("equipment_options").where({ id: source.equipment_option_id }).first("name") : null;
+        const group = (await getGroupEquipment(trx, rosterId)).find((entry) => entry.memberId === memberId);
+        const item = group.items.find((entry) => entry.key === equipmentKey({ ...source, name: option?.name }));
+        if (!item?.missing) fail("This group has no missing copies of this item.");
+        additions = item.quantities.map((count, index) => ({ index, quantity: item.perModel - count }))
+          .filter((entry) => entry.quantity > 0);
+      }
       if (direction === "to_member") {
         if (member.role === "Henchman" && !all && !permissions.some((entry) => entry.allow_individual_group_gear)) {
           fail("This Henchman group must be equipped identically; transfer to all models.");
@@ -399,16 +416,20 @@ function createTradingRepository(db) {
           const already = await trx("warrior_inventory").where({ warrior_id: memberId, shop_item_id: shop.id })
             .whereIn("model_index", all ? Array.from({ length: member.group_size }, (_, index) => index) : [member.role === "Henchman" ? modelIndex : member.role === "Hired Sword" ? -1 : 0])
             .select("model_index", "quantity");
-          if (quantity > shop.definition.maxPerModel || already.some((row) => row.quantity + quantity > shop.definition.maxPerModel)) fail("This model already has its maximum copies of this item.");
+          const targets = additions ?? (all ? Array.from({ length: member.group_size }, (_, index) => ({ index, quantity })) : [{ index: member.role === "Henchman" ? modelIndex : member.role === "Hired Sword" ? -1 : 0, quantity }]);
+          if (targets.some((target) => target.quantity + already.filter((row) => row.model_index === target.index)
+            .reduce((sum, row) => sum + row.quantity, 0) > shop.definition.maxPerModel)) fail("This model already has its maximum copies of this item.");
         }
       }
       const sharedGroup = direction === "to_stash" && member.role === "Henchman"
         && !permissions.some((entry) => entry.allow_individual_group_gear);
       if (sharedGroup) {
-        const matching = await trx("warrior_inventory").where({
-          warrior_id: memberId, equipment_option_id: source.equipment_option_id,
-          shop_item_id: source.shop_item_id, unit_cost_paid: source.unit_cost_paid,
-        }).orderBy("created_at");
+        const carried = await trx("warrior_inventory as inventory")
+          .leftJoin("equipment_options as option", "option.id", "inventory.equipment_option_id")
+          .where("inventory.warrior_id", memberId).orderBy("inventory.created_at")
+          .select("inventory.*", "option.name");
+        const key = equipmentKey(carried.find((entry) => entry.id === source.id));
+        const matching = carried.filter((entry) => !entry.nontransferable && equipmentKey(entry) === key);
         const removals = [];
         for (let index = 0; index < member.group_size; index++) {
           let remaining = quantity;
@@ -423,22 +444,31 @@ function createTradingRepository(db) {
           if (take === entry.quantity) await trx("warrior_inventory").where({ id: entry.id }).delete();
           else await trx("warrior_inventory").where({ id: entry.id }).decrement("quantity", take);
         }
-        await trx("warband_stash").insert({
-          roster_id: rosterId, equipment_option_id: source.equipment_option_id, shop_item_id: source.shop_item_id,
-          quantity: quantity * member.group_size, unit_cost_paid: source.unit_cost_paid,
-          bound_warrior_id: source.bound_warrior_id, nontransferable: source.nontransferable,
-        });
+        const returns = new Map();
+        for (const { entry, take } of removals) {
+          const origin = {
+            roster_id: rosterId, equipment_option_id: entry.equipment_option_id, shop_item_id: entry.shop_item_id,
+            unit_cost_paid: entry.unit_cost_paid, bound_warrior_id: entry.bound_warrior_id,
+            nontransferable: entry.nontransferable, map_result: entry.map_result,
+          };
+          const stackKey = JSON.stringify(origin);
+          const stack = returns.get(stackKey) ?? { ...origin, quantity: 0 };
+          stack.quantity += take;
+          returns.set(stackKey, stack);
+        }
+        await trx("warband_stash").insert([...returns.values()]);
         return;
       }
       const indices = direction === "to_member"
         ? all ? Array.from({ length: member.group_size }, (_, index) => index) : [member.role === "Henchman" ? modelIndex : member.role === "Hired Sword" ? -1 : 0]
         : [source.model_index];
-      const total = quantity * indices.length;
+      const transfers = additions ?? indices.map((index) => ({ index, quantity }));
+      const total = transfers.reduce((sum, entry) => sum + entry.quantity, 0);
       if (total > source.quantity) fail("Not enough copies in this inventory.");
       if (total === source.quantity) await trx(table).where({ id: source.id }).delete();
       else await trx(table).where({ id: source.id }).update({ quantity: source.quantity - total });
       const origin = { equipment_option_id: source.equipment_option_id, shop_item_id: source.shop_item_id, quantity, unit_cost_paid: source.unit_cost_paid, bound_warrior_id: source.bound_warrior_id, nontransferable: source.nontransferable, map_result: source.map_result };
-      if (direction === "to_member") await trx("warrior_inventory").insert(indices.map((index) => ({ ...origin, warrior_id: memberId, model_index: index })));
+      if (direction === "to_member") await trx("warrior_inventory").insert(transfers.map(({ index, quantity: count }) => ({ ...origin, quantity: count, warrior_id: memberId, model_index: index })));
       else await trx("warband_stash").insert({ ...origin, roster_id: rosterId });
     });
   }

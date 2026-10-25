@@ -1,6 +1,7 @@
 const express = require("express");
 const { PRE_BATTLE_STEPS, advanceCampaign, toCampaign } = require("../services/campaign.service");
 const { warbandTitle } = require("../services/warband-identity.service");
+const { getGroupEquipment, groupEquipmentError } = require("../services/group-equipment.service");
 
 const FORMATS = { "1v1": 1, "2v2": 2 };
 const TEAMS = ["A", "B"];
@@ -18,6 +19,8 @@ function createBattleRoutes(db) {
       .select("rosters.*", "battle_rosters.team", "users.username as player");
     const lead = participants[0];
     const stage = lead && battle.status === "active" ? toCampaign(lead) : null;
+    const equipmentErrors = new Map(await Promise.all(participants.map(async (row) =>
+      [row.id, groupEquipmentError(await getGroupEquipment(db, row.id))])));
     return {
       id: battle.id,
       campaignId: battle.campaign_id,
@@ -34,6 +37,7 @@ function createBattleRoutes(db) {
         phase: row.campaign_phase,
         step: row.campaign_step,
         ready: row.campaign_phase === "pre_battle" && row.campaign_step === PRE_BATTLE_STEPS.length,
+        equipmentError: equipmentErrors.get(row.id),
       })),
       round: stage?.battleTurn ?? null,
       firstTeam: battle.first_team,
@@ -160,10 +164,17 @@ function createBattleRoutes(db) {
     if (!TEAMS.includes(firstTeam)) return response.status(400).json({ error: "First team must be A or B." });
     const waiting = view.participants.filter((entry) => !entry.ready);
     if (waiting.length > 0) return response.status(409).json({ error: `${waiting.map((entry) => entry.name).join(", ")} must finish the pre-battle sequence first.` });
-    await db.transaction(async (trx) => {
+    const equipmentError = await db.transaction(async (trx) => {
+      const ids = view.participants.map((entry) => entry.rosterId).sort();
+      await trx("rosters").whereIn("id", ids).orderBy("id").forUpdate().select("id");
+      for (const id of ids) {
+        const error = groupEquipmentError(await getGroupEquipment(trx, id));
+        if (error) return error;
+      }
       await trx("rosters").whereIn("id", view.participants.map((entry) => entry.rosterId)).update({ campaign_phase: "battle", campaign_step: 1, battle_turn: 1, updated_at: new Date() });
       await trx("battles").where({ id: battle.id }).update({ status: "active", first_team: firstTeam, active_team: firstTeam, updated_at: new Date() });
     });
+    if (equipmentError) return response.status(409).json({ error: equipmentError });
     response.json(await present(await find(battle.id)));
   });
 

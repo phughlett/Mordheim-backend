@@ -42,8 +42,11 @@ function createRosterService(repository) {
   async function toRosterResponse(roster, members) {
     const campaign = roster.campaign_id ? await repository.findCampaign(roster.campaign_id) : null;
     const capacity = await getRosterCapacity(roster);
+    const groups = await repository.getGroupEquipment(roster.id);
     return {
-      ...toRoster(roster, members),
+      ...toRoster(roster, members.map((member) => ({
+        ...member, equipmentStatus: groups.find((group) => group.memberId === member.id) ?? null,
+      }))),
       maxHeroes: capacity.maxHeroes,
       maxMembers: capacity.baseMaxMembers,
       ownerId: roster.user_id ?? null,

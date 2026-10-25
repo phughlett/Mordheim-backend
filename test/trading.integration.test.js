@@ -759,7 +759,7 @@ describe("warband stash and trading", () => {
     const bought = await buy(roster, "sword", 2);
     assert.ok(bought.body.stash[0].eligibleRecipients.some((recipient) => recipient.memberId === member.id));
     assert.deepEqual(bought.body.stash[0].eligibleRecipients.find((recipient) => recipient.memberId === henchman.id), {
-      memberId: henchman.id, allowIndividualGroupGear: false,
+      memberId: henchman.id, allowIndividualGroupGear: false, missingCopies: 0,
     });
     assert.equal((await call("POST", path(roster, "/transfer"), { direction: "to_member", inventoryId: bought.body.stash[0].id, memberId: henchman.id, quantity: 1, modelIndex: 0 })).status, 409);
     const grouped = await call("POST", path(roster, "/transfer"), { direction: "to_member", inventoryId: bought.body.stash[0].id, memberId: henchman.id, quantity: 1, modelIndex: -1 });
@@ -795,6 +795,114 @@ describe("warband stash and trading", () => {
     const old = (await call("GET", path(roster))).body.stash[0];
     assert.equal((await call("POST", path(another.roster, "/transfer"), { direction: "to_member", inventoryId: old.id, memberId: another.member.id })).status, 404);
   });
+  test("a fourth Thunderer needs only one shop crossbow and mace, and cannot battle until equipped", async () => {
+    const { roster } = await fixture(false, undefined, "Dwarf Treasure Hunters", "Dwarf Engineer");
+    const dwarfTypes = (await call("GET", `/warbands/${roster.warbandId}/warrior-types`)).body;
+    const hired = await call("POST", `/rosters/${roster.id}/members`, {
+      name: "Growing Thunderers", role: "Henchman", groupSize: 3,
+      warriorTypeId: dwarfTypes.find((type) => type.name === "Dwarf Thunderers").id,
+    });
+    assert.equal(hired.status, 201, JSON.stringify(hired.body));
+    const memberId = hired.body.id;
+    await call("PATCH", `/rosters/${roster.id}`, { battlesFought: 0 });
+    const gear = (await call("GET", `/members/${memberId}/equipment`)).body;
+    for (const name of ["Crossbow", "Mace"]) {
+      const purchased = await call("POST", `/members/${memberId}/equipment`, {
+        equipmentOptionId: gear.availableOptions.find((item) => item.name === name).id, modelIndex: -1, quantity: 1,
+      });
+      assert.equal(purchased.status, 201, JSON.stringify(purchased.body));
+    }
+    await call("PATCH", `/rosters/${roster.id}`, { battlesFought: 1 });
+    assert.equal((await call("PATCH", `/members/${memberId}`, { groupSize: 4 })).status, 200);
+    const status = async () => (await call("GET", `/rosters/${roster.id}`)).body.members
+      .find((member) => member.id === memberId).equipmentStatus;
+    assert.equal((await status()).valid, false);
+    assert.deepEqual((await status()).items.filter((item) => item.missing).map((item) => item.missing), [1, 1]);
+    const original = await db("warrior_inventory").where({ warrior_id: memberId }).where("model_index", "<", 3).orderBy("id");
+    const stocks = [];
+    for (const itemId of ["crossbow", "club-mace-hammer"]) {
+      const bought = await buy(roster, itemId, 1);
+      assert.equal(bought.status, 201, JSON.stringify(bought.body));
+      const stock = bought.body.stash.find((item) => item.shopItemId === itemId);
+      assert.equal(stock.eligibleRecipients.find((recipient) => recipient.memberId === memberId).missingCopies, 1);
+      stocks.push(stock);
+    }
+    const campaign = (await call("POST", "/campaigns", { name: "Equipment readiness regression" })).body;
+    const opponent = (await call("POST", "/rosters", { warbandId: warband.id, campaignId: campaign.id })).body;
+    const { PRE_BATTLE_STEPS } = require("../src/services/campaign.service");
+    await db("rosters").whereIn("id", [roster.id, opponent.id]).update({
+      campaign_id: campaign.id, campaign_phase: "pre_battle", campaign_step: PRE_BATTLE_STEPS.length,
+    });
+    const battle = (await call("POST", `/campaigns/${campaign.id}/battles`, { format: "1v1" })).body;
+    for (const [rosterId, team] of [[roster.id, "A"], [opponent.id, "B"]]) {
+      assert.equal((await call("PUT", `/battles/${battle.id}/participants`, { rosterId, team })).status, 200);
+    }
+    const start = () => call("POST", `/battles/${battle.id}/start`, {});
+    const blocked = await start();
+    assert.equal(blocked.status, 409, JSON.stringify(blocked.body));
+    assert.match(blocked.body.error, /Growing Thunderers.*missing 1/);
+    assert.equal((await db("battles").where({ id: battle.id }).first()).status, "forming");
+    const treasury = (await call("GET", `/rosters/${roster.id}`)).body.treasury;
+    for (const [index, stock] of stocks.entries()) {
+      const input = { direction: "to_member", inventoryId: stock.id, memberId, quantity: 1, modelIndex: -1 };
+      const ordinary = await call("POST", path(roster, "/transfer"), input);
+      assert.equal(ordinary.status, 409);
+      const completed = await call("POST", path(roster, "/transfer"), { ...input, fillMissing: true });
+      assert.equal(completed.status, 200, JSON.stringify(completed.body));
+      assert.ok(!completed.body.stash.some((entry) => entry.id === stock.id));
+      assert.equal(completed.body.memberInventory.find((entry) => entry.shopItemId === stock.shopItemId).modelIndex, 3);
+      assert.deepEqual(await db("warrior_inventory").where({ warrior_id: memberId }).where("model_index", "<", 3).orderBy("id"), original);
+      if (index === 0) assert.equal((await start()).status, 409);
+    }
+    assert.equal((await status()).valid, true);
+    assert.equal((await call("GET", `/rosters/${roster.id}`)).body.treasury, treasury);
+    assert.ok((await status()).items.every((item) => item.total === 4 && item.quantities.every((count) => count === 1)));
+    assert.equal((await start()).status, 200);
+    await stage(roster, "post_battle", 9);
+    const carriedCrossbow = (await call("GET", path(roster))).body.memberInventory
+      .find((entry) => entry.memberId === memberId && entry.name === "Crossbow");
+    assert.equal(carriedCrossbow.returnQuantity, 1);
+    const returned = await call("POST", path(roster, "/transfer"), {
+      direction: "to_stash", inventoryId: carriedCrossbow.id, memberId, quantity: 1, modelIndex: -1,
+    });
+    assert.equal(returned.status, 200, JSON.stringify(returned.body));
+    assert.equal(returned.body.stash.filter((entry) => entry.name === "Crossbow")
+      .reduce((sum, entry) => sum + entry.quantity, 0), 4);
+    assert.equal(returned.body.memberInventory.filter((entry) => entry.memberId === memberId && entry.name === "Crossbow").length, 0);
+    assert.equal((await status()).valid, true);
+  });
+
+  test("completion is atomic when stock is insufficient and rejects inappropriate transfer targets", async () => {
+    const { roster, member } = await fixture();
+    const hired = await call("POST", `/rosters/${roster.id}/members`, {
+      role: "Henchman", name: "Uneven equipment", groupSize: 4,
+      warriorTypeId: types.find((type) => type.name === "Warriors (All Other)").id,
+    });
+    const memberId = hired.body.id;
+    await db("warrior_inventory").insert([
+      { warrior_id: memberId, shop_item_id: "sword", model_index: 0, quantity: 2, unit_cost_paid: 10 },
+      { warrior_id: memberId, shop_item_id: "sword", model_index: 1, quantity: 1, unit_cost_paid: 10 },
+    ]);
+    const bought = await buy(roster, "sword", 1);
+    const stock = bought.body.stash.find((entry) => entry.shopItemId === "sword");
+    assert.equal(stock.eligibleRecipients.find((entry) => entry.memberId === memberId).missingCopies, 5);
+    const input = { direction: "to_member", inventoryId: stock.id, memberId, modelIndex: -1, fillMissing: true };
+    const before = (await call("GET", path(roster))).body;
+    assert.equal((await call("POST", path(roster, "/transfer"), input)).status, 409);
+    const after = (await call("GET", path(roster))).body;
+    assert.deepEqual(after.stash, before.stash);
+    assert.deepEqual(after.memberInventory, before.memberInventory);
+    assert.equal((await call("POST", path(roster, "/transfer"), { ...input, memberId: member.id })).status, 400);
+    assert.equal((await call("POST", path(roster, "/transfer"), { ...input, modelIndex: 3 })).status, 400);
+    assert.equal((await call("POST", path(roster, "/transfer"), { ...input, fillMissing: "yes" })).status, 400);
+    await db("warband_stash").where({ id: stock.id }).update({ quantity: 5 });
+    const completed = await call("POST", path(roster, "/transfer"), input);
+    assert.equal(completed.status, 200, JSON.stringify(completed.body));
+    const swords = completed.body.memberInventory.filter((entry) => entry.memberId === memberId && entry.shopItemId === "sword");
+    assert.deepEqual([0, 1, 2, 3].map((index) => swords.filter((entry) => entry.modelIndex === index)
+      .reduce((sum, entry) => sum + entry.quantity, 0)), [2, 2, 2, 2]);
+  });
+
   test("Thunderers and Engineers can receive their listed melee weapons without broader Dwarf Warrior access", async () => {
     const { roster, member: engineer } = await fixture(false, undefined, "Dwarf Treasure Hunters", "Dwarf Engineer");
     const dwarfTypes = (await call("GET", `/warbands/${roster.warbandId}/warrior-types`)).body;
