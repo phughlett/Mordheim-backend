@@ -9,6 +9,7 @@ const { createCorrectionRoutes } = require("./routes/corrections.routes");
 const { createMemberRoutes } = require("./routes/member.routes");
 const { createRosterRoutes } = require("./routes/roster.routes");
 const { createTradingRoutes } = require("./routes/trading.routes");
+const { createInjuryRoutes } = require("./routes/injury.routes");
 
 function logApiRequest(request, response, next) {
   const startedAt = process.hrtime.bigint();
@@ -48,6 +49,8 @@ function createApp(db, options = {}) {
   app.use("/api", createBattleRoutes(db));
   app.use("/api", createRosterRoutes(db));
   app.use("/api", createMemberRoutes(db));
+  app.use("/api", createInjuryRoutes(db));
+  app.use("/api", require("./routes/graveyard.routes").createGraveyardRoutes(db));
   app.use("/api", createTradingRoutes(db));
   app.use((error, _request, response, _next) => {
     console.error(error);

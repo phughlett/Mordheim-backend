@@ -4,6 +4,7 @@ COPY package.json package-lock.json ./
 RUN npm ci --omit=dev
 COPY knexfile.js ./
 COPY catalog.json ./catalog.json
+COPY hero-injuries.json henchman-injuries.json ./
 COPY warband-capacity.json ./warband-capacity.json
 COPY equipment-catalog.json ./equipment-catalog.json
 COPY trading-catalog.json ./trading-catalog.json

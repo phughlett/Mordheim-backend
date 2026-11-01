@@ -11,6 +11,7 @@ function createAdvancePurchaseRepository(db, { getSkillEligibilityContext, loadA
       .where("warrior.id", warriorId)
       .select({
         id: "warrior.id", role: "warrior.role", stats: "warrior.stats", experience: "warrior.experience",
+        injuryExperienceFloor: "warrior.injury_experience_floor",
         baseline: "warrior.advance_baseline", initialStats: "type.stats", typeName: "type.name",
         canGainExperience: "type.can_gain_experience", warbandName: "warband.name",
         campaignId: "roster.campaign_id", phase: "roster.campaign_phase", battlesFought: "roster.battles_fought",
@@ -117,6 +118,9 @@ function createAdvancePurchaseRepository(db, { getSkillEligibilityContext, loadA
           .orderBy("experience_threshold", "desc").orderBy("created_at", "desc").first("id");
         if (latest?.id !== advance.id || Number(warrior.experience) !== advance.experience_threshold || advance.consumed_at) {
           return { purchaseError: "Undo later advances first; purchased experience cannot be reversed after subsequent experience gains." };
+        }
+        if (Number(advance.experience_before_purchase) < Number(warrior.injuryExperienceFloor)) {
+          return { purchaseError: "This refund would remove protected XP awarded by injuries." };
         }
         const stats = { ...warrior.stats };
         if (advance.stat) {

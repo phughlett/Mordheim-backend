@@ -2,6 +2,7 @@ const express = require("express");
 const { PRE_BATTLE_STEPS, advanceCampaign, toCampaign } = require("../services/campaign.service");
 const { warbandTitle } = require("../services/warband-identity.service");
 const { getGroupEquipment, groupEquipmentError } = require("../services/group-equipment.service");
+const { injuryAvailability } = require("../services/injury-rules.service");
 
 const FORMATS = { "1v1": 1, "2v2": 2 };
 const TEAMS = ["A", "B"];
@@ -170,6 +171,10 @@ function createBattleRoutes(db) {
       for (const id of ids) {
         const error = groupEquipmentError(await getGroupEquipment(trx, id));
         if (error) return error;
+        const roster = await trx("rosters").where({ id }).first();
+        const warriors = await trx("warriors").where({ roster_id: id });
+        const unchecked = warriors.filter((warrior) => injuryAvailability(warrior, roster).needsOldWoundRoll);
+        if (unchecked.length) return `Resolve old battle wound checks for ${unchecked.map((warrior) => warrior.name).join(", ")} before starting battle.`;
       }
       await trx("rosters").whereIn("id", view.participants.map((entry) => entry.rosterId)).update({ campaign_phase: "battle", campaign_step: 1, battle_turn: 1, updated_at: new Date() });
       await trx("battles").where({ id: battle.id }).update({ status: "active", first_team: firstTeam, active_team: firstTeam, updated_at: new Date() });

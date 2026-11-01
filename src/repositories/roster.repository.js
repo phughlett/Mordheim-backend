@@ -18,6 +18,7 @@ const { createTradingRepository } = require("./trading.repository");
 const { canRecruitEquipment, TradingError } = require("../services/trading-rules.service");
 const { canUseEquipment } = require("../services/equipment-access.service");
 const { getGroupEquipment } = require("../services/group-equipment.service");
+const { archiveHero } = require("../services/graveyard.service");
 
 // Builds a compact `stats` object for an equipment row (from a query joined against
 // weapon_profiles / armour_profiles / weapon_material_modifiers / weapon_poisons), or
@@ -66,6 +67,12 @@ function buildEquipmentStats(row) {
 
 function createRosterRepository(db) {
   async function updateWarriorValues(transaction, id, values) {
+    if (values.experience !== undefined) {
+      const warrior = await transaction("warriors").where({ id }).forUpdate().first("injury_experience_floor");
+      if (warrior && Number(values.experience) < Number(warrior.injury_experience_floor)) {
+        throw new TradingError(`Experience cannot go below ${warrior.injury_experience_floor}: XP awarded by injuries is protected.`, 409);
+      }
+    }
     return transaction("warriors").where({ id }).update({ ...values, updated_at: new Date() });
   }
 
@@ -603,6 +610,7 @@ function createRosterRepository(db) {
   return {
     ...purchaseRepository,
     getGroupEquipment: (rosterId) => getGroupEquipment(db, rosterId),
+    listInjuryHistory: (rosterId) => db("warrior_injuries").where({ roster_id: rosterId }).orderBy("created_at", "desc"),
     listRosters(userId) {
       return db("rosters").where({ user_id: userId }).select("*").orderBy("created_at", "asc");
     },
@@ -1025,8 +1033,8 @@ function createRosterRepository(db) {
         .whereNull("consumed_at")
         .max("experience_threshold as locked")
         .first();
-      const warrior = await db("warriors").where({ id: warriorId }).first("promotion_experience");
-      return Math.max(Number(row?.locked || 0), Number(warrior?.promotion_experience || 0));
+      const warrior = await db("warriors").where({ id: warriorId }).first("promotion_experience", "injury_experience_floor");
+      return Math.max(Number(row?.locked || 0), Number(warrior?.promotion_experience || 0), Number(warrior?.injury_experience_floor || 0));
     },
 
     findWarrior(id, columns = "*") {
@@ -1047,6 +1055,7 @@ function createRosterRepository(db) {
           "warrior.id",
           "warrior.role",
           "warrior.experience",
+          "warrior.injury_experience_floor as injuryExperienceFloor",
           "warrior.stats",
           "warrior.advance_baseline",
           "warrior_type.starting_experience as minimumExperience",
@@ -1140,8 +1149,10 @@ function createRosterRepository(db) {
         role: warrior.role,
         experience: Number(warrior.experience),
         lockedExperience,
+        injuryExperienceFloor: Number(warrior.injuryExperienceFloor),
         pendingCount,
-        minimumExperience: Math.max(Number(warrior.minimumExperience || 0), Number(warrior.promotionExperience || 0)),
+        minimumExperience: Math.max(Number(warrior.minimumExperience || 0), Number(warrior.promotionExperience || 0),
+          Number(warrior.injuryExperienceFloor || 0)),
         advanceTable,
         advanceBaseline: Number(warrior.advance_baseline || 0),
         pending: pendingCount > 0,
@@ -1411,11 +1422,11 @@ function createRosterRepository(db) {
         const roster = await transaction("rosters")
           .where({ id: warrior.roster_id })
           .forUpdate()
-          .first("id", "treasury");
+          .first("id", "treasury", "battles_fought");
         if (!roster) return { missingRoster: true };
 
         const modelCount = warrior.role === "Henchman" ? warrior.group_size || 1 : 1;
-        const refundAmount = ["Hero", "Henchman"].includes(warrior.role)
+        const refundAmount = Number(roster.battles_fought) === 0 && ["Hero", "Henchman"].includes(warrior.role)
           ? Number(warrior.hire_cost || 0) * modelCount
           : 0;
         if (refundAmount > 0) {
@@ -1424,6 +1435,9 @@ function createRosterRepository(db) {
             updated_at: new Date(),
           });
         }
+        if (warrior.role === "Hero") await archiveHero(transaction, id, {
+          reason: "dismissed", battleNumber: Number(roster.battles_fought),
+        });
         await transaction("warriors").where({ id }).delete();
         return { refundAmount };
       });
@@ -1432,6 +1446,8 @@ function createRosterRepository(db) {
     listWarriorTypeIdsByName(names) {
       return db("warrior_types").whereIn("name", names).pluck("id");
     },
+
+    listGraveyard: (rosterId) => db("hero_graveyard").where({ roster_id: rosterId }).orderBy("removed_at", "desc"),
 
     async sumWarriorModels(rosterId, warriorTypeIds, exceptMemberId) {
       const query = db("warriors").where({ roster_id: rosterId }).whereIn("warrior_type_id", warriorTypeIds);

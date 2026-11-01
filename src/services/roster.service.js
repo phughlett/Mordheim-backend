@@ -1,6 +1,8 @@
 const { getStatMaximumProfile, racialMaximums } = require("./advancement-rules.service");
 const { toCampaign } = require("./campaign.service");
 const { warbandTitle } = require("./warband-identity.service");
+const { injuryAvailability, activeInjuryConditions } = require("./injury-rules.service");
+const { graveyardUndoBlock } = require("./graveyard.service");
 
 const statKeys = ["M", "WS", "BS", "S", "T", "W", "I", "A", "Ld"];
 
@@ -46,6 +48,8 @@ function createRosterService(repository) {
     return {
       ...toRoster(roster, members.map((member) => ({
         ...member, equipmentStatus: groups.find((group) => group.memberId === member.id) ?? null,
+        injuryConditions: activeInjuryConditions(member.injuryConditions, roster),
+        injuryAvailability: injuryAvailability({ injury_conditions: member.injuryConditions }, roster),
       }))),
       maxHeroes: capacity.maxHeroes,
       maxMembers: capacity.baseMaxMembers,
@@ -56,6 +60,10 @@ function createRosterService(repository) {
       campaignName: campaign?.name ?? null,
       campaignMaxGc: campaign?.max_gc ?? null,
       capacity,
+      injuryHistory: await repository.listInjuryHistory(roster.id),
+      graveyard: Number(roster.battles_fought) === 0 ? [] : (await repository.listGraveyard(roster.id)).map((entry) => ({
+        ...entry, canRestore: !graveyardUndoBlock(entry, roster), restoreBlock: graveyardUndoBlock(entry, roster),
+      })),
     };
   }
 
@@ -116,12 +124,14 @@ function toMember(warrior) {
     ratingExperienceMultiplier: Number(warrior.rating_experience_multiplier ?? 1),
     role: warrior.role,
     experience: String(warrior.experience),
-    minimumExperience: Math.max(Number(warrior.starting_experience || 0), Number(warrior.locked_experience || 0), Number(warrior.promotion_experience || 0)),
+    minimumExperience: Math.max(Number(warrior.starting_experience || 0), Number(warrior.locked_experience || 0),
+      Number(warrior.promotion_experience || 0), Number(warrior.injury_experience_floor || 0)),
     stats: Object.fromEntries(statKeys.map((key) => [key, warrior.stats?.[key] ?? ""])),
     initialStats: Object.fromEntries(statKeys.map((key) => [key, warrior.initial_stats?.[key] ?? ""])),
     maximumStats: racialMaximums[getStatMaximumProfile(warrior.warband_name, warrior.warrior_type_name)] || null,
     specialRules: warrior.type_special_rules ?? [],
     equipment: warrior.equipment,
+    injuryConditions: warrior.injury_conditions ?? [],
     skills: warrior.skills,
     notes: warrior.notes,
   };

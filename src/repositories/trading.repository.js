@@ -5,6 +5,7 @@ const { equipmentSale } = require("../services/equipment-sale.service");
 const { mapTypes, resolveMaps, describeMap } = require("../services/mordheim-map.service");
 const { canUseEquipment } = require("../services/equipment-access.service");
 const { equipmentKey, getGroupEquipment } = require("../services/group-equipment.service");
+const { archiveHero } = require("../services/graveyard.service");
 
 async function insertAcquired(trx, rosterId, item, quantity, cost, mapSelection) {
   const base = { roster_id: rosterId, shop_item_id: item.id, unit_cost_paid: cost };
@@ -549,6 +550,7 @@ function createTradingRepository(db) {
       const { member } = await memberContext(trx, ctx, memberId);
       if (member.role !== "Henchman" || member.group_size === 1) {
         if (modelIndex !== 0) fail("That model does not exist.", 400);
+        if (member.role === "Hero") await archiveHero(trx, memberId, { reason: "death", battleNumber: ctx.battle });
         await trx("warriors").where({ id: memberId }).delete();
         return;
       }

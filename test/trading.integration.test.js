@@ -731,6 +731,7 @@ describe("warband stash and trading", () => {
   });
   test("death loses carried equipment without refund while stash survives; battle transfers blocked", async () => {
     const { roster, member } = await fixture(true);
+    await db("rosters").where({ id: roster.id }).update({ battles_fought: 1 });
     await stage(roster, "post_battle", 8);
     const bought = await buy(roster, "sword", 2);
     assert.equal(bought.status, 201);
@@ -748,6 +749,10 @@ describe("warband stash and trading", () => {
     assert.equal(died.body.stash[0].quantity, 1);
     assert.equal(died.body.memberInventory.length, 0);
     assert.equal(died.body.treasury, treasury);
+    const archived = await db("hero_graveyard").where({ roster_id: roster.id });
+    assert.equal(archived.length, 1);
+    assert.equal(archived[0].reason, "death");
+    assert.ok(archived[0].snapshot.equipment.some((entry) => entry.shop_item_id === "sword"));
     assert.equal((await call("POST", `/rosters/${roster.id}/casualties`, { memberId: member.id })).status, 404);
   });
   test("equipment eligibility, Henchman quantities, free gear grants, and cross-owner access", async () => {

@@ -1,0 +1,52 @@
+{
+  "id": "henchman-serious-injuries",
+  "name": "HENCHMEN WITH SERIOUS INJURIES",
+  "source": {
+    "title": "Mordheim Rulebook",
+    "file": "../References/3Campaigns.pdf",
+    "section": "Campaigns - Serious injuries",
+    "pages": [79],
+    "grade": "core"
+  },
+  "textFormat": {
+    "ruleText": "Original wording from the user-supplied PDF, with layout line breaks removed.",
+    "effects": "Application interpretations, not original rulebook text.",
+    "notes": "Application notes, not original rulebook text.",
+    "resultNames": "Application labels; the source presents these outcomes in a single paragraph."
+  },
+  "ruleText": "Henchmen who are out of action at the end of the battle are removed permanently from the roster sheet on a D6 roll of 1-2. They have either suffered severe injuries, died of their wounds, or decided to quit the warband. On a roll of 3-6 they can fight in the next battle as normal.",
+  "appliesTo": ["Henchman"],
+  "trigger": "out-of-action-at-end-of-battle",
+  "timing": "post-battle-injuries",
+  "resolutionUnit": "individual-model",
+  "roll": {
+    "type": "D6",
+    "dice": 1,
+    "sides": 6,
+    "validResults": [1, 2, 3, 4, 5, 6]
+  },
+  "results": [
+    {
+      "id": "removed-from-warband",
+      "name": "Removed from Warband",
+      "rolls": [1, 2],
+      "ruleText": "Henchmen who are out of action at the end of the battle are removed permanently from the roster sheet on a D6 roll of 1-2. They have either suffered severe injuries, died of their wounds, or decided to quit the warband.",
+      "effects": [
+        { "type": "remove-model", "reason": "injury-death-or-departure", "duration": "permanent" }
+      ]
+    },
+    {
+      "id": "full-recovery",
+      "name": "Full Recovery",
+      "rolls": [3, 4, 5, 6],
+      "ruleText": "On a roll of 3-6 they can fight in the next battle as normal.",
+      "effects": []
+    }
+  ],
+  "notes": [
+    "Roll once for each affected model, not once for its entire Henchman group.",
+    "Surviving Henchmen do not use the Hero injury table or receive permanent stat reductions under this core rule.",
+    "The Henchman paragraph does not specify equipment disposition for a removed model; equipment-loss rules are not inferred from the separate Hero death result.",
+    "This file represents the core Henchman rule only, without warband exceptions, errata or house rules."
+  ]
+}

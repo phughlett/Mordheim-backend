@@ -6,6 +6,7 @@ const {
   validateWarriorTypeCount,
 } = require("../services/roster-validation.service");
 const { getAdvanceTable, getAdvancesEarned } = require("../services/advancement-rules.service");
+const { TradingError } = require("../services/trading-rules.service");
 
 const memberFields = ["name", "type", "warriorTypeId", "groupSize", "role", "experience", "equipment", "skills", "notes"];
 const warriorCategories = ["Hero", "Henchman", "Hired Sword"];
@@ -490,6 +491,9 @@ function createMemberController(repository, rosterService) {
       if (experienceError) return response.status(400).json({ error: experienceError });
       if (Object.keys(values).length === 0) return response.status(400).json({ error: "No valid warrior fields supplied." });
       if (values.experience !== undefined && values.experience < Number(warrior.experience)) {
+        if (values.experience < Number(warrior.injury_experience_floor)) {
+          return response.status(409).json({ error: `Experience cannot go below ${warrior.injury_experience_floor}: XP awarded by injuries is protected.` });
+        }
         const lockedExperience = await repository.getLockedExperience(warrior.id);
         if (values.experience < lockedExperience) {
           const promotionFloor = Number(warrior.promotion_experience || 0);
@@ -506,7 +510,12 @@ function createMemberController(repository, rosterService) {
         if (update.insufficientFunds) return response.status(409).json({ error: `Adding Henchman models costs ${additionalHireCost} GC, but the roster does not have enough gold.` });
         updatedWarrior = update.warrior;
       } else {
-        [updatedWarrior] = await repository.updateWarrior(request.params.memberId, values);
+        try {
+          [updatedWarrior] = await repository.updateWarrior(request.params.memberId, values);
+        } catch (error) {
+          if (error instanceof TradingError) return response.status(error.status).json({ error: error.message });
+          throw error;
+        }
       }
       response.json(rosterService.toMember(updatedWarrior));
     },

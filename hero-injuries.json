@@ -1,0 +1,440 @@
+{
+  "id": "hero-serious-injuries",
+  "name": "Heroes’ serious injuries chart (roll D66)",
+  "source": {
+    "title": "Mordheim Rulebook",
+    "file": "../References/3Campaigns.pdf",
+    "section": "Campaigns - Serious injuries",
+    "pages": [79, 80],
+    "grade": "core"
+  },
+  "textFormat": {
+    "ruleText": "Original wording from the user-supplied PDF, with layout line breaks removed and paragraphs retained.",
+    "effects": "Application interpretations, not original rulebook text.",
+    "notes": "Application notes, not original rulebook text."
+  },
+  "instructions": {
+    "heading": "HEROES WITH SERIOUS INJURIES",
+    "ruleText": "After a battle some of your Heroes may be taken out of action. You will need to determine the extent of their injuries before the next game.\n\nTo use the Heroes’ Serious Injuries chart opposite, roll two D6. The first dice roll represents ‘tens’ and the second ‘units’, so that a roll of 1 and 5 is 15, a roll of 3 and 6 is 36, etc. This type of dice roll is referred to as a ‘D66 roll’."
+  },
+  "appliesTo": ["Hero"],
+  "trigger": "taken-out-of-action-during-battle",
+  "timing": "post-battle-injuries",
+  "roll": {
+    "type": "D66",
+    "dice": 2,
+    "sides": 6,
+    "validResults": [
+      11, 12, 13, 14, 15, 16,
+      21, 22, 23, 24, 25, 26,
+      31, 32, 33, 34, 35, 36,
+      41, 42, 43, 44, 45, 46,
+      51, 52, 53, 54, 55, 56,
+      61, 62, 63, 64, 65, 66
+    ]
+  },
+  "results": [
+    {
+      "id": "dead",
+      "name": "DEAD",
+      "rolls": [11, 12, 13, 14, 15],
+      "ruleText": "The warrior is dead and his body is abandoned in the dark alleys of Mordheim, never to be found again. All the weapons and equipment he carried are lost. Remove him from the warband’s roster.",
+      "effects": [
+        { "type": "remove-warrior", "reason": "death" },
+        { "type": "lose-equipment", "scope": "all-carried-equipment" }
+      ]
+    },
+    {
+      "id": "multiple-injuries",
+      "name": "MULTIPLE INJURIES",
+      "rolls": [16, 21],
+      "ruleText": "The warrior is not dead but has suffered a lot of wounds. Roll D6 times on this table. Re-roll any ‘Dead’, ‘Captured’ and further ‘Multiple Injuries’ results.",
+      "effects": [],
+      "secondaryRoll": {
+        "type": "D6",
+        "purpose": "number-of-injuries",
+        "effects": [
+          {
+            "type": "roll-injury-table",
+            "tableId": "hero-serious-injuries",
+            "count": "secondary-roll",
+            "rerollResultIds": ["dead", "captured", "multiple-injuries"],
+            "resolveSecondaryRolls": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "leg-wound",
+      "name": "LEG WOUND",
+      "rolls": [22],
+      "ruleText": "The warrior’s leg is broken. He suffers a -1 Movement characteristic penalty from now on.",
+      "effects": [
+        { "type": "stat-modifier", "stat": "M", "value": -1, "duration": "permanent" }
+      ]
+    },
+    {
+      "id": "arm-wound",
+      "name": "ARM WOUND",
+      "rolls": [23],
+      "ruleText": "Roll again: 1 = Severe arm wound. The arm must be amputated. The warrior may only use a single one-handed weapon from now on. 2-6 = Light wound. The warrior must miss the next game.",
+      "effects": [],
+      "secondaryRoll": {
+        "type": "D6",
+        "results": [
+          {
+            "id": "severe-arm-wound",
+            "name": "Severe Arm Wound",
+            "rolls": [1],
+            "ruleText": "Severe arm wound. The arm must be amputated. The warrior may only use a single one-handed weapon from now on.",
+            "effects": [
+              { "type": "equipment-restriction", "rule": "single-one-handed-weapon-only", "duration": "permanent" }
+            ]
+          },
+          {
+            "id": "light-arm-wound",
+            "name": "Light Arm Wound",
+            "rolls": [2, 3, 4, 5, 6],
+            "ruleText": "Light wound. The warrior must miss the next game.",
+            "effects": [
+              { "type": "miss-games", "count": 1 }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "madness",
+      "name": "MADNESS",
+      "rolls": [24],
+      "ruleText": "Roll a D6. On a 1-3 the warrior suffers from stupidity; on 4-6 the warrior suffers from frenzy from now on (see the Psychology section for details).",
+      "effects": [],
+      "secondaryRoll": {
+        "type": "D6",
+        "results": [
+          {
+            "id": "stupidity",
+            "name": "Stupidity",
+            "rolls": [1, 2, 3],
+            "ruleText": "On a 1-3 the warrior suffers from stupidity;",
+            "effects": [
+              { "type": "psychology", "rule": "stupidity", "duration": "permanent" }
+            ]
+          },
+          {
+            "id": "frenzy",
+            "name": "Frenzy",
+            "rolls": [4, 5, 6],
+            "ruleText": "on 4-6 the warrior suffers from frenzy from now on (see the Psychology section for details).",
+            "effects": [
+              { "type": "psychology", "rule": "frenzy", "duration": "permanent" }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "smashed-leg",
+      "name": "SMASHED LEG",
+      "rolls": [25],
+      "ruleText": "Roll again: 1 = The warrior may not run any more but he may still charge. 2-6 = The warrior misses the next game.",
+      "effects": [],
+      "secondaryRoll": {
+        "type": "D6",
+        "results": [
+          {
+            "id": "cannot-run",
+            "name": "Cannot Run",
+            "rolls": [1],
+            "ruleText": "The warrior may not run any more but he may still charge.",
+            "effects": [
+              { "type": "movement-restriction", "cannotRun": true, "canCharge": true, "duration": "permanent" }
+            ]
+          },
+          {
+            "id": "temporary-smashed-leg",
+            "name": "Temporary Smashed Leg",
+            "rolls": [2, 3, 4, 5, 6],
+            "ruleText": "The warrior misses the next game.",
+            "effects": [
+              { "type": "miss-games", "count": 1 }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "chest-wound",
+      "name": "CHEST WOUND",
+      "rolls": [26],
+      "ruleText": "The warrior has been badly wounded in the chest. He recovers but is weakened by the injury so his Toughness is reduced by -1.",
+      "effects": [
+        { "type": "stat-modifier", "stat": "T", "value": -1, "duration": "permanent" }
+      ]
+    },
+    {
+      "id": "blinded-in-one-eye",
+      "name": "BLINDED IN ONE EYE",
+      "rolls": [31],
+      "ruleText": "The warrior survives but loses the sight in one eye; randomly determine which. A character that loses an eye has his Ballistic Skill reduced by -1. If the warrior is subsequently blinded in his remaining good eye he must retire from the warband.",
+      "effects": [
+        {
+          "type": "conditional",
+          "condition": "remaining-good-eye-lost",
+          "whenTrue": [
+            { "type": "remove-warrior", "reason": "retirement" }
+          ],
+          "whenFalse": [
+            { "type": "record-eye-loss", "selection": "random", "methodSpecifiedBySource": false },
+            { "type": "stat-modifier", "stat": "BS", "value": -1, "duration": "permanent" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "old-battle-wound",
+      "name": "OLD BATTLE WOUND",
+      "rolls": [32],
+      "ruleText": "The warrior survives, but his wound will prevent him from fighting if you roll a 1 on a D6 at the start of any battle. Roll at the start of each battle from now on.",
+      "effects": [
+        {
+          "type": "pre-battle-check",
+          "duration": "permanent",
+          "roll": "D6",
+          "unavailableOn": [1],
+          "availableOn": [2, 3, 4, 5, 6],
+          "unavailabilityDuration": "current-battle"
+        }
+      ]
+    },
+    {
+      "id": "nervous-condition",
+      "name": "NERVOUS CONDITION",
+      "rolls": [33],
+      "ruleText": "The warrior’s nervous system has been damaged. His Initiative is permanently reduced by -1.",
+      "effects": [
+        { "type": "stat-modifier", "stat": "I", "value": -1, "duration": "permanent" }
+      ]
+    },
+    {
+      "id": "hand-injury",
+      "name": "HAND INJURY",
+      "rolls": [34],
+      "ruleText": "The warrior’s hand is badly injured. His Weapon Skill is permanently reduced by -1.",
+      "effects": [
+        { "type": "stat-modifier", "stat": "WS", "value": -1, "duration": "permanent" }
+      ]
+    },
+    {
+      "id": "deep-wound",
+      "name": "DEEP WOUND",
+      "rolls": [35],
+      "ruleText": "The warrior has suffered a serious wound and must miss the next D3 games while he is recovering. He may do nothing at all while recovering.",
+      "effects": [],
+      "secondaryRoll": {
+        "type": "D3",
+        "purpose": "games-missed",
+        "effects": [
+          { "type": "miss-games", "count": "secondary-roll", "cannotPerformActivities": true }
+        ]
+      }
+    },
+    {
+      "id": "robbed",
+      "name": "ROBBED",
+      "rolls": [36],
+      "ruleText": "The warrior manages to escape, but all his weapons, armour and equipment are lost.",
+      "effects": [
+        { "type": "lose-equipment", "scope": "all-carried-equipment" }
+      ]
+    },
+    {
+      "id": "full-recovery",
+      "name": "FULL RECOVERY",
+      "rolls": [41, 42, 43, 44, 45, 46, 51, 52, 53, 54, 55],
+      "ruleText": "The warrior has been knocked unconscious, or suffers a light wound from which he makes a full recovery.",
+      "effects": []
+    },
+    {
+      "id": "bitter-enmity",
+      "name": "BITTER ENMITY",
+      "rolls": [56],
+      "ruleText": "The warrior makes a full physical recovery, but is psychologically scarred by his experience. From now on the warrior hates the following (roll a D6):\n\nD6 Result\n1-3 The individual who caused the injury. If it was a Henchman, he hates the enemy leader instead.\n4 The leader of the warband that caused the injury.\n5 The entire warband of the warrior responsible for the injury.\n6 All warbands of that type.",
+      "effects": [],
+      "secondaryRoll": {
+        "type": "D6",
+        "results": [
+          {
+            "id": "hate-attacker",
+            "rolls": [1, 2, 3],
+            "ruleText": "The individual who caused the injury. If it was a Henchman, he hates the enemy leader instead.",
+            "effects": [
+              { "type": "hatred", "target": "warrior-who-caused-injury", "ifAttackerIsHenchman": "enemy-leader", "duration": "permanent" }
+            ]
+          },
+          {
+            "id": "hate-enemy-leader",
+            "rolls": [4],
+            "ruleText": "The leader of the warband that caused the injury.",
+            "effects": [
+              { "type": "hatred", "target": "leader-of-warband-that-caused-injury", "duration": "permanent" }
+            ]
+          },
+          {
+            "id": "hate-enemy-warband",
+            "rolls": [5],
+            "ruleText": "The entire warband of the warrior responsible for the injury.",
+            "effects": [
+              { "type": "hatred", "target": "warband-that-caused-injury", "duration": "permanent" }
+            ]
+          },
+          {
+            "id": "hate-warband-type",
+            "rolls": [6],
+            "ruleText": "All warbands of that type.",
+            "effects": [
+              { "type": "hatred", "target": "all-warbands-of-type-that-caused-injury", "duration": "permanent" }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "captured",
+      "name": "CAPTURED",
+      "rolls": [61],
+      "ruleText": "The warrior regains consciousness and finds himself held captive by the other warband.\n\nHe may be ransomed at a price set by the captor or exchanged for one of their warband who is being held captive.\n\nCaptives may be sold to slavers at a price of D6x5 gc. Undead may kill their captive and gain a new Zombie. The Possessed may sacrifice the prisoner. The leader of the warband will gain +1 Experience if they do so.\n\nCaptives who are exchanged or ransomed retain all their weapons, armour and equipment; if captives are sold, killed or turned to Zombies, their weaponry, etc, is retained by their captors.",
+      "effects": [
+        { "type": "captured", "captor": "opposing-warband" }
+      ],
+      "resolutions": [
+        {
+          "id": "ransomed",
+          "ruleText": "He may be ransomed at a price set by the captor or exchanged for one of their warband who is being held captive.\n\nCaptives who are exchanged or ransomed retain all their weapons, armour and equipment; if captives are sold, killed or turned to Zombies, their weaponry, etc, is retained by their captors.",
+          "effects": [
+            { "type": "release-captive" },
+            { "type": "ransom", "price": "set-by-captor" },
+            { "type": "retain-equipment", "owner": "captive" }
+          ]
+        },
+        {
+          "id": "exchanged",
+          "ruleText": "He may be ransomed at a price set by the captor or exchanged for one of their warband who is being held captive.\n\nCaptives who are exchanged or ransomed retain all their weapons, armour and equipment; if captives are sold, killed or turned to Zombies, their weaponry, etc, is retained by their captors.",
+          "effects": [
+            { "type": "exchange-captives" },
+            { "type": "release-captive" },
+            { "type": "retain-equipment", "owner": "captive" }
+          ]
+        },
+        {
+          "id": "sold-to-slavers",
+          "ruleText": "Captives may be sold to slavers at a price of D6x5 gc.\n\nCaptives who are exchanged or ransomed retain all their weapons, armour and equipment; if captives are sold, killed or turned to Zombies, their weaponry, etc, is retained by their captors.",
+          "effects": [
+            { "type": "remove-warrior", "reason": "sold-to-slavers" },
+            { "type": "gold-crowns", "recipient": "captor-warband", "roll": "D6", "multiplier": 5 },
+            { "type": "transfer-equipment", "recipient": "captor-warband", "scope": "all-carried-equipment" }
+          ]
+        },
+        {
+          "id": "killed-by-undead",
+          "requiresCaptorWarband": "Undead",
+          "ruleText": "Undead may kill their captive and gain a new Zombie.\n\nCaptives who are exchanged or ransomed retain all their weapons, armour and equipment; if captives are sold, killed or turned to Zombies, their weaponry, etc, is retained by their captors.",
+          "effects": [
+            { "type": "remove-warrior", "reason": "death" },
+            { "type": "gain-warrior", "recipient": "captor-warband", "warriorType": "Zombie", "count": 1 },
+            { "type": "transfer-equipment", "recipient": "captor-warband", "scope": "all-carried-equipment" }
+          ]
+        },
+        {
+          "id": "sacrificed-by-possessed",
+          "requiresCaptorWarband": "Cult of the Possessed",
+          "ruleText": "The Possessed may sacrifice the prisoner. The leader of the warband will gain +1 Experience if they do so.\n\nCaptives who are exchanged or ransomed retain all their weapons, armour and equipment; if captives are sold, killed or turned to Zombies, their weaponry, etc, is retained by their captors.",
+          "effects": [
+            { "type": "remove-warrior", "reason": "death" },
+            { "type": "experience", "recipient": "captor-leader", "value": 1 },
+            { "type": "transfer-equipment", "recipient": "captor-warband", "scope": "all-carried-equipment" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hardened",
+      "name": "HARDENED",
+      "rolls": [62, 63],
+      "ruleText": "The warrior survives and becomes inured to the horrors of Mordheim. From now on he is immune to fear.",
+      "effects": [
+        { "type": "psychology", "rule": "immune-to-fear", "duration": "permanent" }
+      ]
+    },
+    {
+      "id": "horrible-scars",
+      "name": "HORRIBLE SCARS",
+      "rolls": [64],
+      "ruleText": "The warrior causes fear from now on.",
+      "effects": [
+        { "type": "psychology", "rule": "causes-fear", "duration": "permanent" }
+      ]
+    },
+    {
+      "id": "sold-to-the-pits",
+      "name": "SOLD TO THE PITS",
+      "rolls": [65],
+      "ruleText": "The warrior wakes up in the infamous fighting pits of Cutthroat’s Haven and must fight against a Pit Fighter. See the Hired Swords section for full rules for Pit Fighters.\n\nRoll to see which side charges, and fight the battle as normal. If the warrior loses, roll to see whether he is dead or injured (ie, a D66 roll of 11-35). If he is not dead, he is thrown out of the fighting pits without his armour and weapons and may re-join his warband.\n\nIf the warrior wins he gains 50 gc, +2 Experience and is free to rejoin his warband with all his weapons and equipment.",
+      "effects": [
+        { "type": "resolve-combat", "opponent": "Pit Fighter", "firstCharge": "random", "chargeRollSpecifiedBySource": false }
+      ],
+      "resolutions": [
+        {
+          "id": "pit-fight-won",
+          "ruleText": "If the warrior wins he gains 50 gc, +2 Experience and is free to rejoin his warband with all his weapons and equipment.",
+          "effects": [
+            { "type": "gold-crowns", "recipient": "warrior-warband", "value": 50 },
+            { "type": "experience", "recipient": "warrior", "value": 2 },
+            { "type": "return-to-warband" },
+            { "type": "retain-equipment", "owner": "warrior" }
+          ]
+        },
+        {
+          "id": "pit-fight-lost",
+          "ruleText": "Roll to see which side charges, and fight the battle as normal. If the warrior loses, roll to see whether he is dead or injured (ie, a D66 roll of 11-35). If he is not dead, he is thrown out of the fighting pits without his armour and weapons and may re-join his warband.",
+          "effects": [
+            {
+              "type": "roll-injury-table",
+              "tableId": "hero-serious-injuries",
+              "count": 1,
+              "allowedRolls": [11, 12, 13, 14, 15, 16, 21, 22, 23, 24, 25, 26, 31, 32, 33, 34, 35],
+              "outOfRangeHandlingSpecifiedBySource": false,
+              "resolveSecondaryRolls": true
+            },
+            {
+              "type": "conditional",
+              "condition": "warrior-survives",
+              "whenTrue": [
+                { "type": "lose-equipment", "scope": "carried-weapons-and-armour" },
+                { "type": "return-to-warband" }
+              ],
+              "whenFalse": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "survives-against-the-odds",
+      "name": "SURVIVES AGAINST THE ODDS",
+      "rolls": [66],
+      "ruleText": "The warrior survives and rejoins his warband. He gains +1 Experience.",
+      "effects": [
+        { "type": "return-to-warband" },
+        { "type": "experience", "recipient": "warrior", "value": 1 }
+      ]
+    }
+  ],
+  "notes": [
+    "Full Recovery applies only to the current result; it does not remove previously recorded injuries.",
+    "Permanent stat penalties use the application's stat keys M, WS, BS, T and I. The injury table does not specify minimum stat values or general stacking limits.",
+    "Psychology effects are recorded as rules, not flattened into unconditional stat changes.",
+    "Random eye selection, random pit-fight charge order and handling pit-fight injury rolls outside 11-35 require a resolution method; this table does not specify those methods.",
+    "This file represents the core Hero table only. It does not infer Hired Sword eligibility, warband exceptions, errata or house rules."
+  ]
+}

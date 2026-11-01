@@ -250,6 +250,24 @@ describe("campaign paid advancements", () => {
     assert.equal((await advanceData(member)).experience, 3);
   });
 
+  test("purchased advancement refunds cannot undo protected injury XP", async () => {
+    const { member, roster } = await fixture();
+    const bought = await purchase(member, { stat: "WS" });
+    assert.equal(bought.status, 201, JSON.stringify(bought.body));
+    const data = await advanceData(member);
+    const advance = data.history[0];
+    await db("warriors").where({ id: member.id }).update({ injury_experience_floor: Number(advance.experienceThreshold) });
+    const before = await rosterData(roster);
+    const refused = await refund(member, advance.id);
+    assert.equal(refused.status, 409);
+    assert.match(refused.body.error, /protected XP awarded by injuries/);
+    const after = await rosterData(roster);
+    assert.equal(after.treasury, before.treasury);
+    assert.deepEqual(after.members[0].stats, before.members[0].stats);
+    assert.equal(after.members[0].experience, before.members[0].experience);
+    assert.equal((await advanceData(member)).history.length, 1);
+  });
+
   test("simultaneous purchases respect caps and simultaneous refunds cannot credit twice", async () => {
     const custom = rules();
     custom.stats.WS.maxIncreases = 1;
