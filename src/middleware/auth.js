@@ -48,6 +48,8 @@ function createAuth(db) {
     try {
       const roster = await db("rosters").where({ id: rosterId }).first("id", "user_id", "campaign_id");
       if (!roster) return next();
+      response.locals.logResources = { ...response.locals.logResources, rosterId: roster.id,
+        ...(roster.campaign_id ? { campaignId: roster.campaign_id } : {}) };
       if (roster.user_id === request.user.id) return next();
       if (request.method === "GET") {
         if (roster.campaign_id && await isMember(roster.campaign_id, request.user.id)) return next();

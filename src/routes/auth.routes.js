@@ -17,14 +17,18 @@ function createAuthRoutes(db) {
     if (password.length < 8) return response.status(400).json({ error: "Password must be at least 8 characters." });
     if (await db("users").whereRaw("lower(username) = ?", [username.toLowerCase()]).first()) return response.status(409).json({ error: "That username is taken." });
     const [user] = await db("users").insert({ username, password_hash: hashPassword(password) }).returning(["id", "username"]);
-    response.status(201).json({ token: await createSession(db, user.id), user });
+    const token = await createSession(db, user.id);
+    request.user = user;
+    response.status(201).json({ token, user });
   });
 
   router.post("/auth/login", async (request, response) => {
     const { username, password } = readCredentials(request.body);
     const user = await db("users").whereRaw("lower(username) = ?", [username.toLowerCase()]).first();
     if (!user || !verifyPassword(password, user.password_hash)) return response.status(401).json({ error: "Wrong username or password." });
-    response.json({ token: await createSession(db, user.id), user: { id: user.id, username: user.username } });
+    const token = await createSession(db, user.id);
+    request.user = { id: user.id, username: user.username };
+    response.json({ token, user: request.user });
   });
 
   router.get("/auth/me", requireAuth, (request, response) => response.json({ user: request.user }));

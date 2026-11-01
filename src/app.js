@@ -10,28 +10,14 @@ const { createMemberRoutes } = require("./routes/member.routes");
 const { createRosterRoutes } = require("./routes/roster.routes");
 const { createTradingRoutes } = require("./routes/trading.routes");
 const { createInjuryRoutes } = require("./routes/injury.routes");
-
-function logApiRequest(request, response, next) {
-  const startedAt = process.hrtime.bigint();
-  response.on("finish", () => {
-    const durationMs = Number(process.hrtime.bigint() - startedAt) / 1e6;
-    console.log(JSON.stringify({
-      timestamp: new Date().toISOString(),
-      method: request.method,
-      path: request.originalUrl.split("?")[0],
-      status: response.statusCode,
-      durationMs: Number(durationMs.toFixed(1)),
-    }));
-  });
-  next();
-}
+const { createRequestLogger, logRequestError } = require("./middleware/request-logging");
 
 function createApp(db, options = {}) {
   const app = express();
   const allowedOrigins = (process.env.CORS_ORIGIN || "http://localhost:5173").split(",");
   if (process.env.TRUST_PROXY === "1") app.set("trust proxy", 1);
 
-  app.use("/api", logApiRequest);
+  app.use("/api", createRequestLogger(options.log));
   app.use(cors({
     origin(origin, callback) {
       callback(null, !origin || allowedOrigins.includes(origin));
@@ -53,7 +39,7 @@ function createApp(db, options = {}) {
   app.use("/api", require("./routes/graveyard.routes").createGraveyardRoutes(db));
   app.use("/api", createTradingRoutes(db));
   app.use((error, _request, response, _next) => {
-    console.error(error);
+    logRequestError(error, response);
     response.status(500).json({ error: "Internal server error." });
   });
 
