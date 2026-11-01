@@ -112,6 +112,8 @@ function createRequestLogger(write = (entry) => {
       logged = true;
       const status = response.statusCode;
       const route = typeof request.route?.path === "string" ? request.route.path : null;
+      if (!aborted && route === "/health" && ["GET", "HEAD"].includes(request.method)
+        && status >= 200 && status < 300) return;
       const interaction = interactionFor(request.method, route, context.path);
       const changedFields = request.method === "PATCH" && patchFields[route]
         ? patchFields[route].filter((field) => Object.hasOwn(request.body ?? {}, field)) : [];

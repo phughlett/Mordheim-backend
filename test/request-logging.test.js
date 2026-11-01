@@ -75,9 +75,38 @@ test("unhandled errors are correlated and sanitized instead of dumping SQL or se
   assert.equal(record.outcome, "failed");
   assert.doesNotMatch(JSON.stringify(record), /SQL|secret parameters|stack/);
 });
-test("unknown paths and query strings are redacted and health checks are labeled", async () => {
-  await fetch(`${base}/api/health`);
-  assert.equal(records.at(-1).interaction, "health.read");
+test("successful GET and HEAD health checks are silent but retain request IDs", async () => {
+  const count = records.length;
+  for (const method of ["GET", "HEAD"]) {
+    const response = await fetch(`${base}/api/health`, { method });
+    assert.equal(response.status, 200);
+    assert.match(response.headers.get("x-request-id"), /^[0-9a-f-]{36}$/);
+  }
+  assert.equal(records.length, count);
+});
+test("unsuccessful and aborted health checks are logged exactly once", () => {
+  for (const status of [301, 400, 503]) {
+    const entries = [];
+    const request = { originalUrl: "/api/health", method: "GET", route: { path: "/health" } };
+    const response = Object.assign(new EventEmitter(), { locals: {}, statusCode: status, writableFinished: true, setHeader() {} });
+    createRequestLogger((record) => entries.push(record))(request, response, () => {});
+    response.emit("finish"); response.emit("close");
+    assert.equal(entries.length, 1);
+    assert.equal(entries[0].interaction, "health.read");
+    assert.equal(entries[0].status, status);
+    assert.equal(entries[0].level, status >= 500 ? "error" : status >= 400 ? "warn" : "info");
+  }
+  const entries = [];
+  const request = { originalUrl: "/api/health", method: "GET", route: { path: "/health" } };
+  const response = Object.assign(new EventEmitter(), { locals: {}, statusCode: 200, writableFinished: false, setHeader() {} });
+  createRequestLogger((record) => entries.push(record))(request, response, () => {});
+  response.emit("close"); response.emit("finish");
+  assert.equal(entries.length, 1);
+  assert.equal(entries[0].interaction, "health.read");
+  assert.equal(entries[0].event, "request.aborted");
+  assert.equal(entries[0].level, "error");
+});
+test("unknown paths and query strings are redacted", async () => {
   await fetch(`${base}/api/private-secret?password=query-secret`);
   assert.equal(records.at(-1).interaction, "http.unmatched");
   assert.equal(records.at(-1).path, "/api/:redacted");
