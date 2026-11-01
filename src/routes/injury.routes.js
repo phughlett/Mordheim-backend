@@ -13,6 +13,10 @@ function createInjuryRoutes(db) {
     }
   };
   router.get("/members/:memberId/injuries", handle(async (req, res) => res.json(await repository.get(req.params.memberId))));
+  router.delete("/rosters/:rosterId/injuries/:injuryId", handle(async (req, res) => {
+    if (!uuid(req.params.injuryId)) return res.status(400).json({ error: "Invalid injury ID." });
+    res.json(await repository.remove(req.params.rosterId, req.params.injuryId));
+  }));
   router.post("/members/:memberId/injuries/preview", handle(async (req, res) => {
     if (req.body?.resolvesId !== undefined && !uuid(req.body.resolvesId)) return res.status(400).json({ error: "Invalid pending injury ID." });
     res.status(201).json(await repository.preview(req.params.memberId, req.body ?? {}));

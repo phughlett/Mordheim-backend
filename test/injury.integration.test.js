@@ -93,6 +93,173 @@ describe("persistent post-battle injuries", () => {
     assert.ok(result.history.some((entry) => entry.result.hatredTarget === "Enemy band"));
     assert.equal((await call("POST", path, { hatredTargets: ["A", "B"] })).status, 404);
   });
+  test("Injury correction reverses stats and conditions without overwriting unrelated changes, then rejects replay", async () => {
+    const f = await fixture();
+    const original = await db("warriors").where({ id: f.member.id }).first();
+    const applied = await record(f, { resultId: "leg-wound" });
+    const path = `/rosters/${f.roster.id}/injuries/${applied.body.injuryId}`;
+    assert.equal((await call("GET", f.path)).body.history[0].canRemove, true);
+    await db("warriors").where({ id: f.member.id }).update({ notes: "Keep this new note", name: "Renamed Hero" });
+    assert.equal((await call("DELETE", path)).status, 200);
+    const restored = await db("warriors").where({ id: f.member.id }).first();
+    assert.deepEqual(restored.stats, original.stats);
+    assert.deepEqual(restored.injury_conditions, []);
+    assert.equal(restored.notes, "Keep this new note");
+    assert.equal(restored.name, "Renamed Hero");
+    assert.equal((await call("DELETE", path)).status, 404);
+  });
+  test("Correction blocks dependent stat changes but allows independent injuries and reverse-order corrections", async () => {
+    const f = await fixture();
+    const original = (await db("warriors").where({ id: f.member.id }).first()).stats;
+    const first = await record(f, { resultId: "leg-wound" });
+    const independent = await record(f, { resultId: "madness", secondaryRoll: 6 });
+    assert.equal((await call("DELETE", `/rosters/${f.roster.id}/injuries/${first.body.injuryId}`)).status, 200);
+    assert.equal((await call("GET", f.path)).body.conditions[0].rule, "frenzy");
+    assert.equal((await call("DELETE", `/rosters/${f.roster.id}/injuries/${independent.body.injuryId}`)).status, 200);
+    const wound = await record(f, { resultId: "leg-wound" });
+    const later = await record(f, { resultId: "leg-wound" });
+    const blocked = await call("DELETE", `/rosters/${f.roster.id}/injuries/${wound.body.injuryId}`);
+    assert.equal(blocked.status, 409);
+    assert.match(blocked.body.error, /M was changed/);
+    assert.equal((await call("DELETE", `/rosters/${f.roster.id}/injuries/${later.body.injuryId}`)).status, 200);
+    assert.equal((await call("DELETE", `/rosters/${f.roster.id}/injuries/${wound.body.injuryId}`)).status, 200);
+    assert.deepEqual((await db("warriors").where({ id: f.member.id }).first()).stats, original);
+  });
+  test("Correction returns pit XP and gold, restores the previous XP floor, and blocks dependent advances", async () => {
+    const f = await fixture();
+    const before = await db("warriors").where({ id: f.member.id }).first();
+    const treasury = (await db("rosters").where({ id: f.roster.id }).first()).treasury;
+    const pit = await record(f, { resultId: "sold-to-the-pits", pitOutcome: "won" });
+    const path = `/rosters/${f.roster.id}/injuries/${pit.body.injuryId}`;
+    const [advance] = await db("warrior_advances").insert({ warrior_id: f.member.id, advance_table: "Hero",
+      experience_threshold: 2, mode: "manual", result: "new_skill" }).returning("*");
+    assert.equal((await call("DELETE", path)).status, 409);
+    await db("warrior_advances").where({ id: advance.id }).delete();
+    await db("rosters").where({ id: f.roster.id }).update({ treasury: 49 });
+    assert.equal((await call("DELETE", path)).status, 409);
+    await db("rosters").where({ id: f.roster.id }).update({ treasury: treasury + 50 });
+    const result = await call("DELETE", path);
+    assert.equal(result.status, 200, JSON.stringify(result.body));
+    const after = await db("warriors").where({ id: f.member.id }).first();
+    assert.equal(after.experience, before.experience);
+    assert.equal(after.injury_experience_floor, before.injury_experience_floor);
+    assert.equal((await db("rosters").where({ id: f.roster.id }).first()).treasury, treasury);
+  });
+  test("Correction restores lost gear and pending pit resolution, blocking replacement gear first", async () => {
+    const f = await fixture();
+    await db("warrior_inventory").insert({ warrior_id: f.member.id, shop_item_id: "sword", quantity: 1, model_index: 0, unit_cost_paid: 10 });
+    const gear = await db("warrior_inventory").where({ warrior_id: f.member.id }).orderBy("id");
+    await record(f, { resultId: "sold-to-the-pits" });
+    const pending = (await call("GET", f.path)).body.history.find((entry) => entry.pending);
+    const loss = await record(f, { resultId: "sold-to-the-pits", pitOutcome: "lost",
+      pitInjury: { resultId: "hand-injury" } }, { resolvesId: pending.id });
+    const losses = await db("warrior_injuries").whereIn("id", loss.body.injuryIds);
+    const equipmentLoss = losses.find((entry) => entry.result.effects.some((effect) => effect.type === "lose-equipment"));
+    const wound = losses.find((entry) => entry.result.effects.some((effect) => effect.type === "stat-modifier"));
+    const [replacement] = await db("warrior_inventory").insert({ warrior_id: f.member.id, shop_item_id: "sword",
+      quantity: 1, model_index: 0, unit_cost_paid: 10 }).returning("*");
+    const path = `/rosters/${f.roster.id}/injuries/${equipmentLoss.id}`;
+    const blocked = await call("DELETE", path);
+    assert.equal(blocked.status, 409);
+    assert.match(blocked.body.error, /equipment was changed or replaced/);
+    await db("warrior_inventory").where({ id: replacement.id }).delete();
+    assert.equal((await call("DELETE", path)).status, 200);
+    assert.deepEqual(await db("warrior_inventory").where({ warrior_id: f.member.id }).orderBy("id"), gear);
+    assert.ok((await call("GET", f.path)).body.history.some((entry) => entry.id === pending.id && entry.pending));
+    assert.equal((await call("DELETE", `/rosters/${f.roster.id}/injuries/${wound.id}`)).status, 200);
+  });
+  test("Accidental death correction restores the Hero and earlier injury records, subject to capacity", async () => {
+    const f = await fixture();
+    await record(f, { resultId: "leg-wound" });
+    const original = await db("warriors").where({ id: f.member.id }).first();
+    const death = await record(f, { resultId: "dead" });
+    const path = `/rosters/${f.roster.id}/injuries/${death.body.injuryId}`;
+    const activeRoster = (await call("GET", `/rosters/${f.roster.id}`)).body;
+    assert.ok(activeRoster.injuryHistory.find((entry) => entry.id === death.body.injuryId).canRemove);
+    const fillers = Array.from({ length: 6 }, () => randomUUID());
+    await db("warriors").insert(fillers.map((id, index) => ({ ...original, id, warrior_type_id: null,
+      injury_conditions: JSON.stringify(original.injury_conditions), position: index + 1 })));
+    assert.equal((await call("DELETE", path)).status, 409);
+    assert.equal((await db("hero_graveyard").where({ roster_id: f.roster.id })).length, 1);
+    await db("warriors").whereIn("id", fillers).delete();
+    const restored = await call("DELETE", path);
+    assert.equal(restored.status, 200, JSON.stringify(restored.body));
+    assert.deepEqual((await db("warriors").where({ id: f.member.id }).first()).stats, original.stats);
+    assert.equal((await db("hero_graveyard").where({ roster_id: f.roster.id })).length, 0);
+    const history = (await call("GET", f.path)).body.history;
+    assert.equal(history.length, 1);
+    assert.equal(history[0].result.id, "leg-wound");
+  });
+  test("Henchman model and whole-group casualty correction restores equipment and counts", async () => {
+    const f = await fixture("Henchman");
+    const before = await db("warriors").where({ id: f.member.id }).first();
+    const gear = await db("warrior_inventory").where({ warrior_id: f.member.id }).orderBy("id");
+    const casualty = await record(f, { resultId: "removed-from-warband" }, { modelIndex: 1 });
+    const result = await call("DELETE", `/rosters/${f.roster.id}/injuries/${casualty.body.injuryId}`);
+    assert.equal(result.status, 200, JSON.stringify(result.body));
+    assert.equal((await db("warriors").where({ id: f.member.id }).first()).group_size, before.group_size);
+    assert.deepEqual(await db("warrior_inventory").where({ warrior_id: f.member.id }).orderBy("id"), gear);
+    await db("warriors").where({ id: f.member.id }).update({ group_size: 1 });
+    await db("warrior_inventory").where({ warrior_id: f.member.id }).where("model_index", ">", 0).delete();
+    await db("warrior_starting_gear_grants").where({ warrior_id: f.member.id }).where("model_index", ">", 0).delete();
+    const last = await record(f, { resultId: "removed-from-warband" });
+    assert.equal((await call("DELETE", `/rosters/${f.roster.id}/injuries/${last.body.injuryId}`)).status, 200);
+    assert.equal((await db("warriors").where({ id: f.member.id }).first()).group_size, 1);
+  });
+  test("Retirement correction restores the first eye injury; campaign correction does not require a hiring stage", async () => {
+    const f = await fixture();
+    const first = await record(f, { resultId: "blinded-in-one-eye", eye: "left" });
+    const retired = await record(f, { resultId: "blinded-in-one-eye", eye: "right" });
+    const firstPath = `/rosters/${f.roster.id}/injuries/${first.body.injuryId}`;
+    assert.equal((await call("DELETE", firstPath)).status, 409);
+    const campaign = (await call("POST", "/campaigns", { name: "Injury correction stage" })).body;
+    await db("rosters").where({ id: f.roster.id }).update({ campaign_id: campaign.id, campaign_phase: "battle", campaign_step: 1 });
+    assert.equal((await call("DELETE", `/rosters/${f.roster.id}/injuries/${retired.body.injuryId}`)).status, 200);
+    assert.equal((await call("GET", f.path)).body.conditions.filter((effect) => effect.type === "eye-loss").length, 1);
+    assert.equal((await call("DELETE", firstPath)).status, 200);
+    assert.deepEqual((await call("GET", f.path)).body.conditions, []);
+  });
+  test("Multiple Injuries corrections reverse individual outcomes rather than the entire roll", async () => {
+    const f = await fixture();
+    const stats = (await db("warriors").where({ id: f.member.id }).first()).stats;
+    const multiple = await record(f, { resultId: "multiple-injuries", secondaryRoll: 2,
+      injuries: [{ resultId: "leg-wound" }, { resultId: "hand-injury" }] });
+    const leg = (await db("warrior_injuries").whereIn("id", multiple.body.injuryIds)).find((entry) => entry.result.id === "leg-wound");
+    assert.equal((await call("DELETE", `/rosters/${f.roster.id}/injuries/${leg.id}`)).status, 200);
+    const after = await db("warriors").where({ id: f.member.id }).first();
+    assert.equal(after.stats.M, stats.M);
+    assert.equal(Number(after.stats.WS), Number(stats.WS) - 1);
+    assert.equal((await call("GET", f.path)).body.history.length, 1);
+  });
+  test("Hired Sword death correction preserves its hire type without adding to the warband model limit", async () => {
+    const f = await fixture("Hired Sword");
+    const casualty = await record(f, { resultId: "removed-from-warband" });
+    const result = await call("DELETE", `/rosters/${f.roster.id}/injuries/${casualty.body.injuryId}`);
+    assert.equal(result.status, 200, JSON.stringify(result.body));
+    assert.equal((await db("warriors").where({ id: f.member.id }).first()).role, "Hired Sword");
+  });
+  test("Correction requires the exact counter, owner authorization and saved metadata, and is atomic under concurrent requests", async () => {
+    const f = await fixture();
+    const injury = await record(f, { resultId: "leg-wound" });
+    const path = `/rosters/${f.roster.id}/injuries/${injury.body.injuryId}`;
+    await db("rosters").where({ id: f.roster.id }).update({ battles_fought: 2 });
+    assert.equal((await call("DELETE", path)).status, 409);
+    assert.equal((await call("GET", f.path)).body.history[0].canRemove, false);
+    await db("rosters").where({ id: f.roster.id }).update({ battles_fought: 1 });
+    const stranger = await call("POST", "/auth/register", { username: `correction_${randomUUID().slice(0, 12)}`, password: "Correction-tests-123!" });
+    try {
+      assert.equal((await call("DELETE", path, undefined, stranger.body.token)).status, 403);
+      await call("POST", `/rosters/${f.roster.id}/share`, {});
+      const shared = (await call("GET", `/rosters/${f.roster.id}`)).body;
+      await call("POST", "/shared-rosters/join", { code: shared.shareCode }, stranger.body.token);
+      assert.equal((await call("DELETE", path, undefined, stranger.body.token)).status, 403);
+    } finally { await db("users").where({ id: stranger.body.user.id }).delete(); }
+    const results = await Promise.all([call("DELETE", path), call("DELETE", path)]);
+    assert.deepEqual(results.map((result) => result.status).sort(), [200, 404]);
+    const legacy = await record(f, { resultId: "leg-wound" });
+    await db("warrior_injuries").where({ id: legacy.body.injuryId }).update({ correction: null });
+    assert.equal((await call("DELETE", `/rosters/${f.roster.id}/injuries/${legacy.body.injuryId}`)).status, 409);
+  });
   test("Campaign Bitter Enmity options use only opposing teams from the latest played battle", async () => {
     const f = await fixture();
     const oldEnemy = await fixture();

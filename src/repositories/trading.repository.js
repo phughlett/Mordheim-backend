@@ -7,8 +7,11 @@ const { canUseEquipment } = require("../services/equipment-access.service");
 const { equipmentKey, getGroupEquipment } = require("../services/group-equipment.service");
 const { archiveHero } = require("../services/graveyard.service");
 
-async function insertAcquired(trx, rosterId, item, quantity, cost, mapSelection) {
-  const base = { roster_id: rosterId, shop_item_id: item.id, unit_cost_paid: cost };
+async function insertAcquired(trx, rosterId, item, quantity, cost, mapSelection, provenance = null) {
+  const base = {
+    roster_id: rosterId, shop_item_id: item.id, unit_cost_paid: cost,
+    ...(provenance ?? {}),
+  };
   if (item.id === "mordheim-map") {
     const results = resolveMaps(mapSelection, quantity);
     await trx("warband_stash").insert(results.map((result) => ({ ...base, quantity: 1, map_result: result })));
@@ -16,6 +19,24 @@ async function insertAcquired(trx, rosterId, item, quantity, cost, mapSelection)
     if (mapSelection !== undefined) fail("Map type selection is only valid for Mordheim maps.", 400);
     await trx("warband_stash").insert({ ...base, quantity });
   }
+}
+
+async function releaseRefundedPurchaseSearch(trx, rosterId, purchaseId) {
+  if (!purchaseId) return false;
+  const remainingStash = await trx("warband_stash").where({ roster_id: rosterId, purchase_id: purchaseId })
+    .sum("quantity as quantity").first();
+  const remainingCarried = await trx("warrior_inventory as inventory")
+    .join("warriors as warrior", "warrior.id", "inventory.warrior_id")
+    .where({ "warrior.roster_id": rosterId, "inventory.purchase_id": purchaseId })
+    .sum("inventory.quantity as quantity").first();
+  const remainingConsumed = await trx("consumed_item_uses")
+    .where({ roster_id: rosterId })
+    .whereRaw("state->'item'->>'purchase_id' = ?", [purchaseId])
+    .first("id");
+  if (Number(remainingStash.quantity ?? 0) + Number(remainingCarried.quantity ?? 0) > 0 || remainingConsumed) return false;
+  await trx("trading_searches").where({ roster_id: rosterId, purchase_id: purchaseId })
+    .update({ purchased: false, purchase_id: null });
+  return true;
 }
 
 function createTradingRepository(db) {
@@ -150,6 +171,11 @@ function createTradingRepository(db) {
     const byOption = new Map(options.map((row) => [row.id, row]));
     const byShop = new Map(shopItems.map((row) => [row.id, row.definition]));
     const shopRows = new Map(shopItems.map((row) => [row.id, row]));
+    const purchaseIds = [...new Set(rows.map((row) => row.purchase_id).filter(Boolean))];
+    const cancellations = purchaseIds.length
+      ? await query("purchase_cancellations").whereIn("purchase_id", purchaseIds).whereNull("canceled_at")
+      : [];
+    const cancellationById = new Map(cancellations.map((row) => [row.purchase_id, row]));
     const members = await query("warriors").where({ roster_id: ctx.roster.id }).pluck("id");
     const recipients = await Promise.all(members.map((id) => memberContext(query, ctx, id)));
     const groups = await getGroupEquipment(query, ctx.roster.id);
@@ -165,7 +191,15 @@ function createTradingRepository(db) {
         modelIndex: row.model_index,
         nontransferable: row.nontransferable, boundWarriorId: row.bound_warrior_id,
         ...describeMap(row.map_result),
-        ...equipmentSale(row, option, item, ctx.shop),
+        ...equipmentSale(row, option, item, ctx.shop, ctx.roster.battles_fought),
+        ...(cancellationById.has(row.purchase_id)
+          && Number(cancellationById.get(row.purchase_id).purchase_battles_fought) === Number(ctx.roster.battles_fought)
+          ? {
+            canRefund: true,
+            canCancelUpgrade: true,
+            unitSaleValue: Number(cancellationById.get(row.purchase_id).unit_cost),
+          }
+          : {}),
         ...(!row.warrior_id ? { eligibleRecipients: recipients
           .filter((recipient) => canReceive(row, option, shopRows.get(row.shop_item_id), ctx, recipient))
           .map(({ member, permissions }) => ({
@@ -304,10 +338,14 @@ function createTradingRepository(db) {
       }
       const total = offer.price * quantity;
       if (!integer(total, 0, 2147483647) || total > Number(ctx.roster.treasury)) fail("Not enough Gold Crowns for this purchase.");
-      await insertAcquired(trx, rosterId, item, quantity, offer.price, mapSelection);
+      const purchaseId = randomUUID();
+      await insertAcquired(trx, rosterId, item, quantity, offer.price, mapSelection, {
+        purchase_battles_fought: Number(ctx.roster.battles_fought),
+        purchase_id: purchaseId,
+      });
       await trx("rosters").where({ id: rosterId }).update({ treasury: Number(ctx.roster.treasury) - total, updated_at: new Date() });
       await trx("trading_quotes").where({ id: offer.id }).update({ consumed: true });
-      if (found) await trx("trading_searches").where({ id: found.id }).update({ purchased: true });
+      if (found) await trx("trading_searches").where({ id: found.id }).update({ purchased: true, purchase_id: purchaseId });
     });
   }
   async function addSpoils(rosterId, { itemId, quantity, mapSelection }) {
@@ -325,7 +363,6 @@ function createTradingRepository(db) {
   async function sell(rosterId, { source, inventoryIds, quantity, memberId }, transaction) {
     const execute = async (trx) => {
       const ctx = await context(trx, rosterId, true);
-      if (!ctx.canSell) fail("Second-hand sales are available after the first battle in Freebuild, or during campaign purchasing steps 6–8.");
       const table = source === "stash" ? "warband_stash" : "warrior_inventory";
       const query = trx(table).whereIn("id", inventoryIds).forUpdate();
       if (source === "stash") query.where({ roster_id: rosterId });
@@ -339,11 +376,14 @@ function createTradingRepository(db) {
       for (const row of rows) {
         const option = row.equipment_option_id ? await trx("equipment_options").where({ id: row.equipment_option_id }).first() : null;
         const definition = row.shop_item_id ? (await trx("shop_items").where({ id: row.shop_item_id }).first())?.definition : null;
-        const sale = equipmentSale(row, option, definition, ctx.shop);
-        if (sale.saleRestriction) fail(sale.saleRestriction);
+        const sale = equipmentSale(row, option, definition, ctx.shop, ctx.roster.battles_fought);
+        if (!ctx.canSell && !sale.canRefund) {
+          fail("Second-hand sales are available after the first battle in Freebuild, or during campaign purchasing steps 6–8.");
+        }
+        if (sale.saleRestriction && !sale.canRefund) fail(sale.saleRestriction);
         if (source === "member") {
           const recipient = await memberContext(trx, ctx, row.warrior_id);
-          if (recipient.member.role === "Henchman" && !recipient.permissions.some((entry) => entry.allow_individual_group_gear)) {
+          if (!sale.canRefund && recipient.member.role === "Henchman" && !recipient.permissions.some((entry) => entry.allow_individual_group_gear)) {
             const key = equipmentKey({ ...row, name: option?.name, category: option?.category });
             const carried = await trx("warrior_inventory as inventory")
               .leftJoin("equipment_options as option", "option.id", "inventory.equipment_option_id")
@@ -358,7 +398,7 @@ function createTradingRepository(db) {
           }
           const carried = await trx("warrior_inventory as inventory").join("shop_items as item", "item.id", "inventory.shop_item_id")
             .where("inventory.warrior_id", row.warrior_id).select("inventory.id", "item.definition");
-          if (carried.some((entry) => entry.definition.requiresOwnedItem === row.shop_item_id && !inventoryIds.includes(entry.id))) {
+          if (!sale.canRefund && carried.some((entry) => entry.definition.requiresOwnedItem === row.shop_item_id && !inventoryIds.includes(entry.id))) {
             fail("Sell or return the mount's barding before selling its mount.");
           }
         }
@@ -371,6 +411,11 @@ function createTradingRepository(db) {
         if (amount === row.quantity) await trx(table).where({ id: row.id }).delete();
         else await trx(table).where({ id: row.id }).decrement("quantity", amount);
       }
+      const canceledPurchaseIds = [...new Set(rows
+        .filter((row) => row.purchase_id && row.purchase_battles_fought != null
+          && Number(row.purchase_battles_fought) === Number(ctx.roster.battles_fought))
+        .map((row) => row.purchase_id))];
+      for (const purchaseId of canceledPurchaseIds) await releaseRefundedPurchaseSearch(trx, rosterId, purchaseId);
       await trx("rosters").where({ id: rosterId }).update({ treasury, updated_at: new Date() });
       return { refundAmount: total, treasury };
     };
@@ -455,6 +500,7 @@ function createTradingRepository(db) {
             roster_id: rosterId, equipment_option_id: entry.equipment_option_id, shop_item_id: entry.shop_item_id,
             unit_cost_paid: entry.unit_cost_paid, bound_warrior_id: entry.bound_warrior_id,
             nontransferable: entry.nontransferable, map_result: entry.map_result,
+            purchase_battles_fought: entry.purchase_battles_fought, purchase_id: entry.purchase_id,
           };
           const stackKey = JSON.stringify(origin);
           const stack = returns.get(stackKey) ?? { ...origin, quantity: 0 };
@@ -472,7 +518,12 @@ function createTradingRepository(db) {
       if (total > source.quantity) fail("Not enough copies in this inventory.");
       if (total === source.quantity) await trx(table).where({ id: source.id }).delete();
       else await trx(table).where({ id: source.id }).update({ quantity: source.quantity - total });
-      const origin = { equipment_option_id: source.equipment_option_id, shop_item_id: source.shop_item_id, quantity, unit_cost_paid: source.unit_cost_paid, bound_warrior_id: source.bound_warrior_id, nontransferable: source.nontransferable, map_result: source.map_result };
+      const origin = {
+        equipment_option_id: source.equipment_option_id, shop_item_id: source.shop_item_id, quantity,
+        unit_cost_paid: source.unit_cost_paid, bound_warrior_id: source.bound_warrior_id,
+        nontransferable: source.nontransferable, map_result: source.map_result,
+        purchase_battles_fought: source.purchase_battles_fought, purchase_id: source.purchase_id,
+      };
       if (direction === "to_member") await trx("warrior_inventory").insert(transfers.map(({ index, quantity: count }) => ({ ...origin, quantity: count, warrior_id: memberId, model_index: index })));
       else await trx("warband_stash").insert({ ...origin, roster_id: rosterId });
     });
@@ -506,25 +557,100 @@ function createTradingRepository(db) {
       const total = offer.price * targets.length;
       if (Number(ctx.roster.treasury) < total) fail("Not enough Gold Crowns to upgrade these weapons.");
       const id = `upgrade/${randomUUID()}`;
+      const purchaseId = randomUUID();
+      const purchaseBattlesFought = Number(ctx.roster.battles_fought);
+      const snapshots = [];
       await trx("shop_items").insert({
         id, definition: JSON.stringify({ ...definition, id, name: `${definition.name} (Poisoned)`,
           description: `${definition.description} Permanent poison: +1 to injury rolls. Cannot be traded or sold.` }),
         weapon_profile_id: origin.weapon_profile_id, material_modifier_id: origin.material_modifier_id,
       });
       for (const target of targets) {
-        if (target.quantity === 1) await trx("warrior_inventory").where({ id: target.id }).update({
-          equipment_option_id: null, shop_item_id: id, unit_cost_paid: target.unit_cost_paid + offer.price, nontransferable: true,
-        });
-        else {
-          await trx("warrior_inventory").where({ id: target.id }).decrement("quantity", 1);
-          await trx("warrior_inventory").insert({
-            warrior_id: target.warrior_id, model_index: target.model_index, equipment_option_id: null,
-            shop_item_id: id, quantity: 1, unit_cost_paid: target.unit_cost_paid + offer.price, nontransferable: true,
+        const original = {
+          id: target.id, warrior_id: target.warrior_id, model_index: target.model_index,
+          equipment_option_id: target.equipment_option_id, shop_item_id: target.shop_item_id,
+          quantity: target.quantity, unit_cost_paid: target.unit_cost_paid,
+          nontransferable: target.nontransferable, bound_warrior_id: target.bound_warrior_id,
+          map_result: target.map_result, purchase_battles_fought: target.purchase_battles_fought,
+          purchase_id: target.purchase_id, created_at: target.created_at,
+        };
+        let upgradedInventoryId;
+        if (target.quantity === 1) {
+          upgradedInventoryId = target.id;
+          await trx("warrior_inventory").where({ id: target.id }).update({
+            equipment_option_id: null, shop_item_id: id, unit_cost_paid: target.unit_cost_paid + offer.price,
+            nontransferable: true, purchase_battles_fought: purchaseBattlesFought, purchase_id: purchaseId,
           });
+        } else {
+          await trx("warrior_inventory").where({ id: target.id }).decrement("quantity", 1);
+          const [inserted] = await trx("warrior_inventory").insert({
+            warrior_id: target.warrior_id, model_index: target.model_index, equipment_option_id: null,
+            shop_item_id: id, quantity: 1, unit_cost_paid: target.unit_cost_paid + offer.price,
+            nontransferable: true, bound_warrior_id: target.bound_warrior_id, map_result: target.map_result,
+            purchase_battles_fought: purchaseBattlesFought, purchase_id: purchaseId,
+          }).returning("id");
+          upgradedInventoryId = inserted.id;
         }
-        await trx("trading_quotes").where({ id: offer.id }).update({ consumed: true });
+        snapshots.push({ inventoryId: upgradedInventoryId, original });
       }
+      await trx("purchase_cancellations").insert({
+        purchase_id: purchaseId, roster_id: rosterId, purchase_battles_fought: purchaseBattlesFought,
+        unit_cost: offer.price, inventory_snapshots: JSON.stringify(snapshots),
+      });
+      await trx("trading_quotes").where({ id: offer.id }).update({ consumed: true });
       await trx("rosters").where({ id: rosterId }).update({ treasury: Number(ctx.roster.treasury) - total, updated_at: new Date() });
+    });
+  }
+  async function cancelUpgrade(rosterId, { inventoryId }) {
+    return db.transaction(async (trx) => {
+      const ctx = await context(trx, rosterId, true);
+      const source = await trx("warrior_inventory as inventory")
+        .join("warriors as warrior", "warrior.id", "inventory.warrior_id")
+        .where({ "inventory.id": inventoryId, "warrior.roster_id": rosterId, "inventory.nontransferable": true })
+        .select("inventory.*").first();
+      if (!source?.purchase_id) fail("This weapon has no refundable permanent upgrade.", 404);
+      const cancellation = await trx("purchase_cancellations").where({
+        purchase_id: source.purchase_id, roster_id: rosterId,
+      }).forUpdate().first();
+      if (!cancellation || cancellation.canceled_at) fail("This permanent upgrade has already been canceled or is not refundable.");
+      if (Number(cancellation.purchase_battles_fought) !== Number(ctx.roster.battles_fought)) {
+        fail("Permanent upgrades can only be canceled before the warband fights another battle.");
+      }
+      const snapshots = cancellation.inventory_snapshots;
+      const upgraded = await trx("warrior_inventory as inventory")
+        .join("warriors as warrior", "warrior.id", "inventory.warrior_id")
+        .where({ "warrior.roster_id": rosterId, "inventory.purchase_id": source.purchase_id, "inventory.nontransferable": true })
+        .select("inventory.id");
+      if (!Array.isArray(snapshots) || upgraded.length !== snapshots.length
+        || !snapshots.some((entry) => entry.inventoryId === inventoryId)) {
+        fail("All upgraded weapons must still be present to cancel this purchase.");
+      }
+      const refund = Number(cancellation.unit_cost) * snapshots.length;
+      const treasury = Number(ctx.roster.treasury) + refund;
+      if (!integer(treasury, 0, 2147483647)) fail("This cancellation would exceed the treasury limit.");
+      for (const { inventoryId: upgradedId, original } of snapshots) {
+        if (original.quantity === 1) {
+          await trx("warrior_inventory").where({ id: upgradedId }).update({
+            warrior_id: original.warrior_id, model_index: original.model_index,
+            equipment_option_id: original.equipment_option_id, shop_item_id: original.shop_item_id,
+            quantity: original.quantity, unit_cost_paid: original.unit_cost_paid,
+            nontransferable: original.nontransferable, bound_warrior_id: original.bound_warrior_id,
+            map_result: original.map_result, purchase_battles_fought: original.purchase_battles_fought,
+            purchase_id: original.purchase_id,
+          });
+        } else {
+          const remaining = await trx("warrior_inventory").where({ id: original.id }).first("id");
+          if (remaining) {
+            await trx("warrior_inventory").where({ id: original.id }).increment("quantity", 1);
+          } else {
+            await trx("warrior_inventory").insert({ ...original, quantity: 1, id: original.id });
+          }
+          await trx("warrior_inventory").where({ id: upgradedId }).delete();
+        }
+      }
+      await trx("purchase_cancellations").where({ purchase_id: source.purchase_id }).update({ canceled_at: new Date() });
+      await trx("rosters").where({ id: rosterId }).update({ treasury, updated_at: new Date() });
+      return { refundAmount: refund, treasury };
     });
   }
   async function heroStatus(rosterId, { heroId, outOfAction }) {
@@ -589,6 +715,6 @@ function createTradingRepository(db) {
       await trx("rosters").where({ id: rosterId }).update({ updated_at: new Date() });
     });
   }
-  return { getTrading, search, quote, purchase, addSpoils, resolveMap, upgrade, transfer, sell, heroStatus, casualty };
+  return { getTrading, search, quote, purchase, addSpoils, resolveMap, upgrade, cancelUpgrade, transfer, sell, heroStatus, casualty };
 }
-module.exports = { createTradingRepository };
+module.exports = { createTradingRepository, releaseRefundedPurchaseSearch };

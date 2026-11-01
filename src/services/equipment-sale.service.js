@@ -16,18 +16,22 @@ function listedItem(option, shop = catalog) {
     && item.weaponNames?.some((alias) => normalize(alias) === weaponName));
 }
 
-function equipmentSale(row, option, definition, shop = catalog) {
-  if (row.nontransferable) return { unitSaleValue: null, saleRestriction: "Permanently poisoned weapons cannot be sold." };
-  if (row.bound_warrior_id) return { unitSaleValue: null, saleRestriction: "Bound items cannot be sold." };
+function equipmentSale(row, option, definition, shop = catalog, battlesFought = null) {
+  const canRefund = row.purchase_id != null
+    && row.purchase_battles_fought != null
+    && Number(row.purchase_battles_fought) === Number(battlesFought);
+  if (row.nontransferable) return { canRefund: false, unitSaleValue: null, saleRestriction: "Permanently poisoned weapons cannot be sold." };
+  if (canRefund) return { canRefund: true, unitSaleValue: Number(row.unit_cost_paid), saleRestriction: null };
+  if (row.bound_warrior_id) return { canRefund: false, unitSaleValue: null, saleRestriction: "Bound items cannot be sold." };
   if (option && Number(row.unit_cost_paid) === 0) {
-    return { unitSaleValue: null, saleRestriction: "Free starting equipment cannot be sold." };
+    return { canRefund: false, unitSaleValue: null, saleRestriction: "Free starting equipment cannot be sold." };
   }
   const item = row.shop_item_id ? shop.find((entry) => entry.id === row.shop_item_id) ?? definition : listedItem(option, shop);
   const baseCost = item?.baseCost ?? option?.unit_cost;
   if (!Number.isSafeInteger(Number(baseCost)) || Number(baseCost) < 0) {
     throw new Error(`Missing listed resale price for inventory ${row.id}.`);
   }
-  return { unitSaleValue: Math.floor(Number(baseCost) / 2), saleRestriction: null };
+  return { canRefund: false, unitSaleValue: Math.floor(Number(baseCost) / 2), saleRestriction: null };
 }
 
 module.exports = { equipmentSale, listedItem };

@@ -1,5 +1,6 @@
 const { getAdvanceThresholds, getAdvancesEarned, getStatMaximumProfile, racialMaximums } = require("../services/advancement-rules.service");
 const { canPurchaseAdvances, defaultPurchaseRules } = require("../services/advance-purchase-rules.service");
+const { skillDependencyError, lockChoiceRoster } = require("../services/between-battle.service");
 
 function createAdvancePurchaseRepository(db, { getSkillEligibilityContext, loadAvailableSkills, isSkillEligible }) {
   function warriorQuery(query, warriorId) {
@@ -106,14 +107,14 @@ function createAdvancePurchaseRepository(db, { getSkillEligibilityContext, loadA
 
     async refundPurchasedAdvance(warriorId, advanceId) {
       return db.transaction(async (transaction) => {
+        await lockChoiceRoster(transaction, warriorId);
         const warrior = await warriorQuery(transaction, warriorId).forUpdate("warrior", "roster").first();
         if (!warrior) return { missingWarrior: true };
         const advance = await transaction("warrior_advances").where({ id: advanceId, warrior_id: warriorId }).first();
         if (!advance) return { missingAdvance: true };
         if (advance.purchase_cost === null) return { notPurchased: true };
-        if (!canPurchaseAdvances(warrior, warrior.rules || defaultPurchaseRules)) {
-          return { purchaseError: "Purchased advances can only be refunded during initial roster creation." };
-        }
+        const roster = await transaction("rosters").where({ id: warrior.rosterId }).first("battles_fought");
+        if (advance.choice_battles_fought !== Number(roster.battles_fought)) return { purchaseError: "This purchased choice is fixed because the battle counter has changed." };
         const latest = await transaction("warrior_advances").where({ warrior_id: warriorId, advance_table: "Hero" })
           .orderBy("experience_threshold", "desc").orderBy("created_at", "desc").first("id");
         if (latest?.id !== advance.id || Number(warrior.experience) !== advance.experience_threshold || advance.consumed_at) {
@@ -121,6 +122,11 @@ function createAdvancePurchaseRepository(db, { getSkillEligibilityContext, loadA
         }
         if (Number(advance.experience_before_purchase) < Number(warrior.injuryExperienceFloor)) {
           return { purchaseError: "This refund would remove protected XP awarded by injuries." };
+        }
+        if (advance.learned_skill_id) {
+          const skill = await transaction("warrior_skills").where({ id: advance.learned_skill_id }).first("skill_id");
+          const dependencyError = skill ? await skillDependencyError(transaction, warriorId, skill.skill_id) : null;
+          if (dependencyError) return { dependencyError };
         }
         const stats = { ...warrior.stats };
         if (advance.stat) {

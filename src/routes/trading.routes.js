@@ -76,6 +76,12 @@ function createTradingRoutes(db) {
     await repository.upgrade(request.params.rosterId, { itemId, inventoryId, quoteId });
     response.json(await repository.getTrading(request.params.rosterId));
   }));
+  router.post("/rosters/:rosterId/trading/cancel-upgrade", handle(async (request, response) => {
+    const { inventoryId } = request.body ?? {};
+    if (!uuid(inventoryId)) return invalid(response, "Select a permanently upgraded weapon.");
+    const result = await repository.cancelUpgrade(request.params.rosterId, { inventoryId });
+    response.json({ ...await repository.getTrading(request.params.rosterId), saleAmount: result.refundAmount });
+  }));
   router.post("/rosters/:rosterId/trading/hero-status", handle(async (request, response) => {
     if (!uuid(request.body?.heroId) || typeof request.body?.outOfAction !== "boolean") return invalid(response, "Supply a Hero ID and outOfAction boolean.");
     await repository.heroStatus(request.params.rosterId, request.body);

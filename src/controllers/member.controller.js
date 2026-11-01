@@ -32,6 +32,7 @@ function createMemberController(repository, rosterService) {
       }
 
       const outcome = await repository.recordWarriorAdvance(request.params.memberId, { mode, result, stat });
+      if (outcome.dependencyError) return response.status(409).json({ error: outcome.dependencyError });
       if (outcome.missingWarrior) return response.status(404).json({ error: "Warrior not found." });
       if (outcome.experienceDisabled) return response.status(409).json({ error: "This warrior type does not gain experience." });
       if (outcome.noPendingAdvance) return response.status(409).json({ error: "No unrecorded advance is available at the warrior's current experience." });
@@ -49,7 +50,9 @@ function createMemberController(repository, rosterService) {
 
     async removeAdvance(request, response) {
       const result = await repository.deleteWarriorAdvance(request.params.memberId, request.params.advanceId);
+      if (result.dependencyError) return response.status(409).json({ error: result.dependencyError });
       if (result.purchaseError) return response.status(409).json({ error: result.purchaseError });
+      if (result.choiceLocked) return response.status(409).json({ error: "This choice is fixed because the battle counter has changed." });
       if (result.missingWarrior) return response.status(404).json({ error: "Warrior not found." });
       if (result.missingAdvance) return response.status(404).json({ error: "Advancement not found." });
       if (result.usedForPromotion) return response.status(409).json({ error: "Advancements earned as a Henchman, including the one used for promotion, cannot be removed." });
@@ -176,6 +179,8 @@ function createMemberController(repository, rosterService) {
 
     async forgetSkill(request, response) {
       const result = await repository.forgetWarriorSkill(request.params.memberId, request.params.warriorSkillId);
+      if (result.dependencyError) return response.status(409).json({ error: result.dependencyError });
+      if (result.choiceLocked) return response.status(409).json({ error: "This skill is fixed because the battle counter has changed." });
       if (result.purchaseError) return response.status(409).json({ error: result.purchaseError });
       if (result.notRemovable) return response.status(409).json({ error: "Starting skills cannot be removed." });
       if (!result.deleted) return response.status(404).json({ error: "Learned skill not found." });
@@ -266,6 +271,7 @@ function createMemberController(repository, rosterService) {
 
     async forgetSpell(request, response) {
       const result = await repository.forgetWarriorSpell(request.params.memberId, request.params.warriorSpellId);
+      if (result.choiceLocked) return response.status(409).json({ error: "This spell is fixed because the battle counter has changed." });
       if (result.notRemovable) return response.status(409).json({ error: "Spells gained from an advance can only be removed by removing that advance." });
       if (!result.deleted) return response.status(404).json({ error: "Learned spell not found." });
       const spells = await repository.getWarriorSpells(request.params.memberId);
@@ -330,9 +336,10 @@ function createMemberController(repository, rosterService) {
         return response.status(400).json({ error: "choices must be an array of exactly 2 { category, specialListName? } entries." });
       }
       const result = await repository.setLadsGotTalentChoices(request.params.memberId, overrides);
+      if (result.choiceLocked) return response.status(409).json({ error: "These skill lists are fixed because the battle counter has changed." });
       if (result.missingWarrior) return response.status(404).json({ error: "Warrior not found." });
       if (result.notPromotedHenchman) return response.status(400).json({ error: "Lad's Got Talent skill-list choices only apply to a promoted Henchman." });
-      if (result.skillsAlreadyLearned) return response.status(409).json({ error: "Skill lists cannot be changed after a skill has been learned." });
+      if (result.skillsAlreadyLearned) return response.status(409).json({ error: "Forget the skills learned from these lists before changing the lists." });
       if (result.invalidChoiceCount) return response.status(400).json({ error: "Exactly 2 skill-list choices are required." });
       if (result.duplicateChoice) return response.status(400).json({ error: "The 2 skill-list choices must be different." });
       if (result.invalidChoice) return response.status(400).json({ error: "One or more choices are not available to this warband's Heroes." });

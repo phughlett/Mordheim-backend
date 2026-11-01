@@ -34,8 +34,11 @@ function createGraveyardRepository(db) {
       async function restoreRows(table, rows, conflictKey = null) {
         if (!rows?.length) return;
         const columns = await trx(table).columnInfo();
-        const values = rows.map((row) => Object.fromEntries(Object.entries(row).filter(([key]) => key in columns)
-          .map(([key, value]) => [key, columns[key].type === "jsonb" && value !== null ? JSON.stringify(value) : value])));
+        const values = rows.map((saved) => {
+          const row = columns.choice_battles_fought ? { ...saved, choice_battles_fought: saved.choice_battles_fought ?? -1 } : saved;
+          return Object.fromEntries(Object.entries(row).filter(([key]) => key in columns)
+            .map(([key, value]) => [key, columns[key].type === "jsonb" && value !== null ? JSON.stringify(value) : value]));
+        });
         const query = trx(table).insert(values);
         if (conflictKey) await query.onConflict(conflictKey).merge(table === "trading_searches" ? ["hero_id"] : undefined);
         else await query;
@@ -48,6 +51,7 @@ function createGraveyardRepository(db) {
       await restoreRows("warrior_mutations", entry.snapshot.mutations);
       await restoreRows("warrior_starting_gear_grants", entry.snapshot.startingGear);
       await restoreRows("warrior_advances", entry.snapshot.advances);
+      await restoreRows("warrior_advance_revisions", entry.snapshot.advanceRevisions);
       await restoreRows("warrior_injuries", entry.snapshot.injuries, "id");
       await restoreRows("trading_hero_status", entry.snapshot.heroStatus, ["hero_id", "battle_number"]);
       await restoreRows("trading_searches", entry.snapshot.searches, "id");

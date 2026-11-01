@@ -60,7 +60,10 @@ function createRosterService(repository) {
       campaignName: campaign?.name ?? null,
       campaignMaxGc: campaign?.max_gc ?? null,
       capacity,
-      injuryHistory: await repository.listInjuryHistory(roster.id),
+      injuryHistory: (await repository.listInjuryHistory(roster.id)).map((entry) => {
+        const { correction, ...record } = entry;
+        return { ...record, canRemove: Boolean(correction && correction.battlesFought === Number(roster.battles_fought)) };
+      }),
       graveyard: Number(roster.battles_fought) === 0 ? [] : (await repository.listGraveyard(roster.id)).map((entry) => ({
         ...entry, canRestore: !graveyardUndoBlock(entry, roster), restoreBlock: graveyardUndoBlock(entry, roster),
       })),

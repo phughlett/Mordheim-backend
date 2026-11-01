@@ -5,6 +5,7 @@ const { tableFor, heroes, canAddInjury, battleNumber, resolveInjury, injuryAvail
 const { fail, integer } = require("../services/trading-rules.service");
 const { heroSnapshot, archiveHero } = require("../services/graveyard.service");
 const { getRosterLeader } = require("../services/warband-leader.service");
+const { correctionSnapshot, reverseCorrection } = require("../services/injury-correction.service");
 
 const snapshot = (member) => ({
   stats: member.stats, experience: member.experience, groupSize: member.group_size,
@@ -26,7 +27,10 @@ function createInjuryRepository(db) {
 
   async function get(memberId) {
     const { member, roster } = await context(db, memberId);
-    const history = await db("warrior_injuries").where({ warrior_id: memberId }).orderBy("created_at", "desc");
+    const history = (await db("warrior_injuries").where({ warrior_id: memberId }).orderBy("created_at", "desc")).map((entry) => {
+      const { correction, ...record } = entry;
+      return { ...record, canRemove: Boolean(correction && correction.battlesFought === Number(roster.battles_fought)) };
+    });
     return { table: tableFor(member), heroTable: heroes, canAdd: canAddInjury(roster),
       canCheckOldWound: !roster.campaign_id ? Number(roster.battles_fought) >= 1 : roster.campaign_phase === "pre_battle",
       conditions: activeInjuryConditions(member.injury_conditions, roster), availability: injuryAvailability(member, roster),
@@ -134,7 +138,6 @@ function createInjuryRepository(db) {
         if (index !== input.hatredTargets.length) fail("Hatred targets do not match this injury preview.", 400);
       }
       let conditions = [...member.injury_conditions];
-      if (row.resolves_id) conditions = conditions.filter((condition) => condition.injuryId !== row.resolves_id);
       const stats = { ...member.stats };
       let experience = Number(member.experience), treasury = Number(roster.treasury), removed = false;
       let injuryExperienceFloor = Number(member.injury_experience_floor);
@@ -155,6 +158,12 @@ function createInjuryRepository(db) {
         }
         result.children = children;
         if (removed) { result.effects = []; return; }
+        const before = await correctionSnapshot(trx, memberId);
+        const priorInjuryIds = await trx("warrior_injuries").where({ warrior_id: memberId }).pluck("id");
+        const pending = result === row.result && row.resolves_id
+          ? await trx("warrior_injuries").where({ id: row.resolves_id }).first() : null;
+        if (pending) conditions = conditions.filter((condition) => condition.injuryId !== row.resolves_id);
+        const treasuryBefore = treasury;
         const appliedEffects = [];
         const add = (condition) => {
           const applied = withInjuryGameplayRules(condition);
@@ -226,25 +235,39 @@ function createInjuryRepository(db) {
         if (result.id === "sold-to-the-pits" && result.pending) add({ type: "pit-fight-pending" });
         result.effects = appliedEffects;
         const recordedResult = retainedInjuryResult({ ...result, children: [] });
-        if (recordedResult) records.push({ id: injuryId, result: recordedResult });
+        if (pending && !recordedResult) {
+          await trx("warrior_injuries").where({ id: pending.id }).delete();
+          await trx("warriors").where({ id: memberId }).update({ injury_conditions: JSON.stringify(conditions), updated_at: new Date() });
+        }
+        if (recordedResult) {
+          if (pending) await trx("warrior_injuries").where({ id: pending.id }).delete();
+          if (removed) {
+            if (member.role === "Hero") await archiveHero(trx, memberId, {
+              reason: removalReason, battleNumber: row.battle_number, cause: removalCause, snapshot: preserved,
+              treasuryDelta: treasury - Number(roster.treasury),
+            });
+            await removeModel(trx, member, row.model_index);
+          } else await trx("warriors").where({ id: memberId }).update({
+            stats, experience, injury_experience_floor: injuryExperienceFloor,
+            injury_conditions: JSON.stringify(conditions), updated_at: new Date(),
+          });
+          const after = await correctionSnapshot(trx, memberId);
+          await trx("warrior_injuries").insert({
+            id: injuryId, roster_id: roster.id, warrior_id: after.member ? memberId : null, warrior_name: member.name,
+            role: member.role, model_index: row.model_index, battle_number: row.battle_number,
+            mode: row.mode, result: recordedResult, pending: recordedResult.pending === true,
+            correction: { warriorId: memberId, battlesFought: Number(roster.battles_fought), before, after,
+              priorInjuryIds, pending, treasuryDelta: treasury - treasuryBefore },
+          });
+          records.push({ id: injuryId, result: recordedResult });
+          if (removed && member.role === "Hero") {
+            const ids = await trx("warrior_injuries").where({ roster_id: roster.id }).whereIn("id", records.map((record) => record.id)).pluck("id");
+            await trx("hero_graveyard").where({ original_warrior_id: memberId }).update({ removal_injury_ids: JSON.stringify(ids) });
+          }
+        }
       };
       await applyResult(row.result);
       if (!integer(experience, 0, 2147483647) || !integer(treasury, 0, 2147483647)) fail("Injury awards exceed the supported treasury or experience range.");
-      if (records.length) await trx("warrior_injuries").insert(records.map((record) => ({
-        id: record.id, roster_id: roster.id, warrior_id: memberId, warrior_name: member.name,
-        role: member.role, model_index: row.model_index, battle_number: row.battle_number,
-        mode: row.mode, result: record.result, pending: record.result.pending === true,
-      })));
-      if (row.resolves_id) await trx("warrior_injuries").where({ id: row.resolves_id }).delete();
-      if (removed) {
-        if (member.role === "Hero") await archiveHero(trx, memberId, {
-          reason: removalReason, battleNumber: row.battle_number, cause: removalCause, snapshot: preserved,
-          treasuryDelta: treasury - Number(roster.treasury),
-        });
-        await removeModel(trx, member, row.model_index);
-      }
-      else await trx("warriors").where({ id: memberId }).update({ stats, experience,
-        injury_experience_floor: injuryExperienceFloor, injury_conditions: JSON.stringify(conditions), updated_at: new Date() });
       await trx("rosters").where({ id: roster.id }).update({ treasury, updated_at: new Date() });
       await trx("injury_previews").where({ warrior_id: memberId }).delete();
       return { applied: true, removed, injuryId: records[0]?.id ?? null, injuryIds: records.map((record) => record.id) };
@@ -254,6 +277,18 @@ function createInjuryRepository(db) {
   async function cancel(memberId, previewId) {
     const deleted = await db("injury_previews").where({ id: previewId, warrior_id: memberId }).delete();
     if (!deleted) fail("Injury preview not found.", 404);
+  }
+
+  async function remove(rosterId, injuryId) {
+    return db.transaction(async (trx) => {
+      const roster = await trx("rosters").where({ id: rosterId }).forUpdate().first();
+      if (!roster) fail("Roster not found.", 404);
+      const injury = await trx("warrior_injuries").where({ id: injuryId, roster_id: rosterId }).forUpdate().first();
+      if (!injury) fail("Injury not found or already removed.", 404);
+      if (injury.correction) await trx("warriors").where({ id: injury.correction.warriorId }).forUpdate().first();
+      await reverseCorrection(trx, roster, injury);
+      return { removed: true };
+    });
   }
 
   async function checkOldWound(memberId, input) {
@@ -271,7 +306,7 @@ function createInjuryRepository(db) {
       return { roll };
     });
   }
-  return { get, preview, apply, cancel, checkOldWound };
+  return { get, preview, apply, cancel, checkOldWound, remove };
 }
 
 module.exports = { createInjuryRepository };

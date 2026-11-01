@@ -9,7 +9,7 @@ async function heroSnapshot(trx, warriorId) {
     .select("warrior.*", "type.name as typeName", "type.special_rules as specialRules").first();
   if (!member) fail("Hero not found.", 404);
   if (member.role !== "Hero") return null;
-  const [equipment, skills, spells, advances, injuries, startingGear, leader, mutations, heroStatus, searches] = await Promise.all([
+  const [equipment, skills, spells, advances, injuries, startingGear, leader, mutations, heroStatus, searches, advanceRevisions] = await Promise.all([
     trx("warrior_inventory as inventory")
       .leftJoin("equipment_options as option", "option.id", "inventory.equipment_option_id")
       .leftJoin("shop_items as shop", "shop.id", "inventory.shop_item_id")
@@ -34,13 +34,14 @@ async function heroSnapshot(trx, warriorId) {
     trx("warrior_mutations").where({ warrior_id: warriorId }),
     trx("trading_hero_status").where({ hero_id: warriorId }),
     trx("trading_searches").where({ hero_id: warriorId }),
+    trx("warrior_advance_revisions").where({ warrior_id: warriorId }),
   ]);
   if (leader?.id === warriorId) {
     const ability = leaderAbility(leader.warband_name, leader.warrior_type_name);
     skills.unshift({ id: ability.id, name: ability.name, category: ability.category,
       description: ability.description, source_reference: ability.sourceReference, notes: ability.notes });
   }
-  return { member, equipment, skills, spells, advances, injuries, startingGear, mutations, heroStatus, searches };
+  return { member, equipment, skills, spells, advances, injuries, startingGear, mutations, heroStatus, searches, advanceRevisions };
 }
 
 async function archiveHero(trx, warriorId, { reason, battleNumber, cause = null, snapshot, treasuryDelta = 0 }) {

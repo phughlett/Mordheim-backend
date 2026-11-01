@@ -236,17 +236,24 @@ describe("campaign paid advancements", () => {
     assert.equal(Number((await rosterData(roster)).treasury), 0);
   });
 
-  test("recorded purchase refunds are unavailable after creation and new XP", async () => {
+  test("purchase refunds remain available across stages but lock after the next battle or new XP", async () => {
     const { roster, member } = await fixture();
     const bought = await purchase(member, { stat: "WS" });
     assert.equal(bought.status, 201);
     const advanceId = bought.body.history[0].id;
     await db("rosters").where({ id: roster.id }).update({ campaign_phase: "post_battle", campaign_step: 2 });
-    assert.equal((await refund(member, advanceId)).status, 409);
+    assert.equal((await advanceData(member)).history[0].canRemove, true);
+    assert.equal((await refund(member, advanceId)).status, 200);
+    await db("rosters").where({ id: roster.id }).update({ campaign_phase: "setup" });
+    const replacement = await purchase(member, { stat: "WS" });
+    const replacementId = replacement.body.history[0].id;
+    await db("rosters").where({ id: roster.id }).update({ battles_fought: 1 });
+    assert.equal((await refund(member, replacementId)).status, 409);
     assert.equal((await advanceData(member)).history[0].canRemove, false);
+    await db("rosters").where({ id: roster.id }).update({ battles_fought: 0, campaign_phase: "post_battle", campaign_step: 2 });
     assert.equal((await call("PATCH", `/members/${member.id}`, { experience: 3 })).status, 200);
     await db("rosters").where({ id: roster.id }).update({ campaign_phase: "setup" });
-    assert.equal((await refund(member, advanceId)).status, 409);
+    assert.equal((await refund(member, replacementId)).status, 409);
     assert.equal((await advanceData(member)).experience, 3);
   });
 

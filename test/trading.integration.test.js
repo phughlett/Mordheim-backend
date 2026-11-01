@@ -193,7 +193,8 @@ describe("warband stash and trading", () => {
   test("stash sales use half the base price for fixed, variable and free spoils and are atomic", async () => {
     const { roster } = await fixture();
     const bought = await buy(roster, "axe", 3);
-    const axe = bought.body.stash.find((item) => item.shopItemId === "axe");
+    await db("rosters").where({ id: roster.id }).update({ battles_fought: 2 });
+    const axe = (await call("GET", path(roster))).body.stash.find((item) => item.shopItemId === "axe");
     assert.equal(axe.unitSaleValue, 2);
     const treasury = Number(bought.body.treasury);
     const sell = (inventoryIds, quantity, user) => call("POST", path(roster, "/sell"), { source: "stash", inventoryIds, quantity }, user);
@@ -209,6 +210,7 @@ describe("warband stash and trading", () => {
     const rare = await buy(roster, "elf-bow", 1, [6, 6, 6]);
     const rifle = rare.body.stash.find((item) => item.shopItemId === "elf-bow");
     const baseCost = rare.body.shop.find((item) => item.id === "elf-bow").baseCost;
+    await db("rosters").where({ id: roster.id }).update({ battles_fought: 3 });
     const soldRare = await sell([rifle.id], 1);
     assert.equal(soldRare.body.saleAmount, Math.floor(baseCost / 2));
     const spoils = await call("POST", path(roster, "/spoils"), { itemId: "sword" });
@@ -245,6 +247,7 @@ describe("warband stash and trading", () => {
     });
     const ids = assigned.body.memberInventory.filter((item) => item.memberId === henchman.id && item.shopItemId === "sword").map((item) => item.id);
     assert.equal(ids.length, 2);
+    await db("rosters").where({ id: roster.id }).update({ battles_fought: 2 });
     assert.equal((await call("DELETE", `/members/${henchman.id}/equipment/${ids[0]}`)).status, 409);
     assert.equal((await call("POST", path(roster, "/sell"), { source: "member", inventoryIds: [ids[0]] })).status, 409);
     const grouped = await call("DELETE", `/members/${henchman.id}/equipment`, { inventoryItemIds: ids });
@@ -261,6 +264,7 @@ describe("warband stash and trading", () => {
     const bought = await buy(roster, customId, 1, [6]);
     const entry = bought.body.stash.find((item) => item.shopItemId === customId);
     assert.equal(entry.unitCostPaid, 41);
+    await db("rosters").where({ id: roster.id }).update({ battles_fought: 1 });
     const sale = () => call("POST", path(roster, "/sell"), { source: "stash", inventoryIds: [entry.id], quantity: 1 });
     for (const [phase, step] of [["battle", 1], ["post_battle", 5], ["post_battle", 9], ["pre_battle", 1], ["setup", 1]]) {
       await stage(roster, phase, step);
@@ -274,6 +278,7 @@ describe("warband stash and trading", () => {
     await stage(roster, "post_battle", 9);
     const transfer = await call("POST", path(roster, "/transfer"), { direction: "to_member", inventoryId: axe.id, memberId: member.id, quantity: 1 });
     const carried = transfer.body.memberInventory.find((item) => item.shopItemId === "axe");
+    await db("rosters").where({ id: roster.id }).update({ battles_fought: 2 });
     assert.equal((await call("DELETE", `/members/${member.id}/equipment/${carried.id}`)).status, 409);
     await stage(roster, "post_battle", 7);
     const memberSale = await call("DELETE", `/members/${member.id}/equipment/${carried.id}`);
@@ -575,6 +580,64 @@ describe("warband stash and trading", () => {
     assert.equal((await db("rosters").where({ id: roster.id }).first()).treasury, treasury);
     assert.match(results.find((result) => result.status === 409).body.error, /already been learned/);
   });
+  test("cancelling a consumed current purchase refunds the full quote and reverses its spells without deleting earned advances", async () => {
+    const { roster, member } = await fixture(false, undefined, "Mercenaries", "Mercenary Captain");
+    await db("rosters").where({ id: roster.id }).update({ treasury: 1500 });
+    const lore = await db("skills").where({ name: "Arcane Lore" }).first();
+    await db("warrior_skills").insert({ warrior_id: member.id, skill_id: lore.id });
+    const bought = await buy(roster, "tome-of-magic", 1, [3]);
+    assert.equal(bought.status, 201);
+    const book = bought.body.stash.find((row) => row.shopItemId === "tome-of-magic");
+    const assigned = await call("POST", path(roster, "/transfer"), {
+      direction: "to_member", inventoryId: book.id, memberId: member.id, quantity: 1, modelIndex: 0,
+    });
+    assert.equal(assigned.status, 200, JSON.stringify(assigned.body));
+    const use = await call("POST", `/members/${member.id}/spells/learn-lesser-magic`);
+    assert.equal(use.status, 200, JSON.stringify(use.body));
+    const record = use.body.consumedTomes[0];
+    assert.equal(record.canCancel, true);
+    assert.equal(record.refundAmount, book.unitCostPaid);
+    const [advance] = await db("warrior_advances").insert({ warrior_id: member.id, advance_table: "Hero",
+      experience_threshold: 25, mode: "manual", result: "new_skill" }).returning("*");
+    const spell = use.body.availableDisciplines.find((discipline) => discipline.name === "Lesser Magic").spells[0];
+    const learned = await call("POST", `/members/${member.id}/spells`, { spellId: spell.id, advanceId: advance.id, acquisitionMethod: "advance" });
+    assert.equal(learned.status, 201, JSON.stringify(learned.body));
+    const cancelPath = `/members/${member.id}/spells/tomes/${record.id}`;
+    assert.equal((await call("DELETE", cancelPath, undefined, users[1])).status, 403);
+    const cancelled = await Promise.all([call("DELETE", cancelPath), call("DELETE", cancelPath)]);
+    assert.deepEqual(cancelled.map((result) => result.status).sort(), [200, 404]);
+    const state = (await call("GET", `/members/${member.id}/spells`)).body;
+    assert.equal(state.lesserMagicUnlocked, false);
+    assert.equal(state.knownSpells.length, 0);
+    assert.equal(state.tomeInventory.length, 0);
+    assert.equal(state.consumedTomes.length, 0);
+    assert.equal((await db("warrior_advances").where({ id: advance.id }).first()).learned_spell_id, null);
+    assert.equal((await db("rosters").where({ id: roster.id }).first()).treasury, 1500);
+  });
+  test("undoing an older Tome restores the item instead of refunding it, and use becomes fixed next battle", async () => {
+    const { roster, member } = await fixture(false, undefined, "Mercenaries", "Mercenary Captain");
+    const lore = await db("skills").where({ name: "Arcane Lore" }).first();
+    await db("warrior_skills").insert({ warrior_id: member.id, skill_id: lore.id });
+    const bought = await buy(roster, "tome-of-magic", 1, [1]);
+    assert.equal(bought.status, 201);
+    const book = bought.body.stash.find((row) => row.shopItemId === "tome-of-magic");
+    const assigned = await call("POST", path(roster, "/transfer"), {
+      direction: "to_member", inventoryId: book.id, memberId: member.id, quantity: 1, modelIndex: 0,
+    });
+    assert.equal(assigned.status, 200);
+    await db("rosters").where({ id: roster.id }).update({ battles_fought: 2 });
+    const before = await db("rosters").where({ id: roster.id }).first("treasury");
+    const used = await call("POST", `/members/${member.id}/spells/learn-lesser-magic`);
+    const record = used.body.consumedTomes[0];
+    assert.equal(record.refundAmount, null);
+    assert.equal((await call("DELETE", `/members/${member.id}/spells/tomes/${record.id}`)).status, 200);
+    assert.deepEqual(await db("rosters").where({ id: roster.id }).first("treasury"), before);
+    assert.equal((await call("GET", `/members/${member.id}/spells`)).body.tomeInventory[0].quantity, 1);
+    const again = await call("POST", `/members/${member.id}/spells/learn-lesser-magic`);
+    await db("rosters").where({ id: roster.id }).update({ battles_fought: 3 });
+    assert.equal((await call("DELETE", `/members/${member.id}/spells/tomes/${again.body.consumedTomes[0].id}`)).status, 409);
+    assert.equal((await call("GET", `/members/${member.id}/spells`)).body.consumedTomes[0].canCancel, false);
+  });
   test("a Tome assigned to another Hero does not unlock learning and a single carried Tome is deleted", async () => {
     const { member } = await fixture(false, undefined, "Mercenaries", "Mercenary Captain");
     const { member: other } = await fixture(false, undefined, "Mercenaries", "Mercenary Captain");
@@ -868,7 +931,7 @@ describe("warband stash and trading", () => {
     const crossbows = (await call("GET", `/members/${memberId}/equipment`)).body.inventory.filter((item) => item.name === "Crossbow");
     assert.equal(crossbows.length, 4);
     assert.deepEqual([...new Set(crossbows.map((item) => item.stackKey))], ["shop:crossbow"]);
-    assert.ok(crossbows.every((item) => item.unitSaleValue === 15));
+    assert.ok(crossbows.every((item) => item.unitSaleValue === (item.canRefund ? item.unitCostPaid : 15)));
     assert.equal((await start()).status, 200);
     await stage(roster, "post_battle", 9);
     const carriedCrossbow = (await call("GET", path(roster))).body.memberInventory
@@ -883,6 +946,7 @@ describe("warband stash and trading", () => {
     assert.equal(returned.body.memberInventory.filter((entry) => entry.memberId === memberId && entry.name === "Crossbow").length, 0);
     assert.equal((await status()).valid, true);
     await stage(roster, "post_battle", 8);
+    await db("rosters").where({ id: roster.id }).increment("battles_fought", 1);
     const maces = (await call("GET", `/members/${memberId}/equipment`)).body.inventory
       .filter((item) => item.stackKey === "shop:club-mace-hammer");
     assert.equal(maces.length, 4);

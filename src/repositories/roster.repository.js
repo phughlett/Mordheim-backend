@@ -1,4 +1,4 @@
-const { randomInt } = require("node:crypto");
+const { randomInt, randomUUID } = require("node:crypto");
 const {
   getAdvanceTable,
   getAdvanceThresholds,
@@ -19,6 +19,8 @@ const { canRecruitEquipment, TradingError } = require("../services/trading-rules
 const { canUseEquipment } = require("../services/equipment-access.service");
 const { getGroupEquipment } = require("../services/group-equipment.service");
 const { archiveHero } = require("../services/graveyard.service");
+const { choiceIsEditable, lockChoiceRoster, skillDependencyError } = require("../services/between-battle.service");
+const { getAllowedActions, describeBlock } = require("../services/campaign.service");
 
 // Builds a compact `stats` object for an equipment row (from a query joined against
 // weapon_profiles / armour_profiles / weapon_material_modifiers / weapon_poisons), or
@@ -245,6 +247,7 @@ function createRosterRepository(db) {
         warriorTypeCategory: "warrior_type.category",
         warbandId: "roster.warband_id",
         skillCategoryOverrides: "warrior.skill_category_overrides",
+        skillListChoiceBattlesFought: "warrior.skill_list_choice_battles_fought",
       });
     if (!warrior) return null;
 
@@ -360,6 +363,7 @@ function createRosterRepository(db) {
         warbandName: "warband.name",
         lesserMagicUnlocked: "warrior.lesser_magic_unlocked",
         selectedSpellDisciplineId: "warrior.selected_spell_discipline_id",
+        rosterId: "roster.id",
       });
     if (!warrior) return null;
 
@@ -467,6 +471,7 @@ function createRosterRepository(db) {
         "warrior_spell.casting_difficulty_modifier as castingDifficultyModifier",
         "warrior_spell.notes as notes",
         "warrior_spell.acquired_at as acquiredAt",
+        "warrior_spell.choice_battles_fought as choiceBattlesFought",
         "spell.spell_discipline_id as disciplineId",
         "discipline.name as disciplineName",
         "spell.d6_result as roll",
@@ -494,6 +499,8 @@ function createRosterRepository(db) {
     const selectedSpellDisciplineId = uniqueRows.some((row) => row.disciplineId === warrior.selectedSpellDisciplineId)
       ? warrior.selectedSpellDisciplineId
       : selectedFixed;
+    const currentRoster = await queryBuilder("rosters").join("warriors", "warriors.roster_id", "rosters.id")
+      .where("warriors.id", warriorId).first("rosters.battles_fought");
     const knownSpells = learnedRows.map((row) => {
       const castingDifficulty = row.spellId ? row.spellCastingDifficulty : row.customCastingDifficulty;
       return {
@@ -515,6 +522,7 @@ function createRosterRepository(db) {
         acquisitionMethod: row.acquisitionMethod,
         notes: row.notes,
         acquiredAt: row.acquiredAt,
+        canForget: row.choiceBattlesFought === Number(currentRoster.battles_fought),
       };
     });
     const selectedProfile = profileRows.find((row) => row.disciplineId === selectedSpellDisciplineId);
@@ -587,7 +595,9 @@ function createRosterRepository(db) {
         .forUpdate()
         .select("id", "quantity", "unit_cost_paid", "shop_item_id");
       if (inventoryItems.length !== inventoryItemIds.length) return { missingItem: true };
-      if (inventoryItems.some((item) => item.shop_item_id)) return { shopItem: true };
+      if (inventoryItems.some((item) => item.shop_item_id)) {
+        return createTradingRepository(db).sell(warrior.rosterId, { source: "member", inventoryIds: inventoryItemIds, memberId: warriorId }, transaction);
+      }
       if (inventoryItems.some((item) => Number(item.unit_cost_paid) <= 0)) return { freeItem: true };
 
       const refundAmount = inventoryItems.reduce((total, item) =>
@@ -831,7 +841,8 @@ function createRosterRepository(db) {
         return { ...stripStatColumns(row),
           stackKey: entry.stackKey,
           ...(entry.mapResult ? { name: entry.name, description: entry.description, mapResult: entry.mapResult } : {}),
-          unitSaleValue: entry.unitSaleValue, saleRestriction: entry.saleRestriction };
+          unitSaleValue: entry.unitSaleValue, saleRestriction: entry.saleRestriction,
+          canRefund: entry.canRefund, canCancelUpgrade: entry.canCancelUpgrade };
       });
 
       return { role: warrior.role, groupSize: warrior.groupSize || 1, availableOptions, inventory, mutations,
@@ -951,12 +962,15 @@ function createRosterRepository(db) {
           return { insufficientFunds: true, totalCost, treasury: Number(warrior.treasury) };
         }
         if (purchases.length) {
+          const purchaseId = randomUUID();
           await transaction("warrior_inventory").insert(purchases.map((purchase) => ({
             warrior_id: warriorId,
             equipment_option_id: equipmentOptionId,
             model_index: purchase.model,
             quantity: purchase.quantity,
             unit_cost_paid: purchase.unitCost,
+            purchase_battles_fought: purchase.unitCost > 0 ? Number(warrior.battlesFought) : null,
+            purchase_id: purchase.unitCost > 0 ? purchaseId : null,
           })));
           const freeGrants = purchases.filter((purchase) => purchase.unitCost === 0 && option.firstFree)
             .map((purchase) => ({ warrior_id: warriorId, equipment_option_id: equipmentOptionId, model_index: purchase.model }));
@@ -1068,6 +1082,7 @@ function createRosterRepository(db) {
           "warband.name as warbandName",
           "warband.max_heroes as maxHeroes",
           "roster.id as rosterId",
+          "roster.battles_fought as battlesFought",
         );
       if (!warrior) return null;
 
@@ -1095,6 +1110,8 @@ function createRosterRepository(db) {
           db.raw("coalesce(reduced_spell_catalog.name, reduced_spell.custom_name) as \"reducedSpellName\""),
           "warrior_advances.created_at as createdAt",
           "warrior_advances.consumed_at as consumedAt",
+          "warrior_advances.choice_battles_fought as choiceBattlesFought",
+          "warrior_advances.resolution_battles_fought as resolutionBattlesFought",
         )
         .leftJoin("warrior_skills as learned_skill", "learned_skill.id", "warrior_advances.learned_skill_id")
         .leftJoin("skills as skill", "skill.id", "learned_skill.skill_id")
@@ -1144,8 +1161,12 @@ function createRosterRepository(db) {
         && warrior.promotionEligibility === "eligible"
         && Number(currentHeroes) < Number(warrior.maxHeroes || 6);
       const purchases = await purchaseRepository.getAdvancePurchaseOptions(warriorId);
+      const revision = nextAdvanceThreshold === null ? null : await db("warrior_advance_revisions")
+        .where({ warrior_id: warriorId, advance_table: advanceTable, experience_threshold: nextAdvanceThreshold,
+          battles_fought: Number(warrior.battlesFought) }).first();
 
       return {
+        canRevise: Boolean(revision && pendingCount > 0),
         role: warrior.role,
         experience: Number(warrior.experience),
         lockedExperience,
@@ -1169,9 +1190,11 @@ function createRosterRepository(db) {
         pendingSkillAdvances,
         history: history.map((advance) => ({
           ...advance,
-          canRemove: !advance.consumedAt && !(warrior.role === "Hero" && advance.advanceTable === "Henchman")
+          canResetChoice: Boolean(advance.reducedSpellId && advance.resolutionBattlesFought === Number(warrior.battlesFought)),
+          canRemove: advance.choiceBattlesFought === Number(warrior.battlesFought)
+            && !advance.consumedAt && !(warrior.role === "Hero" && advance.advanceTable === "Henchman")
             && latestAdvanceByTable.get(advance.advanceTable)?.id === advance.id
-            && (advance.purchaseCost === null || (purchases.enabled && Number(warrior.experience) === Number(advance.experienceThreshold))),
+            && (advance.purchaseCost === null || Number(warrior.experience) === Number(advance.experienceThreshold)),
         })),
         purchases,
       };
@@ -1179,6 +1202,7 @@ function createRosterRepository(db) {
 
     async recordWarriorAdvance(warriorId, { mode, result: requestedResult, stat: requestedStat }) {
       return db.transaction(async (transaction) => {
+        await lockChoiceRoster(transaction, warriorId);
         const warrior = await transaction("warriors as warrior")
           .leftJoin("warrior_types as warrior_type", "warrior_type.id", "warrior.warrior_type_id")
           .join("rosters as roster", "roster.id", "warrior.roster_id")
@@ -1215,6 +1239,10 @@ function createRosterRepository(db) {
         if (nextAdvanceThreshold === null || Number(warrior.experience) < nextAdvanceThreshold) {
           return { noPendingAdvance: true };
         }
+        const roster = await createRosterRepository(transaction).findRoster(warrior.rosterId);
+        const revision = await transaction("warrior_advance_revisions").where({ warrior_id: warriorId, advance_table: advanceTable,
+          experience_threshold: nextAdvanceThreshold, battles_fought: Number(roster.battles_fought) }).first();
+        if (!revision && !getAllowedActions(roster).includes("advance")) return { dependencyError: describeBlock(roster, "advance") };
 
         const profileName = getStatMaximumProfile(warrior.warbandName, warrior.warriorTypeName);
         const maximumStats = profileName ? racialMaximums[profileName] : null;
@@ -1268,6 +1296,8 @@ function createRosterRepository(db) {
           result: outcome.result,
           stat: outcome.stat,
         });
+        await transaction("warrior_advance_revisions").where({ warrior_id: warriorId, advance_table: advanceTable,
+          experience_threshold: nextAdvanceThreshold }).delete();
         await transaction("warriors").where({ id: warriorId }).update({
           stats: nextStats,
           updated_at: new Date(),
@@ -1280,6 +1310,7 @@ function createRosterRepository(db) {
       const paid = await db("warrior_advances").where({ id: advanceId, warrior_id: warriorId }).first("purchase_cost");
       if (paid?.purchase_cost != null) return purchaseRepository.refundPurchasedAdvance(warriorId, advanceId);
       return db.transaction(async (transaction) => {
+        await lockChoiceRoster(transaction, warriorId);
         const warrior = await transaction("warriors as warrior")
           .leftJoin("warrior_types as warrior_type", "warrior_type.id", "warrior.warrior_type_id")
           .where("warrior.id", warriorId)
@@ -1295,8 +1326,9 @@ function createRosterRepository(db) {
         const advance = await transaction("warrior_advances")
           .where({ id: advanceId, warrior_id: warriorId })
           .forUpdate()
-          .first("id", "advance_table", "experience_threshold", "result", "stat", "learned_skill_id", "learned_spell_id", "reduced_spell_id", "consumed_at");
+          .first("id", "advance_table", "experience_threshold", "result", "stat", "learned_skill_id", "learned_spell_id", "reduced_spell_id", "consumed_at", "choice_battles_fought");
         if (!advance) return { missingAdvance: true };
+        if (!await choiceIsEditable(transaction, warriorId, advance)) return { choiceLocked: true };
         if (advance.consumed_at) return { usedForPromotion: true };
         if (advance.advance_table === "Henchman" && warrior.role === "Hero") return { usedForPromotion: true };
 
@@ -1323,12 +1355,19 @@ function createRosterRepository(db) {
           const learnedSkill = await transaction("warrior_skills")
             .where({ id: advance.learned_skill_id, warrior_id: warriorId })
             .forUpdate()
-            .first("id", "is_starting");
+            .first("id", "is_starting", "skill_id");
           if (learnedSkill?.is_starting) return { startingSkill: true };
+          const dependencyError = learnedSkill ? await skillDependencyError(transaction, warriorId, learnedSkill.skill_id) : null;
+          if (dependencyError) return { dependencyError };
           learnedSkillId = learnedSkill?.id ?? null;
         }
 
         await transaction("warrior_advances").where({ id: advance.id }).delete();
+        const roster = await transaction("rosters").join("warriors", "warriors.roster_id", "rosters.id")
+          .where("warriors.id", warriorId).first("rosters.battles_fought");
+        await transaction("warrior_advance_revisions").insert({ warrior_id: warriorId, advance_table: advance.advance_table,
+          experience_threshold: advance.experience_threshold, battles_fought: Number(roster.battles_fought) })
+          .onConflict(["warrior_id", "advance_table", "experience_threshold"]).merge();
         if (advance.learned_spell_id) {
           await transaction("warrior_spells").where({ id: advance.learned_spell_id, warrior_id: warriorId }).delete();
         }
@@ -1510,13 +1549,15 @@ function createRosterRepository(db) {
           await addWarriorTypeStartingSkills(transaction, newHero);
           const henchmanAdvances = await transaction("warrior_advances")
             .where({ warrior_id: warrior.id, advance_table: "Henchman" })
-            .select("advance_table", "experience_threshold", "mode", "roll", "secondary_roll", "result", "stat", "created_at", "consumed_at");
+            .select("advance_table", "experience_threshold", "mode", "roll", "secondary_roll", "result", "stat", "created_at", "consumed_at",
+              "choice_battles_fought", "resolution_battles_fought");
           if (henchmanAdvances.length) {
             await transaction("warrior_advances").insert(henchmanAdvances.map((advance) => ({ ...advance, warrior_id: newHero.id })));
           }
           const promotedInventory = await transaction("warrior_inventory")
             .where({ warrior_id: warrior.id, model_index: 0 })
-            .select("equipment_option_id", "shop_item_id", "quantity", "unit_cost_paid", "nontransferable", "bound_warrior_id", "map_result");
+            .select("equipment_option_id", "shop_item_id", "quantity", "unit_cost_paid", "nontransferable", "bound_warrior_id", "map_result",
+              "purchase_id", "purchase_battles_fought");
           if (promotedInventory.length) {
             await transaction("warrior_inventory").insert(promotedInventory.map((item) => ({
               ...item,
@@ -1634,6 +1675,8 @@ function createRosterRepository(db) {
             result: "new_skill",
           })
           .whereNull("learned_skill_id")
+          .whereNull("learned_spell_id")
+          .whereNull("reduced_spell_id")
           .whereNull("consumed_at")
           .orderBy("experience_threshold", "asc")
           .select("id", "experience_threshold as experienceThreshold");
@@ -1662,6 +1705,7 @@ function createRosterRepository(db) {
             "skill.warrior_type_id as warrior_type_id",
             "skill.is_learnable as is_learnable",
             "warrior_skill.is_starting as warriorSkillIsStarting",
+            "warrior_skill.choice_battles_fought as choiceBattlesFought",
           ),
       ]);
 
@@ -1674,7 +1718,11 @@ function createRosterRepository(db) {
         availableSkills: loadedSkills.filter((skill) => !knownSkillIds.has(skill.id)),
         learnedSkills: [
           ...(leader?.id === warriorId ? [leaderAbility(leader.warband_name, leader.warrior_type_name)] : []),
-          ...learnedSkills.map((row) => ({ warriorSkillId: row.warriorSkillId, acquiredAt: row.acquiredAt, notes: row.notes, purchaseCost: row.purchaseCost, ...mapSkillRow(row) })),
+          ...await Promise.all(learnedSkills.map(async (row) => ({
+            warriorSkillId: row.warriorSkillId, acquiredAt: row.acquiredAt, notes: row.notes, purchaseCost: row.purchaseCost,
+            canForget: !row.warriorSkillIsStarting && await choiceIsEditable(db, warriorId, { choice_battles_fought: row.choiceBattlesFought }),
+            ...mapSkillRow(row),
+          }))),
         ],
       };
     },
@@ -1682,7 +1730,11 @@ function createRosterRepository(db) {
     async getWarriorSpells(warriorId) {
       const context = await getWarriorSpellContext(db, warriorId);
       if (!context) return null;
+      const roster = await db("rosters").where({ id: context.warrior.rosterId }).first("battles_fought");
+      const uses = await db("consumed_item_uses").where({ warrior_id: warriorId });
       return {
+        consumedTomes: uses.map((use) => ({ id: use.id, canCancel: use.battles_fought === Number(roster.battles_fought),
+          refundAmount: use.state.item.purchase_battles_fought === Number(roster.battles_fought) ? Number(use.state.item.unit_cost_paid) : null })),
         role: context.warrior.role,
         warriorTypeName: context.warrior.warriorTypeName,
         hasSpellcastingProfile: context.profileRows.length > 0,
@@ -1728,10 +1780,11 @@ function createRosterRepository(db) {
 
     async consumeWarriorMagicTome(warriorId) {
       return db.transaction(async (transaction) => {
+        await lockChoiceRoster(transaction, warriorId);
         const warrior = await transaction("warriors")
           .where({ id: warriorId })
           .forUpdate()
-          .first("id", "lesser_magic_unlocked");
+          .first("id", "lesser_magic_unlocked", "selected_spell_discipline_id", "roster_id");
         if (!warrior) return { missingWarrior: true };
         const context = await getWarriorSpellContext(transaction, warriorId);
         if (!context) return { missingWarrior: true };
@@ -1748,10 +1801,17 @@ function createRosterRepository(db) {
             .orWhere("inventory.shop_item_id", "tome-of-magic"))
           .forUpdate("inventory")
           .orderBy("inventory.created_at")
-          .first("inventory.id", "inventory.quantity");
+          .first("inventory.*");
         if (!tome) return { missingTome: true };
         const lesserMagic = await transaction("spell_disciplines").where({ name: "Lesser Magic" }).first("id");
         if (!lesserMagic) throw new Error("Lesser Magic discipline is missing from the spell catalog.");
+        const roster = await transaction("rosters").where({ id: warrior.roster_id }).first("battles_fought");
+        await transaction("consumed_item_uses").insert({
+          roster_id: warrior.roster_id, warrior_id: warriorId, battles_fought: Number(roster.battles_fought),
+          state: { item: tome, lesserMagicUnlocked: warrior.lesser_magic_unlocked,
+            selectedDisciplineId: warrior.selected_spell_discipline_id, disciplineId: lesserMagic.id,
+            spellIds: await transaction("warrior_spells").where({ warrior_id: warriorId }).pluck("id") },
+        });
         if (tome.quantity > 1) await transaction("warrior_inventory").where({ id: tome.id }).decrement("quantity", 1);
         else await transaction("warrior_inventory").where({ id: tome.id }).delete();
         await transaction("warriors").where({ id: warriorId }).update({
@@ -1800,6 +1860,7 @@ function createRosterRepository(db) {
 
     async learnWarriorSpell(warriorId, { spellId, customSpell, acquisitionMethod = "manual", advanceId }) {
       return db.transaction(async (transaction) => {
+        await lockChoiceRoster(transaction, warriorId);
         const lockedWarrior = await transaction("warriors")
           .where({ id: warriorId })
           .forUpdate()
@@ -1869,6 +1930,7 @@ function createRosterRepository(db) {
 
     async reduceWarriorSpellDifficulty(warriorId, warriorSpellId, advanceId) {
       return db.transaction(async (transaction) => {
+        await lockChoiceRoster(transaction, warriorId);
         const lockedWarrior = await transaction("warriors").where({ id: warriorId }).forUpdate().first("id");
         if (!lockedWarrior) return { missingSpell: true };
         const context = await getWarriorSpellContext(transaction, warriorId);
@@ -1893,27 +1955,32 @@ function createRosterRepository(db) {
           casting_difficulty_modifier: Number(spell.modifier) - 1,
           updated_at: new Date(),
         });
-        await transaction("warrior_advances").where({ id: advance.id }).update({ reduced_spell_id: spell.id });
+        const roster = await transaction("rosters").where({ id: context.warrior.rosterId }).first("battles_fought");
+        await transaction("warrior_advances").where({ id: advance.id }).update({ reduced_spell_id: spell.id,
+          resolution_battles_fought: Number(roster.battles_fought) });
         return { updated: true };
       });
     },
 
     async forgetWarriorSpell(warriorId, warriorSpellId) {
-      const spell = await db("warrior_spells")
-        .where({ id: warriorSpellId, warrior_id: warriorId })
-        .first("is_starting");
-      if (!spell) return { deleted: false };
-      const linkedAdvance = await db("warrior_advances")
-        .where({ learned_spell_id: warriorSpellId })
-        .orWhere({ reduced_spell_id: warriorSpellId })
-        .first("id");
-      if (linkedAdvance) return { notRemovable: true };
-      const deletedCount = await db("warrior_spells").where({ id: warriorSpellId, warrior_id: warriorId }).delete();
-      return { deleted: deletedCount > 0 };
+      return db.transaction(async (transaction) => {
+        await lockChoiceRoster(transaction, warriorId);
+        await transaction("warriors").where({ id: warriorId }).forUpdate().first();
+        const spell = await transaction("warrior_spells").where({ id: warriorSpellId, warrior_id: warriorId }).forUpdate().first();
+        if (!spell) return { deleted: false };
+        if (!await choiceIsEditable(transaction, warriorId, spell)) return { choiceLocked: true };
+        const reductions = await transaction("warrior_advances").where({ reduced_spell_id: warriorSpellId });
+        if (reductions.some((advance) => advance.choice_battles_fought !== spell.choice_battles_fought)) return { choiceLocked: true };
+        await transaction("warrior_advances").where({ learned_spell_id: warriorSpellId }).update({ learned_spell_id: null });
+        await transaction("warrior_advances").where({ reduced_spell_id: warriorSpellId }).update({ reduced_spell_id: null });
+        await transaction("warrior_spells").where({ id: warriorSpellId }).delete();
+        return { deleted: true };
+      });
     },
 
     async learnWarriorSkill(warriorId, skillId, advanceId) {
       return db.transaction(async (transaction) => {
+        await lockChoiceRoster(transaction, warriorId);
         const warrior = await transaction("warriors")
           .where({ id: warriorId })
           .forUpdate()
@@ -1950,12 +2017,15 @@ function createRosterRepository(db) {
     async forgetWarriorSkill(warriorId, warriorSkillId) {
       const paid = await db("warrior_advances").where({ warrior_id: warriorId, learned_skill_id: warriorSkillId }).whereNotNull("purchase_cost").first("id");
       if (paid) return purchaseRepository.refundPurchasedAdvance(warriorId, paid.id);
-      const skill = await db("warrior_skills")
-        .where({ id: warriorSkillId, warrior_id: warriorId })
-        .first("id", "is_starting");
-      if (!skill) return { deleted: false };
-      if (skill.is_starting) return { notRemovable: true };
       return db.transaction(async (transaction) => {
+        await lockChoiceRoster(transaction, warriorId);
+        await transaction("warriors").where({ id: warriorId }).forUpdate().first();
+        const skill = await transaction("warrior_skills").where({ id: warriorSkillId, warrior_id: warriorId }).forUpdate().first();
+        if (!skill) return { deleted: false };
+        if (skill.is_starting) return { notRemovable: true };
+        if (!await choiceIsEditable(transaction, warriorId, skill)) return { choiceLocked: true };
+        const dependencyError = await skillDependencyError(transaction, warriorId, skill.skill_id);
+        if (dependencyError) return { dependencyError };
         // Release the New Skill advance so the skill can be re-selected.
         await transaction("warrior_advances").where({ learned_skill_id: warriorSkillId }).update({ learned_skill_id: null });
         const deletedCount = await transaction("warrior_skills").where({ id: warriorSkillId, warrior_id: warriorId }).delete();
@@ -1986,11 +2056,14 @@ function createRosterRepository(db) {
       }
 
       const selected = Array.isArray(context.warrior.skillCategoryOverrides) ? context.warrior.skillCategoryOverrides : [];
-      return { options, selected };
+      const roster = await db("rosters").join("warriors", "warriors.roster_id", "rosters.id")
+        .where("warriors.id", warriorId).first("rosters.battles_fought");
+      return { options, selected, canChange: !selected.length || context.warrior.skillListChoiceBattlesFought === Number(roster.battles_fought) };
     },
 
     async setLadsGotTalentChoices(warriorId, overrides) {
       return db.transaction(async (transaction) => {
+        await lockChoiceRoster(transaction, warriorId);
         const warrior = await transaction("warriors as warrior")
           .join("rosters as roster", "roster.id", "warrior.roster_id")
           .leftJoin("warrior_types as warrior_type", "warrior_type.id", "warrior.warrior_type_id")
@@ -2001,7 +2074,9 @@ function createRosterRepository(db) {
         const isPromotedHenchman = warrior.role === "Hero" && warrior.warriorTypeCategory === "Henchman";
         if (!isPromotedHenchman) return { notPromotedHenchman: true };
 
-        const learned = await transaction("warrior_skills").where({ warrior_id: warriorId }).first("id");
+        const options = await createRosterRepository(transaction).getLadsGotTalentOptions(warriorId);
+        if (!options.canChange) return { choiceLocked: true };
+        const learned = await transaction("warrior_skills").where({ warrior_id: warriorId, is_starting: false }).first("id");
         if (learned) return { skillsAlreadyLearned: true };
 
         if (!Array.isArray(overrides) || overrides.length !== 2) return { invalidChoiceCount: true };
@@ -2018,8 +2093,11 @@ function createRosterRepository(db) {
         if (new Set(chosenKeys).size !== chosenKeys.length) return { duplicateChoice: true };
 
         const normalizedOverrides = overrides.map((override) => ({ category: override.category, specialListName: override.specialListName ?? null }));
+        const roster = await transaction("rosters").join("warriors", "warriors.roster_id", "rosters.id")
+          .where("warriors.id", warriorId).first("rosters.battles_fought");
         await transaction("warriors").where({ id: warriorId }).update({
           skill_category_overrides: JSON.stringify(normalizedOverrides),
+          skill_list_choice_battles_fought: Number(roster.battles_fought),
           updated_at: new Date(),
         });
         return { skillCategoryOverrides: normalizedOverrides };
