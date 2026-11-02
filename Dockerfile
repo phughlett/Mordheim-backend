@@ -5,6 +5,7 @@ RUN npm ci --omit=dev
 COPY knexfile.js ./
 COPY catalog.json ./catalog.json
 COPY hero-injuries.json henchman-injuries.json ./
+COPY league-2026.json ./league-2026.json
 COPY warband-capacity.json ./warband-capacity.json
 COPY equipment-catalog.json ./equipment-catalog.json
 COPY trading-catalog.json ./trading-catalog.json

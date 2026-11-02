@@ -63,13 +63,16 @@ function createMemberController(repository, rosterService) {
     },
 
     async purchaseAdvance(request, response) {
-      const { stat, skillId } = request.body || {};
+      const { stat, skillId, startingBonus } = request.body || {};
+      if (startingBonus !== undefined && (typeof startingBonus !== "boolean" || (startingBonus && typeof stat !== "string"))) {
+        return response.status(400).json({ error: "A starting bonus claim requires a characteristic stat." });
+      }
       if ((typeof stat === "string") === (typeof skillId === "string")
         || (stat !== undefined && skillId !== undefined)
         || (typeof skillId === "string" && !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(skillId))) {
         return response.status(400).json({ error: "Supply exactly one characteristic stat or skillId to purchase." });
       }
-      const result = await repository.purchaseWarriorAdvance(request.params.memberId, { stat, skillId });
+      const result = await repository.purchaseWarriorAdvance(request.params.memberId, { stat, skillId, startingBonus: startingBonus === true });
       if (result.missingWarrior) return response.status(404).json({ error: "Warrior not found." });
       if (result.error) return response.status(409).json({ error: result.error });
       response.status(201).json(await repository.getWarriorAdvancements(request.params.memberId));

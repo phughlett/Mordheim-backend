@@ -662,6 +662,33 @@ function createRosterRepository(db) {
       return db("campaigns").where({ id }).first();
     },
 
+    async leagueAssignment(roster) {
+      if (!roster.campaign_id) return null;
+      const campaign = await db("campaigns").where({ id: roster.campaign_id }).first();
+      if (!campaign?.league_enabled) return null;
+      const active = await db("campaign_rounds").where({ campaign_id: campaign.id, status: "active" }).first();
+      const games = active ? await db("league_games").where({ round_id: active.id }).whereNot({ status: "finished" }) : [];
+      return { scenario: games.some((g) => g.seats.some((s) => s.rosterId === roster.id)) ? active.scenario.name : null };
+    },
+
+    async campaignRosterError(campaignId, userId, warbandId, creating = false) {
+      if (!campaignId) return null;
+      const campaign = await db("campaigns").where({ id: campaignId }).first();
+      if (!campaign) return "Campaign not found.";
+      if (campaign.allowed_warband_ids.length && !campaign.allowed_warband_ids.includes(warbandId)) return "This warband is not allowed by the commissioner.";
+      if (creating) {
+        if (await db("campaign_rounds").where({ campaign_id: campaignId, status: "active" }).first()) return "Wait for the active scenario to finish before enrolling or replacing a warband.";
+        const [{ count }] = await db("rosters").where({ campaign_id: campaignId, user_id: userId, league_retired: false }).count();
+        const limit = campaign.league_enabled ? 1 : campaign.max_warbands_per_player;
+        if (limit && Number(count) >= limit) return "The campaign's active warbands-per-player limit has been reached.";
+      }
+      return null;
+    },
+
+    async hasLeagueSchedule(campaignId) {
+      return campaignId && Boolean(await db("campaign_rounds").where({ campaign_id: campaignId }).first());
+    },
+
     countHeroes(rosterId) {
       return db("warriors").where({ roster_id: rosterId, role: "Hero" }).count("id as count");
     },
@@ -670,8 +697,19 @@ function createRosterRepository(db) {
       return db("warbands").where({ id, is_available: true }).first(columns);
     },
 
-    createRoster(values) {
-      return db("rosters").insert(values).returning("*");
+    async createRoster(values) {
+      return db.transaction(async (trx) => {
+        if (values.campaign_id) {
+          const campaign = await trx("campaigns").where({ id: values.campaign_id }).forUpdate().first();
+          if (!campaign) return { error: "Campaign not found." };
+          if (!await trx("campaign_members").where({ campaign_id: campaign.id, user_id: values.user_id }).first()) return { error: "Join this campaign before creating a warband." };
+          const error = await createRosterRepository(trx).campaignRosterError(campaign.id, values.user_id, values.warband_id, true);
+          if (error) return { error };
+          values = { ...values, treasury: campaign.max_gc };
+        }
+        const [roster] = await trx("rosters").insert(values).returning("*");
+        return { roster };
+      });
     },
 
     updateRoster(id, values) {
@@ -1101,6 +1139,7 @@ function createRosterRepository(db) {
           "warrior_advances.stat",
           "warrior_advances.purchase_cost as purchaseCost",
           "warrior_advances.experience_before_purchase as experienceBeforePurchase",
+          "warrior_advances.house_rule as houseRule",
           "learned_skill.id as learnedSkillId",
           "skill.name as learnedSkillName",
           "skill.category as learnedSkillCategory",

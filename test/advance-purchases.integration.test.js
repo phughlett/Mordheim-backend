@@ -22,8 +22,8 @@ async function call(method, path, body, user = users[0]) {
   return { status: response.status, body: text ? JSON.parse(text) : null };
 }
 
-async function fixture(purchaseRules = rules(), name = "Youngblood", role = "Hero") {
-  const campaign = (await call("POST", "/campaigns", { name: "Paid advancement tests", advancePurchaseRules: purchaseRules })).body;
+async function fixture(purchaseRules = rules(), name = "Youngblood", role = "Hero", settings = {}) {
+  const campaign = (await call("POST", "/campaigns", { name: "Paid advancement tests", advancePurchaseRules: purchaseRules, ...settings })).body;
   const roster = (await call("POST", "/rosters", { warbandId: warband.id, campaignId: campaign.id })).body;
   const member = await call("POST", `/rosters/${roster.id}/members`, { name, role, warriorTypeId: types.find((type) => type.name === name).id });
   assert.equal(member.status, 201, JSON.stringify(member.body));
@@ -320,5 +320,43 @@ describe("campaign paid advancements", () => {
     assert.equal((await refund(fixtureFree.member, freeStat.body.history[0].id)).status, 200);
     assert.equal((await advanceData(fixtureFree.member)).experience, 0);
     assert.equal(Number((await rosterData(fixtureFree.roster)).treasury), starting);
+  });
+
+  test("per-hero escalation and the starting bonus pool follow the commissioner's house rules", async () => {
+    const paid = rules();
+    paid.costEscalation = "hero";
+    for (const stat of Object.keys(paid.stats)) paid.stats[stat] = ["WS", "BS"].includes(stat) ? { firstCost: 15, additionalCost: 30, maxIncreases: 1 } : { firstCost: 0, additionalCost: 0, maxIncreases: 0 };
+    const houseRuleOptions = { optionalRules: ["critical-hits-by-weapon"], startingBonus: { stats: ["W"], pool: 2, maxPerHero: 1 } };
+    const { campaign, roster, member } = await fixture(paid, "Youngblood", "Hero", { houseRuleOptions });
+    assert.deepEqual(campaign.houseRuleOptions, houseRuleOptions);
+    assert.equal(campaign.advancePurchaseRules.costEscalation, "hero");
+    const starting = Number((await rosterData(roster)).treasury);
+    assert.equal((await purchase(member, { stat: "WS" })).status, 201);
+    const options = (await advanceData(member)).purchases;
+    assert.equal(options.stats.find((item) => item.stat === "BS").cost, 30);
+    assert.equal(options.stats.find((item) => item.stat === "WS").available, false);
+    assert.equal((await purchase(member, { stat: "BS" })).body.history[1].purchaseCost, 30);
+    assert.equal(Number((await rosterData(roster)).treasury), starting - 45);
+
+    const claim = await purchase(member, { stat: "W", startingBonus: true });
+    assert.equal(claim.status, 201, JSON.stringify(claim.body));
+    assert.equal(claim.body.history[2].houseRule, "starting_bonus");
+    assert.equal(claim.body.history[2].purchaseCost, 0);
+    assert.equal(claim.body.stats.W, "2");
+    assert.equal(claim.body.purchases.startingBonus.remaining, 1);
+    assert.equal((await purchase(member, { stat: "W", startingBonus: true })).status, 409);
+    assert.equal((await purchase(member, { stat: "T", startingBonus: true })).status, 409);
+    assert.equal((await purchase(member, { startingBonus: true })).status, 400);
+    assert.equal(Number((await rosterData(roster)).treasury), starting - 45);
+
+    const add = (name) => call("POST", `/rosters/${roster.id}/members`, { name, role: "Hero", warriorTypeId: types.find((type) => type.name === name).id });
+    const second = (await add("Youngblood")).body;
+    const third = (await add("Mercenary Captain")).body;
+    const secondClaim = await purchase(second, { stat: "W", startingBonus: true });
+    assert.equal(secondClaim.status, 201);
+    assert.equal((await purchase(third, { stat: "W", startingBonus: true })).status, 409);
+    assert.equal((await advanceData(third)).purchases.startingBonus.remaining, 0);
+    assert.equal((await refund(second, secondClaim.body.history[0].id)).status, 200);
+    assert.equal((await purchase(third, { stat: "W", startingBonus: true })).status, 201);
   });
 });

@@ -33,6 +33,18 @@ const interactions = {
   "POST /rosters/:rosterId/campaign/reopen": "campaign.reopen_stage",
   "POST /shared-rosters/join": "roster.join_share",
   "POST /campaigns/join": "campaign.join",
+  "DELETE /campaigns/:campaignId": "campaign.delete",
+  "POST /campaigns/:campaignId/rounds": "scenario.schedule",
+  "POST /campaigns/:campaignId/rounds/:roundId/start": "scenario.start",
+  "POST /campaigns/:campaignId/rounds/:roundId/complete": "scenario.complete",
+  "POST /campaigns/:campaignId/tables/:gameId/teams": "league.set_teams",
+  "POST /campaigns/:campaignId/tables/:gameId/start": "league.start_table",
+  "POST /campaigns/:campaignId/tables/:gameId/results": "league.record_results",
+  "POST /campaigns/:campaignId/warbands/:rosterId/retire": "league.retire_warband",
+  "POST /campaigns/:campaignId/rounds/:roundId/absence-notes": "league.record_absence",
+  "POST /campaigns/:campaignId/rounds/:roundId/attendance": "league.adjust_attendance",
+  "POST /campaigns/:campaignId/rounds/:roundId/catch-up": "league.catch_up_award",
+  "POST /campaigns/:campaignId/warbands/:rosterId/post-battle/advance": "commissioner.advance_post_battle",
   "POST /campaigns/:campaignId/battles": "battle.create",
   "POST /battles/:battleId/start": "battle.start",
   "POST /battles/:battleId/advance": "battle.advance",
@@ -49,7 +61,7 @@ const createdResources = {
 const patchFields = {
   "/members/:memberId": ["name", "type", "warriorTypeId", "role", "experience", "stats", "equipment", "skills", "notes", "groupSize"],
   "/rosters/:rosterId": ["name", "warband", "warbandId", "warband_id", "treasury", "battlesFought", "notes"],
-  "/campaigns/:campaignId": ["name", "maxGc"],
+  "/campaigns/:campaignId": ["name", "maxGc", "scenarioLimit", "houseRules", "allowedWarbandIds", "maxWarbandsPerPlayer", "houseRuleOptions", "advancePurchaseRules", "tradingRules"],
 };
 const uuidPattern = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const resourceNames = { rosters: "rosterId", members: "memberId", campaigns: "campaignId", battles: "battleId", warbands: "warbandId" };
@@ -62,6 +74,8 @@ const safeSegments = new Set([
   "reopen", "member-order", "capacity-modifiers", "lads-got-talent-options", "skill-category-overrides",
   "trading", "search", "quote", "purchase", "spoils", "map", "transfer", "sell", "upgrade",
   "cancel-upgrade", "hero-status", "start", "finish", "leave", "ready", "participants",
+  "league", "rounds", "scenarios", "import", "players", "pairings", "suggest", "complete", "post-battle", "calendar.ics",
+  "tables", "teams", "results", "retire", "absence-notes", "attendance", "catch-up", "templates", "2026", "rule-options",
 ]);
 
 function requestContext(request) {

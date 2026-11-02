@@ -96,11 +96,14 @@ function createRosterController(repository, rosterService) {
       }
       const warbandError = await resolveWarbandSelection(repository, values);
       if (warbandError !== true) return response.status(warbandError.status).json(warbandError.body);
+      const campaignError = await repository.campaignRosterError(values.campaign_id, request.user.id, values.warband_id, true);
+      if (campaignError) return response.status(409).json({ error: campaignError });
       const integerError = validateNonNegativeIntegers(values, ["treasury", "wyrdstone"]);
       if (integerError) return response.status(400).json({ error: integerError });
       if (values.wyrdstone > 2147483647) return response.status(400).json({ error: "wyrdstone must not exceed 2147483647." });
 
-      const [roster] = await repository.createRoster(values);
+      const { roster, error } = await repository.createRoster(values);
+      if (error) return response.status(409).json({ error });
       response.status(201).json(await rosterService.toRosterResponse(roster, []));
     },
 
@@ -133,12 +136,16 @@ function createRosterController(repository, rosterService) {
       const roster = await repository.findRoster(request.params.rosterId);
       if (!roster) return response.status(404).json({ error: "Roster not found." });
       if (!roster.campaign_id) return response.status(409).json({ error: "Freebuild warbands are not part of a campaign sequence." });
-      if (roster.campaign_id && roster.campaign_phase === "battle") return response.status(409).json({ error: "This warband is in a battle. Advance the battle from the Battle panel." });
+      const assignment = await repository.leagueAssignment(roster);
+      if (roster.campaign_phase === "battle") return response.status(409).json({ error: assignment ? "Record your table's results in Campaign management." : "This warband is in a battle. Advance the battle from the Battle panel." });
       if (roster.campaign_id && roster.campaign_phase === "pre_battle" && roster.campaign_step === PRE_BATTLE_STEPS.length) {
-        return response.status(409).json({ error: "Set up the battle (teams) and start it from the Battle panel." });
+        return response.status(409).json({ error: assignment ? "Start your assigned table in Campaign management." : "Set up the battle (teams) and start it from the Battle panel." });
       }
       const [{ count }] = await repository.countHeroes(roster.id);
-      const result = advanceCampaign(roster, { scenario: request.body?.scenario, heroCount: Number(count), endBattle: request.body?.endBattle === true });
+      if (assignment && roster.campaign_phase === "pre_battle" && !assignment.scenario) return response.status(409).json({ error: "Wait for the commissioner to start your assigned scenario." });
+      const scenario = assignment?.scenario ?? request.body?.scenario;
+      const result = advanceCampaign(roster, { scenario, heroCount: Number(count), endBattle: request.body?.endBattle === true,
+        scheduledScenario: Boolean(assignment?.scenario) });
       if (result.error) return response.status(409).json({ error: result.error });
       const [updated] = await repository.updateRoster(roster.id, result.updates);
       response.json(await rosterService.toRosterResponse(updated, await rosterService.fetchRosterMembers(updated.id)));
@@ -169,6 +176,8 @@ function createRosterController(repository, rosterService) {
       const warbandError = await resolveWarbandSelection(repository, values, rosterExists.warband_id);
       if (warbandError !== true) return response.status(warbandError.status).json(warbandError.body);
       if (values.warband_id !== undefined) {
+        const campaignError = await repository.campaignRosterError(rosterExists.campaign_id, request.user.id, values.warband_id);
+        if (campaignError) return response.status(409).json({ error: campaignError });
         const assignedTypeIds = await repository.listAssignedWarriorTypeIds(rosterExists.id);
         if (assignedTypeIds.length > 0) {
           const eligibleTypeIds = values.warband_id
@@ -211,6 +220,8 @@ function createRosterController(repository, rosterService) {
     },
 
     async delete(request, response) {
+      const current = await repository.findRoster(request.params.rosterId);
+      if (current && await repository.hasLeagueSchedule(current.campaign_id)) return response.status(409).json({ error: "Scheduled league warbands are retained for campaign history." });
       const deleted = await repository.deleteRoster(request.params.rosterId);
       if (!deleted) return response.status(404).json({ error: "Roster not found." });
       response.status(204).end();

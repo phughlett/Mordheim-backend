@@ -111,7 +111,7 @@ function toCampaign(roster) {
 }
 
 // Returns { error } or { updates } for moving the roster to the next stage of the sequence.
-function advanceCampaign(roster, { scenario, heroCount = 0, endBattle = false } = {}) {
+function advanceCampaign(roster, { scenario, heroCount = 0, endBattle = false, scheduledScenario = false } = {}) {
   const { phase, step } = getStage(roster);
   if (phase === "setup") {
     if (!roster.warband_id) return { error: "Choose a warband before finalizing the roster." };
@@ -121,7 +121,7 @@ function advanceCampaign(roster, { scenario, heroCount = 0, endBattle = false } 
   if (phase === "pre_battle") {
     if (step === 1) {
       const chosen = scenario ?? roster.scenario;
-      if (!SCENARIOS.includes(chosen)) return { error: "Choose a scenario before continuing." };
+      if (!scheduledScenario && !SCENARIOS.includes(chosen)) return { error: "Choose a scenario before continuing." };
       return { updates: { campaign_step: 2, scenario: chosen } };
     }
     if (step < PRE_BATTLE_STEPS.length) return { updates: { campaign_step: step + 1 } };
@@ -148,4 +148,4 @@ function reopenCampaign(roster) {
   return { updates: { campaign_phase: "setup", campaign_step: 1, scenario: null } };
 }
 
-module.exports = { PRE_BATTLE_STEPS, SCENARIOS, advanceCampaign, describeBlock, getAllowedActions, reopenCampaign, toCampaign };
+module.exports = { PRE_BATTLE_STEPS, POST_BATTLE_STEPS, SCENARIOS, advanceCampaign, describeBlock, getAllowedActions, reopenCampaign, toCampaign };

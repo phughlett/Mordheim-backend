@@ -1,5 +1,7 @@
 const { getAdvanceThresholds, getAdvancesEarned, getStatMaximumProfile, racialMaximums } = require("../services/advancement-rules.service");
-const { canPurchaseAdvances, defaultPurchaseRules } = require("../services/advance-purchase-rules.service");
+const { canPurchaseAdvances, defaultPurchaseRules, isStartingHero } = require("../services/advance-purchase-rules.service");
+
+const STARTING_BONUS = "starting_bonus";
 const { skillDependencyError, lockChoiceRoster } = require("../services/between-battle.service");
 
 function createAdvancePurchaseRepository(db, { getSkillEligibilityContext, loadAvailableSkills, isSkillEligible }) {
@@ -17,6 +19,7 @@ function createAdvancePurchaseRepository(db, { getSkillEligibilityContext, loadA
         canGainExperience: "type.can_gain_experience", warbandName: "warband.name",
         campaignId: "roster.campaign_id", phase: "roster.campaign_phase", battlesFought: "roster.battles_fought",
         rosterId: "roster.id", treasury: "roster.treasury", rules: "campaign.advance_purchase_rules",
+        houseRuleOptions: "campaign.house_rule_options",
       });
   }
 
@@ -24,7 +27,8 @@ function createAdvancePurchaseRepository(db, { getSkillEligibilityContext, loadA
     const rules = warrior.rules || defaultPurchaseRules;
     const skillsEnabled = rules.skillsEnabled !== false;
     const history = await query("warrior_advances").where({ warrior_id: warrior.id, advance_table: "Hero" }).whereNull("consumed_at");
-    const paid = history.filter((advance) => advance.purchase_cost !== null);
+    const paid = history.filter((advance) => advance.purchase_cost !== null && advance.house_rule !== STARTING_BONUS);
+    const bonuses = history.filter((advance) => advance.house_rule === STARTING_BONUS);
     const statPurchases = paid.filter((advance) => advance.result === "stat_increase");
     const skillsPurchased = paid.filter((advance) => advance.result === "new_skill").length;
     const nextExperience = getAdvanceThresholds("Hero").find((threshold) => threshold > Number(warrior.experience)) ?? null;
@@ -32,16 +36,30 @@ function createAdvancePurchaseRepository(db, { getSkillEligibilityContext, loadA
     const enabled = canPurchaseAdvances(warrior, rules);
     const canPurchase = enabled && !pending && nextExperience !== null;
     const maximumStats = racialMaximums[getStatMaximumProfile(warrior.warbandName, warrior.typeName)] || null;
+    const belowMaximum = (stat) => {
+      const current = Number(warrior.stats?.[stat]);
+      return Number.isFinite(current) && current >= 0 && (maximumStats?.[stat] === undefined || current < maximumStats[stat]);
+    };
+    const bonusRule = warrior.houseRuleOptions?.startingBonus ?? null;
+    let bonus = null;
+    if (bonusRule && isStartingHero(warrior)) {
+      const [{ count }] = await query("warrior_advances as advance").join("warriors as owner", "owner.id", "advance.warrior_id")
+        .where({ "owner.roster_id": warrior.rosterId, "advance.house_rule": STARTING_BONUS }).whereNull("advance.consumed_at").count("advance.id as count");
+      const remaining = Math.max(0, bonusRule.pool - Number(count));
+      const canClaim = remaining > 0 && bonuses.length < bonusRule.maxPerHero && !pending && nextExperience !== null;
+      bonus = {
+        pool: bonusRule.pool, remaining, maxPerHero: bonusRule.maxPerHero, claimed: bonuses.length,
+        stats: bonusRule.stats.map((stat) => ({ stat, available: canClaim && belowMaximum(stat) })),
+      };
+    }
     const stats = Object.keys(defaultPurchaseRules.stats).map((stat) => {
       const rule = rules.stats[stat];
       const count = statPurchases.filter((advance) => advance.stat === stat).length;
-      const current = Number(warrior.stats?.[stat]);
+      const priced = rules.costEscalation === "hero" ? statPurchases.length : count;
       return {
-        stat, cost: count === 0 ? rule.firstCost : rule.additionalCost, purchasedCount: count,
+        stat, cost: priced === 0 ? rule.firstCost : rule.additionalCost, purchasedCount: count,
         maxIncreases: rule.maxIncreases, racialMaximum: maximumStats?.[stat] ?? null,
-        available: canPurchase && Number.isFinite(current) && current >= 0
-          && (maximumStats?.[stat] === undefined || current < maximumStats[stat])
-          && (rule.maxIncreases === null || count < rule.maxIncreases),
+        available: canPurchase && belowMaximum(stat) && (rule.maxIncreases === null || count < rule.maxIncreases),
       };
     });
     let skills = [];
@@ -52,6 +70,7 @@ function createAdvancePurchaseRepository(db, { getSkillEligibilityContext, loadA
     }
     return {
       enabled, canPurchase, pendingAdvances: pending, nextExperience, stats,
+      costEscalation: rules.costEscalation ?? "characteristic", startingBonus: bonus,
       skillsEnabled, skillCost: rules.skillCost,
       skillAllowance: skillsEnabled ? statPurchases.length - skillsPurchased : 0, availableSkills: skills,
     };
@@ -63,11 +82,26 @@ function createAdvancePurchaseRepository(db, { getSkillEligibilityContext, loadA
       return warrior ? state(db, warrior) : null;
     },
 
-    async purchaseWarriorAdvance(warriorId, { stat, skillId }) {
+    async purchaseWarriorAdvance(warriorId, { stat, skillId, startingBonus = false }) {
       return db.transaction(async (transaction) => {
         const warrior = await warriorQuery(transaction, warriorId).forUpdate("warrior", "roster").first();
         if (!warrior) return { missingWarrior: true };
         const options = await state(transaction, warrior);
+        if (startingBonus) {
+          if (!options.startingBonus) return { error: "Starting bonuses are available only to eligible Heroes during initial campaign roster creation." };
+          if (options.pendingAdvances) return { error: "Resolve pending experience advances before claiming a starting bonus." };
+          if (!options.startingBonus.stats.some((item) => item.stat === stat && item.available)) {
+            return { error: "This starting bonus is unavailable: the warband pool is spent, this Hero has its maximum, or the racial maximum is reached." };
+          }
+          const stats = { ...warrior.stats, [stat]: String(Number(warrior.stats[stat]) + 1) };
+          await transaction("warrior_advances").insert({
+            warrior_id: warriorId, advance_table: "Hero", experience_threshold: options.nextExperience,
+            mode: "manual", result: "stat_increase", stat, purchase_cost: 0, house_rule: STARTING_BONUS,
+            experience_before_purchase: Number(warrior.experience),
+          });
+          await transaction("warriors").where({ id: warriorId }).update({ stats, experience: options.nextExperience, updated_at: new Date() });
+          return { purchased: true };
+        }
         if (!options.enabled) return { error: "Paid advancements are enabled only for eligible Heroes during initial campaign roster creation." };
         if (options.pendingAdvances) return { error: "Resolve pending experience advances before purchasing an advancement." };
         if (!options.canPurchase) return { error: "This Hero has reached the experience-track maximum." };

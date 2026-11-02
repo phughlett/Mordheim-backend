@@ -45,6 +45,7 @@ function createRosterService(repository) {
     const campaign = roster.campaign_id ? await repository.findCampaign(roster.campaign_id) : null;
     const capacity = await getRosterCapacity(roster);
     const groups = await repository.getGroupEquipment(roster.id);
+    const assignment = campaign?.league_enabled ? await repository.leagueAssignment(roster) : null;
     return {
       ...toRoster(roster, members.map((member) => ({
         ...member, equipmentStatus: groups.find((group) => group.memberId === member.id) ?? null,
@@ -54,11 +55,13 @@ function createRosterService(repository) {
       maxHeroes: capacity.maxHeroes,
       maxMembers: capacity.baseMaxMembers,
       ownerId: roster.user_id ?? null,
+      leagueRetired: Boolean(roster.league_retired),
       player: roster.user_id ? (await repository.findUsername(roster.user_id)) ?? null : null,
       shareCode: roster.share_code ?? null,
       campaignId: campaign?.id ?? null,
       campaignName: campaign?.name ?? null,
       campaignMaxGc: campaign?.max_gc ?? null,
+      campaign: { ...toCampaign(roster), leagueManaged: Boolean(campaign?.league_enabled), leagueScenario: assignment?.scenario ?? null },
       capacity,
       injuryHistory: (await repository.listInjuryHistory(roster.id)).map((entry) => {
         const { correction, ...record } = entry;
@@ -140,4 +143,4 @@ function toMember(warrior) {
   };
 }
 
-module.exports = { createRosterService };
+module.exports = { createRosterService, calculateWarbandRating };

@@ -2,6 +2,7 @@ const defaultPurchaseRules = {
   enabled: false,
   skillsEnabled: true,
   skillCost: 40,
+  costEscalation: "characteristic",
   stats: Object.fromEntries(Object.entries({
     M: [15, 15], WS: [15, 15], BS: [15, 15], S: [25, 35], T: [30, 45],
     W: [20, 30], I: [10, 10], A: [25, 35], Ld: [15, 15],
@@ -15,6 +16,9 @@ function validatePurchaseRules(value) {
   const validPrice = (number) => Number.isSafeInteger(number) && number >= 0 && number <= 100000;
   if (value.skillsEnabled !== undefined && typeof value.skillsEnabled !== "boolean") {
     return { error: "Skill purchase rules require a skillsEnabled boolean." };
+  }
+  if (value.costEscalation !== undefined && !["characteristic", "hero"].includes(value.costEscalation)) {
+    return { error: "Cost escalation must be characteristic or hero." };
   }
   if (!validPrice(value.skillCost)) return { error: "Purchased skill cost must be a whole number from 0 to 100000." };
   if (!value.stats || typeof value.stats !== "object" || Array.isArray(value.stats)
@@ -30,12 +34,16 @@ function validatePurchaseRules(value) {
     }
     stats[stat] = { firstCost: rule.firstCost, additionalCost: rule.additionalCost, maxIncreases: rule.maxIncreases };
   }
-  return { rules: { enabled: value.enabled, skillsEnabled: value.skillsEnabled ?? true, skillCost: value.skillCost, stats } };
+  return { rules: { enabled: value.enabled, skillsEnabled: value.skillsEnabled ?? true, skillCost: value.skillCost, costEscalation: value.costEscalation ?? "characteristic", stats } };
 }
 
-function canPurchaseAdvances(warrior, rules) {
-  return Boolean(warrior.campaignId && rules.enabled && warrior.role === "Hero"
+function isStartingHero(warrior) {
+  return Boolean(warrior.campaignId && warrior.role === "Hero"
     && warrior.canGainExperience !== false && warrior.phase === "setup" && Number(warrior.battlesFought) === 0);
 }
 
-module.exports = { defaultPurchaseRules, validatePurchaseRules, canPurchaseAdvances };
+function canPurchaseAdvances(warrior, rules) {
+  return Boolean(rules.enabled) && isStartingHero(warrior);
+}
+
+module.exports = { defaultPurchaseRules, validatePurchaseRules, canPurchaseAdvances, isStartingHero };

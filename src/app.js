@@ -32,6 +32,7 @@ function createApp(db, options = {}) {
   app.use("/api/rosters/:rosterId", authorizeRoster);
   app.use("/api/members/:memberId", authorizeMember);
   app.use("/api", createCampaignRoutes(db));
+  app.use("/api", require("./routes/league.routes").createLeagueRoutes(db));
   app.use("/api", createBattleRoutes(db));
   app.use("/api", createRosterRoutes(db));
   app.use("/api", createMemberRoutes(db));

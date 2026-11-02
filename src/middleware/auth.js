@@ -46,10 +46,11 @@ function createAuth(db) {
   // Warbands and their members are readable by campaign mates but editable only by their owner.
   async function checkRoster(rosterId, request, response, next) {
     try {
-      const roster = await db("rosters").where({ id: rosterId }).first("id", "user_id", "campaign_id");
+      const roster = await db("rosters").where({ id: rosterId }).first("id", "user_id", "campaign_id", "league_retired");
       if (!roster) return next();
       response.locals.logResources = { ...response.locals.logResources, rosterId: roster.id,
         ...(roster.campaign_id ? { campaignId: roster.campaign_id } : {}) };
+      if (request.method !== "GET" && roster.league_retired) return response.status(409).json({ error: "Retired league warbands are read-only." });
       if (roster.user_id === request.user.id) return next();
       if (request.method === "GET") {
         if (roster.campaign_id && await isMember(roster.campaign_id, request.user.id)) return next();

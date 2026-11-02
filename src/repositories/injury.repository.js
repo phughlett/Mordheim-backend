@@ -39,14 +39,25 @@ function createInjuryRepository(db) {
 
   async function hatredOpponents(roster) {
     if (!roster.campaign_id) return null;
-    const battle = await db("battle_rosters as participant").join("battles", "battles.id", "participant.battle_id")
-      .where({ "participant.roster_id": roster.id, "battles.campaign_id": roster.campaign_id })
-      .whereIn("battles.status", ["active", "finished"]).orderBy("battles.created_at", "desc")
-      .first("battles.id", "participant.team");
-    if (!battle) return [];
-    const opponents = await db("battle_rosters as participant").join("rosters", "rosters.id", "participant.roster_id")
-      .where("participant.battle_id", battle.id).whereNot("participant.team", battle.team)
-      .select("rosters.id", "rosters.name", "rosters.warband").orderBy("rosters.name");
+    const game = await db("league_games").join("campaign_rounds", "campaign_rounds.id", "league_games.round_id")
+      .where({ "campaign_rounds.campaign_id": roster.campaign_id }).whereIn("league_games.status", ["active", "finished"])
+      .whereRaw("league_games.seats @> ?::jsonb", [JSON.stringify([{ rosterId: roster.id }])])
+      .orderBy("campaign_rounds.number", "desc").first("league_games.seats");
+    let opponents;
+    if (game) {
+      const own = game.seats.find((s) => s.rosterId === roster.id);
+      const ids = game.seats.filter((s) => s.rosterId !== roster.id && (!own.team || s.team !== own.team)).map((s) => s.rosterId);
+      opponents = await db("rosters").whereIn("id", ids).select("id", "name", "warband").orderBy("name");
+    } else {
+      const battle = await db("battle_rosters as participant").join("battles", "battles.id", "participant.battle_id")
+        .where({ "participant.roster_id": roster.id, "battles.campaign_id": roster.campaign_id })
+        .whereIn("battles.status", ["active", "finished"]).orderBy("battles.created_at", "desc")
+        .first("battles.id", "participant.team");
+      if (!battle) return [];
+      opponents = await db("battle_rosters as participant").join("rosters", "rosters.id", "participant.roster_id")
+        .where("participant.battle_id", battle.id).whereNot("participant.team", battle.team)
+        .select("rosters.id", "rosters.name", "rosters.warband").orderBy("rosters.name");
+    }
     return Promise.all(opponents.map(async (opponent) => {
       const [leader, heroes] = await Promise.all([
         getRosterLeader(db, opponent.id),

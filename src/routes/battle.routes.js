@@ -112,7 +112,13 @@ function createBattleRoutes(db) {
     if (!FORMATS[format]) return response.status(400).json({ error: "Battle format must be 1v1 or 2v2." });
     const campaign = await membership(request, response, request.params.campaignId);
     if (!campaign) return;
-    const [battle] = await db("battles").insert({ campaign_id: campaign.id, format }).returning("*");
+    const battle = await db.transaction(async (trx) => {
+      const current = await trx("campaigns").where({ id: campaign.id }).forUpdate().first();
+      if (!current || current.league_enabled) return null;
+      const [created] = await trx("battles").insert({ campaign_id: campaign.id, format }).returning("*");
+      return created;
+    });
+    if (!battle) return response.status(409).json({ error: "The campaign is unavailable or the commissioner manages battles through its scenario schedule." });
     response.status(201).json(await present(battle));
   });
 
@@ -166,6 +172,8 @@ function createBattleRoutes(db) {
     const waiting = view.participants.filter((entry) => !entry.ready);
     if (waiting.length > 0) return response.status(409).json({ error: `${waiting.map((entry) => entry.name).join(", ")} must finish the pre-battle sequence first.` });
     const equipmentError = await db.transaction(async (trx) => {
+      const locked = await trx("battles").where({ id: battle.id }).forUpdate().first();
+      if (locked.status !== "forming") return "This battle has already started.";
       const ids = view.participants.map((entry) => entry.rosterId).sort();
       await trx("rosters").whereIn("id", ids).orderBy("id").forUpdate().select("id");
       for (const id of ids) {
@@ -204,10 +212,15 @@ function createBattleRoutes(db) {
         battleUpdates.active_team = battle.first_team;
       }
     }
-    await db.transaction(async (trx) => {
+    const changed = await db.transaction(async (trx) => {
+      const locked = await trx("battles").where({ id: battle.id }).forUpdate().first();
+      if (locked.status !== "active" || new Date(locked.updated_at).getTime() !== new Date(battle.updated_at).getTime()) return false;
       await trx("rosters").whereIn("id", rosters.map((row) => row.id)).update({ ...updates, updated_at: new Date() });
       if (Object.keys(battleUpdates).length) await trx("battles").where({ id: battle.id }).update({ ...battleUpdates, updated_at: new Date() });
+      else await trx("battles").where({ id: battle.id }).update({ updated_at: new Date() });
+      return true;
     });
+    if (!changed) return response.status(409).json({ error: "The battle changed. Refresh before continuing." });
     response.json(await present(await find(battle.id)));
   });
 
